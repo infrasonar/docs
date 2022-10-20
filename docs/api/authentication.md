@@ -1,10 +1,10 @@
 # Authentication
 
-The authentication scheme that the Oversight API makes use of is "Bearer authentication".
+The authentication scheme that the InfraSonar API makes use of is "Bearer authentication".
 
 ## Bearer Authentication
 
-Bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens called bearer tokens. The name “Bearer authentication” can be understood as “give access to the bearer of this token.” The client must send this token in the Authorization header when making requests to the Oversight API:
+Bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens called bearer tokens. The name “Bearer authentication” can be understood as “give access to the bearer of this token.” The client must send this token in the Authorization header when making requests to the InfraSonar API:
 
 ```bash
 Authorization: Bearer <token>

@@ -2,7 +2,7 @@
 
 ## Description
 
-Remove a host from Oversight.
+Remove a host from InfraSonar.
 
 ## Arguments
 
@@ -24,7 +24,7 @@ Remove a host from Oversight.
 ## Example curl
 
 ```bash
-curl --location --request POST 'https://oversig.ht/api/host/delete' \
+curl --location --request POST 'https://api.infrasonar.com/host/delete' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data-raw '{

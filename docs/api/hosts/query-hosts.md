@@ -16,17 +16,17 @@ Query for hosts.
 
 ## Columns
 
-| key         | description                                      |
-| ----------- | ------------------------------------------------ |
-| hostUuid    | The host uuid.                                   |
-| parentUuid  | The parent uuid.                                 |
-| address     | The host address.                                |
-| name        | The name of the host which is used in Oversight. |
-| description | The host description.                            |
-| labels      | List of labels. Each label with a key string (`ks`) and `name` property.  |
-| probes      | List of probes. Each probe with a `probe` and `name` property.            |
+| key         | description                                                                                 |
+| ----------- | ------------------------------------------------------------------------------------------- |
+| hostUuid    | The host uuid.                                                                              |
+| parentUuid  | The parent uuid.                                                                            |
+| address     | The host address.                                                                           |
+| name        | The name of the host which is used in InfraSonar.                                           |
+| description | The host description.                                                                       |
+| labels      | List of labels. Each label with a key string (`ks`) and `name` property.                    |
+| probes      | List of probes. Each probe with a `probe` and `name` property.                              |
 | environment | Environment where the host is created. With a uuid (`environmentUuid`) and `name` property. |
-| lastSeen    | Date/time in ISO 8601 format when Oversight last received data for this host.               |
+| lastSeen    | Date/time in ISO 8601 format when InfraSonar last received data for this host.              |
 
 ## Example body (JSON)
 
@@ -40,7 +40,7 @@ Query for hosts.
 ## Example curl
 
 ```bash
-curl --location --request POST 'https://oversig.ht/api/hosts' \
+curl --location --request POST 'https://api.infrasonar.com/hosts' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data-raw '{

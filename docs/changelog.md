@@ -39,7 +39,7 @@
 * Added `docker` icon.
 * Removed `text` widget.
 * Added Azure probe.
-* Allow `agents` to be added in Oversight.
+* Allow `agents` to be added in InfraSonar.
 * Fix display `probe` address.
 * Fix filter for assigned alerts.
 * Fix displaying the correct metrics in a widget.
@@ -75,7 +75,7 @@
 
 <small>_ Thursday 17 Feb 2022 @ 21:00 CET</small>
 
-* Fixed CSV download for Oversight Accounts (sysadmin).
+* Fixed CSV download for InfraSonar Accounts (sysadmin).
 * Add *"show more"* when more text-lines are available in logging message.
 * Fixed missing email address at the *no-environments* page.
 * Changed menu behavior at probe page *(solves highlight last item)*.
@@ -159,7 +159,7 @@
 <small>_ Monday 29 Nov 2021 @ 20:00 CET</small>
 
 * Enable `changed` option for boolean and timestamp type.
-* Removed CRM from Oversight.
+* Removed CRM from InfraSonar.
 
 ## 0.1.107
 
@@ -229,7 +229,7 @@
 
 <small>_ Tuesday 22 Jun 2021 @ 20:00 CET</small>
 
-* Added link to new Oversight documentation.
+* Added link to new InfraSonar documentation.
 * Added query data API call and added `/api/data` to replace `api/data/insert`.
 * Added support for `withLabel` and `withProbe` keys to hosts query API.
 * Replaced `accept`/`reject` lists with `item (not) in list`.
@@ -291,7 +291,7 @@
 
 <small>_ Tuesday 6 Apr 2021 @ 20:00 CET</small>
 
-* Added API route for posting Oversight (host) data.
+* Added API route for posting InfraSonar (host) data.
 * Added API routes for controlling metadata.
 * Added derived metric option.
 

@@ -83,7 +83,7 @@ The first step is to add the source you just created to the desired InfraSonar c
 2. Click the _DutyCalls_ icon in the left hand menu, this should open the DutyCalls configuration page
 3. Click on the **Configure source** button.
 4. Enter the previously retrieved username as **Consumer key** and the password as **Consumer secret** and click on the **Save** button.
-   ![InfraSonar channel configuration](../../images/configure_oversight_source.png){: style="width:500px"}
+   ![InfraSonar channel configuration](../../images/configure_infrasonar_source.png){: style="width:500px"}
 
 ### Channel configuration
 
@@ -96,6 +96,6 @@ The second step is to add the channel you created to the container you selected 
 5. Select the correct **DutyCalls source**
 6. Optionally set `condition` and `host` filters, to filter the alerts that will be forwarded to DutyCalls.
 
-    ![InfraSonar channel configuration](../../images/configure_oversight_channel.png){: style="width:500px"}
+    ![InfraSonar channel configuration](../../images/configure_infrasonar_channel.png){: style="width:500px"}
 
 The configuration has now been completed. Alerts related to the configured InfraSonar container will be posted in the configured DutyCalls channel.

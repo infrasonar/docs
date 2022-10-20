@@ -2,16 +2,16 @@
 
 ## Description
 
-Change the name of a host which is used in Oversight.
+Change the name of a host which is used in InfraSonar.
 
 ## Arguments
 
-| key             | value          | description                                           |
-| --------------- | -------------- | ----------------------------------------------------- |
-| environmentUuid | str (required) | The environment uuid.                                 |
-| hostUuid        | str (required) | The host uuid.                                        |
-| name            | str (required) | The name of the host which will be used in Oversight. |
-| reason          | str            | An audit logging message.                             |
+| key             | value          | description                                            |
+| --------------- | -------------- | ------------------------------------------------------ |
+| environmentUuid | str (required) | The environment uuid.                                  |
+| hostUuid        | str (required) | The host uuid.                                         |
+| name            | str (required) | The name of the host which will be used in InfraSonar. |
+| reason          | str            | An audit logging message.                              |
 
 ## Example body (JSON)
 
@@ -26,7 +26,7 @@ Change the name of a host which is used in Oversight.
 ## Example curl
 
 ```bash
-curl --location --request POST 'https://oversig.ht/api/host/name' \
+curl --location --request POST 'https://api.infrasonar.com/host/name' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data-raw '{

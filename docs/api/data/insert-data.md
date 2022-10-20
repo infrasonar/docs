@@ -2,7 +2,7 @@
 
 ## Description
 
-Insert data into Oversight.
+Insert data into InfraSonar.
 
 !!! note
     This API route has an alias `/api/data` which will be removed in a future version
@@ -57,7 +57,7 @@ When a metric value is null, the metric will be ignored.
 ## Example curl
 
 ```bash
-curl --location --request POST 'https://oversig.ht/api/data/insert' \
+curl --location --request POST 'https://api.infrasonar.com/data/insert' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data-raw '{
