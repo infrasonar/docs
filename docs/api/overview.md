@@ -1,3 +1,3 @@
 # Overview
 
-The Oversight API is used for accessing and manipulating data within Oversight by third parties
+The InfraSonar API is used for accessing and manipulating data within InfraSonar by third parties

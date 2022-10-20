@@ -8,7 +8,7 @@ Remove a CWM company mapping.
 
 | key             | value          | description                    |
 | --------------- | -------------- | ------------------------------ |
-| environmentUuid | str (required) | An Oversight environment uuid. |
+| environmentUuid | str (required) | An InfraSonar environment uuid. |
 
 ## Example body (JSON)
 
@@ -21,7 +21,7 @@ Remove a CWM company mapping.
 ## Example curl
 
 ```bash
-curl --location --request POST 'https://oversig.ht/api/cwm/del-company' \
+curl --location --request POST 'https://api.infrasonar.com/api/cwm/del-company' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data-raw '{

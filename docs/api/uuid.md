@@ -1,6 +1,6 @@
 # UUID
 
-UUID's are used within Oversight to uniquely identify environments and hosts.
+UUID's are used within InfraSonar to uniquely identify environments and hosts.
 
 ## Figuring out UUID's
 
@@ -8,9 +8,9 @@ UUID's are used within Oversight to uniquely identify environments and hosts.
 2. Retrieve the `environment UUID` and `host UUID` from the URL.
 
 ```
-https://oversig.ht/#/c/123/e/xxxxxxxxxxxx/h/xxxxxxxxxxxx-yyyyyyyyyyyy/overview
-                             ============   =========================
-                                  ▲                      ▲
-Environment UUID ─────────────────┘                      │
-Host UUID ───────────────────────────────────────────────┘
+https://app.infrasonar.com/#/c/123/e/xxxxxxxxxxxx/h/xxxxxxxxxxxx-yyyyyyyyyyyy/overview
+                                     ============   =========================
+                                          ▲                      ▲
+Environment UUID ─────────────────────────┘                      │
+Host UUID ───────────────────────────────────────────────────────┘
 ```

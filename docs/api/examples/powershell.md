@@ -19,9 +19,9 @@ See the [authentication](../authentication.md) section on how to obtain a token 
 ```powershell
 # Global parameters
 
-$token = "<oversight-token>"
-$environmentUuid = "<oversight-environment-uuid>"
-$hostUuid = "<oversight-host-uuid>"
+$token = "<infrasonar-token>"
+$environmentUuid = "<infrasonar-environment-uuid>"
+$hostUuid = "<infrasonar-host-uuid>"
 $duration = 300 # Durtation in seconds for the label to stay on the host
 $label = "ahtzfmRldGVjdC1hbmFseXplLW5vdGlmeS0wMWFyJAsSCEN1c3RvbWVyIghzeXNhZG1pbgwLEgVMYWJlbBihlMsEDA" # This is the keystring for our maintenance label
 
@@ -32,7 +32,7 @@ function Set-Host-In-Maintenance {
               `"label`": `"$label`",
               `"reason`": `"$reason`"
              }"
-    $response = Invoke-RestMethod 'https://oversig.ht/api/host/label/add' -Method 'POST' -Headers $headers -Body $body
+    $response = Invoke-RestMethod 'https://api.infrasonar.com/host/label/add' -Method 'POST' -Headers $headers -Body $body
 }
 
 function Plan-Label-Removal {
@@ -45,7 +45,7 @@ function Plan-Label-Removal {
               `"reason`": `"$reason`",
               `"timestamp`": $when
              }"
-    $response = Invoke-RestMethod 'https://oversig.ht/api/task/host-label-add' -Method 'POST' -Headers $headers -Body $body
+    $response = Invoke-RestMethod 'https://api.infrasonar.com/task/host-label-add' -Method 'POST' -Headers $headers -Body $body
 }
 
 ### ___MAIN

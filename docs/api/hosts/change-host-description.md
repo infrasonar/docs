@@ -6,12 +6,12 @@ Change the description of a host.
 
 ## Arguments
 
-| key             | value          | description                                     |
-| --------------- | -------------- | ----------------------------------------------- |
-| environmentUuid | str (required) | The environment uuid.                           |
-| hostUuid        | str (required) | The host uuid.                                  |
-| description     | str (required) | The description that will be used in Oversight. |
-| reason          | str            | An audit logging message.                       |
+| key             | value          | description                                      |
+| --------------- | -------------- | ------------------------------------------------ |
+| environmentUuid | str (required) | The environment uuid.                            |
+| hostUuid        | str (required) | The host uuid.                                   |
+| description     | str (required) | The description that will be used in InfraSonar. |
+| reason          | str            | An audit logging message.                        |
 
 ## Example body (JSON)
 
@@ -26,7 +26,7 @@ Change the description of a host.
 ## Example curl
 
 ```bash
-curl --location --request POST 'https://oversig.ht/api/host/description' \
+curl --location --request POST 'https://api.infrasonar.com/host/description' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data-raw '{

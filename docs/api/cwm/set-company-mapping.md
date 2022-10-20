@@ -6,10 +6,10 @@ Set a CWM company mapping.
 
 ## Arguments
 
-| key             | value          | description                |
-| --------------- | -------------- | -------------------------- |
-| environmentUuid | str (required) | An Oversight environment uuid. |
-| companyId       | int (required) | A CWM ticket company id.      |
+| key             | value          | description                     |
+| --------------- | -------------- | ------------------------------- |
+| environmentUuid | str (required) | An InfraSonar environment uuid. |
+| companyId       | int (required) | A CWM ticket company id.        |
 
 ## Example body (JSON)
 
@@ -23,7 +23,7 @@ Set a CWM company mapping.
 ## Example curl
 
 ```bash
-curl --location --request POST 'https://oversig.ht/api/cwm/set-company' \
+curl --location --request POST 'https://api.infrasonar.com/cwm/set-company' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data-raw '{

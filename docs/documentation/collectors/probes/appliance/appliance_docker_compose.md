@@ -1,12 +1,12 @@
 # :material-docker: Docker
 
-Oversight probes and the Oversight Agent-core are distributed using Docker containers. 
+InfraSonar probes and the InfraSonar Agent-core are distributed using Docker containers. 
 
 This section outlines this [docker-compose](https://docs.docker.com/compose/) setup.
 
 ## Data location
 
-We opt to store all Oversight related data and configuration in one directory, preferably in `/etc/infrasonar`.
+We opt to store all InfraSonar related data and configuration in one directory, preferably in `/etc/infrasonar`.
 
 ## Docker compose file
 
@@ -114,4 +114,4 @@ We strive to use a default `environment` for all probes, but sometimes you might
       OS_LOG_LEVEL: "debug"
 ```
 
-The full list of supported environment variables can be found in the Agent-core client library [documentation](https://github.com/oversight/agentcoreclient#supported-environment-variable).
+The full list of supported environment variables can be found in the Agent-core client library [documentation](https://github.com/infrasonar/agentcoreclient#supported-environment-variable).

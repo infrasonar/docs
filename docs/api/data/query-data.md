@@ -2,7 +2,7 @@
 
 ## Description
 
-Query data from Oversight.
+Query data from InfraSonar.
 
 ## Arguments
 
@@ -31,7 +31,7 @@ Query data from Oversight.
 ## Example curl
 
 ```bash
-curl --location --request POST 'https://oversig.ht/api/data/query' \
+curl --location --request POST 'https://api.infrasonar.com/data/query' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data-raw '{

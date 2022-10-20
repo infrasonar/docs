@@ -2,18 +2,18 @@
 
 ## Description
 
-Add a host to Oversight.
+Add a host to InfraSonar.
 
 ## Arguments
 
-| key             | value          | description                                      |
-| --------------- | -------------- | ------------------------------------------------ |
-| environmentUuid | str (required) | An environment uuid.                             |
-| parentUuid      | str (required) | A parent uuid.                                   |
-| address         | str (required) | The host address.                                |
-| name            | str            | The name of the host which is used in Oversight. |
-| description     | str            | A description that will be used in Oversight.    |
-| reason          | str            | An audit logging message.                        |
+| key             | value          | description                                       |
+| --------------- | -------------- | ------------------------------------------------- |
+| environmentUuid | str (required) | An environment uuid.                              |
+| parentUuid      | str (required) | A parent uuid.                                    |
+| address         | str (required) | The host address.                                 |
+| name            | str            | The name of the host which is used in InfraSonar. |
+| description     | str            | A description that will be used in InfraSonar.    |
+| reason          | str            | An audit logging message.                         |
 
 ## Example body (JSON)
 
@@ -29,7 +29,7 @@ Add a host to Oversight.
 ## Example curl
 
 ```bash
-curl --location --request POST 'https://oversig.ht/api/host/add' \
+curl --location --request POST 'https://api.infrasonar.com/host/add' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data-raw '{
