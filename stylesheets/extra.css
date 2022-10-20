@@ -1,0 +1,52 @@
+/*
+  This file adds our styling additions / fixes to maintain.
+  Some of which are overly specific and may break with future updates by upstream.
+*/
+
+/* ============================================================================================================= */
+
+
+/* Color definitions */
+:root {
+  --md-primary-fg-color:        #607d8b;
+  --md-primary-fg-color--light: #7f97a2;
+  --md-primary-fg-color--dark:  #435761;
+
+  --md-accent-fg-color: #23527c;
+}
+
+.gray-icon {
+  color: rgb(117 117 117);
+}
+
+.purple-icon {
+  color:rgb(156 39 176)
+}
+
+.green-icon {
+  color:rgb(76 175 79);
+}
+
+.red-icon {
+  color: rgb(211 47 47);
+}
+
+.blue-icon {
+  color: rgb(63 80 181);
+}
+
+
+
+
+/* ============================================================================================================= */
+
+/*
+  UX Bugfix for left navbar visibility on top-level (tabbed) pages with no nested sub-pages.
+  Upstream will not fix: https://github.com/squidfunk/mkdocs-material/issues/3109
+*/
+
+@media screen and (min-width: 76.25em) {
+  .md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
+    display: none;
+  }
+}

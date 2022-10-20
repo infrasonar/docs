@@ -1,0 +1,3374 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Changelog - InfraSonar</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#0212" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="InfraSonar" class="md-header__button md-logo" aria-label="InfraSonar" data-md-component="logo">
+      
+  <img src="../images/infrasonar_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            InfraSonar
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../documentation/introduction/getting_started/" class="md-tabs__link">
+        Documentation
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../integrations/" class="md-tabs__link">
+        Integrations
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/overview/" class="md-tabs__link">
+        API reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Changelog
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="InfraSonar" class="md-nav__button md-logo" aria-label="InfraSonar" data-md-component="logo">
+      
+  <img src="../images/infrasonar_logo.png" alt="logo">
+
+    </a>
+    InfraSonar
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introduction" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/introduction/getting_started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/introduction/what_is_Infra_Sonar/" class="md-nav__link">
+        What is InfraSonar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/introduction/platform/" class="md-nav__link">
+        Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/introduction/contact_us/" class="md-nav__link">
+        Contact us
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Collectors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Collectors" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Collectors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../documentation/collectors/agents/">Agents</a>
+          
+            <label for="__nav_2_2_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Agents" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/agents/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../documentation/collectors/probes/">Probes</a>
+          
+            <label for="__nav_2_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Probes" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Probes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2_2" type="checkbox" id="__nav_2_2_2_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2_2">
+          Appliance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Appliance" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Appliance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/appliance/appliance_deployment/" class="md-nav__link">
+        Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/appliance/credentials/" class="md-nav__link">
+        Credentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/agentcore/" class="md-nav__link">
+        Agent-core
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/dns/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/http/" class="md-nav__link">
+        HTTP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/microsoft_azure/" class="md-nav__link">
+        Microsoft Azure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/wmi/" class="md-nav__link">
+        Microsoft WMI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/microsoft_sql/" class="md-nav__link">
+        Microsoft SQL Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/netapp/" class="md-nav__link">
+        NetApp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/ping/" class="md-nav__link">
+        Ping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/pure_probe/" class="md-nav__link">
+        Pure storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/snmp/" class="md-nav__link">
+        SNMP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/tcp/" class="md-nav__link">
+        TCP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/vmware/" class="md-nav__link">
+        VMware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/collectors/probes/smtp/" class="md-nav__link">
+        SMTP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Web application
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web application" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/web_application/environment/" class="md-nav__link">
+        Environments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/web_application/assets/" class="md-nav__link">
+        Hosts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/web_application/labels/" class="md-nav__link">
+        Labels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/web_application/conditions/" class="md-nav__link">
+        Conditions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/web_application/subscriptions/" class="md-nav__link">
+        Subscriptions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/web_application/tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/web_application/user_management/" class="md-nav__link">
+        User management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/guides/migration/" class="md-nav__link">
+        Migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/guides/remote_support/" class="md-nav__link">
+        Remote support
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Privacy & Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Privacy & Security" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Privacy & Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/privacy-security/security_considerations/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/privacy-security/privacy/" class="md-nav__link">
+        Privacy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../integrations/">Integrations</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          DutyCalls
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DutyCalls" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          DutyCalls
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/dutycalls/dutycalls-getting-started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/dutycalls/dutycalls-best-practices/" class="md-nav__link">
+        Best practices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/connectwise_manage/" class="md-nav__link">
+        ConnectWise Manage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          API reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/authentication/" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/uuid/" class="md-nav__link">
+        UUID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/keystring/" class="md-nav__link">
+        Keystrings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          User section
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User section" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          User section
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_1" type="checkbox" id="__nav_4_5_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_1">
+          Alerts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Alerts" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Alerts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/alerts/query-alerts/" class="md-nav__link">
+        Query alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/alerts/query-closed-alerts/" class="md-nav__link">
+        Query closed alerts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_2" type="checkbox" id="__nav_4_5_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_2">
+          Ansible
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ansible" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Ansible
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/ansible/query-hosts/" class="md-nav__link">
+        Query hosts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3" type="checkbox" id="__nav_4_5_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3">
+          Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/data/query-data/" class="md-nav__link">
+        Query data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/data/insert-data/" class="md-nav__link">
+        Insert data
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_4" type="checkbox" id="__nav_4_5_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_4">
+          Environments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Environments" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Environments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/environments/query-environments/" class="md-nav__link">
+        Query environments
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_5" type="checkbox" id="__nav_4_5_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_5">
+          Hosts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hosts" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Hosts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/add-host-label/" class="md-nav__link">
+        Add host label
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/add-host-probe/" class="md-nav__link">
+        Add host probe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/add-host/" class="md-nav__link">
+        Add host
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/change-host-address/" class="md-nav__link">
+        Change host address
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/change-host-description/" class="md-nav__link">
+        Change host description
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/change-host-name/" class="md-nav__link">
+        Change host name
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/change-monitoring-host/" class="md-nav__link">
+        Change monitoring host
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/get-host-uptime/" class="md-nav__link">
+        Get host uptime
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/query-hosts/" class="md-nav__link">
+        Query hosts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/remove-host-label/" class="md-nav__link">
+        Remove host label
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/remove-host-probe/" class="md-nav__link">
+        Remove host probe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/hosts/remove-host/" class="md-nav__link">
+        Remove host
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_6" type="checkbox" id="__nav_4_5_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_6">
+          Labels
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Labels" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Labels
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/labels/add-label/" class="md-nav__link">
+        Add label
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/labels/change-label-description/" class="md-nav__link">
+        Change label description
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/labels/change-label-name/" class="md-nav__link">
+        Change label name
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/labels/query-labels/" class="md-nav__link">
+        Query labels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/labels/remove-label/" class="md-nav__link">
+        Remove label
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_7" type="checkbox" id="__nav_4_5_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_7">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/tasks/add-host-label/" class="md-nav__link">
+        Add host label
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/tasks/get-tasks/" class="md-nav__link">
+        Get tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/tasks/remove-host-label/" class="md-nav__link">
+        Remove host label
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/tasks/remove-task/" class="md-nav__link">
+        Remove task
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Admin section
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Admin section" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Admin section
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6_1" type="checkbox" id="__nav_4_6_1" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_1">
+          CRM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CRM" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          CRM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/crm/upload-crm/" class="md-nav__link">
+        Upload CRM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6_2" type="checkbox" id="__nav_4_6_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2">
+          CWM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CWM" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          CWM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/cwm/remove-company-mapping/" class="md-nav__link">
+        Remove company mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/cwm/set-company-mapping/" class="md-nav__link">
+        Set company mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/cwm/set-ticket-board-id/" class="md-nav__link">
+        Set ticket board id
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/cwm/set-ticket-status-name/" class="md-nav__link">
+        Set ticket status name
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6_3" type="checkbox" id="__nav_4_6_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_3">
+          Metadata
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Metadata" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/metadata/get-type-definition/" class="md-nav__link">
+        Get type defition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/metadata/remove-type-definition/" class="md-nav__link">
+        Remove type defition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/metadata/set-type-definition/" class="md-nav__link">
+        Set type defition
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_7">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/examples/powershell/" class="md-nav__link">
+        Powershell
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Changelog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Changelog
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0212" class="md-nav__link">
+    0.2.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0211" class="md-nav__link">
+    0.2.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0210" class="md-nav__link">
+    0.2.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#029" class="md-nav__link">
+    0.2.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#028" class="md-nav__link">
+    0.2.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#027" class="md-nav__link">
+    0.2.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#026" class="md-nav__link">
+    0.2.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#025" class="md-nav__link">
+    0.2.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#024" class="md-nav__link">
+    0.2.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#023" class="md-nav__link">
+    0.2.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#022" class="md-nav__link">
+    0.2.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#021" class="md-nav__link">
+    0.2.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#020" class="md-nav__link">
+    0.2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01109" class="md-nav__link">
+    0.1.109
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01108" class="md-nav__link">
+    0.1.108
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01107" class="md-nav__link">
+    0.1.107
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01106" class="md-nav__link">
+    0.1.106
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01105" class="md-nav__link">
+    0.1.105
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01104" class="md-nav__link">
+    0.1.104
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01103" class="md-nav__link">
+    0.1.103
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01102" class="md-nav__link">
+    0.1.102
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01101" class="md-nav__link">
+    0.1.101
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01100" class="md-nav__link">
+    0.1.100
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0199" class="md-nav__link">
+    0.1.99
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0198" class="md-nav__link">
+    0.1.98
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0197" class="md-nav__link">
+    0.1.97
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0196" class="md-nav__link">
+    0.1.96
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0195" class="md-nav__link">
+    0.1.95
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0194" class="md-nav__link">
+    0.1.94
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0193" class="md-nav__link">
+    0.1.93
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0192" class="md-nav__link">
+    0.1.92
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0191" class="md-nav__link">
+    0.1.91
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0190" class="md-nav__link">
+    0.1.90
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0189" class="md-nav__link">
+    0.1.89
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0212" class="md-nav__link">
+    0.2.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0211" class="md-nav__link">
+    0.2.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0210" class="md-nav__link">
+    0.2.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#029" class="md-nav__link">
+    0.2.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#028" class="md-nav__link">
+    0.2.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#027" class="md-nav__link">
+    0.2.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#026" class="md-nav__link">
+    0.2.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#025" class="md-nav__link">
+    0.2.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#024" class="md-nav__link">
+    0.2.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#023" class="md-nav__link">
+    0.2.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#022" class="md-nav__link">
+    0.2.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#021" class="md-nav__link">
+    0.2.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#020" class="md-nav__link">
+    0.2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01109" class="md-nav__link">
+    0.1.109
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01108" class="md-nav__link">
+    0.1.108
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01107" class="md-nav__link">
+    0.1.107
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01106" class="md-nav__link">
+    0.1.106
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01105" class="md-nav__link">
+    0.1.105
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01104" class="md-nav__link">
+    0.1.104
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01103" class="md-nav__link">
+    0.1.103
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01102" class="md-nav__link">
+    0.1.102
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01101" class="md-nav__link">
+    0.1.101
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01100" class="md-nav__link">
+    0.1.100
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0199" class="md-nav__link">
+    0.1.99
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0198" class="md-nav__link">
+    0.1.98
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0197" class="md-nav__link">
+    0.1.97
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0196" class="md-nav__link">
+    0.1.96
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0195" class="md-nav__link">
+    0.1.95
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0194" class="md-nav__link">
+    0.1.94
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0193" class="md-nav__link">
+    0.1.93
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0192" class="md-nav__link">
+    0.1.92
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0191" class="md-nav__link">
+    0.1.91
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0190" class="md-nav__link">
+    0.1.90
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0189" class="md-nav__link">
+    0.1.89
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Changelog</h1>
+
+<h2 id="0212">0.2.12</h2>
+<p><small>_ Wednesday 03 Aug 2022 @ 22:00 CET</small></p>
+<ul>
+<li>Minor Enodo updates.</li>
+</ul>
+<h2 id="0211">0.2.11</h2>
+<p><small>_ Monday 01 Aug 2022 @ 21:00 CET</small></p>
+<ul>
+<li>Added Enodo.</li>
+<li>No more Guest probes.</li>
+</ul>
+<h2 id="0210">0.2.10</h2>
+<p><small>_ Friday 15 Jul 2022 @ 13:00 CET</small></p>
+<ul>
+<li>Improved DNS probe dialog.</li>
+<li>Removed Lift, SQL SSH, VmwareGuest, WinRm and XenGuest probes.</li>
+<li>Added feedback for failed reports.</li>
+<li>Fixed adding a user with same email address but different auth provider.</li>
+<li>Fixed a few spelling mistakes.</li>
+<li>Added TcpProbe.</li>
+<li>Added WMI Check for files option using the <code>cimDatafiles</code> class.</li>
+<li>Added <em>services-name</em> to the windows services widget.</li>
+</ul>
+<h2 id="029">0.2.9</h2>
+<p><small>_ Tuesday 17 May 2022 @ 17:00 CET</small></p>
+<ul>
+<li>Fix saving the order of metrics in a grid.</li>
+<li>Changed caption column to description in application widget.</li>
+</ul>
+<h2 id="028">0.2.8</h2>
+<p><small>_ Monday 16 May 2022 @ 21:00 CET</small></p>
+<ul>
+<li>Added <code>allowRedirects</code> option to the http probe configuration.</li>
+<li>Added <code>docker</code> icon.</li>
+<li>Removed <code>text</code> widget.</li>
+<li>Added Azure probe.</li>
+<li>Allow <code>agents</code> to be added in Oversight.</li>
+<li>Fix display <code>probe</code> address.</li>
+<li>Fix filter for assigned alerts.</li>
+<li>Fix displaying the correct metrics in a widget.</li>
+<li>Fix application widget by using <em>description</em> field instead of <em>caption</em>.</li>
+<li>Fix closing a legend when moving mouse focus out the widget.</li>
+<li>No longer close a widget edit dialog when clicking outside the editor.</li>
+</ul>
+<h2 id="027">0.2.7</h2>
+<p><small>_ Tuesday 11 Apr 2022 @ 21:00 CET</small></p>
+<ul>
+<li>Upgraded packages.</li>
+<li>Fixed broken widget when switching between hosts.</li>
+<li>Enable search on host-name in alerts and closed-alerts page.</li>
+<li>Added <em>pingProbe</em> and removed <em>psProbe</em>.</li>
+<li>Added <em>httpProbe</em>.</li>
+<li>Added <em>nmapProbe</em> (v2.x.x).</li>
+<li>Fixed broken check interval select box.</li>
+<li>Fixed broken boolean probe switch.</li>
+<li>Added probe configuration checks on asset edit.</li>
+<li>Fixed broken filter component for <code>True</code> values in data table.</li>
+<li>Re-direct to the requested link after sign-in.</li>
+<li>Fixed typo in subscriptions.</li>
+<li>Fixed overlay bug on drop-down-arrows in <em>"edit widget"</em> dialog.</li>
+<li>Fixed bug with <em>"Add widget"</em> button when a asset has no label.</li>
+<li>Changed the no-environment page for new users and added copyright text.</li>
+<li>Changed the link to <em>"Contact support"</em>.</li>
+<li>Fixed bug with resetting the check interval.</li>
+<li>No longer allow to change dialog tabs while providing a reason for change.</li>
+<li>Remove missing network probe warning message as this is no longer a best practice.</li>
+</ul>
+<h2 id="026">0.2.6</h2>
+<p><small>_ Thursday 17 Feb 2022 @ 21:00 CET</small></p>
+<ul>
+<li>Fixed CSV download for Oversight Accounts (sysadmin).</li>
+<li>Add <em>"show more"</em> when more text-lines are available in logging message.</li>
+<li>Fixed missing email address at the <em>no-environments</em> page.</li>
+<li>Changed menu behavior at probe page <em>(solves highlight last item)</em>.</li>
+<li>Added icon for Pure Storage.</li>
+<li>Prevent view changes of probe page on refresh.</li>
+</ul>
+<h2 id="025">0.2.5</h2>
+<p><small>_ Tuesday 01 Feb 2022 @ 21:30 CET</small></p>
+<ul>
+<li>Fixed bug with incognito browsing.</li>
+</ul>
+<h2 id="024">0.2.4</h2>
+<p><small>_ Tuesday 01 Feb 2022 @ 20:00 CET</small></p>
+<ul>
+<li>Fixed bug in filter host specific closed alerts.</li>
+<li>Changed ordering on first click in a grid.</li>
+<li>Fixed bug in host filter on alerts page (not showing the name of the host).</li>
+<li>Switched to FireBase authentication.</li>
+<li>Added support for Microsoft Azure (work) accounts.</li>
+<li>Switched to NPM 8.x for website building.</li>
+</ul>
+<h2 id="023">0.2.3</h2>
+<p><small>_ Wednesday 12 Jan 2022 @ 22:00 CET</small></p>
+<ul>
+<li>Fixed bug with filter selection (not visible) in grid.</li>
+<li>Fixed bug with user container view when having no users.</li>
+<li>Fixed minor widget editor bugs.</li>
+<li>Changed filter and sort icon appearance to make active filter or order visible.</li>
+</ul>
+<h2 id="022">0.2.2</h2>
+<p><small>_ Friday 24 Dec 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Fixed column sorting on container view.</li>
+<li>Fixed filter outline with little space to render the filter selection.</li>
+<li>Fixed missing condition options in expression builder.</li>
+<li>Added <em>Last seen</em> column to host overview as alternative to the <em>Active</em> column.</li>
+</ul>
+<h2 id="021">0.2.1</h2>
+<p><small>_ Wednesday 22 Dec 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Added environment to <em>Breadcrumbs</em> bar when the name equals the parent container.</li>
+<li>Fixed access check for modifying <strong>Views</strong> and return with an appropriate message if not.</li>
+<li>Fixed spacing between name and body in an alert message.</li>
+<li>Removed incorrect icon in front of <em>Agent-core</em> in host overview.</li>
+</ul>
+<h2 id="020">0.2.0</h2>
+<p><small>_ Tuesday 21 Dec 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Updated UI using the Material design language.</li>
+<li>Added Light/Dark mode.</li>
+<li>Added a dashboard which shows useful information and shortcuts.</li>
+<li>Added the <strong>Tasks</strong> overview. In this overview, Admins can see all tasks related to the current environment.</li>
+<li>The <strong>Closed</strong> alerts and the <strong>Search</strong> closed alerts pages are merged into a single page.</li>
+<li>Added the option to "star" <em>Views</em> and <em>Environments</em> as favorite.</li>
+<li>Added a "Share" button to <em>Views</em>.</li>
+<li>Added "click-on-tag" for "copy-to-clipboard".</li>
+<li>Merged the <em>container</em> and <em>environment</em> logging into one page.</li>
+<li>Added a "Task" column and a "Parent" column to log entries.</li>
+<li>Replaced the counter with tags in the <strong>Conditions</strong> page.</li>
+<li>Authentication provider is now implied when adding a user to a container.</li>
+<li>Improved feedback when submitting invalid forms.</li>
+<li>Added specific icons to all <em>Hosts</em>.</li>
+<li>Added "No environments found" screen, for users without container access.</li>
+<li>Added time selection to the statistics page.</li>
+<li>Added the "Windows Services" widget to the <strong>Insight</strong> page.</li>
+</ul>
+<h2 id="01109">0.1.109</h2>
+<p><small>_ Tuesday 07 Dec 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Fixed API checks.</li>
+</ul>
+<h2 id="01108">0.1.108</h2>
+<p><small>_ Monday 29 Nov 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Enable <code>changed</code> option for boolean and timestamp type.</li>
+<li>Removed CRM from Oversight.</li>
+</ul>
+<h2 id="01107">0.1.107</h2>
+<p><small>_ Saturday 13 Nov 2021 @ 14:00 CET</small></p>
+<ul>
+<li>Critical update: <code>aiogcd</code>.</li>
+</ul>
+<h2 id="01106">0.1.106</h2>
+<p><small>_ Friday 12 Nov 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Collapsible raster on double mouse click.</li>
+<li>Added audit logging to re-discover changes on a host.</li>
+<li>Fixed bug with selecting a time range within a modal.</li>
+<li>Fixed socket message on re-connect.</li>
+<li>Added search in my alerts view.</li>
+<li>Prevent inserting invalid metric info.</li>
+</ul>
+<h2 id="01105">0.1.105</h2>
+<p><small>_ Tuesday 12 Oct 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Log tasks using the user who initiated the task.</li>
+<li>Return the taskId when creating a task using the API.</li>
+<li>Send an email to the user when a schedules task has failed.</li>
+</ul>
+<h2 id="01104">0.1.104</h2>
+<p><small>_ Monday 13 Sep 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Added Id column to environment overview page.</li>
+<li>Added /api/environments API call.</li>
+<li>Added support for custom time zone per environment.</li>
+<li>Fixed bug with assigned alerts for users without key string.</li>
+</ul>
+<h2 id="01103">0.1.103</h2>
+<p><small>_ Tuesday 27 Jul 2021 @ 11:00 CET</small></p>
+<ul>
+<li>Loosely name validation for check and type in data query API call.</li>
+</ul>
+<h2 id="01102">0.1.102</h2>
+<p><small>_ Wednesday 21 Jul 2021 @ 22:00 CET</small></p>
+<ul>
+<li>Added <code>environment</code> and <code>lastSeen</code> columns to <code>api/hosts</code> API call.</li>
+<li>Added <code>api/labels</code> API call to query for labels in an environment.</li>
+<li>Fixed bug in widget editor when no hosts are configured.</li>
+<li>Fixed minor widget bugs (no panel data, handle escape key correctly).</li>
+</ul>
+<h2 id="01101">0.1.101</h2>
+<p><small>_ Thursday 15 Jul 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Added check for valid labels in API call <code>api/host/label/add</code>.</li>
+<li>Added filter for empty hosts in view.</li>
+<li>Added filter item option in widgets.</li>
+<li>Added the option to exclude host with specified labels from a view.</li>
+<li>Auto convert <code>int</code> to <code>float</code> for the insert API call.</li>
+<li>Fixed bug in auto refresh on a view.</li>
+<li>Fixed bug in validate API metric names.</li>
+<li>Fixed bug when moving a root widget on a host overview page.</li>
+<li>Fixed minor bug in side menu on probe pages.</li>
+<li>Required metrics no longer accept a <code>null</code> value.</li>
+</ul>
+<h2 id="01100">0.1.100</h2>
+<p><small>_ Tuesday 22 Jun 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Added link to new Oversight documentation.</li>
+<li>Added query data API call and added <code>/api/data</code> to replace <code>api/data/insert</code>.</li>
+<li>Added support for <code>withLabel</code> and <code>withProbe</code> keys to hosts query API.</li>
+<li>Replaced <code>accept</code>/<code>reject</code> lists with <code>item (not) in list</code>.</li>
+<li>Check for int64 when using the API to insert data.</li>
+<li>Improved error messages when using incorrect API calls.</li>
+<li>Fixed double boolean naming when choosing a display function.</li>
+</ul>
+<h2 id="0199">0.1.99</h2>
+<p><small>_ Tuesday 18 Apr 2021 @ 9:00 CET</small></p>
+<ul>
+<li>Fix alerts overview.</li>
+</ul>
+<h2 id="0198">0.1.98</h2>
+<p><small>_ Monday 17 May 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Added tool for generating encryption keys.</li>
+<li>Fix ConnectWise member API call.</li>
+<li>Fix My-Alert view (too many alerts).</li>
+<li>Fix time range selection on aggregation grid.</li>
+<li>Sort series on environment in time-series chart.</li>
+<li>Update: ThingsDB client (fix re-connect Emitter bug).</li>
+<li>Update: Python packages.</li>
+<li>Update: Npm packages.</li>
+</ul>
+<h2 id="0197">0.1.97</h2>
+<p><small>_ Tuesday 20 Apr 2021 @ 12:00 CET</small></p>
+<ul>
+<li>Fix alerts.</li>
+</ul>
+<h2 id="0196">0.1.96</h2>
+<p><small>_ Monday 19 Apr 2021 @ 19:45 CET</small></p>
+<ul>
+<li>Fix charts.</li>
+</ul>
+<h2 id="0195">0.1.95</h2>
+<p><small>_ Monday 19 Apr 2021 @ 19:00 CET</small></p>
+<ul>
+<li>Improved item-list in expression editor.</li>
+<li>Fixed number of rows in grid after using a filter (search).</li>
+<li>Update browser title when opening a view.</li>
+<li>Fixed CTRL-F when viewing a data-table with search disabled.</li>
+<li>Added column suppressed label count on conditions page.</li>
+<li>Fixed bug with auto-refresh.</li>
+<li>Update: Python packages.</li>
+<li>Update: Npm packages.</li>
+</ul>
+<h2 id="0194">0.1.94</h2>
+<p><small>_ Wednesday 7 Apr 2021 @ 15:30 CET</small></p>
+<ul>
+<li>Fixed ConnectWise manage bug, maximum summary length.</li>
+</ul>
+<h2 id="0193">0.1.93</h2>
+<p><small>_ Tuesday 6 Apr 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Added API route for posting Oversight (host) data.</li>
+<li>Added API routes for controlling metadata.</li>
+<li>Added derived metric option.</li>
+</ul>
+<h2 id="0192">0.1.92</h2>
+<p><small>_ Monday 15 Mar 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Fixed check for valid hostUuids in API handler.</li>
+<li>Select current user as default owner for an alert.</li>
+</ul>
+<h2 id="0191">0.1.91</h2>
+<p><small>_ Wednesday 24 Feb 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Allow ticket in CWM without owner.</li>
+<li>Update API documentation.</li>
+</ul>
+<h2 id="0190">0.1.90</h2>
+<p><small>_ Tuesday 23 Feb 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Added ConnectWise Manage support.</li>
+<li>Added environment widget for installed software on Windows.</li>
+<li>Added option to select a time range for the aggregation grid widget.</li>
+<li>Fixed bug in top menu after window resize.</li>
+</ul>
+<h2 id="0189">0.1.89</h2>
+<p><small>_ Thursday 14 Jan 2021 @ 20:00 CET</small></p>
+<ul>
+<li>Added channels column on labels overview page.</li>
+<li>Added item (not) in list expression to replace black/white list.</li>
+<li>Added option to accept or reject specific conditions for DutyCalls.</li>
+<li>Added option to show/hide self signed certificates.</li>
+<li>Added option to sort on environemt in a gid widget.</li>
+<li>Added search box to certificate widget.</li>
+<li>Auto-complete default probe address unless changed by the user.</li>
+<li>Changed export to CSV for time and age values.</li>
+<li>Prevent saving conditions with empty expressions.</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        
+  <footer class="md-footer">
+    
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          <a href="../api/examples/powershell/" class="md-footer__link md-footer__link--prev" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Powershell
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          
+            <div class="md-footer-copyright__highlight">
+              Copyright &copy; 2022 Cesbit
+            </div>
+          
+          <!-- Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a> -->
+          
+        </div>
+        <div class="md-social">
+  
+</div>
+      </div>
+    </div>
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
