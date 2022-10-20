@@ -1,0 +1,34 @@
+x-oversight-template:
+  &oversight
+  networks:
+    - oversight-network-2003
+  restart: always
+  logging:
+    options:
+      max-size: 5m
+  volumes:
+      - ./config-2003:/data/config
+
+networks:
+  oversight-network-2003:
+    driver: bridge
+    ipam:
+       driver: default
+       config:
+         - subnet: 10.232.200.0/24
+
+services:
+  agentcore-2003:
+    << : *oversight
+    image: ghcr.io/cesbit/osagentcore
+    hostname: sgsnlvenmonv03-2003
+    environment:
+      OS_CUSTOMER_UUID: "d12d145ca956"
+      OS_SYSTEM_ID: "000000000002"
+      OS_AGENTCORE_LISTEN_IP: "0.0.0.0"
+
+  oswmicprobe-2003:
+    << : *oversight
+    image: transceptortechnology/oswmicprobe
+    environment:
+      OS_AGENTCORE_IP: "sgsnlvenmonv03-2003"

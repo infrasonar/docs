@@ -1,0 +1,150 @@
+# Project information
+site_name: InfraSonar
+
+
+
+# Copyright
+copyright: "Copyright &copy; 2022 Cesbit"
+
+# Theme configuration
+theme:
+  name: material
+  custom_dir: theme
+  favicon: images/favicon.ico
+  logo: images/infrasonar_logo.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+
+# Custom styling
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - def_list
+  - md_in_html
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# Page tree
+nav:
+  - Home: index.md
+  - Documentation:  
+      - Introduction:
+          - Getting started: documentation/introduction/getting_started.md
+          - What is InfraSonar: documentation/introduction/what_is_Infra_Sonar.md
+          - Platform: documentation/introduction/platform.md
+          - Contact us: documentation/introduction/contact_us.md
+      - Collectors:
+          - Agents:
+              - documentation/collectors/agents/index.md
+              -  Docker: documentation/collectors/agents/docker.md
+          - Probes:
+              - documentation/collectors/probes/index.md
+              - Appliance:
+                  - Deployment: documentation/collectors/probes/appliance/appliance_deployment.md
+                  - Credentials: documentation/collectors/probes/appliance/credentials.md  
+                  - Agent-core: documentation/collectors/probes/agentcore.md
+              - DNS: documentation/collectors/probes/dns.md
+              - HTTP: documentation/collectors/probes/http.md
+              - Microsoft Azure: documentation/collectors/probes/microsoft_azure.md
+              - Microsoft WMI: documentation/collectors/probes/wmi.md
+              - Microsoft SQL Server: documentation/collectors/probes/microsoft_sql.md
+              - NetApp: documentation/collectors/probes/netapp.md
+              - Ping: documentation/collectors/probes/ping.md
+              - Pure storage: documentation/collectors/probes/pure_probe.md
+              - SNMP: documentation/collectors/probes/snmp.md
+              - TCP: documentation/collectors/probes/tcp.md
+              - VMware: documentation/collectors/probes/vmware.md
+              - SMTP: documentation/collectors/probes/smtp.md
+      - Web application:
+          - Environments: documentation/web_application/environment.md
+          - Hosts: documentation/web_application/assets.md
+          - Labels: documentation/web_application/labels.md
+          - Conditions: documentation/web_application/conditions.md
+          - Subscriptions: documentation/web_application/subscriptions.md
+          - Tasks: documentation/web_application/tasks.md
+          - User management: documentation/web_application/user_management.md
+      - Guides:
+          - Migration: documentation/guides/migration.md
+          - Remote support: documentation/guides/remote_support.md
+      - Privacy & Security:
+          - Security: documentation/privacy-security/security_considerations.md
+          - Privacy: documentation/privacy-security/privacy.md
+  - Integrations:
+      - Overview: integrations/index.md
+      - DutyCalls:
+        - Getting started: integrations/dutycalls/dutycalls-getting-started.md
+        - Best practices: integrations/dutycalls/dutycalls-best-practices.md
+      - ConnectWise Manage: integrations/connectwise_manage.md
+  - API reference:
+      - Overview: api/overview.md
+      - Authentication: api/authentication.md
+      - UUID: api/uuid.md
+      - Keystrings: api/keystring.md
+      - User section:
+          - Alerts:
+              - Query alerts: api/alerts/query-alerts.md
+              - Query closed alerts: api/alerts/query-closed-alerts.md
+          - Ansible:
+              - Query hosts: api/ansible/query-hosts.md
+          - Data:
+              - Query data: api/data/query-data.md
+              - Insert data: api/data/insert-data.md
+          - Environments:
+              - Query environments: api/environments/query-environments.md
+          - Hosts:
+              - Add host label: api/hosts/add-host-label.md
+              - Add host probe: api/hosts/add-host-probe.md
+              - Add host: api/hosts/add-host.md
+              - Change host address: api/hosts/change-host-address.md
+              - Change host description: api/hosts/change-host-description.md
+              - Change host name: api/hosts/change-host-name.md
+              - Change monitoring host: api/hosts/change-monitoring-host.md
+              - Get host uptime: api/hosts/get-host-uptime.md
+              - Query hosts: api/hosts/query-hosts.md
+              - Remove host label: api/hosts/remove-host-label.md
+              - Remove host probe: api/hosts/remove-host-probe.md
+              - Remove host: api/hosts/remove-host.md
+          - Labels:
+              - Add label: api/labels/add-label.md
+              - Change label description: api/labels/change-label-description.md
+              - Change label name: api/labels/change-label-name.md
+              - Query labels: api/labels/query-labels.md
+              - Remove label: api/labels/remove-label.md
+          - Tasks:
+              - Add host label: api/tasks/add-host-label.md
+              - Get tasks: api/tasks/get-tasks.md
+              - Remove host label: api/tasks/remove-host-label.md
+              - Remove task: api/tasks/remove-task.md
+      - Admin section:
+          - CRM:
+              - Upload CRM: api/crm/upload-crm.md
+          - CWM:
+              - Remove company mapping: api/cwm/remove-company-mapping.md
+              - Set company mapping: api/cwm/set-company-mapping.md
+              - Set ticket board id: api/cwm/set-ticket-board-id.md
+              - Set ticket status name: api/cwm/set-ticket-status-name.md
+          - Metadata:
+              - Get type defition: api/metadata/get-type-definition.md
+              - Remove type defition: api/metadata/remove-type-definition.md
+              - Set type defition: api/metadata/set-type-definition.md
+      - Examples:
+          - Powershell: api/examples/powershell.md
+             
+
+  - Changelog: changelog.md
