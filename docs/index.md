@@ -6,5 +6,5 @@ InfraSonar is an infrastructure monitoring platform as a service developed by [C
     We aim to monitor 'agentless' wherever possible to minimize our footprint in a monitored infrastructure.
 
 <figure markdown="1">
-  <img src="images/oversight_logo-md.png"  style="margin-top:32px;"/>
+  <img src="images/infrasonar_logo-md.png"  style="margin-top:32px;"/>
 </figure>

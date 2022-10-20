@@ -11,7 +11,7 @@ theme:
   name: material
   custom_dir: theme
   favicon: images/favicon.ico
-  logo: images/oversight_logo.png
+  logo: images/infrasonar_logo.png
   features:
     - navigation.tabs
     - navigation.sections
