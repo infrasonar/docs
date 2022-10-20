@@ -2578,9 +2578,9 @@
 <p>See the <a href="../../authentication/">authentication</a> section on how to obtain a token and the <a href="../../uuid/">UUID</a> section on how to obtain the correct UUID's</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Global parameters</span>
 
-<span class="nv">$token</span> <span class="p">=</span> <span class="s2">&quot;&lt;oversight-token&gt;&quot;</span>
-<span class="nv">$environmentUuid</span> <span class="p">=</span> <span class="s2">&quot;&lt;oversight-environment-uuid&gt;&quot;</span>
-<span class="nv">$hostUuid</span> <span class="p">=</span> <span class="s2">&quot;&lt;oversight-host-uuid&gt;&quot;</span>
+<span class="nv">$token</span> <span class="p">=</span> <span class="s2">&quot;&lt;infrasonar-token&gt;&quot;</span>
+<span class="nv">$environmentUuid</span> <span class="p">=</span> <span class="s2">&quot;&lt;infrasonar-environment-uuid&gt;&quot;</span>
+<span class="nv">$hostUuid</span> <span class="p">=</span> <span class="s2">&quot;&lt;infrasonar-host-uuid&gt;&quot;</span>
 <span class="nv">$duration</span> <span class="p">=</span> <span class="n">300</span> <span class="c"># Durtation in seconds for the label to stay on the host</span>
 <span class="nv">$label</span> <span class="p">=</span> <span class="s2">&quot;ahtzfmRldGVjdC1hbmFseXplLW5vdGlmeS0wMWFyJAsSCEN1c3RvbWVyIghzeXNhZG1pbgwLEgVMYWJlbBihlMsEDA&quot;</span> <span class="c"># This is the keystring for our maintenance label</span>
 
@@ -2591,7 +2591,7 @@
 <span class="s2">              </span><span class="se">`&quot;</span><span class="s2">label</span><span class="se">`&quot;</span><span class="s2">: </span><span class="se">`&quot;</span><span class="s2">$label</span><span class="se">`&quot;</span><span class="s2">,</span>
 <span class="s2">              </span><span class="se">`&quot;</span><span class="s2">reason</span><span class="se">`&quot;</span><span class="s2">: </span><span class="se">`&quot;</span><span class="s2">$reason</span><span class="se">`&quot;</span><span class="s2"></span>
 <span class="s2">             }&quot;</span>
-    <span class="nv">$response</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="s1">&#39;https://oversig.ht/api/host/label/add&#39;</span> <span class="n">-Method</span> <span class="s1">&#39;POST&#39;</span> <span class="n">-Headers</span> <span class="nv">$headers</span> <span class="n">-Body</span> <span class="nv">$body</span>
+    <span class="nv">$response</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="s1">&#39;https://api.infrasonar.com/host/label/add&#39;</span> <span class="n">-Method</span> <span class="s1">&#39;POST&#39;</span> <span class="n">-Headers</span> <span class="nv">$headers</span> <span class="n">-Body</span> <span class="nv">$body</span>
 <span class="p">}</span>
 
 <span class="k">function</span> <span class="n">Plan-Label-Removal</span> <span class="p">{</span>
@@ -2604,7 +2604,7 @@
 <span class="s2">              </span><span class="se">`&quot;</span><span class="s2">reason</span><span class="se">`&quot;</span><span class="s2">: </span><span class="se">`&quot;</span><span class="s2">$reason</span><span class="se">`&quot;</span><span class="s2">,</span>
 <span class="s2">              </span><span class="se">`&quot;</span><span class="s2">timestamp</span><span class="se">`&quot;</span><span class="s2">: $when</span>
 <span class="s2">             }&quot;</span>
-    <span class="nv">$response</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="s1">&#39;https://oversig.ht/api/task/host-label-add&#39;</span> <span class="n">-Method</span> <span class="s1">&#39;POST&#39;</span> <span class="n">-Headers</span> <span class="nv">$headers</span> <span class="n">-Body</span> <span class="nv">$body</span>
+    <span class="nv">$response</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="s1">&#39;https://api.infrasonar.com/task/host-label-add&#39;</span> <span class="n">-Method</span> <span class="s1">&#39;POST&#39;</span> <span class="n">-Headers</span> <span class="nv">$headers</span> <span class="n">-Body</span> <span class="nv">$body</span>
 <span class="p">}</span>
 
 <span class="c">### ___MAIN</span>

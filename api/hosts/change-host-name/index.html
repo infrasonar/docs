@@ -2594,7 +2594,7 @@
 
 <h1 id="post-apihostname"><code>POST</code> /api/host/name</h1>
 <h2 id="description">Description</h2>
-<p>Change the name of a host which is used in Oversight.</p>
+<p>Change the name of a host which is used in InfraSonar.</p>
 <h2 id="arguments">Arguments</h2>
 <table>
 <thead>
@@ -2618,7 +2618,7 @@
 <tr>
 <td>name</td>
 <td>str (required)</td>
-<td>The name of the host which will be used in Oversight.</td>
+<td>The name of the host which will be used in InfraSonar.</td>
 </tr>
 <tr>
 <td>reason</td>
@@ -2635,7 +2635,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="example-curl">Example curl</h2>
-<div class="highlight"><pre><span></span><code>curl --location --request POST <span class="s1">&#39;https://oversig.ht/api/host/name&#39;</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl --location --request POST <span class="s1">&#39;https://api.infrasonar.com/host/name&#39;</span> <span class="se">\</span>
 --header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
 --header <span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span> <span class="se">\</span>
 --data-raw <span class="s1">&#39;{</span>

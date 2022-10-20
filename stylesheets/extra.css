@@ -8,10 +8,10 @@
 
 /* Color definitions */
 :root {
-  --md-primary-fg-color:        #607d8b;
+  --md-primary-fg-color:        #4970CC;
   --md-primary-fg-color--light: #7f97a2;
   --md-primary-fg-color--dark:  #435761;
-
+  
   --md-accent-fg-color: #23527c;
 }
 

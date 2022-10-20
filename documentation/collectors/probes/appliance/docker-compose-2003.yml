@@ -1,7 +1,7 @@
-x-oversight-template:
-  &oversight
+x-infrasonar-template:
+  &infrasonar
   networks:
-    - oversight-network-2003
+    - infrasonar-network-2003
   restart: always
   logging:
     options:
@@ -10,7 +10,7 @@ x-oversight-template:
       - ./config-2003:/data/config
 
 networks:
-  oversight-network-2003:
+  infrasonar-network-2003:
     driver: bridge
     ipam:
        driver: default
@@ -19,7 +19,7 @@ networks:
 
 services:
   agentcore-2003:
-    << : *oversight
+    << : *infrasonar
     image: ghcr.io/cesbit/osagentcore
     hostname: sgsnlvenmonv03-2003
     environment:
@@ -28,7 +28,7 @@ services:
       OS_AGENTCORE_LISTEN_IP: "0.0.0.0"
 
   oswmicprobe-2003:
-    << : *oversight
+    << : *infrasonar
     image: transceptortechnology/oswmicprobe
     environment:
       OS_AGENTCORE_IP: "sgsnlvenmonv03-2003"
