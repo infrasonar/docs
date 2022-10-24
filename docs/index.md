@@ -1,10 +1,14 @@
 # Welcome to InfraSonar
+
+[InfraSonar](https://infrasonar.com) a powerful infrastructure monitoring platform as a service.
+
 <figure markdown="1">
-  <img src="images/infrasonar_logo-md.gif"  style="margin-top:32px;"/>
+  <img src="images/infrasonar_banner.png"  style="margin-top:16px;"/>
 </figure>
 
-InfraSonar is an infrastructure monitoring platform as a service developed by [Cesbit](http://cesbit.com).
-
-!!! quote "Mission"
-    We aim to monitor 'agentless' wherever possible to minimize our footprint in a monitored infrastructure.
+!!! tip "Features"
+    * Agentless data collection where possible, minimizing our footprint in a monitored infrastructure;
+    * We excel in detailed state and performance monitoring;
+    * Effortless realtime anomaly detection;
+    * Crystal clear conditions.
 
