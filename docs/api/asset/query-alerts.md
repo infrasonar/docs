@@ -31,6 +31,17 @@ Field               | Return type   | Description
 `lastTimestamp`     | integer       | Unix timestamp in seconds of the last hit _(equal to "timestamp" with only a single hit)_.
 `ownerId`           | integer/null  | User Id of the owner or _null_ when the alert is not assigned to an owner.
 
+### Return codes
+
+Error code  | Reason
+------------|--------
+`200`       | Success.
+`400`       | Unknown field.
+`401`       | Invalid or missing token.
+`403`       | Insufficient permissions _(required: `API`+`READ`)_.
+`404`       | AssetId not found.
+
+
 ### Example
 Curl request:
 ```bash

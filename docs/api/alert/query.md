@@ -39,6 +39,16 @@ Action field        | Return type   | Description
 `timestamp`         | integer       | Unix timestamp in seconds.
 `data`              | object/null   | Additional data object.
 
+### Return codes
+
+Error code  | Reason
+------------|--------
+`200`       | Success.
+`400`       | Unknown field or action.
+`401`       | Invalid or missing token.
+`403`       | Insufficient permissions _(required: `API`+`READ`)_.
+`404`       | Alert not found.
+
 ### Example
 Curl request:
 ```bash
