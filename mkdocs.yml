@@ -43,7 +43,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Documentation:  
+  - Documentation:
       - Introduction:
           - Getting started: documentation/introduction/getting_started.md
           - What is InfraSonar: documentation/introduction/what_is_Infra_Sonar.md
@@ -57,7 +57,7 @@ nav:
               - documentation/collectors/probes/index.md
               - Appliance:
                   - Deployment: documentation/collectors/probes/appliance/appliance_deployment.md
-                  - Credentials: documentation/collectors/probes/appliance/credentials.md  
+                  - Credentials: documentation/collectors/probes/appliance/credentials.md
                   - Agent-core: documentation/collectors/probes/agentcore.md
               - DNS: documentation/collectors/probes/dns.md
               - HTTP: documentation/collectors/probes/http.md
@@ -96,55 +96,14 @@ nav:
       - Authentication: api/authentication.md
       - UUID: api/uuid.md
       - Keystrings: api/keystring.md
-      - User section:
-          - Alerts:
-              - Query alerts: api/alerts/query-alerts.md
-              - Query closed alerts: api/alerts/query-closed-alerts.md
-          - Ansible:
-              - Query hosts: api/ansible/query-hosts.md
-          - Data:
-              - Query data: api/data/query-data.md
-              - Insert data: api/data/insert-data.md
-          - Environments:
-              - Query environments: api/environments/query-environments.md
-          - Hosts:
-              - Add host label: api/hosts/add-host-label.md
-              - Add host probe: api/hosts/add-host-probe.md
-              - Add host: api/hosts/add-host.md
-              - Change host address: api/hosts/change-host-address.md
-              - Change host description: api/hosts/change-host-description.md
-              - Change host name: api/hosts/change-host-name.md
-              - Change monitoring host: api/hosts/change-monitoring-host.md
-              - Get host uptime: api/hosts/get-host-uptime.md
-              - Query hosts: api/hosts/query-hosts.md
-              - Remove host label: api/hosts/remove-host-label.md
-              - Remove host probe: api/hosts/remove-host-probe.md
-              - Remove host: api/hosts/remove-host.md
-          - Labels:
-              - Add label: api/labels/add-label.md
-              - Change label description: api/labels/change-label-description.md
-              - Change label name: api/labels/change-label-name.md
-              - Query labels: api/labels/query-labels.md
-              - Remove label: api/labels/remove-label.md
-          - Tasks:
-              - Add host label: api/tasks/add-host-label.md
-              - Get tasks: api/tasks/get-tasks.md
-              - Remove host label: api/tasks/remove-host-label.md
-              - Remove task: api/tasks/remove-task.md
-      - Admin section:
-          - CRM:
-              - Upload CRM: api/crm/upload-crm.md
-          - CWM:
-              - Remove company mapping: api/cwm/remove-company-mapping.md
-              - Set company mapping: api/cwm/set-company-mapping.md
-              - Set ticket board id: api/cwm/set-ticket-board-id.md
-              - Set ticket status name: api/cwm/set-ticket-status-name.md
-          - Metadata:
-              - Get type defition: api/metadata/get-type-definition.md
-              - Remove type defition: api/metadata/remove-type-definition.md
-              - Set type defition: api/metadata/set-type-definition.md
+      - Asset:
+        - Query asset alerts: api/asset/query-alerts.md
+        - Query asset Id: api/asset/query-id.md
+      - Alert:
+        - Query alert: api/alert/query.md
+
       - Examples:
           - Powershell: api/examples/powershell.md
-             
+
 
   - Changelog: changelog.md

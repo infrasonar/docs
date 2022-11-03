@@ -1,0 +1,21 @@
+{
+    "ks": "<a-unique-key-string>",
+    "message": "Initial message of the alert",
+    "severity": 3,
+    "timestamp": 1667511262,
+    "lastMessage": "Last message of the alert",
+    "lastSeverity": 3,
+    "listTimestamp": 1667511523,
+    "ownerId": 123,
+    "closedTimestamp": null,
+    "actions": [
+        {
+            "kind": "Assign",
+            "timestamp": 1667511469,
+            "data": {
+                "user_id": 123,
+                "message": "Alert assigned to me!"
+            }
+        }
+    ]
+}
