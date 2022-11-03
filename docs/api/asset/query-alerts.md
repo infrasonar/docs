@@ -4,7 +4,7 @@
 ### Description
 Query all _open_ alerts for a given asset.
 
-> Note: with the current API it is not possible to query for _closed_ alerts, except when you have an explicit alert key string.
+> With the current API it is not possible to query for _closed_ alerts, except when you have an explicit alert key string.
 
 ### Path parameters
 
