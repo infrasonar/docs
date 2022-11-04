@@ -3,7 +3,7 @@
 [InfraSonar](https://infrasonar.com) a powerful infrastructure monitoring platform as a service.
 
 <figure markdown="1">
-  <img src="images/infrasonar_banner.png"  style="margin-top:16px;"/>
+  <img src="images/infrasonar-banner.svg"  style="margin-top:16px;"/>
 </figure>
 
 !!! tip "Features"

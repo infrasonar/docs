@@ -99,6 +99,7 @@ nav:
       - Asset:
         - Query asset alerts: api/asset/query-alerts.md
         - Query asset Id: api/asset/query-id.md
+        - Insert check data: api/asset/insert-check-data.md
       - Alert:
         - Query alert: api/alert/query.md
 
