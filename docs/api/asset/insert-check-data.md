@@ -1,5 +1,5 @@
 # Insert check data
-**`POST` /asset/<assetId\>/collector/<collectorKey/>/check/<checkKey/>/data**
+**`POST` /asset/<assetId\>/collector/<collectorKey\>/check/<checkKey\>/data**
 
 ### Description
 Insert check data.
