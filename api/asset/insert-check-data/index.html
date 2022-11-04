@@ -1309,6 +1309,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4">
@@ -1396,6 +1398,8 @@
       
       
       
+        
+          
         
           
         
@@ -1535,6 +1539,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set-mode/" class="md-nav__link">
+        Set asset mode
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1616,12 +1634,65 @@
       
       
         <label class="md-nav__link" for="__nav_4_7">
+          Container
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Container" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Container
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/create-asset/" class="md-nav__link">
+        Create asset
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_8">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_7">
+        <label class="md-nav__title" for="__nav_4_8">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -1753,7 +1824,7 @@
 
 
 <h1 id="insert-check-data">Insert check data</h1>
-<p><strong><code>POST</code> /asset/&lt;assetId>/collector/<collectorKey/>/check/<checkKey/>/data</strong></p>
+<p><strong><code>POST</code> /asset/&lt;assetId>/collector/&lt;collectorKey>/check/&lt;checkKey>/data</strong></p>
 <h3 id="description">Description</h3>
 <p>Insert check data.</p>
 <h3 id="path-parameters">Path parameters</h3>
@@ -1802,7 +1873,7 @@
 <td><code>runtime</code></td>
 <td>float</td>
 <td>No</td>
-<td>Time in seconds.</td>
+<td>Time it took for the check to run in seconds.</td>
 </tr>
 <tr>
 <td><code>timestamp</code></td>
@@ -1858,7 +1929,8 @@
 <span class="s1">        ]</span>
 <span class="s1">    }</span>
 <span class="s1">}&#39;</span>
-</code></pre></div></p>
+</code></pre></div>
+<em>In this example, "<strong>docker</strong>" is the collector, "<strong>network</strong>" the check, "<strong>networks</strong>" a type, "<strong>name</strong>" is a required metric and "<strong>ipAddress</strong>" is a metric.</em></p>
 
 
 
@@ -1893,13 +1965,13 @@
           </a>
         
         
-          <a href="../../alert/query/" class="md-footer__link md-footer__link--next" rel="next">
+          <a href="../set-mode/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                Query alert
+                Set asset mode
               </div>
             </div>
             <div class="md-footer__button md-icon">
