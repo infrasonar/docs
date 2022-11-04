@@ -36,6 +36,7 @@ Curl request:
 curl \
     -X POST 'https://api.infrasonar.com/asset/123/collector/docker/check/network/data' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
+    -H 'Content-Type: application/json' \
     --data-raw '{
     "data": {
         "networks": [

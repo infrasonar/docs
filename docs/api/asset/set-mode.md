@@ -2,7 +2,7 @@
 **`PATCH` /asset/<assetId\>/mode**
 
 ### Description
-Set the asset mode.
+Set the asset mode. Success _(204)_ is also returned when the asset was already in the desired mode.
 
 ### Path parameters
 Param               | Description
@@ -32,6 +32,7 @@ Curl request:
 curl \
     -X PATCH 'https://api.infrasonar.com/asset/123/mode' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
+    -H 'Content-Type: application/json' \
     --data-raw '{
     "mode": "maintenance"
 }'
