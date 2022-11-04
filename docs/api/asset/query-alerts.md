@@ -7,19 +7,16 @@ Query all _open_ alerts for a given asset.
 > With the current API it is not possible to query for _closed_ alerts, except when you have an explicit alert key string.
 
 ### Path parameters
-
 Param               | Description
 --------------------|-------------
 `assetId`           | Asset Id.
 
 ### Query parameters
-
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | `ks`              | Fields to return _(see fields below for all available fields)_.
 
 ### Fields
-
 Field               | Return type   | Description
 --------------------|---------------|-------------
 `ks`                | string        | Key string of the alert.
@@ -32,7 +29,6 @@ Field               | Return type   | Description
 `ownerId`           | integer/null  | User Id of the owner or _null_ when the alert is not assigned to an owner.
 
 ### Return codes
-
 Error code  | Reason
 ------------|--------
 `200`       | Success.
@@ -40,7 +36,6 @@ Error code  | Reason
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`READ`)_.
 `404`       | AssetId not found.
-
 
 ### Example
 Curl request:

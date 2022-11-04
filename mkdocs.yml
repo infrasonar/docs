@@ -100,8 +100,11 @@ nav:
         - Query asset alerts: api/asset/query-alerts.md
         - Query asset Id: api/asset/query-id.md
         - Insert check data: api/asset/insert-check-data.md
+        - Set asset mode: api/asset/set-mode.md
       - Alert:
         - Query alert: api/alert/query.md
+      - Container:
+        - Create asset: api/container/create-asset.md
 
       - Examples:
           - Powershell: api/examples/powershell.md

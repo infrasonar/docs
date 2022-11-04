@@ -1,15 +1,13 @@
-# Insert check data
-**`POST` /container/<containerId\>/asset**
+# Set asset mode
+**`PATCH` /asset/<assetId\>/mode**
 
 ### Description
-Create a new asset.
-
->Note: Duplicated asset names are allowed although not recommended.
+Set the asset mode.
 
 ### Path parameters
 Param               | Description
 --------------------|-------------
-`containerId`       | Container Id.
+`assetId`           | Asset Id.
 
 ### Query parameters
 _none_
@@ -17,31 +15,24 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`name`      | string    | Yes       | Name of the asset.
+`mode`      | string    | Yes       | One of `normal`, `maintenance` or `disabled`.
 
 ### Return codes
 Error code  | Reason
 ------------|--------
-`200`       | Success.
+`204`       | Success.
 `400`       | Invalid body.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
-`404`       | ContainerId not found.
+`404`       | AssetId not found.
 
 ### Example
 Curl request:
 ```bash
 curl \
-    -X POST 'https://api.infrasonar.com/container/123/asset' \
+    -X PATCH 'https://api.infrasonar.com/asset/123/mode' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     --data-raw '{
-    "name": "my-host.local"
+    "mode": "maintenance"
 }'
-```
-
-Response:
-```json
-{
-    "assetId": 123
-}
 ```

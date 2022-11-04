@@ -5,7 +5,6 @@
 Insert check data.
 
 ### Path parameters
-
 Param               | Description
 --------------------|-------------
 `assetId`           | Asset Id.
@@ -13,19 +12,16 @@ Param               | Description
 `checkKey`          | Check key.
 
 ### Query parameters
-
 _none_
 
 ### Body
-
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
 `data`      | object    | Yes       | Object with check data.
-`runtime`   | float     | No        | Time in seconds.
+`runtime`   | float     | No        | Time it took for the check to run in seconds.
 `timestamp` | integer   | No        | Unix timestamp in seconds. If omitted, InfraSonar will set the timestamp for the check data.
 
 ### Return codes
-
 Error code  | Reason
 ------------|--------
 `204`       | Success.
@@ -33,7 +29,6 @@ Error code  | Reason
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`INSERT_CHECK_DATA`)_.
 `404`       | AssetId or collectorKey or checkKey not found.
-
 
 ### Example
 Curl request:
@@ -52,3 +47,4 @@ curl \
     }
 }'
 ```
+_In this example, "**docker**" is the collector, "**network**" the check, "**networks**" a type, "**name**" is a required metric and "**ipAddress**" is a metric._

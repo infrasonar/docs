@@ -7,17 +7,14 @@ Query an asset Id by name. This route _only_ works with a container token.
 > Removed assets _(assets in trash)_ are ignored and will _not_ be found using this API call.
 
 ### Path parameters
-
 Param               | Description
 --------------------|-------------
 `assetName`         | Asset name.
 
 ### Query parameters
-
 _none_
 
 ### Return codes
-
 Error code  | Reason
 ------------|--------
 `200`       | Success.
