@@ -28,7 +28,7 @@ Error code  | Reason
 `400`       | Invalid body.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`INSERT_CHECK_DATA`)_.
-`404`       | AssetId or collectorKey or checkKey not found.
+`404`       | Asset or collector or check not found.
 
 ### Example
 Curl request:

@@ -5,20 +5,17 @@
 Query alert details. This API call will work for both an open _and_ closed alert.
 
 ### Path parameters
-
 Param               | Description
 --------------------|-------------
 `alertKs`           | Alert key string _(ks)_.
 
 ### Query parameters
-
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | _all fields_      | Fields to return _(see fields below for all available fields)_.
-`actions`           | _none_            | Action fields. If at least one field is given, the result will include an _actions_ field with an array of _action_ objects _(see actions below for all available action fields)_.
+`actions`           | _none_            | Action fields. If at least one field is given, the result will include "_actions_" with an array of _action_ objects _(see Actions below for all available action fields)_.
 
 ### Fields
-
 Field               | Return type   | Description
 --------------------|---------------|-------------
 `ks`                | string        | Key string of the alert.
@@ -32,7 +29,6 @@ Field               | Return type   | Description
 `closedTimestamp`   | integer/null  | Unix timestamp in seconds when the alert was closed or _null_ if not closed.
 
 ### Actions
-
 Action field        | Return type   | Description
 --------------------|---------------|-------------
 `kind`              | string        | One of: `Assign`, `Comment`, `IntegrationCall`, `Close`, `AutoClose`, `IndirectClose`
@@ -40,7 +36,6 @@ Action field        | Return type   | Description
 `data`              | object/null   | Additional data object.
 
 ### Return codes
-
 Error code  | Reason
 ------------|--------
 `200`       | Success.

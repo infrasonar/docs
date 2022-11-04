@@ -22,7 +22,7 @@ Error code  | Reason
 `204`       | Success.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
-`404`       | AssetId or labelId not found.
+`404`       | Asset or label not found.
 
 ### Example
 Curl request:

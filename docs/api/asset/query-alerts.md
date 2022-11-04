@@ -35,7 +35,7 @@ Error code  | Reason
 `400`       | Unknown field.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`READ`)_.
-`404`       | AssetId not found.
+`404`       | Asset not found.
 
 ### Example
 Curl request:

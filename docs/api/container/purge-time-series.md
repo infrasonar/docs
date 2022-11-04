@@ -1,10 +1,8 @@
-# Create asset
-**`POST` /container/<containerId\>/asset**
+# Purge time-series
+**`POST` /container/<containerId\>/purge-time-series**
 
 ### Description
-Create a new asset.
-
-> Duplicated asset names are allowed although not recommended.
+Purge dead time-series. Time series are considered _dead_ if they didn't got any new data for a period of time. This period must be given in weeks.
 
 ### Path parameters
 Param               | Description
@@ -17,32 +15,32 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`name`      | string    | Yes       | Name of the asset.
+`weeks`     | integer   | Yes       | Integer value between 1 and 999 _(**recommended:** 5 weeks or more)_.
 
 ### Return codes
 Error code  | Reason
 ------------|--------
-`201`       | Success.
+`200`       | Success.
 `400`       | Invalid body.
 `401`       | Invalid or missing token.
-`403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
+`403`       | Insufficient permissions _(required: `API`+`PURGE_TIME_SERIES`)_.
 `404`       | Container not found.
 
 ### Example
 Curl request:
 ```bash
 curl \
-    -X POST 'https://api.infrasonar.com/container/123/asset' \
+    -X POST 'https://api.infrasonar.com/container/123/purge-time-series' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
-    "name": "my-host.local"
+    "weeks": 5
 }'
 ```
 
 Response:
 ```json
 {
-    "assetId": 123
+    "purged-time-series": 12345
 }
 ```

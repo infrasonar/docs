@@ -28,7 +28,7 @@ Error code  | Reason
 `400`       | Invalid body.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
-`404`       | AssetId or collectorKey not found.
+`404`       | Asset or collector not found.
 
 ### Example
 Curl request: _(no config required for docker agent)_
