@@ -24,7 +24,7 @@ Error code  | Reason
 `204`       | Success.
 `400`       | Invalid body.
 `401`       | Invalid or missing token.
-`403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
+`403`       | Insufficient permissions _(required: `API`+`CONTAINER_MANAGEMENT`)_.
 `404`       | Container not found.
 `409`       | ConnectWise Manage add-on is not available for the container.
 
