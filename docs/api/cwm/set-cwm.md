@@ -3,7 +3,7 @@
 
 ### Description
 This API call can be used to create a mapping between a ConnectWise Manage company Id and an InfraSonar container.
-It is required to have ConnectWise Manage add-on, contact [InfraSonar](https://infrasonar.com/support) for more information.
+The ConnectWise Manage add-on is required, contact [InfraSonar](https://infrasonar.com/support) for more information.
 
 ### Path parameters
 Param               | Description
