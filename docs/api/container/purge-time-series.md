@@ -41,6 +41,6 @@ curl \
 Response:
 ```json
 {
-    "purged-time-series": 12345
+    "purgedTimeSeries": 12345
 }
 ```
