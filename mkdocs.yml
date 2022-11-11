@@ -114,6 +114,7 @@ nav:
         - Query container assets: api/container/query-assets.md
         - Create asset: api/container/create-asset.md
         - Set container mode: api/container/set-mode.md
+        - Purge notifications: api/container/purge-notifications.md
         - Purge time-series: api/container/purge-time-series.md
       - ConnectWise Manage add-on:
         - Set CWM: api/cwm/set-cwm.md
