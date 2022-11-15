@@ -18,6 +18,7 @@ _none_
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
 `data`      | object    | Yes       | Object with check data.
+`version`   | string    | Yes       | Version of the collector.
 `runtime`   | float     | No        | Time it took for the check to run in seconds.
 `timestamp` | integer   | No        | Unix timestamp in seconds. If omitted, InfraSonar will set the timestamp for the check data.
 
@@ -45,7 +46,8 @@ curl \
                 "ipAddress": "1.2.3.4"
             }
         ]
-    }
+    },
+    "version": "0.1.0"
 }'
 ```
 _In this example, "**docker**" is the collector, "**network**" the check, "**networks**" a type, "**name**" is a required metric and "**ipAddress**" is a metric._
