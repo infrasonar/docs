@@ -1,4 +1,4 @@
-# :fontawesome-solid-magnifying-glass: Probes
+# :material-radar: Probes
 
 InfraSonar uses probes to retrieve data from monitored assets (hosts).
 

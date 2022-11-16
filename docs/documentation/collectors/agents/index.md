@@ -1,4 +1,4 @@
-# :fontawesome-solid-magnifying-glass: Agents
+# :material-radar: Agents
 
 InfraSonar agents monitor autonomously and send the retrieved monitoring data to the InfraSonar platform using the [InfraSonar API](../../../api/data/insert-data.md)
 
