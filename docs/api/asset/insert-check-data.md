@@ -1,5 +1,5 @@
 # Insert check data
-**`POST` /asset/<assetId\>/collector/<collectorKey\>/check/<checkKey\>/data**
+**`POST` /asset/<assetId\>/collector/<collectorKey\>/check/<checkKey\>**
 
 ### Description
 Insert check data.
@@ -35,7 +35,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X POST 'https://api.infrasonar.com/asset/123/collector/docker/check/network/data' \
+    -X POST 'https://api.infrasonar.com/asset/123/collector/docker/check/network' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
