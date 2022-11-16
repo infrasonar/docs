@@ -2071,7 +2071,7 @@
 
 
 <h1 id="insert-check-data">Insert check data</h1>
-<p><strong><code>POST</code> /asset/&lt;assetId>/collector/&lt;collectorKey>/check/&lt;checkKey></strong></p>
+<p><strong><code>POST</code> /asset/&lt;assetId&gt;/collector/&lt;collectorKey&gt;/check/&lt;checkKey&gt;</strong></p>
 <h3 id="description">Description</h3>
 <p>Insert check data.</p>
 <h3 id="path-parameters">Path parameters</h3>
@@ -2164,6 +2164,10 @@
 <tr>
 <td><code>404</code></td>
 <td>Asset or collector or check not found.</td>
+</tr>
+<tr>
+<td><code>409</code></td>
+<td>Collector is not assigned to the asset.</td>
 </tr>
 </tbody>
 </table>
