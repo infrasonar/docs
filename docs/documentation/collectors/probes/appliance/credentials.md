@@ -4,6 +4,34 @@ Some InfraSonar probes require credentials to authenticate its queries. A good e
 
 Credentials are stored securely on the appliance at the monitored infrastructure and will only be used within the boundaries of the appliance.
 
+
+```yaml
+# WARNING: InfraSonar will make `password` and `secret` values unreadable but
+# this must not be regarded as true encryption as the encryption key is
+# publically available.
+#
+# Example configuration for `myprobe` collector:
+#
+myprobe:
+  config:
+    username: alice
+    password: "secret password"
+  assets:
+    - id: 12345
+      config:
+        username: bob
+        password: "my secret"
+```
+
+
+
+
+-------
+
+
+
+
+
 ## Credential files
 
 Each probe has its own default credential file and optional asset/host specific credential files to accommodate for example non-windows domain hosts.

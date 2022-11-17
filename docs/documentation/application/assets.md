@@ -5,7 +5,7 @@
 When you open the *Environment* page, you can add hosts via the **Add host** button.
 
 <figure markdown>
-  ![InfraSonar add host](../../images/web_application_add_host.png){ width="800" }
+  ![InfraSonar add host](../../images/application_add_host.png){ width="800" }
   <figcaption>InfraSonar add host</figcaption>
 </figure>
 
@@ -16,7 +16,7 @@ Configuration pre-requisites:
 
 
 <figure markdown>
-  ![InfraSonar add host details](../../images/web_application_add_host_details.png){ width="800" }
+  ![InfraSonar add host details](../../images/application_add_host_details.png){ width="800" }
   <figcaption>InfraSonar add host details</figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ InfraSonar allows multiple hosts to be entered at once. This step requires you t
 Managing a host can be done by clicking the menu next to the host in the host overview and selecting edit.
 
 <figure markdown>
-  ![InfraSonar manage host](../../images/web_application_edit_host.png){ width="300" }
+  ![InfraSonar manage host](../../images/application_edit_host.png){ width="300" }
   <figcaption>InfraSonar manage host</figcaption>
 </figure>
 
@@ -89,7 +89,7 @@ Edit checks:
 3. Click **Edit checks**.
 
 <figure markdown>
-  ![InfraSonar edit host](../../images/web_application_edit_checks.png){ width="400" }
+  ![InfraSonar edit host](../../images/application_edit_checks.png){ width="400" }
   <figcaption>InfraSonar add host</figcaption>
 </figure>
 

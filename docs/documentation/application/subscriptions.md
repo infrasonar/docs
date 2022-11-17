@@ -12,6 +12,6 @@ Follow these steps to configure your subscriptions:
 2. Select **My subscriptions**.
 3. Configure per environment for which severity levels you wish to receive :material-email: email alerts.
 
-![Subscriptions](../../images/web_application_subscriptions.png){ width="200" align=left}
-![Subscriptions](../../images/web_application_subscriptions_configure.png){ width="500" align=right}
+![Subscriptions](../../images/application_subscriptions.png){ width="200" align=left}
+![Subscriptions](../../images/application_subscriptions_configure.png){ width="500" align=right}
 

@@ -26,13 +26,13 @@ x-infrasonar-template:
 services:
   agentcore:
     << : *infrasonar
-    image: ghcr.io/cesbit/osagentcore
+    image: ghcr.io/infrasonar/agentcore
     environment:
-      OS_CUSTOMER_UUID: "d794e0cdd700"
+      TOKEN: "<your-token>"
 
   pingprobe:
     << : *infrasonar
-    image: ghcr.io/infrasonar/pingprobe
+    image: ghcr.io/infrasonar/ping-probe
 
   httpprobe:
     << : *infrasonar
@@ -94,24 +94,5 @@ The `x-infrasonar-template` section ensures the default settings are the same fo
 
 #### Agent-core service
 
-The Agent-core service contains an environment variable that must be set correctly prior to starting the InfraSonar environment.
+The Agent-core service contains an environment variable containing a TOKEN that must be set correctly prior to starting the InfraSonar environment.
 See the [operational guide](appliance_deployment.md) on how to determine the correct variable.
-
-
-!!! Warning "Legacy settings"
-    Setting the variable `OS_AGENTCORE_LISTEN_IP: "0.0.0.0"` should be avoided and only used for legacy setups that use the "old" Agent-core API.
-    Our probes are configured to connect to `agentcore` using `localhost`.
-
-#### services
-
-We strive to use a default `environment` for all probes, but sometimes you might want to change the log level for a probe. The example below outlines how to enable this:
-
-```yaml title="/etc/infrasonar/docker-compose.yml" hl_lines="4 5"
-  wmicprobe:
-    << : *infrasonar
-    image: ghcr.io/infrasonar//wmicprobe
-    environment:
-      OS_LOG_LEVEL: "debug"
-```
-
-The full list of supported environment variables can be found in the Agent-core client library [documentation](https://github.com/infrasonar/agentcoreclient#supported-environment-variable).

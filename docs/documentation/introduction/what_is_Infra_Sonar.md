@@ -19,7 +19,6 @@ This predefined set of conditions and agent-less monitoring capabilities make fo
   Monitors the current state and notifies when a threshold is reached.<br>
   Performance data is stored in our time series database [SiriDB](https://siridb.com) for analysis over time.
 * **Analysis**<br>
-  Performance data and hit alerts (open & closed) are used for analysis over time.<br>
-  *"Q2-2022: We will implement the [Enodo](https://siridb.com/enodo/) add-on on our [SiriDB](https://siridb.com) cluster to enable anomaly detection and forecasting."*
+  Performance data and hit alerts (open & closed) are used for analysis over time.
 * **API**<br>
   Utilizing the [InfraSonar API](../../api/overview.md) allows for easy integration with automation platforms, such as [Ansible](https://www.ansible.com/) and [Salt](https://saltproject.io/).

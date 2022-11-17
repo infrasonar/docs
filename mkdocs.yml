@@ -71,14 +71,14 @@ nav:
               - TCP: documentation/collectors/probes/tcp.md
               - VMware: documentation/collectors/probes/vmware.md
               - SMTP: documentation/collectors/probes/smtp.md
-      - Web application:
-          - Environments: documentation/web_application/environment.md
-          - Hosts: documentation/web_application/assets.md
-          - Labels: documentation/web_application/labels.md
-          - Conditions: documentation/web_application/conditions.md
-          - Subscriptions: documentation/web_application/subscriptions.md
-          - Tasks: documentation/web_application/tasks.md
-          - User management: documentation/web_application/user_management.md
+      - Application:
+          - Environments: documentation/application/environment.md
+          - Hosts: documentation/application/assets.md
+          - Labels: documentation/application/labels.md
+          - Conditions: documentation/application/conditions.md
+          - Subscriptions: documentation/application/subscriptions.md
+          - Tasks: documentation/application/tasks.md
+          - User management: documentation/application/user_management.md
       - Guides:
           - Migration: documentation/guides/migration.md
           - Remote support: documentation/guides/remote_support.md

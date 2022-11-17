@@ -77,7 +77,7 @@ graph LR
 From the container view, you can add a new environment.
 
 <figure markdown>
-  ![InfraSonar add environment](../../images/web_application_add_environment.png){ width="800" }
+  ![InfraSonar add environment](../../images/application_add_environment.png){ width="800" }
   <figcaption>InfraSonar add environment</figcaption>
 </figure>
 
