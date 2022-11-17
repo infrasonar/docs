@@ -1,4 +1,4 @@
-# :fontawesome-solid-magnifying-glass: Agent-core
+# :material-radar: Agent-core
 
 The Agent-core orchestrates our [probes](index.md) and is responsible for scheduling checks. During the startup sequence of a probe, it will “announce” itself to the Agent-core.
 
@@ -8,7 +8,7 @@ The Agent-core also acts as a communication gateway. Data retrieved by the probe
 
 ``` mermaid
 graph LR
-  probe[Probe] --> | TCP 7211 | Agentcore[Agent-core] --> | HTTPS 443 | infrasonarcloud[InfraSonar Cloud Platform];
+  probe[Probe] --> | TCP 8750 | Agentcore[Agent-core] --> | HTTPS 443 | infrasonarcloud[InfraSonar Cloud Platform];
 ```
 
 Because probes usually run in the same Docker network as the Agent-core, they can easily connect to it.
