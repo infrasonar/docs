@@ -1,6 +1,41 @@
-# Maintenance Label
+# Modes
+
+Modes can be used to change the behavior of a container or an asset or group of assets.
+
+mode                    | description
+------------------------|-----------------------------
+normal                  | normal operations, all conditions are evaluated.
+maintenance (no alerts) | All asset notifications and alert messages suppressed
+disabled (no checks)    | All data send by an agent for this asset is ignored. <br>Any probes / checks configured for this asset are stopped.
+
+
+## Container
+
+Modes can be set on container level. Effectivly changing the mode for all assets in the container.
+
+Changing the mode on a container can be done via a :material-clock-outline: schedule or via the :fontawesome-solid-folder-tree: container view.
+
+## Asset 
+
+Changing the mode on an asset can be done in the asset configuration.
+
+## API
+
+It is also possible to change the mode using our API
+
+* [asset](../../api/asset/set-mode.md)
+* [container](../../api/container/set-mode.md)
+
+
+
+
+
+
+
 
 It is possible to put a host in maintenance mode by adding the :material-label:{.gray-icon} maintenance label using an API request.
+
+
 
 !!! warning "The Agent-core API will be deprecated soon"
     The better way is to use the [webserver API](../../api/hosts/add-host-label.md) and even better is to use tasks to remove the :material-label:{.gray-icon} maintenance label after a certain amount of time.

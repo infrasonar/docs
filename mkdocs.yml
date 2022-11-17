@@ -50,6 +50,7 @@ nav:
           - Platform: documentation/introduction/platform.md
           - Contact us: documentation/introduction/contact_us.md
       - Collectors:
+          - documentation/collectors/index.md
           - Agents:
               - documentation/collectors/agents/index.md
               -  Docker: documentation/collectors/agents/docker.md
@@ -72,8 +73,8 @@ nav:
               - VMware: documentation/collectors/probes/vmware.md
               - SMTP: documentation/collectors/probes/smtp.md
       - Application:
-          - Environments: documentation/application/environment.md
-          - Hosts: documentation/application/assets.md
+          - Containers: documentation/application/container.md
+          - Assets: documentation/application/assets.md
           - Labels: documentation/application/labels.md
           - Conditions: documentation/application/conditions.md
           - Subscriptions: documentation/application/subscriptions.md

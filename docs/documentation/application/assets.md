@@ -1,107 +1,76 @@
-# Hosts
+# Assets
 
-## Adding hosts
+## Add asset
 
-When you open the *Environment* page, you can add hosts via the **Add host** button.
+When you are in the assets view you can add a new asset using the Add asset button.
 
 <figure markdown>
-  ![InfraSonar add host](../../images/application_add_host.png){ width="800" }
+  ![InfraSonar add host](../../images/application_add_asset.png){ width="800" }
   <figcaption>InfraSonar add host</figcaption>
 </figure>
 
-Configuration pre-requisites:
-
-* An Agent-core must be deployed before adding hosts, as hosts need to be assigned to an Agent-core. See the [InfraSonar appliance](../collectors/probes/appliance/appliance_deployment.md) documentation on how to set this up.
-* [Credentials](../collectors/probes/appliance/credentials.md) for the monitored host(s) must be configured to gain access.
-
+## Basic asset configuration
 
 <figure markdown>
-  ![InfraSonar add host details](../../images/application_add_host_details.png){ width="800" }
-  <figcaption>InfraSonar add host details</figcaption>
+  ![InfraSonar add asset details](../../images/application_add_asset_details.png){ width="800" }
+  <figcaption>InfraSonar add asset details</figcaption>
 </figure>
 
-Adding a host involves the following steps:
+Configuring an asset involves the following steps:
 
-1. Enter the hostname.<br>
+1. Enter an asset name.<br>
    We strongly suggest entering the correct hostname here, but do not enforce this.
 2. Enter an optional description.
-3. Select the Agent-core.<br>
-   *This is only required for large environments where multiple Agent-cores are deployed.*
-4. Select which [probes](../collectors/probes/index.md) you want to use.
-5. Select the [label](labels.md) you want to use.
-6. Provide the configuration details per probe on their respective tabs.
-7. Enter details for logging when prompted.
+3. Select the mode.<br>
+   *This is usually normal.*
+4. Select the zone.
+5. Select the [collectors](../collectors/probes/index.md) you want to use.
+6. Enter the coreect labels for this aset.
 
-Host discovery starts now and will take a couple of minutes.
+## Advanced asset configuration
 
-### Adding multiple hosts
+### mode
 
-InfraSonar allows multiple hosts to be entered at once. This step requires you to add the hosts first and then add the probes and labels.
+We identify the following modes for an asset or a container:
 
-## Managing hosts
-
-Managing a host can be done by clicking the menu next to the host in the host overview and selecting edit.
-
-<figure markdown>
-  ![InfraSonar manage host](../../images/application_edit_host.png){ width="300" }
-  <figcaption>InfraSonar manage host</figcaption>
-</figure>
-
-Next to adding probes and labels, the following actions are possible when editing an already discovered host:
-
-* [Rediscover checks](assets.md#editing-hosts)
-* Discover new checks
-* Edit checks
-* Remove probe(s)
-
-*As credentials are not stored in the InfraSonar platform. These need to be managed on the InfraSonar appliance.*
-
-### Rediscover checks
-
-Rediscovering checks essentially removes and adds the host to InfraSonar while retaining the configuration in a single action.
-
-Rediscover checks:
-
-1. Edit a host.
-2. Open the **InfraSonar probe** tab.
-3. Click **Rediscover checks**.
-
-### Discover new checks
-
-InfraSonar tries to discover checks on its own, but sometimes you want to discover new checks right away.
-The above is especially useful if you granted more access to the monitoring account and want to check instantly if the data is accessible.
-
-Discover new checks:
-
-1. Edit a host.
-2. Open the **Probe** tab for the probe you want to discover.
-3. Click **Discover new checks**.
+mode                    | description
+------------------------|-----------------------------
+normal                  | normal operations, all conditions are evaluated.
+maintenance (no alerts) | All asset notifications and alert messages suppressed
+disabled (no checks)    | All data send by an agent for this asset is ignored. <br>Any probes / checks configured for this asset are stopped.
 
 
-### Edit checks
+These modes can be set on a container using the container model. 
 
-The edit checks allows you to remove a check or change the check interval for a check.
+### zone
 
-Edit checks:
+When one or more agentcores are configured in the specified zone the host is bound to an agentcore in this zone.
+If no agentcores are configured in the specified zone we fall back to any other agent core.
 
-1. Edit a host.
-2. Open the **Probe** tab for the probe you want to discover.
-3. Click **Edit checks**.
+This feature can be usefull for assets in a dmz or remote networks as it allows to direct probes to a specific zone.
 
-<figure markdown>
-  ![InfraSonar edit host](../../images/application_edit_checks.png){ width="400" }
-  <figcaption>InfraSonar add host</figcaption>
-</figure>
+For agents the zone is only cosmetic.
 
-!!! danger
-    Try to avoid changing the default check interval for many hosts/checks as this can lead to an increase in load, especially when using a shorter check interval.
+*In the future we might add a link between zones and locations.*
 
-### Remove probe(s)
+### Collectors
 
-When removing a probe, you are prompted if you want to save the configuration. Doing so can be convenient if you want to remove the probe temporary.
+Here you can add or remove a collector on an asset.
 
-## API
+When a collector is added additional tabs are added to the asset editor allowing you to configure the collector.
 
-Adding hosts add assigning labels / probes to them can also be done via the [InfraSonar API](../../api/hosts/add-host.md).
+See the [collectors section](../collectors/index.md) in our documentation for additional information.
+
+When you remove an agent based collector here the agent can no longer send data to this asset and will receive a 409 error from our api.
 
 
+### Labels
+
+Here you can add or remove labels on an asset.
+
+See the [labels section](labels.md) in our documentation for additional information.
+
+
+## Adding multiple assets
+
+When there is a need to add multiple assets at once we suggest using our [api](api/../index.md).

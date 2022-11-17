@@ -1,5 +1,7 @@
 # :material-list-status: Conditions
 
+:construction: Under construction :construction:
+
 Check results sent to the InfraSonar cloud platform are immediately evaluated using the conditions configured for the specific asset. 
 
 InfraSonar comes with many predefined conditions based on years of experience and best practices.
