@@ -8,74 +8,84 @@ We support user authentication using using one of these cloud identities:
 * :material-microsoft: [Microsoft account](https://account.live.com/) (*this can be a work or personal account*)
 * :material-google: [Google account](https://www.google.com/account/about/) (*this can be a personal or Google workspace account*)
 
+
+!!! Tip
+    Users can only be added to our platform if they are "known" to us.
+    As such a user should fist authenticate once on our platform and from there on the user can be added to a container.
+
 ## Authorization
 
-A user's identity can be authorized on a container [container](environment.md) using a specific role.
+A user's identity can be authorized on a container [container](container.md) using a specific role.
 
 ### Authorization flags
 
-#### READ
-* When applied to the root container, this gives sysadmin access;
-* Required for viewing this container;
 
-#### AUTH_FLAG_BILLING
-* Required for viewing the credits tab on this container (only when credits are available on the container);
+`Alerts can be assigned to this user ("Is member")`
+:   * Allows alerts to be assigned to this user, makes the user "visible" for alert assignment.
 
-#### INSERT_CHECK_DATA
-* Required for inserting data using the API (used by agents);
 
-#### CORE_CONNECT
-Required for AgentCores to connect to the hub;
+`View`
+:   * When applied to the root container, this gives sysadmin access;
+    * Required for viewing this container.
 
-#### ASSET_MANAGEMENT
-* Required for changing the container mode (and/or schedule container mode);
-* Required for changing the asset mode (and/or schedule asset mode);
-* Required for creating new assets;
-* Required for removing assets (including delete from trash);
-* Required for changing asset configuration (including labels and collector related configuration);
+`Billing`
+:   * Required for viewing the credits tab on this container (only when credits are available on the container).
 
-#### ALERT_ASSIGN
-* Required for assigning alerts;
+`InsertCheckData`
+:   * Required for inserting data using the API (used by agents).
 
-#### ALERT_CHANGE
-* Required for closing alerts;
-* Required for adding comments to alerts;
+`AgentcoreConnect`
+:    * Required for AgentCores to connect to the hub.
 
-#### API
-* Required for any API request;
+`AssetManagement`
+:   * Required for changing the container mode (and/or schedule container mode);
+    * Required for changing the asset mode (and/or schedule asset mode);
+    * Required for creating new assets;
+    * Required for removing assets (including delete from trash);
+    * Required for changing asset configuration (including labels and collector related configuration).
 
-#### CONTAINER_MANAGEMENT
-* Required for adding child containers to this container;
-* Required for removing this container;
-* Required for renaming this container;
+`AlertAssign`
+:   * Required for assigning alerts.
 
-#### CONTAINER_ADMIN
-* Required for creating/changing/removing labels within this container;
-* Required for creating/changing/removing conditions within this container;
-* Required to create/change/remove a DutyCalls service to this container;
+`AlertChange`
+:   * Required for closing alerts;
+    * Required for adding comments to alerts.
 
-#### CONTAINER_ACCESS
-* Required for managing user access to this container;
-* Required for managing tokens on this container;
+`API`
+:   * Required for any API request.
 
-#### CHECK_MANAGEMENT
-* Required for enable/disable/configure checks per collector on assets;
+`ContainerManagement`
+:   * Required for adding child containers to this container;
+    * Required for removing this container;
+    * Required for renaming this container.
 
-#### TIME_SERIES_MANAGEMENT
-* Required for enable/disable time-series for this container;
+`ContainerAdmin`
+:   * Required for creating/changing/removing labels within this container;
+    * Required for creating/changing/removing conditions within this container;
+    * Required to create/change/remove a DutyCalls service to this container.
 
-#### RULE_MANAGEMENT
-* Required for managing DutyCalls rules on this container;
-* Required for managing Email rules (including rules by other users) on this container;
+`ContainerAccess`
+:   * Required for managing user access to this container;
+    * Required for managing tokens on this container.
 
-#### RULE_EMAIL
-* Required for creating a personal email rule on this container; _(other email rules are only visible when having the
+`CheckManagement`
+:   * Required for enable/disable/configure checks per collector on assets.
 
-#### PURGE_TIME_SERIES
-* Required for purging dead-time-series within this container;
+`TimeSeriesManagement`
+:   * Required for enable/disable time-series for this container.
 
-#### VIEW_LOG
-* Required for viewing logging;
+`RuleManagement`
+:   * Required for managing DutyCalls rules on this container;
+    * Required for managing Email rules (including rules by other users) on this container.
 
-#### CWM_ADDON
-* Required to use the CWM_ADDON on this container; (only if the container has CWM configured);
+`RuleEmail`
+:   * Required for creating a personal email rule on this container. _(other email rules are only visible when having the admin role)_
+
+`PurgeTimeSeries`
+:   * Required for purging dead-time-series within this container.
+
+`ViewLog`
+:   * Required for viewing logging.
+
+`ConnectWiseManageAddOn`
+:   * Required to use the CWM_ADDON on this container; (only if the container has CWM configured).

@@ -75,10 +75,10 @@ nav:
       - Application:
           - Containers: documentation/application/container.md
           - Assets: documentation/application/assets.md
+          - Modes: documentation/application/modes.md
           - Labels: documentation/application/labels.md
           - Conditions: documentation/application/conditions.md
-          - Subscriptions: documentation/application/subscriptions.md
-          - Tasks: documentation/application/tasks.md
+          - Rules: documentation/application/rules.md
           - User management: documentation/application/user_management.md
       - Guides:
           - Migration: documentation/guides/migration.md
