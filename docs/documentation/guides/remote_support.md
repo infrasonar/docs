@@ -1,5 +1,7 @@
 # Remote support
 
+![InfraSonar support](../../images/support.png){ width="200" align=right}
+
 ## tmate
 
 We opt to use [tmate](https://tmate.io/) to provide remote support as it is easy to use, fully open source, and allows TeamViewer-like access to the terminal.

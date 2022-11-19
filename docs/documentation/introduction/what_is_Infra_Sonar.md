@@ -1,8 +1,6 @@
-# Getting started with InfraSonar
+# What is InfraSonar
 
-## What is InfraSonar
-
-InfraSonar is the creation of two IT infrastructure specialists who joined forces with an IT service provider to create an easy-to-maintain, uniform monitoring platform. Using open standards from the vendors, the InfraSonar monitoring [appliance](../collectors/probes/appliance/appliance_deployment.md) securely monitors your IT infrastructure.
+InfraSonar is the brainchild of two IT infrastructure specialists who joined forces with an IT service provider to create an easy-to-maintain, uniform monitoring platform. Using open standards from vendors, the InfraSonar monitoring [appliance](../collectors/probes/appliance/appliance_deployment.md) securely monitors your IT infrastructure.
 
 InfraSonar comes out of the box with many predefined conditions based on years of experience and best practices.
 
