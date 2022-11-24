@@ -1,4 +1,4 @@
-# Set asset mode
+# Set asset kind
 **`PATCH` /asset/<assetId\>/kind**
 
 ### Description
