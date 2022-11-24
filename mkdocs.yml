@@ -101,19 +101,20 @@ nav:
         - Query asset alerts: api/asset/query-alerts.md
         - Query asset Id: api/asset/query-id.md
         - Insert check data: api/asset/insert-check-data.md
-        - Set asset mode: api/asset/set-mode.md
         - Add label to asset: api/asset/add-label.md
-        - Remove label from asset: api/asset/remove-label.md
-        - Upsert collector to asset: api/asset/upsert-collector.md
         - Remove collector from asset: api/asset/remove-collector.md
+        - Remove label from asset: api/asset/remove-label.md
+        - Set asset kind: api/asset/set-kind.md
+        - Set asset mode: api/asset/set-mode.md
+        - Upsert collector to asset: api/asset/upsert-collector.md
       - Alert:
         - Query alert: api/alert/query.md
       - Container:
+        - Create asset: api/container/create-asset.md
         - Query container: api/container/query.md
         - Query container Id: api/container/query-id.md
         - Query container alerts: api/container/query-alerts.md
         - Query container assets: api/container/query-assets.md
-        - Create asset: api/container/create-asset.md
         - Set container mode: api/container/set-mode.md
         - Purge notifications: api/container/purge-notifications.md
         - Purge time-series: api/container/purge-time-series.md
