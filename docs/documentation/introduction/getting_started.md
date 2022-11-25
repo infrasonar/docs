@@ -14,8 +14,8 @@ Implementing a basic InfraSonar configuration is easy because InfraSonar can be 
    Deploy and setup the [InfraSonar appliance](../collectors/probes/appliance/appliance_deployment.md) in your environment.
 3. **Configure probes**<br>
    Setting up (default) [credentials](../collectors/probes/appliance/credentials.md) is the only configuration required in most cases. 
-4. **Add hosts**<br>
-   [Add hosts](../application/assets.md) using the web application.
+4. **Add assets**<br>
+   [Add assets](../application/assets.md) using the web application.
 
 ## Implementation support
 

@@ -20,3 +20,8 @@ Because probes usually run in the same Docker network as the Agent-core, they ca
 When an Agent-core is decommissioned, all hosts monitored by it need to be moved to another Agent-core.
 
 The UI does not allow an Agent-core to be removed if there are still hosts attached to it.
+
+
+To file on clean shutdown:
+* Assets only used 
+* FiFo queueu 100.000 packages

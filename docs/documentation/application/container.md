@@ -80,5 +80,3 @@ From the container view, you can add a new environment.
 4. Select the mode, this is usual **normal**;
 5. Select the **timezone** for this container;
 6. CLick **save**.
-
-*:material-skip-next: The next step is to deploy the InfraSonar [appliance](../collectors/probes/appliance/appliance_deployment.md).*

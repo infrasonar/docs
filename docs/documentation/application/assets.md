@@ -19,13 +19,13 @@ When you are in the assets view you can add a new asset using the Add asset butt
 Configuring an asset involves the following steps:
 
 1. Enter an asset name.<br>
-   We strongly suggest entering the correct hostname here, but do not enforce this.
+   *We strongly suggest entering the correct hostname here, but do not enforce this.*
 2. Enter an optional description.
 3. Select the mode.<br>
    *This is usually normal.*
 4. Select the zone.
 5. Select the [collectors](../collectors/probes/index.md) you want to use.
-6. Enter the coreect labels for this aset.
+6. Enter the correct labels for this asset.
 
 ## Advanced asset configuration
 
@@ -47,7 +47,7 @@ These modes can be set on a container using the container model.
 When one or more agentcores are configured in the specified zone the host is bound to an agentcore in this zone.
 If no agentcores are configured in the specified zone we fall back to any other agent core.
 
-This feature can be usefull for assets in a dmz or remote networks as it allows to direct probes to a specific zone.
+This feature can be useful for assets in a dmz or remote networks as it allows to direct probes to a specific zone.
 
 For agents the zone is only cosmetic.
 

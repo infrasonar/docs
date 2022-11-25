@@ -19,11 +19,11 @@ mode          | description
 
 Modes can be set on container level. Effectively changing the mode for all assets in the container.
 
-Changing the mode on a container can be done using our a :material-clock-outline: schedular or in the :fontawesome-solid-folder-tree: container view.
+Changing the mode on a container can be done using our a [:material-clock-outline: schedular](schedule.md) or in the :fontawesome-solid-folder-tree: container view.
 
 ### Asset 
 
-Changing the mode on an asset can be done in the asset configuration.
+Changing the mode on an asset can be done while editing :material-pencil: an asset or [:material-clock-outline: scheduled](schedule.md)
 
 ### API
 
@@ -31,3 +31,4 @@ It is also possible to change the mode using our API:
 
 * [Change mode on a asset](../../api/asset/set-mode.md)
 * [Change mode on a container](../../api/container/set-mode.md)
+

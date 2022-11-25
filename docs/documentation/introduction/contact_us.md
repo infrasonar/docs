@@ -10,10 +10,10 @@
 
 ## Availability
 
-We are a European company based in the Netherlands.
-Our general availability is from Monday to Friday between 08:00 and 17:00 (CET).
+We are a European company based in the Netherlands.<br>
+Our general availability is from Monday to Friday between 08:00 :clock8: and 17:00 :clock5: (CET)[^1].
 
-_Different times are possible by appointment._
+[^1]: Different times are possible by appointment.
 
 ## Services
 

@@ -21,14 +21,14 @@ x-infrasonar-template:
     options:
       max-size: 5m
   volumes:
-      - ./config:/data/config
+      - ./data:/data/
 
 services:
   agentcore:
     << : *infrasonar
     image: ghcr.io/infrasonar/agentcore
     environment:
-      TOKEN: "<your-token>"
+      TOKEN: "<<agentcore-token>>"
 
   pingprobe:
     << : *infrasonar
@@ -73,17 +73,14 @@ services:
   smtpprobe:
     << : *infrasonar
     image: ghcr.io/infrasonar/smtpprobe
-
-  # dockeragent:
-  #   << : *infrasonar
-  #   image: ghcr.io/infrasonar/dockeragent
-  #   environment:
-  #     OSDA_ENVIRONMENT_UUID: "xxxxxxxxxxxx"
-  #     OSDA_TOKEN: "my super secret token"
-  #     OSDA_API_URI: "https://api.infrasonar"
-  #     OSDA_HOST_UUID: "xxxxxxxxxxxx-yyyyyyyyyyyy"
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock
+  
+  dockeragent:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/docker-agent
+    environment:
+      TOKEN: "<<agent token>>"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 ```
 
 ### Section outline
@@ -95,4 +92,4 @@ The `x-infrasonar-template` section ensures the default settings are the same fo
 #### Agent-core service
 
 The Agent-core service contains an environment variable containing a TOKEN that must be set correctly prior to starting the InfraSonar environment.
-See the [operational guide](appliance_deployment.md) on how to determine the correct variable.
+See the [tokens section](../../../application/tokens.md) on how to determine the correct variable.

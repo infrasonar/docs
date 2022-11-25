@@ -2,85 +2,73 @@
 
 The Docker-agent is a Docker container that can be used to monitor other Docker containers. The Docker-agent itself runs as a Docker container on the host, which hosts the containers and uses the Unix socket `docker.sock` to retrieve relevant monitoring data which, is send to the InfraSonar API.
 
-## Agent configuration
+![Docker Agent](../../../images/agent_docker.png){ width="500" }
 
-### Prerequisites
+## Prerequisites
 
-* The Docker-agent must be able to connect to the InfraSonar API (https://api.infrasonar.com) using TCP port 443.
+* The Docker-agent must be able to connect to the InfraSonar API (https://api.infrasonar.com)
 * The Docker-agent must be allowed access to the Unix socket `docker.sock`.
 * The Docker-agent requires a valid [token](../../../api/authentication.md).
 
-### Configuration
+## Deployment
 
-The Docker-agent is configured using the following mandatory environment variables:
+There are multiple scenario's that can be used to deploy the docker agent and it depends on your use case which one would suites best for you.
 
-| **variable**          | **description**                                                                                       |
-|-----------------------|-------------------------------------------------------------------------------------------------------|
-| OSDA_ENVIRONMENT_UUID | The environment UUID.                                                                                 |
-| OSDA_TOKEN            | The [authentication token](../../../api/authentication.md) for authenticating to the InfraSonar API. |
-| OSDA_HOST_UUID        | The full host UUID.                                                                                   |
+!!! tip "Host network vs bridge network"
+    When using a bridge network it is highly recommended to set the container host name using the `--hostname` / `-h` flag as this is the name used by the agent to present itself.
 
 
-#### Figuring out UUID's
+Upon first run the Docker agents registers itself as an asset in InfraSonar, to ensure reconnection to the same asset an asset-id is stored in `/data/.asset.json` hence the resaon we mount the the `/data` folder.
 
-1. Navigate to the host you want to add the Docker-agent to.
-2. Retrieve the `environment UUID` and `host UUID` from the URL.
+### Docker command
 
-```
-https://app.infrasonar.com/#/c/110/e/xxxxxxxxxxxx/h/xxxxxxxxxxxx-yyyyyyyyyyyy/overview
-                                     ============   =========================
-                                            ▲                      ▲
-Environment UUID ───────────────────────────┘                      │
-Host UUID ─────────────────────────────────────────────────────────┘
-```
-
-#### Token
-
-We advise you to create a user for each environment and setup a token for this user.
-This ensure the token only has access to the correct environment.
-
-### Docker host configuration
-
-The Docker-agent can be deployed as a Docker container, using the following Docker command:
+*Deploys the docker agent using a bridged network and names the hostname  to the system hostname:*
 
 ```bash
 docker run \
   --name dockeragent \
-  -e OSDA_ENVIRONMENT_UUID="xxxxxxxxxxxx" \
-  -e OSDA_TOKEN="my super secret token" \
-  -e OSDA_HOST_UUID="xxxxxxxxxxxx-yyyyyyyyyyyy" \
+  -h $HOSTNAME \
+  -v infraSonarData:/data \
+  -e TOKEN="<<agent token>>" \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  ghcr.io/infrasonar/dockeragent
+  ghcr.io/infrasonar/docker-agent:unstable
 ```
+
+*Deploys the docker agent using the host network and thus automatically uses the system hostname:*
+
+```bash
+docker run \
+  --name dockeragent \
+  --network host \
+  -v infraSonarData:/data \
+  -e TOKEN="<<agent token>>" \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  ghcr.io/infrasonar/docker-agent:unstable
+```
+
+### docker-compose
 
 You can also add the Docker-agent to your `docker-compose.yml` file:
 
 ```YAML
-services
+volumes:
+  infraSonarData:
+
+services:
   dockeragent:
+    network_mode: host
+    container_name: dockeragent
+    hostname: dockeragent
     restart: always
     logging:
       options:
         max-size: 5m
-    image: ghcr.io/infrasonar/dockeragent
+    image: ghcr.io/infrasonar/docker-agent:unstable
     environment:
-      OSDA_ENVIRONMENT_UUID: "xxxxxxxxxxxx"
-      OSDA_TOKEN: "my super secret token"
-      OSDA_HOST_UUID: "xxxxxxxxxxxx-yyyyyyyyyyyy"
+      TOKEN: "<<agent token>>"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - infraSonarData:/data
 ```
 
-### InfraSonar configuration
 
-The last step is to add the agent on the host using the InfraSonar UI.
-1. Browse to the host
-2. Click edit host :material-playlist-edit: button
-3. Select the **dockeragent** in the *Probes* section
-4. Click save
-
-## Known issues
-
-### Warning message no swap limit support
-
-See [this](https://docs.docker.com/config/containers/resource_constraints/) article to troubleshoot the `WARNING: No swap limit support` message.
