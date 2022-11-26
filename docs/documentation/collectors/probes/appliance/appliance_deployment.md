@@ -24,7 +24,7 @@ InfraSonar runs in Docker containers on Linux. Access is possible through the co
 
 Modern desktop operating systems have the *ssh* command as part of their terminal. Alternatively, you can download and use [PuTTY](https://www.putty.org/).
 
-SSH access is granted to the `sysadmin` user, which uses the default password: `0versight!`.
+SSH access is granted to the `sysadmin` user.
 
 ### Nano basics
 
@@ -114,16 +114,11 @@ $ sudo netplan apply
 
 ## Starting InfraSonar
 
-For each InfraSonar appliance, `OS_CUSTOMER_UUID` must be set in the `/etc/infrasonar/docker-compose.yml` file.
+For each InfraSonar appliance, the `TOKEN` must be set in the `/etc/infrasonar/docker-compose.yml` file.
 
-The `OS_CUSTOMER_UUID` can be found by enabling the ID column using the column selector :material-view-column: in the [InfraSonar environments view](https://oversig.ht/#/environments). Lookup the correct ID here for the environment you are setting up the appliance for.
+See our [token documentation](../../../application/tokens.md) on how to retrieve a token.
     
-
-!!! warning
-    Starting the Docker environment without setting the correct environment files first can result in abnormal behavior.
-    Verify this step before staring docker-compose.
-
-When the environment variables are set, you can start the appliance using the following `docker compose` command:
+When a token set, you can start the appliance using the following `docker compose` command:
 
 ```bash
 docker compose -f /etc/infrasonar/docker-compose.yml pull
@@ -134,26 +129,11 @@ docker compose -f /etc/infrasonar/docker-compose.yml up -d
     Detailed documentation about the docker-compose.yml file in use by InfraSonar can be found [here](appliance_docker_compose.md).
 
 When the Docker environment is up and running, you should see the Agent-core as a host in your environment.
-If this is not the case, please verify that the `OS_CUSTOMER_UUID` is configured properly.
 [Contact InfraSonar support](../../../introduction/contact_us.md) if you require any assistance.
 
 ## Monitor the appliance
 
 Since InfraSonar is a monitoring platform, the first thing to do is monitor the appliance using the SNMP-probe.
 
-To do this, go to https://oversig.ht and navigate to the environment the appliance has been setup for.
-
-You should see the Agent-core there in the list of hosts.
-
-1. Open the host and click on the **Edit host** icon :material-playlist-edit:.
-2. Add the `snmpprobe` in the list of probes.
-3. Open the **Snmpprobe** tab.
-4. Enter `127.0.0.1` as address, leave version (2c) and SNMP Community String (public) to their default settings.
-5. Click on the **Save** button.
-
-You should now see the **Snmpprobe** in the list of probes and the monitoring details. It can take up to five minutes to retrieve a complete dataset.
-
-:partying_face: You did it! InfraSonar is now monitoring your first host.
-
-:material-skip-next: *The next step is to add [credentials](credentials.md) for the probes you want to use.*
+TODO
 

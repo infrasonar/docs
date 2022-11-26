@@ -12,14 +12,14 @@ Create a new virtual machine using these specifications:
 * **Compatibility**: Compatible with: ESXi 6.5 and later VM version 13
 * **Guest OS Family**: Linux
 * **Guest OS Version**: Ubuntu Linux (64-bit) 
-* **CPU**: 2 CPU
+* **CPU**: 1 CPU
 * **Memory**: 2 GB memory
-* **Disk**: 20 GB HDD
+* **Disk**: 16 GB HDD
 * **Name**: infrasonar-appliance
 
 ### Installation steps
 
-Boot from the Ubuntu Server 20.04.3 ISO and then follow these steps:
+Boot from the Ubuntu Server 22.04.1 ISO and then follow these steps:
 
 1. Select your language: **English**.
 2. Keyboard configuration:
@@ -304,7 +304,7 @@ Prior to creating a template the following steps need to be performed:
 
 #### First boot script
 
-The following script is used to run at first boot and sets a random schedule for a daily Infra Sonor update.
+The following script is used to run at first boot and sets a random schedule for a daily InfraSonor update.
 
 ```bash title="/home/sysadmin/init"
 #!/usr/bin/env bash
@@ -351,13 +351,42 @@ See also [this](https://kb.vmware.com/s/article/82229) VMware knowledge base art
 
 Before cloning, run these commands inside the Linux Guest OS:
 
+### First login
+
+
+### first boot
+
+
+#### Change hostname
+
 ```
-sudo -s
-echo -n > /etc/machine-id
-rm /var/lib/dbus/machine-id
-ln -s /etc/machine-id /var/lib/dbus/machine-id
-exit
+#!/bin/bash
+hostnamectl set-hostname "blue"
+echo $?
+hostnamectl set-hostname ""
+echo $?
 ```
+
+
+sudo hostnamectl set-hostname "blue"
+sudo sed -i 's/infrasonar/blue/g' /etc/hosts
+
+
+
+https://www.cyberciti.biz/faq/ubuntu-20-04-lts-change-hostname-permanently/
+
+```
+sudo hostnamectl set-hostname ubuntu-2004-nixcraft
+```
+
+
+TODOR
+
+```bash
+# Expire the sysadmin password enforcing the user to change the password at logon
+passwd -e sysadmin
+```
+
 
 ### Cleanup
 

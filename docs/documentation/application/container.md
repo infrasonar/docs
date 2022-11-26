@@ -1,8 +1,8 @@
-# :material-apps: InfraSonar environments 
+# :material-apps: InfraSonar containers 
 
-A monitored environment often referred to as an environment, is a business or an IT infrastructure monitored using InfraSonar.
+InfraSonor containers are a hierarchial setup of you monitored infrastructure.
 
-As InfraSonar is designed to be used in a multi-tenant setup, environments can be organized in a hierarchy using containers.
+A container can contain monitored assets and/or sub-containers.
 
 On the container level an admin can configure authorization, custom labels, and conditions.
 
@@ -10,38 +10,28 @@ On the container level an admin can configure authorization, custom labels, and 
 
 ### Principles
 
-* A monitored environment is always member of a container.
 * Authorization is inherited to "lower" containers. Inheritance can be "broken" down the chain.
-* Timezones can be configured per environment.
-* A user with the role *admin*:
-    * Can move a container or environment to another container within that user's authorized scope.
-    * Can authorize users on the container.
+* Timezones can be configured per container.
 
 #### InfraSonar hierarchical setup
 
 ``` mermaid
 graph LR
   A[InfraSonar] --> B[container];
-  B -->C[/environment/];
+  B -->C((assets));
   A -->D[container];
   D -->E[container];
   D -->F[container];
-  E -->G[/environment/];
-  F -->H[/environment/];
+  E -->G((assets));
+  F -->H((assets));
   A -->I[container];
-  I -->J[/environment/];
+  I -->J((assets));
   I -->K[container];
   K -->L[container];
-  K -->M[container];
-  M -->N[container];
-  L -->O[/environment/];
-  M -->P[/environment/];
-  M -->Q[/environment/];
-  M -->R[/environment/];
-  N -->S[/environment/];
-  N -->T[/environment/];
+  L -->N[container];
+  L -->O((assets));
+  N -->S((assets));
 ```
-
 
 ??? Example "Hierarchy implementation for a service provider"
 
@@ -51,19 +41,22 @@ graph LR
       B --> C[internal infrastructure]
       B --> D[monitoring only]
       B --> E[managed service]
-      C --> F[/environment/]
+      C --> F((assets))
       D --> customer1[customer 1]
       D --> customer2[customer 2]
-      customer1 --> I[/environment/]
-      customer2 --> J[/environment/]
+      customer1 --> I((assets))
+      customer2 --> J((assets))
       E --> customer3[customer 3]
-      customer3 --> K[/environment/]
+      customer3 --> K((assets))
       E --> customer4[customer 4]
-      customer4 --> L[/environment/]
+      customer4 --> L((assets))
       E --> customer5[customer 5]
-      customer5 --> M[/environment-development/]
-      customer5 --> N[/environment-acceptance/]
-      customer5 --> O[/environment-production/]
+      customer5 --> M[development]
+      customer5 --> N[acceptance]
+      customer5 --> O[production]
+      M --> Q((assets))
+      N --> R((assets))
+      O --> S((assets))
     ```
 
 ## Setup a new environment
@@ -77,10 +70,13 @@ graph LR
 From the container view, you can add a new environment.
 
 <figure markdown>
-  ![InfraSonar add environment](../../images/web_application_add_environment.png){ width="800" }
+  ![InfraSonar add environment](../../images/application_add_container.png){ width="800" }
   <figcaption>InfraSonar add environment</figcaption>
 </figure>
 
-When adding an environment you are asked to specify the timezone for this environment.
-
-*:material-skip-next: The next step is to deploy the InfraSonar [appliance](../collectors/probes/appliance/appliance_deployment.md).*
+1. When you are in asset view you can use the child containers button :material-file-tree: to switch to container view;
+2. Click the add **container button**;
+3. Enter a name for your container;
+4. Select the mode, this is usual **normal**;
+5. Select the **timezone** for this container;
+6. CLick **save**.
