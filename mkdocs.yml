@@ -26,6 +26,7 @@ markdown_extensions:
   - admonition
   - def_list
   - md_in_html
+  - footnotes
   - pymdownx.highlight
   - pymdownx.superfences:
       custom_fences:
@@ -49,10 +50,13 @@ nav:
           - What is InfraSonar: documentation/introduction/what_is_Infra_Sonar.md
           - Platform: documentation/introduction/platform.md
           - Contact us: documentation/introduction/contact_us.md
+          - Terminology: documentation/introduction/terminology.md
       - Collectors:
+          - documentation/collectors/index.md
           - Agents:
               - documentation/collectors/agents/index.md
               -  Docker: documentation/collectors/agents/docker.md
+              -  Microsoft Windows: documentation/collectors/agents/microsoft_windows.md
           - Probes:
               - documentation/collectors/probes/index.md
               - Appliance:
@@ -71,14 +75,18 @@ nav:
               - TCP: documentation/collectors/probes/tcp.md
               - VMware: documentation/collectors/probes/vmware.md
               - SMTP: documentation/collectors/probes/smtp.md
-      - Web application:
-          - Environments: documentation/web_application/environment.md
-          - Hosts: documentation/web_application/assets.md
-          - Labels: documentation/web_application/labels.md
-          - Conditions: documentation/web_application/conditions.md
-          - Subscriptions: documentation/web_application/subscriptions.md
-          - Tasks: documentation/web_application/tasks.md
-          - User management: documentation/web_application/user_management.md
+          - Services:
+              - documentation/collectors/services/index.md          
+      - Application:
+          - Containers: documentation/application/container.md
+          - Assets: documentation/application/assets.md
+          - Modes: documentation/application/modes.md
+          - Labels: documentation/application/labels.md
+          - Conditions: documentation/application/conditions.md
+          - Alerts: documentation/application/alerts.md
+          - Notifications: documentation/application/notifications.md
+          - Rules: documentation/application/rules.md
+          - User management: documentation/application/user_management.md
       - Guides:
           - Migration: documentation/guides/migration.md
           - Remote support: documentation/guides/remote_support.md
@@ -94,13 +102,13 @@ nav:
   - API reference:
       - Overview: api/overview.md
       - Authentication: api/authentication.md
-      - UUID: api/uuid.md
       - Keystrings: api/keystring.md
       - Asset:
         - Query asset: api/asset/query.md
         - Query asset alerts: api/asset/query-alerts.md
         - Query asset Id: api/asset/query-id.md
         - Insert check data: api/asset/insert-check-data.md
+        - Set asset mode: api/asset/set-mode.md
         - Add label to asset: api/asset/add-label.md
         - Remove collector from asset: api/asset/remove-collector.md
         - Remove label from asset: api/asset/remove-label.md

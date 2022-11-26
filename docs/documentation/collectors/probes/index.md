@@ -1,4 +1,4 @@
-# :fontawesome-solid-magnifying-glass: Probes
+# :material-radar: Probes
 
 InfraSonar uses probes to retrieve data from monitored assets (hosts).
 
@@ -25,7 +25,7 @@ The Agent-core also acts as a communication gateway. Data retrieved by the probe
 
 ``` mermaid
 graph LR
-  probe[Probe] --> | TCP 7211 | Agentcore[Agent-core] --> | HTTPS 443 | infrasonarcloud[Infra Solar Cloud Platform];
+  probe[Probe] --> Agentcore[Agent-core] --> infrasonarcloud[InfraSonar Cloud Platform];
 ```
 
 Because probes usually run in the same Docker network as the Agent-core, they can easily connect to it.
@@ -36,20 +36,3 @@ Probes are deployed as :material-docker: Docker container using [docker compose]
 
 Probe behavior, such as setting the log level, can be configured using environment variables in the `/etc/infrasonar/docker-compose.yml` file.
 The usage of this file is outlined [here](appliance/appliance_docker_compose.md)
-
-## Operational
-
-### Removing an Agent-core.
-
-When an Agent-core is decommissioned, all hosts monitored by it need to be moved to another Agent-core.
-
-The UI does not allow an Agent-core to be removed if there are still hosts attached to it.
-
-
-### Reload probe configuration
-
-An InfraSonar admin can force a reload of the local configuration files. For example, when the local configuration is changed. This can be done by adding a file named `reload` inside the configuration folder. For example:
-
-```bash
-sudo touch /etc/infrasonar/config/OsWmicProbe/reload
-```

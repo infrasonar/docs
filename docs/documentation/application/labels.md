@@ -16,28 +16,18 @@ graph LR
   label --- host3[Host];
 ```
 
-*Labels "glue" conditions onto hosts.*
+!!! tip "Glue"
+
+    Labels "glue" conditions onto hosts.
 
 ## How to use
 
 Labels can be assigned to hosts either by :material-playlist-edit: editing a host or by selecting one or more hosts and using the **action menu**.
 
 <figure markdown>
-  ![Action menu](../../images/web_application_actions.png)
+  ![Action menu](../../images/application_actions.png)
   <figcaption>Action menu in action</figcaption>
 </figure>
-
-
-Using the **action menu** it is possible to add and remove a label at a scheduled time and/or for a specific duration.
-
-The screenshot below shows the maintenance label being added automatically at 01:00 on may 5th 2022 and being removed 4 hours later.
-
-<figure markdown>
-  ![Label schedule](../../images/web_application_labels_schedule.png){ width="400"}
-  <figcaption>Label schedule</figcaption>
-</figure>
-
-You can verify the status of scheduled tasks in the ::material-check-circle-outline [tasks menu](tasks.md).
 
 ## Deep dive
 
@@ -58,7 +48,7 @@ Class                          | Description
 InfraSonar administrators can create custom labels for an environment.
 
 <figure markdown>
-  ![InfraSonar add label](../../images/web_application_add_label.png){ width="800" }
+  ![InfraSonar add label](../../images/application_add_label.png){ width="800" }
   <figcaption>InfraSonar add label</figcaption>
 </figure>
 
