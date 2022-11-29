@@ -1,6 +1,6 @@
-# :material-web: HTTP Probe
+![HTTP-Probe](../../../images/application_probe_http.png){ width="300" align=right}
 
-## Features
+# :material-web: HTTP Probe
 
 The HTTP probe sends an HTTP(s) request to an [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) and measures its roundtrip time.
 
@@ -13,18 +13,18 @@ Property        | Description
 URI             | URI of the website you want to monitor
 Timeout         | Timeout in seconds should be a value between 0 and 240. The default timeout is 10.0
 Verify SSL      | If turned off, the check ignores invalid certificates; when on, the URI must have a valid certificate. Nots, this is only applicable for HTTPS URI. The default is off.
+With payload    | Retrieves the payload, bare in mind the payload is limited to 500 Kb
 Allow redirects | When turned on, redirects are followed.
 
 !!! Tip Redirects
     When monitoring cloud services, enable **Allow redirects** as these services heavily rely on http redirects.
 
 
-## Operational
+## Check specifics
 
 ### HTTP Status codes
 
 See [rfc9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes) or the [List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) on Wikipedia for more detailed information.
-
 
 code | class         | code Meaning
 -----|---------------|-------------
