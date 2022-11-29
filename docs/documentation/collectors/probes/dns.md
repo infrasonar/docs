@@ -210,33 +210,75 @@ Example:
 
 ## Best practices
 
+### Internal vs External response
+
+Setup an asset to monitor your internal and external DNS response.
+
+This can easily be done by monitoring for example `google.com` on your internal DNS servers and Google DNS servers, for IPv4: `8.8.8.8` and/or `8.8.4.4`  and for IPv6: `2001:4860:4860::8888` and/or `2001:4860:4860::8844`.
+
+The average DNS lookup time is between 20 and 120 milliseconds. Anything between that and under is generally considered very good.
+
 ### Microsoft Active Directory
 
 [source](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/verify-srv-dns-records-have-been-created)
 
-Setup a DNS probe to monitor `_ldap._tcp.dc._msdcs.<Domain_Name>` on each DNS server on your domain, where <Domain_Name> is the name of your domain.
+Setup a DNS probe to monitor for Microsoft Active Directory specific DNS entries for each DNS server in your forest / domain.
 
-#### SRV Records Registered by Net Logon
+!!! note inline end "Legend"
+    * **Domain_Name** is the name of your domain.
+    * **SiteName**, name of your Active Directory Site
+    * **DnsForestName**, name of your DNS Forest.
 
-[source](https://social.technet.microsoft.com/wiki/contents/articles/7608.srv-records-registered-by-net-logon.aspx)
+The following SRV records are registered by Net Logon:
 
+`_ldap._tcp.<Domain_Name>.`                                
+:   Allows a client to locate servers running the LDAP service in the domain of **Domain_Name**.
 
-SRV record                                                   | Description
--------------------------------------------------------------|--------------------
-_ldap._tcp.DnsDomainName.                                    | Allows a client to locate servers running the LDAP service in the domain of DnsDomainName.
-_ldap._tcp. SiteName._sites.<br>DnsDomainName.               | Allows a client to locate servers running the LDAP service in a domain in a site SiteName DnsDomainName. SiteName relative file name, which is stored in the Configuration container in Active Directory.
-_ldap._tcp.dc._msdcs.DnsDomainName.                          | Allows a client to find a domain controller in the domain DnsDomainName. All DC register this SRV record.
-_ldap._tcp. SiteName.<bn>_sites.dc._msdcs.DnsDomainName.     | Allows a client to find a domain controller in the domain in site SiteName DnsDomainName. All DC register this SRV record.
-_ldap._tcp.pdc._msdcs.DnsDomainName.                         | Allows a client to find a domain PDC DnsDomainName. Only PDC server registers this SRV record.
-_ldap._tcp.gc._msdcs.DnsForestName.                          | Allows a client to find a DC in the forest DnsForestName. Only GC servers register this SRV record.
-_ldap._tcp. SiteName.<br>_sites.gc._msdcs.<br>DnsForestName. | Allows a client to find a GC in the forest Only GC server DnsForestName. owned by this forest register this SRV record
-_gc._tcp.DnsForestName.                                      | Allows a client to find a GC in the domain. Only GC servers owned by this forest DnsForestName register this SRV record.
-_gc._tcp.SiteName._sites.DnsForestName.                      | Allows a client to find a GC in this forest site SiteName DnsForestName. Only GC servers owned by this forest DnsForestName register this SRV record.
-_ldap._tcp.<br>DomainGuid.domains._msdcs.<br>DnsForestName.  | Allows customers to find the DC GUID. A GUID is a 128-bit unique index. Admits when DnsDomainName DnsForestName and changed.
-_kerberos._tcp.<br>DnsDomainName<br>.                        | Allows clients to find a Kerberos KDC in that domain: DnsDomainName. All DC register this SRV record.
-_kerberos._udp.<br>DnsDomainName<br>.                        | Same as _kerberos ._tcp. DnsDomainName only over UDP
-_kerberos._tcp.SiteName._sites.<br>DnsDomainName.            | Allows clients to find a Kerberos KDC in that domain: DnsDomainName site SiteName. All DC register this SRV record.
-_kerberos._tcp.dc._msdcs.DnsDomainName.                      | Allows clients to find a DC running a Kerberos KDC's role in that domain: DnsDomainName. All DC with the KDC log this SRV record.
-_kerberos.tcp.SiteName._sites.dc._msdcs.<br>DnsDomainName.   | Allows clients to find a DC running a Kerberos KDC's role in that domain: DnsDomainName site SiteName. All DC with the KDC log this SRV record.
-_kpasswd._tcp.DnsDomainName.                                 | Kerberos Password Change allows you to search for current domain. All kerberos KDC DC (c) role of the register this SRV record
-_kpasswd._udp.DnsDomainName.                                 | Same as _kpassword ._tcp. DnsDomainName only over UDP
+`_ldap._tcp.<SiteName>._sites.<Domain_Name>.`              
+:   Allows a client to locate servers running the LDAP service in a domain in a site **SiteName** **Domain_Name**. **SiteName** relative file name, which is stored in the Configuration container in Active Directory.
+
+`_ldap._tcp.dc._msdcs.<Domain_Name>.`                      
+:   Allows a client to find a domain controller in the domain **Domain_Name**. All DC register this SRV record.
+
+`_ldap._tcp. <SiteName>._sites.dc._msdcs.<Domain_Name>.`   
+:   Allows a client to find a domain controller in the domain in site **SiteName** **Domain_Name**. All DC register this SRV record.
+
+`_ldap._tcp.pdc._msdcs.<Domain_Name>.`                     
+:   Allows a client to find a domain PDC **Domain_Name**. Only PDC server registers this SRV record.
+
+`_ldap._tcp.gc._msdcs.<DnsForestName>.`                    
+:   Allows a client to find a DC in the forest **DnsForestName**. Only GC servers register this SRV record.
+
+`_ldap._tcp. <SiteName>._sites.gc._msdcs.<DnsForestName>.` 
+:   Allows a client to find a GC in the forest Only GC server **DnsForestName** owned by this forest register this SRV record
+
+`_gc._tcp.<DnsForestName>.`                                
+:   Allows a client to find a GC in the domain. Only GC servers owned by this forest **DnsForestName** register this SRV record.
+
+`_gc._tcp.<SiteName>._sites.<DnsForestName>.`              
+:   Allows a client to find a GC in this forest site **SiteName** **DnsForestName**. Only GC servers owned by this forest **DnsForestName** register this SRV record.
+
+`_ldap._tcp.DomainGuid.domains._msdcs.<DnsForestName>.`    
+:   Allows customers to find the DC GUID. A GUID is a 128-bit unique index. Admits when **Domain_Name** **DnsForestName** and changed.
+
+`_kerberos._tcp.<Domain_Name>.`                            
+:   Allows clients to find a Kerberos KDC in that domain: **Domain_Name**. All DC register this SRV record.
+
+`_kerberos._udp.<Domain_Name>.`                            
+:   Same as _kerberos `._tcp.<Domain_Name>` only over UDP
+
+`_kerberos._tcp.<SiteName>._sites.<Domain_Name>.`          
+:   Allows clients to find a Kerberos KDC in that domain: **Domain_Name** site **SiteName**. All DC register this SRV record.
+
+`_kerberos._tcp.dc._msdcs.<Domain_Name>.`                  
+:   Allows clients to find a DC running a Kerberos KDC's role in that domain: **Domain_Name**. All DC with the KDC log this SRV record.
+
+`_kerberos.tcp.<SiteName>._sites.dc._msdcs.<Domain_Name>.` 
+:   Allows clients to find a DC running a Kerberos KDC's role in that domain: **Domain_Name** site **SiteName**. All DC with the KDC log this SRV record.
+
+`_kpasswd._tcp.<Domain_Name>.`                             
+:   Kerberos Password Change allows you to search for current domain. All kerberos KDC DC (c) role of the register this SRV record
+
+`_kpasswd._udp.<Domain_Name>.`                             
+
+:   Same as `_kpassword._tcp.<Domain_Name>` only over UDP
