@@ -870,22 +870,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#microsoft-active-directory" class="md-nav__link">
-    Microsoft Active Directory
-  </a>
-  
-    <nav class="md-nav" aria-label="Microsoft Active Directory">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#srv-records-registered-by-net-logon" class="md-nav__link">
-    SRV Records Registered by Net Logon
+  <a href="#internal-vs-external-response" class="md-nav__link">
+    Internal vs External response
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#microsoft-active-directory" class="md-nav__link">
+    Microsoft Active Directory
+  </a>
   
 </li>
         
@@ -2358,22 +2352,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#microsoft-active-directory" class="md-nav__link">
-    Microsoft Active Directory
-  </a>
-  
-    <nav class="md-nav" aria-label="Microsoft Active Directory">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#srv-records-registered-by-net-logon" class="md-nav__link">
-    SRV Records Registered by Net Logon
+  <a href="#internal-vs-external-response" class="md-nav__link">
+    Internal vs External response
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#microsoft-active-directory" class="md-nav__link">
+    Microsoft Active Directory
+  </a>
   
 </li>
         
@@ -2671,89 +2659,60 @@
 </tbody>
 </table>
 <h2 id="best-practices">Best practices</h2>
+<h3 id="internal-vs-external-response">Internal vs External response</h3>
+<p>Setup an asset to monitor your internal and external DNS response.</p>
+<p>This can easily be done by monitoring for example <code>google.com</code> on your internal DNS servers and Google DNS servers, for IPv4: <code>8.8.8.8</code> and/or <code>8.8.4.4</code>  and for IPv6: <code>2001:4860:4860::8888</code> and/or <code>2001:4860:4860::8844</code>.</p>
+<p>The average DNS lookup time is between 20 and 120 milliseconds. Anything between that and under is generally considered very good.</p>
 <h3 id="microsoft-active-directory">Microsoft Active Directory</h3>
 <p><a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/verify-srv-dns-records-have-been-created">source</a></p>
-<p>Setup a DNS probe to monitor <code>_ldap._tcp.dc._msdcs.&lt;Domain_Name&gt;</code> on each DNS server on your domain, where <Domain_Name> is the name of your domain.</p>
-<h4 id="srv-records-registered-by-net-logon">SRV Records Registered by Net Logon</h4>
-<p><a href="https://social.technet.microsoft.com/wiki/contents/articles/7608.srv-records-registered-by-net-logon.aspx">source</a></p>
-<table>
-<thead>
-<tr>
-<th>SRV record</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>_ldap._tcp.DnsDomainName.</td>
-<td>Allows a client to locate servers running the LDAP service in the domain of DnsDomainName.</td>
-</tr>
-<tr>
-<td>_ldap._tcp. SiteName._sites.<br>DnsDomainName.</td>
-<td>Allows a client to locate servers running the LDAP service in a domain in a site SiteName DnsDomainName. SiteName relative file name, which is stored in the Configuration container in Active Directory.</td>
-</tr>
-<tr>
-<td>_ldap._tcp.dc._msdcs.DnsDomainName.</td>
-<td>Allows a client to find a domain controller in the domain DnsDomainName. All DC register this SRV record.</td>
-</tr>
-<tr>
-<td>_ldap._tcp. SiteName.<bn>_sites.dc._msdcs.DnsDomainName.</td>
-<td>Allows a client to find a domain controller in the domain in site SiteName DnsDomainName. All DC register this SRV record.</td>
-</tr>
-<tr>
-<td>_ldap._tcp.pdc._msdcs.DnsDomainName.</td>
-<td>Allows a client to find a domain PDC DnsDomainName. Only PDC server registers this SRV record.</td>
-</tr>
-<tr>
-<td>_ldap._tcp.gc._msdcs.DnsForestName.</td>
-<td>Allows a client to find a DC in the forest DnsForestName. Only GC servers register this SRV record.</td>
-</tr>
-<tr>
-<td>_ldap._tcp. SiteName.<br>_sites.gc._msdcs.<br>DnsForestName.</td>
-<td>Allows a client to find a GC in the forest Only GC server DnsForestName. owned by this forest register this SRV record</td>
-</tr>
-<tr>
-<td>_gc._tcp.DnsForestName.</td>
-<td>Allows a client to find a GC in the domain. Only GC servers owned by this forest DnsForestName register this SRV record.</td>
-</tr>
-<tr>
-<td>_gc._tcp.SiteName._sites.DnsForestName.</td>
-<td>Allows a client to find a GC in this forest site SiteName DnsForestName. Only GC servers owned by this forest DnsForestName register this SRV record.</td>
-</tr>
-<tr>
-<td>_ldap._tcp.<br>DomainGuid.domains._msdcs.<br>DnsForestName.</td>
-<td>Allows customers to find the DC GUID. A GUID is a 128-bit unique index. Admits when DnsDomainName DnsForestName and changed.</td>
-</tr>
-<tr>
-<td>_kerberos._tcp.<br>DnsDomainName<br>.</td>
-<td>Allows clients to find a Kerberos KDC in that domain: DnsDomainName. All DC register this SRV record.</td>
-</tr>
-<tr>
-<td>_kerberos._udp.<br>DnsDomainName<br>.</td>
-<td>Same as _kerberos ._tcp. DnsDomainName only over UDP</td>
-</tr>
-<tr>
-<td>_kerberos._tcp.SiteName._sites.<br>DnsDomainName.</td>
-<td>Allows clients to find a Kerberos KDC in that domain: DnsDomainName site SiteName. All DC register this SRV record.</td>
-</tr>
-<tr>
-<td>_kerberos._tcp.dc._msdcs.DnsDomainName.</td>
-<td>Allows clients to find a DC running a Kerberos KDC's role in that domain: DnsDomainName. All DC with the KDC log this SRV record.</td>
-</tr>
-<tr>
-<td>_kerberos.tcp.SiteName._sites.dc._msdcs.<br>DnsDomainName.</td>
-<td>Allows clients to find a DC running a Kerberos KDC's role in that domain: DnsDomainName site SiteName. All DC with the KDC log this SRV record.</td>
-</tr>
-<tr>
-<td>_kpasswd._tcp.DnsDomainName.</td>
-<td>Kerberos Password Change allows you to search for current domain. All kerberos KDC DC (c) role of the register this SRV record</td>
-</tr>
-<tr>
-<td>_kpasswd._udp.DnsDomainName.</td>
-<td>Same as _kpassword ._tcp. DnsDomainName only over UDP</td>
-</tr>
-</tbody>
-</table>
+<p>Setup a DNS probe to monitor for Microsoft Active Directory specific DNS entries for each DNS server in your forest / domain.</p>
+<div class="admonition note inline end">
+<p class="admonition-title">Legend</p>
+<ul>
+<li><strong>Domain_Name</strong> is the name of your domain.</li>
+<li><strong>SiteName</strong>, name of your Active Directory Site</li>
+<li><strong>DnsForestName</strong>, name of your DNS Forest.</li>
+</ul>
+</div>
+<p>The following SRV records are registered by Net Logon:</p>
+<dl>
+<dt><code>_ldap._tcp.&lt;Domain_Name&gt;.</code></dt>
+<dd>Allows a client to locate servers running the LDAP service in the domain of <strong>Domain_Name</strong>.</dd>
+<dt><code>_ldap._tcp.&lt;SiteName&gt;._sites.&lt;Domain_Name&gt;.</code></dt>
+<dd>Allows a client to locate servers running the LDAP service in a domain in a site <strong>SiteName</strong> <strong>Domain_Name</strong>. <strong>SiteName</strong> relative file name, which is stored in the Configuration container in Active Directory.</dd>
+<dt><code>_ldap._tcp.dc._msdcs.&lt;Domain_Name&gt;.</code></dt>
+<dd>Allows a client to find a domain controller in the domain <strong>Domain_Name</strong>. All DC register this SRV record.</dd>
+<dt><code>_ldap._tcp. &lt;SiteName&gt;._sites.dc._msdcs.&lt;Domain_Name&gt;.</code></dt>
+<dd>Allows a client to find a domain controller in the domain in site <strong>SiteName</strong> <strong>Domain_Name</strong>. All DC register this SRV record.</dd>
+<dt><code>_ldap._tcp.pdc._msdcs.&lt;Domain_Name&gt;.</code></dt>
+<dd>Allows a client to find a domain PDC <strong>Domain_Name</strong>. Only PDC server registers this SRV record.</dd>
+<dt><code>_ldap._tcp.gc._msdcs.&lt;DnsForestName&gt;.</code></dt>
+<dd>Allows a client to find a DC in the forest <strong>DnsForestName</strong>. Only GC servers register this SRV record.</dd>
+<dt><code>_ldap._tcp. &lt;SiteName&gt;._sites.gc._msdcs.&lt;DnsForestName&gt;.</code></dt>
+<dd>Allows a client to find a GC in the forest Only GC server <strong>DnsForestName</strong> owned by this forest register this SRV record</dd>
+<dt><code>_gc._tcp.&lt;DnsForestName&gt;.</code></dt>
+<dd>Allows a client to find a GC in the domain. Only GC servers owned by this forest <strong>DnsForestName</strong> register this SRV record.</dd>
+<dt><code>_gc._tcp.&lt;SiteName&gt;._sites.&lt;DnsForestName&gt;.</code></dt>
+<dd>Allows a client to find a GC in this forest site <strong>SiteName</strong> <strong>DnsForestName</strong>. Only GC servers owned by this forest <strong>DnsForestName</strong> register this SRV record.</dd>
+<dt><code>_ldap._tcp.DomainGuid.domains._msdcs.&lt;DnsForestName&gt;.</code></dt>
+<dd>Allows customers to find the DC GUID. A GUID is a 128-bit unique index. Admits when <strong>Domain_Name</strong> <strong>DnsForestName</strong> and changed.</dd>
+<dt><code>_kerberos._tcp.&lt;Domain_Name&gt;.</code></dt>
+<dd>Allows clients to find a Kerberos KDC in that domain: <strong>Domain_Name</strong>. All DC register this SRV record.</dd>
+<dt><code>_kerberos._udp.&lt;Domain_Name&gt;.</code></dt>
+<dd>Same as _kerberos <code>._tcp.&lt;Domain_Name&gt;</code> only over UDP</dd>
+<dt><code>_kerberos._tcp.&lt;SiteName&gt;._sites.&lt;Domain_Name&gt;.</code></dt>
+<dd>Allows clients to find a Kerberos KDC in that domain: <strong>Domain_Name</strong> site <strong>SiteName</strong>. All DC register this SRV record.</dd>
+<dt><code>_kerberos._tcp.dc._msdcs.&lt;Domain_Name&gt;.</code></dt>
+<dd>Allows clients to find a DC running a Kerberos KDC's role in that domain: <strong>Domain_Name</strong>. All DC with the KDC log this SRV record.</dd>
+<dt><code>_kerberos.tcp.&lt;SiteName&gt;._sites.dc._msdcs.&lt;Domain_Name&gt;.</code></dt>
+<dd>Allows clients to find a DC running a Kerberos KDC's role in that domain: <strong>Domain_Name</strong> site <strong>SiteName</strong>. All DC with the KDC log this SRV record.</dd>
+<dt><code>_kpasswd._tcp.&lt;Domain_Name&gt;.</code></dt>
+<dd>Kerberos Password Change allows you to search for current domain. All kerberos KDC DC (c) role of the register this SRV record</dd>
+<dt><code>_kpasswd._udp.&lt;Domain_Name&gt;.</code>                             </dt>
+<dd>
+<p>Same as <code>_kpassword._tcp.&lt;Domain_Name&gt;</code> only over UDP</p>
+</dd>
+</dl>
 
 
 
