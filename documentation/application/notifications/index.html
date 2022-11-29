@@ -2093,6 +2093,13 @@
 
 <h1 id="notifications">Notifications</h1>
 <p>Notification are used to notify InfraSonar users of issues with the monitoring platform.</p>
+<p>Notifications offer a clear distinction between actual "Alerts" and when monitoring is failing.</p>
+<p>Notifications auto-close when the issue is resolved, users can't close a notification only the system can once the issue is resolved. 
+As such all notifications should be handled as an indication that something is wrong with monitoring.</p>
+<div class="admonition tip">
+<p class="admonition-title">Good to known</p>
+<p>Notifications are not the result of a condition. The only notifications which are raised by incoming data, are the check errors. These are not conditions but errors which directly result in a notification.</p>
+</div>
 
 
 
