@@ -208,9 +208,6 @@ Example:
 -----------------------------------------|-----------
 `infrasonar.com`                         | `ns-cloud-e1.googledomains.com. cloud-dns-hostmaster.google.com. 15 21600 3600 259200 300`
 
-* FQDN: `infrasonar.com`
-* Result: `ns-cloud-e1.googledomains.com. cloud-dns-hostmaster.google.com. 15 21600 3600 259200 300`
-
 ## Best practices
 
 ### Microsoft Active Directory
