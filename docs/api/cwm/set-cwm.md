@@ -32,7 +32,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X POST 'https://api.infrasonar.com/container/123/set-cwm-company' \
+    -X POST 'https://api.infrasonar.com/container/123/set-cwm' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
