@@ -31,7 +31,7 @@ docker run \
   -v infraSonarData:/data \
   -e TOKEN="<<agent token>>" \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  ghcr.io/infrasonar/docker-agent:unstable
+  ghcr.io/infrasonar/docker-agent
 ```
 
 *Deploys the docker agent using the host network and thus automatically uses the system hostname:*
@@ -43,7 +43,7 @@ docker run \
   -v infraSonarData:/data \
   -e TOKEN="<<agent token>>" \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  ghcr.io/infrasonar/docker-agent:unstable
+  ghcr.io/infrasonar/docker-agent
 ```
 
 ### docker-compose
@@ -63,7 +63,7 @@ services:
     logging:
       options:
         max-size: 5m
-    image: ghcr.io/infrasonar/docker-agent:unstable
+    image: ghcr.io/infrasonar/docker-agent
     environment:
       TOKEN: "<<agent token>>"
     volumes:
