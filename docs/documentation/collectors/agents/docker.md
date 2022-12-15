@@ -22,7 +22,7 @@ Upon first run the Docker agents registers itself as an asset in InfraSonar, to 
 
 ### Docker command
 
-*Deploys the docker agent using a bridged network and names the hostname  to the system hostname:*
+*Deploys the docker agent using a bridged network and names the hostname to the system hostname:*
 
 ```bash
 docker run \
