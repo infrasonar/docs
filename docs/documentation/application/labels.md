@@ -1,10 +1,15 @@
 # :material-label: Labels
 
+
 ## Purpose
 
-Labels can be added to hosts to group and identify them quickly.
+**Grouping**, labels can be added to hosts to group and identify them quickly.
 
-Labels are also used to control which conditions are active and which conditions should be suppressed. A label can enforce multiple conditions on a host and is not bound to a specific probe.
+**Apply conditions**, Labels are also used to control which conditions are active.
+
+!!! tip inline end "Glue"
+
+    Labels "glue" conditions onto hosts.
 
 ``` mermaid
 graph LR
@@ -16,9 +21,7 @@ graph LR
   label --- host3[Host];
 ```
 
-!!! tip "Glue"
 
-    Labels "glue" conditions onto hosts.
 
 ## How to use
 

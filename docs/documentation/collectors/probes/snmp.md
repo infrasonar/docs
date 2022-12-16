@@ -1,27 +1,49 @@
 # :material-upload-network-outline: SNMP
 
-## Features
-
 > "Simple Network Management Protocol is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behavior." - _[wikipedia](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)_
 
-The SNMP probe tries to discover which MIB's are accessible and will configure itself to monitor these without additional configuration.
+## Features
 
-## Configuration
+InfraSonar supports retrieving data from remote assets using the *SNMPv1*, *SNMPv2c*, and *SNMPv3* protocol.
 
-### Probe configuration
+The SNMP probe consists of a base probe and various vendor specific add-ons:
 
-Adding a host requires access to SNMP from the InfraSonar appliance running the SNMP probe and a community string.
+* APC PDU
+* APC UPS
+* Dell
+* HP Integrated Lights-Out (iLO)
+* HP ProCurve 
+* Synology
 
-InfraSonar supports SNMPv1, SNMPv2c, and SNMPv3.
+## Deployment
 
-!!! note
-    SNMPv3 requires a credentials file as described [here](appliance/credentials.md).
+We assume you deployed the SNMP probe as part of our appliance implementation.
 
-### Enable SNMP
+## Prerequisites
+
+To monitor an asset using SNMP there ar two things two setup on the monitored asset:
+
+**Access**
+
+:   Most SNMP implementation require you to add the monitoring IP as an authorized host. In our appliance based setup this is usually the IP address used by the monitoring appliance.
+
+    When you deploy multiple appliances be aware to configure all IP addresses on the SNMP monitored assets.
+
+    Also note Adding a host requires access to SNMP (udp/161) from the InfraSonar appliance running the SNMP probe.
+
+**Authentication**
+:   *SNMPv1* and *SNMPv2c* versions "plain" community string for authentication; *SNMPv3* is more secure but not supported on all devices.
+
+    The community string or credentials should be stored on the appliance as described [here](appliance/credentials.md#snmp).
+
+    !!! note "default configuration"
+        When **no** configuration file is specified the probe falls back **SNMPv2c** and used the community string `public`.
+
+## How to configure SNMP
 
 The SNMP probe requires SNMP to be configured on devices you wish to monitor. The next chapter describes how to configure SNMP on some standard devices.
 
-#### Debian based systems
+### Debian based systems
 
 The first step is to install `snmpd` using`apt`:
 
@@ -81,7 +103,7 @@ Jul 29 10:37:24 donkey-kong systemd[1]: Started Simple Network Management Protoc
 Jul 29 10:37:24 donkey-kong snmpd[14394]: NET-SNMP version 5.7.3
 ```
 
-#### CentOS
+### CentOS
 
 You can find a guide on how to install SNMP on CentOS [here](https://www.liquidweb.com/kb/how-to-install-and-configure-snmp-on-centos/).
 
@@ -118,9 +140,9 @@ Start the agents:
 /etc/init.d/snmpd restart
 ```
 
-#### VWware
+### VWware
 
-#####  Virtual center appliance
+####  Virtual center appliance
 
 The VMware virtual center appliance can be configured to be monitored using SNMP.
 
@@ -140,7 +162,7 @@ service snmpd status
 ```
 5. Add the SNMP-probe in InfraSonar.
 
-##### ESXi
+#### ESXi
 
 For the monitoring appliance to query the ESXi host, the following modifications must be made to the `/etc/snmp/snmpd.conf` file. This can be achieved by logging on to the ESXi hosts using SSH.
 

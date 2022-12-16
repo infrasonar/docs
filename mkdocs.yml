@@ -73,7 +73,6 @@ nav:
               - Appliance:
                   - Deployment: documentation/collectors/probes/appliance/appliance_deployment.md
                   - Credentials: documentation/collectors/probes/appliance/credentials.md
-                  - Agent-core: documentation/collectors/probes/agentcore.md
               - DNS: documentation/collectors/probes/dns.md
               - HTTP: documentation/collectors/probes/http.md
               - Microsoft Azure: documentation/collectors/probes/microsoft_azure.md
@@ -84,7 +83,8 @@ nav:
               - Pure storage: documentation/collectors/probes/pure_probe.md
               - SNMP: documentation/collectors/probes/snmp.md
               - TCP: documentation/collectors/probes/tcp.md
-              - VMware: documentation/collectors/probes/vmware.md
+              - VMware ESX: documentation/collectors/probes/vmware-esx.md
+              - VMware vCenter: documentation/collectors/probes/vmware-vcenter.md
               - SMTP: documentation/collectors/probes/smtp.md
           - Services:
               - documentation/collectors/services/index.md          
@@ -97,6 +97,7 @@ nav:
           - Alerts: documentation/application/alerts.md
           - Notifications: documentation/application/notifications.md
           - Rules: documentation/application/rules.md
+          - Agentcores: documentation/application/agentcores.md
           - User management: documentation/application/user_management.md
       - Guides:
           - Migration: documentation/guides/migration.md

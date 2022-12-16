@@ -1,6 +1,6 @@
 # Modes
 
-Modes can be used to temporary change the monitoring operation on a container or an asset or group of assets.
+Modes can be used to temporary change the monitoring operation on a **container** or an **asset** or **group of assets**.
 
 We identify the following modes within the InfraSonar application:
 

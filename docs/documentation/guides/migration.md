@@ -21,22 +21,22 @@ InfraSonar support ensures a hassle-free transition by aligning all parties invo
 
 This step involves transiting of the InfraSonar implementation inside the monitored environment; in most cases, this is the monitoring [appliance](../collectors/probes/appliance/appliance_deployment.md).
 
-As this appliance is potentially used to provide other services within the monitored environment, we advise starting with setting up a new appliance (with the [Agent-core](../collectors/probes/agentcore.md) and probes) and transitioning the monitored host to this new Agent-core.
-This process is similar to decommissioning an Agent-core.
+As this appliance is potentially used to provide other services within the monitored environment, we advise starting with setting up a new appliance (with the [agentcore](../collectors/probes/agentcore.md) and probes) and transitioning the monitored host to this new agentcore.
+This process is similar to decommissioning an agentcore.
 
 We do not recommend a "rip and replace" scenario, as this is not beneficial for the monitored environment.
 
 If the leaving and receiving parties are discussing terms and conditions, we recommend the following first:
 
-1. Deploy a new Agent-core infrastructure.
+1. Deploy a new agentcore infrastructure.
 2. Perform a hierarchy transition.
-3. Move the monitored hosts to the new Agent-core infrastructure.
-4. Remove the "old" Agent-cores from InfraSonar.
+3. Move the monitored hosts to the new agentcore infrastructure.
+4. Remove the "old" agentcores from InfraSonar.
 5. Decommission and remove leaving party appliance(s).
 
 These steps can be performed without any access to the appliance(s) of the leaving party.
 
-Suppose the leaving party demands the appliance to be removed prior to the hierarchy transition. In that case, InfraSonar monitoring will most likely be disturbed when the orphaned hosts are transitioned to the new Agent-core(s).
+Suppose the leaving party demands the appliance to be removed prior to the hierarchy transition. In that case, InfraSonar monitoring will most likely be disturbed when the orphaned hosts are transitioned to the new agentcore(s).
 
 We strongly encourage a gradual and joint approach, as this ensures uninterrupted monitoring services of the monitored environment.
 

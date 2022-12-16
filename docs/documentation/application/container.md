@@ -59,19 +59,18 @@ graph LR
       O --> S((assets))
     ```
 
-## Setup a new environment
+## Setup a new container
 
 !!! note First time users
 
     When you are new to InfraSonar and sign in for the first time, you will see the message:
-    > Welcome to InfraSonar! It appears that you are not yet a member of an InfraSonar environment. If you are a member of an organization that uses InfraSonar, ask for permission from an authorized person to add you to the appropriate environment.
-    At the moment, it is impossible to create the first environment without our assistance, please [contact us](../introduction/contact_us.md) so we can set up an empty environment for you.
+    > Welcome to InfraSonar! It appears that you are not yet a member of an InfraSonar container. If you are a member of an organization that uses InfraSonar, ask for permission from an authorized person to add you to the relevant container. Otherwise, request a free demo via the [website](https://infrasonar.com/support)!
 
-From the container view, you can add a new environment.
+From the container view, you can add a new container.
 
 <figure markdown>
-  ![InfraSonar add environment](../../images/application_add_container.png){ width="800" }
-  <figcaption>InfraSonar add environment</figcaption>
+  ![InfraSonar add container](../../images/application_add_container.png){ width="800" }
+  <figcaption>InfraSonar add container</figcaption>
 </figure>
 
 1. When you are in asset view you can use the child containers button :material-file-tree: to switch to container view;

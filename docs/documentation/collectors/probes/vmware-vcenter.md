@@ -1,4 +1,4 @@
-# VMware
+# :simple-vmware: VMware vCenter
 
 ## Features
 

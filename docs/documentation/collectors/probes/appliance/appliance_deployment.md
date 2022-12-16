@@ -128,7 +128,7 @@ docker compose -f /etc/infrasonar/docker-compose.yml up -d
 !!! note "docker-compose.yml details"
     Detailed documentation about the docker-compose.yml file in use by InfraSonar can be found [here](appliance_docker_compose.md).
 
-When the Docker environment is up and running, you should see the Agent-core as a host in your environment.
+When the Docker environment is up and running, you should see the agentcore as a host in your environment.
 [Contact InfraSonar support](../../../introduction/contact_us.md) if you require any assistance.
 
 ## Monitor the appliance

@@ -2,9 +2,9 @@
 
 ## Features
 
-InfraSonar can use the WMI-probe to monitor Microsoft Windows hosts without installing an agent on them. Monitoring in this scenario is performed by periodically querying the Windows host using WQL queries.
+InfraSonar can use the [WMI](https://en.wikipedia.org/wiki/Windows_Management_Instrumentation) protocol to monitor Microsoft Windows hosts without installing an agent on them. Monitoring in this scenario is performed by periodically querying the Windows host using WQL queries.
 
-Version 2 of the InfraSonar WMI-probe is released as open source on [GitHub](https://github.com/infrasonar/wmiprobe) and uses the [aiowmi](https://github.com/cesbit/aiowmi) library.
+InfraSonar uses the open source [aiowmi](https://github.com/cesbit/aiowmi) library released in 2021 by Cesbit.
 
 ## Prerequisites
 
@@ -68,17 +68,24 @@ netsh int ipv6 show dynamicport udp
 ```
 
 !!! note
-    The range is set separately for each transport (TCP or UDP). The port range is now truly a range that has a starting point and an ending point. Microsoft customers who deploy servers that are running Windows Server 2008 may have problems that affect RPC communication between servers if firewalls are used on the internal network. In these situations, we recommend that you reconfigure the firewalls to allow traffic between servers in the dynamic port range of 49152 through 65535. This range is in addition to well-known ports that are used by services and applications. Or, the port range that is used by the servers can be modified on each server. You adjust this range by using the netsh command, as follows: netsh int <ipv4|ipv6> set dynamic <tcp|udp> start= number num= range. This command sets the dynamic port range for TCP. The start port is number, and the total number of ports is range.
+    The range is set separately for each transport (TCP or UDP).
+    
+    The port range is now truly a range that has a starting point and an ending point. 
+    
+    Microsoft customers who deploy servers that are running Windows Server 2008 may have problems that affect RPC communication between servers if firewalls are used on the internal network. 
+    
+    In these situations, we recommend that you reconfigure the firewalls to allow traffic between servers in the dynamic port range of 49152 through 65535.
+    
+    This range is in addition to well-known ports that are used by services and applications. Or, the port range that is used by the servers can be modified on each server.
+    
+    You adjust this range by using the netsh command, as follows: netsh int <ipv4|ipv6> set dynamic <tcp|udp> start= number num= range. This command sets the dynamic port range for TCP. The start port is number, and the total number of ports is range.
 
 
 ## FAQ
 
-### How to monitor a Microsoft ISA Server?
+### How can I troubleshoot WMI?
 
-Monitoring a Microsoft ISA server requires the following rules on the ISA server:
-
-* Allow traffic from the monitoring appliance to localhost for all protocols.
-* Within this rule, filtering "Enforce strict RPC compliance" must be disabled.
+See our [troubleshooting section](wmi-troubleshooting.md) for known issues and ways to troubleshot WMI queries.
 
 ### How to use a local account?
 
@@ -109,6 +116,20 @@ You can use the following steps to create a local account:
    11. Ensure to allow: _Local Launch_, _Remote Launch_, _Local Activation_ and _Remote Activation_.
    12. Close the windows by clicking **OK** twice and exit the Component Services console.
 
-### How can I troubleshoot WMI?
+### How to monitor Microsoft Windows server 2003?
 
- See our [troubleshooting section](wmi-troubleshooting.md) for known issues and ways to troubleshot WMI queries.
+You should ensure **Management and Monitoring Tools** are installed using **Add/remove windows components**
+
+The **software** and **updates** check might not work as expected.
+
+### How to monitor a Microsoft ISA Server?
+
+Monitoring a Microsoft ISA server requires the following rules on the ISA server:
+
+* Allow traffic from the monitoring appliance to localhost for all protocols.
+* Within this rule, filtering "Enforce strict RPC compliance" must be disabled.
+
+
+
+
+ 
