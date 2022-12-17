@@ -32,9 +32,9 @@ Labels can be assigned to hosts either by :material-playlist-edit: editing a hos
   <figcaption>Action menu in action</figcaption>
 </figure>
 
-## Deep dive
+## TODO
 
-## Label classes
+## Label colours
 
 InfraSonar has five label classes which can be identified by their color.
 
@@ -45,6 +45,7 @@ Class                          | Description
 :material-label:{.purple-icon} | **Ignore labels** that are primarily used to suppress a condition are prefixed with a `≠` sign.
 :material-label:{.red-icon}    | **Maintenance label** suppresses all conditions effectively muting a host.
 :material-label:{.green-icon}  | **Ansible labels** using the InfraSonar API, it is possible to integrate InfraSonar with an automation solutions such as Ansible. InfraSonar uses the `&` prefix to identify special labels.
+
 
 ### Custom labels
 

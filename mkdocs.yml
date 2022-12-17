@@ -114,7 +114,7 @@ nav:
   - API reference:
       - Overview: api/overview.md
       - Authentication: api/authentication.md
-      - Keystrings: api/keystring.md
+      - ID's: api/ids.md
       - Asset:
         - Query asset: api/asset/query.md
         - Query asset alerts: api/asset/query-alerts.md
