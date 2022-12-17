@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -51,12 +51,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -102,6 +106,30 @@
         </div>
       </div>
     </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
     
     
     
@@ -610,6 +638,8 @@
         
           
         
+          
+        
       
       
         
@@ -645,8 +675,6 @@
       
       
       
-        
-          
         
           
         
@@ -688,20 +716,6 @@
     <li class="md-nav__item">
       <a href="../../collectors/probes/appliance/credentials/" class="md-nav__link">
         Credentials
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../collectors/probes/agentcore/" class="md-nav__link">
-        Agent-core
       </a>
     </li>
   
@@ -861,8 +875,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../collectors/probes/vmware/" class="md-nav__link">
-        VMware
+      <a href="../../collectors/probes/vmware-esx/" class="md-nav__link">
+        VMware ESX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collectors/probes/vmware-vcenter/" class="md-nav__link">
+        VMware vCenter
       </a>
     </li>
   
@@ -957,6 +985,8 @@
       
       
       
+        
+          
         
           
         
@@ -1133,6 +1163,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#managing-alerts" class="md-nav__link">
+    Managing alerts
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing alerts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closing-alerts" class="md-nav__link">
+    Closing alerts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1164,6 +1214,20 @@
     <li class="md-nav__item">
       <a href="../rules/" class="md-nav__link">
         Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentcores/" class="md-nav__link">
+        Agentcores
       </a>
     </li>
   
@@ -1550,8 +1614,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/keystring/" class="md-nav__link">
-        Keystrings
+      <a href="../../../api/ids/" class="md-nav__link">
+        ID's
       </a>
     </li>
   
@@ -2176,6 +2240,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#managing-alerts" class="md-nav__link">
+    Managing alerts
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing alerts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closing-alerts" class="md-nav__link">
+    Closing alerts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2192,32 +2276,50 @@
 
 
 <h1 id="alerts">Alerts</h1>
-<p>When a condition is hit an alert can be send using the condition <code>return</code> statement.</p>
-<p>When an alert is raised it is visible in various locations within the InfraSonar application.</p>
+<p>Alerts are raised by conditions using the <code>return</code> statement in our condition edition.</p>
 <p>Using <a href="../rules/">rules</a> it is possible to route the alert to email or <a href="https://dutycalls.me">DutyCalls</a>.</p>
 <h2 id="viewing-alerts">Viewing alerts</h2>
-<p>When you are in a container view (1) you can view the alerts and <a href="../notifications/">notifications</a> in the <strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2m-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></span> Alerts &amp; Notificatins page</strong> (2)<br></p>
+<p>When you are in a container view (1) you can view the alerts and <a href="../notifications/">notifications</a> in the <strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2m-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></span> Alerts &amp; Notifications page</strong> (2)<br></p>
 <p><img alt="Alerts and notfications" src="../../../images/application_alerts.png" width="500" /></p>
 <p>This view shows:</p>
+<ul>
+<li><a href="./#open-alerts">Open alerts (3)</a> </li>
+<li><a href="#closed-alerts">Closed alerts (4)</a></li>
+<li><a href="#notifications">Notifications (5)</a></li>
+</ul>
 <h3 id="open-alerts">Open alerts</h3>
 <p>The open alerts (3) pane shows a list (6) of all open alerts and its status.</p>
 <p><img alt="Alerts open" src="../../../images/application_alerts_open.png" width="500" /></p>
 <p>When you click the show details button <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1zM3.75 2A1.75 1.75 0 0 0 2 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0 0 14 12.25v-3.5a.75.75 0 0 0-1.5 0v3.5a.25.25 0 0 1-.25.25h-8.5a.25.25 0 0 1-.25-.25v-8.5a.25.25 0 0 1 .25-.25h3.5a.75.75 0 0 0 0-1.5h-3.5z"/></svg></span> the details pane opens.</p>
 <p><img alt="Alerts details" src="../../../images/application_alerts_details.png" width="500" /></p>
 <ol>
-<li><strong>Add message</strong><br>
-   Allows you to add a message to the alert, this might be usefully to inform coworkers.</li>
-<li><strong>Assign alert</strong><br>
-   Allows you to assign the alert to yourself or another member on this container.</li>
-<li><strong>Close alert</strong><br>
-   Closes the alert, when the issue is not resolved the issue is reopened and automatically assigned to the user who closed the alert.</li>
-<li><strong>Refresh</strong><br>
-   Refreshes the alert pane.</li>
+<li><strong>Add message</strong>, allows you to add a message to the alert; this might be useful to inform coworkers.</li>
+<li><strong>Assign alert</strong>, allows you to assign the alert to yourself or another member of this container.</li>
+<li><strong>Close alert</strong>, closes the alert; when the issue is not resolved, the issue is reopened and automatically assigned to the user who closed the alert.</li>
+<li><strong>Refresh</strong>, refreshes the alert pane.</li>
 </ol>
 <h3 id="closed-alerts">Closed alerts</h3>
 <p>The closed alerts pane (4) shows a list of closed alerts.</p>
 <h3 id="notifications">Notifications</h3>
-<p>The closed alerts pane (5) shows a list of all open notifications (6), see the <a href="../notifications/">notification section</a> for more information.</p>
+<p>The closed alerts pane (5) shows a list of all open notifications (6); see our detailed <a href="../notifications/">notification section</a> for more information.</p>
+<h2 id="managing-alerts">Managing alerts</h2>
+<h3 id="closing-alerts">Closing alerts</h3>
+<p>There are three ways an alert gets closed:</p>
+<ol>
+<li><strong>User close</strong>, an end users closed the alert;</li>
+<li><strong>auto close</strong>, the condition is configured to close the alert if the issue is resolved;</li>
+<li><strong>indirect close</strong>, the relation between the condition and asset is removed:<ol>
+<li>When the asset is removed from the condition (e.g. removing the label applying the condition);</li>
+<li>When the check triggering the condition is disabled;</li>
+<li>When the asset is removed.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Auto close caveat</p>
+<p>it is possible that an <strong>auto close</strong> fails when the item triggering the alert no longer exists upon a new check result.
+This can happen for example when you create a condition on cpu usage in a list of processes, if you then kill the process InfraSonar will never see this item again. When this happens you need to close the alert manually.</p>
+</div>
 
 
 
@@ -2297,8 +2399,9 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
+    
     
   </body>
 </html>

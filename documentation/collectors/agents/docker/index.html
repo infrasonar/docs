@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -51,12 +51,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -102,6 +106,30 @@
         </div>
       </div>
     </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
     
     
     
@@ -682,6 +710,8 @@
         
           
         
+          
+        
       
       
         
@@ -717,8 +747,6 @@
       
       
       
-        
-          
         
           
         
@@ -760,20 +788,6 @@
     <li class="md-nav__item">
       <a href="../../probes/appliance/credentials/" class="md-nav__link">
         Credentials
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../probes/agentcore/" class="md-nav__link">
-        Agent-core
       </a>
     </li>
   
@@ -933,8 +947,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../probes/vmware/" class="md-nav__link">
-        VMware
+      <a href="../../probes/vmware-esx/" class="md-nav__link">
+        VMware ESX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probes/vmware-vcenter/" class="md-nav__link">
+        VMware vCenter
       </a>
     </li>
   
@@ -1027,6 +1055,8 @@
       
       
       
+        
+          
         
           
         
@@ -1166,6 +1196,20 @@
     <li class="md-nav__item">
       <a href="../../../application/rules/" class="md-nav__link">
         Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../application/agentcores/" class="md-nav__link">
+        Agentcores
       </a>
     </li>
   
@@ -1552,8 +1596,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../api/keystring/" class="md-nav__link">
-        Keystrings
+      <a href="../../../../api/ids/" class="md-nav__link">
+        ID's
       </a>
     </li>
   
@@ -2194,7 +2238,7 @@
 
 
 <p><img align="right" alt="Docker Agent" src="../../../../images/agent_docker.png" width="400" /></p>
-<h1 id="docker"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg></span> Docker</h1>
+<h1 id="docker"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg></span> Docker</h1>
 <p>The Docker-agent is a Docker container that can be used to monitor other Docker containers. The Docker-agent itself runs as a Docker container on the host, which hosts the containers and uses the Unix socket <code>docker.sock</code> to retrieve relevant monitoring data which, is send to the InfraSonar API.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
@@ -2210,14 +2254,14 @@
 </div>
 <p>Upon first run the Docker agents registers itself as an asset in InfraSonar, to ensure reconnection to the same asset an asset-id is stored in <code>/data/.asset.json</code> hence the reason we mount the the <code>/data</code> folder.</p>
 <h3 id="docker-command">Docker command</h3>
-<p><em>Deploys the docker agent using a bridged network and names the hostname  to the system hostname:</em></p>
+<p><em>Deploys the docker agent using a bridged network and names the hostname to the system hostname:</em></p>
 <div class="highlight"><pre><span></span><code>docker run <span class="se">\</span>
   --name dockeragent <span class="se">\</span>
   -h <span class="nv">$HOSTNAME</span> <span class="se">\</span>
   -v infraSonarData:/data <span class="se">\</span>
   -e <span class="nv">TOKEN</span><span class="o">=</span><span class="s2">&quot;&lt;&lt;agent token&gt;&gt;&quot;</span> <span class="se">\</span>
   -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
-  ghcr.io/infrasonar/docker-agent:unstable
+  ghcr.io/infrasonar/docker-agent
 </code></pre></div>
 <p><em>Deploys the docker agent using the host network and thus automatically uses the system hostname:</em></p>
 <div class="highlight"><pre><span></span><code>docker run <span class="se">\</span>
@@ -2226,7 +2270,7 @@
   -v infraSonarData:/data <span class="se">\</span>
   -e <span class="nv">TOKEN</span><span class="o">=</span><span class="s2">&quot;&lt;&lt;agent token&gt;&gt;&quot;</span> <span class="se">\</span>
   -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
-  ghcr.io/infrasonar/docker-agent:unstable
+  ghcr.io/infrasonar/docker-agent
 </code></pre></div>
 <h3 id="docker-compose">docker-compose</h3>
 <p>You can also add the Docker-agent to your <code>docker-compose.yml</code> file:</p>
@@ -2242,7 +2286,7 @@
 <span class="w">    </span><span class="nt">logging</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">options</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span><span class="w"></span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/docker-agent:unstable</span><span class="w"></span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/docker-agent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">TOKEN</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;&lt;agent</span><span class="nv"> </span><span class="s">token&gt;&gt;&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
@@ -2328,8 +2372,9 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
+    
     
   </body>
 </html>

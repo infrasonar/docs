@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -51,12 +51,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -102,6 +106,30 @@
         </div>
       </div>
     </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
     
     
     
@@ -610,6 +638,8 @@
         
           
         
+          
+        
       
       
         
@@ -645,8 +675,6 @@
       
       
       
-        
-          
         
           
         
@@ -688,20 +716,6 @@
     <li class="md-nav__item">
       <a href="../../collectors/probes/appliance/credentials/" class="md-nav__link">
         Credentials
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../collectors/probes/agentcore/" class="md-nav__link">
-        Agent-core
       </a>
     </li>
   
@@ -861,8 +875,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../collectors/probes/vmware/" class="md-nav__link">
-        VMware
+      <a href="../../collectors/probes/vmware-esx/" class="md-nav__link">
+        VMware ESX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collectors/probes/vmware-vcenter/" class="md-nav__link">
+        VMware vCenter
       </a>
     </li>
   
@@ -976,6 +1004,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_3">
@@ -1051,50 +1081,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-asset-configuration" class="md-nav__link">
-    Basic asset configuration
+  <a href="#asset-configuration" class="md-nav__link">
+    Asset configuration
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-asset-configuration" class="md-nav__link">
-    Advanced asset configuration
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced asset configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mode" class="md-nav__link">
-    mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zone" class="md-nav__link">
-    zone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collectors" class="md-nav__link">
-    Collectors
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#labels" class="md-nav__link">
-    Labels
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1192,6 +1181,20 @@
     <li class="md-nav__item">
       <a href="../rules/" class="md-nav__link">
         Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentcores/" class="md-nav__link">
+        Agentcores
       </a>
     </li>
   
@@ -1578,8 +1581,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/keystring/" class="md-nav__link">
-        Keystrings
+      <a href="../../../api/ids/" class="md-nav__link">
+        ID's
       </a>
     </li>
   
@@ -2178,50 +2181,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-asset-configuration" class="md-nav__link">
-    Basic asset configuration
+  <a href="#asset-configuration" class="md-nav__link">
+    Asset configuration
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-asset-configuration" class="md-nav__link">
-    Advanced asset configuration
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced asset configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mode" class="md-nav__link">
-    mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zone" class="md-nav__link">
-    zone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collectors" class="md-nav__link">
-    Collectors
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#labels" class="md-nav__link">
-    Labels
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2248,14 +2210,15 @@
 
 
 <h1 id="assets">Assets</h1>
+<p>Assets are in essence the monitored objects in an InfraSonar implementation. Assets can be IT components such as routers, switches, servers etc but can easily also consists of any other device which can be monitored such as elevators <img alt="🛗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6d7.svg" title=":elevator:" />, IOT devices <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10a2 2 0 0 1 2 2 2 2 0 0 1-.47 1.29L16.7 22h-2.13L12 14.93 9.43 22H7.3l3.17-8.71A2 2 0 0 1 10 12a2 2 0 0 1 2-2m0-2a4 4 0 0 0-4 4c0 .5.1 1 .28 1.46l-.88 2.4A6.026 6.026 0 0 1 6 12a6 6 0 0 1 6-6 6 6 0 0 1 6 6c0 1.47-.53 2.81-1.4 3.86l-.88-2.4C15.9 13 16 12.5 16 12a4 4 0 0 0-4-4m0-4a8 8 0 0 0-8 8c0 2.36 1 4.5 2.64 5.94l-.72 2A10.005 10.005 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10c0 3.23-1.54 6.11-3.92 7.94l-.72-2C19 16.5 20 14.36 20 12a8 8 0 0 0-8-8Z"/></svg></span>, etc. </p>
 <h2 id="add-asset">Add asset</h2>
 <p>When you are in the assets view you can add a new asset using the Add asset button.</p>
 <figure>
 <p><img alt="InfraSonar add host" src="../../../images/application_add_asset.png" width="800" />
   </p>
-<figcaption>InfraSonar add host</figcaption>
+<figcaption>InfraSonar add asset</figcaption>
 </figure>
-<h2 id="basic-asset-configuration">Basic asset configuration</h2>
+<h2 id="asset-configuration">Asset configuration</h2>
 <figure>
 <p><img alt="InfraSonar add asset details" src="../../../images/application_add_asset_details.png" width="800" />
   </p>
@@ -2264,54 +2227,19 @@
 <p>Configuring an asset involves the following steps:</p>
 <ol>
 <li>Enter an asset name.<br>
-   <em>We strongly suggest entering the correct hostname here, but do not enforce this.</em></li>
+   <em>We strongly suggest entering the correct hostname in <a href="https://en.wikipedia.org/wiki/Fully_qualified_domain_name">FQDN</a> format here, but do not enforce this.</em></li>
 <li>Enter an optional description.</li>
 <li>Select the mode.<br>
-   <em>This is usually normal.</em></li>
-<li>Select the zone.</li>
+   <em>This is usually normal, see our <a href="../modes/">mode</a> documentation for more details</em></li>
+<li>Select the zone.
+   <em>This is usually 0, see our <a href="../zones/">zone</a> documentation for more details</em></li>
 <li>Select the <a href="../../collectors/probes/">collectors</a> you want to use.</li>
-<li>Enter the correct labels for this asset.</li>
+<li>Enter the correct <a href="../labels/">labels</a> for this asset.</li>
 </ol>
-<h2 id="advanced-asset-configuration">Advanced asset configuration</h2>
-<h3 id="mode">mode</h3>
-<p>We identify the following modes for an asset or a container:</p>
-<table>
-<thead>
-<tr>
-<th>mode</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>normal</td>
-<td>normal operations, all conditions are evaluated.</td>
-</tr>
-<tr>
-<td>maintenance (no alerts)</td>
-<td>All asset notifications and alert messages suppressed</td>
-</tr>
-<tr>
-<td>disabled (no checks)</td>
-<td>All data send by an agent for this asset is ignored. <br>Any probes / checks configured for this asset are stopped.</td>
-</tr>
-</tbody>
-</table>
-<p>These modes can be set on a container using the container model. </p>
-<h3 id="zone">zone</h3>
-<p>When one or more agentcores are configured in the specified zone the host is bound to an agentcore in this zone.
-If no agentcores are configured in the specified zone we fall back to any other agent core.</p>
-<p>This feature can be useful for assets in a dmz or remote networks as it allows to direct probes to a specific zone.</p>
-<p>For agents the zone is only cosmetic.</p>
-<p><em>In the future we might add a link between zones and locations.</em></p>
-<h3 id="collectors">Collectors</h3>
-<p>Here you can add or remove a collector on an asset.</p>
-<p>When a collector is added additional tabs are added to the asset editor allowing you to configure the collector.</p>
-<p>See the <a href="../../collectors/">collectors section</a> in our documentation for additional information.</p>
-<p>When you remove an agent based collector here the agent can no longer send data to this asset and will receive a 409 error from our api.</p>
-<h3 id="labels">Labels</h3>
-<p>Here you can add or remove labels on an asset.</p>
-<p>See the <a href="../labels/">labels section</a> in our documentation for additional information.</p>
+<div class="admonition note">
+<p class="admonition-title">Advanced asset configuration and credentials</p>
+<p>Some collectors require a more advanced configuration or credentials to be setup on the appliance running the collector. See our <a href="../../collectors/probes/appliance/credentials/">credentials</a> section if this applies to your setup.</p>
+</div>
 <h2 id="adding-multiple-assets">Adding multiple assets</h2>
 <p>When there is a need to add multiple assets at once we suggest using our <a href="../">api</a>.</p>
 
@@ -2393,8 +2321,9 @@ If no agentcores are configured in the specified zone we fall back to any other 
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
+    
     
   </body>
 </html>

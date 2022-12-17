@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -51,12 +51,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -102,6 +106,30 @@
         </div>
       </div>
     </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
     
     
     
@@ -614,6 +642,8 @@
         
           
         
+          
+        
       
       
         
@@ -649,8 +679,6 @@
       
       
       
-        
-          
         
           
         
@@ -692,20 +720,6 @@
     <li class="md-nav__item">
       <a href="../appliance/credentials/" class="md-nav__link">
         Credentials
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agentcore/" class="md-nav__link">
-        Agent-core
       </a>
     </li>
   
@@ -878,26 +892,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#probe-configuration" class="md-nav__link">
-    Probe configuration
+  <a href="#deployment" class="md-nav__link">
+    Deployment
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#enable-snmp" class="md-nav__link">
-    Enable SNMP
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
-    <nav class="md-nav" aria-label="Enable SNMP">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-configure-snmp" class="md-nav__link">
+    How to configure SNMP
+  </a>
+  
+    <nav class="md-nav" aria-label="How to configure SNMP">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -912,12 +925,18 @@
     CentOS
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="CentOS">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#hp-proliant-hosts" class="md-nav__link">
     HP Proliant hosts
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -940,11 +959,6 @@
   <a href="#esxi" class="md-nav__link">
     ESXi
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -987,8 +1001,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../vmware/" class="md-nav__link">
-        VMware
+      <a href="../vmware-esx/" class="md-nav__link">
+        VMware ESX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vmware-vcenter/" class="md-nav__link">
+        VMware vCenter
       </a>
     </li>
   
@@ -1081,6 +1109,8 @@
       
       
       
+        
+          
         
           
         
@@ -1220,6 +1250,20 @@
     <li class="md-nav__item">
       <a href="../../../application/rules/" class="md-nav__link">
         Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../application/agentcores/" class="md-nav__link">
+        Agentcores
       </a>
     </li>
   
@@ -1606,8 +1650,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../api/keystring/" class="md-nav__link">
-        Keystrings
+      <a href="../../../../api/ids/" class="md-nav__link">
+        ID's
       </a>
     </li>
   
@@ -2206,26 +2250,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#probe-configuration" class="md-nav__link">
-    Probe configuration
+  <a href="#deployment" class="md-nav__link">
+    Deployment
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#enable-snmp" class="md-nav__link">
-    Enable SNMP
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
-    <nav class="md-nav" aria-label="Enable SNMP">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-configure-snmp" class="md-nav__link">
+    How to configure SNMP
+  </a>
+  
+    <nav class="md-nav" aria-label="How to configure SNMP">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2240,12 +2283,18 @@
     CentOS
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="CentOS">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#hp-proliant-hosts" class="md-nav__link">
     HP Proliant hosts
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2280,11 +2329,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
@@ -2302,22 +2346,44 @@
 
 
 <h1 id="snmp"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 20a1 1 0 0 0-1-1h-1v-2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4v2h-1a1 1 0 0 0-1 1H2v2h7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1h7v-2h-7m-8-5V5h10v10H7m5-9-4 4h3v4h2v-4h3l-4-4Z"/></svg></span> SNMP</h1>
-<h2 id="features">Features</h2>
 <blockquote>
 <p>"Simple Network Management Protocol is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behavior." - <em><a href="https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol">wikipedia</a></em></p>
 </blockquote>
-<p>The SNMP probe tries to discover which MIB's are accessible and will configure itself to monitor these without additional configuration.</p>
-<h2 id="configuration">Configuration</h2>
-<h3 id="probe-configuration">Probe configuration</h3>
-<p>Adding a host requires access to SNMP from the InfraSonar appliance running the SNMP probe and a community string.</p>
-<p>InfraSonar supports SNMPv1, SNMPv2c, and SNMPv3.</p>
+<h2 id="features">Features</h2>
+<p>InfraSonar supports retrieving data from remote assets using the <em>SNMPv1</em>, <em>SNMPv2c</em>, and <em>SNMPv3</em> protocol.</p>
+<p>The SNMP probe consists of a base probe and various vendor specific add-ons:</p>
+<ul>
+<li>APC PDU</li>
+<li>APC UPS</li>
+<li>Dell</li>
+<li>HP Integrated Lights-Out (iLO)</li>
+<li>HP ProCurve </li>
+<li>Synology</li>
+</ul>
+<h2 id="deployment">Deployment</h2>
+<p>We assume you deployed the SNMP probe as part of our appliance implementation.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To monitor an asset using SNMP there ar two things two setup on the monitored asset:</p>
+<dl>
+<dt><strong>Access</strong></dt>
+<dd>
+<p>Most SNMP implementation require you to add the monitoring IP as an authorized host. In our appliance based setup this is usually the IP address used by the monitoring appliance.</p>
+<p>When you deploy multiple appliances be aware to configure all IP addresses on the SNMP monitored assets.</p>
+<p>Also note Adding a host requires access to SNMP (udp/161) from the InfraSonar appliance running the SNMP probe.</p>
+</dd>
+<dt><strong>Authentication</strong></dt>
+<dd>
+<p><em>SNMPv1</em> and <em>SNMPv2c</em> versions "plain" community string for authentication; <em>SNMPv3</em> is more secure but not supported on all devices.</p>
+<p>The community string or credentials should be stored on the appliance as described <a href="../appliance/credentials/#snmp">here</a>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>SNMPv3 requires a credentials file as described <a href="../appliance/credentials/">here</a>.</p>
+<p class="admonition-title">default configuration</p>
+<p>When <strong>no</strong> configuration file is specified the probe falls back <strong>SNMPv2c</strong> and used the community string <code>public</code>.</p>
 </div>
-<h3 id="enable-snmp">Enable SNMP</h3>
+</dd>
+</dl>
+<h2 id="how-to-configure-snmp">How to configure SNMP</h2>
 <p>The SNMP probe requires SNMP to be configured on devices you wish to monitor. The next chapter describes how to configure SNMP on some standard devices.</p>
-<h4 id="debian-based-systems">Debian based systems</h4>
+<h3 id="debian-based-systems">Debian based systems</h3>
 <p>The first step is to install <code>snmpd</code> using<code>apt</code>:</p>
 <div class="highlight"><pre><span></span><code>sudo apt install snmpd
 </code></pre></div>
@@ -2359,7 +2425,7 @@ Jul <span class="m">29</span> <span class="m">10</span>:37:24 donkey-kong system
 Jul <span class="m">29</span> <span class="m">10</span>:37:24 donkey-kong systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Started Simple Network Management Protocol <span class="o">(</span>SNMP<span class="o">)</span> Daemon..
 Jul <span class="m">29</span> <span class="m">10</span>:37:24 donkey-kong snmpd<span class="o">[</span><span class="m">14394</span><span class="o">]</span>: NET-SNMP version <span class="m">5</span>.7.3
 </code></pre></div>
-<h4 id="centos">CentOS</h4>
+<h3 id="centos">CentOS</h3>
 <p>You can find a guide on how to install SNMP on CentOS <a href="https://www.liquidweb.com/kb/how-to-install-and-configure-snmp-on-centos/">here</a>.</p>
 <h4 id="hp-proliant-hosts">HP Proliant hosts</h4>
 <p>The HP agents can be installed and queried on HP Proliant hosts using SNMP. This section describes the setup.</p>
@@ -2382,8 +2448,8 @@ gpgkey=http://downloads.linux.hp.com/SDR/downloads/ServicePackforProLiant/GPG-KE
 /etc/init.d/hp-snmp-agents start
 /etc/init.d/snmpd restart
 </code></pre></div>
-<h4 id="vwware">VWware</h4>
-<h5 id="virtual-center-appliance">Virtual center appliance</h5>
+<h3 id="vwware">VWware</h3>
+<h4 id="virtual-center-appliance">Virtual center appliance</h4>
 <p>The VMware virtual center appliance can be configured to be monitored using SNMP.</p>
 <ol>
 <li>Log in to the webinterface (https://ip:5480) using a root account.</li>
@@ -2400,7 +2466,7 @@ service snmpd status
 </code></pre></div></li>
 <li>Add the SNMP-probe in InfraSonar.</li>
 </ol>
-<h5 id="esxi">ESXi</h5>
+<h4 id="esxi">ESXi</h4>
 <p>For the monitoring appliance to query the ESXi host, the following modifications must be made to the <code>/etc/snmp/snmpd.conf</code> file. This can be achieved by logging on to the ESXi hosts using SSH.</p>
 <div class="highlight"><pre><span></span><code>rocommunity  &lt;RO_Community_String&gt;
 trapcommunity &lt;TRAPS_Community_String&gt;
@@ -2521,8 +2587,9 @@ syslocation &lt;system_location&gt;
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
+    
     
   </body>
 </html>
