@@ -1,6 +1,6 @@
 # :material-docker: Docker
 
-InfraSonar probes and the InfraSonar Agent-core are distributed using Docker containers. 
+InfraSonar probes and the InfraSonar agentcore are distributed using Docker containers. 
 
 This section outlines this [docker-compose](https://docs.docker.com/compose/) setup.
 
@@ -10,7 +10,7 @@ We opt to store all InfraSonar related data and configuration in one directory, 
 
 ## Docker compose file
 
-The docker-compose file below can be used to deploy all currently available probes and an Agent-core. 
+The docker-compose file below can be used to deploy all currently available probes and an agentcore. 
 
 ```yaml title="/etc/infrasonar/docker-compose.yml"
 x-infrasonar-template:
@@ -89,7 +89,7 @@ services:
 
 The `x-infrasonar-template` section ensures the default settings are the same for all InfraSonar containers.
 
-#### Agent-core service
+#### Agentcore service
 
-The Agent-core service contains an environment variable containing a TOKEN that must be set correctly prior to starting the InfraSonar environment.
+The gentcore service contains an environment variable containing a TOKEN that must be set correctly prior to starting the InfraSonar environment.
 See the [tokens section](../../../application/tokens.md) on how to determine the correct variable.

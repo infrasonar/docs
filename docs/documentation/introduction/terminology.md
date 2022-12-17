@@ -2,7 +2,7 @@
 
 Term           | Description
 ---------------|----------------------------------------------------------
-**Agent-core** | Central component in a monitored infrastructure that acts as a relay between probes and the InfraSonar cloud.
+**Agentcore**  | Central component in a monitored infrastructure that acts as a relay between probes and the InfraSonar cloud.
 **Agents**     | A standalone InfraSonar component that can send monitoring data to InfraSonar via the [API](../../api/overview)
 **API**        | The [API](../../api/overview) allows users to perform automated access using a personal access token.
 **Appliance**  | A dedicated (virtual) Linux appliance for InfraSonar.

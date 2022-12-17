@@ -1,10 +1,15 @@
 # :material-label: Labels
 
+
 ## Purpose
 
-Labels can be added to hosts to group and identify them quickly.
+**Grouping**, labels can be added to hosts to group and identify them quickly.
 
-Labels are also used to control which conditions are active and which conditions should be suppressed. A label can enforce multiple conditions on a host and is not bound to a specific probe.
+**Apply conditions**, Labels are also used to control which conditions are active.
+
+!!! tip inline end "Glue"
+
+    Labels "glue" conditions onto hosts.
 
 ``` mermaid
 graph LR
@@ -16,9 +21,7 @@ graph LR
   label --- host3[Host];
 ```
 
-!!! tip "Glue"
 
-    Labels "glue" conditions onto hosts.
 
 ## How to use
 
@@ -29,9 +32,9 @@ Labels can be assigned to hosts either by :material-playlist-edit: editing a hos
   <figcaption>Action menu in action</figcaption>
 </figure>
 
-## Deep dive
+## TODO
 
-## Label classes
+## Label colours
 
 InfraSonar has five label classes which can be identified by their color.
 
@@ -42,6 +45,7 @@ Class                          | Description
 :material-label:{.purple-icon} | **Ignore labels** that are primarily used to suppress a condition are prefixed with a `≠` sign.
 :material-label:{.red-icon}    | **Maintenance label** suppresses all conditions effectively muting a host.
 :material-label:{.green-icon}  | **Ansible labels** using the InfraSonar API, it is possible to integrate InfraSonar with an automation solutions such as Ansible. InfraSonar uses the `&` prefix to identify special labels.
+
 
 ### Custom labels
 

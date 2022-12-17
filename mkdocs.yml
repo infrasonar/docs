@@ -8,6 +8,17 @@ copyright: "Copyright &copy; 2022 Cesbit"
 
 # Theme configuration
 theme:
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   name: material
   custom_dir: theme
   favicon: images/favicon.ico
@@ -62,7 +73,6 @@ nav:
               - Appliance:
                   - Deployment: documentation/collectors/probes/appliance/appliance_deployment.md
                   - Credentials: documentation/collectors/probes/appliance/credentials.md
-                  - Agent-core: documentation/collectors/probes/agentcore.md
               - DNS: documentation/collectors/probes/dns.md
               - HTTP: documentation/collectors/probes/http.md
               - Microsoft Azure: documentation/collectors/probes/microsoft_azure.md
@@ -73,7 +83,8 @@ nav:
               - Pure storage: documentation/collectors/probes/pure_probe.md
               - SNMP: documentation/collectors/probes/snmp.md
               - TCP: documentation/collectors/probes/tcp.md
-              - VMware: documentation/collectors/probes/vmware.md
+              - VMware ESX: documentation/collectors/probes/vmware-esx.md
+              - VMware vCenter: documentation/collectors/probes/vmware-vcenter.md
               - SMTP: documentation/collectors/probes/smtp.md
           - Services:
               - documentation/collectors/services/index.md          
@@ -86,6 +97,7 @@ nav:
           - Alerts: documentation/application/alerts.md
           - Notifications: documentation/application/notifications.md
           - Rules: documentation/application/rules.md
+          - Agentcores: documentation/application/agentcores.md
           - User management: documentation/application/user_management.md
       - Guides:
           - Migration: documentation/guides/migration.md
@@ -102,7 +114,7 @@ nav:
   - API reference:
       - Overview: api/overview.md
       - Authentication: api/authentication.md
-      - Keystrings: api/keystring.md
+      - ID's: api/ids.md
       - Asset:
         - Query asset: api/asset/query.md
         - Query asset alerts: api/asset/query-alerts.md

@@ -99,7 +99,7 @@ We use the following data classification for InfraSonar and InfraSonar related d
 
 ## Monitoring appliance
 
-The monitoring appliance on which the InfraSonar probes and InfraSonar Agent-core are deployed requires extra attention, as many vendors do not support a 'least privilege' approach to collecting monitoring data. As such, the probes often require the use of highly privileged accounts and sometimes even root or administrator accounts.
+The monitoring appliance on which the InfraSonar probes and InfraSonar agentcore are deployed requires extra attention, as many vendors do not support a 'least privilege' approach to collecting monitoring data. As such, the probes often require the use of highly privileged accounts and sometimes even root or administrator accounts.
 
 Our recommendations:
 
