@@ -24,7 +24,7 @@ Allow redirects | When turned on, redirects are followed.
 
 ### HTTP Status codes
 
-See [rfc9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes) or the [List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) on Wikipedia for more detailed information.
+See [RFC9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes) or the [List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) on Wikipedia for more detailed information.
 
 code | class         | code Meaning
 -----|---------------|-------------

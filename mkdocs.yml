@@ -60,7 +60,7 @@ nav:
           - Getting started: documentation/introduction/getting_started.md
           - What is InfraSonar: documentation/introduction/what_is_Infra_Sonar.md
           - Platform: documentation/introduction/platform.md
-          - Contact us: documentation/introduction/contact_us.md
+          - Support: documentation/introduction/support.md
           - Terminology: documentation/introduction/terminology.md
       - Collectors:
           - documentation/collectors/index.md

@@ -1,19 +1,8 @@
-# Contact us
+![Contact US](../../images/introduction_support.png){ width="200" align=right}
 
-![Contact US](../../images/contact_us.png){ width="200" align=right}
+# Support
 
-## Contact details
-
-:material-email: [support@infrasonar.com](mailto:support@infrasonar.com)
-
-:material-phone: [+31 85 876 8733](tel:+31858768733)
-
-## Availability
-
-We are a European company based in the Netherlands.<br>
-Our general availability is from Monday to Friday between 08:00 :clock8: and 17:00 :clock5: (CET)[^1].
-
-[^1]: Different times are possible by appointment.
+How can we help you?
 
 ## Services
 
@@ -39,4 +28,15 @@ Our general availability is from Monday to Friday between 08:00 :clock8: and 17:
 
     If you have any specific requirements we can jointly figure out what would we the best way to setup InfraSonar dashboards.
 
+## Contact details
 
+:material-email: [support@infrasonar.com](mailto:support@infrasonar.com)
+
+:material-phone: [+31 85 876 8733](tel:+31858768733)
+
+## Availability
+
+We are a European company based in the Netherlands.<br>
+Our general availability is from Monday to Friday between 08:00 :clock8: and 17:00 :clock5: (CET)[^1].
+
+[^1]: Different times are possible by appointment.
