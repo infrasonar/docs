@@ -1,3 +1,5 @@
+![Start here](../../images/introduction_starthere.png){ width="200" align=right}
+
 # Getting started with InfraSonar
 
 ## Familiarize

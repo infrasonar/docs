@@ -1,6 +1,6 @@
-# :material-radar: Agentcore
-
 ![Agentcore](../../images/application_agentcore.png){ width="200" align=right}
+
+# :material-radar: Agentcore
 
 The Agentcore orchestrates our [probes](../collectors/probes/index.md) and is responsible for scheduling checks.
 During the startup sequence of a probe, it will “:material-bullhorn-variant-outline: announce” itself to the Agentcore.

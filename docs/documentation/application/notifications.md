@@ -1,3 +1,5 @@
+![Notifications](../../images/application_notifications.png){ width="200" align=right}
+
 # Notifications
 
 Notification are used to notify InfraSonar users of issues with the monitoring platform.

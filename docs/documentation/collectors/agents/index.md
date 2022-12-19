@@ -1,6 +1,8 @@
+![Software Package](../../../images/software_package.png){ width="200" align=right}
+
 # Agents
 
-InfraSonar agents monitor autonomously and send the retrieved monitoring data to the InfraSonar platform using the [InfraSonar API](../../../api/asset/insert-check-data.md)
+An InfraSonar agents is an installable software component that autonomously and send the retrieved monitoring data to the InfraSonar platform using the [InfraSonar API](../../../api/asset/insert-check-data.md)
 
 ## Available agents
 

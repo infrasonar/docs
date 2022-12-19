@@ -96,8 +96,10 @@ nav:
           - Conditions: documentation/application/conditions.md
           - Alerts: documentation/application/alerts.md
           - Notifications: documentation/application/notifications.md
+          - Schedule: documentation/application/schedule.md
           - Rules: documentation/application/rules.md
           - Agentcores: documentation/application/agentcores.md
+          - Zones: documentation/application/zones.md
           - User management: documentation/application/user_management.md
       - Guides:
           - Migration: documentation/guides/migration.md
