@@ -15,7 +15,7 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`kind`      | string    | Yes       | One of `ConnectionStatus`, `ConnectionTimeDelta`, `ProbeVersion`, `CheckMissing`, `CheckError`, `CheckAged`, `CheckInvalidResult`, `CheckInvalidTimestamp`, `CheckInvalidData` or `ConditionError`.
+`kind`      | string    | Yes       | One of `ConnectionStatus`, `ConnectionTimeDelta`, `ProbeVersion`, `ProbeMissing`, `ProbeTimeDelta`, `ProbeNoHeartbeat`, `CheckMissing`, `CheckError`, `CheckAged`, `CheckInvalidResult`, `CheckInvalidTimestamp`, `CheckInvalidData` or `ConditionError`.
 
 ### Return codes
 Error code  | Reason
