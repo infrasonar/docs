@@ -1,3 +1,5 @@
+![User management](../../images/application_usermanagement.png){ width="200" align=right}
+
 # User management
 
 ## Authentication

@@ -1,3 +1,5 @@
+![Assets](../../images/application_assets.png){ width="200" align=right}
+
 # Assets
 
 Assets are in essence the monitored objects in an InfraSonar implementation. Assets can be IT components such as routers, switches, servers etc but can easily also consists of any other device which can be monitored such as elevators :elevator:, IOT devices :material-radio-tower:, etc. 
@@ -37,4 +39,4 @@ Configuring an asset involves the following steps:
 
 ## Adding multiple assets
 
-When there is a need to add multiple assets at once we suggest using our [api](api/../index.md).
+When there is a need to add multiple assets at once we suggest using our [api](../../api/overview.md)

@@ -1,3 +1,5 @@
+![What is?](../../images/introduction_whatis.png){ width="200" align=right}
+
 # What is InfraSonar
 
 InfraSonar is the brainchild of two IT infrastructure specialists who joined forces with an IT service provider to create an easy-to-maintain, uniform monitoring platform. Using open standards from vendors, the InfraSonar monitoring [appliance](../collectors/probes/appliance/appliance_deployment.md) securely monitors your IT infrastructure.

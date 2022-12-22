@@ -1,4 +1,4 @@
-![API-ID](../../../images/api_token.png){ width="200" align=right}
+![API-ID](../images/api_token.png){ width="200" align=right}
 
 # Authentication
 

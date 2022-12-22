@@ -1,4 +1,4 @@
-![API-ID](../../../images/api_id.png){ width="200" align=right}
+![API-ID](../images/api_id.png{ width="200" align=right}
 
 # ID's
 

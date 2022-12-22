@@ -1,3 +1,5 @@
+![Zones](../../images/application_zones.png){ width="200" align=right}
+
 # zones
 
 When one or more agentcores are configured in the specified zone an asset is bound to an agentcore in this zone.

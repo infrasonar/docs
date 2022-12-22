@@ -21,7 +21,7 @@ InfraSonar support ensures a hassle-free transition by aligning all parties invo
 
 This step involves transiting of the InfraSonar implementation inside the monitored environment; in most cases, this is the monitoring [appliance](../collectors/probes/appliance/appliance_deployment.md).
 
-As this appliance is potentially used to provide other services within the monitored environment, we advise starting with setting up a new appliance (with the [agentcore](../collectors/probes/agentcore.md) and probes) and transitioning the monitored host to this new agentcore.
+As this appliance is potentially used to provide other services within the monitored environment, we advise starting with setting up a new appliance (with the [agentcore](../application/agentcores.md) and probes) and transitioning the monitored host to this new agentcore.
 This process is similar to decommissioning an agentcore.
 
 We do not recommend a "rip and replace" scenario, as this is not beneficial for the monitored environment.

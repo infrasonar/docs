@@ -1,3 +1,5 @@
+![Containers](../../images/application_containers.png){ width="200" align=right}
+
 # :material-apps: InfraSonar containers 
 
 InfraSonor containers are a hierarchial setup of you monitored infrastructure.
@@ -76,6 +78,6 @@ From the container view, you can add a new container.
 1. When you are in asset view you can use the child containers button :material-file-tree: to switch to container view;
 2. Click the add **container button**;
 3. Enter a name for your container;
-4. Select the mode, this is usual **normal**;
+4. Select the [mode](modes.md), this is usual **normal**;
 5. Select the **timezone** for this container;
 6. CLick **save**.

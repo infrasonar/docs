@@ -1,3 +1,5 @@
+![Modes](../../images/application_modes.png){ width="200" align=right}
+
 # Modes
 
 Modes can be used to temporary change the monitoring operation on a **container** or an **asset** or **group of assets**.

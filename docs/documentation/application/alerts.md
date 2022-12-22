@@ -1,3 +1,5 @@
+![Alerts](../../images/application_alert.png){ width="200" align=right}
+
 # Alerts
 
 Alerts are raised by conditions using the `return` statement in our condition edition.

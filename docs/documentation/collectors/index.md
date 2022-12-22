@@ -1,3 +1,5 @@
+![Collectors](../../images/collectors.png){ width="200" align=right}
+
 # Collectors
 
 InfraSonar collectors collect monitoring data to be parsed by the InfraSonar cloud platform.
@@ -6,25 +8,23 @@ All our general purpose collectors are available as open-source :material-open-s
 
 Using the provided libraries third parties can easily add additional collectors to our platform.
 
-We identify the following collector types:
 
-1. Agents
-2. Probes
-3. Services
+## Collection concepts
 
-## Agents
+InfraSonar identities three collection concepts to gather data from monitored assets.
 
-[Agents](agents/index.md) run autonomously on a monitored asset and send data directly the to InfraSonar platform.
+**Agents**
 
-## Probes
+:   [Agents](agents/index.md) run autonomously on a monitored asset and send data directly the to InfraSonar platform
 
-[Probes](probes/index.md) are most often deployed on an appliance and are orchestrated by an [agentcore](probes/agentcore.md).
+**Probes**
 
-Probes are typically used for agentless monitoring scenario's.
+:   [Probes](probes/index.md) are most often deployed on an appliance and are orchestrated by an [agentcore](../application/agentcores.md)
 
-## Services
+    Probes are typically used for agentless monitoring scenario's.
 
-[Services](services/index.md) collect data "as a service".
+**Services**
 
+:   [Services](services/index.md) collect data "as a service".
 
 
