@@ -25,6 +25,7 @@ Error code  | Reason
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
 `404`       | Container not found.
+`409`       | Too many open alerts. _(mode "normal" is only allowed with less than 500 open alerts)_
 
 ### Example
 Curl request:
