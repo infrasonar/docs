@@ -11,32 +11,38 @@
   --md-primary-fg-color:        #4970CC;
   --md-primary-fg-color--light: #7f97a2;
   --md-primary-fg-color--dark:  #435761;
-  
-  --md-accent-fg-color: #23527c;
+  --md-accent-fg-color:         #23527c;
 }
 
-.gray-icon {
-  color: rgb(117 117 117);
+/* Label color definitions */
+
+.label-steel {
+    color:#5f7789;
 }
 
-.purple-icon {
-  color:rgb(156 39 176)
+.label-olive {
+    color:#668860;
 }
 
-.green-icon {
-  color:rgb(76 175 79);
+.label-mauve {
+    color:#795f8d;
 }
 
-.red-icon {
-  color: rgb(211 47 47);
+.label-emerald {
+    color:#008d00;
 }
 
-.blue-icon {
-  color: rgb(63 80 181);
+.label-orange {
+    color:#ff5b00;
 }
 
+.label-magenta {
+    color:#ec0074;
+}
 
-
+.label-infrasonarblue {
+    color:#436caa;
+}
 
 /* ============================================================================================================= */
 
