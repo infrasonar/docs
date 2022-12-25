@@ -8,11 +8,11 @@ copyright: "Copyright &copy; 2022 Cesbit"
 
 # Theme configuration
 theme:
-  palette: 
+  palette:
     # Palette toggle for light mode
     - scheme: default
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
@@ -87,7 +87,7 @@ nav:
               - VMware vCenter: documentation/collectors/probes/vmware-vcenter.md
               - SMTP: documentation/collectors/probes/smtp.md
           - Services:
-              - documentation/collectors/services/index.md          
+              - documentation/collectors/services/index.md
       - Application:
           - Containers: documentation/application/container.md
           - Assets: documentation/application/assets.md
@@ -140,6 +140,8 @@ nav:
         - Set container mode: api/container/set-mode.md
         - Purge notifications: api/container/purge-notifications.md
         - Purge time-series: api/container/purge-time-series.md
+      - Label:
+        - Query label: api/label/query.md
       - ConnectWise Manage add-on:
         - Set CWM: api/cwm/set-cwm.md
       - Examples:
