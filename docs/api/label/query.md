@@ -1,4 +1,4 @@
-# Query alert
+# Query label
 **`GET`/label/<labelId\>?fields=...**
 
 ### Description
@@ -17,10 +17,10 @@ Param               | Default           | Description
 ### Fields
 Field               | Return type   | Description
 --------------------|---------------|-------------
-`id`                | int           | Id of the label.
-`name`              | string        | Name of the label.
-`color`             | string        | Color used for the label.
-`description`       | string        | Description for the label.
+`id`                | int           | Label Id.
+`name`              | string        | Label name.
+`color`             | string        | One of `Steel`, `Olive`, `Mauve`, `Emerald`, `Orange`, `Magenta` or `InfraSonarBlue`.
+`description`       | string        | Label description.
 
 
 ### Return codes
