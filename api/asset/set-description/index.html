@@ -13,7 +13,7 @@
     
     
       
-        <title>Query asset alerts - InfraSonar</title>
+        <title>Set asset description - InfraSonar</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#query-asset-alerts" class="md-skip">
+        <a href="#set-asset-description" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Query asset alerts
+              Set asset description
             
           </span>
         </div>
@@ -1640,6 +1640,48 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../query-alerts/" class="md-nav__link">
+        Query asset alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query-id/" class="md-nav__link">
+        Query asset Id
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insert-check-data/" class="md-nav__link">
+        Insert check data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1652,12 +1694,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Query asset alerts
+          Set asset description
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Query asset alerts
+        Set asset description
       </a>
       
         
@@ -1697,8 +1739,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fields" class="md-nav__link">
-    Fields
+  <a href="#body" class="md-nav__link">
+    Body
   </a>
   
 </li>
@@ -1721,48 +1763,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../query-id/" class="md-nav__link">
-        Query asset Id
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../insert-check-data/" class="md-nav__link">
-        Insert check data
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../set-description/" class="md-nav__link">
-        Set asset description
-      </a>
     </li>
   
 
@@ -2319,8 +2319,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fields" class="md-nav__link">
-    Fields
+  <a href="#body" class="md-nav__link">
+    Body
   </a>
   
 </li>
@@ -2354,13 +2354,10 @@
                   
 
 
-<h1 id="query-asset-alerts">Query asset alerts</h1>
-<p><strong><code>GET</code> /asset/&lt;assetId>/alerts?fields=...</strong></p>
+<h1 id="set-asset-description">Set asset description</h1>
+<p><strong><code>PATCH</code> /asset/&lt;assetId>/description</strong></p>
 <h3 id="description">Description</h3>
-<p>Query all <em>open</em> alerts for a given asset.</p>
-<blockquote>
-<p>With the current API it is not possible to query for <em>closed</em> alerts, except when you have an explicit alert key string.</p>
-</blockquote>
+<p>Set the asset description. Success <em>(204)</em> is also returned when the asset description has not changed.</p>
 <h3 id="path-parameters">Path parameters</h3>
 <table>
 <thead>
@@ -2377,71 +2374,23 @@
 </tbody>
 </table>
 <h3 id="query-parameters">Query parameters</h3>
+<p><em>none</em></p>
+<h3 id="body">Body</h3>
 <table>
 <thead>
 <tr>
 <th>Param</th>
-<th>Default</th>
+<th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>fields</code></td>
-<td><code>ks</code></td>
-<td>Fields to return <em>(see fields below for all available fields)</em>.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="fields">Fields</h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Return type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ks</code></td>
+<td><code>description</code></td>
 <td>string</td>
-<td>Key string of the alert.</td>
-</tr>
-<tr>
-<td><code>message</code></td>
-<td>string</td>
-<td>Initial message when the alert was opened.</td>
-</tr>
-<tr>
-<td><code>severity</code></td>
-<td>integer</td>
-<td>Initial severity when the alert was opened <em>(value between 0=highest and 7=lowest severity)</em>.</td>
-</tr>
-<tr>
-<td><code>timestamp</code></td>
-<td>integer</td>
-<td>Unix timestamp in seconds when the alert was opened.</td>
-</tr>
-<tr>
-<td><code>lastMessage</code></td>
-<td>string</td>
-<td>Message of the last hit <em>(equal to "message" with only a single hit)</em>.</td>
-</tr>
-<tr>
-<td><code>lastSeverity</code></td>
-<td>integer</td>
-<td>Severity of the last hit <em>(equal to "severity" with only a single hit)</em>.</td>
-</tr>
-<tr>
-<td><code>lastTimestamp</code></td>
-<td>integer</td>
-<td>Unix timestamp in seconds of the last hit <em>(equal to "timestamp" with only a single hit)</em>.</td>
-</tr>
-<tr>
-<td><code>ownerId</code></td>
-<td>integer/null</td>
-<td>User Id of the owner or <em>null</em> when the alert is not assigned to an owner.</td>
+<td>Yes</td>
+<td>Asset description.</td>
 </tr>
 </tbody>
 </table>
@@ -2455,12 +2404,12 @@
 </thead>
 <tbody>
 <tr>
-<td><code>200</code></td>
+<td><code>204</code></td>
 <td>Success.</td>
 </tr>
 <tr>
 <td><code>400</code></td>
-<td>Unknown field.</td>
+<td>Invalid body.</td>
 </tr>
 <tr>
 <td><code>401</code></td>
@@ -2468,7 +2417,7 @@
 </tr>
 <tr>
 <td><code>403</code></td>
-<td>Insufficient permissions <em>(required: <code>API</code>+<code>READ</code>)</em>.</td>
+<td>Insufficient permissions <em>(required: <code>API</code>+<code>ASSET_MANAGEMENT</code>)</em>.</td>
 </tr>
 <tr>
 <td><code>404</code></td>
@@ -2479,18 +2428,12 @@
 <h3 id="example">Example</h3>
 <p>Curl request:
 <div class="highlight"><pre><span></span><code>curl <span class="se">\</span>
-    -X GET <span class="s1">&#39;https://api.infrasonar.com/asset/123/alerts?fields=ks,message,severity,ownerId&#39;</span> <span class="se">\</span>
-    -H <span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>
-</code></pre></div></p>
-<p>Response:
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;a-unique-key-string&gt;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Initial message of the alert&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ownerId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+    -X PATCH <span class="s1">&#39;https://api.infrasonar.com/asset/123/description&#39;</span> <span class="se">\</span>
+    -H <span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span> <span class="se">\</span>
+    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+    --data-raw <span class="s1">&#39;{</span>
+<span class="s1">    &quot;description&quot;: &quot;This is cool asset!&quot;</span>
+<span class="s1">}&#39;</span>
 </code></pre></div></p>
 
 
@@ -2511,7 +2454,7 @@
     
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
-          <a href="../query/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <a href="../insert-check-data/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2520,19 +2463,19 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                Query asset
+                Insert check data
               </div>
             </div>
           </a>
         
         
-          <a href="../query-id/" class="md-footer__link md-footer__link--next" rel="next">
+          <a href="../set-kind/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                Query asset Id
+                Set asset kind
               </div>
             </div>
             <div class="md-footer__button md-icon">

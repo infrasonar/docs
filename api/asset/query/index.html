@@ -1606,6 +1606,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_4">
@@ -1688,6 +1690,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#collectors" class="md-nav__link">
+    Collectors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#return-codes" class="md-nav__link">
     Return codes
   </a>
@@ -1758,50 +1767,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../set-mode/" class="md-nav__link">
-        Set asset mode
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../add-label/" class="md-nav__link">
-        Add label to asset
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../remove-collector/" class="md-nav__link">
-        Remove collector from asset
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../remove-label/" class="md-nav__link">
-        Remove label from asset
+      <a href="../set-description/" class="md-nav__link">
+        Set asset description
       </a>
     </li>
   
@@ -1842,8 +1809,64 @@
   
   
     <li class="md-nav__item">
+      <a href="../set-name/" class="md-nav__link">
+        Set asset name
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-label/" class="md-nav__link">
+        Add label to asset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../upsert-collector/" class="md-nav__link">
         Upsert collector to asset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remove-collector/" class="md-nav__link">
+        Remove collector from asset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remove-label/" class="md-nav__link">
+        Remove label from asset
       </a>
     </li>
   
@@ -2310,6 +2333,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#collectors" class="md-nav__link">
+    Collectors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#return-codes" class="md-nav__link">
     Return codes
   </a>
@@ -2372,6 +2402,11 @@
 <td><em>all fields</em></td>
 <td>Fields to return <em>(see fields below for all available fields)</em>.</td>
 </tr>
+<tr>
+<td><code>collectors</code></td>
+<td><em>none</em></td>
+<td>Collector fields. If at least one field is given, the result will include "<em>collectors</em>" with an array of <em>collector</em> objects <em>(see Collectors below for all available collector fields)</em>.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="fields">Fields</h3>
@@ -2395,6 +2430,11 @@
 <td>Asset name.</td>
 </tr>
 <tr>
+<td><code>kind</code></td>
+<td>string</td>
+<td>One of the kinds <em>(see <a href="../set-kind/">set-kind</a> api)</em></td>
+</tr>
+<tr>
 <td><code>description</code></td>
 <td>string</td>
 <td>Asset description.</td>
@@ -2403,6 +2443,43 @@
 <td><code>mode</code></td>
 <td>string</td>
 <td>One of <code>normal</code>, <code>maintenance</code> or <code>disabled</code>.</td>
+</tr>
+<tr>
+<td><code>labels</code></td>
+<td>array(integer)</td>
+<td>List with label Ids.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="collectors">Collectors</h3>
+<table>
+<thead>
+<tr>
+<th>Collector field</th>
+<th>Return type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td>string</td>
+<td>Collector key.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Collector name.</td>
+</tr>
+<tr>
+<td><code>kind</code></td>
+<td>string</td>
+<td>One of <code>agent</code>, <code>probe</code> or <code>service</code>.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object/null</td>
+<td>Configuration for the collector if config exists.</td>
 </tr>
 </tbody>
 </table>
@@ -2447,8 +2524,10 @@
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my-host.local&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Asset&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My host&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">456</span><span class="p">,</span><span class="w"> </span><span class="mi">789</span><span class="p">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 
