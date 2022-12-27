@@ -13,14 +13,25 @@ Param               | Description
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | `id`              | Fields to return _(see fields below for all available fields)_.
+`collectors`        | _none_            | Collector fields. If at least one field is given, the result will include "_collectors_" with an array of _collector_ objects _(see Collectors below for all available collector fields)_.
 
 ### Fields
 Field               | Return type       | Description
 --------------------|-------------------|-------------
 `id`                | integer           | Asset Id.
 `name`              | string            | Asset name.
+`kind`              | string            | One of the kinds _(see [set-kind](../asset/set-kind.md) api)_
 `description`       | string            | Asset description.
 `mode`              | string            | One of `normal`, `maintenance` or `disabled`.
+`labels`            | array(integer)    | List with label Ids.
+
+### Collectors
+Collector field     | Return type   | Description
+--------------------|---------------|-------------
+`key`               | string        | Collector key.
+`name`              | string        | Collector name.
+`kind`              | string        | One of `agent`, `probe` or `service`.
+`config`            | object/null   | Configuration for the collector if config exists.
 
 ### Return codes
 Error code  | Reason

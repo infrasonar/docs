@@ -122,13 +122,14 @@ nav:
         - Query asset alerts: api/asset/query-alerts.md
         - Query asset Id: api/asset/query-id.md
         - Insert check data: api/asset/insert-check-data.md
-        - Set asset mode: api/asset/set-mode.md
-        - Add label to asset: api/asset/add-label.md
-        - Remove collector from asset: api/asset/remove-collector.md
-        - Remove label from asset: api/asset/remove-label.md
+        - Set asset description: api/asset/set-description.md
         - Set asset kind: api/asset/set-kind.md
         - Set asset mode: api/asset/set-mode.md
+        - Set asset name: api/asset/set-name.md
+        - Add label to asset: api/asset/add-label.md
         - Upsert collector to asset: api/asset/upsert-collector.md
+        - Remove collector from asset: api/asset/remove-collector.md
+        - Remove label from asset: api/asset/remove-label.md
       - Alert:
         - Query alert: api/alert/query.md
       - Container:
