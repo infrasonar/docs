@@ -1882,6 +1882,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_6">
@@ -2044,6 +2046,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query-collectors/" class="md-nav__link">
+        Query container collectors
+      </a>
     </li>
   
 
@@ -2407,6 +2423,46 @@
 <td><em>none</em></td>
 <td>Collector fields. If at least one field is given, the result will include "<em>collectors</em>" with an array of <em>collector</em> objects <em>(see Collectors below for all available collector fields)</em>.</td>
 </tr>
+<tr>
+<td><code>kind</code></td>
+<td><em>none</em></td>
+<td>Only assets with the given kind <em>(e.g kind=Windows)</em>.</td>
+</tr>
+<tr>
+<td><code>not-kind</code></td>
+<td><em>none</em></td>
+<td>Only assets with another kind than the given kind <em>(e.g not-kind=Asset)</em>.</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td><em>none</em></td>
+<td>Only assets with the given mode <em>(e.g mode=normal)</em>.</td>
+</tr>
+<tr>
+<td><code>not-mode</code></td>
+<td><em>none</em></td>
+<td>Only assets with another mode than the given mode <em>(e.g not-mode=disabled)</em>.</td>
+</tr>
+<tr>
+<td><code>collector</code></td>
+<td><em>none</em></td>
+<td>Only assets with the given collector <em>(e.g collector=tcp)</em>.</td>
+</tr>
+<tr>
+<td><code>not-collector</code></td>
+<td><em>none</em></td>
+<td>Only assets without the given collector <em>(e.g not-collector=wmi)</em>.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><em>none</em></td>
+<td>Only assets with the given label Id <em>(e.g label=123)</em>.</td>
+</tr>
+<tr>
+<td><code>not-label</code></td>
+<td><em>none</em></td>
+<td>Only assets without the given label Id <em>(e.g not-label=456)</em>.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="fields">Fields</h3>
@@ -2563,13 +2619,13 @@
           </a>
         
         
-          <a href="../set-mode/" class="md-footer__link md-footer__link--next" rel="next">
+          <a href="../query-collectors/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                Set container mode
+                Query container collectors
               </div>
             </div>
             <div class="md-footer__button md-icon">
