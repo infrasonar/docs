@@ -27,6 +27,7 @@ Param               | Default           | Description
 Field               | Return type       | Description
 --------------------|-------------------|-------------
 `id`                | integer           | Asset Id.
+`container`         | integer           | Asset container Id _(Equal to containerId)_.
 `name`              | string            | Asset name.
 `kind`              | string            | One of the kinds _(see [set-kind](../asset/set-kind.md) api)_
 `description`       | string            | Asset description.
