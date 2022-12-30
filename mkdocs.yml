@@ -138,6 +138,7 @@ nav:
         - Query container Id: api/container/query-id.md
         - Query container alerts: api/container/query-alerts.md
         - Query container assets: api/container/query-assets.md
+        - Query container collectors: api/container/query-collectors.md
         - Set container mode: api/container/set-mode.md
         - Purge notifications: api/container/purge-notifications.md
         - Purge time-series: api/container/purge-time-series.md

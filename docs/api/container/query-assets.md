@@ -7,13 +7,21 @@ Query all assets for a given container. _(removed assets are not included)_.
 ### Path parameters
 Param               | Description
 --------------------|-------------
-`containerId`           | Container Id.
+`containerId`       | Container Id.
 
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | `id`              | Fields to return _(see fields below for all available fields)_.
 `collectors`        | _none_            | Collector fields. If at least one field is given, the result will include "_collectors_" with an array of _collector_ objects _(see Collectors below for all available collector fields)_.
+`kind`              | _none_            | Only assets with the given kind _(e.g kind=Windows)_.
+`not-kind`          | _none_            | Only assets with another kind than the given kind _(e.g not-kind=Asset)_.
+`mode`              | _none_            | Only assets with the given mode _(e.g mode=normal)_.
+`not-mode`          | _none_            | Only assets with another mode than the given mode _(e.g not-mode=disabled)_.
+`collector`         | _none_            | Only assets with the given collector _(e.g collector=tcp)_.
+`not-collector`     | _none_            | Only assets without the given collector _(e.g not-collector=wmi)_.
+`label`             | _none_            | Only assets with the given label Id _(e.g label=123)_.
+`not-label`         | _none_            | Only assets without the given label Id _(e.g not-label=456)_.
 
 ### Fields
 Field               | Return type       | Description
