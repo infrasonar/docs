@@ -8,8 +8,14 @@
       
       
       
+      
+        <link rel="prev" href="../pure_probe/">
+      
+      
+        <link rel="next" href="../tcp/">
+      
       <link rel="icon" href="../../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -17,11 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -110,8 +115,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
@@ -119,8 +122,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
@@ -2464,6 +2465,7 @@
                   
 
 
+
 <h1 id="snmp"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 20a1 1 0 0 0-1-1h-1v-2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4v2h-1a1 1 0 0 0-1 1H2v2h7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1h7v-2h-7m-8-5V5h10v10H7m5-9-4 4h3v4h2v-4h3l-4-4Z"/></svg></span> SNMP</h1>
 <blockquote>
 <p>"Simple Network Management Protocol is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behavior." - <em><a href="https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol">wikipedia</a></em></p>
@@ -2504,11 +2506,11 @@
 <p>The SNMP probe requires SNMP to be configured on devices you wish to monitor. The next chapter describes how to configure SNMP on some standard devices.</p>
 <h3 id="debian-based-systems">Debian based systems</h3>
 <p>The first step is to install <code>snmpd</code> using<code>apt</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo apt install snmpd
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>snmpd
 </code></pre></div>
 <p>The next step is configuring <code>snmpd</code>. For this we need to edit <code>/etc/snmp/snmpd.conf</code>.
 Prior to editing this file we suggest making a backup of the existing configuration. This can be done by using the following command:</p>
-<div class="highlight"><pre><span></span><code>cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.bak
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>/etc/snmp/snmpd.conf<span class="w"> </span>/etc/snmp/snmpd.conf.bak
 </code></pre></div>
 <p>Example <code>snmpd.conf</code> file:</p>
 <div class="highlight"><pre><span></span><code>############# InfraSonar SNMP Config ##################
@@ -2524,25 +2526,25 @@ syscontact support@infrasonar.com
 <p>The community string in the above example is set to <code>infrasonar</code>. Also note the settings for <code>syslocation</code> and <code>syscontact</code>.</p>
 </div>
 <p>Restart the SNMP daemon to make the configuration effective:</p>
-<div class="highlight"><pre><span></span><code>sudo service snmpd restart
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>service<span class="w"> </span>snmpd<span class="w"> </span>restart
 </code></pre></div>
 <p>Verify that the service is running correctly:</p>
-<div class="highlight"><pre><span></span><code>sudo service snmpd status
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>service<span class="w"> </span>snmpd<span class="w"> </span>status
 </code></pre></div>
 <p>This should result in a similar output like this:</p>
-<div class="highlight"><pre><span></span><code>● snmpd.service - Simple Network Management Protocol <span class="o">(</span>SNMP<span class="o">)</span> Daemon.
-   Loaded: loaded <span class="o">(</span>/lib/systemd/system/snmpd.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
-   Active: active <span class="o">(</span>running<span class="o">)</span> since Thu <span class="m">2021</span>-07-29 <span class="m">10</span>:37:24 CEST<span class="p">;</span> 1s ago
-  Process: <span class="m">14393</span> <span class="nv">ExecStartPre</span><span class="o">=</span>/bin/mkdir -p /var/run/agentx <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
- Main PID: <span class="m">14394</span> <span class="o">(</span>snmpd<span class="o">)</span>
-    Tasks: <span class="m">1</span> <span class="o">(</span>limit: <span class="m">2358</span><span class="o">)</span>
-   Memory: <span class="m">5</span>.0M
-   CGroup: /system.slice/snmpd.service
-           └─14394 /usr/sbin/snmpd -Lsd -Lf /dev/null -u Debian-snmp -g Debian-snmp -I -smux mteTrigger mteTriggerConf -f -p /run/snmpd.pid
+<div class="highlight"><pre><span></span><code>●<span class="w"> </span>snmpd.service<span class="w"> </span>-<span class="w"> </span>Simple<span class="w"> </span>Network<span class="w"> </span>Management<span class="w"> </span>Protocol<span class="w"> </span><span class="o">(</span>SNMP<span class="o">)</span><span class="w"> </span>Daemon.
+<span class="w">   </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/lib/systemd/system/snmpd.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>enabled<span class="o">)</span>
+<span class="w">   </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Thu<span class="w"> </span><span class="m">2021</span>-07-29<span class="w"> </span><span class="m">10</span>:37:24<span class="w"> </span>CEST<span class="p">;</span><span class="w"> </span>1s<span class="w"> </span>ago
+<span class="w">  </span>Process:<span class="w"> </span><span class="m">14393</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/bin/mkdir<span class="w"> </span>-p<span class="w"> </span>/var/run/agentx<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
+<span class="w"> </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">14394</span><span class="w"> </span><span class="o">(</span>snmpd<span class="o">)</span>
+<span class="w">    </span>Tasks:<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>limit:<span class="w"> </span><span class="m">2358</span><span class="o">)</span>
+<span class="w">   </span>Memory:<span class="w"> </span><span class="m">5</span>.0M
+<span class="w">   </span>CGroup:<span class="w"> </span>/system.slice/snmpd.service
+<span class="w">           </span>└─14394<span class="w"> </span>/usr/sbin/snmpd<span class="w"> </span>-Lsd<span class="w"> </span>-Lf<span class="w"> </span>/dev/null<span class="w"> </span>-u<span class="w"> </span>Debian-snmp<span class="w"> </span>-g<span class="w"> </span>Debian-snmp<span class="w"> </span>-I<span class="w"> </span>-smux<span class="w"> </span>mteTrigger<span class="w"> </span>mteTriggerConf<span class="w"> </span>-f<span class="w"> </span>-p<span class="w"> </span>/run/snmpd.pid
 
-Jul <span class="m">29</span> <span class="m">10</span>:37:24 donkey-kong systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Starting Simple Network Management Protocol <span class="o">(</span>SNMP<span class="o">)</span> Daemon....
-Jul <span class="m">29</span> <span class="m">10</span>:37:24 donkey-kong systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Started Simple Network Management Protocol <span class="o">(</span>SNMP<span class="o">)</span> Daemon..
-Jul <span class="m">29</span> <span class="m">10</span>:37:24 donkey-kong snmpd<span class="o">[</span><span class="m">14394</span><span class="o">]</span>: NET-SNMP version <span class="m">5</span>.7.3
+Jul<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">10</span>:37:24<span class="w"> </span>donkey-kong<span class="w"> </span>systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>Starting<span class="w"> </span>Simple<span class="w"> </span>Network<span class="w"> </span>Management<span class="w"> </span>Protocol<span class="w"> </span><span class="o">(</span>SNMP<span class="o">)</span><span class="w"> </span>Daemon....
+Jul<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">10</span>:37:24<span class="w"> </span>donkey-kong<span class="w"> </span>systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>Started<span class="w"> </span>Simple<span class="w"> </span>Network<span class="w"> </span>Management<span class="w"> </span>Protocol<span class="w"> </span><span class="o">(</span>SNMP<span class="o">)</span><span class="w"> </span>Daemon..
+Jul<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">10</span>:37:24<span class="w"> </span>donkey-kong<span class="w"> </span>snmpd<span class="o">[</span><span class="m">14394</span><span class="o">]</span>:<span class="w"> </span>NET-SNMP<span class="w"> </span>version<span class="w"> </span><span class="m">5</span>.7.3
 </code></pre></div>
 <h3 id="centos">CentOS</h3>
 <p>You can find a guide on how to install SNMP on CentOS <a href="https://www.liquidweb.com/kb/how-to-install-and-configure-snmp-on-centos/">here</a>.</p>
@@ -2559,13 +2561,13 @@ gpgcheck=0
 gpgkey=http://downloads.linux.hp.com/SDR/downloads/ServicePackforProLiant/GPG-KEY-ProLiantSupportPack
 </code></pre></div>
 <p>Install the HP agents:</p>
-<div class="highlight"><pre><span></span><code>yum install hp-snmp-agents hp-health
+<div class="highlight"><pre><span></span><code>yum<span class="w"> </span>install<span class="w"> </span>hp-snmp-agents<span class="w"> </span>hp-health
 </code></pre></div>
 <p>You will get additional questions about the desired configuration. This will update the <code>snmpd.conf</code> file.</p>
 <p>Start the agents:</p>
 <div class="highlight"><pre><span></span><code>/sbin/hpsnmpconfig
-/etc/init.d/hp-snmp-agents start
-/etc/init.d/snmpd restart
+/etc/init.d/hp-snmp-agents<span class="w"> </span>start
+/etc/init.d/snmpd<span class="w"> </span>restart
 </code></pre></div>
 <h3 id="vwware">VWware</h3>
 <h4 id="virtual-center-appliance">Virtual center appliance</h4>
@@ -2574,14 +2576,14 @@ gpgkey=http://downloads.linux.hp.com/SDR/downloads/ServicePackforProLiant/GPG-KE
 <li>Log in to the webinterface (https://ip:5480) using a root account.</li>
 <li>Enable shell access: <strong>access</strong> --&gt; <strong>shell / ssh</strong>.</li>
 <li>Log in using SSH and execute the following commands:
-<div class="highlight"><pre><span></span><code>snmp.set --port <span class="m">161</span>
-snmp.set --communities public
+<div class="highlight"><pre><span></span><code>snmp.set<span class="w"> </span>--port<span class="w"> </span><span class="m">161</span>
+snmp.set<span class="w"> </span>--communities<span class="w"> </span>public
 snmp.enable
 </code></pre></div></li>
 <li>Verify if the snmpd service is started:
-<div class="highlight"><pre><span></span><code>shell.set --enabled.true
+<div class="highlight"><pre><span></span><code>shell.set<span class="w"> </span>--enabled.true
 shell
-service snmpd status
+service<span class="w"> </span>snmpd<span class="w"> </span>status
 </code></pre></div></li>
 <li>Add the SNMP-probe in InfraSonar.</li>
 </ol>
@@ -2625,7 +2627,7 @@ syslocation &lt;system_location&gt;
 </tbody>
 </table>
 <p>For the modifications to take effect, the SNMPD must be restarted using the following command:</p>
-<div class="highlight"><pre><span></span><code>/etc/init.d/snmpd restart
+<div class="highlight"><pre><span></span><code>/etc/init.d/snmpd<span class="w"> </span>restart
 </code></pre></div>
 
 
@@ -2644,7 +2646,7 @@ syslocation &lt;system_location&gt;
         
   <footer class="md-footer">
     
-      <nav class="md-footer__inner md-grid" aria-label="Footer">
+      <nav class="md-footer__inner md-grid" aria-label="">
         
           <a href="../pure_probe/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
@@ -2703,12 +2705,11 @@ syslocation &lt;system_location&gt;
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

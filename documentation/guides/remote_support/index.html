@@ -8,8 +8,14 @@
       
       
       
+      
+        <link rel="prev" href="../migration/">
+      
+      
+        <link rel="next" href="../../privacy-security/security_considerations/">
+      
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -17,11 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -110,8 +115,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
@@ -119,8 +122,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
@@ -2340,6 +2341,7 @@
                   
 
 
+
 <h1 id="remote-support">Remote support</h1>
 <p><img align="right" alt="InfraSonar support" src="../../../images/support.png" width="200" /></p>
 <h2 id="tmate">tmate</h2>
@@ -2347,22 +2349,22 @@
 <h3 id="installation">Installation</h3>
 <p>Tmate comes preinstalled on our appliances, but if you have set up your environment manually, you might need to install tmate first.</p>
 <p>On Debian / Ubuntu systems the installation is straightforward:</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install tmate
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>tmate
 </code></pre></div>
 <p>For other distributions, follow the guides provided at the <a href="https://tmate.io/">tmate</a> website</p>
 <h3 id="usage">Usage</h3>
 <p>Just type <code>tmate</code> while connected via ssh or in the console of your virtual appliance.</p>
 <p>You will be greeted with a screen like this:</p>
-<div class="highlight"><pre><span></span><code>Tip: <span class="k">if</span> you wish to use tmate only <span class="k">for</span> remote access, run: tmate -F                                                                                                                                                                      <span class="o">[</span><span class="m">0</span>/0<span class="o">]</span>
-To see the following messages again, run <span class="k">in</span> a tmate session: tmate show-messages
-Press &lt;q&gt; or &lt;ctrl-c&gt; to <span class="k">continue</span>
+<div class="highlight"><pre><span></span><code>Tip:<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>wish<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>tmate<span class="w"> </span>only<span class="w"> </span><span class="k">for</span><span class="w"> </span>remote<span class="w"> </span>access,<span class="w"> </span>run:<span class="w"> </span>tmate<span class="w"> </span>-F<span class="w">                                                                                                                                                                      </span><span class="o">[</span><span class="m">0</span>/0<span class="o">]</span>
+To<span class="w"> </span>see<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>messages<span class="w"> </span>again,<span class="w"> </span>run<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>tmate<span class="w"> </span>session:<span class="w"> </span>tmate<span class="w"> </span>show-messages
+Press<span class="w"> </span>&lt;q&gt;<span class="w"> </span>or<span class="w"> </span>&lt;ctrl-c&gt;<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span>
 ---------------------------------------------------------------------
-Connecting to ssh.tmate.io...
-Note: clear your terminal before sharing <span class="nb">readonly</span> access
-web session <span class="nb">read</span> only: https://tmate.io/t/ro-generated_ro_id
-ssh session <span class="nb">read</span> only: ssh ro-generated_ro_id@lon1.tmate.io
-web session: https://tmate.io/t/generated_id
-ssh session: ssh generated_id@lon1.tmate.io
+Connecting<span class="w"> </span>to<span class="w"> </span>ssh.tmate.io...
+Note:<span class="w"> </span>clear<span class="w"> </span>your<span class="w"> </span>terminal<span class="w"> </span>before<span class="w"> </span>sharing<span class="w"> </span><span class="nb">readonly</span><span class="w"> </span>access
+web<span class="w"> </span>session<span class="w"> </span><span class="nb">read</span><span class="w"> </span>only:<span class="w"> </span>https://tmate.io/t/ro-generated_ro_id
+ssh<span class="w"> </span>session<span class="w"> </span><span class="nb">read</span><span class="w"> </span>only:<span class="w"> </span>ssh<span class="w"> </span>ro-generated_ro_id@lon1.tmate.io
+web<span class="w"> </span>session:<span class="w"> </span>https://tmate.io/t/generated_id
+ssh<span class="w"> </span>session:<span class="w"> </span>ssh<span class="w"> </span>generated_id@lon1.tmate.io
 </code></pre></div>
 <p>Send our support engineer this information via a secure channel and ensure access is only used by our support engineer by observing the screen.
 If in doubt, exit the session using the <code>exit</code> command or by pressing <code>ctrl-d</code></p>
@@ -2383,7 +2385,7 @@ If in doubt, exit the session using the <code>exit</code> command or by pressing
         
   <footer class="md-footer">
     
-      <nav class="md-footer__inner md-grid" aria-label="Footer">
+      <nav class="md-footer__inner md-grid" aria-label="">
         
           <a href="../migration/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
@@ -2442,12 +2444,11 @@ If in doubt, exit the session using the <code>exit</code> command or by pressing
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

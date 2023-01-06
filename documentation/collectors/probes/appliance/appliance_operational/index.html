@@ -8,8 +8,10 @@
       
       
       
+      
+      
       <link rel="icon" href="../../../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -17,11 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -110,8 +111,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
@@ -119,8 +118,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
@@ -2267,18 +2264,19 @@
                   
 
 
+
 <h1 id="appliance-maintenance">Appliance maintenance</h1>
 <p>As the InfraSonar appliance updates itself it requires almost no maintenance.</p>
 <h2 id="manual-update">Manual update</h2>
 <p>If you want to update your InfraSonar components manually you can do so using the following commands:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Look for newer images and pull these</span>
-docker compose -f /etc/infrasonar/docker-compose.yml pull
+docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>/etc/infrasonar/docker-compose.yml<span class="w"> </span>pull
 <span class="c1"># Reload any changed images</span>
-docker compose -f /etc/infrasonar/docker-compose.yml up -d
+docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>/etc/infrasonar/docker-compose.yml<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
 <h2 id="restarting-infrasonar">Restarting InfraSonar</h2>
 <p>If you want ro restart all InfraSonan containers you can do so using the following command:</p>
-<div class="highlight"><pre><span></span><code>docker compose -f /etc/infrasonar/docker-compose.yml restart
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>/etc/infrasonar/docker-compose.yml<span class="w"> </span>restart
 </code></pre></div>
 <h2 id="logging">Logging</h2>
 <p>For troubleshooting purposes you can change the loglevel in the <code>/etc/infrasonar/docker-compose.yml</code> </p>
@@ -2290,31 +2288,31 @@ docker compose -f /etc/infrasonar/docker-compose.yml up -d
 <li>error</li>
 <li>critical</li>
 </ul>
-<div class="highlight"><span class="filename">/etc/infrasonar/docker-compose.yml</span><pre><span></span><code><span class="nt">x-infrasonar-template</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nl">&amp;infrasonar</span><span class="w"></span>
-<span class="w">  </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span><span class="w"></span>
-<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span><span class="w"></span>
-<span class="w">  </span><span class="nt">logging</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">options</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span><span class="w"></span>
-<span class="w">  </span><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/data/</span><span class="w"></span>
+<div class="highlight"><span class="filename">/etc/infrasonar/docker-compose.yml</span><pre><span></span><code><span class="nt">x-infrasonar-template</span><span class="p">:</span>
+<span class="w">  </span><span class="nl">&amp;infrasonar</span>
+<span class="w">  </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span>
+<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">  </span><span class="nt">logging</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">options</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/data/</span>
 
-<span class="nt">services</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">agentcore</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span><span class="w"></span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/agentcore</span><span class="w"></span>
-<span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">TOKEN</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;your-token&gt;&quot;</span><span class="w"></span>
-<span class="hll"><span class="w">      </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="w"></span>
-</span><span class="hll"><span class="w">      </span><span class="nt">LOG_COLORIZED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w"></span>
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">agentcore</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/agentcore</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">TOKEN</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;your-token&gt;&quot;</span>
+<span class="hll"><span class="w">      </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;debug&quot;</span>
+</span><span class="hll"><span class="w">      </span><span class="nt">LOG_COLORIZED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
 </span>
-<span class="w">  </span><span class="nt">pingprobe</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span><span class="w"></span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/ping-probe</span><span class="w"></span>
-<span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
-<span class="hll"><span class="w">      </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="w"></span>
-</span><span class="hll"><span class="w">      </span><span class="nt">LOG_COLORIZED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pingprobe</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/ping-probe</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="hll"><span class="w">      </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;debug&quot;</span>
+</span><span class="hll"><span class="w">      </span><span class="nt">LOG_COLORIZED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2363,12 +2361,11 @@ docker compose -f /etc/infrasonar/docker-compose.yml up -d
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>
