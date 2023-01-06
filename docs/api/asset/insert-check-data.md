@@ -31,6 +31,7 @@ Error code  | Reason
 `403`       | Insufficient permissions _(required: `API`+`INSERT_CHECK_DATA`)_.
 `404`       | Asset or collector or check not found.
 `409`       | Collector is not assigned to the asset.
+`413`       | Body size too large _(maximum 500 KB)_.
 
 ### Example
 Curl request:
