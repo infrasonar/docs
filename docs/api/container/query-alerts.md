@@ -9,7 +9,7 @@ Query all _open_ alerts for a given container.
 ### Path parameters
 Param               | Description
 --------------------|-------------
-`containerId`           | Container Id.
+`containerId`       | Container Id.
 
 ### Query parameters
 Param               | Default           | Description

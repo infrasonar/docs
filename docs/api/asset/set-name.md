@@ -1,13 +1,13 @@
-# Set container mode
-**`PATCH` /container/<containerId\>/mode**
+# Set asset name
+**`PATCH` /asset/<assetId\>/name**
 
 ### Description
-Set the container mode. Success _(204)_ is also returned when the container was already in the desired mode.
+Set the asset name. Success _(204)_ is also returned when the asset name has not been changed.
 
 ### Path parameters
 Param               | Description
 --------------------|-------------
-`containerId`       | Container Id.
+`assetId`           | Asset Id.
 
 ### Query parameters
 _none_
@@ -15,7 +15,7 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`mode`      | string    | Yes       | One of `normal`, `maintenance` or `disabled`.
+`name`      | string    | Yes       | Asset name.
 
 ### Return codes
 Error code  | Reason
@@ -24,17 +24,16 @@ Error code  | Reason
 `400`       | Invalid body.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
-`404`       | Container not found.
-`409`       | Too many open alerts. _(mode "normal" is only allowed with less than 500 open alerts)_
+`404`       | Asset not found.
 
 ### Example
 Curl request:
 ```bash
 curl \
-    -X PATCH 'https://api.infrasonar.com/container/123/mode' \
+    -X PATCH 'https://api.infrasonar.com/asset/123/name' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
-    "mode": "maintenance"
+    "name": "This is cool asset!"
 }'
 ```
