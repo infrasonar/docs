@@ -1,0 +1,65 @@
+## InfraSonar docker-compose.yml file
+##
+## Set the correct TOKEN variables before starting.
+
+x-infrasonar-template: &infrasonar
+  network_mode: host
+  restart: always
+  logging:
+    options:
+      max-size: 5m
+  volumes:
+      - ./data:/data/
+
+services:
+  agentcore:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/agentcore
+    environment:
+      TOKEN: "--AGENTCORE-TOKEN-HERE--"
+  
+  docker-agent:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/docker-agent
+    environment:
+      TOKEN: "--AGENT-TOKEN-HERE--"
+      CHECK_SYSTEM_INTERVAL: "60"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/data/
+
+  dns-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/dns-probe
+    
+  esx-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/esx-probe
+
+  http-probe:
+     << : *infrasonar
+     image: ghcr.io/infrasonar/http-probe
+  
+  netapp-probe:
+     << : *infrasonar
+     image: ghcr.io/infrasonar/netapp-probe
+
+  ping-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/ping-probe
+
+  snmp-probe:
+     << : *infrasonar
+     image: ghcr.io/infrasonar/snmp-probe
+
+  tcp-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/tcp-probe
+
+  vcenter-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/vcenter-probe
+  
+  wmi-probe:
+     << : *infrasonar
+     image: ghcr.io/infrasonar/wmi-probe
