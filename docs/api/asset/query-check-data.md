@@ -2,7 +2,7 @@
 **`GET` /asset/<assetId\>/collector/<collectorKey\>/check/<checkKey\>?raw=false**
 
 ### Description
-Query check data. The result always contains a framework. Both data and the framework may be `null` when no state data is found.
+Query check data. The result might be `null` when both the _collector_ and _check_ exist, but no data for the given _asset_ exists. If only the _framework_ is `null`, then the _check_ is enabled for the _asset_ but no data is received _(yet)_.
 
 ### Path parameters
 Param               | Description
@@ -29,7 +29,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/asset/123/collector/docker/check/network' \
+    -X GET 'https://api.infrasonar.com/asset/123/collector/ping/check/ping' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
@@ -37,17 +37,25 @@ Response:
 ```json
 {
     "data": {
-        "networks": [
+        "icmp": [
             {
-                "name": "myNetwork",
-                "ipAddress": "1.2.3.4"
+                "address": "192.168.1.2",
+                "maxTime": "1 ms",
+                "name": "ping",
+                "count": "5",
+                "dropped": "0",
+                "minTime": "165 μs"
             }
         ]
     },
     "framework": {
-        "timestamp": 1667511469
+        "duration": 4.015371322631836,
+        "timestamp": 1673471283,
+        "prev": {
+            "timestamp": 1673470983
+        }
     }
 }
 ```
 
-_In this example, "**docker**" is the collector, "**network**" the check, "**networks**" a type, "**name**" is a required metric and "**ipAddress**" is a metric._
+_In this example, "**ping**" is a collector, "**ping**" a check, "**icmp**" a type and "**name**", **address**, **maxTime** etc, are the metrics._
