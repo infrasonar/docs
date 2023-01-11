@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#query-asset-alerts" class="md-skip">
+        <a href="#query-check-data" class="md-skip">
           Skip to content
         </a>
       
@@ -2393,10 +2393,10 @@
 
 
 
-<h1 id="query-asset-alerts">Query asset alerts</h1>
+<h1 id="query-check-data">Query check data</h1>
 <p><strong><code>GET</code> /asset/&lt;assetId>/collector/&lt;collectorKey>/check/&lt;checkKey>?raw=false</strong></p>
 <h3 id="description">Description</h3>
-<p>Query check data. The result always contains a framework. Both data and the framework may be <code>null</code> when no state data is found.</p>
+<p>Query check data. The result might be <code>null</code> when both the <em>collector</em> and <em>check</em> exist, but no data for the given <em>asset</em> exists. If only the <em>framework</em> is <code>null</code>, then the <em>check</em> is enabled for the <em>asset</em> but no data is received <em>(yet)</em>.</p>
 <h3 id="path-parameters">Path parameters</h3>
 <table>
 <thead>
@@ -2471,25 +2471,33 @@
 <h3 id="example">Example</h3>
 <p>Curl request:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/asset/123/collector/docker/check/network&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/asset/123/collector/ping/check/ping&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>
 </code></pre></div></p>
 <p>Response:
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;networks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="nt">&quot;icmp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myNetwork&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;ipAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.2.3.4&quot;</span>
+<span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;192.168.1.2&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;maxTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1 ms&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ping&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;dropped&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;minTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;165 μs&quot;</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1667511469</span>
+<span class="w">        </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.015371322631836</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1673471283</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1673470983</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<p><em>In this example, "<strong>docker</strong>" is the collector, "<strong>network</strong>" the check, "<strong>networks</strong>" a type, "<strong>name</strong>" is a required metric and "<strong>ipAddress</strong>" is a metric.</em></p>
+<p><em>In this example, "<strong>ping</strong>" is a collector, "<strong>ping</strong>" a check, "<strong>icmp</strong>" a type and "<strong>name</strong>", <strong>address</strong>, <strong>maxTime</strong> etc, are the metrics.</em></p>
 
 
 
