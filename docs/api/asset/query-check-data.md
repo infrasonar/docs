@@ -1,4 +1,4 @@
-# Query asset alerts
+# Query check data
 **`GET` /asset/<assetId\>/collector/<collectorKey\>/check/<checkKey\>?raw=false**
 
 ### Description
