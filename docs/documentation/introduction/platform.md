@@ -33,7 +33,7 @@ The InfraSonar cloud platform is hosted on the [Google Cloud Platform](https://c
 
 Data from a monitored environment is received and processed in the InfraSonar cloud platform on what we call the Message-hubs. These Message-hubs evaluate the data against configured conditions and store received time series data in [SiriDB](https://siridb.net/). Received state data is kept in memory by the Message-hubs.
 
-### InfraSonar application
+## InfraSonar application
 
 The InfraSonar application is a web based user interface which accessible using any modern web browser.
 

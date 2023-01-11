@@ -2,7 +2,7 @@
 
 # What is InfraSonar
 
-InfraSonar is the brainchild of two IT infrastructure specialists who joined forces with an IT service provider to create an easy-to-maintain, uniform monitoring platform. Using open standards from vendors, the InfraSonar monitoring [appliance](../collectors/probes/appliance/appliance_deployment.md) securely monitors your IT infrastructure.
+InfraSonar is the brainchild an IT infrastructure specialist and a great software development team with a passion for scalable software solutions who joined forces with an IT service provider to create an easy-to-maintain, uniform monitoring platform.
 
 InfraSonar comes out of the box with many predefined conditions based on years of experience and best practices.
 
@@ -20,5 +20,9 @@ This predefined set of conditions and agent-less monitoring capabilities make fo
   Performance data is stored in our time series database [SiriDB](https://siridb.com) for analysis over time.
 * **Analysis**<br>
   Performance data and hit alerts (open & closed) are used for analysis over time.
-* **API**<br>
-  Utilizing the [InfraSonar API](../../api/overview.md) allows for easy integration with automation platforms, such as [Ansible](https://www.ansible.com/) and [Salt](https://saltproject.io/).
+
+## History
+
+InfraSonar is de successor of Oversight an IT infrastructure monitoring solution which started out in 2013 as a monitoring solution for IT service providers.
+
+With InfraSonar we took the lessons learned and made a more versatile and resistent platform not only suitable for IT environments but for any platform were state and performance monitoring are required.

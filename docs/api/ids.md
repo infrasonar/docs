@@ -1,4 +1,4 @@
-![API-ID](../images/api_id.png{ width="200" align=right}
+![API-ID](../images/api_id.png){ width="200" align=right}
 
 # ID's
 
@@ -34,7 +34,7 @@ InfraSonar uses ID's to identify:
 2. Use the column :material-view-column: picker in the top right corner and ensure **ID** is selected.
 3. The **container ID** is now visible in the most left hand column.
 
-!!! tip "Query asset ID using our API"
+!!! tip "Query container ID using our API"
     Container ID's can be retrieved using our [API](container/query-id.md)
 
 ### Label ID

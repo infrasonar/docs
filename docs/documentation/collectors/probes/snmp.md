@@ -43,6 +43,108 @@ To monitor an asset using SNMP there ar two things two setup on the monitored as
 
 The SNMP probe requires SNMP to be configured on devices you wish to monitor. The next chapter describes how to configure SNMP on some standard devices.
 
+### Ubuntu
+
+First step is to install the SNMP Daemon:
+
+```
+sudo apt-get update
+sudo apt-get install snmpd
+```
+
+Next is to edit the `snmpd.conf` file, this requires a few setting in this file to change:
+
+```title="/etc/snmp/snmpd.conf" hl_lines="2 3 5 7 8"
+
+sysLocation    Sitting on the Dock of the Bay
+sysContact     Me <me@example.org>
+
+agentAddress udp:161,udp6:[::1]:161
+
+rocommunity  public default
+rocommunity6 public default
+
+```
+
+Set `sysLocation` to the correct location for this device and set `sysContact` to the system administrator contact.
+
+`agentAddress` configures which IPv4 and IPv6 the SNMP daemon should listen on.
+
+Setting this to: `agentAddress udp:161,udp6:[::1]:161` will set the server to listen on all IPv4 and IPv6 addresses.
+
+Alternatively you can bind to a specific IP address as such:
+```
+agentAddress udp:192.168.1.5:161
+```
+This binds the SNMPD daemon to the IP address 192.168.1.5 on port 161.
+
+
+Set the desired community name, in this example we use `public`
+```
+rocommunity: rocommunity public
+```
+
+Last step is to restart the SNMPD service: `sudo service snmpd restart`
+
+YOu can verify the  SNMPD is started using: `sudo service snmpd status`
+
+### FreeBSD
+
+Edit (as root) the file `/etc/snmpd.config`, find the following lines in the file:
+
+```
+location := "Room 200"
+contact := "sysmeister@example.com"
+
+read := "public"
+
+write := "geheim"
+trap := "mytrap"
+```
+
+Set `location` to the correct location for this device and set `contact` to the system administrator contact.
+
+Set the desired community name, in this example we use `public`
+```
+read := "public"
+```
+
+
+Enable **bsnmpd** in `/etc/rc.conf`
+
+Add this at the end of the file:
+```
+bsnmpd_enable="YES"
+```
+
+Start snmpd:
+```
+service bsnmpd start
+```
+
+We recommend to unstall the **bsnmp-ucd package** for more complete monitoring. 
+
+Installing this package involves the following steps:
+
+```
+pkg_add -r bsnmp-ucd
+```
+
+Locate and uncomment the line in `/etc/snmpd.config`
+```
+begemotSnmpdModulePath."hostres" = "/usr/lib/snmp_hostres.so"
+```
+Add the next line below the just uncommented line:
+```
+begemotSnmpdModulePath."ucd" = "/usr/local/lib/snmp_ucd.so"
+```
+
+When done restart the bsnmp daemon:
+```
+/etc/rc.d/bsnmpd restart
+```
+
+
 ### Debian based systems
 
 The first step is to install `snmpd` using`apt`:
@@ -55,7 +157,7 @@ The next step is configuring `snmpd`. For this we need to edit `/etc/snmp/snmpd.
 Prior to editing this file we suggest making a backup of the existing configuration. This can be done by using the following command:
 
 ```bash
-cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.bak
+sudo cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.bak
 ```
 
 Example `snmpd.conf` file:
