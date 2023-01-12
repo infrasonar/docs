@@ -21,7 +21,7 @@ Field               | Return type       | Description
 `key`               | string            | Collector Id.
 `name`              | string            | Collector name.
 `kind`              | string            | One of `agent`, `probe` or `service`.
-`description`       | string            | Collector description.
+`info`              | string            | Collector info.
 `min-version`       | string            | Minimal required version for the collector.
 
 ### Options
@@ -29,7 +29,7 @@ Option field     | Return type   | Description
 --------------------|---------------|-------------
 `key`               | string        | Option key.
 `name`              | string        | Option name.
-`description`       | string        | Option description.
+`info`              | string        | Option info.
 `type`              | string        | One of `Bool`, `Int`, `Float`, `String`, `ListBool`, `ListInt`, `ListFloat` or `ListString`.
 `default`           | any           | Default value _(The default value is not guaranteed to pass the validation function)_.
 
