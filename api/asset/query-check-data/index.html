@@ -2394,7 +2394,7 @@
 
 
 <h1 id="query-check-data">Query check data</h1>
-<p><strong><code>GET</code> /asset/&lt;assetId>/collector/&lt;collectorKey>/check/&lt;checkKey>?raw=false</strong></p>
+<p><strong><code>GET</code> /asset/&lt;assetId>/collector/&lt;collectorKey>/check/&lt;checkKey>?fmt=false</strong></p>
 <h3 id="description">Description</h3>
 <p>Query check data. The result might be <code>null</code> when both the <em>collector</em> and <em>check</em> exist, but no data for the given <em>asset</em> exists. If only the <em>framework</em> is <code>null</code>, then the <em>check</em> is enabled for the <em>asset</em> but no data is received <em>(yet)</em>.</p>
 <h3 id="path-parameters">Path parameters</h3>
@@ -2431,9 +2431,9 @@
 </thead>
 <tbody>
 <tr>
-<td><code>raw</code></td>
+<td><code>fmt</code></td>
 <td><code>false</code></td>
-<td>Either <code>true</code> or <code>false</code>. When <code>false</code> the display function is used to format the values and if <code>true</code>, the raw values are returned.</td>
+<td>Either <code>true</code> or <code>false</code>. When <code>true</code> the display function is used to format the values and if <code>false</code>, the raw values are returned.</td>
 </tr>
 </tbody>
 </table>
@@ -2452,7 +2452,7 @@
 </tr>
 <tr>
 <td><code>400</code></td>
-<td>Invalid value for <em>raw</em> query param.</td>
+<td>Invalid value for <em>fmt</em> query param.</td>
 </tr>
 <tr>
 <td><code>401</code></td>
@@ -2471,7 +2471,7 @@
 <h3 id="example">Example</h3>
 <p>Curl request:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/asset/123/collector/ping/check/ping&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/asset/123/collector/ping/check/ping?fmt=true&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>
 </code></pre></div></p>
 <p>Response:
@@ -2489,10 +2489,10 @@
 <span class="w">        </span><span class="p">]</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.015371322631836</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1673471283</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4.015 seconds&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-12 15:29:37+01:00&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1673470983</span>
+<span class="w">            </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-12 15:24:37+01:00&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
