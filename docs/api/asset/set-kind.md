@@ -40,6 +40,7 @@ Logo                                                                            
 <img src="https://app.infrasonar.com/static/images/hosticons/supermicro.png" style="margin:0; width:20px;"/>    | `Supermicro`
 <img src="https://app.infrasonar.com/static/images/hosticons/switch.png" style="margin:0; width:20px;"/>        | `Switch`
 <img src="https://app.infrasonar.com/static/images/hosticons/synology.png" style="margin:0; width:20px;"/>      | `Synology`
+<img src="https://app.infrasonar.com/static/images/hosticons/unifi.png" style="margin:0; width:20px;"/>         | `UniFi`
 <img src="https://app.infrasonar.com/static/images/hosticons/vmware.png" style="margin:0; width:20px;"/>        | `VMware`
 <img src="https://app.infrasonar.com/static/images/hosticons/website.png" style="margin:0; width:20px;"/>       | `Website`
 <img src="https://app.infrasonar.com/static/images/hosticons/windows.png" style="margin:0; width:20px;"/>       | `Windows`
