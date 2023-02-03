@@ -8,7 +8,7 @@ Download a report.
 Param               | Description
 --------------------|-------------
 `reportingId`       | Reporting Id.
-`reportId`          | Report Id. _(can be found with using the [reporting](./query.md) API)_.
+`reportId`          | Report Id. _(can be found using the [reporting](./query.md) API)_.
 
 ### Return codes
 Error code  | Reason
