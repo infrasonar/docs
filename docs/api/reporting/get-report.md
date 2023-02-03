@@ -27,4 +27,4 @@ curl \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
-The result might ba a _PDF_, _XLSX_ or _JSON_ file, depending on the report type.
+The result contains either a _PDF_, _XLSX_ or _JSON_ file, depending on the report type.
