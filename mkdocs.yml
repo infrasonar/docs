@@ -145,6 +145,9 @@ nav:
         - Purge time-series: api/container/purge-time-series.md
       - Label:
         - Query label: api/label/query.md
+      - Reporting:
+        - Query reporting: api/reporting/query.md
+        - Get report: api/reporting/get-report.md
       - ConnectWise Manage add-on:
         - Set CWM: api/cwm/set-cwm.md
       - Examples:
