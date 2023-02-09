@@ -1,20 +1,11 @@
 # Project information
 site_name: InfraSonar
-repo_url: https://github.com/infrasonar/docs
 
 # Copyright
 copyright: "Copyright &copy; 2023 Cesbit"
 
-# Plugins
-Plugins:
-  # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/?h=date#document-dates
-  - git-revision-date-localized:
-      enable_creation_date: true
-
 # Theme configuration
 theme:
-  icon:
-    repo: material/github
   palette:
     # Palette toggle for light mode
     - scheme: default
