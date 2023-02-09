@@ -1,7 +1,6 @@
 # Project information
 site_name: InfraSonar
-
-
+repo_url: https://github.com/infrasonar/docs
 
 # Copyright
 copyright: "Copyright &copy; 2023 Cesbit"
@@ -14,6 +13,8 @@ Plugins:
 
 # Theme configuration
 theme:
+  icon:
+    repo: material/github
   palette:
     # Palette toggle for light mode
     - scheme: default
