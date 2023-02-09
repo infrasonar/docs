@@ -54,9 +54,7 @@ Some of the included measurements:
 
 ## Deployment
 
-The HTTP probe can best be deployed as a docker container.
-
-:material-docker: [ghcr.io/infrasonar/mssql-probe](ghcr.io/infrasonar/mssql-probe)
+The Microsoft SQL probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
 
 See our TODO
 

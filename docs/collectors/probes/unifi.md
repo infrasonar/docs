@@ -4,31 +4,30 @@
 
 ## Introduction
 
+The UniFi probe uses [snmp](snmp.md) to perform its queries.
+
 ## Features
 
 ## Deployment
 
-The UniFi probe can best be deployed as a docker container.
-
-:material-docker: [ghcr.io/infrasonar/unifi-probe](ghcr.io/infrasonar/unifi-probe)
-
-See our TODO
+The UniFi probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
 
 ## Probe configuration
 
-### Credentials
+The easiest way to configure the UniFi probe is in most scenarios to tell the probe to use the `snmp` configuration like so:
 
-## Checks
+```yaml
+unifi:
+  use: snmp
+```
 
-## Best practices
+The `unifi` section however can contain a custom configuration similar to the [snmp](snmp.md) section.
 
 ## Operational
 
-### Known issues
-
-## Additional information
+### SNMP version
 
 
 ## Additional information
 
-:material-github: [UniFi probe source code](https://github.com/infrasonar/unifo-probe)
+:material-github: [UniFi probe source code](https://github.com/infrasonar/unifi-probe)

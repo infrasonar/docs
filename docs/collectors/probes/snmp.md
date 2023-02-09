@@ -6,18 +6,17 @@
 
 InfraSonar supports retrieving data from remote assets using the *SNMPv1*, *SNMPv2c*, and *SNMPv3* protocol.
 
-The SNMP probe consists of a base probe and various vendor specific add-ons:
+The SNMP probe consists of a base probe and various vendor specific probes:
 
-* APC PDU
-* APC UPS
-* Dell
-* HP Integrated Lights-Out (iLO)
-* HP ProCurve 
-* Synology
+* [Eaton](eaton.md)
+* [HP ILO](hpilo.md)
+* [HP ProCurve](hpprocurve.md)
+* [Synology](synology.md)
+* [UniFi](unifi.md)
 
 ## Deployment
 
-We assume you deployed the SNMP probe as part of our appliance implementation.
+The SNMP probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
 
 ## Prerequisites
 

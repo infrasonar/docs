@@ -13,11 +13,7 @@ The HTTP probe allows to monitor a specific [URI](https://en.wikipedia.org/wiki/
 
 ## Deployment
 
-The HTTP probe can best be deployed as a docker container.
-
-:material-docker: [ghcr.io/infrasonar/http-probe](ghcr.io/infrasonar/http-probe)
-
-See our TODO
+The HTTP probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
 
 ## Probe configuration
 

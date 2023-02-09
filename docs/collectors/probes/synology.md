@@ -2,6 +2,10 @@
 
 ## Features
 
+## Deployment
+
+The Synology probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+
 ## Configuration
 
 ### Credentials

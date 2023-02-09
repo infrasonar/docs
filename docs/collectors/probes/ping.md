@@ -7,15 +7,11 @@ The ping-probe utilizes the [icmp protocol](https://en.wikipedia.org/wiki/Ping_(
 ## Features
 
 * Ping roundtrip monitoring, min and max timing
-* Number of successfull and/or dropped packages
+* Number of successfully and/or dropped packages
 
 ## Deployment
 
-The ping probe can best be deployed as a docker container.
-
-:material-docker: [ghcr.io/infrasonar/ping-probe](ghcr.io/infrasonar/ping-probe)
-
-See our TODO
+The ping probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
 
 ## Probe configuration
 

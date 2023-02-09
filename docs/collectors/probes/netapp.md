@@ -12,11 +12,21 @@ InfraSonar monitors NetApp systems running Data ONTAP using the ONTAP rest API.
 
 ## Features
 
+Some of the features of the InfraSonar NetApp probe:
+
+* NetApp Health Status
+* Aggregate and volume and utilization
+* Cluster information
+* Disk status
+* Interface status (Ethernet and FCP)
+* CIFS status
+* Autosupport configuration
+* IOPS
+* Snapmirror
+
 ## Deployment
 
-The NetApp probe can best be deployed as a docker container.
-
-:material-docker: [ghcr.io/infrasonar/netapp-probe](ghcr.io/infrasonar/netapp-probe)
+The NetApp probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
 
 ## Probe configuration
 

@@ -1,4 +1,4 @@
-![DNS-Probe](../../images/probe_eaton.png){ width="200" align=right}
+![Eaton-Probe](../../images/probe_eaton.png){ width="200" align=right}
 
 # Eaton
 
@@ -18,11 +18,7 @@ UPS monitoring
 
 ## Deployment
 
-The Eaton probe can best be deployed as a docker container.
-
-:material-docker: [ghcr.io/infrasonar/eaton-probe](ghcr.io/infrasonar/eaton-probe)
-
-See our TODO
+The Eaton probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
 
 ## Probe configuration
 

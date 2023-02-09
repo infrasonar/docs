@@ -6,6 +6,14 @@
 
 The DNS probe monitors DNS servers and can even monitor changes to specific DNS records.
 
+## Features 
+
+THe DNS probe can perform forward and reverse DNS queries for an FQDN
+
+## Deployment
+
+The DNS probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+
 ## Probe configuration
 
 Property    | Description
