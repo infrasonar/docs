@@ -4,7 +4,15 @@ site_name: InfraSonar
 
 
 # Copyright
-copyright: "Copyright &copy; 2022 Cesbit"
+copyright: "Copyright &copy; 2023 Cesbit"
+
+# Plugins
+Plugins:
+  # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/?h=date#document-dates
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+      type: date
 
 # Theme configuration
 theme:
@@ -27,6 +35,8 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.indexes
+    # Enanles the Code copy button
+    - content.code.copy
 
 # Custom styling
 extra_css:
@@ -62,32 +72,6 @@ nav:
           - Platform: documentation/introduction/platform.md
           - Support: documentation/introduction/support.md
           - Terminology: documentation/introduction/terminology.md
-      - Collectors:
-          - documentation/collectors/index.md
-          - Agents:
-              - documentation/collectors/agents/index.md
-              -  Docker: documentation/collectors/agents/docker.md
-              -  Microsoft Windows: documentation/collectors/agents/microsoft_windows.md
-          - Probes:
-              - documentation/collectors/probes/index.md
-              - Appliance:
-                  - Deployment: documentation/collectors/probes/appliance/appliance_deployment.md
-                  - Credentials: documentation/collectors/probes/appliance/credentials.md
-              - DNS: documentation/collectors/probes/dns.md
-              - HTTP: documentation/collectors/probes/http.md
-              - Microsoft Azure: documentation/collectors/probes/microsoft_azure.md
-              - Microsoft WMI: documentation/collectors/probes/wmi.md
-              - Microsoft SQL Server: documentation/collectors/probes/microsoft_sql.md
-              - NetApp: documentation/collectors/probes/netapp.md
-              - Ping: documentation/collectors/probes/ping.md
-              - Pure storage: documentation/collectors/probes/pure_probe.md
-              - SNMP: documentation/collectors/probes/snmp.md
-              - TCP: documentation/collectors/probes/tcp.md
-              - VMware ESX: documentation/collectors/probes/vmware-esx.md
-              - VMware vCenter: documentation/collectors/probes/vmware-vcenter.md
-              - SMTP: documentation/collectors/probes/smtp.md
-          - Services:
-              - documentation/collectors/services/index.md
       - Application:
           - Containers: documentation/application/container.md
           - Assets: documentation/application/assets.md
@@ -107,6 +91,41 @@ nav:
       - Privacy & Security:
           - Security: documentation/privacy-security/security_considerations.md
           - Privacy: documentation/privacy-security/privacy.md
+  - Collectors:
+    - collectors/index.md
+    - Agents:
+        - collectors/agents/index.md
+        -  Docker: collectors/agents/docker.md
+        -  Microsoft Windows: collectors/agents/microsoft_windows.md
+    - Probes:
+        - collectors/probes/index.md
+        - Appliance:
+            - collectors/probes/appliance/index.md
+            - Docker compose: collectors/probes/appliance/docker_compose.md
+            - Credentials: collectors/probes/appliance/credentials.md
+        - DNS: collectors/probes/dns.md
+        - EATON: collectors/probes/eaton.md
+        - HP ILO: collectors/probes/hpilo.md
+        - HP ProCurve: collectors/probes/hpprocurve.md
+        - HTTP: collectors/probes/http.md
+        - Microsoft Azure: collectors/probes/microsoft_azure.md
+        - Microsoft WMI: collectors/probes/wmi.md
+        - Microsoft SQL Server: collectors/probes/mssql.md
+        - NetApp: collectors/probes/netapp.md
+        - Palo Alto: collectors/probes/paloalto.md
+        - Ping: collectors/probes/ping.md
+        - SNMP: collectors/probes/snmp.md
+        - Synology: collectors/probes/synology.md
+        - TCP: collectors/probes/tcp.md
+        - UniFi: collectors/probes/unifi.md
+        - VMWare:
+            - collectors/probes/vmware/index.md
+            - ESXi: collectors/probes/vmware/esx.md
+            - vCenter: collectors/probes/vmware/vcenter.md
+        - SMTP: collectors/probes/smtp.md
+    - Services:
+        - collectors/services/index.md
+        - Last seen: collectors/services/last_seen.md
   - Integrations:
       - Overview: integrations/index.md
       - DutyCalls:

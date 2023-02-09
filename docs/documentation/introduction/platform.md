@@ -19,11 +19,11 @@ InfraSonar can be broken down in three area's:
 
 Within InfraSonar, we identify three concepts for collecting data:
 
-* **[Agents](../collectors/agents/index.md)**<br>
+* **[Agents](../../collectors/agents/index.md)**<br>
   Agents run autonomously on an endpoint and send data straight to the InfraSonar platform.
-* **[Probes](../collectors/probes/index.md)**<br>
+* **[Probes](../../collectors/probes/index.md)**<br>
   Probes query an endpoint using a specific protocol.
-* **[Services](../collectors/services/index.md)**<br>
+* **[Services](../../collectors/services/index.md)**<br>
   Services monitor an endpoint and report the status to multiple containers.<br>
   *E.g. [Microsoft 365 Service Health Status](https://status.office365.com/)*
 

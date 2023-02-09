@@ -29,13 +29,13 @@ Configuring an asset involves the following steps:
    *This is usually normal, see our [mode](modes.md) documentation for more details*
 4. Select the zone.
    *This is usually 0, see our [zone](zones.md) documentation for more details*
-5. Select the [collectors](../collectors/probes/index.md) you want to use.
+5. Select the [collectors](../../collectors/index.md) you want to use.
 6. Enter the correct [labels](labels.md) for this asset.
 
 
 !!! note "Advanced asset configuration and credentials"
 
-    Some collectors require a more advanced configuration or credentials to be setup on the appliance running the collector. See our [credentials](../collectors/probes/appliance/credentials.md) section if this applies to your setup.
+    Some collectors require a more advanced configuration or credentials to be setup on the appliance running the collector. See our [credentials](../../collectors/probes/appliance/credentials.md) section if this applies to your setup.
 
 ## Adding multiple assets
 
