@@ -11,8 +11,6 @@ Plugins:
   # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/?h=date#document-dates
   - git-revision-date-localized:
       enable_creation_date: true
-      fallback_to_build_date: true
-      type: date
 
 # Theme configuration
 theme:
@@ -35,7 +33,7 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.indexes
-    # Enanles the Code copy button
+    # Enables the Code copy button
     - content.code.copy
 
 # Custom styling
@@ -171,6 +169,3 @@ nav:
         - Set CWM: api/cwm/set-cwm.md
       - Examples:
           - Powershell: api/examples/powershell.md
-
-
-  - Changelog: changelog.md
