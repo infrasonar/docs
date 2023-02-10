@@ -1,4 +1,4 @@
-![What is?](../../images/introduction_whatis.png){ width="200" align=right}
+![What is?](../images/introduction_whatis.png){ width="200" align=right}
 
 # What is InfraSonar
 

@@ -1,4 +1,4 @@
-![Conditions](../../images/application_conditions.png){ width="200" align=right}
+![Conditions](../images/application_conditions.png){ width="200" align=right}
 
 # :material-list-status: Conditions
 

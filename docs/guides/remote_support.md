@@ -1,6 +1,6 @@
 # Remote support
 
-![InfraSonar support](../../images/support.png){ width="200" align=right}
+![InfraSonar support](../images/support.png){ width="200" align=right}
 
 ## tmate
 

@@ -1,4 +1,11 @@
+![Terminology](../images/application_terminology.png){ width="400" align=right}
+
 # Terminology
+
+Terminology in IT is always a bit of a challenge :fontawesome-regular-face-laugh-wink:
+ we try to make it easier by outlining what we mean with curtain terms.
+
+## Terminology overview
 
 Term           | Description
 ---------------|----------------------------------------------------------

@@ -1,4 +1,4 @@
-![Modes](../../images/application_modes.png){ width="200" align=right}
+![Modes](../images/application_modes.png){ width="200" align=right}
 
 # Modes
 
@@ -31,6 +31,6 @@ Changing the mode on an asset can be done while editing :material-pencil: an ass
 
 It is also possible to change the mode using our API:
 
-* [Change mode on a asset](../../api/asset/set-mode.md)
-* [Change mode on a container](../../api/container/set-mode.md)
+* [Change mode on a asset](../api/asset/set-mode.md)
+* [Change mode on a container](../api/container/set-mode.md)
 

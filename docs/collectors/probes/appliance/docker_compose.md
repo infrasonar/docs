@@ -108,13 +108,13 @@ The `x-infrasonar-template` section ensures the default settings are the same fo
 #### Agentcore service
 
 The agentcore service contains an environment variable containing a TOKEN that must be set correctly prior to starting the InfraSonar environment.
-See the [tokens section](../../../documentation/application/tokens.md) on how to determine the correct variable.
+See the [tokens section](../../../application/tokens.md) on how to determine the correct variable.
 
 
 #### Docker agent
 
 The Docker agent contains an environment variable containing a TOKEN that must be set correctly prior to starting the InfraSonar environment.
-See the [tokens section](../../../documentation/application/tokens.md) on how to determine the correct variable.
+See the [tokens section](../../../application/tokens.md) on how to determine the correct variable.
 
 
 #### Watchtower service

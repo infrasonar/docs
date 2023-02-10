@@ -1,4 +1,4 @@
-![Alerts](../../images/application_alert.png){ width="200" align=right}
+![Alerts](../images/application_alerts.png){ width="200" align=right}
 
 # Alerts
 
@@ -10,7 +10,7 @@ Using [rules](rules.md) it is possible to route the alert to email or [DutyCalls
 
 When you are in a container view (1) you can view the alerts and [notifications](notifications.md) in the **:material-bell: Alerts & Notifications page** (2)<br>
 
-![Alerts and notfications](../../images/application_alerts.png){ width="500"}
+![Alerts and notfications](../images/application_alerts.png){ width="500"}
 
 This view shows:
 
@@ -22,11 +22,11 @@ This view shows:
 
 The open alerts (3) pane shows a list (6) of all open alerts and its status.
 
-![Alerts open](../../images/application_alerts_open.png){ width="500"}
+![Alerts open](../images/application_alerts_open.png){ width="500"}
 
 When you click the show details button :octicons-link-external-16: the details pane opens.
 
-![Alerts details](../../images/application_alerts_details.png){ width="500"}
+![Alerts details](../images/application_alerts_details.png){ width="500"}
 
 1. **Add message**, allows you to add a message to the alert; this might be useful to inform coworkers.
 2. **Assign alert**, allows you to assign the alert to yourself or another member of this container.

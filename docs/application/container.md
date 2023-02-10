@@ -1,19 +1,26 @@
-![Containers](../../images/application_containers.png){ width="200" align=right}
+![Containers](../images/application_containers.png){ width="200" align=right}
 
 # :material-apps: InfraSonar containers 
 
-InfraSonor containers are a hierarchial setup of you monitored infrastructure.
+InfraSonar containers are a hierarchial setup of you monitored infrastructure.
 
 A container can contain monitored assets and/or sub-containers.
 
-On the container level an admin can configure authorization, custom labels, and conditions.
+Depending on your access level the following can be configured at container level:
+
+* Authorization
+* Labels
+* Conditions.
+* Collectors
+* Billing
+* Modes
+* Timezone
 
 ## Hierarchy
 
 ### Principles
 
-* Authorization is inherited to "lower" containers. Inheritance can be "broken" down the chain.
-* Timezones can be configured per container.
+Authorization is inherited to "lower" containers. Inheritance can be "broken" down the chain.
 
 #### InfraSonar hierarchical setup
 
@@ -68,14 +75,14 @@ graph LR
     When you are new to InfraSonar and sign in for the first time, you will see the message:
     > Welcome to InfraSonar! It appears that you are not yet a member of an InfraSonar container. If you are a member of an organization that uses InfraSonar, ask for permission from an authorized person to add you to the relevant container. Otherwise, request a free demo via the [website](https://infrasonar.com/support)!
 
-From the container view, you can add a new container.
+From the container view, you can add a new child container.
 
 <figure markdown>
-  ![InfraSonar add container](../../images/application_add_container.png){ width="800" }
+  ![InfraSonar add child container](../images/application_add_container.png){ width="800" }
   <figcaption>InfraSonar add container</figcaption>
 </figure>
 
-1. When you are in asset view you can use the child containers button :material-file-tree: to switch to container view;
+1. When you are in asset view you can use the child containers button :material-file-tree: to switch to child container view;
 2. Click the add **container button**;
 3. Enter a name for your container;
 4. Select the [mode](modes.md), this is usual **normal**;

@@ -15,7 +15,7 @@ When a new asset (host) is added and the InfraSonar admin enables a specific pro
 
 Probes are typically deployed using a Docker image running as a Docker container one or more InfraSonar [appliances](appliance/index.md).
 
-Upon startup a probe registers itself to the for this probe configured [agentcore](../../documentation/application/agentcores.md)
+Upon startup a probe registers itself to the for this probe configured [agentcore](../../application/agentcores.md)
 
 Because probes usually run in the same Docker network as the agentcore, they can easily connect to it.
 

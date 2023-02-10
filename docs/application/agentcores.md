@@ -1,8 +1,8 @@
-![Agentcore](../../images/application_agentcore.png){ width="200" align=right}
+![Agentcore](../images/application_agentcore.png){ width="200" align=right}
 
 # :material-radar: Agentcore
 
-The Agentcore orchestrates our [probes](../../collectors/index.md) and is responsible for scheduling checks.
+The Agentcore orchestrates our [probes](../collectors/index.md) and is responsible for scheduling checks.
 During the startup sequence of a probe, it will “:material-bullhorn-variant-outline: announce” itself to the Agentcore.
 
 The Agentcore also acts as a communication gateway. Data retrieved by the probes is sent to the InfraSonar cloud platform via the Agentcore.

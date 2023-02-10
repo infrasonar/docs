@@ -118,7 +118,7 @@ $ sudo netplan apply
 
 For each InfraSonar appliance, the `TOKEN` must be set in the `/etc/infrasonar/docker-compose.yml` file.
 
-See our [token documentation](../../../documentation/application/tokens.md) on how to retrieve a token.
+See our [token documentation](../../../application/tokens.md) on how to retrieve a token.
     
 When a token set, you can start the appliance using the following `docker compose` command:
 
@@ -131,7 +131,7 @@ docker compose -f /etc/infrasonar/docker-compose.yml up -d
     Detailed documentation about the docker-compose.yml file in use by InfraSonar can be found [here](docker_compose.md)
 
 When the Docker environment is up and running, you should see the agentcore as a host in your environment.
-[Contact InfraSonar support](../../../documentation/introduction/support.md) if you require any assistance.
+[Contact InfraSonar support](../../../introduction/support.md) if you require any assistance.
 
 ## Monitor the appliance
 

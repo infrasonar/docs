@@ -46,7 +46,7 @@ Follow these steps below to create and add a token to your user account.
 !!! tip inline end
     We strongly suggest setting up separate tokens when possible.
 
-Container tokens are also required for [agentcore](../documentation/application/agentcores.md) and [agent](../collectors/agents/index.md) authentication.
+Container tokens are also required for [agentcore](../application/agentcores.md) and [agent](../collectors/agents/index.md) authentication.
 
 
 1. Navigate to the container you want to create a token for.

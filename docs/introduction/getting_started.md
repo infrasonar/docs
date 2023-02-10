@@ -1,4 +1,4 @@
-![Start here](../../images/introduction_starthere.png){ width="200" align=right}
+![Start here](../images/introduction_starthere.png){ width="200" align=right}
 
 # Getting started with InfraSonar
 
@@ -13,9 +13,9 @@ Implementing a basic InfraSonar configuration is easy because InfraSonar can be 
 1. **Create a container**<br>
    The first step is to [create a container](../application/container.md#setup-a-new-container) for your assets.
 2. **Deploy the InfraSonar appliance**<br>
-   Deploy and setup the [InfraSonar appliance](../../collectors/probes/appliance/index.md) in your infrastructure.
+   Deploy and setup the [InfraSonar appliance](../collectors/probes/appliance/index.md) in your infrastructure.
 3. **Configure probes**<br>
-   Setting up (default) [credentials](../../collectors/probes/appliance/credentials.md) is the only configuration required in most cases. 
+   Setting up (default) [credentials](../collectors/probes/appliance/credentials.md) is the only configuration required in most cases. 
 4. **Add assets**<br>
    [Add assets](../application/assets.md) using the web application.
 

@@ -1,4 +1,4 @@
-![Label](../../images/application_label.png){ width="200" align=right}
+![Label](../images/application_label.png){ width="200" align=right}
 
 # :material-label: Labels
 
@@ -28,7 +28,7 @@ graph LR
 Labels can be assigned to hosts either by :material-playlist-edit: editing a host or by selecting one or more hosts and using the **action menu**.
 
 <figure markdown>
-  ![Action menu](../../images/application_actions.png)
+  ![Action menu](../images/application_actions.png)
   <figcaption>Action menu in action</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ Labels can be assigned to hosts either by :material-playlist-edit: editing a hos
 InfraSonar container admins can create custom labels for a container.
 
 <figure markdown>
-  ![InfraSonar add label](../../images/application_add_label.png){ width="800" }
+  ![InfraSonar add label](../images/application_add_label.png){ width="800" }
   <figcaption>InfraSonar add label</figcaption>
 </figure>
 
