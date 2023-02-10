@@ -92,26 +92,7 @@ wmi:
 
 ## Probe specifics
 
-### ESX
-
-The ESX section is straightforward and has beyond a **username** and a **password** no configuration options.
-
-```yaml
-esx:
-  config:
-    username: root
-    password: "a secret"
-  assets:
-  - id: 123
-    config:
-      username: root
-      password: "my secret"
-  - id: [456, 789]
-    config:
-      username: root
-      password: "other secret"
-```
-
+For most probes it is sufficient to provide a `username` and `password`; we outlined probes with a more distinct configuration here:
 
 ### SNMP
 
@@ -186,8 +167,6 @@ The WMI probe uses a straightforward configuration as shown below.
 When Microsoft Active directory accounts are used the **username** can be either in domain format `domain\infrasonar_service_account` or use the UPN format: `infrasonar_service_account@domain.something`
 
 An asset specific configuration can be useful for non domain joined servers.
-
-
 
 ```yaml
 wmi:

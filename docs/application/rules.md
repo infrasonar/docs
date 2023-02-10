@@ -4,11 +4,8 @@
 
 Rules are a great way to configure notifications for end-users.
 
-InfraSonor supports the following notification services:
+## Features
 
-* email
-* DutyCalls
+Rules can be setup for a group of conditions and assets and route messages to either DutyCalls or email.
 
-## email
-
-## DuyCalls
+Routing to DutyCalls requires this service to be setup first, see our [DutyCalls documentation](dutycalls.md) for more information.
