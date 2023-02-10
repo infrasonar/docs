@@ -8,6 +8,8 @@ We recommend setting up a small-scale testing environment and using this documen
 
 ## Implementation steps
 
+### Agent-less implementation
+
 Implementing a basic InfraSonar configuration is easy because InfraSonar can be deployed agent-less and thus leaves no footprint on the monitored infrastructure.
 
 1. **Create a container**<br>
