@@ -71,5 +71,5 @@ services:
       - infraSonarData:/data
 ```
 
-See also our InfraSonar [docker compose](appliance/docker_compose.md) on how we deploy the docker agent on our monitoring appliances.
+See also our InfraSonar [docker compose](../probes/appliance/docker_compose.md) on how we deploy the docker agent on our monitoring appliances.
 
