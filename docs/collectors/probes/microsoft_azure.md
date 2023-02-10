@@ -1,4 +1,6 @@
-# :material-microsoft-azure: Microsoft Azure
+![Microsoft Azure](../../images/probe_azure.png){ width="150" align=right}
+
+# Microsoft Azure
 
 ## Introduction
 

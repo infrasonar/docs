@@ -1,4 +1,4 @@
-![UniFi-Probe](../../images/probe_unifi.png){ width="200" align=right}
+![UniFi-Probe](../../images/probe_unifi.png){ width="150" align=right}
 
 # UniFi
 

@@ -1,3 +1,5 @@
+![HP](../../images/probe_hp.png){ width="150" align=right}
+
 # HP ILO
 
 ## Introduction

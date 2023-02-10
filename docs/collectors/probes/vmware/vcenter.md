@@ -1,4 +1,4 @@
-![VMware](../../../images/probe_vmware.png){ width="200" align=right}
+![VMware](../../../images/probe_vmware.png){ width="150" align=right}
 
 # VMware vCenter
 

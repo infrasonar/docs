@@ -62,6 +62,12 @@ nav:
           - Platform: introduction/platform.md
           - Support: introduction/support.md
           - Terminology: introduction/terminology.md
+      - Guides:
+          - Migration: guides/migration.md
+          - Remote support: guides/remote_support.md
+      - Privacy & Security:
+          - Security: privacy-security/security_considerations.md
+          - Privacy: privacy-security/privacy.md
   - Application:
       - application/index.md
       - Alerts: application/alerts.md
@@ -84,12 +90,6 @@ nav:
       - Trash: application/trash.md
       - Modes: application/modes.md
       - Notifications: application/notifications.md
-      - Guides:
-          - Migration: guides/migration.md
-          - Remote support: guides/remote_support.md
-      - Privacy & Security:
-          - Security: privacy-security/security_considerations.md
-          - Privacy: privacy-security/privacy.md
   - Collectors:
     - collectors/index.md
     - Agents:

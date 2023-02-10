@@ -1,4 +1,4 @@
-![lastseen-service](../../images/service_lastseen.png){ width="200" align=right}
+![lastseen-service](../../images/service_lastseen.png){ width="150" align=right}
 
 # Last Seen
 

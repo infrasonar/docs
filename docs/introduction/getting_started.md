@@ -1,4 +1,4 @@
-![Start here](../images/introduction_starthere.png){ width="200" align=right}
+![Start here](../images/introduction_starthere.png){ width="150" align=right}
 
 # Getting started with InfraSonar
 

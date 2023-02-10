@@ -1,4 +1,4 @@
-![wmi-probe](../../images/probe_wmi.png){ width="200" align=right}
+![wmi-probe](../../images/probe_wmi.png){ width="150" align=right}
 
 # WMI
 

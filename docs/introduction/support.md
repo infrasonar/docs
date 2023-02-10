@@ -1,4 +1,4 @@
-![Contact US](../images/introduction_support.png){ width="200" align=right}
+![Contact US](../images/introduction_support.png){ width="150" align=right}
 
 # Support
 

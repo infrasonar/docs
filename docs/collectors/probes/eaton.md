@@ -1,4 +1,4 @@
-![Eaton-Probe](../../images/probe_eaton.png){ width="200" align=right}
+![Eaton-Probe](../../images/probe_eaton.png){ width="150" align=right}
 
 # Eaton
 

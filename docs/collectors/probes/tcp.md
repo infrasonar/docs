@@ -1,21 +1,31 @@
-# :material-ip-network-outline: TCP
+![TCP](../../images/probe_tcp.png){ width="150" align=right}
 
-The TCP probe consists of two checks:
+# TCP
+
+## Introduction
+
+The TCP probe uses TCP to try and make a TCP connection.
+
+## Features
 
 * Check TCP ports
 * Check certificates
 
-## Configuration
+## Deployment
 
-**<div style="width:120px">Property</div>** | Description
+The TCP probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+
+## Probe configuration
+
+*<div style="width:120px">Property</div>** | Description
 --------------------------------------------|------------------------
 Address                                     | The address that the probe should check.
 Certificate Ports                           | List of ports to perform certificates check on.
 TCP Ports                                   | List of ports to perform a port check on.<br>Each port must be a numeric value between 1 and 65535, where ports are separated by a comma.
 
-## Check specifics  
+## Checks
 
-### Check TCP ports
+### TCP ports
 
 Check TCP ports allows for monitoring specific TCP port statuses.
 
@@ -30,6 +40,10 @@ As the TCP probe uses NMAP at its core it can identify the same six ports states
 `open|filtered`                               | Nmap places ports in this state when it is unable to determine whether a port is open or filtered.
 `closed|filtered`                             | This state is used when Nmap is unable to determine whether a port is closed or filtered.
 
-### Check certificates
+### Certificates
 
 Gathers certificates and ciphers present on the specified TCP port.
+
+## Additional information
+
+:material-github: [TCP probe source code](https://github.com/infrasonar/tcp-probe)

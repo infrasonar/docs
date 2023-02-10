@@ -1,4 +1,4 @@
-![HP-ProCurve-Probe](../../images/probe_hp_procurve.png){ width="200" align=right}
+![HP](../../images/probe_hp.png){ width="150" align=right}
 
 # HP ProCurve
 

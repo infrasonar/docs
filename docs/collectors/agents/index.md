@@ -1,4 +1,4 @@
-![Software Package](../../images/software_package.png){ width="200" align=right}
+![Software Package](../../images/software_package.png){ width="150" align=right}
 
 # Agents
 

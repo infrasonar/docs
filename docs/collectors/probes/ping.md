@@ -1,4 +1,6 @@
-# :material-upload-network-outline: Ping
+![Ping](../../images/probe_ping.png){ width="150" align=right}
+
+# Ping
 
 ## Introduction
 

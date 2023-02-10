@@ -1,4 +1,4 @@
-![Zones](../images/application_zones.png){ width="200" align=right}
+![Zones](../images/application_zones.png){ width="150" align=right}
 
 # zones
 

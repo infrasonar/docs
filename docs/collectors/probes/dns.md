@@ -1,6 +1,6 @@
-![DNS-Probe](../../images/probe_dns.png){ width="200" align=right}
+![DNS-Probe](../../images/probe_dns.png){ width="150" align=right}
 
-# :material-dns-outline: DNS
+# DNS
 
 ## Introduction
 

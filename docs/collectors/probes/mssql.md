@@ -1,4 +1,4 @@
-![mssql-probe](../../images/probe_mssql.png){ width="200" align=right}
+![mssql-probe](../../images/probe_mssql.png){ width="150" align=right}
 
 # :material-microsoft: Microsoft SQL Server
 

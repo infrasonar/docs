@@ -1,4 +1,6 @@
-# :material-upload-network-outline: SNMP
+![SNMP](../../images/probe_snmp.png){ width="150" align=right}
+
+# SNMP
 
 > "Simple Network Management Protocol is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behavior." - _[wikipedia](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)_
 
