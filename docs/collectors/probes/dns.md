@@ -4,7 +4,8 @@
 
 ## Introduction
 
-The DNS probe monitors DNS servers and can even monitor changes to specific DNS records.
+The DNS probe is a synthetic monitor and can even monitor changes to specific DNS records.
+
 
 ## Features 
 
