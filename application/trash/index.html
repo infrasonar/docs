@@ -828,9 +828,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Trash
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Trash
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recovering-an-asset" class="md-nav__link">
+    Recovering an asset
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1199,6 +1230,8 @@
         
           
         
+          
+        
       
       
         
@@ -1296,6 +1329,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collectors/probes/agentcore/" class="md-nav__link">
+        Agentcore
+      </a>
     </li>
   
 
@@ -1522,7 +1569,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_18" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_19" >
       
       
         
@@ -1541,14 +1588,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../collectors/probes/vmware/">VMWare</a>
           
-            <label for="__nav_4_3_18">
+            <label for="__nav_4_3_19">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_18_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_3_18">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_19">
           <span class="md-nav__icon md-icon"></span>
           VMWare
         </label>
@@ -2654,6 +2701,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recovering-an-asset" class="md-nav__link">
+    Recovering an asset
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2670,6 +2732,12 @@
 
 <p><img align="right" alt="Trash" src="../../images/application_trash.png" width="150" /></p>
 <h1 id="trash">Trash</h1>
+<p>Asset's are soft-deleted.</p>
+<p>When an asset is deleted we remove the collectors from the asset and move the asset to the trash-bin.</p>
+<h2 id="recovering-an-asset">Recovering an asset</h2>
+<p>When you recover an asset you will need to add the collectors and labels back to this asset.</p>
+<p>Kind and description are recovered from the "bin".</p>
+<p>When you did not purge the time-series data this will be available again also.</p>
 
 
 

@@ -1250,6 +1250,8 @@
         
           
         
+          
+        
       
       
         
@@ -1347,6 +1349,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collectors/probes/agentcore/" class="md-nav__link">
+        Agentcore
+      </a>
     </li>
   
 
@@ -1573,7 +1589,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_18" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_19" >
       
       
         
@@ -1592,14 +1608,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../collectors/probes/vmware/">VMWare</a>
           
-            <label for="__nav_4_3_18">
+            <label for="__nav_4_3_19">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_18_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_3_18">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_19">
           <span class="md-nav__icon md-icon"></span>
           VMWare
         </label>
@@ -2769,136 +2785,102 @@
 As such a user should fist authenticate once on our platform and from there on the user can be added to a container.</p>
 </div>
 <h2 id="authorization">Authorization</h2>
-<p>A user's identity can be authorized on a container <a href="../container/">container</a> using a specific role.</p>
+<p>A user's identity can be authorized on a <a href="../container/">container</a> using a specific role.</p>
 <h3 id="authorization-flags">Authorization flags</h3>
-<dl>
-<dt><code>Alerts can be assigned to this user ("Is member")</code></dt>
-<dd>
-<ul>
-<li>Allows alerts to be assigned to this user, makes the user "visible" for alert assignment.</li>
-</ul>
-</dd>
-<dt><code>View</code></dt>
-<dd>
-<ul>
-<li>When applied to the root container, this gives sysadmin access;</li>
-<li>Required for viewing this container.</li>
-</ul>
-</dd>
-<dt><code>Billing</code></dt>
-<dd>
-<ul>
-<li>Required for viewing the credits tab on this container (only when credits are available on the container).</li>
-</ul>
-</dd>
-<dt><code>InsertCheckData</code></dt>
-<dd>
-<ul>
-<li>Required for inserting data using the API (used by agents).</li>
-</ul>
-</dd>
-<dt><code>AgentcoreConnect</code></dt>
-<dd>
-<ul>
-<li>Required for AgentCores to connect to the hub.</li>
-</ul>
-</dd>
-<dt><code>AssetManagement</code></dt>
-<dd>
-<ul>
-<li>Required for changing the container mode (and/or schedule container mode);</li>
-<li>Required for changing the asset mode (and/or schedule asset mode);</li>
-<li>Required for creating new assets;</li>
-<li>Required for removing assets (including delete from trash);</li>
-<li>Required for changing asset configuration (including labels and collector related configuration).</li>
-</ul>
-</dd>
-<dt><code>AlertAssign</code></dt>
-<dd>
-<ul>
-<li>Required for assigning alerts.</li>
-</ul>
-</dd>
-<dt><code>AlertChange</code></dt>
-<dd>
-<ul>
-<li>Required for closing alerts;</li>
-<li>Required for adding comments to alerts.</li>
-</ul>
-</dd>
-<dt><code>API</code></dt>
-<dd>
-<ul>
-<li>Required for any API request.</li>
-</ul>
-</dd>
-<dt><code>ContainerManagement</code></dt>
-<dd>
-<ul>
-<li>Required for adding child containers to this container;</li>
-<li>Required for removing this container;</li>
-<li>Required for renaming this container.</li>
-</ul>
-</dd>
-<dt><code>ContainerAdmin</code></dt>
-<dd>
-<ul>
-<li>Required for creating/changing/removing labels within this container;</li>
-<li>Required for creating/changing/removing conditions within this container;</li>
-<li>Required to create/change/remove a DutyCalls service to this container.</li>
-</ul>
-</dd>
-<dt><code>ContainerAccess</code></dt>
-<dd>
-<ul>
-<li>Required for managing user access to this container;</li>
-<li>Required for managing tokens on this container.</li>
-</ul>
-</dd>
-<dt><code>CheckManagement</code></dt>
-<dd>
-<ul>
-<li>Required for enable/disable/configure checks per collector on assets.</li>
-</ul>
-</dd>
-<dt><code>TimeSeriesManagement</code></dt>
-<dd>
-<ul>
-<li>Required for enable/disable time-series for this container.</li>
-</ul>
-</dd>
-<dt><code>RuleManagement</code></dt>
-<dd>
-<ul>
-<li>Required for managing DutyCalls rules on this container;</li>
-<li>Required for managing Email rules (including rules by other users) on this container.</li>
-</ul>
-</dd>
-<dt><code>RuleEmail</code></dt>
-<dd>
-<ul>
-<li>Required for creating a personal email rule on this container. <em>(other email rules are only visible when having the admin role)</em></li>
-</ul>
-</dd>
-<dt><code>PurgeTimeSeries</code></dt>
-<dd>
-<ul>
-<li>Required for purging dead-time-series within this container.</li>
-</ul>
-</dd>
-<dt><code>ViewLog</code></dt>
-<dd>
-<ul>
-<li>Required for viewing logging.</li>
-</ul>
-</dd>
-<dt><code>ConnectWiseManageAddOn</code></dt>
-<dd>
-<ul>
-<li>Required to use the CWM_ADDON on this container; (only if the container has CWM configured).</li>
-</ul>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th><strong><div style="width:40px">Flag</div></strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Alerts can be assigned to this user ("Is member")</code></td>
+<td>Allows alerts to be assigned to this user, makes the user "visible" for alert assignment.</td>
+</tr>
+<tr>
+<td><code>View</code></td>
+<td>Required for viewing this container.</td>
+</tr>
+<tr>
+<td><code>Billing</code></td>
+<td>Required for viewing the credits tab on this container (only when credits are available on the container).</td>
+</tr>
+<tr>
+<td><code>InsertCheckData</code></td>
+<td>Required for inserting data using the API (used by agents).</td>
+</tr>
+<tr>
+<td><code>AgentcoreConnect</code></td>
+<td>Required for AgentCores to connect to the hub.</td>
+</tr>
+<tr>
+<td><code>AssetManagement</code></td>
+<td>Required for changing the container mode (and/or schedule container mode);<br>Required for changing the asset mode (and/or schedule asset mode);<br>Required for creating new assets;<br>Required for removing assets (including delete from trash);<br>Required for changing asset configuration (including labels and collector related configuration).</td>
+</tr>
+<tr>
+<td><code>AlertAssign</code></td>
+<td>Required for assigning alerts.</td>
+</tr>
+<tr>
+<td><code>AlertChange</code></td>
+<td>Required for closing alerts;<br>Required for adding comments to alerts.</td>
+</tr>
+<tr>
+<td><code>API</code></td>
+<td>Required for any API request.</td>
+</tr>
+<tr>
+<td><code>ContainerManagement</code></td>
+<td>Required for adding child containers to this container;<br>Required for removing this container;<br>Required for renaming this container.</td>
+</tr>
+<tr>
+<td><code>ContainerAdmin</code></td>
+<td>Required for creating/changing/removing labels within this container;<br>Required for creating/changing/removing conditions within this container;<br>Required to create/change/remove a DutyCalls service to this container.</td>
+</tr>
+<tr>
+<td><code>ContainerAccess</code></td>
+<td>Required for managing user access to this container;<br>Required for managing tokens on this container.</td>
+</tr>
+<tr>
+<td><code>CheckManagement</code></td>
+<td>Required for enable/disable/configure checks per collector on assets.</td>
+</tr>
+<tr>
+<td><code>TimeSeriesManagement</code></td>
+<td>Required for enable/disable time-series for this container.</td>
+</tr>
+<tr>
+<td><code>RuleManagement</code></td>
+<td>Required for managing DutyCalls rules on this container;<br>Required for managing Email rules (including rules by other users) on this container.</td>
+</tr>
+<tr>
+<td><code>RuleEmail</code></td>
+<td>Required for creating a personal email rule on this container.<br><em>(other email rules are only visible when having the admin role)</em></td>
+</tr>
+<tr>
+<td><code>PurgeTimeSeries</code></td>
+<td>Required for purging dead-time-series within this container.</td>
+</tr>
+<tr>
+<td><code>ReportingView</code></td>
+<td>Required for viewing reports.</td>
+</tr>
+<tr>
+<td><code>ReportingAdmin</code></td>
+<td>Required for managing reports/</td>
+</tr>
+<tr>
+<td><code>ViewLog</code></td>
+<td>Required for viewing logging.</td>
+</tr>
+<tr>
+<td><code>ConnectWiseManageAddOn</code></td>
+<td>Required to use the <a href="../../integrations/connectwise_manage/">ConnectWise manage addon</a> on this container;<br><em>only if the container has CWM configured</em>.</td>
+</tr>
+</tbody>
+</table>
 
 
 

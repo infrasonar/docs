@@ -730,9 +730,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Zones
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Zones
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    Good to know
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1199,6 +1230,8 @@
         
           
         
+          
+        
       
       
         
@@ -1296,6 +1329,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collectors/probes/agentcore/" class="md-nav__link">
+        Agentcore
+      </a>
     </li>
   
 
@@ -1522,7 +1569,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_18" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_19" >
       
       
         
@@ -1541,14 +1588,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../collectors/probes/vmware/">VMWare</a>
           
-            <label for="__nav_4_3_18">
+            <label for="__nav_4_3_19">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_18_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_3_18">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_19">
           <span class="md-nav__icon md-icon"></span>
           VMWare
         </label>
@@ -2654,6 +2701,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    Good to know
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2670,10 +2732,13 @@
 
 <p><img align="right" alt="Zones" src="../../images/application_zones.png" width="200" /></p>
 <h1 id="zones">zones</h1>
-<p>When one or more agentcores are configured in the specified zone an asset is bound to an agentcore in this zone.
-If no agentcores are configured in the specified zone we fall back to any other agent core.</p>
-<p>This feature can be useful for assets in a dmz or remote networks as it allows to direct probes to a specific zone.</p>
-<p>For assets being monitored using an agent the zone configuration is purely cosmetic.</p>
+<p>Zones can be useful when assets are located in a dmz or remote networks as it allows to direct assets to a specific Agentcore by configuring the asset to be a member of the specific zone.</p>
+<h2 id="good-to-know">Good to know</h2>
+<ul>
+<li>When one or more <a href="../agentcores/">Agentcores</a> are configured in the specified zone an asset is bound to one of the Agentcores in this zone.</li>
+<li>If no agentcores are configured in the specified zone we fall back to any other agent core.</li>
+<li>For assets being monitored using an agent the zone configuration is purely cosmetic.</li>
+</ul>
 <p><em>In the future we might add a link between zones and locations.</em></p>
 
 

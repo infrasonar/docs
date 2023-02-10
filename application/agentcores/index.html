@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#agentcore" class="md-skip">
+        <a href="#agentcores" class="md-skip">
           Skip to content
         </a>
       
@@ -741,49 +741,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#removing-a-agentcore" class="md-nav__link">
+    Removing a Agentcore
   </a>
-  
-    <nav class="md-nav" aria-label="Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#resumable-operation" class="md-nav__link">
-    Resumable operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-agentcores" class="md-nav__link">
-    Multiple agentcores
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operational" class="md-nav__link">
-    Operational
-  </a>
-  
-    <nav class="md-nav" aria-label="Operational">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#removing-an-agentcore" class="md-nav__link">
-    Removing an Agentcore
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1270,6 +1230,8 @@
         
           
         
+          
+        
       
       
         
@@ -1367,6 +1329,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collectors/probes/agentcore/" class="md-nav__link">
+        Agentcore
+      </a>
     </li>
   
 
@@ -1593,7 +1569,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_18" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_19" >
       
       
         
@@ -1612,14 +1588,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../collectors/probes/vmware/">VMWare</a>
           
-            <label for="__nav_4_3_18">
+            <label for="__nav_4_3_19">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_18_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_3_18">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_19">
           <span class="md-nav__icon md-icon"></span>
           VMWare
         </label>
@@ -2732,49 +2708,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#removing-a-agentcore" class="md-nav__link">
+    Removing a Agentcore
   </a>
-  
-    <nav class="md-nav" aria-label="Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#resumable-operation" class="md-nav__link">
-    Resumable operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-agentcores" class="md-nav__link">
-    Multiple agentcores
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operational" class="md-nav__link">
-    Operational
-  </a>
-  
-    <nav class="md-nav" aria-label="Operational">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#removing-an-agentcore" class="md-nav__link">
-    Removing an Agentcore
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2795,31 +2731,14 @@
 
 
 <p><img align="right" alt="Agentcore" src="../../images/application_agentcore.png" width="150" /></p>
-<h1 id="agentcore"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 4.93-1.41 1.41A8.014 8.014 0 0 1 20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8c0-4.08 3.05-7.44 7-7.93v2.02C8.16 6.57 6 9.03 6 12a6 6 0 0 0 6 6 6 6 0 0 0 6-6c0-1.66-.67-3.16-1.76-4.24l-1.41 1.41C15.55 9.9 16 10.9 16 12a4 4 0 0 1-4 4 4 4 0 0 1-4-4c0-1.86 1.28-3.41 3-3.86v2.14c-.6.35-1 .98-1 1.72a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-.74-.4-1.38-1-1.72V2h-1A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-2.76-1.12-5.26-2.93-7.07Z"/></svg></span> Agentcore</h1>
-<p>The Agentcore orchestrates our <a href="../../collectors/">probes</a> and is responsible for scheduling checks.
-During the startup sequence of a probe, it will “<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2v2L4 8V6H2v12h2v-2l2 .5v2C6 20.4 7.6 22 9.5 22s3.5-1.6 3.5-3.5v-.2l7 1.7v2h2V2h-2m-9 16.5c0 .8-.7 1.5-1.5 1.5S8 19.3 8 18.5V17l3 .8v.7m9-.5L4 14v-4l16-4v12Z"/></svg></span> announce” itself to the Agentcore.</p>
-<p>The Agentcore also acts as a communication gateway. Data retrieved by the probes is sent to the InfraSonar cloud platform via the Agentcore.</p>
-<pre class="mermaid"><code>graph LR
-  probe[Probe] --&gt; | TCP 8750 | Agentcore[Agentcore] --&gt; | HTTPS 443 | infrasonarcloud[InfraSonar Cloud Platform];</code></pre>
-<div class="admonition note">
-<p>Because probes usually run in the same Docker network as the Agentcore, they can easily connect to it.</p>
+<h1 id="agentcores">Agentcores</h1>
+<p>It this panel you can see the status of the <a href="../../collectors/probes/agentcore/">Agentcores</a> deployed for a container.</p>
+<h2 id="removing-a-agentcore">Removing a Agentcore</h2>
+<p>With the proper autorotation it is possible to remove an Agentcore here.</p>
+<div class="admonition danger">
+<p class="admonition-title">Proceed with caution</p>
+<p>Removing an Agentcore without having a secondary agentcore in the same zone can seriously impact the availability of your monitoring solution.</p>
 </div>
-<h2 id="features">Features</h2>
-<h3 id="resumable-operation">Resumable operation</h3>
-<p>If an agentcore is shutdown properly a list of assets and a check result queue are saved on disk.
-Given the agentcore starts and it can't connect to the InfraSonar cloud platform the list of saved assets will be used to resume operations.
-Check results up to a maximum of 100.000 packages will be stored in a queue</p>
-<h3 id="multiple-agentcores">Multiple agentcores</h3>
-<p>InfraSonar supports multiple agentcores within a monitored environment. Deploying multiple agentcores can be useful in spreading the network load, accommodate for network segmentation, and supporting large-scale implementations.</p>
-<p>To support network segmentation, assets can be assigned to a <a href="../zones/">zone</a>. When this zone also has an agentcore assigned its assets will automatically be monitored using the agentcores in this zone.</p>
-<p>When you deploy multiple agentcores in a zone, assets will be evenly distributed between all agentcores in this zone..</p>
-<div class="admonition tip">
-<p class="admonition-title">No automagic failover</p>
-<p>If an agentcore fails it's role will not automatically be taken over by another agentcore. To accomplish this, the failing agentcore needs to be removed by an InfraSonar admin.</p>
-</div>
-<h2 id="operational">Operational</h2>
-<h3 id="removing-an-agentcore">Removing an Agentcore</h3>
-<p>When an Agentcore is decommissioned, all hosts monitored by are automatically transferred to other agentcores in the configured zone.</p>
 
 
 
