@@ -1,4 +1,4 @@
-![Modes](../images/application_modes.png){ width="200" align=right}
+![Modes](../images/application_modes.png){ width="150" align=right}
 
 # Modes
 

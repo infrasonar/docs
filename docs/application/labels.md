@@ -1,4 +1,4 @@
-![Label](../images/application_label.png){ width="200" align=right}
+![Label](../images/application_label.png){ width="150" align=right}
 
 # :material-label: Labels
 

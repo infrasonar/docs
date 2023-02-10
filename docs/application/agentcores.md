@@ -1,4 +1,4 @@
-![Agentcore](../images/application_agentcore.png){ width="200" align=right}
+![Agentcore](../images/application_agentcore.png){ width="150" align=right}
 
 # :material-radar: Agentcore
 

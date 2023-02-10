@@ -1,6 +1,6 @@
-![User management](../images/application_usermanagement.png){ width="200" align=right}
+![User management](../images/application_usermanagement.png){ width="150" align=right}
 
-# User management
+# Users
 
 ## Authentication
 

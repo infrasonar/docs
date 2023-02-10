@@ -1,4 +1,4 @@
-![Alerts](../images/application_alerts.png){ width="200" align=right}
+![Alerts](../images/application_alert.png){ width="150" align=right}
 
 # Alerts
 

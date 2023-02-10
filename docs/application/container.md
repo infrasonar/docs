@@ -1,4 +1,4 @@
-![Containers](../images/application_containers.png){ width="200" align=right}
+![Containers](../images/application_containers.png){ width="150" align=right}
 
 # :material-apps: InfraSonar containers 
 

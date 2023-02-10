@@ -1,4 +1,4 @@
-![Notifications](../images/application_notifications.png){ width="200" align=right}
+![Notifications](../images/application_notifications.png){ width="150" align=right}
 
 # Notifications
 

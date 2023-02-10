@@ -1,4 +1,4 @@
-![Schedule](../images/application_schedule.png){ width="200" align=right}
+![Schedule](../images/application_schedule.png){ width="150" align=right}
 
 # Schedule
 

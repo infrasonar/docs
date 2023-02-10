@@ -1,4 +1,4 @@
-![Rules](../images/application_rules.png){ width="200" align=right}
+![Rules](../images/application_rules.png){ width="150" align=right}
 
 # Rules
 

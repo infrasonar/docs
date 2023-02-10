@@ -63,6 +63,7 @@ nav:
           - Support: introduction/support.md
           - Terminology: introduction/terminology.md
   - Application:
+      - application/index.md
       - Alerts: application/alerts.md
       - Assets: application/assets.md
       - Child containers: application/container.md

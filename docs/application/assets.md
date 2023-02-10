@@ -1,4 +1,4 @@
-![Assets](../images/application_assets.png){ width="200" align=right}
+![Assets](../images/application_assets.png){ width="150" align=right}
 
 # Assets
 
