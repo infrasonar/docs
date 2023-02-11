@@ -4,6 +4,12 @@ site_name: InfraSonar
 # Copyright
 copyright: "Copyright &copy; 2023 Cesbit"
 
+# Google analytics (Uses Cesbit Google account)
+extra:
+  analytics:
+    provider: google
+    property: G-N3NW18WYVM
+
 # Theme configuration
 theme:
   palette:
