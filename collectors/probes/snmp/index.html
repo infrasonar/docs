@@ -1656,6 +1656,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unable-to-derive-address-info" class="md-nav__link">
+    Unable to derive address info
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2958,6 +2978,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unable-to-derive-address-info" class="md-nav__link">
+    Unable to derive address info
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3197,6 +3237,11 @@ syslocation &lt;system_location&gt;
 <p>For the modifications to take effect, the SNMPD must be restarted using the following command:</p>
 <div class="highlight"><pre><span></span><code>/etc/init.d/snmpd<span class="w"> </span>restart
 </code></pre></div>
+<h2 id="known-issues">Known issues</h2>
+<h3 id="unable-to-derive-address-info">Unable to derive address info</h3>
+<p>InfraSonar derives the address info from the ifdescr oid <code>1.3.6.1.2.1.2.2.1.2</code> </p>
+<p>We have seen devices return data in a hexadecimal format which cannot be decoded.</p>
+<p>The solution for now is to disable the <code>ipAddress</code> check on the asset.</p>
 
 
   

@@ -2835,61 +2835,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#first-login" class="md-nav__link">
-    First login
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#first-boot" class="md-nav__link">
-    first boot
-  </a>
-  
-    <nav class="md-nav" aria-label="first boot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#change-hostname" class="md-nav__link">
-    Change hostname
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cleanup" class="md-nav__link">
-    Cleanup
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shutdown" class="md-nav__link">
-    Shutdown
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#export-the-appliance" class="md-nav__link">
-    Export the appliance:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-template" class="md-nav__link">
-    Create a template
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2920,9 +2865,9 @@
 <li><strong>Compatibility</strong>: Compatible with: ESXi 6.5 and later VM version 13</li>
 <li><strong>Guest OS Family</strong>: Linux</li>
 <li><strong>Guest OS Version</strong>: Ubuntu Linux (64-bit) </li>
-<li><strong>CPU</strong>: 1 CPU</li>
+<li><strong>CPU</strong>: 2 CPU</li>
 <li><strong>Memory</strong>: 2 GB memory</li>
-<li><strong>Disk</strong>: 16 GB HDD</li>
+<li><strong>Disk</strong>: 30 GB HDD</li>
 <li><strong>Name</strong>: infrasonar-appliance</li>
 </ul>
 <h3 id="installation-steps">Installation steps</h3>
@@ -2950,8 +2895,8 @@
 <li>Your name: <em>sysadmin</em>.</li>
 <li>Your server's name: <em>infrasonar-appliance</em>.</li>
 <li>Pick a username: <em>sysdmin</em>.</li>
-<li>Choose a password: ...</li>
-<li>Confirm your password: ...</li>
+<li>Choose a password: Infr@S0n@r</li>
+<li>Confirm your password: Infr@S0n@r</li>
 </ol>
 </li>
 <li>SSH Setup:<ol>
@@ -2986,7 +2931,7 @@ sudo apt update
 sudo apt install -y open-vm-tools
 </code></pre></div></p>
 <h3 id="miscellaneous-tools">Miscellaneous tools</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>vim<span class="w"> </span>nano<span class="w"> </span>cron<span class="w"> </span>dns-utils<span class="w"> </span>snmp
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>vim<span class="w"> </span>nano<span class="w"> </span>cron<span class="w"> </span>dnsutils<span class="w"> </span>snmp<span class="w"> </span>iputils-ping
 </code></pre></div>
 <h3 id="docker-installation">Docker installation</h3>
 <p>All InfraSonar components run as Docker containers and are orchestrated using docker-compose.</p>
@@ -3114,8 +3059,6 @@ AllowAgentForwarding no
 <div class="highlight"><pre><span></span><code># Read-only access to everyone to the systemonly view
 rocommunity  public default
 rocommunity6 public default -V systemonly
-
-# SNMPv3 doesn&#39;t use communities, but users with (optionally) an
 </code></pre></div>
 <h3 id="tmate">tmate</h3>
 <p><a href="https://tmate.io/">tmate</a> is installed to offer remote support on request.</p>
@@ -3148,18 +3091,6 @@ This file is outlined <a href="../docker_compose/">here</a></p>
 <h4 id="first-boot-script">First boot script</h4>
 <p>The following script is used to run at first boot and sets a random schedule for a daily InfraSonor update.</p>
 <div class="highlight"><span class="filename">/home/sysadmin/init</span><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
-
-<span class="c1"># InfraSonar appliance init script.</span>
-<span class="c1"># This script is only run once on the first boot of the appliance.</span>
-
-<span class="c1"># Remove the init crontab.</span>
-crontab<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;/home/sysadmin/init&#39;</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>crontab<span class="w"> </span>-
-
-<span class="c1"># Scheduling docker crontab for: $hour:$minute&quot;.</span>
-<span class="nv">hour</span><span class="o">=</span>$<span class="o">[</span><span class="w"> </span><span class="nv">$RANDOM</span><span class="w"> </span>%<span class="w"> </span><span class="m">10</span><span class="w"> </span>+<span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="c1"># Random hour between 7 and 16</span>
-<span class="nv">minute</span><span class="o">=</span>$<span class="o">[</span><span class="w"> </span><span class="nv">$RANDOM</span><span class="w"> </span>%<span class="w"> </span><span class="m">59</span><span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="c1"># Random minute between 1 and 59</span>
-<span class="o">(</span>crontab<span class="w"> </span>-l<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$minute</span><span class="s2"> </span><span class="nv">$hour</span><span class="s2"> * * * docker compose -f /etc/infrasonar/docker-compose.yml pull &amp;&amp; docker compose -f /etc/infrasonar/docker-compose.yml up -d&quot;</span><span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>crontab<span class="w"> </span>-
-
 <span class="c1"># Fix removed SSH host keys</span>
 <span class="c1"># Note: this requires the use of sudo without password</span>
 sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>openssh-server
@@ -3179,24 +3110,39 @@ rm<span class="w"> </span>/home/sysadmin/init
 <h3 id="avoid-duplicate-machine-ids">Avoid duplicate machine ID's</h3>
 <p>See also <a href="https://kb.vmware.com/s/article/82229">this</a> VMware knowledge base article.</p>
 <p>Before cloning, run these commands inside the Linux Guest OS:</p>
-<h3 id="first-login">First login</h3>
-<h3 id="first-boot">first boot</h3>
-<h4 id="change-hostname">Change hostname</h4>
-<div class="highlight"><pre><span></span><code>#!/bin/bash
-hostnamectl set-hostname &quot;blue&quot;
+<div class="highlight"><pre><span></span><code>sudo -s
+echo -n &gt; /etc/machine-id
+rm /var/lib/dbus/machine-id
+ln -s /etc/machine-id /var/lib/dbus/machine-id
+``
+
+### First login
+
+
+### first boot
+
+
+#### Change hostname
+</code></pre></div>
+<h1 id="binbash">!/bin/bash</h1>
+<p>hostnamectl set-hostname "blue"
 echo $?
-hostnamectl set-hostname &quot;&quot;
+hostnamectl set-hostname ""
 echo $?
+<div class="highlight"><pre><span></span><code>sudo hostnamectl set-hostname &quot;blue&quot;
+sudo sed -i &#39;s/infrasonar/blue/g&#39; /etc/hosts
+
+
+
+https://www.cyberciti.biz/faq/ubuntu-20-04-lts-change-hostname-permanently/
 </code></pre></div>
-<p>sudo hostnamectl set-hostname "blue"
-sudo sed -i 's/infrasonar/blue/g' /etc/hosts</p>
-<p>https://www.cyberciti.biz/faq/ubuntu-20-04-lts-change-hostname-permanently/</p>
-<div class="highlight"><pre><span></span><code>sudo hostnamectl set-hostname ubuntu-2004-nixcraft
-</code></pre></div>
-<p>TODOR</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Expire the sysadmin password enforcing the user to change the password at logon</span>
-passwd<span class="w"> </span>-e<span class="w"> </span>sysadmin
-</code></pre></div>
+sudo hostnamectl set-hostname ubuntu-2004-nixcraft
+<div class="highlight"><pre><span></span><code>TODOR
+
+```bash
+# Expire the sysadmin password enforcing the user to change the password at logon
+passwd -e sysadmin
+</code></pre></div></p>
 <h3 id="cleanup">Cleanup</h3>
 <p>Remove the history</p>
 <div class="highlight"><pre><span></span><code><span class="nb">history</span><span class="w"> </span>-c
@@ -3205,6 +3151,7 @@ passwd<span class="w"> </span>-e<span class="w"> </span>sysadmin
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>shutdown<span class="w"> </span>-h<span class="w"> </span>now
 </code></pre></div>
 <h3 id="export-the-appliance">Export the appliance:</h3>
+<p>Using the ovftool on Windows and virtual center:</p>
 <div class="highlight"><pre><span></span><code>cd C:\Program Files\VMware\VMware OVF Tool
 ovftool &quot;vi://administrator@vsphere.local@vcenter.lab.test-technology.nl:443 \
    /Datacenter/vm/infrasonar-appliance&quot; \
@@ -3212,6 +3159,9 @@ ovftool &quot;vi://administrator@vsphere.local@vcenter.lab.test-technology.nl:44
 Enter login information for source vi://vcenter.lab.test-technology.nl/
 Username: administrator%40vsphere.local
 Password: ********
+</code></pre></div>
+<p>or when using VMware workstation on Linux:</p>
+<div class="highlight"><pre><span></span><code>ovftool /home/sysadmin/vmware/infrasonar-appliance/infrasonar-appliance.vmx ~/infrasonar-appliance.ova
 </code></pre></div>
 <h3 id="create-a-template">Create a template</h3>
 <div class="admonition note">
