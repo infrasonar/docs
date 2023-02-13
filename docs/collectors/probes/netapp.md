@@ -32,7 +32,48 @@ The NetApp probe is deployed as a :material-docker: docker container using [dock
 
 ### Credentials
 
-NetApp storage systems are monitored using the root account.
+!!! danger "Don't use admin"
+
+    We strongly advise setting up a separate user for monitoring to have a clear separation of responsibilities but also to avoid lock-out issues.
+
+
+First step is to figure out which vserver to use:
+
+```
+vserver show
+```
+
+
+Create a role for InfraSonar with limited access, ensure to use the correct vserver. `vserver show` is your friend :nerd:
+
+
+```title="Create NetApp role"
+security login rest-role create -role infrasonar -vserver netapp01 -api /api -access readonly
+security login rest-role create -role infrasonar -vserver netapp01 -api /api/security -access none
+security login rest-role create -role infrasonar -vserver netapp01 -api /api/security/audit/destinations -access readonly
+security login rest-role create -role infrasonar -vserver netapp01 -api /api/security/authentication/password -access all
+security login rest-role create -role infrasonar -vserver netapp01 -api /api/security/certificates -access readonly
+```
+
+You can verify this role using:
+
+```title="Verify NetApp role"
+security login rest-role show infrasonar
+```
+
+Next step is to create a user (`infrasonar`) and assign the previously created role (`infrasonar`) to this user:
+
+```title="Create NetApp user"
+security login create infrasonar -role infrasonar -comment "system-monitoring user, readonly" -application ontapi -authentication-method password 
+security login create infrasonar -role infrasonar -application http -authentication-method password 
+```
+
+Verify the user creation:
+
+```title="Verify NetApp user"
+security login show infrasonar
+```
+
 See the [credentials](appliance/credentials.md) section on how to configure credentials.
 
 The probe retrieves monitoring data using the ONTAP REST API on TCP port 443.

@@ -4,13 +4,13 @@
 
 We strongly advise to set up a dedicated (virtual) Linux :fontawesome-brands-linux: appliance for InfraSonar.
 
-This appliance can be set up manually using [this](appliance_installation.md) guide or by downloading our ready-to-run OVA (Open Virtual Appliance) [here](https://storage.googleapis.com/oversight_repository/appliance/oversight-appliance.ova).
+This appliance can be set up manually using [this](appliance_installation.md) guide or by downloading our ready-to-run OVA (Open Virtual Appliance) [here](https://storage.googleapis.com/infrasonar-repository/infrasonar-appliance.ova).
 
 ## Initialization
 
 Initializing the InfraSonar appliances consists of three steps:
 
-1. Change the default `sysadmin` password. (`0versight!`)
+1. Change the default `sysadmin` password. (`Infr@S0n@r`)
 2. Configure the network stack.
 3. Set the environment variables in the compose file.
 
@@ -28,18 +28,16 @@ SSH access is granted to the `sysadmin` user.
 
 ### Nano basics
 
-TODO
-
 The InfraSonar appliance configuration requires you to edit files using SSH access. The appliance includes the main text editors of **vi** and **nano**.
 
 Since Nano is easier to use, we outline its essential functions here.
 
-In this example, we create a `defaultCredentials.ini` file for the [WMI-probe](../probes/wmi/). See the [credentials section](credentials.md) for more in-depth information regarding credential files.
+In this example, we create will add credials for the [WMI-probe](../probes/wmi/). See the [credentials section](credentials.md) for more in-depth information regarding credential files.
 
 The easiest way to use Nano, is to open the file you want to edit or create directly using Nano, like this:
 
 ```bash
-sudo nano /etc/infrasonar/config/wmiprobe/defaultCredentials.ini
+nano /etc/infrasonar/data/config/infrasonar.yaml
 ```
 
 !!! note SSH access assumed
@@ -91,6 +89,7 @@ The InfraSonar appliance ova uses DHCP by default. You can change this to a stat
           dhcp4: true
       version: 2
     ```
+
 **Static IP config**
 
 :   Example static IP configuration:
@@ -116,11 +115,11 @@ $ sudo netplan apply
 
 ## Starting InfraSonar
 
-For each InfraSonar appliance, the `TOKEN` must be set in the `/etc/infrasonar/docker-compose.yml` file.
+For each InfraSonar appliance, the `TOKEN` must be set in the `/etc/infrasonar/docker-compose.yml` file for the [Agentcore](../agentcore.md) service and [Docker-agent](../../agents/docker.md)
 
-See our [token documentation](../../../application/tokens.md) on how to retrieve a token.
+See our [token documentation](../../../application/tokens.md) on how to create tokens.
     
-When a token set, you can start the appliance using the following `docker compose` command:
+When the tokens are set, you can start the appliance using the following `docker compose` command:
 
 ```bash
 docker compose -f /etc/infrasonar/docker-compose.yml pull
@@ -130,8 +129,9 @@ docker compose -f /etc/infrasonar/docker-compose.yml up -d
 !!! note "docker-compose.yml details"
     Detailed documentation about the docker-compose.yml file in use by InfraSonar can be found [here](docker_compose.md)
 
-When the Docker environment is up and running, you should see the agentcore as a host in your environment.
-[Contact InfraSonar support](../../../introduction/support.md) if you require any assistance.
+When the Docker environment is up and running, you should see the Agentcore appear in the UI in the [Agentcores section](../../../application/agentcores.md)
+
+[Contact InfraSonar support](../../../introduction/support.md)    if you require any assistance.
 
 ## Monitor the appliance
 

@@ -292,3 +292,13 @@ For the modifications to take effect, the SNMPD must be restarted using the foll
 ```bash
 /etc/init.d/snmpd restart
 ```
+
+## Known issues
+
+### Unable to derive address info
+
+InfraSonar derives the address info from the ifdescr oid `1.3.6.1.2.1.2.2.1.2` 
+
+We have seen devices return data in a hexadecimal format which cannot be decoded.
+
+The solution for now is to disable the `ipAddress` check on the asset.

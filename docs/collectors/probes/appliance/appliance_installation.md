@@ -6,15 +6,14 @@ This section outlines how to install the :fontawesome-brands-linux: Linux applia
 
 :material-ubuntu: Ubuntu Server 22.04 LTS is used as the basis for the InfraSonar appliance.
 
-
 Create a new virtual machine using these specifications:
 
 * **Compatibility**: Compatible with: ESXi 6.5 and later VM version 13
 * **Guest OS Family**: Linux
 * **Guest OS Version**: Ubuntu Linux (64-bit) 
-* **CPU**: 1 CPU
+* **CPU**: 2 CPU
 * **Memory**: 2 GB memory
-* **Disk**: 16 GB HDD
+* **Disk**: 30 GB HDD
 * **Name**: infrasonar-appliance
 
 ### Installation steps
@@ -39,8 +38,8 @@ Boot from the Ubuntu Server 22.04.1 ISO and then follow these steps:
     1.  Your name: *sysadmin*.
     2.  Your server's name: *infrasonar-appliance*.
     3.  Pick a username: *sysdmin*.
-    4.  Choose a password: ...
-    5.  Confirm your password: ...
+    4.  Choose a password: Infr@S0n@r
+    5.  Confirm your password: Infr@S0n@r
 11. SSH Setup:
     1.  Select: **Install OpenSSH Server**.
     2.  Import SSH identity: **No**.
@@ -80,7 +79,7 @@ sudo apt install -y open-vm-tools
 ### Miscellaneous tools
 
 ```bash
-sudo apt install -y vim nano cron dns-utils snmp
+sudo apt install -y vim nano cron dnsutils snmp iputils-ping
 ```
 
 ### Docker installation
@@ -242,16 +241,11 @@ sudo apt install -y snmpd
 
 As we use the default community string `public` and only require the snmpd daemon to listen on `localhost`, no further configuration is required.
 
-
 ```
 # Read-only access to everyone to the systemonly view
 rocommunity  public default
 rocommunity6 public default -V systemonly
-
-# SNMPv3 doesn't use communities, but users with (optionally) an
 ```
-
-
 
 ### tmate
 
@@ -308,18 +302,6 @@ The following script is used to run at first boot and sets a random schedule for
 
 ```bash title="/home/sysadmin/init"
 #!/usr/bin/env bash
-
-# InfraSonar appliance init script.
-# This script is only run once on the first boot of the appliance.
-
-# Remove the init crontab.
-crontab -l | grep -v '/home/sysadmin/init'  | crontab -
-
-# Scheduling docker crontab for: $hour:$minute".
-hour=$[ $RANDOM % 10 + 7 ] # Random hour between 7 and 16
-minute=$[ $RANDOM % 59 + 1 ] # Random minute between 1 and 59
-(crontab -l ; echo "$minute $hour * * * docker compose -f /etc/infrasonar/docker-compose.yml pull && docker compose -f /etc/infrasonar/docker-compose.yml up -d") | crontab -
-
 # Fix removed SSH host keys
 # Note: this requires the use of sudo without password
 sudo dpkg-reconfigure openssh-server
@@ -350,6 +332,13 @@ sudo rm /etc/ssh/ssh_host_*
 See also [this](https://kb.vmware.com/s/article/82229) VMware knowledge base article.
 
 Before cloning, run these commands inside the Linux Guest OS:
+
+```
+sudo -s
+echo -n > /etc/machine-id
+rm /var/lib/dbus/machine-id
+ln -s /etc/machine-id /var/lib/dbus/machine-id
+``
 
 ### First login
 
@@ -404,6 +393,8 @@ sudo shutdown -h now
 
 ### Export the appliance: 
 
+Using the ovftool on Windows and virtual center:
+
 ```
 cd C:\Program Files\VMware\VMware OVF Tool
 ovftool "vi://administrator@vsphere.local@vcenter.lab.test-technology.nl:443 \
@@ -413,6 +404,13 @@ Enter login information for source vi://vcenter.lab.test-technology.nl/
 Username: administrator%40vsphere.local
 Password: ********
 ```
+
+or when using VMware workstation on Linux:
+
+```
+ovftool /home/sysadmin/vmware/infrasonar-appliance/infrasonar-appliance.vmx ~/infrasonar-appliance.ova
+```
+
 
 ### Create a template
 

@@ -47,9 +47,6 @@ esx:
 
 [^1]: Passwords are encrypted on the appliance the moment the file is saved, see our [credentials documentation](../appliance/credentials.md)
 
-
-
-
 !!! danger "Don't use root"
 
     We strongly advise setting up a separate user for monitoring to have a clear separation of responsibilities but also to avoid lock-out issues.
