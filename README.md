@@ -6,36 +6,35 @@ This is the repository for the InfraSonar documentation. It makes use of [MkDocs
 
 ## Installation
 
+### Local
+
 Installing the required pip packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
 
-## Running
+Start the server:
 
 ```bash
 mkdocs serve
 ```
 
-or using Docker:
+### Docker
+
+The following commands build the site and start the server on http://127.0.0.1:8000
+Observe we overwrite the path with our local path, this allows for live updates while making modifications to the site.
 
 ```bash
 docker build -t infrasonardocs .
-docker run --rm -p 8000:8000 infrasonardocs
-```
-
-Alternative:
-```
-docker run --rm --volume="$PWD:/docs" --publish 8000:8000 squidfunk/mkdocs-material
+docker run --rm --volume="$PWD:/usr/src/app" -p 8000:8000 infrasonardocs
 ```
 
 ## Editing
 
-* [search for emojis](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/)
----
+* [Find supported emojis](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/)
+
 
 ## Deploying
 

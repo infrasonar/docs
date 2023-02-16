@@ -1,10 +1,14 @@
 # Project information
 site_name: InfraSonar
 
-
-
 # Copyright
-copyright: "Copyright &copy; 2022 Cesbit"
+copyright: "Copyright &copy; 2023 Cesbit"
+
+# Google analytics (Uses Cesbit Google account)
+extra:
+  analytics:
+    provider: google
+    property: G-N3NW18WYVM
 
 # Theme configuration
 theme:
@@ -27,6 +31,8 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.indexes
+    # Enables the Code copy button
+    - content.code.copy
 
 # Custom styling
 extra_css:
@@ -56,57 +62,77 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Documentation:
-      - Introduction:
-          - Getting started: documentation/introduction/getting_started.md
-          - What is InfraSonar: documentation/introduction/what_is_Infra_Sonar.md
-          - Platform: documentation/introduction/platform.md
-          - Support: documentation/introduction/support.md
-          - Terminology: documentation/introduction/terminology.md
-      - Collectors:
-          - documentation/collectors/index.md
-          - Agents:
-              - documentation/collectors/agents/index.md
-              -  Docker: documentation/collectors/agents/docker.md
-              -  Microsoft Windows: documentation/collectors/agents/microsoft_windows.md
-          - Probes:
-              - documentation/collectors/probes/index.md
-              - Appliance:
-                  - Deployment: documentation/collectors/probes/appliance/appliance_deployment.md
-                  - Credentials: documentation/collectors/probes/appliance/credentials.md
-              - DNS: documentation/collectors/probes/dns.md
-              - HTTP: documentation/collectors/probes/http.md
-              - Microsoft Azure: documentation/collectors/probes/microsoft_azure.md
-              - Microsoft WMI: documentation/collectors/probes/wmi.md
-              - Microsoft SQL Server: documentation/collectors/probes/microsoft_sql.md
-              - NetApp: documentation/collectors/probes/netapp.md
-              - Ping: documentation/collectors/probes/ping.md
-              - Pure storage: documentation/collectors/probes/pure_probe.md
-              - SNMP: documentation/collectors/probes/snmp.md
-              - TCP: documentation/collectors/probes/tcp.md
-              - VMware ESX: documentation/collectors/probes/vmware-esx.md
-              - VMware vCenter: documentation/collectors/probes/vmware-vcenter.md
-              - SMTP: documentation/collectors/probes/smtp.md
-          - Services:
-              - documentation/collectors/services/index.md
-      - Application:
-          - Containers: documentation/application/container.md
-          - Assets: documentation/application/assets.md
-          - Modes: documentation/application/modes.md
-          - Labels: documentation/application/labels.md
-          - Conditions: documentation/application/conditions.md
-          - Alerts: documentation/application/alerts.md
-          - Notifications: documentation/application/notifications.md
-          - Schedule: documentation/application/schedule.md
-          - Rules: documentation/application/rules.md
-          - Agentcores: documentation/application/agentcores.md
-          - Zones: documentation/application/zones.md
-          - User management: documentation/application/user_management.md
-      - Guides:
-          - Migration: documentation/guides/migration.md
-          - Remote support: documentation/guides/remote_support.md
-      - Privacy & Security:
-          - Security: documentation/privacy-security/security_considerations.md
-          - Privacy: documentation/privacy-security/privacy.md
+    - Introduction:
+       - Getting started: introduction/getting_started.md
+       - What is InfraSonar: introduction/what_is_Infra_Sonar.md
+       - Platform: introduction/platform.md
+       - Support: introduction/support.md
+       - Terminology: introduction/terminology.md
+    - Guides:
+       - Migration: guides/migration.md
+       - Remote support: guides/remote_support.md
+    - Privacy & Security:
+       - Security: privacy-security/security_considerations.md
+       - Privacy: privacy-security/privacy.md
+  - Application:
+    - application/index.md
+    - Main menu:
+       - Alerts: application/alerts.md
+       - Assets: application/assets.md
+       - Child containers: application/container.md
+       - Conditions: application/conditions.md
+       - Labels: application/labels.md
+       - Schedule: application/schedule.md
+       - Views: application/views.md
+       - Credits: application/credits.md
+       - Rules: application/rules.md
+       - Agentcores: application/agentcores.md
+       - Zones: application/zones.md
+       - Users: application/users.md
+       - DutyCalls: application/dutycalls.md
+       - Tokens: application/tokens.md
+       - Time series: application/timeseries.md
+       - Collectors: application/collectors.md
+       - Log: application/log.md
+       - Trash: application/trash.md
+       - Modes: application/modes.md
+       - Notifications: application/notifications.md
+  - Collectors:
+    - collectors/index.md
+    - Agents:
+        - collectors/agents/index.md
+        -  Docker: collectors/agents/docker.md
+        -  Microsoft Windows: collectors/agents/microsoft_windows.md
+    - Probes:
+        - collectors/probes/index.md
+        - Appliance:
+            - collectors/probes/appliance/index.md
+            - Docker compose: collectors/probes/appliance/docker_compose.md
+            - Credentials: collectors/probes/appliance/credentials.md
+        - Agentcore: collectors/probes/agentcore.md
+        - DNS: collectors/probes/dns.md
+        - EATON: collectors/probes/eaton.md
+        - HP ILO: collectors/probes/hpilo.md
+        - HP ProCurve: collectors/probes/hpprocurve.md
+        - HTTP: collectors/probes/http.md
+        - Microsoft Azure: collectors/probes/microsoft_azure.md
+        - Microsoft WMI: collectors/probes/wmi.md
+        - Microsoft SQL Server: collectors/probes/mssql.md
+        - NetApp: collectors/probes/netapp.md
+        - Palo Alto: collectors/probes/paloalto.md
+        - Ping: collectors/probes/ping.md
+        - SNMP: collectors/probes/snmp.md
+        - Synology: collectors/probes/synology.md
+        - TCP: collectors/probes/tcp.md
+        - UniFi: collectors/probes/unifi.md
+        - VMWare:
+            - collectors/probes/vmware/index.md
+            - ESXi: collectors/probes/vmware/esx.md
+            - vCenter: collectors/probes/vmware/vcenter.md
+        - SMTP: collectors/probes/smtp.md
+    - Services:
+        - collectors/services/index.md
+        - Last seen: collectors/services/last_seen.md
   - Integrations:
       - Overview: integrations/index.md
       - DutyCalls:
@@ -152,6 +178,3 @@ nav:
         - Set CWM: api/cwm/set-cwm.md
       - Examples:
           - Powershell: api/examples/powershell.md
-
-
-  - Changelog: changelog.md

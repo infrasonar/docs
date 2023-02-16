@@ -1,4 +1,4 @@
-![API-ID](../images/api_id.png){ width="200" align=right}
+![API-ID](../images/api_id.png){ width="150" align=right}
 
 # ID's
 
@@ -14,7 +14,7 @@ InfraSonar uses ID's to identify:
 ### Asset ID
 
 1. Navigate to the container to which the asset belongs.
-2. Open the [asset](../documentation/application/assets.md) overview page.
+2. Open the [asset](../application/assets.md) overview page.
 3. Use the column :material-view-column: picker in the top right corner and ensure **ID** is selected.
 4. The **asset ID** is now visible in the most left hand column.
 
@@ -24,13 +24,13 @@ InfraSonar uses ID's to identify:
 ### Condition ID
 
 1. Navigate to the container to which the condition belongs.
-2. Open the [condtions](../documentation/application/conditions.md) overview page.
+2. Open the [condtions](../application/conditions.md) overview page.
 3. Use the column :material-view-column: picker in the top right corner and ensure **ID** is selected.
 4. The **condition ID** is now visible in the most left hand column.
 
 ### Container ID
 
-1. Open the [containers](../documentation/application/container.md) view.
+1. Open the [containers](../application/container.md) view.
 2. Use the column :material-view-column: picker in the top right corner and ensure **ID** is selected.
 3. The **container ID** is now visible in the most left hand column.
 
@@ -40,7 +40,7 @@ InfraSonar uses ID's to identify:
 ### Label ID
 
 1. Navigate to the container to which the label belongs.
-2. Open the [label](../documentation/application/labels.md) overview page.
+2. Open the [label](../application/labels.md) overview page.
 3. Use the column :material-view-column: picker in the top right corner and ensure **ID** is selected.
 4. The **label ID** is now visible in the most left hand column.
 
