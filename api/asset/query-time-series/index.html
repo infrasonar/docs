@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../ids/">
+        <link rel="prev" href="../query-check-data/">
       
       
-        <link rel="next" href="../query-alerts/">
+        <link rel="next" href="../insert-check-data/">
       
       <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
     
     
       
-        <title>Query asset - InfraSonar</title>
+        <title>Query time series - InfraSonar</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#query-asset" class="md-skip">
+        <a href="#query-time-series" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Query asset
+              Query time series
             
           </span>
         </div>
@@ -2037,94 +2037,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Query asset
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
         Query asset
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#path-parameters" class="md-nav__link">
-    Path parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#query-parameters" class="md-nav__link">
-    Query parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fields" class="md-nav__link">
-    Fields
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collectors" class="md-nav__link">
-    Collectors
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#return-codes" class="md-nav__link">
-    Return codes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2176,11 +2093,100 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../query-time-series/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Query time series
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Query time series
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path-parameters" class="md-nav__link">
+    Path parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#body" class="md-nav__link">
+    Body
+  </a>
+  
+    <nav class="md-nav" aria-label="Body">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    Merge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregation" class="md-nav__link">
+    Aggregation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-codes" class="md-nav__link">
+    Return codes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2834,23 +2840,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#query-parameters" class="md-nav__link">
-    Query parameters
+  <a href="#body" class="md-nav__link">
+    Body
+  </a>
+  
+    <nav class="md-nav" aria-label="Body">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    Merge
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#fields" class="md-nav__link">
-    Fields
+        
+          <li class="md-nav__item">
+  <a href="#aggregation" class="md-nav__link">
+    Aggregation
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#collectors" class="md-nav__link">
-    Collectors
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2883,10 +2895,10 @@
                   
 
 
-<h1 id="query-asset">Query asset</h1>
-<p><strong><code>GET</code>/asset/&lt;assetId>?fields=...</strong></p>
+<h1 id="query-time-series">Query time series</h1>
+<p><strong><code>POST</code> /asset/&lt;assetId>/query-time-series</strong></p>
 <h3 id="description">Description</h3>
-<p>Query asset details.</p>
+<p>Query time series.</p>
 <h3 id="path-parameters">Path parameters</h3>
 <table>
 <thead>
@@ -2902,104 +2914,120 @@
 </tr>
 </tbody>
 </table>
-<h3 id="query-parameters">Query parameters</h3>
+<h3 id="body">Body</h3>
 <table>
 <thead>
 <tr>
 <th>Param</th>
-<th>Default</th>
+<th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>fields</code></td>
-<td><em>all fields</em></td>
-<td>Fields to return <em>(see fields below for all available fields)</em>.</td>
-</tr>
-<tr>
-<td><code>collectors</code></td>
-<td><em>none</em></td>
-<td>Collector fields. If at least one field is given, the result will include "<em>collectors</em>" with an array of <em>collector</em> objects <em>(see Collectors below for all available collector fields)</em>.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="fields">Fields</h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Return type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>integer</td>
-<td>Asset Id.</td>
-</tr>
-<tr>
-<td><code>container</code></td>
-<td>integer</td>
-<td>Asset container Id.</td>
-</tr>
-<tr>
-<td><code>name</code></td>
+<td><code>collector</code></td>
 <td>string</td>
-<td>Asset name.</td>
-</tr>
-<tr>
-<td><code>kind</code></td>
-<td>string</td>
-<td>One of the kinds <em>(see <a href="../set-kind/">set-kind</a> api)</em></td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>string</td>
-<td>Asset description.</td>
-</tr>
-<tr>
-<td><code>mode</code></td>
-<td>string</td>
-<td>One of <code>normal</code>, <code>maintenance</code> or <code>disabled</code>.</td>
-</tr>
-<tr>
-<td><code>labels</code></td>
-<td>array(integer)</td>
-<td>List with label Ids.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="collectors">Collectors</h3>
-<table>
-<thead>
-<tr>
-<th>Collector field</th>
-<th>Return type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>key</code></td>
-<td>string</td>
+<td>Yes</td>
 <td>Collector key.</td>
 </tr>
 <tr>
-<td><code>name</code></td>
+<td><code>check</code></td>
 <td>string</td>
-<td>Collector name.</td>
+<td>Yes</td>
+<td>Check key.</td>
 </tr>
 <tr>
-<td><code>kind</code></td>
+<td><code>type</code></td>
 <td>string</td>
-<td>One of <code>agent</code>, <code>probe</code> or <code>service</code>.</td>
+<td>Yes</td>
+<td>Type key.</td>
 </tr>
 <tr>
-<td><code>config</code></td>
-<td>object/null</td>
-<td>Configuration for the collector if config exists.</td>
+<td><code>metric</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Metric key.</td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td>array(string)</td>
+<td>No</td>
+<td>Item names. If not given, all items are returned.</td>
+</tr>
+<tr>
+<td><code>timeSpan</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Time span in seconds. Defaults to <code>28800</code> <em>(8 hours)</em>. The maximum time span is <code>2419200</code> <em>(28 days)</em>.</td>
+</tr>
+<tr>
+<td><code>start</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Unix timestamp. The <em>start</em> + <em>time-span</em> is the <em>end</em> of the time window. When not given, the <em>start</em> is calculated as <em>now</em> minus the <em>time span</em> which results in the latest data points.</td>
+</tr>
+<tr>
+<td><code>aggregation</code></td>
+<td>object</td>
+<td>No</td>
+<td>See <a href="#aggregation">aggregation section</a>. If not given, no aggregation is used.</td>
+</tr>
+<tr>
+<td><code>merge</code></td>
+<td>object</td>
+<td>No</td>
+<td>See <a href="#merge">merge section</a>. If not given, items are not merged.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="merge">Merge</h4>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>as</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Name as the time-series will be returned in the result. Only alpha-numeric characters and underscores are allowed and the name must not be empty.</td>
+</tr>
+<tr>
+<td><code>aggregation</code></td>
+<td>object</td>
+<td>No</td>
+<td>See <a href="#aggregation">aggregation section</a>. If not given, no aggregation is used.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="aggregation">Aggregation</h4>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>One of <code>mean</code>, <code>min</code>, <code>max</code>, <code>sum</code>, <code>median</code>, <code>median_high</code> or <code>median_low</code>.</td>
+</tr>
+<tr>
+<td><code>timeSpan</code></td>
+<td>integer</td>
+<td>Yes</td>
+<td>Time span in seconds used for aggregation blocks. For example <code>3600</code> will create per-hour blocks.</td>
 </tr>
 </tbody>
 </table>
@@ -3018,7 +3046,7 @@
 </tr>
 <tr>
 <td><code>400</code></td>
-<td>Unknown field.</td>
+<td>Invalid body.</td>
 </tr>
 <tr>
 <td><code>401</code></td>
@@ -3035,19 +3063,29 @@
 </tbody>
 </table>
 <h3 id="example">Example</h3>
-<p>Curl request:
+<p>Curl request <em>(Average bytes received p/s per hour for the last 12 hours)</em>:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/asset/123&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>
+<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/asset/123/query-time-series&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\`</span><span class="sb">``</span>
+<span class="w">    </span>--data-raw<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;collector&quot;: &quot;wmi&quot;,</span>
+<span class="s1">    &quot;check&quot;: &quot;network&quot;,</span>
+<span class="s1">    &quot;type&quot;: &quot;interface&quot;,</span>
+<span class="s1">    &quot;metric&quot;: &quot;BytesReceivedPersec&quot;,</span>
+<span class="s1">    &quot;timeSpan&quot;: 43200,</span>
+<span class="s1">    &quot;aggregation&quot;: {</span>
+<span class="s1">        &quot;type&quot;: &quot;mean&quot;,</span>
+<span class="s1">        &quot;timeSpan&quot;: 3600</span>
+<span class="s1">    }</span>
+<span class="s1">}&#39;</span>
 </code></pre></div></p>
-<p>Response:
+<p>Response <em>(Each key in the response represents an item name, unless "merge" is used. The value is an array with with arrays containing a timestamp and value)</em>:
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my-host.local&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Asset&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My host&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">456</span><span class="p">,</span><span class="w"> </span><span class="mi">789</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;Intel...&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="err">..</span><span class="p">,</span><span class="w"> </span><span class="err">..</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="err">..</span><span class="p">,</span><span class="w"> </span><span class="err">..</span><span class="p">]</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></p>
 
@@ -3071,7 +3109,7 @@
     
       <nav class="md-footer__inner md-grid" aria-label="">
         
-          <a href="../../ids/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <a href="../query-check-data/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -3080,19 +3118,19 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                ID's
+                Query check data
               </div>
             </div>
           </a>
         
         
-          <a href="../query-alerts/" class="md-footer__link md-footer__link--next" rel="next">
+          <a href="../insert-check-data/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                Query asset alerts
+                Insert check data
               </div>
             </div>
             <div class="md-footer__button md-icon">
