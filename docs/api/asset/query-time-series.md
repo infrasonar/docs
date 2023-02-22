@@ -26,7 +26,7 @@ Param           | Type              | Required  | Description
 Param           | Type      | Required  | Description
 ----------------|-----------|-----------|-------------
 `as`            | string    | Yes       | Name as the time-series will be returned in the result. Only alpha-numeric characters and underscores are allowed and the name must not be empty.
-`aggregation`   | object    | No        | See [aggregation section](#aggregation). If not given, no aggregation is used.
+`aggregation`   | object    | Yes       | See [aggregation section](#aggregation). This aggregation is used for merging the time series.
 
 #### Aggregation
 Param       | Type      | Required  | Description
