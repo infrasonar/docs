@@ -10,17 +10,17 @@ Param               | Description
 `assetId`           | Asset Id.
 
 ### Body
-Param           | Type          | Required  | Description
-----------------|---------------|-----------|-------------
-`collector`     | string        | Yes       | Collector key.
-`check`         | string        | Yes       | Check key.
-`type`          | string        | Yes       | Type key.
-`metric`        | string        | Yes       | Metric key.
-`items`         | array(string) | No        | Item names. If not given, all items are returned.
-`timeSpan`      | integer       | No        | Time span in seconds. Defaults to `28800` _(8 hours)_. The maximum time span is `2419200` _(28 days)_.
-`start`         | integer       | No        | Unix timestamp. The _start_ + _time-span_ is the _end_ of the time window. When not given, the _start_ is calculated as _now_ minus the _time span_ which results in the latest data points.
-`aggregation`   | object        | No        | See [aggregation section](#aggregation). If not given, no aggregation is used.
-`merge`         | object        | No        | See [merge section](#merge). If not given, items are not merged.
+Param           | Type              | Required  | Description
+----------------|-------------------|-----------|-------------
+`collector`     | string            | Yes       | Collector key.
+`check`         | string            | Yes       | Check key.
+`type`          | string            | Yes       | Type key.
+`metric`        | string            | Yes       | Metric key.
+`items`         | array(string)     | No        | Item names. If not given, all items are returned.
+`timeSpan`      | integer           | No        | Time span in seconds. Defaults to `28800` _(8 hours)_. The maximum time span is `2419200` _(28 days)_.
+`start`         | integer/string    | No        | Unix timestamp or ISO time string. The _start_ + _time-span_ is the _end_ of the time window. When not given, the _start_ is calculated as _now_ minus the _time span_ which results in the latest data points.
+`aggregation`   | object            | No        | See [aggregation section](#aggregation). If not given, no aggregation is used.
+`merge`         | object            | No        | See [merge section](#merge). If not given, items are not merged.
 
 #### Merge
 Param           | Type      | Required  | Description
