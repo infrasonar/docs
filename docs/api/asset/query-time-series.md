@@ -31,7 +31,7 @@ Param           | Type      | Required  | Description
 #### Aggregation
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`type`      | string    | Yes       | One of `mean`, `min`, `max`, `sum`, `median`, `median_high` or `median_low`.
+`type`      | string    | Yes       | One of `mean`, `min`, `max`, `sum`, `median`, `median_high`, `median_low` or `count`.
 `timeSpan`  | integer   | Yes       | Time span in seconds used for aggregation blocks. For example `3600` will create per-hour blocks.
 
 ### Return codes
