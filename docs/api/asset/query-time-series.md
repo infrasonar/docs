@@ -32,7 +32,7 @@ Param           | Type      | Required  | Description
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
 `type`      | string    | Yes       | One of `mean`, `min`, `max`, `sum`, `median`, `median_high`, `median_low` or `count`.
-`timeSpan`  | integer   | Yes       | Time span in seconds used for aggregation blocks. For example `3600` will create per-hour blocks.
+`timeSpan`  | integer   | No        | Time span in seconds used for aggregation blocks. For example `3600` will create per-hour blocks. If not given, the result will contain a single value with the current timestamp.
 
 ### Return codes
 Error code  | Reason
@@ -44,7 +44,7 @@ Error code  | Reason
 `404`       | Asset not found.
 
 ### Example
-Curl request _(Average bytes received p/s per hour for the last 12 hours)_:
+Curl request _(Average bytes received p/s for the last 4 hours)_:
 ```bash
 curl \
     -X POST 'https://api.infrasonar.com/asset/123/query-time-series' \
@@ -55,20 +55,22 @@ curl \
     "check": "network",
     "type": "interface",
     "metric": "BytesReceivedPersec",
-    "timeSpan": 43200,
+    "timeSpan": 14400,
     "aggregation": {
-        "type": "mean",
-        "timeSpan": 3600
+        "type": "mean"
     }
 }'
 ```
 
 Response _(Each key in the response represents an item name, unless "merge" is used. The value is an array with with arrays containing a timestamp and value)_:
+
 ```json
 {
-    "Intel...": [
-        [.., ..],
-        [.., ..]
+    "Intel[R] 82574L Gigabit Network Connection": [
+        [
+            1677142522,
+            9488.9375
+        ]
     ]
 }
 ```
