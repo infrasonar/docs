@@ -2963,9 +2963,9 @@
 </tr>
 <tr>
 <td><code>start</code></td>
-<td>integer</td>
+<td>integer/string</td>
 <td>No</td>
-<td>Unix timestamp. The <em>start</em> + <em>time-span</em> is the <em>end</em> of the time window. When not given, the <em>start</em> is calculated as <em>now</em> minus the <em>time span</em> which results in the latest data points.</td>
+<td>Unix timestamp or ISO time string. The <em>start</em> + <em>time-span</em> is the <em>end</em> of the time window. When not given, the <em>start</em> is calculated as <em>now</em> minus the <em>time span</em> which results in the latest data points.</td>
 </tr>
 <tr>
 <td><code>aggregation</code></td>
@@ -3001,8 +3001,8 @@
 <tr>
 <td><code>aggregation</code></td>
 <td>object</td>
-<td>No</td>
-<td>See <a href="#aggregation">aggregation section</a>. If not given, no aggregation is used.</td>
+<td>Yes</td>
+<td>See <a href="#aggregation">aggregation section</a>. This aggregation is used for merging the time series.</td>
 </tr>
 </tbody>
 </table>
@@ -3021,13 +3021,13 @@
 <td><code>type</code></td>
 <td>string</td>
 <td>Yes</td>
-<td>One of <code>mean</code>, <code>min</code>, <code>max</code>, <code>sum</code>, <code>median</code>, <code>median_high</code> or <code>median_low</code>.</td>
+<td>One of <code>mean</code>, <code>min</code>, <code>max</code>, <code>sum</code>, <code>median</code>, <code>median_high</code>, <code>median_low</code> or <code>count</code>.</td>
 </tr>
 <tr>
 <td><code>timeSpan</code></td>
 <td>integer</td>
-<td>Yes</td>
-<td>Time span in seconds used for aggregation blocks. For example <code>3600</code> will create per-hour blocks.</td>
+<td>No</td>
+<td>Time span in seconds used for aggregation blocks. For example <code>3600</code> will create per-hour blocks. If not given, the result will contain a single value with the current timestamp.</td>
 </tr>
 </tbody>
 </table>
@@ -3063,7 +3063,7 @@
 </tbody>
 </table>
 <h3 id="example">Example</h3>
-<p>Curl request <em>(Average bytes received p/s per hour for the last 12 hours)</em>:
+<p>Curl request <em>(Average bytes received p/s for the last 4 hours)</em>:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/asset/123/query-time-series&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -3073,21 +3073,22 @@
 <span class="s1">    &quot;check&quot;: &quot;network&quot;,</span>
 <span class="s1">    &quot;type&quot;: &quot;interface&quot;,</span>
 <span class="s1">    &quot;metric&quot;: &quot;BytesReceivedPersec&quot;,</span>
-<span class="s1">    &quot;timeSpan&quot;: 43200,</span>
+<span class="s1">    &quot;timeSpan&quot;: 14400,</span>
 <span class="s1">    &quot;aggregation&quot;: {</span>
-<span class="s1">        &quot;type&quot;: &quot;mean&quot;,</span>
-<span class="s1">        &quot;timeSpan&quot;: 3600</span>
+<span class="s1">        &quot;type&quot;: &quot;mean&quot;</span>
 <span class="s1">    }</span>
 <span class="s1">}&#39;</span>
 </code></pre></div></p>
-<p>Response <em>(Each key in the response represents an item name, unless "merge" is used. The value is an array with with arrays containing a timestamp and value)</em>:
+<p>Response <em>(Each key in the response represents an item name, unless "merge" is used. The value is an array with with arrays containing a timestamp and value)</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Intel...&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="err">..</span><span class="p">,</span><span class="w"> </span><span class="err">..</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="err">..</span><span class="p">,</span><span class="w"> </span><span class="err">..</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;Intel[R] 82574L Gigabit Network Connection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">            </span><span class="mi">1677142522</span><span class="p">,</span>
+<span class="w">            </span><span class="mf">9488.9375</span>
+<span class="w">        </span><span class="p">]</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 
 
   
