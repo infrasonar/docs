@@ -17,7 +17,7 @@ We support user authentication using using one of these cloud identities:
 
 ## Authorization
 
-A user's identity can be authorized on a [container](container.md) using a specific role.
+A user's identity can be authorized on a [container](child_containers.md) using a specific role.
 
 ### Authorization flags
 

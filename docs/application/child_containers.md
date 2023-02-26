@@ -1,6 +1,6 @@
-![Containers](../images/application_containers.png){ width="150" align=right}
+![Containers](../images/application_childcontainers.png){ width="150" align=right}
 
-# :material-apps: InfraSonar containers 
+# :material-apps: Child containers 
 
 InfraSonar containers are a hierarchial setup of you monitored infrastructure.
 

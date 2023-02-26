@@ -13,7 +13,7 @@ We recommend setting up a small-scale testing environment and using this documen
 Implementing a basic InfraSonar configuration is easy because InfraSonar can be deployed agent-less and thus leaves no footprint on the monitored infrastructure.
 
 1. **Create a container**<br>
-   The first step is to [create a container](../application/container.md#setup-a-new-container) for your assets.
+   The first step is to [create a container](../application/child_containers.md#setup-a-new-container) for your assets.
 2. **Deploy the InfraSonar appliance**<br>
    Deploy and setup the [InfraSonar appliance](../collectors/probes/appliance/index.md) in your infrastructure.
 3. **Configure probes**<br>

@@ -1,6 +1,6 @@
 ![Assets](../images/application_assets.png){ width="150" align=right}
 
-# Assets
+# :material-laptop: Assets
 
 Assets are in essence the monitored objects in an InfraSonar implementation. Assets can be IT components such as routers, switches, servers etc but can easily also consists of any other device which can be monitored such as elevators :elevator:, IOT devices :material-radio-tower:, etc. 
 
