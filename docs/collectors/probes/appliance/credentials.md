@@ -12,18 +12,20 @@ The basic structure looks like this:
 
 ```yaml title="infrasonar.yaml"
 exampleProbe:
-  config:
-    username: alice
-    password: "a secret"
   assets:
-  - id: 123
-    config:
-      username: bob
+  - config:
       password: "my secret"
-  - id: [456, 789]
-    config:
-      username: charlie
+      username: bob
+    id: 123
+  - config:
       password: "other secret"
+      username: charlie
+    id:
+    - 456
+    - 789
+  config:
+    password: "a secret"
+    username: alice
 otherProbe:
   use: exampleProbe
 ```
@@ -51,15 +53,18 @@ Asset specific configuration can be added by adding a `assets` section and assig
 
 ```yaml
   assets:
-  - id: 123
-    config:
-      username: bob
+  - config:
       password: "my secret"
-  - id: [456, 789]
-    config:
-      username: charlie
+      username: bob
+    id: 123
+  - config:
       password: "other secret"
+      username: charlie
+    id:
+    - 456
+    - 789
 ```
+
 
 `use` is a special property to indicate a probe should use the config from another probe. An example for this are the vendor specific SNMP probes we offer.
 
@@ -107,7 +112,7 @@ wmi:
     username: administrator
     password:
       encrypted: !!binary |
-        Z0FBQUFBqmppaWFKblBwbGVIVV72ckFKZFRZRmItX0pYNlpRYnRsT2pLRG1vS2ZjV1lfSExrbi1J
+        Z0FBQUFBqmppaWFKblawbGVIVt72ckFKZYRZRmItX1pYNlpRYnRsT2pLRG1vS2ZjV1lfSExrbi1J
         Uy1LQjhZcVZCAXhCMG5jUmRDd1EteE5Za3duQ1VMbGw3U2JXX3BWSkE9PQ==
 ```
 
@@ -120,23 +125,21 @@ For most probes it is sufficient to provide a `username` and `password`; we outl
 
 The SNNP probe supports SNMPv1, SNMPv2c, and SNMPv3
 
-
 ```yaml
 snmp:
   config:
     community: public
   assets:
-  - id: 123
-    config:
-      community: other
-      version: 2c
-  - id: 456
-    config:
+  - config:
       version: "1"
+      community: other
+    id: 123
+  - config:
+      version: 2c
       community:
         secret: not_so_public
-  - id: [789, 012]
-    config:
+    id: 456
+  - config:
       version: "3"
       username: alice
       auth:
@@ -149,6 +152,9 @@ snmp:
         # supported: USM_PRIV_CBC56_DES, USM_PRIV_CFB128_AES or USM_PRIV_NONE
         type: USM_PRIV_CFB128_AES
         password: "my secret password"
+    id:
+    - 789
+    - 012
 snmp-synology:
   use: snmp
 ```
@@ -196,14 +202,16 @@ wmi:
     username: alice
     password: "a secret"
   assets:
-  - id: 123
-    config:
+  - config:
       username: domain\bob
       password: "my secret"
-  - id: [456, 789]
-    config:
+    id: 123
+  - config:
       username: charlie@domain.org
       password: "other secret"
+    id: 
+    - 456
+    - 789
 ```
 
 ## FAQ
