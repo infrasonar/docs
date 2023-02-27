@@ -24,6 +24,15 @@ Some of the features of the InfraSonar NetApp probe:
 * IOPS
 * Snapmirror
 
+### Version specific
+
+Some checks are only available from a specific ONTAP version onward: 
+
+* **cluster node controller info** requires ONTAP v9.9 or higher
+* **cluster node statistics** requires ONTAP v9.8 or higher
+* **interface and interface ports statistics** requires ONTAP v9.8 or higher
+* **SnapMirror transfer data** requires ONTAP v9.11 or higher
+
 ## Deployment
 
 The NetApp probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
