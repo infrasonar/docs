@@ -98,13 +98,24 @@ It is good practice to create a dedicated account for SQL monitoring.
 
 ## Best practices
 
+### SQL Server maximum server memory is set to default
+
+Setting max server memory value too high can cause a single instance of SQL Server to compete for memory with other SQL Server instances hosted on the same host. However, setting this value too low could cause significant memory pressure and performance problems. Setting max server memory to the minimum value can even prevent SQL Server from starting. If you cannot start SQL Server after changing this option, start it using the -f startup option and reset max server memory to its previous value. For more information, see Database Engine Service Startup Options.
+
+A rule of thumb is to leave 4GB or 10% of total memory free, whichever is larger on your instance to start with, and adjust this as needed.
+
+See also:
+
+- [Microsoft.com - Server memory configuration options](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/server-memory-server-configuration-options)
+- [Brent Ozar - Memory Dangerously Low or Max Memory Too High](https://www.brentozar.com/blitz/max-memory/)
+
 ### SQL Server Cost threshold for parallelism
 
-InfraSonar can report the following message:
+SQL Server Cost threshold for parallelism is a value you might want to review.
 
-> SQL Server Cost threshold for parallelism is set to 5. Suggested is to set this value to 50.
+While the default value of 5 is adequate for most systems, a different value may be appropriate. Perform application testing with higher and lower values if needed to optimize application performance.
 
-A Microsoft SQL DBA can resolve this by changing the threshold for parallelism to 50, using this SQL statement:
+A Microsoft SQL DBA can change this by changing the threshold for parallelism to for example `50`, using this SQL statement:
 
 ```sql
 EXEC sp_configure 'show advanced options', 1;
