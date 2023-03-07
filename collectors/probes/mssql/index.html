@@ -15,7 +15,7 @@
         <link rel="next" href="../netapp/">
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.113286f1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.402914a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -517,6 +517,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -530,6 +532,20 @@
           Guides
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/raspberrypi_dashboard/" class="md-nav__link">
+        Raspberry Pi dashboard
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1631,6 +1647,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sql-server-maximum-server-memory-is-set-to-default" class="md-nav__link">
+    SQL Server maximum server memory is set to default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sql-server-cost-threshold-for-parallelism" class="md-nav__link">
     SQL Server Cost threshold for parallelism
   </a>
@@ -2231,6 +2254,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
@@ -2405,8 +2430,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/asset/upsert-collector/" class="md-nav__link">
-        Upsert collector to asset
+      <a href="../../../api/asset/purge-notifications/" class="md-nav__link">
+        Purge notifications
       </a>
     </li>
   
@@ -2435,6 +2460,20 @@
     <li class="md-nav__item">
       <a href="../../../api/asset/remove-label/" class="md-nav__link">
         Remove label from asset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/asset/upsert-collector/" class="md-nav__link">
+        Upsert collector to asset
       </a>
     </li>
   
@@ -3025,6 +3064,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sql-server-maximum-server-memory-is-set-to-default" class="md-nav__link">
+    SQL Server maximum server memory is set to default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sql-server-cost-threshold-for-parallelism" class="md-nav__link">
     SQL Server Cost threshold for parallelism
   </a>
@@ -3168,12 +3214,18 @@
 <h4 id="grants-for-sql-user">Grants for SQL User</h4>
 <p><a href="grantsforsqluser.sql">This</a> script uses the default username <code>svc_infrasonar</code> and the password <code>someSuperSecurePasswordHereOfCourse</code>, which you should change before running the script.</p>
 <h2 id="best-practices">Best practices</h2>
+<h3 id="sql-server-maximum-server-memory-is-set-to-default">SQL Server maximum server memory is set to default</h3>
+<p>Setting max server memory value too high can cause a single instance of SQL Server to compete for memory with other SQL Server instances hosted on the same host. However, setting this value too low could cause significant memory pressure and performance problems. Setting max server memory to the minimum value can even prevent SQL Server from starting. If you cannot start SQL Server after changing this option, start it using the -f startup option and reset max server memory to its previous value. For more information, see Database Engine Service Startup Options.</p>
+<p>A rule of thumb is to leave 4GB or 10% of total memory free, whichever is larger on your instance to start with, and adjust this as needed.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/server-memory-server-configuration-options">Microsoft.com - Server memory configuration options</a></li>
+<li><a href="https://www.brentozar.com/blitz/max-memory/">Brent Ozar - Memory Dangerously Low or Max Memory Too High</a></li>
+</ul>
 <h3 id="sql-server-cost-threshold-for-parallelism">SQL Server Cost threshold for parallelism</h3>
-<p>InfraSonar can report the following message:</p>
-<blockquote>
-<p>SQL Server Cost threshold for parallelism is set to 5. Suggested is to set this value to 50.</p>
-</blockquote>
-<p>A Microsoft SQL DBA can resolve this by changing the threshold for parallelism to 50, using this SQL statement:</p>
+<p>SQL Server Cost threshold for parallelism is a value you might want to review.</p>
+<p>While the default value of 5 is adequate for most systems, a different value may be appropriate. Perform application testing with higher and lower values if needed to optimize application performance.</p>
+<p>A Microsoft SQL DBA can change this by changing the threshold for parallelism to for example <code>50</code>, using this SQL statement:</p>
 <div class="highlight"><pre><span></span><code><span class="k">EXEC</span><span class="w"> </span><span class="n">sp_configure</span><span class="w"> </span><span class="s1">&#39;show advanced options&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="k">GO</span>
 <span class="n">RECONFIGURE</span>
@@ -3297,7 +3349,7 @@ This scenario results in the following InfraSonar alert:</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b78d2936.min.js"></script>
       
     
   </body>
