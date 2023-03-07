@@ -69,6 +69,7 @@ nav:
        - Support: introduction/support.md
        - Terminology: introduction/terminology.md
     - Guides:
+       - Raspberry Pi dashboard: guides/raspberrypi_dashboard.md
        - Migration: guides/migration.md
        - Remote support: guides/remote_support.md
     - Privacy & Security:
