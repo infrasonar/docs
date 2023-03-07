@@ -1,6 +1,6 @@
 ![Alerts](../images/application_alert.png){ width="150" align=right}
 
-# Alerts
+# :material-bell: Alerts
 
 Alerts are raised by conditions using the `return` statement in our condition edition.
 
@@ -8,7 +8,7 @@ Using [rules](rules.md) it is possible to route the alert to email or [DutyCalls
 
 ## Viewing alerts
 
-When you are in a container view (1) you can view the alerts and [notifications](notifications.md) in the **:material-bell: Alerts & Notifications page** (2)<br>
+When you are in a container view (1) you can view the alerts and [notifications](#notifications) in the **:material-bell: Alerts & Notifications page** (2)<br>
 
 ![Alerts and notfications](../images/application_alerts.png){ width="500"}
 
@@ -39,7 +39,17 @@ The closed alerts pane (4) shows a list of closed alerts.
 
 ### Notifications
 
-The closed alerts pane (5) shows a list of all open notifications (6); see our detailed [notification section](notifications.md) for more information.
+![Notifications](../images/application_notifications.png){ width="150" align=right}
+
+The closed alerts pane (5) shows a list of all open notifications (6).
+
+Notification are used to notify InfraSonar users of issues with the monitoring platform they offer a clear distinction between actual "Alerts" and when monitoring is failing.
+
+Notifications disappear when the issue is resolved, users can't close a notification only the system can once the issue is resolved. 
+As such all notifications should be handled as an indication that something is wrong with monitoring.
+
+!!! tip "Good to known"
+    Notifications are not the result of a condition. The only notifications which are raised by incoming data, are the check errors. These are not conditions but errors which directly result in a notification.
 
 ## Managing alerts
 

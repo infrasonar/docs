@@ -69,6 +69,7 @@ nav:
        - Support: introduction/support.md
        - Terminology: introduction/terminology.md
     - Guides:
+       - Raspberry Pi dashboard: guides/raspberrypi_dashboard.md
        - Migration: guides/migration.md
        - Remote support: guides/remote_support.md
     - Privacy & Security:
@@ -77,26 +78,28 @@ nav:
   - Application:
     - application/index.md
     - Main menu:
-       - Alerts: application/alerts.md
-       - Assets: application/assets.md
-       - Child containers: application/container.md
-       - Conditions: application/conditions.md
-       - Labels: application/labels.md
-       - Schedule: application/schedule.md
-       - Views: application/views.md
-       - Credits: application/credits.md
-       - Rules: application/rules.md
-       - Agentcores: application/agentcores.md
-       - Zones: application/zones.md
-       - Users: application/users.md
-       - DutyCalls: application/dutycalls.md
-       - Tokens: application/tokens.md
-       - Time series: application/timeseries.md
-       - Collectors: application/collectors.md
-       - Log: application/log.md
-       - Trash: application/trash.md
-       - Modes: application/modes.md
-       - Notifications: application/notifications.md
+       - Dashboard: application/dashboard.md
+       - Containers: application/containers.md
+    - Container:
+      - Alerts: application/alerts.md
+      - Assets: application/assets.md
+      - Child containers: application/child_containers.md
+      - Conditions: application/conditions.md
+      - Labels: application/labels.md
+      - Schedule: application/schedule.md
+      - Views: application/views.md
+      - Credits: application/credits.md
+      - Rules: application/rules.md
+      - Agentcores: application/agentcores.md
+      - Zones: application/zones.md
+      - Users: application/users.md
+      - DutyCalls: application/dutycalls.md
+      - Tokens: application/tokens.md
+      - Time series: application/timeseries.md
+      - Collectors: application/collectors.md
+      - Reporting: application/reporting.md
+      - Log: application/log.md
+      - Trash: application/trash.md
   - Collectors:
     - collectors/index.md
     - Agents:

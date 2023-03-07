@@ -12,18 +12,20 @@ The basic structure looks like this:
 
 ```yaml title="infrasonar.yaml"
 exampleProbe:
-  config:
-    username: alice
-    password: "a secret"
   assets:
-  - id: 123
-    config:
-      username: bob
+  - config:
       password: "my secret"
-  - id: [456, 789]
-    config:
-      username: charlie
+      username: bob
+    id: 123
+  - config:
       password: "other secret"
+      username: charlie
+    id:
+    - 456
+    - 789
+  config:
+    password: "a secret"
+    username: alice
 otherProbe:
   use: exampleProbe
 ```
@@ -47,19 +49,22 @@ The probe specific sections in this chapter describe the individual options per 
     password: "a secret"
 ```
 
-Asset specific configuration can be added per asset-id using the `id` property, this can either be one asset or a list of assets.
+Asset specific configuration can be added by adding a `assets` section and assigning assets to this section by providing the asset-id using the `id` property, this can either be one asset or a list of assets.
 
 ```yaml
   assets:
-  - id: 123
-    config:
-      username: bob
+  - config:
       password: "my secret"
-  - id: [456, 789]
-    config:
-      username: charlie
+      username: bob
+    id: 123
+  - config:
       password: "other secret"
+      username: charlie
+    id:
+    - 456
+    - 789
 ```
+
 
 `use` is a special property to indicate a probe should use the config from another probe. An example for this are the vendor specific SNMP probes we offer.
 
@@ -67,6 +72,28 @@ Asset specific configuration can be added per asset-id using the `id` property, 
 otherProbe:
   use: exampleProbe
 ```
+
+## Local configuration
+
+Another nice way to utilize the `yaml` file is to provide a configuration section and use the local configuration option in our UI to point the asset to this specific section.
+
+### Example
+
+In this example we use a specific account in the domain `example.com` this account can then we used in any probe using the local configuration option.
+
+```yaml
+example.com:
+  config:
+    username: "alice@example.com"
+    password: "a secret"
+```
+
+Now we can use `example.com` when we configure an asset in the UI.
+
+![Local configuration](../../../images/application_local_configuration.png){ width="500"}
+
+
+
 
 ## Security considerations
 
@@ -85,7 +112,7 @@ wmi:
     username: administrator
     password:
       encrypted: !!binary |
-        Z0FBQUFBqmppaWFKblBwbGVIVV72ckFKZFRZRmItX0pYNlpRYnRsT2pLRG1vS2ZjV1lfSExrbi1J
+        Z0FBQUFBqmppaWFKblawbGVIVt72ckFKZYRZRmItX1pYNlpRYnRsT2pLRG1vS2ZjV1lfSExrbi1J
         Uy1LQjhZcVZCAXhCMG5jUmRDd1EteE5Za3duQ1VMbGw3U2JXX3BWSkE9PQ==
 ```
 
@@ -98,23 +125,21 @@ For most probes it is sufficient to provide a `username` and `password`; we outl
 
 The SNNP probe supports SNMPv1, SNMPv2c, and SNMPv3
 
-
 ```yaml
 snmp:
   config:
     community: public
   assets:
-  - id: 123
-    config:
-      community: other
-      version: 2c
-  - id: 456
-    config:
+  - config:
       version: "1"
+      community: other
+    id: 123
+  - config:
+      version: 2c
       community:
         secret: not_so_public
-  - id: [789, 012]
-    config:
+    id: 456
+  - config:
       version: "3"
       username: alice
       auth:
@@ -127,6 +152,9 @@ snmp:
         # supported: USM_PRIV_CBC56_DES, USM_PRIV_CFB128_AES or USM_PRIV_NONE
         type: USM_PRIV_CFB128_AES
         password: "my secret password"
+    id:
+    - 789
+    - 012
 snmp-synology:
   use: snmp
 ```
@@ -174,19 +202,30 @@ wmi:
     username: alice
     password: "a secret"
   assets:
-  - id: 123
-    config:
+  - config:
       username: domain\bob
       password: "my secret"
-  - id: [456, 789]
-    config:
+    id: 123
+  - config:
       username: charlie@domain.org
       password: "other secret"
+    id: 
+    - 456
+    - 789
 ```
 
 ## FAQ
 
-**Q:** is it possible to copy credentials?
+**Is it possible to copy credentials?**<br>
+Yes credential files can be exchanged between appliances belonging to the some InfraSonar container.
 
-**A:** Yes credential files can be exchanged between appliances belonging to the some InfraSonar container.
-
+**I note my credentials are not being encoded?**<br>
+Check if you did not configure a duplicate section, see this simplified example:
+```yaml hl_lines="1 5"
+wmi:
+  config:
+    username: alice
+    password: "a secret"
+wmi:
+  use: something
+```

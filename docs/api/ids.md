@@ -30,7 +30,7 @@ InfraSonar uses ID's to identify:
 
 ### Container ID
 
-1. Open the [containers](../application/container.md) view.
+1. Open the [containers](../application/child_containers.md) view.
 2. Use the column :material-view-column: picker in the top right corner and ensure **ID** is selected.
 3. The **container ID** is now visible in the most left hand column.
 
