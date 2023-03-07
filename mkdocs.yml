@@ -155,9 +155,10 @@ nav:
         - Set asset mode: api/asset/set-mode.md
         - Set asset name: api/asset/set-name.md
         - Add label to asset: api/asset/add-label.md
-        - Upsert collector to asset: api/asset/upsert-collector.md
+        - Purge notifications: api/asset/purge-notifications.md
         - Remove collector from asset: api/asset/remove-collector.md
         - Remove label from asset: api/asset/remove-label.md
+        - Upsert collector to asset: api/asset/upsert-collector.md
       - Alert:
         - Query alert: api/alert/query.md
       - Container:
