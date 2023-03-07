@@ -78,6 +78,7 @@ nav:
   - Application:
     - application/index.md
     - Main menu:
+       - Home: application/home.md
        - Dashboard: application/dashboard.md
        - Containers: application/containers.md
     - Container:
