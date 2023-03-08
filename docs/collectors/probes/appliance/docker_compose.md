@@ -58,9 +58,12 @@ services:
   eaton-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/eaton-probe
+  esx-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/esx-probe
   hpilo-probe:
     << : *infrasonar
-    image: ghcr.io/infrasonar/hpilo-probe
+    image: ghcr.io/infrasonar/hpilo-probe:unstable
   hpprocurve-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/hpprocurve-probe
@@ -68,20 +71,26 @@ services:
     << : *infrasonar
     image: ghcr.io/infrasonar/esx-probe
   http-probe:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/http-probe
+    << : *infrasonar
+    image: ghcr.io/infrasonar/http-probe
   mssql-probe:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/mssql-probe
+    << : *infrasonar
+    image: ghcr.io/infrasonar/mssql-probe:unstable
   netapp-probe:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/netapp-probe
+    << : *infrasonar
+    image: ghcr.io/infrasonar/netapp-probe
+  paloalto-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/paloalto-probe:unstable
   ping-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/ping-probe
   snmp-probe:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/snmp-probe
+    << : *infrasonar
+    image: ghcr.io/infrasonar/snmp-probe
+  santricity-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/santricity-probe:unstable
   synology-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/synology-probe
@@ -95,8 +104,9 @@ services:
     << : *infrasonar
     image: ghcr.io/infrasonar/vcenter-probe
   wmi-probe:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/wmi-probe
+    << : *infrasonar
+    image: ghcr.io/infrasonar/wmi-probe
+
 ```
 
 ### Section outline

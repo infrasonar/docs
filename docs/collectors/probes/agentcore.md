@@ -9,7 +9,7 @@ The Agentcore also acts as a communication gateway. Data retrieved by the probes
 
 ``` mermaid
 graph LR
-  probe[Probe] --> | TCP 8750 | Agentcore[Agentcore] --> | HTTPS 443 | infrasonarcloud[InfraSonar Cloud Platform];
+  probe[Probe] --> | TCP 8750 | Agentcore[Agentcore] --> | HTTPS 8730 | infrasonarcloud[InfraSonar Cloud Platform];
 ```
 
 !!! note ""
