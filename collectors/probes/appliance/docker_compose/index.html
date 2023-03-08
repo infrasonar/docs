@@ -3108,9 +3108,12 @@
 <span class="w">  </span><span class="nt">eaton-probe</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/eaton-probe</span>
+<span class="w">  </span><span class="nt">esx-probe</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/esx-probe</span>
 <span class="w">  </span><span class="nt">hpilo-probe</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/hpilo-probe</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/hpilo-probe:unstable</span>
 <span class="w">  </span><span class="nt">hpprocurve-probe</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/hpprocurve-probe</span>
@@ -3118,20 +3121,26 @@
 <span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/esx-probe</span>
 <span class="w">  </span><span class="nt">http-probe</span><span class="p">:</span>
-<span class="w">     </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
-<span class="w">     </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/http-probe</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/http-probe</span>
 <span class="w">  </span><span class="nt">mssql-probe</span><span class="p">:</span>
-<span class="w">     </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
-<span class="w">     </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/mssql-probe</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/mssql-probe:unstable</span>
 <span class="w">  </span><span class="nt">netapp-probe</span><span class="p">:</span>
-<span class="w">     </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
-<span class="w">     </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/netapp-probe</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/netapp-probe</span>
+<span class="w">  </span><span class="nt">paloalto-probe</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/paloalto-probe:unstable</span>
 <span class="w">  </span><span class="nt">ping-probe</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/ping-probe</span>
 <span class="w">  </span><span class="nt">snmp-probe</span><span class="p">:</span>
-<span class="w">     </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
-<span class="w">     </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/snmp-probe</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/snmp-probe</span>
+<span class="w">  </span><span class="nt">santricity-probe</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/santricity-probe:unstable</span>
 <span class="w">  </span><span class="nt">synology-probe</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/synology-probe</span>
@@ -3145,8 +3154,8 @@
 <span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/vcenter-probe</span>
 <span class="w">  </span><span class="nt">wmi-probe</span><span class="p">:</span>
-<span class="w">     </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
-<span class="w">     </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/wmi-probe</span>
+<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/wmi-probe</span>
 </code></pre></div>
 <h3 id="section-outline">Section outline</h3>
 <h4 id="x-infrasonar-template">x-infrasonar-template</h4>
