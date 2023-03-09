@@ -121,6 +121,19 @@ wmi:
 
 For most probes it is sufficient to provide a `username` and `password`; we outlined probes with a more distinct configuration here:
 
+### SANtricity / NetApp E-Series
+
+The SANtricity / NetApp E-Series probe is configured in the `santricity` section:
+
+
+```yaml
+santricity:
+  config:
+    password: "some_secure_passw0rd"
+    username: monitor
+```
+
+
 ### SNMP
 
 The SNNP probe supports SNMPv1, SNMPv2c, and SNMPv3
