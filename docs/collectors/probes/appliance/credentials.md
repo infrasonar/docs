@@ -133,72 +133,119 @@ santricity:
     username: monitor
 ```
 
-
 ### SNMP
 
 The SNNP probe supports SNMPv1, SNMPv2c, and SNMPv3
 
+We use the following defaults:
+
+* SNMP version 2c
+* Community string `public`
+
+#### SNMPv1
+
 ```yaml
 snmp:
   config:
-    community: public
-  assets:
-  - config:
-      version: "1"
-      community: other
-    id: 123
-  - config:
-      version: 2c
-      community:
-        secret: not_so_public
-    id: 456
-  - config:
-      version: "3"
-      username: alice
-      auth:
-        # auth is optional; type USM_AUTH_NONE is used when omitted.
-        # supported: USM_AUTH_HMAC96_MD5, USM_AUTH_HMAC96_SHA or USM_AUTH_NONE
-        type: USM_AUTH_HMAC96_SHA
-        password: "my secret password"
-      priv:
-        # priv is optional; type USM_PRIV_NONE is used when omitted.
-        # supported: USM_PRIV_CBC56_DES, USM_PRIV_CFB128_AES or USM_PRIV_NONE
-        type: USM_PRIV_CFB128_AES
-        password: "my secret password"
-    id:
-    - 789
-    - 012
-snmp-synology:
-  use: snmp
+    community: SomeCommunityString
+    version: 1
 ```
 
-`version` supports the following values:
-
-- `1` for SNMPv1
-- `"2c"` for SNMPv2c
-- `3` for SNMPv3
-
-Community strings are not encrypted when used as such:
+#### SNMPv2c
 
 ```yaml
-      community: other
+snmp:
+  config:
+    community: SomeCommunityString
+    version: "2c"
 ```
 
-It is possible though to encrypt the community strings on the appliance by indicating the string is **secret** as such:
+#### SNMPv3
 
 ```yaml
-      community:
-        secret: not_so_public
+snmp:
+  config:
+    version: 3
+    username: alice
+    auth:
+      # auth is optional; type USM_AUTH_NONE is used when omitted.
+      # supported: USM_AUTH_HMAC96_MD5, USM_AUTH_HMAC96_SHA or USM_AUTH_NONE
+      type: USM_AUTH_HMAC96_SHA
+      password: "my secret password"
+    priv:
+      # priv is optional; type USM_PRIV_NONE is used when omitted.
+      # supported: USM_PRIV_CBC56_DES, USM_PRIV_CFB128_AES or USM_PRIV_NONE
+      type: USM_PRIV_CFB128_AES
+      password: "my secret password"
+```
+
+#### Encrypted community string
+
+It is possible though to encrypt the community string on the appliance by indicating the string is **secret** as such:
+
+```yaml
+snmp:
+  config:
+    community:
+      secret: SomeCommunityString
+    version: "2c"
 ```
 
 This results upon save in community string being encrypted:
 
 ```yaml
+snmp:
+
+  community:
+    secret:
+      encrypted: !!binary |
+        Z0FBQUFBQmptMEhGq0FhTGJZNFNTckZKdXzWaVpKT2RzMzBARlJGUW1MVGVCVHNmTE15eVlOMTVD
+        dGZWU1VEYUtPN2V4cWdOeGdoYlB1M29ua2JTZzNuQVlqU09eM0Z2c2c9PQ==
+    version "2c"
+```
+
+#### Inherited config
+
+As we have multiple different SNMP based probes it is possible to point these to the **snmp** configuration section
+
+```
+some-snmp-based-probe:
+  use: snmp
+```
+
+
+#### Advanced example
+
+The example below uses all variances for multiple assets.
+* Asset 12 uses SNMP version 1 and community string `other`
+* Asset 34 uses SNMP version 2c and community string `SomeCommunityString`which is encrypted upon save
+* Assets 56 & 78 use SNMP version 3 using username `alice`
+
+
+```yaml
+snmp:
+  assets:
+  - config:
+      community: other
+      version: '1'
+    id: 12
+  - config:
       community:
-        secret:
-          encrypted: !!binary |
-            Z0FBQUFBQmptMEhGZ0FhTGJZNFNTckZKdXRWaVpKT0RzMzBERlJGUW1MVGVCVHNmTE15eVlOMTVD
-            dGZWU1VEYUtPN2V4cWdOeGdoYlB1M29ua2JTZzNuQVlqU09EM0Z2c2c9PQ==
+        secret: SomeCommunityString
+      version: 2c
+    id: 34
+  - config:
+      auth:
+        password: "my secret password"
+        type: USM_AUTH_HMAC96_SHA
+      priv:
+        password: "my super secret password"
+        type: USM_PRIV_CFB128_AES
+      username: alice
+      version: '3'
+    id:
+    - 56
+    - 78
 ```
 
 ### WMI
