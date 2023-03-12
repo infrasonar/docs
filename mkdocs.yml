@@ -72,6 +72,7 @@ nav:
        - Raspberry Pi dashboard: guides/raspberrypi_dashboard.md
        - Migration: guides/migration.md
        - Remote support: guides/remote_support.md
+       - Running InfraSonar on Docker Desktop: guides/infrasonar_appliance_windows.md
     - Privacy & Security:
        - Security: privacy-security/security_considerations.md
        - Privacy: privacy-security/privacy.md
