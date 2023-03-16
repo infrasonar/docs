@@ -88,6 +88,22 @@ LAN Manager authentication level can cause the query error: `NTSTATUS: NT_STATUS
    5. Security Options
 3. Verify if **Network security: LAN Manager authentication level** is set to: `Send LM & NTLM - use NTLMv2 session security if negotiated`.
 
+#### Remote UAC
+
+If you are monitoring a non-domain Windows asset you might see the notification `unable to authenticate: ACCESS_DENIED (5)`
+
+This might happens if you don't use the local administrator account itself but instead created a separate account, even if this is a member of the local administrators group.
+
+To fix this you need to disable remote User Account Control (UAC). Disabling remote user account control does not disable local UAC functionality.
+
+To disable remote UAC for a workgroup computer:
+
+1, Using an administrator account, logon the computer you want to monitor.
+2. Go to Start → Accessories → Command Prompt. Type `regedit`
+3. Browse to the key: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
+4. Locate or create a **DWORD** entry named `LocalAccountTokenFilterPolicy` and provide a **DWORD** value of `1`. To re-enable remote UAC, change this value to 0.
+
+
 ### WMI error 0x80041010
 
 Performance counter based checks such as:
