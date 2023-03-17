@@ -578,7 +578,7 @@
   
     <li class="md-nav__item">
       <a href="../../../guides/infrasonar_appliance_windows/" class="md-nav__link">
-        Running InfraSonar on Docker Desktop
+        Running InfraSonar containers on Windows
       </a>
     </li>
   
@@ -3099,10 +3099,12 @@ Configured LocalAccountTokenFilterPolicy to grant administrative rights remotely
 <p>This might happens if you don't use the local administrator account itself but instead created a separate account, even if this is a member of the local administrators group.</p>
 <p>To fix this you need to disable remote User Account Control (UAC). Disabling remote user account control does not disable local UAC functionality.</p>
 <p>To disable remote UAC for a workgroup computer:</p>
-<p>1, Using an administrator account, logon the computer you want to monitor.
-2. Go to Start → Accessories → Command Prompt. Type <code>regedit</code>
-3. Browse to the key: <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</code>
-4. Locate or create a <strong>DWORD</strong> entry named <code>LocalAccountTokenFilterPolicy</code> and provide a <strong>DWORD</strong> value of <code>1</code>. To re-enable remote UAC, change this value to 0.</p>
+<ol>
+<li>Using an administrator account, logon the computer you want to monitor.</li>
+<li>Go to Start → Accessories → Command Prompt. Type <code>regedit</code></li>
+<li>Browse to the key: <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</code></li>
+<li>Locate or create a <strong>DWORD</strong> entry named <code>LocalAccountTokenFilterPolicy</code> and provide a <strong>DWORD</strong> value of <code>1</code>. To re-enable remote UAC, change this value to 0.</li>
+</ol>
 <h3 id="wmi-error-0x80041010">WMI error 0x80041010</h3>
 <p>Performance counter based checks such as:</p>
 <ul>

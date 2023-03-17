@@ -19,7 +19,7 @@
     
     
       
-        <title>Running InfraSonar on Docker Desktop - InfraSonar</title>
+        <title>Running InfraSonar containers on Windows - InfraSonar</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Running InfraSonar on Docker Desktop
+              Running InfraSonar containers on Windows
             
           </span>
         </div>
@@ -597,12 +597,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Running InfraSonar on Docker Desktop
+          Running InfraSonar containers on Windows
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Running InfraSonar on Docker Desktop
+        Running InfraSonar containers on Windows
       </a>
       
         
@@ -621,35 +621,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-docker-desktop-on-windows" class="md-nav__link">
-    Install Docker Desktop on Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#deploy-the-infrasonar-containers" class="md-nav__link">
     Deploy the InfraSonar containers
   </a>
   
-    <nav class="md-nav" aria-label="Deploy the InfraSonar containers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step-guide" class="md-nav__link">
-    Step by step guide
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#fix-vmmem-memory-consumption" class="md-nav__link">
-    Fix Vmmem memory consumption
+  <a href="#tune-vmmem-memory-consumption" class="md-nav__link">
+    Tune Vmmem memory consumption
   </a>
   
 </li>
@@ -2941,35 +2921,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-docker-desktop-on-windows" class="md-nav__link">
-    Install Docker Desktop on Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#deploy-the-infrasonar-containers" class="md-nav__link">
     Deploy the InfraSonar containers
   </a>
   
-    <nav class="md-nav" aria-label="Deploy the InfraSonar containers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step-guide" class="md-nav__link">
-    Step by step guide
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#fix-vmmem-memory-consumption" class="md-nav__link">
-    Fix Vmmem memory consumption
+  <a href="#tune-vmmem-memory-consumption" class="md-nav__link">
+    Tune Vmmem memory consumption
   </a>
   
 </li>
@@ -2991,21 +2951,22 @@
 
 <p><img align="right" alt="Software Package" src="../../images/windows_logo.png" width="150" /></p>
 <h1 id="infrasonar-on-windows">InfraSonar on Windows</h1>
-<p>As InfraSonar uses Docker containers it can be deployed on multiple platforms including Microsoft Windows.</p>
+<p>As InfraSonar uses Docker containers it can be easily deployed on multiple platforms including Microsoft Windows.</p>
+<p>Docker is a great concept to deploy and maintain Linux applications and services even on a Microsoft Windows host.</p>
+<p>Checkout the <a href="https://www.docker.com/get-started/">Get Started with Docker</a> guide to learn more.</p>
+<p>There are two options to accomplish this:</p>
+<ol>
+<li>Docker Desktop for Windows (ideal for home-lab and test-scenarios)<br>
+   <em>The official Docker documentation has a great <a href="(https://docs.docker.com/desktop/install/windows-install/)">guide</a> on this</em></li>
+<li>Use containers with Hyper-V isolation on Windows.<br>
+   <em>We found the <a href="https://ubuntu.com/tutorials/windows-ubuntu-hyperv-containers#1-overview">Ubuntu documentation</a> to be most useful.</em></li>
+</ol>
 <div class="admonition info">
-<p class="admonition-title">Unfortunate Windows Server doesn't support Linux containers</p>
-<p>Linux containers are available on Windows client (10 and 11) only for development purposes.
-On a physical Microsoft Windows Server machine you can install a Linux VM on Hyper-V and run Docker from there this requires however native hardware or nested virtualization.</p>
+<p class="admonition-title">Info</p>
+<p>We tested this setup on a Windows 11 host running Docker Desktop version 4.17.0</p>
 </div>
-<p>For this guide we opt to use a Windows 11 desktop with Docker Desktop.</p>
-<h2 id="install-docker-desktop-on-windows">Install Docker Desktop on Windows</h2>
-<p>As the <a href="https://docs.docker.com/desktop/install/windows-install/">official Docker documentation</a> has a great guide on how to set this up we won't repeat this steps here.</p>
-<p><em>We tested this setup on a Windows 11 host running Docker Desktop version 4.17.0</em></p>
 <h2 id="deploy-the-infrasonar-containers">Deploy the InfraSonar containers</h2>
-<p>InfraSonar uses Linux docker containers but there is no way need to feel intimidated.</p>
-<p>Docker is a great concept to deploy and maintain Linux applications and services even on a Microsoft Windows host.
-Checkout the <a href="https://www.docker.com/get-started/">Get Started with Docker</a> guide to learn more.</p>
-<h3 id="step-by-step-guide">Step by step guide</h3>
+<p>Step by step <img alt="🐾" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f43e.svg" title=":feet:" /> guide: </p>
 <ol>
 <li>Open notepad <img alt="🗒" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f5d2.svg" title=":notepad_spiral:" /></li>
 <li>Copy the <a href="../../collectors/probes/appliance/docker_compose/">docker-compose.yml</a> file from our documentation page using the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1Z"/></svg></span> button</li>
@@ -3030,8 +2991,31 @@ Checkout the <a href="https://www.docker.com/get-started/">Get Started with Dock
   </p>
 <figcaption>InfraSonar on Windows</figcaption>
 </figure>
-<h2 id="fix-vmmem-memory-consumption">Fix Vmmem memory consumption</h2>
-<p>Vmmem uses a lot of  RAM when running Docker on WSL, luckily there is an easy fix.</p>
+<h2 id="tune-vmmem-memory-consumption">Tune Vmmem memory consumption</h2>
+<p>As shown by this <code>docker stats</code> output resource usage for the InfraSonar probes is very limited.
+WSL however claims a lot of memory by default.</p>
+<div class="highlight"><span class="filename">docker stats output</span><pre><span></span><code><span class="go">CONTAINER ID   NAME                            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O   PIDS</span>
+<span class="go">bbf5f976f370   infrasonar-eaton-probe-1        0.01%     6.105MiB / 1.865GiB   0.32%     0B / 0B   0B / 0B     1</span>
+<span class="go">8c9e76c02422   infrasonar-ping-probe-1         0.04%     8.492MiB / 1.865GiB   0.44%     0B / 0B   0B / 0B     1</span>
+<span class="go">17e811490457   infrasonar-vcenter-probe-1      0.01%     7.301MiB / 1.865GiB   0.38%     0B / 0B   0B / 0B     1</span>
+<span class="go">cd31bd13a236   infrasonar-agentcore-1          0.01%     6.812MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     2</span>
+<span class="go">69f1e6ccc784   infrasonar-mssql-probe-1        0.01%     6.719MiB / 1.865GiB   0.35%     0B / 0B   0B / 0B     1</span>
+<span class="go">e33dee93aaaa   infrasonar-tcp-probe-1          0.01%     5.312MiB / 1.865GiB   0.28%     0B / 0B   0B / 0B     1</span>
+<span class="go">276f90782d43   infrasonar-santricity-probe-1   0.01%     8.035MiB / 1.865GiB   0.42%     0B / 0B   0B / 0B     1</span>
+<span class="go">72b609c9aa8f   infrasonar-paloalto-probe-1     0.01%     7MiB / 1.865GiB       0.37%     0B / 0B   0B / 0B     1</span>
+<span class="go">ae075f468016   infrasonar-docker-agent-1       0.03%     59.76MiB / 1.865GiB   3.13%     0B / 0B   0B / 0B     2</span>
+<span class="go">886cc62a929e   infrasonar-netapp-probe-1       0.01%     6.957MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     1</span>
+<span class="go">d75b00d7f3ea   infrasonar-esx-probe-1          0.01%     6.383MiB / 1.865GiB   0.33%     0B / 0B   0B / 0B     1</span>
+<span class="go">b44ff0ac2e3a   infrasonar-wmi-probe-1          0.02%     6.992MiB / 1.865GiB   0.37%     0B / 0B   0B / 0B     1</span>
+<span class="go">3d1e2202050c   infrasonar-hpprocurve-probe-1   0.01%     6.938MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     1</span>
+<span class="go">be51bb8784ba   infrasonar-unifi-probe-1        0.01%     6.695MiB / 1.865GiB   0.35%     0B / 0B   0B / 0B     1</span>
+<span class="go">696339a2d744   infrasonar-snmp-probe-1         0.01%     10.4MiB / 1.865GiB    0.54%     0B / 0B   0B / 0B     1</span>
+<span class="go">1fa404f5d74d   infrasonar-dns-probe-1          0.01%     5.66MiB / 1.865GiB    0.30%     0B / 0B   0B / 0B     1</span>
+<span class="go">525d977d3fe0   infrasonar-hpilo-probe-1        0.01%     6.898MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     1</span>
+<span class="go">c33ffae3eaeb   infrasonar-synology-probe-1     0.01%     6.531MiB / 1.865GiB   0.34%     0B / 0B   0B / 0B     1</span>
+<span class="go">8b6b0ceb9038   infrasonar-http-probe-1         0.01%     6.902MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     1</span>
+</code></pre></div>
+<p>Luckily there is an easy fix.</p>
 <p><strong>Shut down WSL</strong></p>
 <p>Run this on your command line:
 <div class="highlight"><pre><span></span><code>wsl --shutdown
