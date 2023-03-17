@@ -132,6 +132,9 @@ You can use the following steps to create a local account:
     11. Ensure to allow: _Local Launch_, _Remote Launch_, _Local Activation_ and _Remote Activation_.
     12. Close the windows by clicking **OK** twice and exit the Component Services console.
 
+
+See also our WMI trouble shooting section about [remote-UAC](wmi-troubleshooting/#remote-uac) as you might need to disable this. 
+
 ### Microsoft Windows server 2003
 
 You should ensure **Management and Monitoring Tools** are installed using **Add/remove windows components**

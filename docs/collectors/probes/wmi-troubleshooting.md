@@ -98,7 +98,7 @@ To fix this you need to disable remote User Account Control (UAC). Disabling rem
 
 To disable remote UAC for a workgroup computer:
 
-1, Using an administrator account, logon the computer you want to monitor.
+1. Using an administrator account, logon the computer you want to monitor.
 2. Go to Start → Accessories → Command Prompt. Type `regedit`
 3. Browse to the key: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
 4. Locate or create a **DWORD** entry named `LocalAccountTokenFilterPolicy` and provide a **DWORD** value of `1`. To re-enable remote UAC, change this value to 0.
