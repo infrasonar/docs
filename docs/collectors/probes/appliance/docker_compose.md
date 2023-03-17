@@ -160,7 +160,7 @@ docker compose up -d
 
 ## Restart
 
-If you want ro restart all InfraSonar containers you can do so using the following command:
+If you want to restart all InfraSonar containers you can do so using the following command:
 
 ```bash
 docker compose restart
@@ -170,7 +170,7 @@ This implies you are executing this command in the directory containing the Infr
 
 ## Logging
 
-For troubleshooting purposes you can change the loglevel in the `docker-compose.yml` file
+For troubleshooting purposes you can change the log-level in the `docker-compose.yml` file
 
 Supported log levels:
 
