@@ -63,7 +63,7 @@ services:
     image: ghcr.io/infrasonar/esx-probe
   hpilo-probe:
     << : *infrasonar
-    image: ghcr.io/infrasonar/hpilo-probe:unstable
+    image: ghcr.io/infrasonar/hpilo-probe
   hpprocurve-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/hpprocurve-probe
@@ -75,7 +75,7 @@ services:
     image: ghcr.io/infrasonar/http-probe
   mssql-probe:
     << : *infrasonar
-    image: ghcr.io/infrasonar/mssql-probe:unstable
+    image: ghcr.io/infrasonar/mssql-probe
   netapp-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/netapp-probe
@@ -90,7 +90,7 @@ services:
     image: ghcr.io/infrasonar/snmp-probe
   santricity-probe:
     << : *infrasonar
-    image: ghcr.io/infrasonar/santricity-probe:unstable
+    image: ghcr.io/infrasonar/santricity-probe
   synology-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/synology-probe
