@@ -49,7 +49,6 @@ function ask_tokens {
   # Ask for tokens
   echo Enter ${bold}agentcore${normal} token:
   read AGENTCORE_TOKEN
-  echo \n
   echo Enter ${bold}agent${normal} token:
   read AGENT_TOKEN
   echo Verify you entered the correct tokens:
@@ -86,7 +85,7 @@ function check_for_docker_compose_file {
 function download_latest_docker_compose_file {
   # This downloads and overwrites the docker-compose file
   echo "--> Downloading latest docker-compose.yml file"
-  curl -s -o docker-compose.yml https://docs.infrasonar.com/collectors/probes/appliance/docker-compose.yml 
+  curl -s -o docker-compose.yml https://docs.infrasonar.com/collectors/probes/appliance/docker-compose.yml
 }
 
 # Check if docker compose is installed
@@ -102,5 +101,6 @@ echo "--> Starting InfraSonar containers"
 docker compose up -d 
 echo "--> Ready"
 docker compose ps
-echo " Check our docs (https://docs.infrasoner.com) for more information
+echo "Status should be: Up Less than a second for all containers"
+echo " Check our docs (https://docs.infrasonar.com) for more information"
 
