@@ -11,7 +11,7 @@ x-infrasonar-template: &infrasonar
   volumes:
       - ./data:/data/
   labels:
-    com.centurylinklabs.watchtower.enable: TRUE
+    com.centurylinklabs.watchtower.scope: ${AGENTCORE_TOKEN}
 
 services:
   agentcore:
@@ -29,8 +29,8 @@ services:
       - ./data:/data/
   # Auto Update service
   watchtower:
+    << : *infrasonar
     image: containrrr/watchtower
-    restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/localtime:/etc/localtime:ro
@@ -38,7 +38,7 @@ services:
       WATCHTOWER_CLEANUP: TRUE
       WATCHTOWER_INCLUDE_RESTARTING: TRUE
       WATCHTOWER_POLL_INTERVAL: 21600
-      WATCHTOWER_LABEL_ENABLE: TRUE
+      WATCHTOWER_SCOPE: ${AGENTCORE_TOKEN}
   # InfraSonar probes
   dns-probe:
     << : *infrasonar
