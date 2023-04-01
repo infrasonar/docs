@@ -43,13 +43,14 @@ services:
   # Auto Update service
   watchtower:
     image: containrrr/watchtower
+    restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/localtime:/etc/localtime:ro
     environment:
       WATCHTOWER_CLEANUP: TRUE
       WATCHTOWER_INCLUDE_RESTARTING: TRUE
-      WATCHTOWER_POLL_INTERVAL: 43200
+      WATCHTOWER_POLL_INTERVAL: 21600
       WATCHTOWER_LABEL_ENABLE: TRUE
   # InfraSonar probes
   dns-probe:
@@ -67,9 +68,6 @@ services:
   hpprocurve-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/hpprocurve-probe
-  esx-probe:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/esx-probe
   http-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/http-probe

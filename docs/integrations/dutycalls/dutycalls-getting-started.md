@@ -85,9 +85,12 @@ The first step is to add the source you just created to the desired InfraSonar c
 4. Enter the previously retrieved username as **Consumer key** and the password as **Consumer secret** and click on the **Save** button.
    ![InfraSonar channel configuration](../../images/configure_infrasonar_source.png){: style="width:500px"}
 
-### Channel configuration
+### Rules configuration
 
-The second step is to add the channel you created to the container you selected in the previous step.
+The second step is to add a rule
+.....
+
+ you created to the container you selected in the previous step.
 
 1. Select the **Channels** option from the left-hand menu in InfraSonar
 2. Click the **Add channel** button to add a DutyCalls channel
