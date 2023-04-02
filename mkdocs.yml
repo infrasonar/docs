@@ -112,6 +112,8 @@ nav:
         - collectors/probes/index.md
         - Appliance:
             - collectors/probes/appliance/index.md
+            - InfraSonar appliance: collectors/probes/appliance/appliance_installation.md
+            - Deploy InfraSonar: collectors/probes/appliance/deploy_infrasonar.md
             - Docker compose: collectors/probes/appliance/docker_compose.md
             - Credentials: collectors/probes/appliance/credentials.md
         - Agentcore: collectors/probes/agentcore.md

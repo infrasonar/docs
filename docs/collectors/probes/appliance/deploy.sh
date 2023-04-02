@@ -101,6 +101,6 @@ echo "--> Starting InfraSonar containers"
 docker compose up -d 
 echo "--> Ready"
 docker compose ps
-echo "Status should be: Up Less than a second for all containers"
+echo "Status should be: Up ... for all containers"
 echo " Check our docs (https://docs.infrasonar.com) for more information"
 

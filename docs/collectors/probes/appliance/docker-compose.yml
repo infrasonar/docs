@@ -1,6 +1,6 @@
 ## InfraSonar docker-compose.yml file
 ##
-## Set the correct TOKEN variables before starting.
+## Set the correct TOKEN variables in the .env file before starting.
 
 x-infrasonar-template: &infrasonar
   network_mode: host
@@ -11,6 +11,7 @@ x-infrasonar-template: &infrasonar
   volumes:
       - ./data:/data/
   labels:
+    ## We opt to only update our own containers using the AGENTCORE token to identiy the scope
     com.centurylinklabs.watchtower.scope: ${AGENTCORE_TOKEN}
 
 services:
@@ -37,7 +38,9 @@ services:
     environment:
       WATCHTOWER_CLEANUP: TRUE
       WATCHTOWER_INCLUDE_RESTARTING: TRUE
+      ## We update every 6 hours
       WATCHTOWER_POLL_INTERVAL: 21600
+      ## Identies the scope for updating
       WATCHTOWER_SCOPE: ${AGENTCORE_TOKEN}
   # InfraSonar probes
   dns-probe:
