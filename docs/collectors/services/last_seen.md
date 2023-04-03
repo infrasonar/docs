@@ -8,4 +8,4 @@ The last seen service is a service running in the InfraSonar backend responsible
 
 ## Deployment
 
-The last seen service requires no configuration and can easily be deployed to an asset by added the last seen collector to the asset.
+The last seen service requires no configuration and can easily be deployed to an asset by adding the last seen collector to the asset.
