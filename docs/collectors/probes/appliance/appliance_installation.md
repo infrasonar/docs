@@ -12,7 +12,6 @@ After you deployed the appliance there are thre
 
 Enter the `passwd` command when you are logged on as sysadmin and follow the steps when prompted.
 
-
 ```bash
 $ passwd
 Changing password for sysadmin.
@@ -28,8 +27,8 @@ Ensure to keep this password stored somewhere safe.
 
 The InfraSonar appliance ova uses DHCP by default. You can change this to a static IP by editing the file `/etc/netplan/00-installer-config.yaml`.
 
-!!! note YAML file
-    This config file is a YAML file and as such proper indentation is crucial.
+!!! note "Indentation is meaningful in YAML"
+    Make sure that you use spaces, rather than tab characters, to indent sections. In the default configuration files 2 spaces per indentation level are used, We recommend you do the same.
 
 **DHCP configuration**
 
@@ -63,13 +62,10 @@ After you modified your IP configuration you need to apply the new netplan confi
 ```bash
 $ sudo netplan apply
 ```
-
 ## Deploy InfraSonar
 
-Run our [easy deployment script](./deploy_infrasonar.md) in a directory of your choosing, we suggest using `/etc/infrasonar`.
-
-
+Run our [easy deployment script](./deploy_infrasonar.md) to deploy InfraSonar on the appliance.
 
 ## Build your own appliance
 
-When you prefer to perform your own Linux installation or can't use the OVA file format we outlined our installation steps [here](appliance_manual_installation.md) 
+When you prefer to perform your own Linux installation or can't use the OVA file format we outlined our installation steps [here](appliance_manual_installation.md).

@@ -1,11 +1,12 @@
 # Deploy infraSonar
 
-InfraSonar probes can easily be deployed and maintained using our easy deployment script
+InfraSonar probes can easily be deployed and maintained using our easy deployment script.
+If you want to review/audit our script you can find the latest version in our [GitHub repository](https://github.com/infrasonar/docs/blob/main/docs/collectors/probes/appliance/deploy.sh)
 
 ## Prerequisites
 
-1. Before deploying InfraSonar ensure you have an AgentCore and an agent token.<br>See our [token documentation](../../../application/tokens.md) on how to create tokens.
-2. Access to a Linux host running docker compose V2;
+1. Before deploying InfraSonar ensure you have an AgentCore and an agent token.<br>See our [token documentation](../../../application/tokens.md) on how to create tokens;
+2. Access to a Linux host running docker compose V2.
 
 ## Easy deployment
 

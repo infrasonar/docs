@@ -2,11 +2,14 @@
 
 Some InfraSonar probes require configuration and/or credentials to execute / authenticate its queries. A good example is the WMI-probe that requires Windows domain credentials to perform WMI queries.
 
-Credentials are stored in a [yaml](https://en.wikipedia.org/wiki/YAML) formatted file on the [appliance](index.md) hosting the InfraSonar probes.
+Credentials are stored in a [yaml](https://en.wikipedia.org/wiki/YAML) formatted file in the `data/config` directory in the directory from which you deployed InfraSonar. As we suggest using `/etc/infrasonar` the `infrasonar.yaml` file would be located here: `/etc/infrasonar/data/config`
+
+!!! note "Indentation is meaningful in YAML"
+    Make sure that you use spaces, rather than tab characters, to indent sections. In the default configuration files 2 spaces per indentation level are used, We recommend you do the same.
 
 ## infrasonar.yaml basics
 
-The `infrasonar.yaml` file has a straighforward structure allowing probe specific configurations and per asset deviations from a default configuration.
+The `infrasonar.yaml` file has a straightforward structure allowing probe specific configurations and per asset deviations from a default configuration.
 
 The basic structure looks like this:
 
@@ -30,18 +33,19 @@ otherProbe:
   use: exampleProbe
 ```
 
-The `infrasonar.yaml` file where the credentials are stored can be found in the `data/config` folder, on an out of the box implementation this file is stored here: `/etc/infrasonar/data/config`
-
 ### Configuration file breakdown
 
 When applicable a probe has it's own section consisting of the probe name and a configuration for that probe.
 
 ```yaml
 exampleProbe:
+  . . .
+otherProbe:
+  . . .
 ```
 
 The `config` section contains the default probe configuration used by all probes if no exceptions are defined.
-The probe specific sections in this chapter describe the individual options per probe.
+The [Probe specific](#probe-specifics) paragraph describes probe specific configuration options.
 
 ```yaml
   config:
@@ -217,10 +221,6 @@ some-snmp-based-probe:
 #### Advanced example
 
 The example below uses all variances for multiple assets.
-* Asset 12 uses SNMP version 1 and community string `other`
-* Asset 34 uses SNMP version 2c and community string `SomeCommunityString`which is encrypted upon save
-* Assets 56 & 78 use SNMP version 3 using username `alice`
-
 
 ```yaml
 snmp:
@@ -247,6 +247,11 @@ snmp:
     - 56
     - 78
 ```
+
+* Asset **'12'**
+    * uses SNMP version 1 and community string `other`
+* Asset **'34'**, uses SNMP version 2c and community string `SomeCommunityString`which is encrypted upon save
+* Assets **'56'** & **'78'**, use SNMP version 3 using username `alice`
 
 ### WMI
 
@@ -277,10 +282,10 @@ wmi:
 ## FAQ
 
 **Is it possible to copy credentials?**<br>
-Yes credential files can be exchanged between appliances belonging to the some InfraSonar container.
+Yes credential files can be exchanged between appliances belonging to the same InfraSonar container.
 
 **I note my credentials are not being encoded?**<br>
-Check if you did not configure a duplicate section, see this simplified example:
+Check if you did per accident configure a duplicate section, see this simplified example where we configured two *wmi* sections:
 ```yaml hl_lines="1 5"
 wmi:
   config:

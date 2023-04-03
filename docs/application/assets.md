@@ -29,9 +29,8 @@ Configuring an asset involves the following steps:
    *This is usually normal, see our [mode](modes.md) documentation for more details*
 4. Select the zone.
    *This is usually 0, see our [zone](zones.md) documentation for more details*
-5. Select the [collectors])(../collectors/index.md) you want to use.
+5. Select the [collectors](../collectors/index.md) you want to use.
 6. Enter the correct [labels](labels.md) for this asset.
-
 
 !!! note "Advanced asset configuration and credentials"
 
