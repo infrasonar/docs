@@ -1102,9 +1102,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#create-container-tokens" class="md-nav__link">
+    Create container tokens
+  </a>
+  
+    <nav class="md-nav" aria-label="Create container tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#pre-defined-roles" class="md-nav__link">
     Pre-defined roles
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-token-rules" class="md-nav__link">
+    Container token rules
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2946,9 +2966,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#create-container-tokens" class="md-nav__link">
+    Create container tokens
+  </a>
+  
+    <nav class="md-nav" aria-label="Create container tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#pre-defined-roles" class="md-nav__link">
     Pre-defined roles
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-token-rules" class="md-nav__link">
+    Container token rules
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2969,14 +3009,33 @@
 
 <p><img align="right" alt="Tokens" src="../../images/application_token.png" width="150" /></p>
 <h1 id="tokens"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 18h-6v-3h-1.7c-1.1 2.4-3.6 4-6.3 4-3.9 0-7-3.1-7-7s3.1-7 7-7c2.7 0 5.2 1.6 6.3 4H24v6h-3v3m-4-2h2v-3h3v-2H11.9l-.2-.7C11 8.3 9.1 7 7 7c-2.8 0-5 2.2-5 5s2.2 5 5 5c2.1 0 4-1.3 4.7-3.3l.2-.7H17v3M7 15c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3m0-4c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1Z"/></svg></span> Tokens</h1>
-<p>In this section tokens can be generated and maintained.</p>
-<p>It is advisable to create separate tokens for <a href="../agentcores/">Agentcores</a> and per agent.</p>
-<h2 id="pre-defined-roles">Pre-defined roles</h2>
-<p>We predefined three roles to quickly set the correct permisions:</p>
+<p>In this section container-tokens can be generated and maintained.</p>
+<p>Container tokens can be used to authorize external automation to manage InfraSonar data using our API.</p>
+<p>Container tokens are also required for <a href="../agentcores/">agentcore</a> and <a href="../../collectors/agents/">agent</a> authentication.</p>
+<div class="admonition tip inline end">
+<p class="admonition-title">Tip</p>
+<p>We strongly suggest setting up separate tokens where possible.</p>
+</div>
+<h2 id="create-container-tokens">Create container tokens</h2>
+<ol>
+<li>Navigate to the container you want to create a token for.</li>
+<li>Click the tokens icon <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 18h-6v-3h-1.7c-1.1 2.4-3.6 4-6.3 4-3.9 0-7-3.1-7-7s3.1-7 7-7c2.7 0 5.2 1.6 6.3 4H24v6h-3v3m-4-2h2v-3h3v-2H11.9l-.2-.7C11 8.3 9.1 7 7 7c-2.8 0-5 2.2-5 5s2.2 5 5 5c2.1 0 4-1.3 4.7-3.3l.2-.7H17v3M7 15c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3m0-4c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1Z"/></svg></span> in the left hand menu.</li>
+<li>Click the <strong>Add token</strong> button.</li>
+<li>Give the token a identifiable name and provide just enough access<br><em>observe we added some shortcuts to create access tokens for Agentcores and probes</em></li>
+<li>Click <strong>Save</strong>, enter a <strong>reason</strong> and click <strong>confirm</strong></li>
+<li><strong>Reopen</strong> the just created token and copy the ID.</li>
+</ol>
+<h3 id="pre-defined-roles">Pre-defined roles</h3>
+<p>We predefined three roles to quickly set the correct permissions:</p>
 <ul>
 <li>Agentcore</li>
 <li>Agent</li>
 <li>Agent (no auto asset creation)</li>
+</ul>
+<h3 id="container-token-rules">Container token rules</h3>
+<ul>
+<li>User who have the de <code>container Access</code> flag set can create container tokens.</li>
+<li>A user can not grant more access permissions to a token then he or she already has.</li>
 </ul>
 
 

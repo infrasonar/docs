@@ -3026,18 +3026,22 @@
 <h2 id="familiarize">Familiarize</h2>
 <p>We recommend setting up a small-scale testing environment and using this documentation to guide you on your journey to become acquainted with InfraSonar and its terminology.</p>
 <h2 id="implementation-steps">Implementation steps</h2>
+<p>We outline the implementation steps for an agent-less implementation as this is a non-intrusive way to get to know InfraSonar.</p>
 <h3 id="agent-less-implementation">Agent-less implementation</h3>
 <p>Implementing a basic InfraSonar configuration is easy because InfraSonar can be deployed agent-less and thus leaves no footprint on the monitored infrastructure.</p>
+<p>The first step is to deploy an InfraSonar appliance</p>
 <ol>
-<li><strong>Create a container</strong><br>
-   The first step is to <a href="../../application/child_containers/#setup-a-new-container">create a container</a> for your assets.</li>
 <li><strong>Deploy the InfraSonar appliance</strong><br>
-   Deploy and setup the <a href="../../collectors/probes/appliance/">InfraSonar appliance</a> in your infrastructure.</li>
-<li><strong>Configure probes</strong><br>
-   Setting up (default) <a href="../../collectors/probes/appliance/credentials/">credentials</a> is the only configuration required in most cases. </li>
+   Deploy an <a href="../../collectors/probes/appliance/">InfraSonar appliance</a> in your infrastructure.</li>
 <li><strong>Add assets</strong><br>
-   <a href="../../application/assets/">Add assets</a> using the web application.</li>
+   Use our webapp to <a href="../../application/assets/">add assets</a> and collectors per asset to your container.</li>
+<li><strong>Add labels</strong><br>
+   <a href="../../application/labels/">Label</a> your assets to apply our pre-defined conditions.</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Probe configuration and credentials</p>
+<p>Some probes require you to configure credentials, see our <a href="../../collectors/probes/">probe</a> and <a href="../../collectors/probes/appliance/credentials/">credentials</a> specific documentation for more information.</p>
+</div>
 <h2 id="implementation-support">Implementation support</h2>
 <p>Feel free to <a href="../support/">reach out to us</a> for support when implementing/evaluating InfraSonar.</p>
 <p>Our implementation Consultants have years of experience and are keen to show you around and get the best out of our platform.</p>
