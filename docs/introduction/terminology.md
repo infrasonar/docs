@@ -19,4 +19,3 @@ Term           | Description
 **Hub**        | State is stored here in memory, and logic is performed when new monitoring data arrives.
 **SiriDB**     | The [database](https://siridb.com) used for storing [timeseries data](https://en.wikipedia.org/wiki/Time_series) with a long term retention.
 **Probes**     | These perform the actual measurement and are tailored per monitored component.
-**Environment**| A business or an IT infrastructure monitored using InfraSonar.
