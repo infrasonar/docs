@@ -31,7 +31,7 @@ Within InfraSonar, we identify three concepts for collecting data:
 
 The InfraSonar cloud platform is hosted on the [Google Cloud Platform](https://cloud.google.com/).
 
-Data from a monitored environment is received and processed in the InfraSonar cloud platform on what we call the Message-hubs. These Message-hubs evaluate the data against configured conditions and store received time series data in [SiriDB](https://siridb.net/). Received state data is kept in memory by the Message-hubs.
+Data from a monitored environment is received and processed in the InfraSonar cloud platform on what we call the Hubs. These Hubs evaluate the data against configured conditions and store received time series data in [SiriDB](https://siridb.net/). Received state data is kept in memory by the Hubs.
 
 ## InfraSonar application
 
