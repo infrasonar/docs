@@ -67,5 +67,7 @@ InfraSonar container admins can create custom labels for a container.
 
 ## Predefined labels
 
+InfraSonar has created labels that, when applied to an asset with the appropriate collector, monitor the asset using best practices.
+
 
 
