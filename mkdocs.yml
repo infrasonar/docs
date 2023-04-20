@@ -141,6 +141,7 @@ nav:
     - Services:
         - collectors/services/index.md
         - Last seen: collectors/services/last_seen.md
+        - Palo Alto: collectors/services/paloalto.md
   - Integrations:
       - Overview: integrations/index.md
       - DutyCalls:

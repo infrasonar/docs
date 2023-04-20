@@ -2,7 +2,7 @@
 
 # Palo Alto
 
-:construction: The Palo Alto probe is under development and only available as part of our beta program.
+:construction: The Palo Alto service is under development and only available as part of our beta program.
 
 Please [contact us](../../images/contact_us.png) if you want to join this beta.
 
@@ -10,8 +10,8 @@ Please [contact us](../../images/contact_us.png) if you want to join this beta.
 
 InfraSonar monitors Palo Alto firewalls using the rest API.
 
-!!! tip "Also available as service"
-    We also offer a [service](../services/paloalto.md) to monitor Palo Alto firewalls, this is useful if you want to monitor firewalls without deploying your own InfraSonar appliance.
+!!! tip "Also available as probe"
+    We also offer a [probe](../probes/paloalto.md) to monitor Palo Alto firewalls, this allows you to monitor firewalls using your own InfraSonar appliance.
 
 ## Features
 
@@ -22,6 +22,7 @@ The Palo Alto rest API uses a **key** which can be generated for a user.
 !!! danger "Don't use an admin account"
 
     We strongly recommend creating a read only account specific for monitoring.
+
 
 ### Get your API key
 
@@ -63,6 +64,7 @@ Ensure to change:
 ### Revoke API keys
 
 You can [revoke all](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/firewall-administration/manage-firewall-administrators/configure-administrative-accounts-and-authentication/configure-api-key-lifetime.html) currently valid API keys, in the event one or more keys are compromised. To change an API key associated with an administrator account [change the password associated with the administrator account](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/firewall-administration/manage-firewall-administrators/configure-administrative-accounts-and-authentication/configure-local-or-external-authentication-for-firewall-administrators.html). API keys that were generated before you expired all keys, or a key that was created using the previous credentials will no longer be valid.
+
 
 ### Configure API Key Lifetime
 
