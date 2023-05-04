@@ -137,10 +137,10 @@ nav:
             - collectors/probes/vmware/index.md
             - ESXi: collectors/probes/vmware/esx.md
             - vCenter: collectors/probes/vmware/vcenter.md
-        - SMTP: collectors/probes/smtp.md
     - Services:
         - collectors/services/index.md
         - Last seen: collectors/services/last_seen.md
+        - MailRoundTrip: collectors/services/mailroundtrip.md
         - Palo Alto: collectors/services/paloalto.md
         - Ping: collectors/services/ping.md
   - Integrations:
