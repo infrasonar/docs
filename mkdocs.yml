@@ -117,6 +117,7 @@ nav:
             - Docker compose: collectors/probes/appliance/docker_compose.md
             - Credentials: collectors/probes/appliance/credentials.md
         - Agentcore: collectors/probes/agentcore.md
+        - APC UPS: collectors/probes/apcups.md
         - DNS: collectors/probes/dns.md
         - EATON: collectors/probes/eaton.md
         - HP ILO: collectors/probes/hpilo.md
