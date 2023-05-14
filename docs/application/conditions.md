@@ -33,7 +33,10 @@ OK            | This is an explicit OK which results in an alert auto closing wh
 
 [^1]: Our severity levels are derived from the Syslog levels, see this [Syslog :material-wikipedia: wikipedia article](https://en.wikipedia.org/wiki/Syslog) for additional information.
 
-When a condition is hit 
+### Turn off conditions
+
+Conditions can be turned of per asset of on a container.
+
 
 
 
