@@ -30,6 +30,7 @@ Logo                                                                            
 <img src="https://app.infrasonar.com/static/images/hosticons/dns.png" style="margin:0; width:20px;"/>           | `DNS`
 <img src="https://app.infrasonar.com/static/images/hosticons/docker.png" style="margin:0; width:20px;"/>        | `Docker`
 <img src="https://app.infrasonar.com/static/images/hosticons/eaton.png" style="margin:0; width:20px;"/>         | `Eaton`
+<img src="https://app.infrasonar.com/static/images/hosticons/email.png" style="margin:0; width:20px;"/>         | `Email`
 <img src="https://app.infrasonar.com/static/images/hosticons/firewall.png" style="margin:0; width:20px;"/>      | `Firewall`
 <img src="https://app.infrasonar.com/static/images/hosticons/freebsd.png" style="margin:0; width:20px;"/>       | `FreeBSD`
 <img src="https://app.infrasonar.com/static/images/hosticons/hp.png" style="margin:0; width:20px;"/>            | `HP`
