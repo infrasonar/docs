@@ -15,7 +15,9 @@ InfraSonar monitors Palo Alto firewalls using the rest API.
 
 ## Features
 
-## Credentials
+## Configuration
+
+### Credentials
 
 The Palo Alto rest API uses a **key** which can be generated for a user. 
 
@@ -23,8 +25,7 @@ The Palo Alto rest API uses a **key** which can be generated for a user.
 
     We strongly recommend creating a read only account specific for monitoring.
 
-
-### Get your API key
+#### Get your API key
 
 [source](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-panorama-api/get-started-with-the-pan-os-xml-api/get-your-api-key)
 
@@ -61,12 +62,12 @@ Ensure to change:
 * `<firewall>` with your firewall IP or FQDN
 * `<apikey` with the previously generated API key
 
-### Revoke API keys
+#### Revoke API keys
 
 You can [revoke all](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/firewall-administration/manage-firewall-administrators/configure-administrative-accounts-and-authentication/configure-api-key-lifetime.html) currently valid API keys, in the event one or more keys are compromised. To change an API key associated with an administrator account [change the password associated with the administrator account](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/firewall-administration/manage-firewall-administrators/configure-administrative-accounts-and-authentication/configure-local-or-external-authentication-for-firewall-administrators.html). API keys that were generated before you expired all keys, or a key that was created using the previous credentials will no longer be valid.
 
 
-### Configure API Key Lifetime
+#### Configure API Key Lifetime
 
 [Source](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/firewall-administration/manage-firewall-administrators/configure-administrative-accounts-and-authentication/configure-api-key-lifetime)
 
@@ -74,3 +75,13 @@ You can [revoke all](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/f
 An optional step is to configure the API Key Lifetime.
 
 Be aware though that monitoring fails when the API key is expired!
+
+### Service configuration
+
+1. Add the **paloaltosvc** service on your asset
+2. Open the **paloaltosvc** configuration tab
+3. Enter the address and API key
+4. The API key is encrypted before it is send to the InfraSonar backend
+5. Click save
+
+
