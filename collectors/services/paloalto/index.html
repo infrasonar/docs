@@ -15,7 +15,7 @@
         <link rel="next" href="../ping/">
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
     
     
       
@@ -1353,6 +1353,8 @@
         
           
         
+          
+        
       
       
         
@@ -1495,6 +1497,20 @@
     <li class="md-nav__item">
       <a href="../../probes/agentcore/" class="md-nav__link">
         Agentcore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probes/apcups/" class="md-nav__link">
+        APC UPS
       </a>
     </li>
   
@@ -1736,7 +1752,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_20" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_21" >
       
       
         
@@ -1755,14 +1771,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../probes/vmware/">VMWare</a>
           
-            <label for="__nav_4_3_20">
+            <label for="__nav_4_3_21">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_20_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_3_20">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_21_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_21">
           <span class="md-nav__icon md-icon"></span>
           VMWare
         </label>
@@ -1947,6 +1963,14 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#credentials" class="md-nav__link">
     Credentials
   </a>
@@ -1971,6 +1995,18 @@
           <li class="md-nav__item">
   <a href="#configure-api-key-lifetime" class="md-nav__link">
     Configure API Key Lifetime
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-configuration" class="md-nav__link">
+    Service configuration
   </a>
   
 </li>
@@ -3039,6 +3075,14 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#credentials" class="md-nav__link">
     Credentials
   </a>
@@ -3063,6 +3107,18 @@
           <li class="md-nav__item">
   <a href="#configure-api-key-lifetime" class="md-nav__link">
     Configure API Key Lifetime
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-configuration" class="md-nav__link">
+    Service configuration
   </a>
   
 </li>
@@ -3098,13 +3154,14 @@
 <p>We also offer a <a href="../../probes/paloalto/">probe</a> to monitor Palo Alto firewalls, this allows you to monitor firewalls using your own InfraSonar appliance.</p>
 </div>
 <h2 id="features">Features</h2>
-<h2 id="credentials">Credentials</h2>
+<h2 id="configuration">Configuration</h2>
+<h3 id="credentials">Credentials</h3>
 <p>The Palo Alto rest API uses a <strong>key</strong> which can be generated for a user. </p>
 <div class="admonition danger">
 <p class="admonition-title">Don't use an admin account</p>
 <p>We strongly recommend creating a read only account specific for monitoring.</p>
 </div>
-<h3 id="get-your-api-key">Get your API key</h3>
+<h4 id="get-your-api-key">Get your API key</h4>
 <p><a href="https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-panorama-api/get-started-with-the-pan-os-xml-api/get-your-api-key">source</a></p>
 <p>To generate an API key, make a GET or POST request to the firewall’s hostname or IP addresses using the administrative credentials and type=keygen:</p>
 <div class="highlight"><pre><span></span><code>curl -k -X GET &#39;https://&lt;firewall&gt;/api/?type=keygen&amp;user=&lt;username&gt;&amp;password=&lt;password&gt;&#39;
@@ -3130,12 +3187,20 @@
 <li><code>&lt;firewall&gt;</code> with your firewall IP or FQDN</li>
 <li><code>&lt;apikey</code> with the previously generated API key</li>
 </ul>
-<h3 id="revoke-api-keys">Revoke API keys</h3>
+<h4 id="revoke-api-keys">Revoke API keys</h4>
 <p>You can <a href="https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/firewall-administration/manage-firewall-administrators/configure-administrative-accounts-and-authentication/configure-api-key-lifetime.html">revoke all</a> currently valid API keys, in the event one or more keys are compromised. To change an API key associated with an administrator account <a href="https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/firewall-administration/manage-firewall-administrators/configure-administrative-accounts-and-authentication/configure-local-or-external-authentication-for-firewall-administrators.html">change the password associated with the administrator account</a>. API keys that were generated before you expired all keys, or a key that was created using the previous credentials will no longer be valid.</p>
-<h3 id="configure-api-key-lifetime">Configure API Key Lifetime</h3>
+<h4 id="configure-api-key-lifetime">Configure API Key Lifetime</h4>
 <p><a href="https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/firewall-administration/manage-firewall-administrators/configure-administrative-accounts-and-authentication/configure-api-key-lifetime">Source</a></p>
 <p>An optional step is to configure the API Key Lifetime.</p>
 <p>Be aware though that monitoring fails when the API key is expired!</p>
+<h3 id="service-configuration">Service configuration</h3>
+<ol>
+<li>Add the <strong>paloaltosvc</strong> service on your asset</li>
+<li>Open the <strong>paloaltosvc</strong> configuration tab</li>
+<li>Enter the address and API key</li>
+<li>The API key is encrypted before it is send to the InfraSonar backend</li>
+<li>Click save</li>
+</ol>
 
 
   
@@ -3217,7 +3282,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c2be25ad.min.js"></script>
       
     
   </body>
