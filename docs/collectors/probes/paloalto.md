@@ -72,5 +72,12 @@ An optional step is to configure the API Key Lifetime.
 Be aware though that monitoring fails when the API key is expired!
 
 
-### 
+## Known issues
+
+### XML API Issue With Passwords Containing Special Characters
+
+Passwords containing special characters can cause problems retrieving the API key.
+
+[source](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000CliMCAS)
+
 
