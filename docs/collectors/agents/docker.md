@@ -31,6 +31,7 @@ docker run \
   -v infraSonarData:/data \
   -e TOKEN="<<agent token>>" \
   -v /var/run/docker.sock:/var/run/docker.sock \
+  -d \
   ghcr.io/infrasonar/docker-agent
 ```
 
@@ -43,6 +44,7 @@ docker run \
   -v infraSonarData:/data \
   -e TOKEN="<<agent token>>" \
   -v /var/run/docker.sock:/var/run/docker.sock \
+  -d \
   ghcr.io/infrasonar/docker-agent
 ```
 
