@@ -17,7 +17,7 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`aggregation`       | `none`            | One of `none`, `diff`, `diffps`, `first`, `last`, `count`, `mode`, `min`, `max`, `sum`, `mean`, `median`, `medianlow`, `medianhig`. If you are not sure, just use the default `none`.
+`aggregation`       | `none`            | One of `none`, `diff`, `diffps`, `first`, `last`, `count`, `mode`, `min`, `max`, `sum`, `mean`, `median`, `medianlow`, `medianhigh`. If you are not sure, just use the default `none`.
 
 ### Return codes
 Error code  | Reason
