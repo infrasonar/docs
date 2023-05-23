@@ -40,12 +40,12 @@ Response:
 ```json
 [
     {
-        "name": "alt2.aspmx.l.google.com",
+        "name": "foo.local",
         "forecast": null,
         "retryAfter": 1684891252.3467717
     },
     {
-        "name": "aspmx2.googlemail.com",
+        "name": "bar.local",
         "forecast": [
             [
                 1684823400,
