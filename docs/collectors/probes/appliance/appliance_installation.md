@@ -8,6 +8,13 @@ After you deployed the appliance there are thre
 2. Configure a static IP address if required;
 3. Deploy InfraSonar. 
 
+## Default login
+
+You can logon to the appliance using:
+
+* User: `sysadmin`
+* Password: `Infr@S0n@r`
+
 ## Change password
 
 Enter the `passwd` command when you are logged on as sysadmin and follow the steps when prompted.

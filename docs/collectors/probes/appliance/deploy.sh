@@ -3,8 +3,18 @@
 # Fail fast with a concise message when not using bash
 if [ -z "${BASH_VERSION:-}" ]
 then
-  abort "Bash is required to interpret this script."
+  echo "Aborting, bash is required to interpret this script."
+  exit
 fi
+
+# Fail fast when directory is not writable
+
+if ! [ -w `pwd` ]
+then
+  echo "Aborting, directory $PWD must be writable!"
+  exit
+fi
+
 
 # Initialise script
 bold=$(tput bold)
@@ -15,7 +25,7 @@ ENV_FILE=.env
 
 echo -e
 echo "${bold}InfraSonar install script${normal}"
-echo        "========================="
+echo  "${bold}=========================${normal}"
 
 function check_prerequiste_docker_compose {
   echo "--> Checking if docker compose is installed"
@@ -103,4 +113,3 @@ echo "--> Ready"
 docker compose ps
 echo "Status should be: Up ... for all containers"
 echo " Check our docs (https://docs.infrasonar.com) for more information"
-
