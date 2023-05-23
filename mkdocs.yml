@@ -158,6 +158,7 @@ nav:
         - Query asset alerts: api/asset/query-alerts.md
         - Query asset Id: api/asset/query-id.md
         - Query check data: api/asset/query-check-data.md
+        - Query forecast data: api/asset/query-forecast-data.md
         - Query time series: api/asset/query-time-series.md
         - Insert check data: api/asset/insert-check-data.md
         - Set asset description: api/asset/set-description.md
