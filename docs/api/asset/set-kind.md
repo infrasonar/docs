@@ -38,6 +38,7 @@ Logo                                                                            
 <img src="https://app.infrasonar.com/static/images/hosticons/netapp.png" style="margin:0; width:20px;"/>        | `NetApp`
 <img src="https://app.infrasonar.com/static/images/hosticons/paloalto.png" style="margin:0; width:20px;"/>      | `PaloAlto`
 <img src="https://app.infrasonar.com/static/images/hosticons/purestorage.png" style="margin:0; width:20px;"/>   | `PureStorage`
+<img src="https://app.infrasonar.com/static/images/hosticons/speed.png" style="margin:0; width:20px;"/>         | `Speed`
 <img src="https://app.infrasonar.com/static/images/hosticons/supermicro.png" style="margin:0; width:20px;"/>    | `Supermicro`
 <img src="https://app.infrasonar.com/static/images/hosticons/switch.png" style="margin:0; width:20px;"/>        | `Switch`
 <img src="https://app.infrasonar.com/static/images/hosticons/synology.png" style="margin:0; width:20px;"/>      | `Synology`
