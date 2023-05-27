@@ -57,14 +57,15 @@ function check_for_env_file {
 
 function ask_tokens {
   # Ask for tokens
-  echo Enter ${bold}agentcore${normal} token:
-  read AGENTCORE_TOKEN
-  echo Enter ${bold}agent${normal} token:
-  read AGENT_TOKEN
-  echo Verify you entered the correct tokens:
+  read -p "Enter ${bold}agentcore${normal} token:: " AGENTCORE_TOKEN
+  read -p "Enter ${bold}agentcore zone ID [0] ${normal}, leave 0 if unsure: " AGENTCORE_ZONE_ID
+  AGENTCORE_ZONE_ID=${AGENTCORE_ZONE_ID:-0}
+  read -p "Enter ${bold}agent${normal} token: " AGENT_TOKEN
+  echo Verify you entered the correct information:
   echo Agentcore token: ${bold}$AGENTCORE_TOKEN${normal}
+  echo Agentcore zone: ${bold}$AGENTCORE_ZONE_ID${normal}
   echo Agent token: ${bold}$AGENT_TOKEN${normal}
-  echo Are these tokens correct?
+  echo Is this information correct?
   select yn in "Yes" "No"; do
     case $yn in
         Yes ) save_env_file; break;;
@@ -77,6 +78,7 @@ function save_env_file {
   # save tokens to disk
   echo "--> Saving tokens to disk"
   echo "AGENTCORE_TOKEN=$AGENTCORE_TOKEN" > $ENV_FILE
+  echo "AGENTCORE_ZONE_ID=$AGENTCORE_ZONE_ID" >> $ENV_FILE
   echo "AGENT_TOKEN=$AGENT_TOKEN" >> $ENV_FILE
 }
 

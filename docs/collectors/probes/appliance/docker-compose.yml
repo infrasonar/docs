@@ -15,20 +15,7 @@ x-infrasonar-template: &infrasonar
     com.centurylinklabs.watchtower.scope: ${AGENTCORE_TOKEN}
 
 services:
-  agentcore:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/agentcore
-    environment:
-      TOKEN: ${AGENTCORE_TOKEN}
-  docker-agent:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/docker-agent
-    environment:
-      TOKEN: ${AGENT_TOKEN}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./data:/data/
-  # Auto Update service
+  ## Auto Update service
   watchtower:
     << : *infrasonar
     image: containrrr/watchtower
@@ -42,7 +29,28 @@ services:
       WATCHTOWER_POLL_INTERVAL: 21600
       ## Identies the scope for updating
       WATCHTOWER_SCOPE: ${AGENTCORE_TOKEN}
-  # InfraSonar probes
+  ## InfraSonar agents
+  docker-agent:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/docker-agent
+    environment:
+      TOKEN: ${AGENT_TOKEN}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/data/
+  speedtest-agent:
+     << : *infrasonar
+     image: ghcr.io/infrasonar/speedtest-agent
+     environment:
+       TOKEN: ${AGENT_TOKEN}
+
+  ## InfraSonar probes
+  agentcore:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/agentcore
+    environment:
+      TOKEN: ${AGENTCORE_TOKEN}
+      AGENTCORE_ZONE: ${AGENTCORE_ZONE_ID}
   dns-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/dns-probe
