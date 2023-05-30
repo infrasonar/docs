@@ -34,6 +34,7 @@ Logo                                                                            
 <img src="https://app.infrasonar.com/static/images/hosticons/firewall.png" style="margin:0; width:20px;"/>      | `Firewall`
 <img src="https://app.infrasonar.com/static/images/hosticons/freebsd.png" style="margin:0; width:20px;"/>       | `FreeBSD`
 <img src="https://app.infrasonar.com/static/images/hosticons/hp.png" style="margin:0; width:20px;"/>            | `HP`
+<img src="https://app.infrasonar.com/static/images/hosticons/kubernetes.png" style="margin:0; width:20px;"/>    | `Kubernetes`
 <img src="https://app.infrasonar.com/static/images/hosticons/linux.png" style="margin:0; width:20px;"/>         | `Linux`
 <img src="https://app.infrasonar.com/static/images/hosticons/netapp.png" style="margin:0; width:20px;"/>        | `NetApp`
 <img src="https://app.infrasonar.com/static/images/hosticons/paloalto.png" style="margin:0; width:20px;"/>      | `PaloAlto`
