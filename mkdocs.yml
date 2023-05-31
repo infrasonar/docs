@@ -107,6 +107,7 @@ nav:
     - Agents:
         - collectors/agents/index.md
         -  Docker: collectors/agents/docker.md
+        -  Kubernetes: collectors/agents/kubernetes.md
         -  Microsoft Windows: collectors/agents/microsoft_windows.md
         -  Speedtest: collectors/agents/speedtest.md
     - Probes:

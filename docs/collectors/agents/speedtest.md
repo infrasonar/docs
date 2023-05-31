@@ -1,4 +1,4 @@
-![Ping](../../images/agent_speedtest.png){ width="150" align=right}
+![Speed](../../images/agent_speedtest.png){ width="150" align=right}
 
 # :simple-speedtest: Speedtest
 
