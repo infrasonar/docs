@@ -56,8 +56,6 @@ Some of the included measurements:
 
 The Microsoft SQL probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
 
-See our TODO
-
 ## Probe configuration
 
 The MSSQL probe requires the host's IP address running the monitored SQL server and requires access to curtain SQL tables as defined in our grant scripts.
@@ -78,7 +76,7 @@ mssql:
 ```
 [^1]: Passwords are encrypted on the appliance the moment the file is saved, see our [credentials documentation](appliance/credentials.md).
 
-### Authorization  
+### Authorization
 
 The previously created user needs to be granted access onto various tables and resources.
 
@@ -152,7 +150,7 @@ GO
 
 ### New databases
 
-The monitoring account does not automatically gain access to databases created after the initial setup. 
+The monitoring account does not automatically gain access to databases created after the initial setup.
 This scenario results in the following InfraSonar alert:
 
 > The server principal "_account_" is not able to access the database "_databasename_" under the current security context.

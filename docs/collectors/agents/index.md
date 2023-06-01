@@ -7,5 +7,9 @@ An InfraSonar agents is an installable software component that autonomously and 
 ## Available agents
 
 [:material-docker: Docker agent](docker.md)
-  
-[:material-microsoft-windows: Microsoft Windows Agent](microsoft_windows.md)
+
+[:material-kubernetes: Kubernetes agent](kubernetes.md)
+
+[:simple-speedtest: Speedtest agent](speedtest.md)
+
+[:material-microsoft-windows: Microsoft Windows Agent](windows.md)

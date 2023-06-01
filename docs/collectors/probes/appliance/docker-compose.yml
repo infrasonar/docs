@@ -9,7 +9,7 @@ x-infrasonar-template: &infrasonar
     options:
       max-size: 5m
   volumes:
-      - ./data:/data/
+    - ./data:/data/
   labels:
     ## We opt to only update our own containers using the AGENTCORE token to identiy the scope
     com.centurylinklabs.watchtower.scope: ${AGENTCORE_TOKEN}
@@ -38,11 +38,13 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./data:/data/
-  speedtest-agent:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/speedtest-agent
-     environment:
-       TOKEN: ${AGENT_TOKEN}
+  # If you want the Speedtest probe, make sure to add this probe the asset is
+  # created
+  #   speedtest-agent:
+  #      << : *infrasonar
+  #      image: ghcr.io/infrasonar/speedtest-agent
+  #      environment:
+  #        TOKEN: ${AGENT_TOKEN}
 
   ## InfraSonar probes
   agentcore:
@@ -72,6 +74,9 @@ services:
   mssql-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/mssql-probe
+  mysql-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/mysql-probe
   netapp-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/netapp-probe

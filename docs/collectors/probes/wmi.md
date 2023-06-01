@@ -11,7 +11,7 @@ InfraSonar uses the open source [aiowmi](https://github.com/cesbit/aiowmi) libra
 ## Features
 
 * CPU, memory and disk utilization
-* Network utilization 
+* Network utilization
 * Windows services
 * Domain information for domain joined hosts
 * Time drift
@@ -27,8 +27,6 @@ InfraSonar uses the open source [aiowmi](https://github.com/cesbit/aiowmi) libra
 ## Deployment
 
 The WMI probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
-
-See our TODO
 
 ## Probe configuration
 
@@ -91,15 +89,15 @@ netsh int ipv6 show dynamicport udp
 
 !!! note
     The range is set separately for each transport (TCP or UDP).
-    
-    The port range is now truly a range that has a starting point and an ending point. 
-    
-    Microsoft customers who deploy servers that are running Windows Server 2008 may have problems that affect RPC communication between servers if firewalls are used on the internal network. 
-    
+
+    The port range is now truly a range that has a starting point and an ending point.
+
+    Microsoft customers who deploy servers that are running Windows Server 2008 may have problems that affect RPC communication between servers if firewalls are used on the internal network.
+
     In these situations, we recommend that you reconfigure the firewalls to allow traffic between servers in the dynamic port range of 49152 through 65535.
-    
+
     This range is in addition to well-known ports that are used by services and applications. Or, the port range that is used by the servers can be modified on each server.
-    
+
     You adjust this range by using the netsh command, as follows: netsh int <ipv4|ipv6> set dynamic <tcp|udp> start= number num= range. This command sets the dynamic port range for TCP. The start port is number, and the total number of ports is range.
 
 
@@ -133,7 +131,7 @@ You can use the following steps to create a local account:
     12. Close the windows by clicking **OK** twice and exit the Component Services console.
 
 
-See also our WMI trouble shooting section about [remote-UAC](wmi-troubleshooting/#remote-uac) as you might need to disable this. 
+See also our WMI trouble shooting section about [remote-UAC](wmi-troubleshooting/#remote-uac) as you might need to disable this.
 
 ### Microsoft Windows server 2003
 
@@ -165,4 +163,4 @@ See our [troubleshooting section](wmi-troubleshooting.md) for known issues and w
 
 
 
- 
+

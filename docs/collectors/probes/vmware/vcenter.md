@@ -23,8 +23,6 @@ The vCenter probe can best be deployed as a docker container.
 
 :material-docker: [ghcr.io/infrasonar/vcenter-probe](ghcr.io/infrasonar/vcenter-probe)
 
-See our TODO
-
 ## Probe configuration
 
 ### Credentials

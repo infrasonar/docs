@@ -108,7 +108,7 @@ nav:
         - collectors/agents/index.md
         -  Docker: collectors/agents/docker.md
         -  Kubernetes: collectors/agents/kubernetes.md
-        -  Microsoft Windows: collectors/agents/microsoft_windows.md
+        -  Windows: collectors/agents/windows.md
         -  Speedtest: collectors/agents/speedtest.md
     - Probes:
         - collectors/probes/index.md
@@ -128,6 +128,7 @@ nav:
         - Microsoft Azure: collectors/probes/microsoft_azure.md
         - Microsoft WMI: collectors/probes/wmi.md
         - Microsoft SQL Server: collectors/probes/mssql.md
+        - MySQL Server: collectors/probes/mysql.md
         - NetApp: collectors/probes/netapp.md
         - Palo Alto: collectors/probes/paloalto.md
         - Ping: collectors/probes/ping.md
