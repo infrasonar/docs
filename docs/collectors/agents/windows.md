@@ -4,7 +4,7 @@
 
 Download the Microsoft Windows agent from here:
 
-[:material-download: WindowsAgentSetup.msi](https://github.com/infrasonar/windows-agent/releases/download/v1.0.8/WindowsAgentSetup.msi)
+[:material-download: WindowsAgentSetup.msi](https://github.com/infrasonar/windows-agent/releases/download/v1.0.9/WindowsAgentSetup.msi)
 
 This will install the InfraSonarAgent _(Infrasonar Windows agent)_ on you computer.
 
