@@ -41,7 +41,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: infrasonar
 rules:
-- apiGroups: [""]
+- apiGroups: ["metrics.k8s.io", ""]
   resources: ["pods", "namespaces", "nodes"]
   verbs: ["list"]
 ```
