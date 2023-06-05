@@ -191,6 +191,23 @@ kubectl delete ServiceAccount infrasonar --namespace=monitoring
 kubectl delete ns monitoring
 ```
 
+## My CPU and Memory metrics are missing
+
+If the pod and node CPU and Memory metrics are missing, please check the agent logging.
+Most likely the metric server is not running. This can be checked using the following command:
+
+```bash
+kubectl get apiservices v1beta1.metrics.k8s.i
+```
+
+The above should return with something like:
+```
+NAME                     SERVICE                      AVAILABLE   AGE
+v1beta1.metrics.k8s.io   kube-system/metrics-server   True        123d
+```
+
+Click [here](https://github.com/kubernetes-sigs/metrics-server) for information on how to install the metrics server.
+
 ## Additional information
 
 :material-github: [Kubernetes agent source code](https://github.com/infrasonar/kubernetes-agent)
