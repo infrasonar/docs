@@ -169,6 +169,8 @@ kubectl apply -f stateful_set.yaml
 
 ## Cleanup
 
+When you no longer want to use the Kubernetes agent, it can be removed with the following steps:
+
 If a **deployment** was used:
 
 ```bash
@@ -197,7 +199,7 @@ If the pod and node CPU and Memory metrics are missing, please check the agent l
 Most likely the metric server is not running. This can be checked using the following command:
 
 ```bash
-kubectl get apiservices v1beta1.metrics.k8s.i
+kubectl get apiservices v1beta1.metrics.k8s.io
 ```
 
 The above should return with something like:
