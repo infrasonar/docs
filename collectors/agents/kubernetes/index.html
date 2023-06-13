@@ -3326,6 +3326,7 @@ It is also possible to let the agent create the asset for you, in that case you 
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>stateful_set.yaml
 </code></pre></div>
 <h2 id="cleanup">Cleanup</h2>
+<p>When you no longer want to use the Kubernetes agent, it can be removed with the following steps:</p>
 <p>If a <strong>deployment</strong> was used:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>deployment<span class="w"> </span>infrasonar<span class="w"> </span>--namespace<span class="o">=</span>monitoring
 </code></pre></div>
@@ -3342,7 +3343,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>ns<span class="w"> 
 <h2 id="my-cpu-and-memory-metrics-are-missing">My CPU and Memory metrics are missing</h2>
 <p>If the pod and node CPU and Memory metrics are missing, please check the agent logging.
 Most likely the metric server is not running. This can be checked using the following command:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>apiservices<span class="w"> </span>v1beta1.metrics.k8s.i
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>apiservices<span class="w"> </span>v1beta1.metrics.k8s.io
 </code></pre></div>
 <p>The above should return with something like:
 <div class="highlight"><pre><span></span><code>NAME                     SERVICE                      AVAILABLE   AGE
