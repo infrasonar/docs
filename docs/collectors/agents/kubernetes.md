@@ -171,13 +171,13 @@ kubectl apply -f stateful_set.yaml
 
 When you no longer want to use the Kubernetes agent, it can be removed with the following steps:
 
-If a **deployment** was used:
+If a **Deployment** was used:
 
 ```bash
 kubectl delete deployment infrasonar --namespace=monitoring
 ```
 
-If a **state-ful** set was used:
+If a **StatefulSet** was used:
 
 ```bash
 kubectl delete sts infrasonar --namespace=monitoring
