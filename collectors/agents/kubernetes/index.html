@@ -15,7 +15,7 @@
         <link rel="next" href="../windows/">
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
@@ -3225,7 +3225,7 @@
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infrasonar</span>
 <span class="nt">rules</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;metrics.k8s.io&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apiregistration.k8s.io&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;pods&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;namespaces&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;nodes&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apiservices&quot;</span><span class="p p-Indicator">]</span><span class="err">,</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;pods&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;namespaces&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;nodes&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apiservices&quot;</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;list&quot;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <p>Create a new file for the cluster role binding, <code>cluster_role_binding.yaml</code>:</p>
@@ -3327,10 +3327,10 @@ It is also possible to let the agent create the asset for you, in that case you 
 </code></pre></div>
 <h2 id="cleanup">Cleanup</h2>
 <p>When you no longer want to use the Kubernetes agent, it can be removed with the following steps:</p>
-<p>If a <strong>deployment</strong> was used:</p>
+<p>If a <strong>Deployment</strong> was used:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>deployment<span class="w"> </span>infrasonar<span class="w"> </span>--namespace<span class="o">=</span>monitoring
 </code></pre></div>
-<p>If a <strong>state-ful</strong> set was used:</p>
+<p>If a <strong>StatefulSet</strong> was used:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>sts<span class="w"> </span>infrasonar<span class="w"> </span>--namespace<span class="o">=</span>monitoring
 kubectl<span class="w"> </span>delete<span class="w"> </span>pvc<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>infrasonar<span class="w"> </span>--namespace<span class="o">=</span>monitoring
 </code></pre></div>
@@ -3433,7 +3433,7 @@ v1beta1.metrics.k8s.io   kube-system/metrics-server   True        123d
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a51614de.min.js"></script>
       
     
   </body>
