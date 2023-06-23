@@ -82,7 +82,7 @@ services:
     image: ghcr.io/infrasonar/netapp-probe
   paloalto-probe:
     << : *infrasonar
-    image: ghcr.io/infrasonar/paloalto-probe:unstable
+    image: ghcr.io/infrasonar/paloalto-probe
   ping-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/ping-probe
