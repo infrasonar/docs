@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+  namespace: monitoring
+data:
+  infrasonar.yaml: |-
+    mysql:
+      config:
+        username: "infrasonar"
+        password: "<REPLACE_WITH_PASSWORD>"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-probe
+  namespace: monitoring
+  labels:
+    app: mysql-probe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-probe
+  template:
+    metadata:
+      labels:
+        app: mysql-probe
+    spec:
+      containers:
+      - name: mysql-probe
+        image: ghcr.io/infrasonar/mysql-probe:latest
+        imagePullPolicy: Always
+        env:
+        - name: AGENTCORE_HOST
+          value: "agentcore"
+        - name: LOG_COLORIZED
+          value: "1"
+        volumeMounts:
+        - name: mysql-config-volume
+          mountPath: /data/config
+      volumes:
+        - name: mysql-config-volume
+          configMap:
+            name: mysql-config
