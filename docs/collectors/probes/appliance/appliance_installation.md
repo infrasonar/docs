@@ -53,21 +53,26 @@ The InfraSonar appliance ova uses DHCP by default. You can change this to a stat
 
 :   Example static IP configuration:
 
-    ```yaml title="/etc/netplan/00-installer-config.yaml" hl_lines="4 5 6 7"
+    ```yaml title="/etc/netplan/00-installer-config.yaml" hl_lines="5 6 7 8 9 10 11 12"
     network:
+      version: 2
       ethernets:
         ens160:
-          addresses: [192.168.1.3/24]
-          gateway4: 192.168.1.1
-          nameservers:
-            addresses: [192.168.1.10, 192.168.1.11]
-      version: 2
+          dhcp4: false
+         addresses:
+          - 192.168.10.10/24
+         routes:
+          - to: default
+            via: 192.168.10.1
+         nameservers:
+           addresses: [192.168.10.2, 192.168.10.3]
     ```
 
 After you modified your IP configuration you need to apply the new netplan configuration using the following command:
 
 ```bash
-$ sudo netplan apply
+sudo netplan generate
+sudo netplan --debug apply
 ```
 ## Deploy InfraSonar
 
