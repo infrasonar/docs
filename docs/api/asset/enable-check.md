@@ -15,15 +15,12 @@ Param               | Description
 _none_
 
 ### Body
-Param       | Type      | Required  | Description
-------------|-----------|-----------|-------------
-`interval`  | integer   | No        | Interval for the check _(only for probes and services)_.
+_none_
 
 ### Return codes
 Error code  | Reason
 ------------|--------
 `204`       | Success.
-`400`       | Invalid body _(note that a body is not required).
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`CHECK_MANAGEMENT`)_.
 `404`       | Asset, collector or check not found.
