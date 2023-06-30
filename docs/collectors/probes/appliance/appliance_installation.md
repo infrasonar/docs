@@ -8,6 +8,9 @@ After you deployed the appliance there are thre
 2. Configure a static IP address if required;
 3. Deploy InfraSonar. 
 
+!!! warning "Internet access is required"
+    InfraSonar appliances require internet access in order to retrieve up to date docker containers, operating system updates and connect to the InfraSonar cloud.
+
 ## Default login
 
 You can logon to the appliance using:
