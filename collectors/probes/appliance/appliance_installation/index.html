@@ -15,7 +15,7 @@
         <link rel="next" href="../deploy_infrasonar/">
       
       <link rel="icon" href="../../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -3151,6 +3151,10 @@
 <li>Configure a static IP address if required;</li>
 <li>Deploy InfraSonar. </li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Internet access is required</p>
+<p>InfraSonar appliances require internet access in order to retrieve up to date docker containers, operating system updates and connect to the InfraSonar cloud.</p>
+</div>
 <h2 id="default-login">Default login</h2>
 <p>You can logon to the appliance using:</p>
 <ul>
@@ -3188,18 +3192,23 @@ passwd:<span class="w"> </span>password<span class="w"> </span>updated<span clas
 <dd>
 <p>Example static IP configuration:</p>
 <div class="highlight"><span class="filename">/etc/netplan/00-installer-config.yaml</span><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">ens160</span><span class="p">:</span>
-<span class="hll"><span class="w">      </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">192.168.1.3/24</span><span class="p p-Indicator">]</span>
-</span><span class="hll"><span class="w">      </span><span class="nt">gateway4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.1</span>
-</span><span class="hll"><span class="w">      </span><span class="nt">nameservers</span><span class="p">:</span>
-</span><span class="hll"><span class="w">        </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">192.168.1.10</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">192.168.1.11</span><span class="p p-Indicator">]</span>
-</span><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-</code></pre></div>
+<span class="hll"><span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span class="hll"><span class="w">    </span><span class="w w-Error"> </span><span class="nt">addresses</span><span class="p">:</span>
+</span><span class="hll"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.10.10/24</span>
+</span><span class="hll"><span class="w">     </span><span class="nt">routes</span><span class="p">:</span>
+</span><span class="hll"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span class="hll"><span class="w">        </span><span class="nt">via</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.10.1</span>
+</span><span class="hll"><span class="w">     </span><span class="nt">nameservers</span><span class="p">:</span>
+</span><span class="hll"><span class="w">       </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">192.168.10.2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">192.168.10.3</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
 </dd>
 </dl>
 <p>After you modified your IP configuration you need to apply the new netplan configuration using the following command:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>netplan<span class="w"> </span>generate
+sudo<span class="w"> </span>netplan<span class="w"> </span>--debug<span class="w"> </span>apply
 </code></pre></div>
 <h2 id="deploy-infrasonar">Deploy InfraSonar</h2>
 <p>Run our <a href="../deploy_infrasonar/">easy deployment script</a> to deploy InfraSonar on the appliance.</p>
@@ -3286,7 +3295,7 @@ passwd:<span class="w"> </span>password<span class="w"> </span>updated<span clas
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.a51614de.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>
