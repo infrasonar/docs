@@ -1,5 +1,5 @@
 # Enable check on asset
-**`POST` /asset/<assetId\>/collector/<collectorKey\>/check/<checkKey\>**
+**`PUT` /asset/<assetId\>/collector/<collectorKey\>/check/<checkKey\>**
 
 ### Description
 Enable a check on an asset. Success _(204)_ is also returned when the check was already enabled on the asset.
@@ -30,6 +30,6 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X POST 'https://api.infrasonar.com/asset/123/collector/wmi/check/updates' \
+    -X PUT 'https://api.infrasonar.com/asset/123/collector/wmi/check/updates' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
