@@ -1,4 +1,4 @@
-# Remove label from asset
+# Disable check on asset
 **`DELETE` /asset/<assetId\>/collector/<collectorKey\>/check/<checkKey\>**
 
 ### Description
