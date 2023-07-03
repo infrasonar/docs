@@ -25,6 +25,7 @@ Field               | Return type       | Description
 `description`       | string            | Asset description.
 `mode`              | string            | One of `normal`, `maintenance` or `disabled`.
 `labels`            | array(integer)    | List with label Ids.
+`disabledChecks`    | array(object)     | List with check objects. Each check object contains a `collector` and `check` property, both with the key as value.
 
 ### Collectors
 Collector field     | Return type   | Description

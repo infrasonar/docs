@@ -171,6 +171,8 @@ nav:
         - Set asset name: api/asset/set-name.md
         - Add label to asset: api/asset/add-label.md
         - Purge notifications: api/asset/purge-notifications.md
+        - Enable check: api/asset/enable-check.md
+        - Disable check: api/asset/disable-check.md
         - Remove collector from asset: api/asset/remove-collector.md
         - Remove label from asset: api/asset/remove-label.md
         - Upsert collector to asset: api/asset/upsert-collector.md

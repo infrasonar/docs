@@ -1,8 +1,10 @@
 # Add label to asset
-**`POST` /asset/<assetId\>/label/<labelId\>**
+**`PUT` /asset/<assetId\>/label/<labelId\>**
 
 ### Description
 Add a label to an asset. Success _(204)_ is also returned when the label was already assigned to the asset.
+
+> Note: method `POST` is obsolete but still supported.
 
 ### Path parameters
 Param               | Description
@@ -28,6 +30,6 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X POST 'https://api.infrasonar.com/asset/123/label/123' \
+    -X PUT 'https://api.infrasonar.com/asset/123/label/123' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
