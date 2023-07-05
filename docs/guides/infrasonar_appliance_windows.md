@@ -1,4 +1,4 @@
-![Software Package](../../images/windows_logo.png){ width="150" align=right}
+![Software Package](../images/windows_logo.png){ width="150" align=right}
 
 # InfraSonar on Windows
 
