@@ -1458,8 +1458,6 @@
         
           
         
-          
-        
       
       
         
@@ -1698,20 +1696,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../collectors/probes/microsoft_azure/" class="md-nav__link">
-        Microsoft Azure
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../collectors/probes/wmi/" class="md-nav__link">
         Microsoft WMI
       </a>
@@ -1871,7 +1855,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_22" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_21" >
       
       
         
@@ -1890,14 +1874,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../collectors/probes/vmware/">VMWare</a>
           
-            <label for="__nav_4_3_22">
+            <label for="__nav_4_3_21">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_22_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_3_22">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_21_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_21">
           <span class="md-nav__icon md-icon"></span>
           VMWare
         </label>
@@ -1976,6 +1960,8 @@
         
           
         
+          
+        
       
       
         
@@ -2020,6 +2006,20 @@
     <li class="md-nav__item">
       <a href="../../collectors/services/mailroundtrip/" class="md-nav__link">
         MailRoundTrip
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collectors/services/microsoft_azure/" class="md-nav__link">
+        Microsoft Azure
       </a>
     </li>
   
@@ -3184,9 +3184,12 @@
 <h2 id="context">Context</h2>
 <p>To properly read this security considerations page, it is essential to keep the following context in mind:</p>
 <ul>
-<li>InfraSonar monitoring data is collected through:</li>
+<li>InfraSonar monitoring data is collected through:<ul>
 <li><a href="../../collectors/probes/">Probes</a> running in a Docker container on the monitoring <a href="../../collectors/probes/appliance/">appliance</a>.</li>
-<li>Custom collectors are sending data via the <a href="https://docs.oversig.ht/api/data/insert-data/">InfraSonar API</a>.</li>
+<li><a href="../../collectors/agents/">Agents</a> are sending data via the <a href="https://docs.infrasonar.com/api/overview/">InfraSonar API</a>.</li>
+<li><a href="../../collectors/services/">Services</a> services run in our cloud platform and retrieve monitoring data autonomously. </li>
+</ul>
+</li>
 <li>Collected data is sent to the InfraSonar platform for further analysis and user consumption in the InfraSonar frontend.</li>
 </ul>
 <p>The <a href="../../introduction/platform/">platform guide</a> explains this architecture further.</p>
