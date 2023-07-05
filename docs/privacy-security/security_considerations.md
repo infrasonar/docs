@@ -14,8 +14,9 @@ Our focus and efforts are aimed at retrieving monitoring data, and sending the c
 To properly read this security considerations page, it is essential to keep the following context in mind:
 
 - InfraSonar monitoring data is collected through:
-  -  [Probes](../collectors/probes/index.md) running in a Docker container on the monitoring [appliance](../collectors/probes/appliance/index.md).
-  - Custom collectors are sending data via the [InfraSonar API](https://docs.oversig.ht/api/data/insert-data/).
+    - [Probes](../collectors/probes/index.md) running in a Docker container on the monitoring [appliance](../collectors/probes/appliance/index.md).
+    - [Agents](../collectors/agents/index.md) are sending data via the [InfraSonar API](https://docs.infrasonar.com/api/overview/).
+    - [Services](../collectors/services/index.md) services run in our cloud platform and retrieve monitoring data autonomously. 
 - Collected data is sent to the InfraSonar platform for further analysis and user consumption in the InfraSonar frontend.
 
 The [platform guide](../introduction/platform.md) explains this architecture further.
