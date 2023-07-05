@@ -2,8 +2,6 @@
 
 # What is InfraSonar
 
-InfraSonar is the brainchild an IT infrastructure specialist and a great software development team with a passion for scalable software solutions who joined forces with an IT service provider to create an easy-to-maintain, uniform monitoring platform.
-
 InfraSonar comes out of the box with many predefined conditions based on years of experience and best practices.
 
 This predefined set of conditions and agent-less monitoring capabilities make for an easy and non-intrusive rollout with minimum effort.
@@ -23,6 +21,8 @@ This predefined set of conditions and agent-less monitoring capabilities make fo
 
 ## History
 
-InfraSonar is de successor of Oversight an IT infrastructure monitoring solution which started out in 2013 as a monitoring solution for IT service providers.
+InfraSonar started in 2013 as Oversight as the brainchild of an IT architect (Rik) and a senior software developer (Jeroen).
+
+In 2023 we released a completely revised platform under the name InfraSonar.
 
 With InfraSonar we took the lessons learned and made a more versatile and resistent platform not only suitable for IT environments but for any platform were state and performance monitoring are required.
