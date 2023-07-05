@@ -125,7 +125,6 @@ nav:
         - HP ILO: collectors/probes/hpilo.md
         - HP ProCurve: collectors/probes/hpprocurve.md
         - HTTP: collectors/probes/http.md
-        - Microsoft Azure: collectors/probes/microsoft_azure.md
         - Microsoft WMI: collectors/probes/wmi.md
         - Microsoft SQL Server: collectors/probes/mssql.md
         - MySQL Server: collectors/probes/mysql.md
@@ -145,6 +144,7 @@ nav:
         - collectors/services/index.md
         - Last seen: collectors/services/last_seen.md
         - MailRoundTrip: collectors/services/mailroundtrip.md
+        - Microsoft Azure: collectors/services/microsoft_azure.md
         - Palo Alto: collectors/services/paloalto.md
         - Ping: collectors/services/ping.md
   - Integrations:
