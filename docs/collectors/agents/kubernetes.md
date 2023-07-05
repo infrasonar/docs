@@ -132,6 +132,7 @@ spec:
   selector:
     matchLabels:
       app: infrasonar
+  serviceName: infrasonar
   replicas: 1
   template:
     metadata:
