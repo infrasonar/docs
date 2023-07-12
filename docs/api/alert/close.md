@@ -27,6 +27,10 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/alert/xxx/close' \
-    -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    -X POST 'https://api.infrasonar.com/alert/xxx/close' \
+    -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
+    -H 'Content-Type: application/json' \
+    --data-raw '{
+    "message": "Closed using the API"
+}'
 ```
