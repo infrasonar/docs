@@ -39,7 +39,7 @@ Action field        | Return type   | Description
 Error code  | Reason
 ------------|--------
 `200`       | Success.
-`400`       | Unknown field or action.
+`400`       | Unknown field or action or invalid alert key string.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`READ`)_.
 `404`       | Alert not found.

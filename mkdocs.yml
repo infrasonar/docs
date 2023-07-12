@@ -95,7 +95,7 @@ nav:
       - Agentcores: application/agentcores.md
       - Zones: application/zones.md
       - Users: application/users.md
-      - DutyCalls: application/dutycalls.md
+      - Webhooks: application/webhooks.md
       - Tokens: application/tokens.md
       - Time series: application/timeseries.md
       - Collectors: application/collectors.md
@@ -178,6 +178,7 @@ nav:
         - Upsert collector to asset: api/asset/upsert-collector.md
       - Alert:
         - Query alert: api/alert/query.md
+        - Close alert: api/alert/close.md
       - Container:
         - Create asset: api/container/create-asset.md
         - Query container: api/container/query.md
