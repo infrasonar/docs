@@ -3192,7 +3192,7 @@
 <h1 id="close-alert">Close alert</h1>
 <p><strong><code>POST</code>/alert/&lt;alertKs>/close</strong></p>
 <h3 id="description">Description</h3>
-<p>Close an alert. An optional message can be provided.</p>
+<p>Close an alert. An optional message can be provided. Success <em>(204)</em> is also returned when the alert is already closed .</p>
 <h3 id="path-parameters">Path parameters</h3>
 <table>
 <thead>
@@ -3252,17 +3252,17 @@
 <td><code>403</code></td>
 <td>Insufficient permissions <em>(required: <code>API</code>+<code>ALERT_CHANGE</code>)</em>.</td>
 </tr>
-<tr>
-<td><code>404</code></td>
-<td>Alert not found.</td>
-</tr>
 </tbody>
 </table>
 <h3 id="example">Example</h3>
 <p>Curl request:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/alert/xxx/close&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>
+<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/alert/xxx/close&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--data-raw<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;message&quot;: &quot;Closed using the API&quot;</span>
+<span class="s1">}&#39;</span>
 </code></pre></div></p>
 
 
