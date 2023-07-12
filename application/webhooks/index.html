@@ -19,7 +19,7 @@
     
     
       
-        <title>DutyCalls - InfraSonar</title>
+        <title>Webhooks - InfraSonar</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#duty-calls" class="md-skip">
+        <a href="#webhooks" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DutyCalls
+              Webhooks
             
           </span>
         </div>
@@ -1069,9 +1069,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Webhooks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        DutyCalls
+        Webhooks
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variable-in-a-webhook" class="md-nav__link">
+    Variable in a webhook
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2583,6 +2614,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
@@ -2605,6 +2638,20 @@
     <li class="md-nav__item">
       <a href="../../api/alert/query/" class="md-nav__link">
         Query alert
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/alert/close/" class="md-nav__link">
+        Close alert
       </a>
     </li>
   
@@ -3058,6 +3105,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variable-in-a-webhook" class="md-nav__link">
+    Variable in a webhook
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3071,8 +3133,117 @@
                   
 
 
-<p><img align="right" alt="Duty Calls" src="../../images/application_dutycalls.png" width="150" /></p>
-<h1 id="duty-calls">Duty Calls</h1>
+<p><img align="right" alt="Webhooks" src="../../images/webhooks.png" width="150" /></p>
+<h1 id="webhooks">Webhooks</h1>
+<p>Webhooks can be used to inform third party services about open en closed alerts and notifications.</p>
+<h2 id="variable-in-a-webhook">Variable in a webhook</h2>
+<p>It is possible to use variable using the syntax <code>{{ variable }}</code> when creating a webhook. The following variable are available:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Scope</th>
+<th>Example value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alert_link</code></td>
+<td>Alert</td>
+<td>https://app.infrasonar.com/container/123/asset/456/alert?condition=789&amp;item=myitem&amp;alert=1689146219</td>
+</tr>
+<tr>
+<td><code>alert_message</code></td>
+<td>Alert</td>
+<td>A message with optional MarDown syntax.</td>
+</tr>
+<tr>
+<td><code>alert_severity</code></td>
+<td>Alert</td>
+<td>WARNING <em>(One of <code>EMERGENCY</code>, <code>ALERT</code>, <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>NOTICE</code>, <code>INFORMATIONAL</code> or <code>DEBUG</code>)</em></td>
+</tr>
+<tr>
+<td><code>alert_timestamp</code></td>
+<td>Alert</td>
+<td>1689146219</td>
+</tr>
+<tr>
+<td><code>asset_id</code></td>
+<td>Alert</td>
+<td>456</td>
+</tr>
+<tr>
+<td><code>asset_name</code></td>
+<td>Alert</td>
+<td>My asset</td>
+</tr>
+<tr>
+<td><code>condition_id</code></td>
+<td>Alert</td>
+<td>789</td>
+</tr>
+<tr>
+<td><code>condition_name</code></td>
+<td>Alert</td>
+<td>My condition</td>
+</tr>
+<tr>
+<td><code>container_id</code></td>
+<td>All</td>
+<td>123</td>
+</tr>
+<tr>
+<td><code>container_link</code></td>
+<td>All</td>
+<td>https://app.infrasonar.com/container/123</td>
+</tr>
+<tr>
+<td><code>container_name</code></td>
+<td>All</td>
+<td>My container</td>
+</tr>
+<tr>
+<td><code>ks</code></td>
+<td>All</td>
+<td><em>(Unique key string to identify the alert of notification)</em></td>
+</tr>
+<tr>
+<td><code>notification_identifier</code></td>
+<td>Notification</td>
+<td><em>(For example an asset name but can be nil)</em></td>
+</tr>
+<tr>
+<td><code>notification_index</code></td>
+<td>Notification</td>
+<td><em>(For example a check name but can be nil)</em></td>
+</tr>
+<tr>
+<td><code>notification_kind</code></td>
+<td>Notification</td>
+<td>ConnectionStatus <em>(One of <code>ConnectionStatus</code>, <code>ConnectionTimeDelta</code>, <code>ProbeVersion</code>, <code>ProbeMissing</code>, <code>ProbeTimeDelta</code>, <code>ProbeNoHeartbeat</code>, <code>CheckMissing</code>, <code>CheckError</code>, <code>CheckAged</code>, <code>CheckInvalidResult</code>, <code>CheckInvalidTimestamp</code>, <code>CheckInvalidData</code>, <code>ContainerMaintenance</code>, <code>AgentcoreMissing</code> or <code>ConditionError</code>)</em></td>
+</tr>
+<tr>
+<td><code>notification_message</code></td>
+<td>Notification</td>
+<td>A message with optional MarkDown syntax.</td>
+</tr>
+<tr>
+<td><code>notification_severity</code></td>
+<td>Notification</td>
+<td>MEDIUM <em>(One of <code>LOW</code>, <code>MEDIUM</code> or <code>HIGH</code>)</em></td>
+</tr>
+<tr>
+<td><code>notification_timestamp</code></td>
+<td>Notification</td>
+<td>1689146219</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td>All</td>
+<td>AlertOpen <em>(One of <code>AlertOpen</code>, <code>AlertClose</code>, <code>NotificationOpen</code>, <code>NotificationClose</code> or <code>Test</code>)</em></td>
+</tr>
+</tbody>
+</table>
 
 
   
