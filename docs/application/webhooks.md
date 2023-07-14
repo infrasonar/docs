@@ -21,6 +21,7 @@ Variable                    | Scope         | Example value
 `container_id`              | All           | 123
 `container_link`            | All           | https://app.infrasonar.com/container/123
 `container_name`            | All           | My container
+`item_name`                 | Alert         | My item
 `ks`                        | All           | _(Unique key string to identify the alert of notification)_
 `notification_identifier`   | Notification  | _(For example an asset name but can be nil)_
 `notification_index`        | Notification  | _(For example a check name but can be nil)_
