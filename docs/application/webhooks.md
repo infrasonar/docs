@@ -29,4 +29,6 @@ Variable                    | Scope         | Example value
 `notification_message`      | Notification  | A message with optional MarkDown syntax.
 `notification_severity`     | Notification  | MEDIUM _(One of `LOW`, `MEDIUM` or `HIGH`)_
 `notification_timestamp`    | Notification  | 1689146219
+`webhook_id`                | All           | 0 _(Webhook identifier)_
+`webhook_name`              | All           | My webhook
 `scope`                     | All           | AlertOpen _(One of `AlertOpen`, `AlertClose`, `NotificationOpen`, `NotificationClose` or `Test`)_
