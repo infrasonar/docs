@@ -2231,8 +2231,6 @@
         
           
         
-          
-        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3013,66 +3011,12 @@
       
       
         <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
-          ConnectWise Manage add-on
+          Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_9">
-          <span class="md-nav__icon md-icon"></span>
-          ConnectWise Manage add-on
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/cwm/set-cwm/" class="md-nav__link">
-        Set CWM
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_10" >
-      
-      
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_6_10" id="__nav_6_10_label" tabindex="0">
-          Examples
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_10_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6_10">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -3256,11 +3200,11 @@ As such a user should fist authenticate once on our platform and from there on t
 </tr>
 <tr>
 <td><code>RuleManagement</code></td>
-<td>Required for managing DutyCalls rules on this container;<br>Required for managing Email rules (including rules by other users) on this container.</td>
+<td>Required for managing <em>all</em> rules on this container.<br><em>(including rules for webhooks and rules for other users)</em></td>
 </tr>
 <tr>
 <td><code>RuleEmail</code></td>
-<td>Required for creating a personal email rule on this container.<br><em>(other email rules are only visible when having the admin role)</em></td>
+<td>Required for creating a personal email rule on this container.</td>
 </tr>
 <tr>
 <td><code>PurgeTimeSeries</code></td>
@@ -3272,15 +3216,23 @@ As such a user should fist authenticate once on our platform and from there on t
 </tr>
 <tr>
 <td><code>ReportingAdmin</code></td>
-<td>Required for managing reports/</td>
+<td>Required for managing reports.</td>
 </tr>
 <tr>
 <td><code>ViewLog</code></td>
 <td>Required for viewing logging.</td>
 </tr>
 <tr>
-<td><code>ConnectWiseManageAddOn</code></td>
-<td>Required to use the <a href="../../integrations/connectwise_manage/">ConnectWise manage addon</a> on this container;<br><em>only if the container has CWM configured</em>.</td>
+<td><code>ContainerTokens</code></td>
+<td>Required for managing container tokes.</td>
+</tr>
+<tr>
+<td><code>RulePhone</code></td>
+<td>Required for creating a personal phone rule like <em>SMS</em>, <em>PhoneCall</em> or <em>WhatsApp</em> on this container.</td>
+</tr>
+<tr>
+<td><code>Webhooks</code></td>
+<td>Required for managing and viewing Webhooks.<br>Be careful with this privilege as webhooks might contain sensitive information like API keys.<br><em>(This auth flag is <strong>not</strong> required for creating rules using webhooks)</em></td>
 </tr>
 </tbody>
 </table>
