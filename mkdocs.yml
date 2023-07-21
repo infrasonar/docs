@@ -194,7 +194,5 @@ nav:
       - Reporting:
         - Query reporting: api/reporting/query.md
         - Get report: api/reporting/get-report.md
-      - ConnectWise Manage add-on:
-        - Set CWM: api/cwm/set-cwm.md
       - Examples:
           - Powershell: api/examples/powershell.md

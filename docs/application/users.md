@@ -37,10 +37,12 @@ A user's identity can be authorized on a [container](child_containers.md) using 
 `ContainerAccess`                                   | Required for managing user access to this container;<br>Required for managing tokens on this container.
 `CheckManagement`                                   | Required for enable/disable/configure checks per collector on assets.
 `TimeSeriesManagement`                              | Required for enable/disable time-series for this container.
-`RuleManagement`                                    | Required for managing DutyCalls rules on this container;<br>Required for managing Email rules (including rules by other users) on this container.
-`RuleEmail`                                         | Required for creating a personal email rule on this container.<br>_(other email rules are only visible when having the admin role)_
+`RuleManagement`                                    | Required for managing _all_ rules on this container.<br>_(including rules for webhooks and rules for other users)_
+`RuleEmail`                                         | Required for creating a personal email rule on this container.
 `PurgeTimeSeries`                                   | Required for purging dead-time-series within this container.
 `ReportingView`                                     | Required for viewing reports.
-`ReportingAdmin`                                    | Required for managing reports/
+`ReportingAdmin`                                    | Required for managing reports.
 `ViewLog`                                           | Required for viewing logging.
-`ConnectWiseManageAddOn`                            | Required to use the [ConnectWise manage addon](../integrations/connectwise_manage.md) on this container;<br>*only if the container has CWM configured*.
+`ContainerTokens`                                   | Required for managing container tokes.
+`RulePhone`                                         | Required for creating a personal phone rule like _SMS_, _PhoneCall_ or _WhatsApp_ on this container.
+`Webhooks`                                          | Required for managing and viewing Webhooks.<br>Be careful with this privilege as webhooks might contain sensitive information like API keys.<br>_(This auth flag is **not** required for creating rules using webhooks)_
