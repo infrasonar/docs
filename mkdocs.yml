@@ -178,6 +178,8 @@ nav:
         - Upsert collector to asset: api/asset/upsert-collector.md
       - Alert:
         - Query alert: api/alert/query.md
+        - Add message to alert: api/alert/message.md
+        - Assign alert: api/alert/assign.md
         - Close alert: api/alert/close.md
       - Container:
         - Create asset: api/container/create-asset.md

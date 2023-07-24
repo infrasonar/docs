@@ -1,9 +1,8 @@
-# Close alert
-**`PUT`/alert/<alertKs\>/close**
+# Add a message to an alert
+**`PUT`/alert/<alertKs\>/message**
 
 ### Description
-Close an alert. An optional message can be provided. Success _(204)_ is also returned when the alert is already closed .
-
+Add a message to an open alert. Success _(204)_ is also returned when the alert does not exist.
 
 ### Path parameters
 Param               | Description
@@ -11,9 +10,9 @@ Param               | Description
 `alertKs`           | Alert key string _(ks)_.
 
 ### Body
-Param       | Type      | Required  | Description
-------------|-----------|-----------|-------------
-`message`   | string    | No        | Optional message _(max 240 characters, default empty)_.
+Param           | Type      | Required  | Description
+----------------|-----------|-----------|-------------
+`message`       | string    | No        | Optional message _(max 240 characters, default empty)_.
 
 ### Return codes
 Error code  | Reason
@@ -27,10 +26,10 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X PUT 'https://api.infrasonar.com/alert/xxx/close' \
+    -X PUT 'https://api.infrasonar.com/alert/xxx/message' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
-    "message": "Closed using the API"
+    "message": "This is an example message."
 }'
 ```
