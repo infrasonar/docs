@@ -2,7 +2,8 @@
 
 # Webhooks
 
-Webhooks can be used to inform third party services about open en closed alerts and notifications.
+Webhooks can be used to inform third party services about open en closed alerts and notifications. A webhook must be used by a [rule](./rules.md) before the webhook will be executed. This enables more control for when a webhook must be called.
+
 
 ## Variable in a webhook
 

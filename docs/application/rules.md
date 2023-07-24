@@ -6,6 +6,4 @@ Rules are a great way to configure notifications for end-users.
 
 ## Features
 
-Rules can be setup for a group of conditions and assets and route messages to either DutyCalls or email.
-
-Routing to DutyCalls requires this service to be setup first, see our [DutyCalls documentation](dutycalls.md) for more information.
+Rules can be setup for a group of conditions and assets and route messages to either SMS, WhatsApp, Email, a [webhook](./webhooks.md) or even a voice call.
