@@ -6,7 +6,6 @@
 
 We support user authentication using using one of these cloud identities:
 
-* :material-github: [GitHub account](https://github.com)
 * :material-microsoft: [Microsoft account](https://account.live.com/) (*this can be a work or personal account*)
 * :material-google: [Google account](https://www.google.com/account/about/) (*this can be a personal or Google workspace account*)
 
