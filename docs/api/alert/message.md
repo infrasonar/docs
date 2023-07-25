@@ -1,4 +1,4 @@
-# Add a message to an alert
+# Add message to alert
 **`PUT`/alert/<alertKs\>/message**
 
 ### Description
