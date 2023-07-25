@@ -12,7 +12,7 @@ Param               | Description
 ### Body
 Param           | Type      | Required  | Description
 ----------------|-----------|-----------|-------------
-`message`       | string    | No        | Optional message _(max 240 characters, default empty)_.
+`message`       | string    | Yes       | Message to add _(max 240 characters, default empty)_.
 
 ### Return codes
 Error code  | Reason
