@@ -42,7 +42,7 @@ metadata:
   name: infrasonar
 rules:
 - apiGroups: ["metrics.k8s.io", "apiregistration.k8s.io", ""]
-  resources: ["pods", "namespaces", "nodes", "apiservices"]
+  resources: ["pods", "namespaces", "nodes", "apiservices", "persistentvolumeclaims", "services"]
   verbs: ["list"]
 ```
 
