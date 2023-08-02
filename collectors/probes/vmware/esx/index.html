@@ -15,7 +15,7 @@
         <link rel="next" href="../vcenter/">
       
       <link rel="icon" href="../../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
@@ -3283,6 +3283,7 @@
 <h3 id="credentials">Credentials</h3>
 <p>The VMware API requires a regular user account on each monitored ESXi host with read-only permissions to access monitoring data on VMware ESXi hosts.</p>
 <p>See the <a href="https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-172218B8-6DAB-4CEF-A5B7-E3865B9E9EE8.html">VMware documentation</a> on how to setup a local account and grant this account access.</p>
+<p>If you need to create multiple local accounts have a look at <a href="../esx_localaccount/">this</a> page as it outlines a script to create multiple local users at once.</p>
 <p>The corresponding <code>infrasonar.yaml</code> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> section when using for example <strong>infrasonar</strong> as user id looks as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">esx</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">config</span><span class="p">:</span>
