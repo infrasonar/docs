@@ -39,7 +39,7 @@ Create a mail contact containing the mail round trip return address.
     3. Provide a **Full name**, we suggest: *Mail Round Trip Monitoring Return Address*.
     4. Enter an alias, we suggest: *mailroundtripreturn*.
     5. Click on the Edit... button:
-        1. Enter the following return email address in the E-mail address field: *mailroundtrip@mrt.infrasonar.com*.
+        1. Enter the following return email address in the E-mail address field: *mail@mrt.infrasonar.com*.
     6. Click on **Next**:
         1. Review settings.
     7. Click on **New** to create the mail contact:

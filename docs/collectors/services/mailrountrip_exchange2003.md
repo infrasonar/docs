@@ -32,7 +32,7 @@ Add a mail contact. This contact is required to forward the mail back to the mon
         1. Select **SMTP Address**.
         2. Click on **OK**.
     2. Enter the return email address:
-        1. Enter the return mail address in the E-mail address field: *mailroundtrip@mrt.infrasonar.com*.
+        1. Enter the return mail address in the E-mail address field: *mail@mrt.infrasonar.com*.
         2. Click on **OK**.
     3. Finish:
         1. Verify the settings.

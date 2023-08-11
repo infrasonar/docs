@@ -6,6 +6,6 @@
 4. Click on **ADD ANOTHER RULE**:
    1. In the section *Specify envelope recipients to match*, select **Single recipient** and enter the email address: mailroundtrip@<fqdn>.<br>
       Where <fqdn> is your email domain.
-   2. In the section *If the envelope recipient matches the above, select **Change envelope recipient**, set **Replace recipient** and enter: `mailroundtrip@mrt.infrasonar.com`.
+   2. In the section *If the envelope recipient matches the above, select **Change envelope recipient**, set **Replace recipient** and enter: `mail@mrt.infrasonar.com`.
    3. Under **Spam**, select **Bypass spam filter for this message**.
    4. Click **Save**.

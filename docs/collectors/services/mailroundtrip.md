@@ -7,7 +7,7 @@ The steps below outline the email roundtrip for `mailroundtrip@example.org`:
 
 1. The first step is to lookup all MX records for `example.org`.
 2. Our MailRoundTrip service sends an email to all MX records.
-3. The receiving email server is configured to automatically forward all mail sent to the probe address. In our case `mailroundtrip@example.org` is forwarded to `mailroundtrip@mrt.infrasonar.com`.
+3. The receiving email server is configured to automatically forward all mail sent to the probe address. In our case `mailroundtrip@example.org` is forwarded to `mail@mrt.infrasonar.com`.
 
 This approach ensures all components such, as DNS, internet connection, email filtering, and email server components involved in receiving and sending email, are part of the measurement.
 
@@ -23,7 +23,7 @@ So in our case this would be: `mailroundtrip@example.org`
 
 ### Mail service
 
-The email service you want to monitor `example.org` needs to forward messages send to `mailroundtrip@example.org` to `mailroundtrip@mrt.infrasonar.com`
+The email service you want to monitor `example.org` needs to forward messages send to `mailroundtrip@example.org` to `mail@mrt.infrasonar.com`
 
 !!! note Cleanup
     Ensure you forward these emails without storing them in your email database or use a routine to automatically cleanup the messages to avoid digital waste.
