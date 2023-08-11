@@ -3198,7 +3198,7 @@ The steps below outline the email roundtrip for <code>mailroundtrip@example.org<
 <ol>
 <li>The first step is to lookup all MX records for <code>example.org</code>.</li>
 <li>Our MailRoundTrip service sends an email to all MX records.</li>
-<li>The receiving email server is configured to automatically forward all mail sent to the probe address. In our case <code>mailroundtrip@example.org</code> is forwarded to <code>mailroundtrip@mrt.infrasonar.com</code>.</li>
+<li>The receiving email server is configured to automatically forward all mail sent to the probe address. In our case <code>mailroundtrip@example.org</code> is forwarded to <code>mail@mrt.infrasonar.com</code>.</li>
 </ol>
 <p>This approach ensures all components such, as DNS, internet connection, email filtering, and email server components involved in receiving and sending email, are part of the measurement.</p>
 <div class="admonition note mx lookup">
@@ -3210,7 +3210,7 @@ The steps below outline the email roundtrip for <code>mailroundtrip@example.org<
 <p>The only required configuration property for the MailRoundTrip service is the mail domain.
 So in our case this would be: <code>mailroundtrip@example.org</code></p>
 <h3 id="mail-service">Mail service</h3>
-<p>The email service you want to monitor <code>example.org</code> needs to forward messages send to <code>mailroundtrip@example.org</code> to <code>mailroundtrip@mrt.infrasonar.com</code></p>
+<p>The email service you want to monitor <code>example.org</code> needs to forward messages send to <code>mailroundtrip@example.org</code> to <code>mail@mrt.infrasonar.com</code></p>
 <div class="admonition note cleanup">
 <p class="admonition-title">Note</p>
 <p>Ensure you forward these emails without storing them in your email database or use a routine to automatically cleanup the messages to avoid digital waste.</p>
