@@ -2,9 +2,7 @@
 
 # :material-account-supervisor-circle: Users
 
-A user with the [ContainerAccess](#material-toggle-switch-outline-containeraccess) rights can manage users.
-
-The **:material-account-supervisor-circle: users** menu option can be used to manage user access to InfraSonar.
+A user with [ContainerAccess](#material-toggle-switch-outline-containeraccess) rights can manage users.
 
 !!! Tip
     As with any platform we advise to adhere to the [Principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
@@ -26,8 +24,6 @@ A user's identity can be authorized on a [container](child_containers.md) using 
 
 !!! Note
     Also note a user with [ContainerAccess](#material-toggle-switch-outline-containeraccess) rights can never assign more permissiong the assigned to this user.
-
-
 
 ### How-to
 
@@ -53,6 +49,8 @@ Option we suggest adding:
 
 
 ## Permissions
+
+We have listed each of the specific InfraSonar permission flags below:
 
 ### **:material-toggle-switch-outline: Is member**
 Allows alerts to be assigned to this user, makes the user "visible" for alert assignment.
@@ -107,7 +105,8 @@ Required for enable/disable/configure checks per collector on assets.
 Required for enable/disable time-series for this container.
 
 ### **:material-toggle-switch-outline: RuleManagement**
-Required for managing _all_ rules on this container.<br>_(including rules for webhooks and rules for other users)_
+Required for managing _all_ rules on this container.<br>
+_(including rules for webhooks and rules for other users)_
 
 ### **:material-toggle-switch-outline: RuleEmail**
 Required for creating a personal email rule on this container.
