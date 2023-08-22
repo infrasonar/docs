@@ -11,15 +11,13 @@ Rules can be setup for a group of conditions and assets and route messages to ei
     Before we can send a message using SMS or WhatsApp to your phone we need to know your phone number.<br>
     Your can manage your phone number in your profile.
 
-## Pre requisites
+## Prerequisites
 
 If you want to use SMS, WhatsApp or voice calls it is important to note that every time the rule is triggered this will cost one credit which will count against your monthly billed credits.
 
-Users with the privilege **:material-toggle-switch-outline: RuleManagement** and **:material-toggle-switch-outline: RulePhone** can setup rules, even for other users.
-
 Users with the privilege [RuleManagement](./users.md#rulemanagement) can setup any rules, even for other users.
 
-The privilege [RuleEmail](./users.md#ruleemail) allows users to manage there own email rules while [RulePhone](./users.md#rulephone) allows users to manage their own SMS, WhatsApp or voice calls
+The privilege [RuleEmail](./users.md#ruleemail) allows users to manage there own email rules while [RulePhone](./users.md#rulephone) allows users to manage their own SMS, WhatsApp or voice calls.
 
 It is important though that for each user who wants to use SMS, WhatsApp or voice calls their number must be setup in their profile.
 
@@ -30,11 +28,13 @@ It is important though that for each user who wants to use SMS, WhatsApp or voic
     If toBefore we can send a message using SMS or WhatsApp to your phone we need to know your phone number.<br>
     Your can manage your phone number in your profile.
 
+The next paragraphs outline each of the tabs when configuring rules.
+
 ### General
 
 ![Rules screenshot general](../images/application_rules_screenshot_01.png)
 
-To start, select how you'd like this rule to notify you by selecting a **rule kind** :material-numeric-1-circle:{ .red }. The choices are:
+To start, select how you'd like this rule to notify you by selecting a **rule kind** :material-numeric-1-circle:{ .red }:
 
 * Email
 * webhook
@@ -64,17 +64,15 @@ Last choose in this section is for which **severity** :material-numeric-4-circle
 
 In this section you choose for which conditions you want this rule to be active or not.
 
-So you can choose to **exclude** or **include** :material-numeric-1-circle:{ .red } which **conditions** :material-numeric-2-circle:{ .red } you want this rule to apply to.
+You can choose to **exclude** or **include** :material-numeric-1-circle:{ .red } specific **conditions** :material-numeric-2-circle:{ .red } this rule to applies to.
 
 ### Asset
 
 ![Rules screenshot asset](../images/application_rules_screenshot_03.png)
 
-In this section you select which assets you want the rule to based upon their label.
+Select the **label** :material-numeric-1-circle:{ .red } you want to use to specify for which assets this rule applies, if you don't select a label this rule will apply to all assets in the container.
 
-Select the **label** :material-numeric-1-circle:{ .red } you want to use, if you don't select a label this rule will apply to all assets in the container.
-
-When a label a selected we will show the assets :material-numeric-2-circle:{ .red } this rule will be applicable for.
+When a label a selected we will show a list of assets :material-numeric-2-circle:{ .red } for which this rule applies.
 
 ### Schedule
 
