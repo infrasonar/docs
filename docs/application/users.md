@@ -114,22 +114,17 @@ Required for creating a personal email rule on this container.
 ### **:material-toggle-switch-outline: PurgeTimeSeries**
 Required for purging dead-time-series within this container.
 
-
 ### **:material-toggle-switch-outline: ViewLog**
 Required for viewing logging.
-
 
 ### **:material-toggle-switch-outline: ReportingView**
 Required for viewing reports.
 
-
 ### **:material-toggle-switch-outline: ReportingAdmin**
 Required for managing reports.
 
-
 ### **:material-toggle-switch-outline: ContainerTokens**
 Required for managing container tokes.
-
 
 ### **:material-toggle-switch-outline: RulePhone**
 Required for creating a personal phone rule like _SMS_, _PhoneCall_ or _WhatsApp_ on this container.
