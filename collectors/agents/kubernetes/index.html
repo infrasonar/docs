@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.5">
     
     
       
@@ -4104,13 +4104,6 @@
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring</span>
 </code></pre></div>
-<p>Create a new file for a service account, <code>service_account.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infrasonar</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring</span>
-</code></pre></div>
 <p>Create a new file <code>cluster_role.yaml</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRole</span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
@@ -4118,8 +4111,8 @@
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infrasonar</span>
 <span class="nt">rules</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;metrics.k8s.io&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apiregistration.k8s.io&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;pods&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;namespaces&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;nodes&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apiservices&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;persistentvolumeclaims&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;services&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;list&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;pods&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;namespaces&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;nodes&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;nodes/proxy&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apiservices&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;persistentvolumeclaims&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;services&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;list&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;get&quot;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <p>Create a new file for the cluster role binding, <code>cluster_role_binding.yaml</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRoleBinding</span>
@@ -4137,7 +4130,6 @@
 </code></pre></div>
 <p>Apply the files above:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>namespace.yaml
-kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>service_account.yaml
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>cluster_role.yaml
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>cluster_role_binding.yaml
 </code></pre></div>
@@ -4231,7 +4223,6 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>pvc<span class="w">
 <p>Cleanup the namespace, service account and associated role and binding:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>ClusterRoleBinding<span class="w"> </span>infrasonar
 kubectl<span class="w"> </span>delete<span class="w"> </span>ClusterRole<span class="w"> </span>infrasonar
-kubectl<span class="w"> </span>delete<span class="w"> </span>ServiceAccount<span class="w"> </span>infrasonar<span class="w"> </span>--namespace<span class="o">=</span>monitoring
 kubectl<span class="w"> </span>delete<span class="w"> </span>ns<span class="w"> </span>monitoring
 </code></pre></div>
 <h2 id="my-cpu-and-memory-metrics-are-missing">My CPU and Memory metrics are missing</h2>
