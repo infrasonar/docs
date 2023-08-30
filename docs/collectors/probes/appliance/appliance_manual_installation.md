@@ -13,7 +13,7 @@ Create a new virtual machine using these specifications:
 * **Guest OS Version**: Ubuntu Linux (64-bit) 
 * **CPU**: 2 CPU
 * **Memory**: 2 GB memory
-* **Disk**: 30 GB HDD
+* **Disk**: 40 GB HDD
 * **Name**: infrasonar-appliance
 
 ### Installation steps

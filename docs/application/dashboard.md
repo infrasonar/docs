@@ -51,4 +51,5 @@ You can edit the dashboard using the :material-pencil: icon.
 
 !!! note "Configuration"
 
-    The dashboard configuration is stored in the browsers local storage allowing you to setup multiple dashboards on multiple systems using a single read-only account.
+    The dashboard configuration is stored in the users profile.
+    This allows you to change a wall mounted dashboard easily by looging in as the user used to display the dashboard.

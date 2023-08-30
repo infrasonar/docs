@@ -36,6 +36,8 @@ The VMware API requires a regular user account on each monitored ESXi host with 
 
 See the [VMware documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-172218B8-6DAB-4CEF-A5B7-E3865B9E9EE8.html) on how to setup a local account and grant this account access.
 
+If you need to create multiple local accounts have a look at [this](./esx_localaccount.md) page as it outlines a script to create multiple local users at once.
+
 The corresponding `infrasonar.yaml` [^1] section when using for example **infrasonar** as user id looks as follows:
 
 ```yaml
