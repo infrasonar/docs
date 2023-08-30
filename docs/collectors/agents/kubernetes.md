@@ -23,16 +23,6 @@ metadata:
   name: monitoring
 ```
 
-Create a new file for a service account, `service_account.yaml`:
-
-```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: infrasonar
-  namespace: monitoring
-```
-
 Create a new file `cluster_role.yaml`:
 
 ```yaml
@@ -42,8 +32,8 @@ metadata:
   name: infrasonar
 rules:
 - apiGroups: ["metrics.k8s.io", "apiregistration.k8s.io", ""]
-  resources: ["pods", "namespaces", "nodes", "apiservices", "persistentvolumeclaims", "services"]
-  verbs: ["list"]
+  resources: ["pods", "namespaces", "nodes", "nodes/proxy", "apiservices", "persistentvolumeclaims", "services"]
+  verbs: ["list", "get"]
 ```
 
 Create a new file for the cluster role binding, `cluster_role_binding.yaml`:
@@ -68,7 +58,6 @@ Apply the files above:
 
 ```bash
 kubectl apply -f namespace.yaml
-kubectl apply -f service_account.yaml
 kubectl apply -f cluster_role.yaml
 kubectl apply -f cluster_role_binding.yaml
 ```
@@ -190,7 +179,6 @@ Cleanup the namespace, service account and associated role and binding:
 ```bash
 kubectl delete ClusterRoleBinding infrasonar
 kubectl delete ClusterRole infrasonar
-kubectl delete ServiceAccount infrasonar --namespace=monitoring
 kubectl delete ns monitoring
 ```
 
