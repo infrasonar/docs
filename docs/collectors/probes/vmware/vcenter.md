@@ -12,10 +12,11 @@ The **vcenter-probe** uses the [VMware API](https://www.vmware.com/support/pubs/
 * Cluster status
 * Hypervisor hosts
 * Datastores
-* Guests
-  * Status
-  * Virtual disks
-  * VMware tools version
+
+!!! tip "VMware guest monitoring"
+
+    We offer a specific probe for VMware guest monitoring to retrieve even more in-depth metrics per virtual machine.
+    See our [VMware guest documentation](./vmwareguest.md) for more information.
 
 ## Deployment
 

@@ -140,6 +140,7 @@ nav:
             - collectors/probes/vmware/index.md
             - ESXi: collectors/probes/vmware/esx.md
             - vCenter: collectors/probes/vmware/vcenter.md
+            - VMware guest: collectors/probes/vmware/vmwareguest.md
     - Services:
         - collectors/services/index.md
         - Last seen: collectors/services/last_seen.md

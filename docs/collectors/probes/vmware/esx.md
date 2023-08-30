@@ -17,10 +17,16 @@ See our overall [VMwware](index.md) documentation for additional information.
 * Configuration issues
 * Hypervisor status
 * Datastores
-* Guests
-  * Status
-  * Virtual disks
-  * VMware tools version
+    * Virtual datastore provisioning<br>
+      ![Rules screenshot datastore provisioning](../../../images/vmware_esx_datastoreprovioning.png){align=right}
+        * *Actual capacity :material-numeric-1-circle:{ .red } on the datastore*
+        * *Virtual capacity :material-numeric-2-circle:{ .red } space actual virtually provisioned when using thin provisioning.*
+
+
+!!! tip "VMware guest monitoring"
+
+    We offer a specific probe for VMware guest monitoring to retrieve even more in-depth metrics per virtual machine.
+    See our [VMware guest documentation](./vmwareguest.md) for more information.
 
 ## Deployment
 
