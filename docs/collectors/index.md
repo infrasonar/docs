@@ -14,6 +14,6 @@ Using the provided libraries third parties can easily add additional collectors 
 InfraSonar identities three collection concepts to gather data from monitored assets.
 
 * [**Agents**](agents/index.md) run autonomously on a monitored asset and send data directly the to InfraSonar platform
-* [**Probes**](probes/index.md) are most often deployed on an appliance and are orchestrated by an [agentcore](../application/agentcores).md<br>*Probes are typically used for agentless monitoring scenario's.*
+* [**Probes**](probes/index.md) are most often deployed on an appliance and are orchestrated by an [agentcore](../application/agentcores.md)<br>*Probes are typically used for agentless monitoring scenario's.*
 * [**Services**](services/index.md) collect data "as a service".
 
