@@ -32,7 +32,7 @@ Steps for creating a workspace:
 
 ### Create a DutyCalls source
 
-For InfraSonar we use DutyCalls custom API mapping to format the data toward a compatible [DutyCalls data source]((https://docs.dutycalls.me/getting-started/#step-2-add-a-source))
+For InfraSonar we use DutyCalls custom API mapping to format the data toward a compatible [DutyCalls data source](https://docs.dutycalls.me/getting-started/#step-2-add-a-source)
 
 
 InfraSonar specific steps:

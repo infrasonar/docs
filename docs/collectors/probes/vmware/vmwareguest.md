@@ -19,9 +19,7 @@ The VMware guest probe offers a deep inside into individual virtual machines run
 
 ## Deployment
 
-The VMware guest probe can best be deployed as a docker container.
-
-:material-docker: [ghcr.io/infrasonar/vcenter-probe](ghcr.io/infrasonar/vmwareguest-probe)
+The VMware guest probe can best be deployed as a docker container using [docker compose](../appliance/docker-compose.yml).
 
 ## Probe configuration
 

@@ -30,9 +30,7 @@ See our overall [VMwware](index.md) documentation for additional information.
 
 ## Deployment
 
-The Vmware ESXi probe can best be deployed as a docker container.
-
-:material-docker: [ghcr.io/infrasonar/esx-probe](ghcr.io/infrasonar/esx-probe)
+The Vmware ESXi probe can best be deployed as a docker container using [docker compose](../appliance/docker-compose.yml)
 
 ## Configuration
 

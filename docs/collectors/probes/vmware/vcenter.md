@@ -20,9 +20,7 @@ The **vcenter-probe** uses the [VMware API](https://www.vmware.com/support/pubs/
 
 ## Deployment
 
-The vCenter probe can best be deployed as a docker container.
-
-:material-docker: [ghcr.io/infrasonar/vcenter-probe](ghcr.io/infrasonar/vcenter-probe)
+The vCenter probe can best be deployed as a docker container using [docker compose](../appliance/docker-compose.yml)
 
 ## Probe configuration
 

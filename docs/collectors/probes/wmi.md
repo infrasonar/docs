@@ -131,7 +131,7 @@ You can use the following steps to create a local account:
     12. Close the windows by clicking **OK** twice and exit the Component Services console.
 
 
-See also our WMI trouble shooting section about [remote-UAC](wmi-troubleshooting/#remote-uac) as you might need to disable this.
+See also our WMI trouble shooting section about [remote-UAC](wmi-troubleshooting.md#remote-uac) as you might need to disable this.
 
 ### Microsoft Windows server 2003
 

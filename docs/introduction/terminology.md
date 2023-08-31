@@ -10,8 +10,8 @@ Terminology in IT is always a bit of a challenge :fontawesome-regular-face-laugh
 Term           | Description
 ---------------|----------------------------------------------------------
 **Agentcore**  | Central component in a monitored infrastructure that acts as a relay between probes and the InfraSonar cloud.
-**Agents**     | A standalone InfraSonar component that can send monitoring data to InfraSonar via the [API](../../api/overview)
-**API**        | The [API](../../api/overview) allows users to perform automated access using a personal access token.
+**Agents**     | A standalone InfraSonar component that can send monitoring data to InfraSonar via the [API](../api/overview.md)
+**API**        | The [API](../api/overview.md) allows users to perform automated access using a personal access token.
 **Appliance**  | A dedicated (virtual) Linux appliance for InfraSonar.
 **Asset**      | A monitored network component in an environment.
 **Collectors** | These perform the actual measurement and are tailored per monitored component. InfraSonar knows three types of collectors: **probes** for agentless monitoring, **agents** for standalone or event driven monitoring and **services** for remote monitoring from the cloud. 

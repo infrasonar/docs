@@ -13,7 +13,7 @@ Checkout the [Get Started with Docker](https://www.docker.com/get-started/) guid
 There are two options to accomplish this:
 
 1. Docker Desktop for Windows (ideal for home-lab and test-scenarios)<br>
-   _The official Docker documentation has a great [guide]((https://docs.docker.com/desktop/install/windows-install/)) on this_
+   _The official Docker documentation has a great [guide](https://docs.docker.com/desktop/install/windows-install/) on this_
 2. Use containers with Hyper-V isolation on Windows.<br>
    _We found the [Ubuntu documentation](https://ubuntu.com/tutorials/windows-ubuntu-hyperv-containers#1-overview) to be most useful._
 
