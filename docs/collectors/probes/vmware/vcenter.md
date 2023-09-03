@@ -26,7 +26,7 @@ The vCenter probe can best be deployed as a docker container using [docker compo
 
 ### Credentials
 
-The VMware API requires a regular user account with read-only permissions to access monitoring data on VMware vCenter appliance.
+The VMware API requires a user account which is assigned the **Read-only** rol to access monitoring data on VMware vCenter appliance.
 
 #### vCenter integrated with AD
 
