@@ -2,10 +2,6 @@
 
 # Palo Alto
 
-:construction: The Palo Alto service is under development and only available as part of our beta program.
-
-Please [contact us](../../images/contact_us.png) if you want to join this beta.
-
 ## Introduction
 
 InfraSonar monitors Palo Alto firewalls using the rest API.
@@ -16,6 +12,10 @@ InfraSonar monitors Palo Alto firewalls using the rest API.
 ## Features
 
 ## Configuration
+
+### IPv4 addresses
+
+Ensure you authorize the [IPv4 addresses](./index.md/#ipv4-addresses) we use for our services.
 
 ### Credentials
 
@@ -84,4 +84,10 @@ Be aware though that monitoring fails when the API key is expired!
 4. The API key is encrypted before it is send to the InfraSonar backend
 5. Click save
 
+## Known issues
 
+### XML API Issue With Passwords Containing Special Characters
+
+Passwords containing special characters can cause problems retrieving the API key.
+
+[source](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000CliMCAS)

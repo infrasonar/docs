@@ -13,6 +13,9 @@ InfraSonar monitors Palo Alto firewalls using the rest API.
 
 ## Deployment
 
+When the GlobalProtect Portal or Gateway is enabled the probe needs to use a different TCP port number 4443 instead of 443.
+You can toggle this behavior when configuring the probe.
+
 ### Credentials
 
 The Palo Alto rest API uses a **key** which can be generated for a user. 
