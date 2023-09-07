@@ -39,6 +39,7 @@ The email roundtrip flow works as follows on a Microsoft Exchange infrastructure
 ### Detailed configuration guides
 
 * [Google Workspace](mailroundtrip_google_workspace.md)
+* [Microsoft 365](mailrountrip_microsoft365.md)
 * [Microsoft Exchange 2003](mailrountrip_exchange2003.md)
 * [Microsoft Exchange 2010](mailrountrip_exchange2010.md)
 
