@@ -12,9 +12,10 @@ graph LR
   probe[Probe] --> | TCP 8750 | Agentcore[Agentcore] --> | HTTPS 8730 | infrasonarcloud[InfraSonar Cloud Platform];
 ```
 
-!!! note ""
+As probes usually run in the same Docker network as the Agentcore, they can easily connect to it.
 
-    Because probes usually run in the same Docker network as the Agentcore, they can easily connect to it.
+!!! note ""
+    it is possible to use TCP port 443 instead of 8730 we don't recommended this but some environment refuse inter traffic to ports other then 80 and 443
 
 ## Features
 
@@ -22,7 +23,7 @@ graph LR
 
 If an Agentcore is shutdown properly a list of assets and a check result queue are saved on disk.
 Given the Agentcore starts and it can't connect to the InfraSonar cloud platform the list of saved assets will be used to resume operations.
-Check results up to a maximum of 100.000 packages will be stored in a queue
+Check results up to a maximum of 100.000 packages will be stored in a queue.
 
 ### Multiple Agentcores
 
