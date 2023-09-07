@@ -62,3 +62,12 @@
     display: none;
   }
 }
+
+/*
+We set a minimum table width of 150px as this looks better in our API documentation
+*/
+
+.md-typeset__table table:not([class]) td,
+.md-typeset__table table:not([class]) th {
+  min-width: 150px;
+}
