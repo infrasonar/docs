@@ -18,7 +18,7 @@ The DNS probe is deployed as a :material-docker: docker container using [docker 
 ## Probe configuration
 
 Property    | Description
-------------|------------------------
+------------|---------------------------------------------------------
 DNS Servers | DNS servers to query, note all configured DNS servers are queried
 FQDN        | FQDN of the DNS record you want to monitor
 
@@ -42,9 +42,9 @@ Address record, List of IPv4 addresses, most commonly used to map hostnames to a
 
 Example:
 
-**<div style="width:120px">FQDN</div> ** | **Result**
------------------------------------------|-----------
-`infrasonar.com`                         | `185.199.111.153, 185.199.108.153, 185.199.109.153, 185.199.110.153`
+FQDN              | Result
+------------------|---------------------------------------------------------
+`infrasonar.com`  | `185.199.111.153, 185.199.108.153, 185.199.109.153, 185.199.110.153`
 
 ### AAAA
 
@@ -52,9 +52,9 @@ IPv6 address record, list of IPv6 addresses, most commonly used to map hostnames
 
 Example:
 
-**<div style="width:120px">FQDN</div> ** | **Result**
------------------------------------------|-----------
-`infrasonar.com`                         | `2606:50c0:8003::153, 2606:50c0:8002::153, 2606:50c0:8001::153, 2606:50c0:8000::153`
+FQDN             | Result
+-----------------|---------------------------------------------------------
+`infrasonar.com` | `2606:50c0:8003::153, 2606:50c0:8002::153, 2606:50c0:8001::153, 2606:50c0:8000::153`
 
 ### CAA
 
@@ -89,9 +89,9 @@ CAA record structure: `flag` `tag` `value`
 
 Example:
 
-**<div style="width:120px">FQDN</div> ** | **Result**
------------------------------------------|-----------
-`infrasonar.com`                         | `0 issue "pki.goog"`
+FQDN             | Result
+-----------------|---------------------------------------------------------
+`infrasonar.com` | `0 issue "pki.goog"`
 
 ### CNAME
 
@@ -101,9 +101,9 @@ A CNAME lookup returns only **one** canonical name.
 
 Example:
 
-**<div style="width:120px">FQDN</div> ** | **Result**
------------------------------------------|-----------
-`docs.infrasonar.com`                    | `cesbit.github.io.`
+FQDN              | Result
+------------------|---------------------------------------------------------
+`docs.cesbit.com` | `cesbit.github.io.`
 
 ### DS
 
@@ -113,9 +113,9 @@ DS record structure: `Key Tag` `Algorithm` `Digest` `Type` `Digest`
 
 Example:
 
-**<div style="width:120px">FQDN</div> ** | **Result**
------------------------------------------|-----------
-`infrasonar.com`                         | `9907 8 2 33D13AB164664236CF3EF302E8057AF46FC226AAE2B6A2759E4E80BA AF448970`
+FQDN             | Result
+-----------------|---------------------------------------------------------
+`infrasonar.com` | `9907 8 2 33D13AB164664236CF3EF302E8057AF46FC226AAE2B6A2759E4E80BA AF448970`
 
 ### MX
 
@@ -129,9 +129,9 @@ Example output: `1 aspmx.l.google.com.,10 alt3.aspmx.l.google.com.,10 alt4.aspmx
 
 Example:
 
-**<div style="width:120px">FQDN</div> ** | **Result**
------------------------------------------|-----------
-`infrasonar.com`                         | `1 aspmx.l.google.com., 5 alt1.aspmx.l.google.com., 5 alt2.aspmx.l.google.com., 10 alt3.aspmx.l.google.com., 10 alt4.aspmx.l.google.com.`
+FQDN             | Result
+-----------------|---------------------------------------------------------
+`infrasonar.com` | `1 aspmx.l.google.com., 5 alt1.aspmx.l.google.com., 5 alt2.aspmx.l.google.com., 10 alt3.aspmx.l.google.com., 10 alt4.aspmx.l.google.com.`
 
 ### NS
 
@@ -139,9 +139,9 @@ Name server record, Delegates a DNS zone to use the given authoritative name ser
 
 Example: 
 
-**<div style="width:120px">FQDN</div> ** | **Result**
------------------------------------------|-----------
-`infrasonar.com`                         | `ns-cloud-a1.googledomains.com, ns-cloud-a2.googledomains.com, ns-cloud-a3.googledomains.com, ns-cloud-a4.googledomains.com`
+FQDN             | Result
+-----------------|---------------------------------------------------------
+`infrasonar.com` | `ns-cloud-a1.googledomains.com, ns-cloud-a2.googledomains.com, ns-cloud-a3.googledomains.com, ns-cloud-a4.googledomains.com`
 
 ### PTR
 
@@ -156,8 +156,8 @@ PTR Resource Record, possible for IP addresses in the format:
 
 Example:
 
-**<div style="width:120px">FQDN</div> **                                  | **Result**
---------------------------------------------------------------------------|-----------
+FQDN                                                                      | Result
+--------------------------------------------------------------------------|---------------------------------------------------------
 `8.8.8.8.in-addr.arpa.`                                                   | `dns.google.`
 `.4.8.8.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.8.4.0.6.8.4.1.0.0.2.ip6.arpa` | `dns.google.`
 
@@ -182,9 +182,9 @@ SRV record structure: `Priority` `Weight` `Port` `Target`
 
 Example:
 
-**<div style="width:120px">FQDN</div> ** | **Result**
------------------------------------------|-----------
-`_srv._test.test-technology.nl.`         | `0 5 5060 srvrecordtest.test-technology.nl.`
+FQDN                             | Result
+---------------------------------|---------------------------------------------------------
+`_srv._test.test-technology.nl.` | `0 5 5060 srvrecordtest.test-technology.nl.`
 
 ### SOA
 
@@ -215,9 +215,9 @@ SOA record structure: `Primary NS` `Responsible name` `Serial` `Refresh` `Retry`
 
 Example:
 
-**<div style="width:120px">FQDN</div> ** | **Result**
------------------------------------------|-----------
-`infrasonar.com`                         | `ns-cloud-e1.googledomains.com. cloud-dns-hostmaster.google.com. 15 21600 3600 259200 300`
+FQDN             | Result
+-----------------|---------------------------------------------------------
+`infrasonar.com` | `ns-cloud-e1.googledomains.com. cloud-dns-hostmaster.google.com. 15 21600 3600 259200 300`
 
 ## Best practices
 
