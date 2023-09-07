@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2412,6 +2412,8 @@
       
         
       
+        
+      
     
     
       
@@ -2483,6 +2485,26 @@
   
   <span class="md-ellipsis">
     MailRoundTrip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microsoft_365/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft 365
   </span>
   
 
@@ -2586,6 +2608,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ipv4-addresses" class="md-nav__link">
+    IPv4 addresses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#credentials" class="md-nav__link">
     Credentials
   </a>
@@ -2622,6 +2651,26 @@
           <li class="md-nav__item">
   <a href="#service-configuration" class="md-nav__link">
     Service configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xml-api-issue-with-passwords-containing-special-characters" class="md-nav__link">
+    XML API Issue With Passwords Containing Special Characters
   </a>
   
 </li>
@@ -2853,8 +2902,6 @@
   
     
     
-      
-        
       
         
       
@@ -3938,74 +3985,6 @@
 
               
             
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" >
-        
-          <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Examples
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_9">
-            <span class="md-nav__icon md-icon"></span>
-            Examples
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../api/examples/powershell/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Powershell
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4062,6 +4041,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ipv4-addresses" class="md-nav__link">
+    IPv4 addresses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#credentials" class="md-nav__link">
     Credentials
   </a>
@@ -4107,6 +4093,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xml-api-issue-with-passwords-containing-special-characters" class="md-nav__link">
+    XML API Issue With Passwords Containing Special Characters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4124,8 +4130,6 @@
 
 <p><img align="right" alt="paloalto-Probe" src="../../../images/probe_paloalto.png" width="300" /></p>
 <h1 id="palo-alto">Palo Alto</h1>
-<p><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:" /> The Palo Alto service is under development and only available as part of our beta program.</p>
-<p>Please <a href="../../../images/contact_us.png">contact us</a> if you want to join this beta.</p>
 <h2 id="introduction">Introduction</h2>
 <p>InfraSonar monitors Palo Alto firewalls using the rest API.</p>
 <div class="admonition tip">
@@ -4134,6 +4138,10 @@
 </div>
 <h2 id="features">Features</h2>
 <h2 id="configuration">Configuration</h2>
+<p>When the GlobalProtect Portal or Gateway is enabled the probe needs to use a different TCP port number 4443 instead of 443.
+You can toggle this behavior when configuring the service.</p>
+<h3 id="ipv4-addresses">IPv4 addresses</h3>
+<p>Ensure you authorize the <a href="../#ipv4-addresses">IPv4 addresses</a> we use for our services.</p>
 <h3 id="credentials">Credentials</h3>
 <p>The Palo Alto rest API uses a <strong>key</strong> which can be generated for a user. </p>
 <div class="admonition danger">
@@ -4180,6 +4188,10 @@
 <li>The API key is encrypted before it is send to the InfraSonar backend</li>
 <li>Click save</li>
 </ol>
+<h2 id="known-issues">Known issues</h2>
+<h3 id="xml-api-issue-with-passwords-containing-special-characters">XML API Issue With Passwords Containing Special Characters</h3>
+<p>Passwords containing special characters can cause problems retrieving the API key.</p>
+<p><a href="https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000CliMCAS">source</a></p>
 
 
   
@@ -4261,7 +4273,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

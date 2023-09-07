@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.046329b4.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2522,6 +2522,8 @@
       
         
       
+        
+      
     
     
       
@@ -2593,6 +2595,26 @@
   
   <span class="md-ellipsis">
     MailRoundTrip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../services/microsoft_365/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft 365
   </span>
   
 
@@ -2855,8 +2877,6 @@
   
     
     
-      
-        
       
         
       
@@ -3940,74 +3960,6 @@
 
               
             
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" >
-        
-          <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Examples
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_9">
-            <span class="md-nav__icon md-icon"></span>
-            Examples
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../api/examples/powershell/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Powershell
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4144,7 +4096,7 @@ See our <a href="../vmwareguest/">VMware guest documentation</a> for more inform
 <p>The vCenter probe can best be deployed as a docker container using <a href="../../appliance/docker-compose.yml">docker compose</a></p>
 <h2 id="probe-configuration">Probe configuration</h2>
 <h3 id="credentials">Credentials</h3>
-<p>The VMware API requires a regular user account with read-only permissions to access monitoring data on VMware vCenter appliance.</p>
+<p>The VMware API requires a user account which is assigned the <strong>Read-only</strong> rol to access monitoring data on VMware vCenter appliance.</p>
 <h4 id="vcenter-integrated-with-ad">vCenter integrated with AD</h4>
 <p>When vCenter is integrated with Active Directory (AD), you will find a group in vCenter that has a corresponding group in AD.</p>
 <p>Simply create a user with read-only permissions for your vCenter environment in AD and add it to the corresponding AD group. Your credentials for vCenter will be in the format of username@windows.domain.</p>
@@ -4254,7 +4206,7 @@ See our <a href="../vmwareguest/">VMware guest documentation</a> for more inform
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

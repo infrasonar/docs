@@ -9,14 +9,14 @@
       
       
       
-        <link rel="prev" href="../mailroundtrip/">
+        <link rel="prev" href="../microsoft_365/">
       
       
         <link rel="next" href="../paloalto/">
       
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2412,6 +2412,8 @@
       
         
       
+        
+      
     
     
       
@@ -2483,6 +2485,26 @@
   
   <span class="md-ellipsis">
     MailRoundTrip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microsoft_365/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft 365
   </span>
   
 
@@ -2846,8 +2868,6 @@
   
     
     
-      
-        
       
         
       
@@ -3931,74 +3951,6 @@
 
               
             
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" >
-        
-          <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Examples
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_9">
-            <span class="md-nav__icon md-icon"></span>
-            Examples
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../api/examples/powershell/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Powershell
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4130,7 +4082,7 @@ Contact <a href="../../../introduction/support/">InfraSonar support</a> if you w
 <ul>
 <li>Directory (tenant) Id</li>
 <li>Application (client) Id</li>
-<li>Client secret</li>
+<li>Client secret value</li>
 <li>Subscription Id</li>
 <li>Resource group Name</li>
 </ul>
@@ -4141,7 +4093,7 @@ Contact <a href="../../../introduction/support/">InfraSonar support</a> if you w
 <li>Register the InfraSonar service as an Azure app</li>
 <li>Authorize the registered app to the resources you want to monitor</li>
 </ol>
-<p>Open the Azure portal (https://portal.azure.com/) to ensure your account has sufficient privileges.</p>
+<p>Open the Azure portal (https://portal.azure.com/) using an account with sufficient privileges to register an Azure app and set permissions.</p>
 <h4 id="create-an-app-registration">Create an app registration</h4>
 <ol>
 <li>From the main menu, open <strong>Azure Active Directory</strong></li>
@@ -4150,15 +4102,19 @@ Contact <a href="../../../introduction/support/">InfraSonar support</a> if you w
 <li>Enter the <strong>user-facing display name</strong> e.g., <em>InfraSonar Azure Service</em></li>
 <li>Who can use this application or access this API: Select <strong>Accounts in this organizational directory only</strong></li>
 <li>Click <strong>Register</strong></li>
-<li>A new Windows opens, note the following ID's down:</li>
-<li>Application (client) ID</li>
-<li>Directory (tenant) ID</li>
+<li>A new Windows opens, note the following ID's down:<ol>
+<li><em>Application (client) ID</em></li>
+<li><em>Directory (tenant) ID</em></li>
+</ol>
+</li>
 <li>Click <strong>Add a certificate or secret</strong> next to client credentials</li>
-<li>Click <strong>New client secret</strong> in the <em>Client secrets</em> tab</li>
+<li>Click <strong>New client secret</strong> in the <em>Client secrets</em> tab<ol>
 <li>Enter a description: e.g.m <em>InfraSonar azure Service</em></li>
 <li>Set an expiration date, note this value down and remember to renew before this date!</li>
 <li>Click <strong>Add</strong></li>
 <li>Note down the <code>Value</code>, note this can not be retrieved again once you close this window!</li>
+</ol>
+</li>
 </ol>
 <h4 id="app-authorization">app authorization</h4>
 <p>An app authorization is required per resource group you want to monitor.</p>
@@ -4190,7 +4146,7 @@ Contact <a href="../../../introduction/support/">InfraSonar support</a> if you w
 <li>Open the <strong>azure</strong> collector tab and enter the required information</li>
 <li>Directory (tenant) Id</li>
 <li>Application (client) Id</li>
-<li>Client secret</li>
+<li>Client secret value</li>
 <li>Subscription Id</li>
 <li>Resource group Name, <em>Resource group name as used in Azure</em></li>
 <li>Optional, deselect checks you don't want to use.</li>
@@ -4216,7 +4172,7 @@ Contact <a href="../../../introduction/support/">InfraSonar support</a> if you w
     
       <nav class="md-footer__inner md-grid" aria-label="footer.title">
         
-          <a href="../mailroundtrip/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <a href="../microsoft_365/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -4225,7 +4181,7 @@ Contact <a href="../../../introduction/support/">InfraSonar support</a> if you w
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                MailRoundTrip
+                Microsoft 365
               </div>
             </div>
           </a>
@@ -4276,7 +4232,7 @@ Contact <a href="../../../introduction/support/">InfraSonar support</a> if you w
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>
