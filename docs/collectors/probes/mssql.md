@@ -11,36 +11,27 @@ The Microsoft SQL probe uses SQL statements to monitor and analyze the health of
 
 ## Features
 
-The MSSQL probe allows for in-depth analyses of a SQL server.
+The Microsoft SQL probe allows for in-depth analyses of a SQL server.
 
 Some of the included measurements:
 
 * Memory Page life Expectancy.
 * Parallelism configuration.
 * CPU, memory and disk IO per database.
-<figure markdown>
-  ![mssqlserverprobe_cpu_per_database](../../images/mssqlserverprobe_cpu_per_database.png){ width="600" }
-  <figcaption>Microsoft SQL server CPU usage</figcaption>
-</figure>
+  ![mssqlserverprobe_cpu_per_database](../../images/mssqlserverprobe_cpu_per_database.png)
 * SQL Table information.
 * Wait statistics.
 * Top 25 query information (*all queries would put too much strain on the SQL server*).
-  * Top worker time; which queries consume a lot of time and thus cpu usage.
-  * Top logical reads; which queries cost the most IO.
-  * Top execution count; shows the most active queries.
+    * Top worker time; which queries consume a lot of time and thus cpu usage.
+    * Top logical reads; which queries cost the most IO.
+    * Top execution count; shows the most active queries.
 * Index information.
-  * Frequently used indexes (top used).
-  * Missing indexes, where would an index make sense.
-  * Unused indexes, only written but never queried.
-<figure markdown>
-  ![mssqlserverprobe_missing_index](../../images/mssqlserverprobe_missing_index.png){ width="600" }
-  <figcaption>Microsoft SQL server missing indexes</figcaption>
-</figure>
+    * Frequently used indexes (top used).
+    * Missing indexes, where would an index make sense.
+    * Unused indexes, only written but never queried.
+      ![mssqlserverprobe_missing_index](../../images/mssqlserverprobe_missing_index.png)
 * Fragmentation.
-<figure markdown>
-  ![mssqlserverprobe_fragmentation](../../images/mssqlserverprobe_fragmentation.png){ width="600" }
-  <figcaption>Microsoft SQL server fragmentation</figcaption>
-</figure>
+  ![mssqlserverprobe_fragmentation](../../images/mssqlserverprobe_fragmentation.png)
 * IO, per file and per volume.
 * Backup status.
 * Agent jobs.
