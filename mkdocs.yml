@@ -145,6 +145,7 @@ nav:
         - collectors/services/index.md
         - Last seen: collectors/services/last_seen.md
         - MailRoundTrip: collectors/services/mailroundtrip.md
+        - Microsoft 365: collectors/services/microsoft_365.md
         - Microsoft Azure: collectors/services/microsoft_azure.md
         - Palo Alto: collectors/services/paloalto.md
         - Ping: collectors/services/ping.md
@@ -197,5 +198,3 @@ nav:
       - Reporting:
         - Query reporting: api/reporting/query.md
         - Get report: api/reporting/get-report.md
-      - Examples:
-          - Powershell: api/examples/powershell.md
