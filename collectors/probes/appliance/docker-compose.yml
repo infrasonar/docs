@@ -38,13 +38,16 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./data:/data/
-  # If you want the Speedtest probe, make sure to add this probe the asset is
-  # created
-  #   speedtest-agent:
+  # If you want the Speedtest collector:
+  # (the asset will be created automatically unless a specific ASSET_ID is given)
+  #
+  #    speedtest-agent:
   #      << : *infrasonar
   #      image: ghcr.io/infrasonar/speedtest-agent
   #      environment:
   #        TOKEN: ${AGENT_TOKEN}
+  #      volumes:
+  #        - ./data:/data/
 
   ## InfraSonar probes
   agentcore:
