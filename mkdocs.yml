@@ -119,11 +119,7 @@ nav:
             - Docker compose: collectors/probes/appliance/docker_compose.md
             - Credentials: collectors/probes/appliance/credentials.md
         - Agentcore: collectors/probes/agentcore.md
-        - APC UPS: collectors/probes/apcups.md
         - DNS: collectors/probes/dns.md
-        - EATON: collectors/probes/eaton.md
-        - HP ILO: collectors/probes/hpilo.md
-        - HP ProCurve: collectors/probes/hpprocurve.md
         - HTTP: collectors/probes/http.md
         - Microsoft WMI: collectors/probes/wmi.md
         - Microsoft SQL Server: collectors/probes/mssql.md
@@ -132,10 +128,16 @@ nav:
         - Palo Alto: collectors/probes/paloalto.md
         - Ping: collectors/probes/ping.md
         - SANtricity / NetApp E-Series: collectors/probes/santricity.md
-        - SNMP: collectors/probes/snmp.md
-        - Synology: collectors/probes/synology.md
+        - SNMP:
+            - collectors/probes/snmp/index.md
+            - APC UPS: collectors/probes/snmp/apcups.md
+            - EATON: collectors/probes/snmp/eaton.md
+            - HP ILO: collectors/probes/snmp/hpilo.md
+            - HP ProCurve: collectors/probes/snmp/hpprocurve.md
+            - Synology: collectors/probes/snmp/synology.md
+            - UniFi: collectors/probes/snmp/unifi.md
         - TCP: collectors/probes/tcp.md
-        - UniFi: collectors/probes/unifi.md
+        - UniFi: collectors/probes/unificontroller.md
         - VMWare:
             - collectors/probes/vmware/index.md
             - ESXi: collectors/probes/vmware/esx.md

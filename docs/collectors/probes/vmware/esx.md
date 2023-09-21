@@ -18,7 +18,7 @@ See our overall [VMwware](index.md) documentation for additional information.
 * Hypervisor status
 * Datastores
     * Virtual datastore provisioning<br>
-      ![Rules screenshot datastore provisioning](../../../images/vmware_esx_datastoreprovioning.png){align=right}
+      ![Rules screenshot datastore provisioning](../../../images/vmware_esx_datastoreprovioning.png)
         * *Actual capacity :material-numeric-1-circle:{ .red } on the datastore*
         * *Virtual capacity :material-numeric-2-circle:{ .red } space actual virtually provisioned when using thin provisioning.*
 

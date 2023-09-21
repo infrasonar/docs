@@ -1,4 +1,4 @@
-![SNMP](../../images/probe_snmp.png){ width="150" align=right}
+![SNMP](../../../images/probe_snmp.png){ width="150" align=right}
 
 # SNMP
 
@@ -8,8 +8,9 @@
 
 InfraSonar supports retrieving data from remote assets using the *SNMPv1*, *SNMPv2c*, and *SNMPv3* protocol.
 
-The SNMP probe consists of a base probe and various vendor specific probes:
+Next to the base SNMP probe we have various vendor specific probes:
 
+* [APC UPS](apcups.md)
 * [Eaton](eaton.md)
 * [HP ILO](hpilo.md)
 * [HP ProCurve](hpprocurve.md)
@@ -18,7 +19,13 @@ The SNMP probe consists of a base probe and various vendor specific probes:
 
 ## Deployment
 
-The SNMP probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+Ensure the following section is added to your :material-docker: [docker-compose](../appliance/docker_compose.md) template to enable the base-snmp probe:
+
+```yaml
+  snmp-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/snmp-probe
+```
 
 ## Prerequisites
 
@@ -35,7 +42,7 @@ To monitor an asset using SNMP there ar two things two setup on the monitored as
 **Authentication**
 :   *SNMPv1* and *SNMPv2c* versions "plain" community string for authentication; *SNMPv3* is more secure but not supported on all devices.
 
-    The community string or credentials should be stored on the appliance as described [here](appliance/credentials.md#snmp).
+    The community string or credentials should be stored on the appliance as described [here](../appliance/credentials.md#snmp).
 
     !!! note "default configuration"
         When **no** configuration file is specified the probe falls back **SNMPv2c** and used the community string `public`.

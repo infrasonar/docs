@@ -1,10 +1,10 @@
-![Eaton-Probe](../../images/probe_eaton.png){ width="150" align=right}
+![Eaton-Probe](../../../images/probe_eaton.png){ width="150" align=right}
 
 # Eaton
 
 ## Introduction
 
-The Eaton probe uses [snmp](snmp.md) to perform its queries.
+The Eaton probe uses the [snmp](index.md) protocol to perform its queries.
 
 ## Features
 
@@ -17,18 +17,17 @@ The Eaton probe consist of a number of UPS specific checks:
 
 ## Deployment
 
-The Eaton probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
-
-## Probe configuration
-
-The easiest way to configure the Eaton probe is in most scenarios to tell the probe to use the `snmp` configuration like so:
+Ensure the following section is added to your :material-docker: [docker-compose](../appliance/docker_compose.md) template to enable the Eaton probe:
 
 ```yaml
-eaton:
-  use: snmp
+  eaton-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/eaton-probe
 ```
 
-The `eaton` section however can contain a custom configuration similar to the [snmp](snmp.md) section.
+## Credentials
+
+As the Eaton probe uses SNMP the SNMP section in our [credentials documentation](../appliance/credentials.md) is applicable for this probe.
 
 ## Conditions
 
@@ -51,7 +50,7 @@ An interesting use case for this condition is to setup a DutyCalls rule to notif
 
 ### SNMP version
 
-We noted we had te use SNMP version 1 in most scenario's we deployed this probe.
+We noted we had to use SNMP version 1 in most scenario's we deployed this probe.
 
 ## Additional information
 

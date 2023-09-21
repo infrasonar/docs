@@ -42,6 +42,20 @@ The SANtricity / NetApp E-Series probe is deployed as a :material-docker: docker
 
 ### Credentials
 
+#### SANtricity / NetApp E-Series
+
+The SANtricity / NetApp E-Series probe is configured in the `santricity` section:
+
+
+```yaml
+santricity:
+  config:
+    password: "some_secure_passw0rd"
+    username: monitor
+```
+
+
+
 The SANtricity / NetApp E-Series probe used the standard username/password configuration as described in our[credentials](appliance/credentials.md) section.
 
 !!! danger "Don't use admin"
