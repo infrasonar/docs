@@ -104,12 +104,12 @@ services:
   unifi-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/unifi-probe
-   unificontroller-probe:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/unificontroller-probe
-   unifidevice-probe:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/unifidevice-probe
+  unificontroller-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/unificontroller-probe
+  unifidevice-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/unifidevice-probe
   vcenter-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/vcenter-probe
