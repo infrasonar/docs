@@ -13,7 +13,7 @@ InfraSonar uses the open source [aiowmi](https://github.com/cesbit/aiowmi) libra
 
 ## Features
 
-* Guest status as provided by the `Msvm_ComputerSystem`` class
+* Guest status as provided by the `Msvm_ComputerSystem` class
 
 ## Deployment
 
@@ -31,7 +31,7 @@ The HyperV- guest probe is deployed as a :material-docker: docker container usin
 
 :   You can lookup the **GUUID** on the details page of the asset you want specified as Hyper-V host :material-numeric-1-circle:{ .red }
 
-**:material-numeric-3-circle:{ .red }Local conguration**
+**:material-numeric-3-circle:{ .red } Local conguration**
 
 :   As the Hyper-V guest connects to the Hyper-V host we urge you to use the same credentials for the Hyper-V guest queries. When Hyper-V is deployed in a windows domain you can set local configuration to `wmi` as this section is the default section for domain credentials.
 
