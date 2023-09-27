@@ -1991,16 +1991,100 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../wmi/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../wmi/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Microsoft WMI
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Microsoft WMI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wmi/hyperv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hyper-V
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wmi/hypervguest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hyper-V guest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4147,6 +4231,10 @@
 <h1 id="vmware-guest">VMware guest</h1>
 <h2 id="introduction">Introduction</h2>
 <p>The <strong>VMware guest</strong> uses the <a href="https://www.vmware.com/support/pubs/sdk_pubs.html">VMware API</a> to monitor VMware guests on either ESXi or VMware vCenter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The VMware guest probes requires the <a href="../vcenter/">VMware vcenter</a> or <a href="../esx/">VMware ESXi</a> probe to be installed first as these act as a "proxy" for the guest queries.</p>
+</div>
 <h2 id="features">Features</h2>
 <p>The VMware guest probe offers a deep inside into individual virtual machines running on VMware:</p>
 <ul>
@@ -4160,7 +4248,7 @@
 <h2 id="deployment">Deployment</h2>
 <p>The VMware guest probe can best be deployed as a docker container using <a href="../../appliance/docker-compose.yml">docker compose</a>.</p>
 <h2 id="probe-configuration">Probe configuration</h2>
-<p><img alt="Rules screenshot vmwaregest config" src="../../../../images/application_vmwarequest_config.png" /></p>
+<p><img alt="screenshot vmwareguest config" src="../../../../images/application_vmwarequest_config.png" /></p>
 <dl>
 <dt><strong>Hypervisor <span class="twemoji red"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2Z"/></svg></span></strong></dt>
 <dd>
@@ -4176,7 +4264,7 @@
 <p>When monitoring guests running on a standalone ESXi environment you can use <code>esx</code> and when monitoring guest on Vcenter managed environment use <code>vcenter</code> </p>
 </dd>
 </dl>
-<p>You can automate this step using our toolkit and VNWare guests report.</p>
+<p>You can automate this step using our toolkit and VMware guests report.</p>
 <p>Please reach out to <a href="../../../../introduction/support/">support</a> for additional information.</p>
 <h2 id="additional-information">Additional information</h2>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span> <a href="https://github.com/infrasonar/vcenter-probe">vcenter probe source code</a></p>

@@ -74,6 +74,12 @@ services:
   http-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/http-probe
+  hyperv-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/hyperv-probe
+  hypervguest-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/hypervguest-probe
   mssql-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/mssql-probe
