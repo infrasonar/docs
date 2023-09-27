@@ -4,28 +4,28 @@
 
 ## Introduction
 
-The Kubernetes agent is designed to monitor your kubernetes cluster and should be deployed as a pod in your kubernetes cluster.
-
+The Kubernetes agent monitors your Kubernetes cluster.<br>
+Deploy it as a pod in your cluster.
 
 ## Prerequisites
 
-* The Kubernetes-agent requires a valid [token](../../api/authentication.md).
-* The Kubernetes-agent requires an asset Id if you want to use a _Deployment_ instead of a _StatefulSet_.
+* A valid Kubernetes [token](../../api/authentication.md).
+* An InfraSonar asset ID if you want to use a *Deployment* instead of a *StatefulSet*.
 
 ## Installation
 
-Create a file `namespace.yaml`:
+Create a namespace for the agent:
 
-```yaml
+```yaml title="namespace.yaml"
 apiVersion: v1
 kind: Namespace
 metadata:
   name: monitoring
 ```
 
-Create a new file `cluster_role.yaml`:
+Create a cluster role for the agent:
 
-```yaml
+```yaml title="cluster_role.yaml"
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -36,9 +36,9 @@ rules:
   verbs: ["list", "get"]
 ```
 
-Create a new file for the cluster role binding, `cluster_role_binding.yaml`:
+Create a cluster role binding for the agent:
 
-```yaml
+```yaml title="cluster_role_binding.yaml"
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -53,8 +53,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-Apply the files above:
-
+Apply the above files:
 
 ```bash
 kubectl apply -f namespace.yaml
@@ -64,12 +63,11 @@ kubectl apply -f cluster_role_binding.yaml
 
 ### Deployment
 
-If you have already have an asset or manually want to create an asset in InfraSonar, you just need the asset Id and use a Deployment.
-It is also possible to let the agent create the asset for you, in that case you should skip this part and read the [stateful-set](#statefulset) section.
+If you already have an asset or want to create one manually in InfraSonar, you only need the asset ID and can use a Deployment. Otherwise, skip this part and read the [StatefulSet](#statefulset) section.
 
-Create a file `deployment.yaml`:
+Create a deployment for the agent:
 
-```yaml
+```yaml title="deployment.yaml"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -105,11 +103,11 @@ kubectl apply -f deployment.yaml
 
 ### StatefulSet
 
-Use a stateful-set _only_ if you want the agent to create the asset for you, otherwise use a [deployment](#deployment).
+Use a StatefulSet _only_ if you want the agent to create the asset for you, otherwise use a [Deployment](#deployment).
 
-Create a file `stateful_set.yaml`:
+Create a StatefulSet for the agent:
 
-```yaml
+```yaml title="stateful_set.yaml"
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -150,7 +148,7 @@ spec:
           storage: 1Mi
 ```
 
-Apply the _statefulset_:
+Apply the *StatefulSet*:
 
 ```bash
 kubectl apply -f stateful_set.yaml
@@ -159,7 +157,7 @@ kubectl apply -f stateful_set.yaml
 
 ## Cleanup
 
-When you no longer want to use the Kubernetes agent, it can be removed with the following steps:
+When you no longer want to use the Kubernetes agent, you can remove it with the following steps:
 
 If a **Deployment** was used:
 
