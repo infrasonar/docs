@@ -91,7 +91,7 @@ some-snmp-based-probe:
 
 ### Specific configuration
 
-Most probes have a default section they use to lookup local configuration. For the [SNMP probe](../snmp/index.md) this is `snmp` while the [Microsoft WMI probes](../wmi.md) uses `wmi`
+Most probes have a default section they use to lookup local configuration. For the [SNMP probe](../snmp/index.md) this is `snmp` while the [Microsoft WMI probes](../wmi/index.md) uses `wmi`
 
 It is however possible to create your own section, in the example below you see how we created `myCustomSection`.
 

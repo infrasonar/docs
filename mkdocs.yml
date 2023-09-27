@@ -121,7 +121,10 @@ nav:
         - Agentcore: collectors/probes/agentcore.md
         - DNS: collectors/probes/dns.md
         - HTTP: collectors/probes/http.md
-        - Microsoft WMI: collectors/probes/wmi.md
+        - Microsoft WMI:
+            - collectors/probes/wmi/index.md
+            - Hyper-V: collectors/probes/wmi/hyperv.md
+            - Hyper-V guest: collectors/probes/wmi/hypervguest.md
         - Microsoft SQL Server: collectors/probes/mssql.md
         - MySQL Server: collectors/probes/mysql.md
         - NetApp: collectors/probes/netapp.md

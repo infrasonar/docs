@@ -1,4 +1,4 @@
-![wmi-probe](../../images/probe_wmi.png){ width="150" align=right}
+![wmi-probe](../../../images/probe_wmi.png){ width="150" align=right}
 
 # WMI
 
@@ -26,7 +26,7 @@ InfraSonar uses the open source [aiowmi](https://github.com/cesbit/aiowmi) libra
 
 ## Deployment
 
-The WMI probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+The WMI probe is deployed as a :material-docker: docker container using [docker compose](../appliance/docker_compose.md).
 
 ## Probe configuration
 
