@@ -6,6 +6,9 @@
 
 The **VMware guest** uses the [VMware API](https://www.vmware.com/support/pubs/sdk_pubs.html) to monitor VMware guests on either ESXi or VMware vCenter.
 
+!!! note
+    The VMware guest probes requires the [VMware vcenter](vcenter.md) or [VMware ESXi](esx.md) probe to be installed first as these act as a "proxy" for the guest queries.
+
 ## Features
 
 The VMware guest probe offers a deep inside into individual virtual machines running on VMware:
@@ -23,7 +26,7 @@ The VMware guest probe can best be deployed as a docker container using [docker 
 
 ## Probe configuration
 
-![Rules screenshot vmwaregest config](../../../images/application_vmwarequest_config.png)
+![screenshot vmwareguest config](../../../images/application_vmwarequest_config.png)
 
 **Hypervisor :material-numeric-1-circle:{ .red }**
 
@@ -39,7 +42,7 @@ The VMware guest probe can best be deployed as a docker container using [docker 
 
     When monitoring guests running on a standalone ESXi environment you can use `esx` and when monitoring guest on Vcenter managed environment use `vcenter` 
 
-You can automate this step using our toolkit and VNWare guests report.
+You can automate this step using our toolkit and VMware guests report.
 
 Please reach out to [support](../../../introduction/support.md) for additional information.
 
