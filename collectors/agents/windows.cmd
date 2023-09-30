@@ -9,24 +9,23 @@ net.exe session 1>NUL 2>NUL || (Echo This script requires elevated rights. & Exi
 echo InfraSonar agent version %version% (re)deployment.
 
 :: Download the InfraSonar Windows agent
-echo Stage 1, downloading the InfraSonar Windows agent.
+echo Downloading the InfraSonar Windows agent.
 curl -sJL https://github.com/infrasonar/windows-agent/releases/download/%version%/WindowsAgentSetup.msi -o %temp%\WindowsAgentSetup.msi
-
-::misexec
-echo Stage 2, installing the InfraSonar Windows agent.
-net stop InfraSonarAgent >nul
-msiexec /i "%temp%\WindowsAgentSetup.msi" /qn
 :: Check for token and ask if we don't have any
 reg query HKLM\SOFTWARE\Wow6432Node\Cesbit\InfraSonarAgent >nul
-if %errorlevel% equ 0 (echo Stage 3, local InfraSonar configuration found.) else (CALL :configFunction)
-net start InfraSonarAgent >nul
+if %errorlevel% equ 0 (echo Local InfraSonar configuration found.) else (CALL :configFunction)
+::misexec
+echo (re)installing the InfraSonar Windows agent.
+net stop InfraSonarAgent >nul 2>&1
+msiexec /i "%temp%\WindowsAgentSetup.msi" /qn
+net start InfraSonarAgent >nul 2>&1
 goto :eof
 
 :configFunction
 SETLOCAL
 set token=
 set assetid=
-echo Stage 3, configuring the InfraSonar Windows agent.
+echo Configuring the InfraSonar Windows agent.
 echo.
 :: Ask for InfraSonar agent token
 set /p "token=Enter the InfraSonar agent token: "
