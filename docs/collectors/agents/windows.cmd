@@ -1,5 +1,5 @@
 @echo off
-set version=v1.0.11
+set version=v1.0.12
 :: This script deploys the InfraSonar Microsoft Windows agent
 
 :: Check if we have elevated rights
