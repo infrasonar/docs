@@ -78,6 +78,8 @@ nav:
        - Privacy: privacy-security/privacy.md
   - Application:
     - application/index.md
+    - Profile menu:
+       - Profile: application/profile.md
     - Main menu:
        - Home: application/home.md
        - Dashboard: application/dashboard.md
