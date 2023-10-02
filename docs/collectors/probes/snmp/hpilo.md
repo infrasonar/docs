@@ -8,7 +8,7 @@ The HP ILO probe uses the [snmp](index.md) protocol to perform its queries.
 
 ## Features
 
-The HP ILO probe consist of a number of UPS specific checks:
+The HP ILO probe consist of a number of specific checks:
 
 :material-check:  System status (fan, power supply, memory, teperature cpu)<br>
 :material-check:  HP Eventlog<br>
@@ -28,6 +28,7 @@ Ensure the following section is added to your :material-docker: [docker-compose]
 ## Credentials
 
 As the HP ILO probe uses SNMP the SNMP section in our [credentials documentation](../appliance/credentials.md) is applicable for this probe.
+The probe configuration uses the `hpilo` section as default in the InfraSonar credentials file.
 
 ## Conditions
 
