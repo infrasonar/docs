@@ -1,4 +1,4 @@
-![Agentcore](../images/application_profile.png){ width="150" align=right}
+![Profile](../images/application_profile.png){ width="150" align=right}
 
 # Profile menu
 
