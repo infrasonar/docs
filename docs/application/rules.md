@@ -9,7 +9,7 @@ Rules can be setup for a group of conditions and assets and route messages to ei
 !!! note "Setup you phone number"
 
     Before we can send a message using SMS or WhatsApp to your phone we need to know your phone number.<br>
-    Your can manage your phone number in your profile.
+    Your can manage your phone number in your [profile](./profile.md).
 
 ## Prerequisites
 

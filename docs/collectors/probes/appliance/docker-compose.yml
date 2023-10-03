@@ -80,6 +80,9 @@ services:
   hypervguest-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/hypervguest-probe
+  idrac-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/idrac-probe
   mssql-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/mssql-probe
