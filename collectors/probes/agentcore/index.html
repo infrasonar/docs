@@ -4350,7 +4350,7 @@
 During the startup sequence of a probe, it will “<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2v2L4 8V6H2v12h2v-2l2 .5v2C6 20.4 7.6 22 9.5 22s3.5-1.6 3.5-3.5v-.2l7 1.7v2h2V2h-2m-9 16.5c0 .8-.7 1.5-1.5 1.5S8 19.3 8 18.5V17l3 .8v.7m9-.5L4 14v-4l16-4v12Z"/></svg></span> announce” itself to the Agentcore.</p>
 <p>The Agentcore also acts as a communication gateway. Data retrieved by the probes is sent to the InfraSonar cloud platform via the Agentcore.</p>
 <pre class="mermaid"><code>graph LR
-  probe[Probe] --&gt; | TCP 8750 | Agentcore[Agentcore] --&gt; | TCP 8730 (TLS) | infrasonarcloud[InfraSonar Cloud Platform];</code></pre>
+  probe[Probe] --&gt; | TCP 8750 | Agentcore[Agentcore] --&gt; | TCP 8730 TLS/SSL | infrasonarcloud[InfraSonar Cloud Platform];</code></pre>
 <p>As probes usually run in the same Docker network as the Agentcore, they can easily connect to it.</p>
 <div class="admonition note">
 <p>it is possible to use TCP port 443 instead of 8730 we don't recommended this but some environment refuse inter traffic to ports other then 80 and 443</p>
