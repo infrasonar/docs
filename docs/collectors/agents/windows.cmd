@@ -12,7 +12,7 @@ echo InfraSonar agent version %version% (re)deployment.
 echo Downloading the InfraSonar Windows agent.
 curl -sJL https://github.com/infrasonar/windows-agent/releases/download/%version%/WindowsAgentSetup.msi -o %temp%\WindowsAgentSetup.msi
 :: Check for token and ask if we don't have any
-reg query HKLM\SOFTWARE\Wow6432Node\Cesbit\InfraSonarAgent >nul
+reg query HKLM\SOFTWARE\Wow6432Node\Cesbit\InfraSonarAgent >nul 2>&1
 if %errorlevel% equ 0 (echo Local InfraSonar configuration found.) else (CALL :configFunction)
 ::misexec
 echo (re)installing the InfraSonar Windows agent.

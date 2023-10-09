@@ -9,7 +9,8 @@
 You can use our easy deployment script, note this scripts requires elevated privileges as it runs an MSI installer.
 
 ```
-curl -fsSL https://deploywindowsagent.infrasonar.com -o %temp%\infrasonar.cmd && %temp%\infrasonar.cmd
+curl -fsSL https://deploywindowsagent.infrasonar.com ^
+   -o %temp%\infrasonar.cmd && %temp%\infrasonar.cmd
 ```
 
 ### Manual installation 

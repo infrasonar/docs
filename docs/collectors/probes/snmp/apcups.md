@@ -29,6 +29,7 @@ Ensure the following section is added to your :material-docker: [docker-compose]
 ## Credentials
 
 As the APC UPS probe uses SNMP the SNMP section in our [credentials documentation](../appliance/credentials.md) is applicable for this probe.
+The probe configuration uses the `apcups` section as default in the InfraSonar credentials file.
 
 ## Conditions
 
