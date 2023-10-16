@@ -4,9 +4,7 @@
 
 ## Introduction
 
-InfraSonar can use the [WMI](https://en.wikipedia.org/wiki/Windows_Management_Instrumentation) protocol to monitor Microsoft Windows Hyper-V guests without installing an agent on them. Monitoring in this scenario is performed by periodically querying the Windows host using WQL queries.
-
-InfraSonar uses the open source [aiowmi](https://github.com/cesbit/aiowmi) library released in 2021 by Cesbit.
+The Hyper-V guest probes uses [WMI](./index.md) to to monitor Microsoft Windows Hyper-V guests.
 
 !!! note
     The Microsoft Hyper-V guest probes requires the [Hyper-V](hyperv.md) probe to be installed first as these act as a "proxy" for the guest queries.

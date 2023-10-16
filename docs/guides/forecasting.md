@@ -2,7 +2,9 @@
 
 # Forecasting
 
-Forecasting is automatically enabled for metrics when used in conditions.
+Forecasting is automatically enabled for metrics when used in [conditions](../application/conditions.md).
+
+## View
 
 ## Forecast maintenance
 

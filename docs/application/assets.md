@@ -13,7 +13,7 @@ When you are in the assets view you can add a new asset using the Add asset butt
   <figcaption>InfraSonar add asset</figcaption>
 </figure>
 
-## Asset configuration
+### Asset configuration
 
 <figure markdown>
   ![InfraSonar add asset details](../images/application_add_asset_details.png){ width="800" }
@@ -36,6 +36,43 @@ Configuring an asset involves the following steps:
 
     Some collectors require a more advanced configuration or credentials to be setup on the appliance running the collector. See our [credentials](../collectors/probes/appliance/credentials.md) section if this applies to your setup.
 
-## Adding multiple assets
+### Adding multiple assets
 
 When there is a need to add multiple assets at once we suggest using our [api](../api/container/create-asset.md)
+
+## Asset usage
+
+<figure markdown>
+  ![InfraSonar add host](../images/application_add_asset.png){ width="800" }
+  <figcaption>InfraSonar add asset</figcaption>
+</figure>
+
+**Overview**
+:   Todo
+
+**Effective**
+:   Todo
+
+**Open (0)**
+:   Todo
+
+**Closed**
+:   Todo
+
+**Notifications (0)**
+:   Todo
+
+**Collectors**
+:   Todo
+
+**More**
+:   Todo
+
+
+### Manage forecasts
+
+### Manage Time series
+
+
+
+

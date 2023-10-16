@@ -125,6 +125,7 @@ nav:
         - HTTP: collectors/probes/http.md
         - Microsoft WMI:
             - collectors/probes/wmi/index.md
+            - EventLog: collectors/probes/wmi/eventlog.md
             - Hyper-V: collectors/probes/wmi/hyperv.md
             - Hyper-V guest: collectors/probes/wmi/hypervguest.md
         - Microsoft SQL Server: collectors/probes/mssql.md
