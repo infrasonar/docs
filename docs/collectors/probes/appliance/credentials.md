@@ -14,6 +14,8 @@ As suggested by the `.yaml` file extension the file format used is the [yaml](ht
 It is worth noting that **Indentation is meaningful** in YAML.
 As such make sure that you use spaces, rather than tab characters, to indent sections. In the default configuration files 2 spaces per indentation level are used, We recommend you do the same.
 
+See also our [nano documentation section](./appliance_installation.md#nano-basics) on how to edit files on the appliance.
+
 ### Basic 
 
 This is the most basic credentials `infrasonar.yaml` configuration file.

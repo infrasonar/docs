@@ -14,8 +14,6 @@ Your personal access tokens are also managed here.
   <figcaption>InfraSonar profile - access</figcaption>
 </figure>
 
-
-
 **:material-numeric-1-circle:{ .red }Permissions**
 
 :   Here you can lookup your InfraSonar permissions per container :material-numeric-2-circle:{ .red }:
@@ -66,10 +64,10 @@ Your profile details
 
 **:material-numeric-2-circle:{ .red }Email**
 :   Your email address as provided by your authentication provider.<br>
-    Note, we will send [messages](#messages) and [notifications](./rules.md) to this address.
+    Note, we will send [messages](#messages) and email notifications configured in [rules](./rules.md) to this address.
 
 **:material-numeric-3-circle:{ .red }Phone**
-:   If you want to use WhatsApp, SMS and/or voice [notifications]((./rules.md)) you need to configure your mobile phone number here.
+:   If you want to use WhatsApp, SMS and/or voice notifications in [rules](./rules.md) you need to configure your mobile phone number here.
 
 **:material-numeric-4-circle:{ .red }Dark theme**
 :   Choice the dark side here.
