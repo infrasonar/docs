@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.356b1318.min.css">
@@ -4332,6 +4332,61 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#first-login" class="md-nav__link">
+    First login
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-boot" class="md-nav__link">
+    first boot
+  </a>
+  
+    <nav class="md-nav" aria-label="first boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-hostname" class="md-nav__link">
+    Change hostname
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    Shutdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-the-appliance" class="md-nav__link">
+    Export the appliance:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-template" class="md-nav__link">
+    Create a template
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4610,35 +4665,25 @@ rm<span class="w"> </span>/home/sysadmin/init
 echo -n &gt; /etc/machine-id
 rm /var/lib/dbus/machine-id
 ln -s /etc/machine-id /var/lib/dbus/machine-id
-``
-
-### First login
-
-
-### first boot
-
-
-#### Change hostname
 </code></pre></div>
-<h1 id="binbash">!/bin/bash</h1>
-<p>hostnamectl set-hostname "blue"
+<h3 id="first-login">First login</h3>
+<h3 id="first-boot">first boot</h3>
+<h4 id="change-hostname">Change hostname</h4>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+hostnamectl set-hostname &quot;blue&quot;
 echo $?
-hostnamectl set-hostname ""
+hostnamectl set-hostname &quot;&quot;
 echo $?
-<div class="highlight"><pre><span></span><code>sudo hostnamectl set-hostname &quot;blue&quot;
-sudo sed -i &#39;s/infrasonar/blue/g&#39; /etc/hosts
-
-
-
-https://www.cyberciti.biz/faq/ubuntu-20-04-lts-change-hostname-permanently/
 </code></pre></div>
-sudo hostnamectl set-hostname ubuntu-2004-nixcraft
-<div class="highlight"><pre><span></span><code>TODOR
-
-```bash
-# Expire the sysadmin password enforcing the user to change the password at logon
-passwd -e sysadmin
-</code></pre></div></p>
+<p>sudo hostnamectl set-hostname "blue"
+sudo sed -i 's/infrasonar/blue/g' /etc/hosts</p>
+<p>https://www.cyberciti.biz/faq/ubuntu-20-04-lts-change-hostname-permanently/</p>
+<div class="highlight"><pre><span></span><code>sudo hostnamectl set-hostname ubuntu-2004-nixcraft
+</code></pre></div>
+<p>TODOR</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Expire the sysadmin password enforcing the user to change the password at logon</span>
+passwd<span class="w"> </span>-e<span class="w"> </span>sysadmin
+</code></pre></div>
 <h3 id="cleanup">Cleanup</h3>
 <p>Remove the history</p>
 <div class="highlight"><pre><span></span><code><span class="nb">history</span><span class="w"> </span>-c
