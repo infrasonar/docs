@@ -65,6 +65,9 @@ services:
   esx-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/esx-probe
+  # eventlog-probe:
+  #  << : *infrasonar
+  #  image: ghcr.io/infrasonar/eventlog-probe
   hpilo-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/hpilo-probe

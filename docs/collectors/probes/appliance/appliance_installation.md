@@ -42,7 +42,7 @@ Since Nano is easier to use, we outline its essential functions here.
 The easiest way to use Nano, is to open the file you want to edit or create directly using Nano, like this:
 
 ```bash
-nano /etc/infrasonar/data/config/infrasonar.yaml
+sudo nano /etc/infrasonar/data/config/infrasonar.yaml
 ```
 
 !!! note SSH access assumed

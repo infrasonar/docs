@@ -10,14 +10,12 @@ When you are in the assets view you can add a new asset using the Add asset butt
 
 <figure markdown>
   ![InfraSonar add host](../images/application_add_asset.png){ width="800" }
-  <figcaption>InfraSonar add asset</figcaption>
 </figure>
 
 ### Asset configuration
 
 <figure markdown>
   ![InfraSonar add asset details](../images/application_add_asset_details.png){ width="800" }
-  <figcaption>InfraSonar add asset details</figcaption>
 </figure>
 
 Configuring an asset involves the following steps:
@@ -43,35 +41,56 @@ When there is a need to add multiple assets at once we suggest using our [api](.
 ## Asset usage
 
 <figure markdown>
-  ![InfraSonar add host](../images/application_add_asset.png){ width="800" }
-  <figcaption>InfraSonar add asset</figcaption>
+  ![InfraSonar edit asset](../images/application_edit_asset.png){ width="800" }
 </figure>
 
-**Overview**
-:   Todo
+### Overview :material-numeric-1-circle:{ .red }
 
-**Effective**
-:   Todo
+Provides an overview of the asset.
 
-**Open (0)**
-:   Todo
+Using the pencil :material-pencil: icon you can [edit](./assets.md#asset-configuration) this asset.
 
-**Closed**
-:   Todo
+### Effective :material-numeric-2-circle:{ .red }
+Shows the effective conditions for this asset.
+<figure markdown>
+  ![InfraSonar edit asset condition](../images/application_edit_asset_condition.png){ width="800" }
+</figure>
 
-**Notifications (0)**
-:   Todo
+This overview shows all conditions configured for this asset.
+A condtion can have three states: 
 
-**Collectors**
-:   Todo
+1. **Active**, this condition is actively being evaluated.
+2. **Disabled**, the condition is disabled on this asset.<br>
+    You can disable a condition by clicking the condition name and toggle the condition in the lower left corner of the modal: :green_circle: :material-arrow-right: :red_circle:
+3. **Dormant**, there is no data for which this condition is applicable.
+    
 
-**More**
-:   Todo
+### Open :material-numeric-3-circle:{ .red }
 
+All open [alerts](./alerts.md) for this asset.
+    
 
-### Manage forecasts
+### Closed :material-numeric-4-circle:{ .red }
 
-### Manage Time series
+All closed [alerts](./alerts.md) for this asset.
+
+### Notifications :material-numeric-5-circle:{ .red }
+
+All [notifications](alerts.md#notifications) for this asset.
+
+### Collectors :material-numeric-6-circle:{ .red }
+A detailed view off all collected data per collector.
+
+### More :material-numeric-7-circle:{ .red }
+
+Here you can jump to:
+
+* **Forecasts**, manage [forecasts](../guides/forecasting.md) for this asset.<br>
+  You van view the generated forecasts here and drop :fontawesome-solid-trash: forecasts when it is needed to regenerate a forecast.
+* **History**, show all logged actions for this asset.
+* **Schedule**, manage the [mode](./modes.md) schedule for this asset.
+* **Statistics**, alert statistics for this asset
+* **Time series**, manage [time series](./timeseries.md) for this asset.
 
 
 

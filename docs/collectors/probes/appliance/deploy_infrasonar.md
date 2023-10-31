@@ -10,8 +10,7 @@ If you want to review/audit our script you can find the latest version in our [G
 
 ## Easy deployment
 
-Our installer script deploys InfraSonar into the directory where you executed this script. We suggest you create a new directory for our configration, for example `/etc/infrasonar`
-
+Our installer script deploys InfraSonar into the directory where you executed this script. We suggest you create a new directory for our configration, we strongly advise to use: `/etc/infrasonar`
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://deploy.infrasonar.com)"
