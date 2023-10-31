@@ -170,7 +170,7 @@ OK            | This is an explicit OK which results in an alert auto closing wh
     InfraSonar pre-defined conditions only the severity levels  `CRITICAL`, `ERROR`, `WARNING` & `NOTICE`.
 
     We advice to use `ALERT` & `EMERGENCY` for your specific use cases;
-    `EMERGENCY` could for example be used to send notifications to a 24x7 DutyCalls channel where `ALERT` is send to a DutyCalls channel used for non weekends and holidays.
+    `EMERGENCY` could for example be used to send notifications to a 24x7 team as voice message using our [rules](./rules.md) and where `ALERT` is used to send to a WhatsApp message.
 
 `message`
 

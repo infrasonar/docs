@@ -4,7 +4,7 @@
 
 Alerts are raised by conditions using the `return` statement in our condition edition.
 
-Using [rules](rules.md) it is possible to route the alert to email or [DutyCalls](https://dutycalls.me).
+Using [rules](rules.md) it is possible to route the alert to external notification sources such as email, SMS, WhatsApp, voice and webhooks.
 
 ## Viewing alerts
 

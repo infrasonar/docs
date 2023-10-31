@@ -160,9 +160,6 @@ nav:
         - Ping: collectors/services/ping.md
   - Integrations:
       - Overview: integrations/index.md
-      - DutyCalls:
-        - Getting started: integrations/dutycalls/dutycalls-getting-started.md
-        - Best practices: integrations/dutycalls/dutycalls-best-practices.md
       - ConnectWise Manage: integrations/connectwise_manage.md
   - API reference:
       - Overview: api/overview.md

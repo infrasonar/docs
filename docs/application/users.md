@@ -92,7 +92,6 @@ Required for any API request.
 ### **:material-toggle-switch-outline: ContainerAdmin**
 * Required for creating/changing/removing labels within this container;
 * Required for creating/changing/removing conditions within this container;
-* Required to create/change/remove a DutyCalls service to this container.
 
 ### **:material-toggle-switch-outline: ContainerAccess**
 * Required for managing user access to this container;

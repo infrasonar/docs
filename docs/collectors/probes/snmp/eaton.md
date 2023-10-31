@@ -38,7 +38,7 @@ The label `Eaton UPS` can be used to configure our default condition set.
 
 A noteworthy condition is the **Eaton UPS input source** condition as this condition is triggered when the UPS lost it's main power.
 
-An interesting use case for this condition is to setup a DutyCalls rule to notify on-call personal when main power is lost.
+An interesting use case for this condition is to setup a rule to send a voice call to notify on-call personal when main power is lost.
 
 !!! note "Good to known"
 

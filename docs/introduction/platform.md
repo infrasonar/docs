@@ -37,6 +37,6 @@ Data from a monitored environment is received and processed in the InfraSonar cl
 
 The InfraSonar application is a web based user interface which accessible using any modern web browser.
 
-The application can send messages to end-users using email or Dutycalls.
+The application can send messages to end-users using email, SMS, WhatsApp, voice and even webhooks.
 
 See our [application section](../application/index.md) in the documentation for more information
