@@ -4,28 +4,13 @@
 
 ## Overview
 
-### Kinds
-
-We identify these three reporting kinds:
-
-* [Alerts and notifications](#alerts-and-notifications)
-* [State data](#state-data)
-* [Condition](#condition)
-
-
 ### Time schedule
 
-here you can pick the unit of time you want to use as data-window for your report:
+Reports can be scheduled to be delivered at regular intervals:
 
-* Day
-* Week
-* Month
-
-And pick for which period you want the report.
-
-
-
-Optionally you can choose to repeat the report daily, weekly or monthly.
+* Daily
+* Weekly
+* Monthly
 
 !!! note "Tips"
 
@@ -38,61 +23,63 @@ Optionally you can choose to repeat the report daily, weekly or monthly.
     **State data**<br>
     Quering state data is due to its nature not possible over a period of time.
 
-### Data
+### Data filers
 
-here you can use three filter levels to fine grain which assets are returned in your report.
+Data filters can be used to fine grain which assets are returned in your report.
+
+Depending on the report you can use any of these filters:
 
 * **Asset kind filter**<br>You can opt to limit your report to a specific asset kind.
 * **Container filter**<br>Allows you to select for which containers you want the report 
 * **Label filter**<br>Allows you to filter for which labels you want the report 
 
-## Alerts and notifications
 
-Creates a *pdf* report containing an overview of the alerts and notifications for the selected assets in the selected time frame.
+## Reports
 
-## State data
+The following reports are available, we can add additional reports on request.
 
-You can query state data by entering the "path" towards the data: Collector → Check → Type
+### Alerts and notifications
+
+This report contains charts for [alerts](./alerts.md) and [notifications](./alerts.md/#notifications) within a selected time period.
+
+### State data
+
+This report shows data for a `collector` / `check` / `type` for a selection of assets.
 
 State data reports can be useful to periodically retrieve data for keeping your CMDB up to date.
 
-### Example
+### Chart data 
 
-Say you want weekly report containing all relevant certificate information from our [tcp-probe](../collectors/probes/tcp.md)
+This report generates a PDF-document with charts for a selection of assets.
 
-* collector: `tcp`
-* Check: `certificates`
-* Type: `sslCert`
+A useful use case for this report can be to report monthly storage usage.
 
-Next you can select which metrics should be in your report, default we add all metrics.
+### Condition hit
 
-Last step is to specify how you want to receive the data, we support `json` and `xlsx` and allow you format the values for better readability or keep them for better processing.
+This reports shows when and how many time a condition is being hit within a selected time period.
 
-## Condition
+### Condition status 
 
-A condition report can be used to report when an alerts is opened on a specific condition.
+This reports show the status for a condition (like the effective condition page) for a selection of assets.
 
-This report shows the following information:
+### Check status 
 
-* Container Id
-* Container Name
-* Asset Id
-* Asset Name
-* Message
-* Severity
-* Created on
-* Last message
-* Last severity
-* Last hit
-* Owner
-* Last action
-* Last action datetime
-* Last action username
-* Last action message
-* Closed
+This reports show the status for a collector/check for a selection of assets. 
 
+### Phone usage
 
-!!! note "Tip"
+This report contains information about phone usage within a selected time period.
 
-    When you subtract last hit from the created on date you get the duration.
-    
+This reports gives an overview of all external notifications send to a mobile phone via either SMS, WhatsApp or voice message.
+
+### VMware guests
+
+This report contains all VMware Guests based on vCenter or ESX guests-lists combined with assets running the [vmwareguest](../collectors/probes/vmware/vmwareguest.md) collector.
+
+### Hyper-V guests 
+
+This report contains all Hyper-V Guests based on the Hyper-V guests-lists combined with assets running the [hypervguest](../collectors/probes/wmi/hypervguest.md) collector.
+
+### UniFi devices
+
+This report contains all UniFi devices based on the UniFI Controller device lists combined with assets running the [unifidevice](../collectors/probes/unificontroller.md) collector.
