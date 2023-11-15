@@ -20,6 +20,7 @@ Param       | Type      | Required  | Description
 `data`      | object    | Yes       | Object with check data.
 `version`   | string    | Yes       | Version of the collector.
 `runtime`   | float     | No        | Time it took for the check to run in seconds.
+`no_count`  | boolean   | No        | If `true`, the check result will not be _"counted"_ by InfraSonar and therefore will have no impact on _"last-seen"_.
 `timestamp` | integer   | No        | Unix timestamp in seconds. If omitted, InfraSonar will set the timestamp for the check data.
 
 ### Return codes
