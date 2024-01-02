@@ -1,6 +1,6 @@
 # InfraSonar probes
 
-## Getting started
+InfraSonar probes are deployed and maintained as Docker containers.
 
 While it is very possible to deploy InfraSonar on a shared system we advise to use up a dedicated (virtual) Linux :fontawesome-brands-linux: appliance.
 
