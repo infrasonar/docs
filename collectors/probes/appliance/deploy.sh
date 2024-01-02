@@ -15,7 +15,6 @@ then
   exit
 fi
 
-
 # Initialise script
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -99,6 +98,25 @@ function download_latest_docker_compose_file {
   echo "--> Downloading latest docker-compose.yml file"
   curl -s -o docker-compose.yml https://docs.infrasonar.com/collectors/probes/appliance/docker-compose.yml
 }
+
+
+# MAIN
+
+# Ensure we can sudo without password
+echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
+
+# Update and install required packages
+sudo apt update
+sudo apt upgrade -y -q
+sudo apt install -y -q python3 curl pip
+sudo curl -sSL https://get.docker.com | bash
+sudo pip install infrasonar-appliance
+
+
+
+
+
+exit
 
 # Check if docker compose is installed
 check_prerequiste_docker_compose

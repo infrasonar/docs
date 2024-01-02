@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../deploy_infrasonar/">
+        <link rel="prev" href="../appliance_installation/">
       
       
-        <link rel="next" href="../credentials/">
+        <link rel="next" href="../nano_basics/">
       
       
       <link rel="icon" href="../../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
-        <title>Docker compose - InfraSonar</title>
+        <title>InfraSonar Manager - InfraSonar</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -78,16 +78,13 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
         
-        <a href="#docker-deployment" class="md-skip">
+        <a href="#appliance-manager" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker compose
+              InfraSonar Manager
             
           </span>
         </div>
@@ -133,9 +130,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
       </label>
     
@@ -143,15 +140,18 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
       </label>
     
   
 </form>
       
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -372,6 +372,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../.." class="md-nav__link">
         
@@ -388,6 +389,7 @@
     
       
       
+  
   
   
   
@@ -435,6 +437,7 @@
             
               
                 
+  
   
   
   
@@ -489,6 +492,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../introduction/getting_started/" class="md-nav__link">
         
@@ -506,6 +510,7 @@
             
               
                 
+  
   
   
   
@@ -529,6 +534,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../introduction/platform/" class="md-nav__link">
         
@@ -549,6 +555,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../introduction/support/" class="md-nav__link">
         
@@ -566,6 +573,7 @@
             
               
                 
+  
   
   
   
@@ -597,10 +605,9 @@
   
   
   
+  
     
     
-      
-        
       
         
       
@@ -646,6 +653,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../guides/raspberrypi_dashboard/" class="md-nav__link">
         
@@ -663,6 +671,7 @@
             
               
                 
+  
   
   
   
@@ -686,32 +695,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../guides/remote_support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Remote support
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../guides/infrasonar_appliance_windows/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Running InfraSonar containers on Windows
   </span>
   
 
@@ -731,6 +721,7 @@
             
               
                 
+  
   
   
   
@@ -779,6 +770,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../privacy-security/security_considerations/" class="md-nav__link">
         
@@ -796,6 +788,7 @@
             
               
                 
+  
   
   
   
@@ -831,6 +824,7 @@
     
       
       
+  
   
   
   
@@ -895,6 +889,7 @@
   
   
   
+  
     
     
       
@@ -938,6 +933,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/profile/" class="md-nav__link">
         
@@ -963,6 +959,7 @@
             
               
                 
+  
   
   
   
@@ -1013,6 +1010,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/home/" class="md-nav__link">
         
@@ -1033,6 +1031,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/dashboard/" class="md-nav__link">
         
@@ -1050,6 +1049,7 @@
             
               
                 
+  
   
   
   
@@ -1078,6 +1078,7 @@
             
               
                 
+  
   
   
   
@@ -1160,6 +1161,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/alerts/" class="md-nav__link">
         
@@ -1177,6 +1179,7 @@
             
               
                 
+  
   
   
   
@@ -1200,6 +1203,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/child_containers/" class="md-nav__link">
         
@@ -1217,6 +1221,7 @@
             
               
                 
+  
   
   
   
@@ -1240,6 +1245,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/labels/" class="md-nav__link">
         
@@ -1257,6 +1263,7 @@
             
               
                 
+  
   
   
   
@@ -1280,6 +1287,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/views/" class="md-nav__link">
         
@@ -1297,6 +1305,7 @@
             
               
                 
+  
   
   
   
@@ -1320,6 +1329,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/rules/" class="md-nav__link">
         
@@ -1337,6 +1347,7 @@
             
               
                 
+  
   
   
   
@@ -1360,6 +1371,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/zones/" class="md-nav__link">
         
@@ -1377,6 +1389,7 @@
             
               
                 
+  
   
   
   
@@ -1400,6 +1413,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/webhooks/" class="md-nav__link">
         
@@ -1417,6 +1431,7 @@
             
               
                 
+  
   
   
   
@@ -1440,6 +1455,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/timeseries/" class="md-nav__link">
         
@@ -1457,6 +1473,7 @@
             
               
                 
+  
   
   
   
@@ -1480,6 +1497,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/reporting/" class="md-nav__link">
         
@@ -1500,6 +1518,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../application/log/" class="md-nav__link">
         
@@ -1517,6 +1536,7 @@
             
               
                 
+  
   
   
   
@@ -1555,6 +1575,7 @@
   
   
     
+  
   
   
     
@@ -1615,6 +1636,7 @@
             
               
                 
+  
   
   
   
@@ -1681,6 +1703,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../agents/docker/" class="md-nav__link">
         
@@ -1698,6 +1721,7 @@
             
               
                 
+  
   
   
   
@@ -1721,6 +1745,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../agents/windows/" class="md-nav__link">
         
@@ -1738,6 +1763,7 @@
             
               
                 
+  
   
   
   
@@ -1769,6 +1795,7 @@
   
   
     
+  
   
   
     
@@ -1858,11 +1885,18 @@
     
   
   
+  
     
     
       
         
           
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1918,12 +1952,13 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../appliance_installation/" class="md-nav__link">
+      <a href="../ubuntu_installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    InfraSonar appliance
+    Ubuntu guide
   </span>
   
 
@@ -1938,12 +1973,34 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../deploy_infrasonar/" class="md-nav__link">
+      <a href="../windows_installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Deploy InfraSonar
+    Windows guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appliance_installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InfraSonar appliance (OVA)
   </span>
   
 
@@ -1960,6 +2017,7 @@
     
   
   
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -1972,7 +2030,7 @@
           
   
   <span class="md-ellipsis">
-    Docker compose
+    InfraSonar Manager
   </span>
   
 
@@ -1983,7 +2041,7 @@
         
   
   <span class="md-ellipsis">
-    Docker compose
+    InfraSonar Manager
   </span>
   
 
@@ -2005,30 +2063,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-compose-file" class="md-nav__link">
-    Docker compose file
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#manual-update-your-docker-containers" class="md-nav__link">
-    Manual update your docker containers
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage probes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manage probes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronize" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronize
+    </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#restart" class="md-nav__link">
-    Restart
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage agents
+    </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
-    Logging
+        
+          <li class="md-nav__item">
+  <a href="#change-agentcore-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change agentcore token
+    </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-agent-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change agent token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change zone
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2046,12 +2160,55 @@
   
   
   
+  
+    <li class="md-nav__item">
+      <a href="../nano_basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nano basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Credentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced
   </span>
   
 
@@ -2071,6 +2228,7 @@
             
               
                 
+  
   
   
   
@@ -2094,6 +2252,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../dns/" class="md-nav__link">
         
@@ -2114,6 +2273,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../http/" class="md-nav__link">
         
@@ -2131,6 +2291,7 @@
             
               
                 
+  
   
   
   
@@ -2192,6 +2353,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../wmi/eventlog/" class="md-nav__link">
         
@@ -2212,6 +2374,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../wmi/hyperv/" class="md-nav__link">
         
@@ -2229,6 +2392,7 @@
             
               
                 
+  
   
   
   
@@ -2260,6 +2424,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../mssql/" class="md-nav__link">
         
@@ -2277,6 +2442,7 @@
             
               
                 
+  
   
   
   
@@ -2300,6 +2466,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../netapp/" class="md-nav__link">
         
@@ -2317,6 +2484,7 @@
             
               
                 
+  
   
   
   
@@ -2340,6 +2508,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../ping/" class="md-nav__link">
         
@@ -2360,6 +2529,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../santricity/" class="md-nav__link">
         
@@ -2377,6 +2547,7 @@
             
               
                 
+  
   
   
   
@@ -2446,6 +2617,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../snmp/apcups/" class="md-nav__link">
         
@@ -2463,6 +2635,7 @@
             
               
                 
+  
   
   
   
@@ -2486,6 +2659,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../snmp/eaton/" class="md-nav__link">
         
@@ -2503,6 +2677,7 @@
             
               
                 
+  
   
   
   
@@ -2526,6 +2701,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../snmp/hpprocurve/" class="md-nav__link">
         
@@ -2546,6 +2722,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../snmp/synology/" class="md-nav__link">
         
@@ -2563,6 +2740,7 @@
             
               
                 
+  
   
   
   
@@ -2594,6 +2772,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../tcp/" class="md-nav__link">
         
@@ -2614,6 +2793,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../unificontroller/" class="md-nav__link">
         
@@ -2631,6 +2811,7 @@
             
               
                 
+  
   
   
   
@@ -2692,6 +2873,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../vmware/esx/" class="md-nav__link">
         
@@ -2712,6 +2894,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../vmware/vcenter/" class="md-nav__link">
         
@@ -2729,6 +2912,7 @@
             
               
                 
+  
   
   
   
@@ -2765,6 +2949,7 @@
             
               
                 
+  
   
   
   
@@ -2835,6 +3020,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../services/last_seen/" class="md-nav__link">
         
@@ -2852,6 +3038,7 @@
             
               
                 
+  
   
   
   
@@ -2875,6 +3062,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../services/microsoft_365/" class="md-nav__link">
         
@@ -2892,6 +3080,7 @@
             
               
                 
+  
   
   
   
@@ -2915,6 +3104,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../services/paloalto/" class="md-nav__link">
         
@@ -2932,6 +3122,7 @@
             
               
                 
+  
   
   
   
@@ -2967,6 +3158,7 @@
     
       
       
+  
   
   
   
@@ -3027,6 +3219,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../integrations/connectwise_manage/" class="md-nav__link">
         
@@ -3051,6 +3244,7 @@
     
       
       
+  
   
   
   
@@ -3111,6 +3305,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/overview/" class="md-nav__link">
         
@@ -3128,6 +3323,7 @@
             
               
                 
+  
   
   
   
@@ -3151,6 +3347,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/ids/" class="md-nav__link">
         
@@ -3168,6 +3365,7 @@
             
               
                 
+  
   
   
   
@@ -3248,6 +3446,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/asset/query/" class="md-nav__link">
         
@@ -3265,6 +3464,7 @@
             
               
                 
+  
   
   
   
@@ -3288,6 +3488,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/asset/query-id/" class="md-nav__link">
         
@@ -3305,6 +3506,7 @@
             
               
                 
+  
   
   
   
@@ -3328,6 +3530,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/asset/query-forecast-data/" class="md-nav__link">
         
@@ -3345,6 +3548,7 @@
             
               
                 
+  
   
   
   
@@ -3368,6 +3572,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/asset/insert-check-data/" class="md-nav__link">
         
@@ -3385,6 +3590,7 @@
             
               
                 
+  
   
   
   
@@ -3408,6 +3614,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/asset/set-kind/" class="md-nav__link">
         
@@ -3425,6 +3632,7 @@
             
               
                 
+  
   
   
   
@@ -3448,6 +3656,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/asset/set-name/" class="md-nav__link">
         
@@ -3465,6 +3674,7 @@
             
               
                 
+  
   
   
   
@@ -3488,6 +3698,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/asset/purge-notifications/" class="md-nav__link">
         
@@ -3505,6 +3716,7 @@
             
               
                 
+  
   
   
   
@@ -3528,6 +3740,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/asset/disable-check/" class="md-nav__link">
         
@@ -3545,6 +3758,7 @@
             
               
                 
+  
   
   
   
@@ -3568,6 +3782,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/asset/remove-label/" class="md-nav__link">
         
@@ -3585,6 +3800,7 @@
             
               
                 
+  
   
   
   
@@ -3613,6 +3829,7 @@
             
               
                 
+  
   
   
   
@@ -3665,6 +3882,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/alert/query/" class="md-nav__link">
         
@@ -3682,6 +3900,7 @@
             
               
                 
+  
   
   
   
@@ -3705,6 +3924,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/alert/assign/" class="md-nav__link">
         
@@ -3722,6 +3942,7 @@
             
               
                 
+  
   
   
   
@@ -3750,6 +3971,7 @@
             
               
                 
+  
   
   
   
@@ -3812,6 +4034,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/container/create-asset/" class="md-nav__link">
         
@@ -3829,6 +4052,7 @@
             
               
                 
+  
   
   
   
@@ -3852,6 +4076,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/container/query-id/" class="md-nav__link">
         
@@ -3869,6 +4094,7 @@
             
               
                 
+  
   
   
   
@@ -3892,6 +4118,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/container/query-assets/" class="md-nav__link">
         
@@ -3909,6 +4136,7 @@
             
               
                 
+  
   
   
   
@@ -3932,6 +4160,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/container/set-mode/" class="md-nav__link">
         
@@ -3952,6 +4181,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/container/purge-notifications/" class="md-nav__link">
         
@@ -3969,6 +4199,7 @@
             
               
                 
+  
   
   
   
@@ -3997,6 +4228,7 @@
             
               
                 
+  
   
   
   
@@ -4043,6 +4275,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/label/query/" class="md-nav__link">
         
@@ -4068,6 +4301,7 @@
             
               
                 
+  
   
   
   
@@ -4116,6 +4350,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../api/reporting/query/" class="md-nav__link">
         
@@ -4133,6 +4368,7 @@
             
               
                 
+  
   
   
   
@@ -4193,30 +4429,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-compose-file" class="md-nav__link">
-    Docker compose file
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#manual-update-your-docker-containers" class="md-nav__link">
-    Manual update your docker containers
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage probes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manage probes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronize" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronize
+    </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#restart" class="md-nav__link">
-    Restart
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage agents
+    </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
-    Logging
+        
+          <li class="md-nav__item">
+  <a href="#change-agentcore-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change agentcore token
+    </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-agent-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change agent token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change zone
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4235,132 +4527,61 @@
                   
 
 
-<h1 id="docker-deployment"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> Docker deployment</h1>
-<p>InfraSonar probes and the InfraSonar Agentcore are distributed using Docker containers via <a href="https://docs.docker.com/compose/">docker compose</a>.</p>
-<h2 id="docker-compose-file">Docker compose file</h2>
-<p>The latest production version of our complete <code>docker-compose.yml</code> file can be downloaded <a href="../docker-compose.yml">here</a></p>
-<p>Some noteworthily sections of our <code>docker-compose.yml</code> file:</p>
-<dl>
-<dt><em>Volumes</em></dt>
-<dd>
-<p>We opt to store the InfraSonar related data and configuration in the same sub-directory <code>data</code> in the directory where the docker compose file lives.</p>
-</dd>
-<dt><em>Networking</em></dt>
-<dd>
-<p>We use the host network for all our containers and thus probes to avoid any networking issues.</p>
-</dd>
-<dt><em>x-infrasonar-template section</em></dt>
-<dd>
-<p>The <code>x-infrasonar-template</code> section ensures the default settings are the same for all InfraSonar containers.</p>
-</dd>
-<dt><em>Watchtower service</em></dt>
-<dd>
-<p>We use <a href="https://containrrr.dev/watchtower/">Watchtower</a> to periodicity check for updates.</p>
-<p>Within the Watchtower service we mount the localtime file to ensure the container is running in the same timezone as the appliance.</p>
-</dd>
-</dl>
-<h2 id="manual-update-your-docker-containers">Manual update your docker containers</h2>
-<p>Login using SSH and use the <a href="https://en.wikipedia.org/wiki/Cd_(command)">cd</a> command to navigate to the directory containing the InfraSonar configuration. (usually this is <code>/etc/infrasonar/</code>)</p>
-<p>The first step is to check for newer images and pull these using this command:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>pull
+<h1 id="appliance-manager">Appliance manager</h1>
+<p>We created a convenient tool named <a href="https://github.com/infrasonar/appliance-manager">appliance manager</a> to manage your InfraSonar implantation on Debian derived Linux distributions.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-q<span class="w"> </span>python3<span class="w"> </span>curl<span class="w"> </span>pip
+sudo<span class="w"> </span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>infrasonar-appliance
 </code></pre></div>
-<p>If all new images are downloded you can apply the changes using:
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
-</code></pre></div></p>
-<h2 id="restart">Restart</h2>
-<p>If you want to restart all InfraSonar containers you can do so using the following command:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>restart
+<h2 id="usage">Usage</h2>
+<p>You can start the tool using the command: <code>sudo appliance</code></p>
+<p>This starts an easy to navigate interface which allows you to set credentials and download probes you <a href="../../../../application/collectors/">enabled in our UI</a>.</p>
+<p>On first start you are asked for a directory to use, we suggest to use our default <code>/etc/infrasonar</code> as the main directory.</p>
+<div class="highlight"><pre><span></span><code>┌───────────────────────────────────────────────────────────────────────────────┐
+│    ___       __          ___                                                  │
+│   |_ _|_ _  / _|_ _ __ _/ __| ___ _ _  __ _ _ _                               │
+│    | || &#39; \|  _| &#39;_/ _` \__ \/ _ \ &#39; \/ _` | &#39;_|                              │
+│   |___|_||_|_| |_| \__,_|___/\___/_||_\__,_|_|                                │
+│                                                                               │
+│   Manage probes                                                               │
+│   Manage agents                                                               │
+│                                                                               │
+│   Change agentcore token                                                      │
+│   Change agent token                                                          │
+│   Change zone                                                                 │
+│                                                                               │
+│   Exit                                                                        │
+│                                                                               │
+│                                                                               │
+│                                                                               │
+│                                                    InfraSonar status: running │
+└───────────────────────────────────────────────────────────────────────────────┘
 </code></pre></div>
-<p>This implies you are executing this command in the directory containing the InfraSonar <code>docker-compose.yml</code> file.</p>
-<h2 id="logging">Logging</h2>
-<p>For troubleshooting purposes you can change the log-level in the <code>docker-compose.yml</code> file</p>
-<p>Supported log levels:</p>
-<ul>
-<li>debug</li>
-<li>info</li>
-<li>warning</li>
-<li>error</li>
-<li>critical</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">docker-compose.yml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">## InfraSonar docker-compose.yml file</span>
-<span class="c1">##</span>
-<span class="c1">## Set the correct TOKEN variables before starting.</span>
+<h3 id="manage-probes">Manage probes</h3>
+<p>Here you can easily manage the credentials for all probes currently running on this appliance.
+Just select the probe you want to manage.</p>
+<p>When you selected a probe you can view it's logging and change to our unstable channel, we urge you to only do so when instructed by our support staff.</p>
+<p>For probes which require credentials you can easily configure them here.</p>
+<h4 id="synchronize">Synchronize</h4>
+<p>Use the synchronize option to sync the probes configured to run in the <a href="../../../../application/collectors/">UI</a>. with the appliance.</p>
+<h3 id="manage-agents">Manage agents</h3>
+<p>Here you can manage any agent that can be deployed on your appliance, note we deploy the <a href="../../../agents/docker/">docker agent</a> by default.</p>
+<h3 id="change-agentcore-token">Change agentcore token</h3>
+<p>Here you can change the <a href="../../../../application/tokens/">agentcore token</a> if needed.</p>
+<h3 id="change-agent-token">Change agent token</h3>
+<p>Here you can change the <a href="../../../../application/tokens/">agent token</a> if needed.</p>
+<h3 id="change-zone">Change zone</h3>
+<p>Here you can configure the <a href="../../../../application/zones/">zone ID</a> if needed.</p>
+<p>We suggest to use <code>/etc/infrasonar</code> as the main directory.</p>
+<p>On the downloadable appliance we provide the <code>docker-compose.yml</code> file at the following location <code>/etc/infrasonar/docker-compose.yml.example</code>.</p>
 
-<span class="nt">x-infrasonar-template</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;infrasonar</span>
-<span class="w">  </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span>
-<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-<span class="w">  </span><span class="nt">logging</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">options</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
-<span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/data/</span>
-<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">com.centurylinklabs.watchtower.enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TRUE</span>
-<span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-<span class="hll"><span class="w">    </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;debug&quot;</span>
-</span><span class="hll"><span class="w">    </span><span class="nt">LOG_COLORIZED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
-</span>
-<span class="nt">services</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">agentcore</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/agentcore</span>
-<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">TOKEN</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Agentcore-token»&quot;</span>
-<span class="hll"><span class="w">      </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;debug&quot;</span>
-</span><span class="hll"><span class="w">      </span><span class="nt">LOG_COLORIZED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
-</span><span class="w">  </span><span class="nt">docker-agent</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">&lt;&lt; </span><span class="p">:</span><span class="w"> </span><span class="nv">*infrasonar</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/docker-agent</span>
-<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">TOKEN</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;«Agent-token»&quot;</span>
-<span class="hll"><span class="w">      </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;debug&quot;</span>
-</span><span class="hll"><span class="w">      </span><span class="nt">LOG_COLORIZED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
-</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/run/docker.sock:/var/run/docker.sock</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/data/</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">.....</span>
-</code></pre></div></td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You need to restart you containers for changed log setting to become active.</p>
-</div>
-<p><a href="../../../../introduction/support/">Contact InfraSonar support</a> if you require any assistance.</p>
+
+
+
+
+
+
 
 
   
@@ -4373,6 +4594,7 @@
             </div>
           
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -4382,7 +4604,7 @@
     
       <nav class="md-footer__inner md-grid" aria-label="footer.title">
         
-          <a href="../deploy_infrasonar/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <a href="../appliance_installation/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -4391,19 +4613,19 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                Deploy InfraSonar
+                InfraSonar appliance (OVA)
               </div>
             </div>
           </a>
         
         
-          <a href="../credentials/" class="md-footer__link md-footer__link--next" rel="next">
+          <a href="../nano_basics/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                Credentials
+                Nano basics
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4443,7 +4665,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>
