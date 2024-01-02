@@ -13,7 +13,7 @@ The ping-probe utilizes the [icmp protocol](https://en.wikipedia.org/wiki/Ping_(
 
 ## Deployment
 
-The ping probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+The ping probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 

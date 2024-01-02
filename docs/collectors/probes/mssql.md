@@ -45,7 +45,7 @@ Some of the included measurements:
 
 ## Deployment
 
-The Microsoft SQL probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+The Microsoft SQL probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 

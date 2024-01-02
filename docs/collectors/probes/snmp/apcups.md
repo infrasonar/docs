@@ -18,13 +18,7 @@ The APC UPS probe consist of a number of UPS specific checks:
 
 ## Deployment
 
-Ensure the following section is added to your :material-docker: [docker-compose](../appliance/docker_compose.md) template to enable the APC UPS probe:
-
-```yaml
-  apcups-probe:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/apcups-probe
-```
+The APC UPS probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Credentials
 

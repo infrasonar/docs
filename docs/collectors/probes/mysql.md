@@ -8,7 +8,7 @@ The MySQL probe collects information about a MySQL server.
 
 ## Deployment
 
-The MySQL probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+The MySQL probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 

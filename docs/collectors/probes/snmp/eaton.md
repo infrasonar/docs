@@ -17,13 +17,7 @@ The Eaton probe consist of a number of UPS specific checks:
 
 ## Deployment
 
-Ensure the following section is added to your :material-docker: [docker-compose](../appliance/docker_compose.md) template to enable the Eaton probe:
-
-```yaml
-  eaton-probe:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/eaton-probe
-```
+The Eaton probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Credentials
 

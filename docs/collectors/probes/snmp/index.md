@@ -19,13 +19,7 @@ Next to the base SNMP probe we have various vendor specific probes:
 
 ## Deployment
 
-Ensure the following section is added to your :material-docker: [docker-compose](../appliance/docker_compose.md) template to enable the base-snmp probe:
-
-```yaml
-  snmp-probe:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/snmp-probe
-```
+The SNMP probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Prerequisites
 

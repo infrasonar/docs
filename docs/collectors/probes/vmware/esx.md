@@ -30,7 +30,7 @@ See our overall [VMwware](index.md) documentation for additional information.
 
 ## Deployment
 
-The Vmware ESXi probe can best be deployed as a docker container using [docker compose](../appliance/docker-compose.yml)
+The Vmware ESXi probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Configuration
 

@@ -26,7 +26,7 @@ InfraSonar uses the open source [aiowmi](https://github.com/cesbit/aiowmi) libra
 
 ## Deployment
 
-The WMI probe is deployed as a :material-docker: docker container using [docker compose](../appliance/docker_compose.md).
+The WMI probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Probe configuration
 

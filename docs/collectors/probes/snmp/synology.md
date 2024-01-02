@@ -24,13 +24,7 @@ The Synology probe uses the [snmp](index.md) protocol to perform its queries.
 
 ## Deployment
 
-Ensure the following section is added to your :material-docker: [docker-compose](../appliance/docker_compose.md) template to enable the Synology probe:
-
-```yaml
-  synology-probe:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/synology-probe
-```
+The Synology probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Credentials
 

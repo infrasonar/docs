@@ -13,7 +13,7 @@ The TCP probe uses TCP to try and make a TCP connection.
 
 ## Deployment
 
-The TCP probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+The TCP probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 

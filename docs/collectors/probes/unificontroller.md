@@ -12,17 +12,7 @@ The UniFi controller probe uses the UniFi API to collect data from the UniFi con
 ## Features
 
 ## Deployment
-
-Ensure the following section is added to your :material-docker: [docker-compose](./appliance/docker-compose.yml) template to enable the UniFi controller probe and UniFi device probe:
-
-```yaml
-   unificontroller-probe:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/unificontroller-probe
-   unifidevice-probe:
-     << : *infrasonar
-     image: ghcr.io/infrasonar/unifidevice-probe
-```
+The UniFi probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 

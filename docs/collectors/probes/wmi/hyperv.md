@@ -12,7 +12,7 @@ The Hyper-V guest probes uses [WMI](./index.md) to to monitor Microsoft Windows 
 
 ## Deployment
 
-The HyperV probe is deployed as a :material-docker: docker container using [docker compose](../appliance/docker_compose.md).
+The HyperV probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Probe configuration
 

@@ -107,8 +107,4 @@ sudo netplan --debug apply
 ```
 ## Deploy InfraSonar
 
-Run our [easy deployment script](./deploy_infrasonar.md) to deploy InfraSonar on the appliance.
-
-## Build your own appliance
-
-When you prefer to perform your own Linux installation or can't use the OVA file format we outlined our installation steps [here](appliance_manual_installation.md).
+Use the [appliance manager](./appliance_manager.md) to configure InfraSonar on the appliance.
