@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../what_is_Infra_Sonar/">
+        <link rel="prev" href="../getting_started/">
       
       
         <link rel="next" href="../support/">
@@ -518,27 +518,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../what_is_Infra_Sonar/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    What is InfraSonar
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -551,17 +530,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Platform
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -571,61 +539,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#architectural-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architectural overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Collectors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infrasonar-cloud" class="md-nav__link">
-    <span class="md-ellipsis">
-      InfraSonar cloud
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infrasonar-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      InfraSonar application
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -665,6 +578,27 @@
   
   <span class="md-ellipsis">
     Terminology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About InfraSonar
   </span>
   
 
@@ -4374,50 +4308,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#architectural-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architectural overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Collectors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infrasonar-cloud" class="md-nav__link">
-    <span class="md-ellipsis">
-      InfraSonar cloud
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infrasonar-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      InfraSonar application
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4432,34 +4322,13 @@
 
 
 <h1 id="platform">Platform</h1>
-<p>This section provides an overview of the InfraSonar monitoring platform.</p>
-<h2 id="architectural-overview">Architectural overview</h2>
-<p>An architectural overview of the InfraSonar platform</p>
-<p><img alt="High level overview" src="../../images/infrasonar_highlevel.png" width="500" /></p>
-<p>InfraSonar can be broken down in three area's:</p>
-<ol>
-<li>Collectors;</li>
-<li>InfraSonar cloud;</li>
-<li>InfraSonar application.</li>
-</ol>
-<h2 id="collectors">Collectors</h2>
-<p>Within InfraSonar, we identify three concepts for collecting data:</p>
-<ul>
-<li><strong><a href="../../collectors/agents/">Agents</a></strong><br>
-  Agents run autonomously on an endpoint and send data straight to the InfraSonar platform.</li>
-<li><strong><a href="../../collectors/probes/">Probes</a></strong><br>
-  Probes query an endpoint using a specific protocol.</li>
-<li><strong><a href="../../collectors/services/">Services</a></strong><br>
-  Services monitor an endpoint and report the status to multiple containers.<br>
-  <em>E.g. <a href="https://status.office365.com/">Microsoft 365 Service Health Status</a></em></li>
-</ul>
-<h2 id="infrasonar-cloud">InfraSonar cloud</h2>
 <p>The InfraSonar cloud platform is hosted on the <a href="https://cloud.google.com/">Google Cloud Platform</a>.</p>
 <p>Data from a monitored environment is received and processed in the InfraSonar cloud platform on what we call the Hubs. These Hubs evaluate the data against configured conditions and store received time series data in <a href="https://siridb.net/">SiriDB</a>. Received state data is kept in memory by the Hubs.</p>
-<h2 id="infrasonar-application">InfraSonar application</h2>
-<p>The InfraSonar application is a web based user interface which accessible using any modern web browser.</p>
-<p>The application can send messages to end-users using email, SMS, WhatsApp, voice and even webhooks.</p>
-<p>See our <a href="../../application/">application section</a> in the documentation for more information</p>
+<figure>
+<p><img alt="High level overview" src="../../images/infrasonar_highlevel.png" width="500" />
+  </p>
+<figcaption>Architectural overview of the InfraSonar platform</figcaption>
+</figure>
 
 
 
@@ -4489,7 +4358,7 @@
     
       <nav class="md-footer__inner md-grid" aria-label="footer.title">
         
-          <a href="../what_is_Infra_Sonar/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <a href="../getting_started/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -4498,7 +4367,7 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                What is InfraSonar
+                Getting started
               </div>
             </div>
           </a>
