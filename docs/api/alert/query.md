@@ -61,7 +61,7 @@ Response:
     "timestamp": 1667511262,
     "lastMessage": "Last message of the alert",
     "lastSeverity": 3,
-    "listTimestamp": 1667511523,
+    "lastTimestamp": 1667511523,
     "ownerId": 123,
     "closedTimestamp": null,
     "actions": [
