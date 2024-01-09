@@ -1,4 +1,4 @@
-![Software Package](../images/windows_logo.png){ width="150" align=right}
+![Software Package](../../../images/windows_logo.png){ width="150" align=right}
 
 # InfraSonar on Windows
 
@@ -26,9 +26,9 @@ There are two options to accomplish this:
 Step by step :feet: guide: 
 
 1. Open notepad :notepad_spiral:
-2. Copy the [docker-compose.yml](../collectors/probes/appliance/docker_compose.md) file from our documentation page using the :material-content-copy: button
+2. Copy the `docker-compose.yml`` file from our [documentation page](./advanced.md) using the :material-content-copy: button
 3. Paste the file into the just opened notepad
-4. Ensure to set the correct [tokens](../application/tokens.md) for the agentcore and docker-probe in the `docker-compose.yml` file
+4. Ensure to set the correct [tokens](./../../../application/tokens.md) for the agentcore and docker-probe in the `docker-compose.yml` file
 5. Save the file as `docker-compose.yml`, in this example we use a folder named `InfraSonar` in de `Documents` folder.<br>
    !!! Be aware notepad has a tendency of adding `.txt` at the end of the filename.
 6. Open a dos box `cmd.exe`
@@ -36,18 +36,18 @@ Step by step :feet: guide:
    ```
    cd %userprofile%\documents\infrasonar
    ```
-8. Pull the InfraSonar containers using this compose pull:<br>
+8.  Pull the InfraSonar containers using this compose pull:<br>
    ```
    docker compose pull
    ```
    _Downloading all layers might take some time, the total size off all layers is 5Gb_
-9. Once the containers are downloaded you can start the environment using:<br>
+9.  Once the containers are downloaded you can start the environment using:<br>
    ```
    docker compose up -d
    ```
 
 <figure markdown>
-  ![InfraSonar on Windows](../images/guides_windows_appliance_1.png){ width="800" }
+  ![InfraSonar on Windows](../../../images/guides_windows_appliance_1.png){ width="800" }
   <figcaption>InfraSonar on Windows</figcaption>
 </figure>
 

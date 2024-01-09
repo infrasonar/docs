@@ -16,13 +16,7 @@ The HP ProCurve probe consist of a number of UPS specific checks:
 
 ## Deployment
 
-Ensure the following section is added to your :material-docker: [docker-compose](../appliance/docker_compose.md) template to enable the HP ProCurve probe:
-
-```yaml
-  hpprocurve-probe:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/hpprocurve-probe
-```
+The HP ProCurve probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Credentials
 

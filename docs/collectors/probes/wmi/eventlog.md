@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The Hyper-V guest probes uses [WMI](./index.md) to to monitor Microsoft Windows eventlog's.
+The Eventlog guest probes uses [WMI](./index.md) to to monitor Microsoft Windows eventlog's.
 
 ## Features
 
@@ -12,7 +12,7 @@ The Hyper-V guest probes uses [WMI](./index.md) to to monitor Microsoft Windows 
 * Predefined security IDS's
 ## Deployment
 
-The eventlog probe is deployed as a :material-docker: docker container using [docker compose](../appliance/docker_compose.md).
+The eventlog probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Probe configuration
 

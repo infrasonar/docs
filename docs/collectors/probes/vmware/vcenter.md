@@ -20,7 +20,7 @@ The **vcenter-probe** uses the [VMware API](https://www.vmware.com/support/pubs/
 
 ## Deployment
 
-The vCenter probe can best be deployed as a docker container using [docker compose](../appliance/docker-compose.yml)
+The vCenter probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Probe configuration
 

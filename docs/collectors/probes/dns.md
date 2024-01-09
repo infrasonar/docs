@@ -6,14 +6,13 @@
 
 The DNS probe is a synthetic monitor and can even monitor changes to specific DNS records.
 
-
 ## Features 
 
 THe DNS probe can perform forward and reverse DNS queries for an FQDN
 
 ## Deployment
 
-The DNS probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+The DNS probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 

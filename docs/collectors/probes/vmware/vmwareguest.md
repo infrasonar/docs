@@ -22,7 +22,7 @@ The VMware guest probe offers a deep inside into individual virtual machines run
 
 ## Deployment
 
-The VMware guest probe can best be deployed as a docker container using [docker compose](../appliance/docker-compose.yml).
+The VMware guest probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Probe configuration
 

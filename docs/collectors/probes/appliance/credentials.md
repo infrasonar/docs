@@ -2,6 +2,10 @@
 
 Some InfraSonar probes require configuration and/or credentials to execute / authenticate its queries. A good example is the WMI-probe that requires Windows domain credentials to perform WMI queries.
 
+!!! tip "Appliance manager"
+
+    We urge you to use our [appliance manager](./appliance_manager.md) when starting out instead of manually configuring credentials as outlined section below
+
 ## Location
 
 Credentials are stored in the `data/config` subdirectory. This directory is relative from the directory from which you deployed InfraSonar. As we suggest using `/etc/infrasonar` the credentials file would be located here: `/etc/infrasonar/data/config`
@@ -14,7 +18,7 @@ As suggested by the `.yaml` file extension the file format used is the [yaml](ht
 It is worth noting that **Indentation is meaningful** in YAML.
 As such make sure that you use spaces, rather than tab characters, to indent sections. In the default configuration files 2 spaces per indentation level are used, We recommend you do the same.
 
-See also our [nano documentation section](./appliance_installation.md#nano-basics) on how to edit files on the appliance.
+See also our [nano documentation section](./nano_basics.md) on how to edit files on the appliance.
 
 ### Basic 
 

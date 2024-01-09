@@ -13,7 +13,7 @@ The HTTP probe allows to monitor a specific [URI](https://en.wikipedia.org/wiki/
 
 ## Deployment
 
-The HTTP probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+The HTTP probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 

@@ -35,7 +35,7 @@ Some checks are only available from a specific ONTAP version onward:
 
 ## Deployment
 
-The NetApp probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+The NetApp probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 

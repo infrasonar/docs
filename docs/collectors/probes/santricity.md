@@ -32,7 +32,7 @@ Some of the features of the InfraSonar NetApp probe:
 
 ## Deployment
 
-The SANtricity / NetApp E-Series probe is deployed as a :material-docker: docker container using [docker compose](appliance/docker_compose.md).
+The SANtricity / NetApp E-Series probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 

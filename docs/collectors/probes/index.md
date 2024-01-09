@@ -13,7 +13,7 @@ When a new asset (host) is added and the InfraSonar admin enables a specific pro
 
 ## Deployment
 
-Probes are typically deployed using a Docker image running as a Docker container one or more InfraSonar [appliances](appliance/index.md).
+Probes are typically deployed using a Docker image running as a Docker container one or more InfraSonar [appliances](./appliance/index.md).
 
 Upon startup a probe registers itself to the for this probe configured [agentcore](../../application/agentcores.md)
 
@@ -21,4 +21,4 @@ Because probes usually run in the same Docker network as the agentcore, they can
 
 ## Configuration
 
-As probes are typically deployed using Docker compose, probe behavior, such as setting the log level, can easily be accomplished by environment variables in the coresponding `docker-compose.yml` file. The usage of this file is outlined [here](appliance/docker_compose.md)
+Probes can easily be deployed using our [appliance manager](./../probes//appliance/appliance_manager.md).

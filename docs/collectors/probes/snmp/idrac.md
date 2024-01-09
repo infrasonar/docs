@@ -16,13 +16,7 @@ The Dell iDRAC consist of a number of specific checks:
 
 ## Deployment
 
-Ensure the following section is added to your :material-docker: [docker-compose](../appliance/docker_compose.md) template to enable the HP ILO probe:
-
-```yaml
-  idrac-probe:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/idrac-probe
-```
+The Dell iDRAC probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Credentials
 

@@ -17,13 +17,7 @@ The HP ILO probe consist of a number of specific checks:
 
 ## Deployment
 
-Ensure the following section is added to your :material-docker: [docker-compose](../appliance/docker_compose.md) template to enable the HP ILO probe:
-
-```yaml
-  hpilo-probe:
-    << : *infrasonar
-    image: ghcr.io/infrasonar/hpilo-probe
-```
+The HP ILO probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
 
 ## Credentials
 

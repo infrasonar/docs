@@ -13,6 +13,26 @@ curl -fsSL https://deploywindowsagent.infrasonar.com ^
    -o %temp%\infrasonar.cmd && %temp%\infrasonar.cmd
 ```
 
+
+
+Microsoft Windows [Version 10.0.22631.2861]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\sysadmin>curl -fsSL https://deploywindowsagent.infrasonar.com ^
+More?    -o %temp%\infrasonar.cmd && %temp%\infrasonar.cmd
+InfraSonar agent version v1.0.12 (re)deployment.
+Downloading the InfraSonar Windows agent.
+Configuring the InfraSonar Windows agent.
+
+Enter the InfraSonar agent token: 0340229fe198de627effb49a42ada5f6
+The operation completed successfully.
+you can set an optional asset ID, this connects the agent to an existing asset
+Enter the assetID (leave black if unsure):
+(re)installing the InfraSonar Windows agent.
+
+
+
+
 ### Manual installation 
 
 **Install the msi:**
