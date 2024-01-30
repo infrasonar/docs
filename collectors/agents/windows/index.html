@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
     
     
       
@@ -4446,21 +4446,25 @@
 <h2 id="installation">Installation</h2>
 <h3 id="easy-deployment">Easy deployment</h3>
 <p>You can use our easy deployment script, note this scripts requires elevated privileges as it runs an MSI installer.</p>
-<div class="highlight"><pre><span></span><code>curl -fsSL https://deploywindowsagent.infrasonar.com ^
-   -o %temp%\infrasonar.cmd &amp;&amp; %temp%\infrasonar.cmd
+<div class="highlight"><pre><span></span><code>curl -fsSL https://deploywindowsagent.infrasonar.com <span class="se">^</span>
+<span class="se"> </span>  -o <span class="nv">%temp%</span>\infrasonar.cmd <span class="p">&amp;&amp;</span> <span class="nv">%temp%</span>\infrasonar.cmd
 </code></pre></div>
-<p>Microsoft Windows [Version 10.0.22631.2861]
-(c) Microsoft Corporation. All rights reserved.</p>
-<p>C:\Users\sysadmin&gt;curl -fsSL https://deploywindowsagent.infrasonar.com ^
+<p>The install script now prompts you for the <strong>InfraSonar agent token</strong> as shown below:</p>
+<div class="highlight"><pre><span></span><code>Microsoft Windows [Version 10.0.22631.2861]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\sysadmin&gt;curl -fsSL https://deploywindowsagent.infrasonar.com ^
 More?    -o %temp%\infrasonar.cmd &amp;&amp; %temp%\infrasonar.cmd
 InfraSonar agent version v1.0.12 (re)deployment.
 Downloading the InfraSonar Windows agent.
-Configuring the InfraSonar Windows agent.</p>
-<p>Enter the InfraSonar agent token: 0340229fe198de627effb49a42ada5f6
+Configuring the InfraSonar Windows agent.
+
+Enter the InfraSonar agent token: &lt;&lt;ENTER YOUR INFRASONAR AGENT TOKEN HERE&gt;&gt;
 The operation completed successfully.
 you can set an optional asset ID, this connects the agent to an existing asset
 Enter the assetID (leave black if unsure):
-(re)installing the InfraSonar Windows agent.</p>
+(re)installing the InfraSonar Windows agent.
+</code></pre></div>
 <h3 id="manual-installation">Manual installation</h3>
 <p><strong>Install the msi:</strong></p>
 <p>You can download the latest msi of our latest Microsoft Windows agent from our GitHub releases page <a href="https://github.com/infrasonar/windows-agent/releases/latest">here</a>.</p>
@@ -4468,7 +4472,7 @@ Enter the assetID (leave black if unsure):
 <p>Open the registry and add your agent Token:</p>
 <p><img alt="registry" src="../../../images/window-registry-token.png" /></p>
 <p>You can also use the command below in an elevated command prompt to set your agent token:</p>
-<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">token</span><span class="p">=</span>YOURTOKENHRE
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">token</span><span class="p">=&lt;</span>&lt;ENTER YOUR INFRASONAR AGENT TOKEN HERE<span class="p">&gt;</span>&gt;
 reg add <span class="s2">&quot;HKLM\SOFTWARE\Wow6432Node\Cesbit\InfraSonarAgent&quot;</span> /v Token /d <span class="nv">%token%</span> /t REG_SZ /f
 </code></pre></div>
 <div class="admonition quote">
@@ -4553,7 +4557,7 @@ net start InfraSonarAgent
         <div class="md-footer-copyright">
           
             <div class="md-footer-copyright__highlight">
-              Copyright &copy; 2023 Cesbit
+              Copyright &copy; 2024 Cesbit
             </div>
           
           <!-- Made with
@@ -4575,10 +4579,10 @@ net start InfraSonarAgent
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
       
     
   </body>
