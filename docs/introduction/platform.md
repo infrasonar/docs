@@ -4,6 +4,9 @@ The InfraSonar cloud platform is hosted on the [Google Cloud Platform](https://c
 
 Data from a monitored environment is received and processed in the InfraSonar cloud platform on what we call the Hubs. These Hubs evaluate the data against configured conditions and store received time series data in [SiriDB](https://siridb.net/). Received state data is kept in memory by the Hubs.
 
+[ThingsDB](https://thingsdb.io) in our main back-end and the conductor of our Hubs which are in essence micro-services.
+
+
 <figure markdown>
   ![High level overview](../images/infrasonar_highlevel.png){ width="500"}
   <figcaption>Architectural overview of the InfraSonar platform</figcaption>

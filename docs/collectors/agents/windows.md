@@ -8,13 +8,15 @@
 
 You can use our easy deployment script, note this scripts requires elevated privileges as it runs an MSI installer.
 
-```
+```batch
 curl -fsSL https://deploywindowsagent.infrasonar.com ^
    -o %temp%\infrasonar.cmd && %temp%\infrasonar.cmd
 ```
 
+The install script now prompts you for the **InfraSonar agent token** as shown below:
 
 
+```
 Microsoft Windows [Version 10.0.22631.2861]
 (c) Microsoft Corporation. All rights reserved.
 
@@ -24,13 +26,12 @@ InfraSonar agent version v1.0.12 (re)deployment.
 Downloading the InfraSonar Windows agent.
 Configuring the InfraSonar Windows agent.
 
-Enter the InfraSonar agent token: 0340229fe198de627effb49a42ada5f6
+Enter the InfraSonar agent token: <<ENTER YOUR INFRASONAR AGENT TOKEN HERE>>
 The operation completed successfully.
 you can set an optional asset ID, this connects the agent to an existing asset
 Enter the assetID (leave black if unsure):
 (re)installing the InfraSonar Windows agent.
-
-
+```
 
 
 ### Manual installation 
@@ -49,7 +50,7 @@ Open the registry and add your agent Token:
 You can also use the command below in an elevated command prompt to set your agent token:
 
 ```batch
-set token=YOURTOKENHRE
+set token=<<ENTER YOUR INFRASONAR AGENT TOKEN HERE>>
 reg add "HKLM\SOFTWARE\Wow6432Node\Cesbit\InfraSonarAgent" /v Token /d %token% /t REG_SZ /f
 ```
 
