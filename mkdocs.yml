@@ -145,6 +145,7 @@ nav:
             - EATON: collectors/probes/snmp/eaton.md
             - HP ILO: collectors/probes/snmp/hpilo.md
             - HP ProCurve: collectors/probes/snmp/hpprocurve.md
+            - ReadyNAS: collectors/probes/snmp/readynas.md
             - Synology: collectors/probes/snmp/synology.md
             - UniFi: collectors/probes/snmp/unifi.md
         - TCP: collectors/probes/tcp.md
@@ -160,8 +161,10 @@ nav:
         - MailRoundTrip: collectors/services/mailroundtrip.md
         - Microsoft 365: collectors/services/microsoft_365.md
         - Microsoft Azure: collectors/services/microsoft_azure.md
+        - MX: collectors/services/mx.md
         - Palo Alto: collectors/services/paloalto.md
         - Ping: collectors/services/ping.md
+        - TCP: collectors/services/tcp.md
   - Integrations:
       - Overview: integrations/index.md
       - ConnectWise Manage: integrations/connectwise_manage.md
