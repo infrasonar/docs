@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The ping-service is a service variant of our [ping-probe](../probes/ping.md).
+The ping-service is the [service](./index.md) variant of our [ping-probe](../probes/ping.md).
 
 This service send ping requests from our InfraSonar cloud platform to the monitored asset.
 
@@ -13,7 +13,7 @@ This service send ping requests from our InfraSonar cloud platform to the monito
 * Ping roundtrip monitoring, min and max timing
 * Number of successfully and/or dropped packages
 
-## Probe configuration
+## Service configuration
 
 Property | Description
 ---------|------------------------
