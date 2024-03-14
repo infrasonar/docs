@@ -2,6 +2,12 @@
 
 # Netgear - ReadyNAS
 
+!!! danger "Preview"
+
+    The ReadyNAS probe is a preview release.<br>
+    Contact [InfraSonar support](../../introduction/support.md) if you want to get involved in testing our preview release.
+
+
 ## Introduction
 
 InfraSonar monitors ReadyNAS storage systems using [snmp](index.md).
