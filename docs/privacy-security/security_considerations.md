@@ -4,7 +4,10 @@ InfraSonar is an infrastructure monitoring platform as a service. This document 
 
 ## Data Collection and Use
 
-* InfraSonar collectors (agents, probes, and services) gather data relevant to the status and performance of the monitored device. We do not collect extraneous data.
+
+[probes](../collectors/probes/index.md), [agents](../collectors/agents/index.md) and [services](../collectors/services/index.md)
+
+* InfraSonar collectors ([probes](../collectors/probes/index.md), [agents](../collectors/agents/index.md) and [services](../collectors/services/index.md)) gather data relevant to the status and performance of the monitored device. We do **not** collect extraneous data.
 * Our open-source collectors allow for easy auditing of data retrieval methods.
 
 !!! Note
@@ -15,7 +18,7 @@ InfraSonar is an infrastructure monitoring platform as a service. This document 
 For a clear understanding of this security document, consider the following:
 
 * InfraSonar collects monitoring data through:
-    * [Probes](../collectors/probes/index.md) running in Docker containers on the monitoring [appliance](../collectors/probes/appliance/index.md).
+    * [Probes](../collectors/probes/index.md) running in Docker containers on a monitoring [appliance](../collectors/probes/appliance/index.md).
     * [Agents](../collectors/agents/index.md) sending data via the [InfraSonar API](https://docs.infrasonar.com/api/overview/)
     * [Services](../collectors/services/index.md) running in the InfraSonar cloud platform that autonomously retrieve monitoring data.
 * Collected data is sent to the InfraSonar platform for analysis and user access through the InfraSonar frontend.
