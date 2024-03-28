@@ -1,119 +1,106 @@
-# Security considerations
+#:material-security:  Security Overview
 
-InfraSonar is an infrastructure monitoring platform as a service.
+InfraSonar is an infrastructure monitoring platform as a service. This document outlines security considerations to keep in mind when deploying InfraSonar. Our primary focus is on securely retrieving monitoring data and sending it to the InfraSonar cloud platform for analysis.
 
-This document outlines some security considerations to take into account when deploying InfraSonar.
+## Data Collection and Use
 
-Our focus and efforts are aimed at retrieving monitoring data, and sending the collected data securely to the InfraSonar cloud platform for further analysis.
+* InfraSonar collectors (agents, probes, and services) gather data relevant to the status and performance of the monitored device. We do not collect extraneous data.
+* Our open-source collectors allow for easy auditing of data retrieval methods.
 
-!!! note
-    InfraSonar is not an IT automation tool and cannot make changes to a monitored environment. However, some InfraSonar implementations use the InfraSonar API to integrate with an on-premises automation solution such as Ansible, ensuring a single point of truth for configuration management.
+!!! Note
+    InfraSonar is not an IT automation tool and cannot modify the monitored environment. However, some implementations use the InfraSonar API to integrate with on-premises automation solutions like Ansible, ensuring a central configuration management point.
 
-## Context
+## Understanding the Context
 
-To properly read this security considerations page, it is essential to keep the following context in mind:
+For a clear understanding of this security document, consider the following:
 
-- InfraSonar monitoring data is collected through:
-    - [Probes](../collectors/probes/index.md) running in a Docker container on the monitoring [appliance](../collectors/probes/appliance/index.md).
-    - [Agents](../collectors/agents/index.md) are sending data via the [InfraSonar API](https://docs.infrasonar.com/api/overview/).
-    - [Services](../collectors/services/index.md) services run in our cloud platform and retrieve monitoring data autonomously. 
-- Collected data is sent to the InfraSonar platform for further analysis and user consumption in the InfraSonar frontend.
+* InfraSonar collects monitoring data through:
+    * [Probes](../collectors/probes/index.md) running in Docker containers on the monitoring [appliance](../collectors/probes/appliance/index.md).
+    * [Agents](../collectors/agents/index.md) sending data via the [InfraSonar API](https://docs.infrasonar.com/api/overview/)
+    * [Services](../collectors/services/index.md) running in the InfraSonar cloud platform that autonomously retrieve monitoring data.
+* Collected data is sent to the InfraSonar platform for analysis and user access through the InfraSonar frontend.
+* The platform architecture is explained in more detail in the [Platform Guide](../introduction/platform.md).
 
-The [platform guide](../introduction/platform.md) explains this architecture further.
+## InfraSonar Security Design Principles
 
-## InfraSonar design principles
+Our development team adheres to the following security principles:
 
-Our development team adheres to these principles:
+* **Least Privilege**: Use accounts with minimal access privileges to access monitoring data whenever possible.
+* **Vendor Standards**: Utilize vendor-documented standards (APIs or management protocols) to query data.
+* **Credential Storage**: When credentials are required, store them encrypted on the monitoring appliance.
+* **Customer Data Control**: The customer or managed service provider controls access to InfraSonar data.
+* **Minimize Third-Party Libraries**: Avoid using third-party libraries whenever possible.
+* **Security Scanning**: Integrate security scanners into our version control system for all projects.
+* **Security Issue Prioritization**: Security vulnerabilities are addressed with the highest priority.
 
-1. Use least privilege accounts to access monitoring data when possible.
-2. Use vendor-documented standards such as API or management protocols to query data.
-3. When credentials are required, these should be stored encrypted on the monitoring appliance.
-4. The customer or managed service provider controls access to InfraSonar data.
-5. Avoid third-party libraries when possible.
-6. Set up security scanners in our version control system for all projects.
-7. Security-related issues take precedence over all other matters.
+## Data States
 
-## The three states of data
+InfraSonar processes large amounts of monitoring data used for historical analysis, such as identifying trends. We strive to secure all collected data as if it were sensitive.
 
-InfraSonar processes massive amounts of monitoring data stored for historical analysis, such as trending.
-We strive to treat all collected data as if it were sensitive data.
+InfraSonar data can exist in three states:
 
-InfraSonar data can be in one of 3 so-called states.
+* **Data at Rest**: Data not currently being accessed, stored on a physical or logical medium. InfraSonar stores data on AES256 encrypted disks within its cloud platform. The appliance itself does not have disk encryption but uses file-based encryption where possible.
+* **Data in Transit**: Data transferred between devices. Encrypted SSL is used for all data communication between InfraSonar services. Data collected by probes might be unencrypted, as some data collection technologies don't support encryption (e.g., SNMP v2c).
+* **Data in Use**: Data actively used by applications for analysis or user access. Readable data formats are necessary for data in use, especially for end-user consumption. Automated data processing occurs in data centers that comply with various security certifications, including (but not limited to):
+    * ISO/IEC 27001
+    * ISO/IEC 27017
+    * ISO/IEC 27018
+    * SOC 2
+    * SOC 3
 
-**Data at rest**
+The InfraSonar appliance relies on the security measures of the environment it's deployed in to protect data at rest.
 
-:   _Data currently not being accessed, which is stored on a physical or logical medium._
+## Data Classification
+InfraSonar data is classified as follows:
 
-    InfraSonar stores data in it’s cloud platform on AES256 encrypted disks. The appliance itself has no disk encryption but uses file-based encryption where possible.
+* **:octicons-no-entry-fill-12: Restricted**
+    * Configuration data containing (encrypted) credentials stored on the monitoring appliance.
+    * Log data potentially containing user IDs stored on the appliance.
+    * InfraSonar account lists.
+* **:material-lock: Sensitive**
+    * Time series data and performance metrics collected on monitored assets/hosts.
+    * State data.
+    * InfraSonar platform source code.
+    * CRM data.
+    * Contracts.
+* **:material-folder-open: Internal**
+    * InfraSonar back office data, such as invoices.
+    * InfraSonar support incidents.
+    * InfraSonar Slack and email communication.
+* **:material-eye-outline: Public**
+    * InfraSonar open-source code:
+        * [SiriDB](https://github.com/siridb), time series database used by InfraSonar.
+        * [ThingsDB](https://github.com/thingsdb), backend database used by InfraSonar.
+        * [InfraSonar](https://github.com/infrasonar), collectors.
+    * InfraSonar documentation
 
-**Data in transit**
 
-:   _Data that “travels” between devices. The most straightforward example is emails that are in transit._
+## Securing Your Monitoring Appliance
 
-    All data sent between InfraSonar services is SSL encrypted. Data collected by probes is potentially unencrypted, as not all technologies used to collect monitoring data use encryption. SNMP v2c is an example where data is sent without any encryption.
+Since many monitoring vendors don't support "least privilege" data collection, the appliance hosting InfraSonar probes and agentcore requires extra security measures. These probes often rely on privileged accounts, increasing the attack surface.
 
-**Data in use**
+Here's how to strengthen your monitoring appliance's security:
 
-:   _Data actively in use by one or more applications for analysis or for access/consumption by end-users._
+### SSH Access
 
-    When data is in use, it needs to be in a readable format; this is especially true for data consumed by end-users. Automated data processing takes place in the datacenters, which have several certifications related to security measurements. These include, but are not limited to:
+* **Enforce SSH Key-Based Authentication**: Eliminate password logins and utilize SSH keys for secure access.
+* **Disable Passwordless Login Requests**: Prevent users from requesting passwordless logins.
+* **Restrict SSH Root Logins**: Disable root access via SSH entirely.
+* **Upgrade to SSH Protocol 2**: Ensure you're using the more secure SSHv2 protocol.
+* **Set SSH Session Timeouts**: Automatically disconnect idle SSH connections after a set time.
+* **Limit SSH Access**: Restrict access to authorized users or user groups only.
+* **Implement Login Attempt Throttling**: Limit login attempts to prevent brute-force attacks.
 
-    - ISO/IEC 27001
-    - ISO/IEC 27017
-    - ISO/IEC 27018
-    - SOC 2
-    - SOC 3
+### System Maintenance
 
-    The InfraSonar appliance has no special security measures other than those of the environment in which the appliance is used to protect data.
+* **Regular OS Updates**: Apply timely updates to your underlying Linux operating system to patch vulnerabilities.
+* **Daily InfraSonar Updates**: Utilize a daily pull command to ensure you have the latest InfraSonar container images.
+* **Use Latest Tags (Unless Specified)**: By default, leverage the latest tag for InfraSonar containers for automatic updates. Opt-out only if instructed by InfraSonar support due to specific version requirements.
+* **Version Pinning Notification**: If your company enforces version pinning, notify InfraSonar support to receive explicit update notifications.
+* **Regular Probe Password Rotation**: Change the passwords used by InfraSonar probes frequently.
 
-## Data classification
+### Additional Security:
 
-We use the following data classification for InfraSonar and InfraSonar related data:
+* **Disk Encryption (if possible)**: If your hardware supports it, enable disk encryption for additional data protection.
 
-**:octicons-no-entry-fill-12: Restricted**
-
-:  - Configuration data stored on the monitoring appliance, as this contains (encrypted) credentials.
-   - Log data stored on the appliance, as this potentially contains user ids.
-   - InfraSonar accounts lists.
-
-**:material-lock: Sensitive**
-
-:  - Time series data and performance metrics collected on monitored assets / hosts.
-   - State data.
-   - InfraSonar platform source code.
-   - CRM data.
-   - Contracts.
-
-**:material-folder-open: Internal**
-
-:   - InfraSonar back office, such as invoices.
-    - InfraSonar support incidents.
-    - InfraSonar Slack and email communication.
-
-**:material-eye-outline: Public**
-
-:   - InfraSonar open source code:
-        - SiriDB - Time series database used in InfraSonar.
-        - ThingsDB - NoSQL database used in InfraSonar.
-        - InfraSonar probes.
-    - InfraSonar documentation.
-
-## Monitoring appliance
-
-The monitoring appliance on which the InfraSonar probes and InfraSonar agentcore are deployed requires extra attention, as many vendors do not support a 'least privilege' approach to collecting monitoring data. As such, the probes often require the use of highly privileged accounts and sometimes even root or administrator accounts.
-
-Our recommendations:
-
-- Set up SSH Passwordless Authentication.
-- Disable User SSH Passwordless Connection Requests.
-- Disable SSH Root Logins.
-- Use SSH Protocol 2.
-- Set SSH Connection Timeout Idle Value.
-- Limit SSH Access to Certain Users.
-- Configure a Limit for Password Attempts.
-- Update the underlying Linux operating system frequently.
-- Perform a daily pull command for new InfraSonar containers.
-- Use the `latest` tag for InfraSonar containers unless otherwise specified by InfraSonar support.
-- If your company requires version pinning, please let us know so we can explicitly notify you when we release probe updates.
-- Frequently update the password used by InfraSonar probes.
-- Use disk encryption when possible.
+These recommendations will significantly enhance the security posture of your monitoring appliance and minimize the risk associated with privileged access requirements.
