@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security-considerations" class="md-skip">
+        <a href="#security-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -836,27 +836,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
+  <a href="#data-collection-and-use" class="md-nav__link">
     <span class="md-ellipsis">
-      Context
+      Data Collection and Use
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#infrasonar-design-principles" class="md-nav__link">
+  <a href="#understanding-the-context" class="md-nav__link">
     <span class="md-ellipsis">
-      InfraSonar design principles
+      Understanding the Context
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-three-states-of-data" class="md-nav__link">
+  <a href="#infrasonar-security-design-principles" class="md-nav__link">
     <span class="md-ellipsis">
-      The three states of data
+      InfraSonar Security Design Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data States
     </span>
   </a>
   
@@ -865,18 +874,51 @@
         <li class="md-nav__item">
   <a href="#data-classification" class="md-nav__link">
     <span class="md-ellipsis">
-      Data classification
+      Data Classification
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#monitoring-appliance" class="md-nav__link">
+  <a href="#securing-your-monitoring-appliance" class="md-nav__link">
     <span class="md-ellipsis">
-      Monitoring appliance
+      Securing Your Monitoring Appliance
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Securing Your Monitoring Appliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Maintenance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Security:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4483,27 +4525,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
+  <a href="#data-collection-and-use" class="md-nav__link">
     <span class="md-ellipsis">
-      Context
+      Data Collection and Use
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#infrasonar-design-principles" class="md-nav__link">
+  <a href="#understanding-the-context" class="md-nav__link">
     <span class="md-ellipsis">
-      InfraSonar design principles
+      Understanding the Context
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-three-states-of-data" class="md-nav__link">
+  <a href="#infrasonar-security-design-principles" class="md-nav__link">
     <span class="md-ellipsis">
-      The three states of data
+      InfraSonar Security Design Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data States
     </span>
   </a>
   
@@ -4512,18 +4563,51 @@
         <li class="md-nav__item">
   <a href="#data-classification" class="md-nav__link">
     <span class="md-ellipsis">
-      Data classification
+      Data Classification
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#monitoring-appliance" class="md-nav__link">
+  <a href="#securing-your-monitoring-appliance" class="md-nav__link">
     <span class="md-ellipsis">
-      Monitoring appliance
+      Securing Your Monitoring Appliance
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Securing Your Monitoring Appliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Maintenance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Security:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4542,126 +4626,117 @@
                   
 
 
-<h1 id="security-considerations">Security considerations</h1>
-<p>InfraSonar is an infrastructure monitoring platform as a service.</p>
-<p>This document outlines some security considerations to take into account when deploying InfraSonar.</p>
-<p>Our focus and efforts are aimed at retrieving monitoring data, and sending the collected data securely to the InfraSonar cloud platform for further analysis.</p>
+<h1 id="security-overview"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12h7c-.53 4.11-3.28 7.78-7 8.92V12H5V6.3l7-3.11M12 1 3 5v6c0 5.55 3.84 10.73 9 12 5.16-1.27 9-6.45 9-12V5l-9-4Z"/></svg></span>  Security Overview</h1>
+<p>InfraSonar is an infrastructure monitoring platform as a service. This document outlines security considerations to keep in mind when deploying InfraSonar. Our primary focus is on securely retrieving monitoring data and sending it to the InfraSonar cloud platform for analysis.</p>
+<h2 id="data-collection-and-use">Data Collection and Use</h2>
+<p><a href="../../collectors/probes/">probes</a>, <a href="../../collectors/agents/">agents</a> and <a href="../../collectors/services/">services</a></p>
+<ul>
+<li>InfraSonar collectors (<a href="../../collectors/probes/">probes</a>, <a href="../../collectors/agents/">agents</a> and <a href="../../collectors/services/">services</a>) gather data relevant to the status and performance of the monitored device. We do <strong>not</strong> collect extraneous data.</li>
+<li>Our open-source collectors allow for easy auditing of data retrieval methods.</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>InfraSonar is not an IT automation tool and cannot make changes to a monitored environment. However, some InfraSonar implementations use the InfraSonar API to integrate with an on-premises automation solution such as Ansible, ensuring a single point of truth for configuration management.</p>
+<p>InfraSonar is not an IT automation tool and cannot modify the monitored environment. However, some implementations use the InfraSonar API to integrate with on-premises automation solutions like Ansible, ensuring a central configuration management point.</p>
 </div>
-<h2 id="context">Context</h2>
-<p>To properly read this security considerations page, it is essential to keep the following context in mind:</p>
+<h2 id="understanding-the-context">Understanding the Context</h2>
+<p>For a clear understanding of this security document, consider the following:</p>
 <ul>
-<li>InfraSonar monitoring data is collected through:<ul>
-<li><a href="../../collectors/probes/">Probes</a> running in a Docker container on the monitoring <a href="../../collectors/probes/appliance/">appliance</a>.</li>
-<li><a href="../../collectors/agents/">Agents</a> are sending data via the <a href="https://docs.infrasonar.com/api/overview/">InfraSonar API</a>.</li>
-<li><a href="../../collectors/services/">Services</a> services run in our cloud platform and retrieve monitoring data autonomously. </li>
+<li>InfraSonar collects monitoring data through:<ul>
+<li><a href="../../collectors/probes/">Probes</a> running in Docker containers on a monitoring <a href="../../collectors/probes/appliance/">appliance</a>.</li>
+<li><a href="../../collectors/agents/">Agents</a> sending data via the <a href="https://docs.infrasonar.com/api/overview/">InfraSonar API</a></li>
+<li><a href="../../collectors/services/">Services</a> running in the InfraSonar cloud platform that autonomously retrieve monitoring data.</li>
 </ul>
 </li>
-<li>Collected data is sent to the InfraSonar platform for further analysis and user consumption in the InfraSonar frontend.</li>
+<li>Collected data is sent to the InfraSonar platform for analysis and user access through the InfraSonar frontend.</li>
+<li>The platform architecture is explained in more detail in the <a href="../../introduction/platform/">Platform Guide</a>.</li>
 </ul>
-<p>The <a href="../../introduction/platform/">platform guide</a> explains this architecture further.</p>
-<h2 id="infrasonar-design-principles">InfraSonar design principles</h2>
-<p>Our development team adheres to these principles:</p>
-<ol>
-<li>Use least privilege accounts to access monitoring data when possible.</li>
-<li>Use vendor-documented standards such as API or management protocols to query data.</li>
-<li>When credentials are required, these should be stored encrypted on the monitoring appliance.</li>
-<li>The customer or managed service provider controls access to InfraSonar data.</li>
-<li>Avoid third-party libraries when possible.</li>
-<li>Set up security scanners in our version control system for all projects.</li>
-<li>Security-related issues take precedence over all other matters.</li>
-</ol>
-<h2 id="the-three-states-of-data">The three states of data</h2>
-<p>InfraSonar processes massive amounts of monitoring data stored for historical analysis, such as trending.
-We strive to treat all collected data as if it were sensitive data.</p>
-<p>InfraSonar data can be in one of 3 so-called states.</p>
-<dl>
-<dt><strong>Data at rest</strong></dt>
-<dd>
-<p><em>Data currently not being accessed, which is stored on a physical or logical medium.</em></p>
-<p>InfraSonar stores data in it’s cloud platform on AES256 encrypted disks. The appliance itself has no disk encryption but uses file-based encryption where possible.</p>
-</dd>
-<dt><strong>Data in transit</strong></dt>
-<dd>
-<p><em>Data that “travels” between devices. The most straightforward example is emails that are in transit.</em></p>
-<p>All data sent between InfraSonar services is SSL encrypted. Data collected by probes is potentially unencrypted, as not all technologies used to collect monitoring data use encryption. SNMP v2c is an example where data is sent without any encryption.</p>
-</dd>
-<dt><strong>Data in use</strong></dt>
-<dd>
-<p><em>Data actively in use by one or more applications for analysis or for access/consumption by end-users.</em></p>
-<p>When data is in use, it needs to be in a readable format; this is especially true for data consumed by end-users. Automated data processing takes place in the datacenters, which have several certifications related to security measurements. These include, but are not limited to:</p>
+<h2 id="infrasonar-security-design-principles">InfraSonar Security Design Principles</h2>
+<p>Our development team adheres to the following security principles:</p>
 <ul>
+<li><strong>Least Privilege</strong>: Use accounts with minimal access privileges to access monitoring data whenever possible.</li>
+<li><strong>Vendor Standards</strong>: Utilize vendor-documented standards (APIs or management protocols) to query data.</li>
+<li><strong>Credential Storage</strong>: When credentials are required, store them encrypted on the monitoring appliance.</li>
+<li><strong>Customer Data Control</strong>: The customer or managed service provider controls access to InfraSonar data.</li>
+<li><strong>Minimize Third-Party Libraries</strong>: Avoid using third-party libraries whenever possible.</li>
+<li><strong>Security Scanning</strong>: Integrate security scanners into our version control system for all projects.</li>
+<li><strong>Security Issue Prioritization</strong>: Security vulnerabilities are addressed with the highest priority.</li>
+</ul>
+<h2 id="data-states">Data States</h2>
+<p>InfraSonar processes large amounts of monitoring data used for historical analysis, such as identifying trends. We strive to secure all collected data as if it were sensitive.</p>
+<p>InfraSonar data can exist in three states:</p>
+<ul>
+<li><strong>Data at Rest</strong>: Data not currently being accessed, stored on a physical or logical medium. InfraSonar stores data on AES256 encrypted disks within its cloud platform. The appliance itself does not have disk encryption but uses file-based encryption where possible.</li>
+<li><strong>Data in Transit</strong>: Data transferred between devices. Encrypted SSL is used for all data communication between InfraSonar services. Data collected by probes might be unencrypted, as some data collection technologies don't support encryption (e.g., SNMP v2c).</li>
+<li><strong>Data in Use</strong>: Data actively used by applications for analysis or user access. Readable data formats are necessary for data in use, especially for end-user consumption. Automated data processing occurs in data centers that comply with various security certifications, including (but not limited to):<ul>
 <li>ISO/IEC 27001</li>
 <li>ISO/IEC 27017</li>
 <li>ISO/IEC 27018</li>
 <li>SOC 2</li>
 <li>SOC 3</li>
 </ul>
-<p>The InfraSonar appliance has no special security measures other than those of the environment in which the appliance is used to protect data.</p>
-</dd>
-</dl>
-<h2 id="data-classification">Data classification</h2>
-<p>We use the following data classification for InfraSonar and InfraSonar related data:</p>
-<dl>
-<dt><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M6 0a6 6 0 1 1 0 12A6 6 0 0 1 6 0Zm3 5H3v2h6Z"/></svg></span> Restricted</strong></dt>
-<dd>
-<ul>
-<li>Configuration data stored on the monitoring appliance, as this contains (encrypted) credentials.</li>
-<li>Log data stored on the appliance, as this potentially contains user ids.</li>
-<li>InfraSonar accounts lists.</li>
+</li>
 </ul>
-</dd>
-<dt><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2h1m-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3Z"/></svg></span> Sensitive</strong></dt>
-<dd>
+<p>The InfraSonar appliance relies on the security measures of the environment it's deployed in to protect data at rest.</p>
+<h2 id="data-classification">Data Classification</h2>
+<p>InfraSonar data is classified as follows:</p>
 <ul>
-<li>Time series data and performance metrics collected on monitored assets / hosts.</li>
+<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M6 0a6 6 0 1 1 0 12A6 6 0 0 1 6 0Zm3 5H3v2h6Z"/></svg></span> Restricted</strong><ul>
+<li>Configuration data containing (encrypted) credentials stored on the monitoring appliance.</li>
+<li>Log data potentially containing user IDs stored on the appliance.</li>
+<li>InfraSonar account lists.</li>
+</ul>
+</li>
+<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2h1m-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3Z"/></svg></span> Sensitive</strong><ul>
+<li>Time series data and performance metrics collected on monitored assets/hosts.</li>
 <li>State data.</li>
 <li>InfraSonar platform source code.</li>
 <li>CRM data.</li>
 <li>Contracts.</li>
 </ul>
-</dd>
-<dt><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 20H4a2 2 0 0 1-2-2V6c0-1.11.89-2 2-2h6l2 2h7a2 2 0 0 1 2 2H4v10l2.14-8h17.07l-2.28 8.5c-.23.87-1.01 1.5-1.93 1.5Z"/></svg></span> Internal</strong></dt>
-<dd>
-<ul>
-<li>InfraSonar back office, such as invoices.</li>
+</li>
+<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 20H4a2 2 0 0 1-2-2V6c0-1.11.89-2 2-2h6l2 2h7a2 2 0 0 1 2 2H4v10l2.14-8h17.07l-2.28 8.5c-.23.87-1.01 1.5-1.93 1.5Z"/></svg></span> Internal</strong><ul>
+<li>InfraSonar back office data, such as invoices.</li>
 <li>InfraSonar support incidents.</li>
 <li>InfraSonar Slack and email communication.</li>
 </ul>
-</dd>
-<dt><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0Z"/></svg></span> Public</strong></dt>
-<dd>
-<ul>
-<li>InfraSonar open source code:<ul>
-<li>SiriDB - Time series database used in InfraSonar.</li>
-<li>ThingsDB - NoSQL database used in InfraSonar.</li>
-<li>InfraSonar probes.</li>
+</li>
+<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0Z"/></svg></span> Public</strong><ul>
+<li>InfraSonar open-source code:<ul>
+<li><a href="https://github.com/siridb">SiriDB</a>, time series database used by InfraSonar.</li>
+<li><a href="https://github.com/thingsdb">ThingsDB</a>, backend database used by InfraSonar.</li>
+<li><a href="https://github.com/infrasonar">InfraSonar</a>, collectors.</li>
 </ul>
 </li>
-<li>InfraSonar documentation.</li>
+<li>InfraSonar documentation</li>
 </ul>
-</dd>
-</dl>
-<h2 id="monitoring-appliance">Monitoring appliance</h2>
-<p>The monitoring appliance on which the InfraSonar probes and InfraSonar agentcore are deployed requires extra attention, as many vendors do not support a 'least privilege' approach to collecting monitoring data. As such, the probes often require the use of highly privileged accounts and sometimes even root or administrator accounts.</p>
-<p>Our recommendations:</p>
+</li>
+</ul>
+<h2 id="securing-your-monitoring-appliance">Securing Your Monitoring Appliance</h2>
+<p>Since many monitoring vendors don't support "least privilege" data collection, the appliance hosting InfraSonar probes and agentcore requires extra security measures. These probes often rely on privileged accounts, increasing the attack surface.</p>
+<p>Here's how to strengthen your monitoring appliance's security:</p>
+<h3 id="ssh-access">SSH Access</h3>
 <ul>
-<li>Set up SSH Passwordless Authentication.</li>
-<li>Disable User SSH Passwordless Connection Requests.</li>
-<li>Disable SSH Root Logins.</li>
-<li>Use SSH Protocol 2.</li>
-<li>Set SSH Connection Timeout Idle Value.</li>
-<li>Limit SSH Access to Certain Users.</li>
-<li>Configure a Limit for Password Attempts.</li>
-<li>Update the underlying Linux operating system frequently.</li>
-<li>Perform a daily pull command for new InfraSonar containers.</li>
-<li>Use the <code>latest</code> tag for InfraSonar containers unless otherwise specified by InfraSonar support.</li>
-<li>If your company requires version pinning, please let us know so we can explicitly notify you when we release probe updates.</li>
-<li>Frequently update the password used by InfraSonar probes.</li>
-<li>Use disk encryption when possible.</li>
+<li><strong>Enforce SSH Key-Based Authentication</strong>: Eliminate password logins and utilize SSH keys for secure access.</li>
+<li><strong>Disable Passwordless Login Requests</strong>: Prevent users from requesting passwordless logins.</li>
+<li><strong>Restrict SSH Root Logins</strong>: Disable root access via SSH entirely.</li>
+<li><strong>Upgrade to SSH Protocol 2</strong>: Ensure you're using the more secure SSHv2 protocol.</li>
+<li><strong>Set SSH Session Timeouts</strong>: Automatically disconnect idle SSH connections after a set time.</li>
+<li><strong>Limit SSH Access</strong>: Restrict access to authorized users or user groups only.</li>
+<li><strong>Implement Login Attempt Throttling</strong>: Limit login attempts to prevent brute-force attacks.</li>
 </ul>
+<h3 id="system-maintenance">System Maintenance</h3>
+<ul>
+<li><strong>Regular OS Updates</strong>: Apply timely updates to your underlying Linux operating system to patch vulnerabilities.</li>
+<li><strong>Daily InfraSonar Updates</strong>: Utilize a daily pull command to ensure you have the latest InfraSonar container images.</li>
+<li><strong>Use Latest Tags (Unless Specified)</strong>: By default, leverage the latest tag for InfraSonar containers for automatic updates. Opt-out only if instructed by InfraSonar support due to specific version requirements.</li>
+<li><strong>Version Pinning Notification</strong>: If your company enforces version pinning, notify InfraSonar support to receive explicit update notifications.</li>
+<li><strong>Regular Probe Password Rotation</strong>: Change the passwords used by InfraSonar probes frequently.</li>
+</ul>
+<h3 id="additional-security">Additional Security:</h3>
+<ul>
+<li><strong>Disk Encryption (if possible)</strong>: If your hardware supports it, enable disk encryption for additional data protection.</li>
+</ul>
+<p>These recommendations will significantly enhance the security posture of your monitoring appliance and minimize the risk associated with privileged access requirements.</p>
 
 
 
@@ -4752,7 +4827,7 @@ We strive to treat all collected data as if it were sensitive data.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>
