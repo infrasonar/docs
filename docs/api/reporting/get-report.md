@@ -1,5 +1,5 @@
 # Download report
-**`GET`/reporting/<reportingId\>/report/<reportId>**
+**`GET`/reporting/<reportingId\>/report/<reportId\>**
 
 ### Description
 Download a report.
