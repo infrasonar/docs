@@ -4,8 +4,7 @@
 
 ## Introduction
 
-The Kubernetes agent monitors your Kubernetes cluster.<br>
-Deploy it as a pod in your cluster.
+The Kubernetes agent monitors your Kubernetes cluster using an easy to deploy pod in your cluster.
 
 ## Prerequisites
 
@@ -63,11 +62,12 @@ kubectl apply -f cluster_role_binding.yaml
 
 ### Deployment
 
-If you already have an asset or want to create one manually in InfraSonar, you only need the asset ID and can use a Deployment. Otherwise, skip this part and read the [StatefulSet](#statefulset) section.
+!!! note "Choose your desired deployment"
+    If you already have an asset or want to create one manually in InfraSonar, you only need the asset ID and can use a Deployment. Otherwise, skip this part and read the [StatefulSet](#statefulset) section.
 
 Create a deployment for the agent:
 
-```yaml title="deployment.yaml"
+```yaml title="deployment.yaml" hl_lines="23 25"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -107,7 +107,7 @@ Use a StatefulSet _only_ if you want the agent to create the asset for you, othe
 
 Create a StatefulSet for the agent:
 
-```yaml title="stateful_set.yaml"
+```yaml title="stateful_set.yaml" hl_lines="27"
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:

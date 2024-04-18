@@ -23,6 +23,6 @@ This predefined set of conditions and agent-less monitoring capabilities make fo
 
 InfraSonar started in 2013 as Oversight as the brainchild of an IT architect (Rik) and a senior software developer (Jeroen).
 
-In 2023 we released a completely revised platform under the name InfraSonar.
+In April 2023 we released a completely revised platform under the name InfraSonar.
 
-With InfraSonar we took the lessons learned and made a more versatile and resistent platform not only suitable for IT environments but for any platform were state and performance monitoring are required.
+With InfraSonar we took the lessons learned and made a more versatile and resilient platform not only suitable for IT environments but for any platform were state and performance monitoring are required.

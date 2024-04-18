@@ -2,7 +2,7 @@
 site_name: InfraSonar
 
 # Copyright
-copyright: "Copyright &copy; 2023 Cesbit"
+copyright: "Copyright &copy; 2024 Cesbit"
 
 # Google analytics (Uses Cesbit Google account)
 extra:
@@ -53,8 +53,10 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+
   - pymdownx.tasklist:
       custom_checkbox: true
 
@@ -64,10 +66,10 @@ nav:
   - Documentation:
     - Introduction:
        - Getting started: introduction/getting_started.md
-       - What is InfraSonar: introduction/what_is_Infra_Sonar.md
        - Platform: introduction/platform.md
        - Support: introduction/support.md
        - Terminology: introduction/terminology.md
+       - About InfraSonar: introduction/about.md
     - Guides:
        - Raspberry Pi dashboard: guides/raspberrypi_dashboard.md
        - Migration: guides/migration.md
@@ -143,6 +145,7 @@ nav:
             - EATON: collectors/probes/snmp/eaton.md
             - HP ILO: collectors/probes/snmp/hpilo.md
             - HP ProCurve: collectors/probes/snmp/hpprocurve.md
+            - ReadyNAS: collectors/probes/snmp/readynas.md
             - Synology: collectors/probes/snmp/synology.md
             - UniFi: collectors/probes/snmp/unifi.md
         - TCP: collectors/probes/tcp.md
@@ -158,8 +161,10 @@ nav:
         - MailRoundTrip: collectors/services/mailroundtrip.md
         - Microsoft 365: collectors/services/microsoft_365.md
         - Microsoft Azure: collectors/services/microsoft_azure.md
+        - MX: collectors/services/mx.md
         - Palo Alto: collectors/services/paloalto.md
         - Ping: collectors/services/ping.md
+        - TCP: collectors/services/tcp.md
   - Integrations:
       - Overview: integrations/index.md
       - ConnectWise Manage: integrations/connectwise_manage.md

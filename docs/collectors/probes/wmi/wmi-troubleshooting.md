@@ -67,30 +67,22 @@ Configured LocalAccountTokenFilterPolicy to grant administrative rights remotely
 
 #### Verify Security Policy settings
 
-In **Security Settings** --> **Local Policies** --> **Security Options** check these settings:
+1. Start the group policy editor `gpedit.msc`
+2. Navigate to:<br>
+   :material-arrow-right-bottom: *Computer Configuration*<br>
+   :material-arrow-right-bottom: *Windows Settings*<br>
+   :material-arrow-right-bottom: *Security Settings*<br>
+   :material-arrow-right-bottom: *Local Policies*<br>
+   :material-arrow-right-bottom: *Security Options*
+3. check these policies:
+    1. `Network access: Do not allow storage of passwords and credentials for network authentication`,<br> this must be set to: **DISABLED**.
+    2. `Network access: Sharing and security model for local accounts`,<br> this must be set to **CLASSIC**.
+    3. `Network security: LAN Manager authentication level`,<br> should be: **Not Defined**<br> or set to: **Send LM & NTLM - use NTLMv2 session security if negotiated**.<br>*This also should fix any `NTSTATUS: NT_STATUS_ACCESS_DENIED` errors*
 
-- Network access
-  - Do not allow storage of passwords and credentials for network authentication, must be **DISABLED**.
-  - Sharing and security model for local accounts must be set to **CLASSIC**.
-
-Typically we see these settings configured via Group Policy for standalone systems. These are part of the Local Security Policy.
-
-#### LAN Manager authentication level
-
-LAN Manager authentication level can cause the query error: `NTSTATUS: NT_STATUS_ACCESS_DENIED`:
-
-1. Start the group policy editor `gpedit.msc`.
-2. Browse to:
-   1. Computer Configuration
-   2. Windows Settings
-   3. Security Settings
-   4. Local Policies
-   5. Security Options
-3. Verify if **Network security: LAN Manager authentication level** is set to: `Send LM & NTLM - use NTLMv2 session security if negotiated`.
 
 #### Remote UAC
 
-If you are monitoring a non-domain Windows asset you might see the notification `unable to authenticate: ACCESS_DENIED (5)`
+If you are monitoring a Windows asset using a local administrator account you might see the notification `unable to authenticate: ACCESS_DENIED (5)`
 
 This might happens if you don't use the local administrator account itself but instead created a separate account, even if this is a member of the local administrators group.
 
@@ -98,10 +90,16 @@ To fix this you need to disable remote User Account Control (UAC). Disabling rem
 
 To disable remote UAC for a workgroup computer:
 
-1. Using an administrator account, logon the computer you want to monitor.
-2. Go to Start → Accessories → Command Prompt. Type `regedit`
-3. Browse to the key: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
-4. Locate or create a **DWORD** entry named `LocalAccountTokenFilterPolicy` and provide a **DWORD** value of `1`. To re-enable remote UAC, change this value to 0.
+1. Open the registry editor (`regedit`) on the computer you want to monitor.
+2. Browse to the key: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
+3. Locate or create a **DWORD** entry named `LocalAccountTokenFilterPolicy` and provide a **DWORD** value of `1`. To re-enable remote UAC, change this value to `0`.
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"LocalAccountTokenFilterPolicy"=dword:00000001
+```
 
 
 ### WMI error 0x80041010
@@ -190,7 +188,7 @@ sc sdset SCMANAGER D:(A;;CCLCRPRC;;;AU)(A;;CCLCRPWPRC;;;SY)(A;;KA;;;BA)S:(AU;FA;
 
 ### Reverse DNS
 
-WMI can fail when querying on an IP address, if reverse DNS is not ok.
+We have seen instances were WMI fails querying on an IP address, if reverse DNS is not ok.
 
 ### Netlogon service
 
