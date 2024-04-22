@@ -41,7 +41,7 @@ We suggest the following set of access permissions for regular users:
 * :material-toggle-switch-outline: [View](#material-toggle-switch-outline-view)
 * :material-toggle-switch-outline: [AlertChange](#material-toggle-switch-outline-alertchange)
 
-Option we suggest adding:
+Optionally we suggest adding:
 
 * :material-toggle-switch-outline: [AlertAssign](#material-toggle-switch-outline-alertassign) as this allows the user to assign alerts to users.
 * :material-toggle-switch-outline: [ReportingView](#material-toggle-switch-outline-reportingview), access to reports can help users to get a better understanding.
@@ -50,6 +50,9 @@ Option we suggest adding:
 
 ## Permissions
 
+!!! Note "Dashboard only access"
+    When **no flags** are set the specified user has[dashboard](./dashboard.md) access only.
+    
 We have listed each of the specific InfraSonar permission flags below:
 
 ### **:material-toggle-switch-outline: Is member**
