@@ -20,7 +20,7 @@ Field               | Return type       | Description
 `id`                | integer           | Key string of the alert.
 `size`              | integer           | Initial message when the alert was opened.
 `created`           | integer           | Unix timestamp in seconds when the file was created in InfraSonar.
-`type`              | string            | One of `xml`, `json`, `docx`, `xlsx`, `csv`, `pdf`, `image`, `text`, `markdown` or `unknown`.
+`type`              | string            | One of `xml`, `json`, `docx`, `xlsx`, `csv`, `pdf`, `image`, `text`, `markdown`, `compressed` or `unknown`.
 `name`              | string            | File name.
 `labels`            | array(integer)    | List with label Ids.
 
