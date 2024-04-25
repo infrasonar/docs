@@ -211,3 +211,10 @@ nav:
       - Reporting:
         - Query reporting: api/reporting/query.md
         - Get report: api/reporting/get-report.md
+      - Files:
+        - Query files: api/files/query-files.md
+        - Query file: api/files/query-file.md
+        - Upload file: api/files/upload-file.md
+        - Download file: api/files/download-file.md
+        - Modify file: api/files/modify-file.md
+        - Delete file: api/files/delete-file.md

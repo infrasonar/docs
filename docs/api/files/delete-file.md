@@ -1,14 +1,14 @@
-# Remove label from asset
-**`DELETE` /asset/<assetId\>/label/<labelId\>**
+# Delete a file
+**`DELETE` /container/<containerId\>/file/<fileId\>**
 
 ### Description
-Remove a label from an asset. Success _(204)_ is also returned when the label was not assigned to the asset.
+Delete a file.
 
 ### Path parameters
 Param               | Description
 --------------------|-------------
-`assetId`           | Asset Id.
-`labelId`           | Label Id.
+`containerId`       | Container Id.
+`fileId`            | File Id.
 
 ### Query parameters
 _none_
@@ -22,12 +22,12 @@ Error code  | Reason
 `204`       | Success.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
-`404`       | Asset or label not found.
+`404`       | Container or file not found.
 
 ### Example
 Curl request:
 ```bash
 curl \
-    -X DELETE 'https://api.infrasonar.com/asset/123/label/456' \
+    -X DELETE 'https://api.infrasonar.com/container/123/file/456' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```

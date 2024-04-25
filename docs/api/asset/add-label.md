@@ -30,6 +30,6 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X PUT 'https://api.infrasonar.com/asset/123/label/123' \
+    -X PUT 'https://api.infrasonar.com/asset/123/label/456' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```

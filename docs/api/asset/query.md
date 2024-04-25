@@ -1,5 +1,5 @@
 # Query asset
-**`GET`/asset/<assetId\>?fields=...**
+**`GET` /asset/<assetId\>?fields=...**
 
 ### Description
 Query asset details.

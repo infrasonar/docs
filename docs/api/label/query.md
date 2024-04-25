@@ -1,5 +1,5 @@
 # Query label
-**`GET`/label/<labelId\>?fields=...**
+**`GET` /label/<labelId\>?fields=...**
 
 ### Description
 Query label details.

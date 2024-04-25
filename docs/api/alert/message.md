@@ -1,5 +1,5 @@
 # Add message to alert
-**`PUT`/alert/<alertKs\>/message**
+**`PUT` /alert/<alertKs\>/message**
 
 ### Description
 Add a message to an open alert. Success _(204)_ is also returned when the alert does not exist.

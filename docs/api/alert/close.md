@@ -1,5 +1,5 @@
 # Close alert
-**`PUT`/alert/<alertKs\>/close**
+**`PUT` /alert/<alertKs\>/close**
 
 ### Description
 Close an alert. An optional message can be provided. Success _(204)_ is also returned when the alert is already closed .
