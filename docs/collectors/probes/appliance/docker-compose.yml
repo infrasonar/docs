@@ -65,9 +65,9 @@ services:
   esx-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/esx-probe
-  # eventlog-probe:
-  #  << : *infrasonar
-  #  image: ghcr.io/infrasonar/eventlog-probe
+  eventlog-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/eventlog-probe
   hpilo-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/hpilo-probe
@@ -122,6 +122,9 @@ services:
   unifidevice-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/unifidevice-probe
+  unifisite-probe:
+    << : *infrasonar
+    image: ghcr.io/infrasonar/unifisite-probe
   vcenter-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/vcenter-probe
