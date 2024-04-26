@@ -149,7 +149,7 @@ nav:
             - Synology: collectors/probes/snmp/synology.md
             - UniFi: collectors/probes/snmp/unifi.md
         - TCP: collectors/probes/tcp.md
-        - UniFi: collectors/probes/unificontroller.md
+        - UniFi: collectors/probes/unifi.md
         - VMWare:
             - collectors/probes/vmware/index.md
             - ESXi: collectors/probes/vmware/esx.md
@@ -165,6 +165,7 @@ nav:
         - Palo Alto: collectors/services/paloalto.md
         - Ping: collectors/services/ping.md
         - TCP: collectors/services/tcp.md
+        - UniFi: collectors/services/unifi.md
   - Integrations:
       - Overview: integrations/index.md
       - ConnectWise Manage: integrations/connectwise_manage.md
