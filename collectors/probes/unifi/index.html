@@ -2762,34 +2762,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#probe-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Probe configuration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Probe configuration">
+    <nav class="md-nav" aria-label="Introduction">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2802,19 +2775,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#asset-configuration" class="md-nav__link">
+  <a href="#deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Asset configuration
+      Deployment
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Asset configuration">
+    <nav class="md-nav" aria-label="Deployment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#controller" class="md-nav__link">
+  <a href="#unifi-controller" class="md-nav__link">
     <span class="md-ellipsis">
-      Controller
+      UniFi controller
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unifi-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      UniFi Site
     </span>
   </a>
   
@@ -3009,6 +2991,8 @@
       
         
           
+        
+      
         
       
         
@@ -3232,6 +3216,27 @@
   
   <span class="md-ellipsis">
     TCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/unifi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UniFi
   </span>
   
 
@@ -4725,34 +4730,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#probe-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Probe configuration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Probe configuration">
+    <nav class="md-nav" aria-label="Introduction">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4765,19 +4743,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#asset-configuration" class="md-nav__link">
+  <a href="#deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Asset configuration
+      Deployment
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Asset configuration">
+    <nav class="md-nav" aria-label="Deployment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#controller" class="md-nav__link">
+  <a href="#unifi-controller" class="md-nav__link">
     <span class="md-ellipsis">
-      Controller
+      UniFi controller
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unifi-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      UniFi Site
     </span>
   </a>
   
@@ -4829,18 +4816,59 @@
 <p><img align="right" alt="UniFi-Probe" src="../../../images/probe_unifi.png" width="150" /></p>
 <h1 id="unifi">UniFi</h1>
 <h2 id="introduction">Introduction</h2>
-<p>The UniFi controller probe uses the UniFi API to collect data from the UniFi controller.</p>
+<p>A UniFi environment has a hierarchical setup, a controller can contain one or more sites and a site consists of one or more devices. </p>
+<pre class="mermaid"><code>graph TD
+  controller(("`UniFi
+  controller`"))
+  site-1(("`UniFi
+  site`"))
+  site-2(("`UniFi
+  site`"))
+  site-3(("`UniFi
+  site`"))
+  device-1-1(("`UniFi
+  device`"))
+  device-1-2(("`UniFi
+  device`"))
+  device-1-3(("`UniFi
+  device`"))
+  device-2-1(("`UniFi
+  device`"))
+  device-2-2(("`UniFi
+  device`"))
+  device-2-3(("`UniFi
+  device`"))
+  device-3-1(("`UniFi
+  device`"))
+  device-3-2(("`UniFi
+  device`"))
+  device-3-3(("`UniFi
+  device`"))
+  controller --&gt; site-1
+  controller --&gt; site-2
+  controller --&gt; site-3
+  site-1 --&gt; device-1-1
+  site-1 --&gt; device-1-2
+  site-1 --&gt; device-1-3
+  site-2 --&gt; device-2-1
+  site-2 --&gt; device-2-2
+  site-2 --&gt; device-2-3
+  site-3 --&gt; device-3-1
+  site-3 --&gt; device-3-2
+  site-3 --&gt; device-3-3</code></pre>
+<p>To fully support this hierarchical setup we created three corresponding collectors:</p>
+<ul>
+<li><a href="./unificontroller.md">UniFi Controller</a></li>
+<li><a href="./unifisite.md">UniFi Site</a></li>
+<li><a href="./unifidevice.md">UniFi Device</a></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">See also our UniFi SNMP probe</p>
 <p>When you have no controller you can also use our <a href="../snmp/unifi/">UniFi SNMP probe</a> to access UniFi devices directly.</p>
 </div>
-<h2 id="features">Features</h2>
-<h2 id="deployment">Deployment</h2>
-<p>The UniFi probe can easily be deployed using our <a href="../appliance/appliance_manager/">appliance manager</a>.</p>
-<h2 id="probe-configuration">Probe configuration</h2>
 <h3 id="credentials">Credentials</h3>
-<p>The UniFi controller and UniFi device probe use the same read-only credentials to access the UniFi API.</p>
-<p>Use the following sections in our credentials file:</p>
+<p>All three collectors use the UniFi API to collect data from the UniFi controller and this the same read-only credentials.</p>
+<p>Use the following sections in your credentials file:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">unificontroller</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">config</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;username&quot;</span>
@@ -4849,38 +4877,47 @@
 <span class="w">  </span><span class="nt">use</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unificontroller</span>
 </code></pre></div>
 <p>See our <a href="../appliance/credentials/">credentials documentation</a> for more detailed information.</p>
-<h3 id="asset-configuration">Asset configuration</h3>
-<p>Ensure the UniFi Controller probe is setup and returning data before adding UniFi devices as you need information retrieved by the UniFi controller to setup the UniFi devices.</p>
-<h4 id="controller">Controller</h4>
+<h3 id="deployment">Deployment</h3>
+<p>The UniFi probes can easily be deployed using our <a href="../appliance/appliance_manager/">appliance manager</a>.</p>
+<h4 id="unifi-controller">UniFi controller</h4>
 <ol>
-<li>Start by adding an asset for the controller</li>
-<li>Next set kind to <strong>UniFi</strong> in the <em>General</em> section</li>
-<li>Add the <strong>unificontroller</strong> collector</li>
-<li>Open the <strong>unificontroller</strong> collector configuration tab<ol>
-<li>Enter the <strong>address</strong> (IP or FQDN) of the UniFi controller</li>
-<li>Ensure the correct <strong>port</strong> is set</li>
-<li>Set the <strong>site</strong> name.</li>
+<li>Start by adding an asset for the controller.</li>
+<li>Next set kind to <strong>UniFi</strong> in the <em>General</em> section.</li>
+<li>Add the <strong>unificontroller</strong> collector.</li>
+<li>Open the <strong>unificontroller</strong> collector configuration tab.<ol>
+<li>Enter the <strong>address</strong> (IP or FQDN) of the UniFi controller.</li>
+<li>Ensure the correct <strong>port</strong> is set.</li>
 </ol>
 </li>
 </ol>
+<h4 id="unifi-site">UniFi Site</h4>
+<ol>
+<li>Open the UniFi controller asset.</li>
+<li>Locate the <strong>Sites</strong> widget</li>
+<li>Click the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4Z"/></svg></span> icon for the site you want to add.</li>
+<li>Choose wether you want to create a new asset of add the site to an existing asset, using a new asset is most often preferred.</li>
+<li>Verify the suggested settings and click <strong>Save</strong>.</li>
+<li>The site will now appear with a <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg></span> icon indicating it has been setup.</li>
+<li>Add the correct labels to the newly created asset and add the <a href="../../services/last_seen/">lastseen</a> collector if desired.</li>
+</ol>
+<p>You can automate this step using our <a href="https://github.com/infrasonar/toolkit">toolkit</a> and UniFi devices report.</p>
 <h4 id="unifi-devices">UniFi devices</h4>
 <ol>
-<li>Start by adding an asset for the UniFi device</li>
-<li>Next set kind to <strong>UniFi</strong> in the <em>General</em> section</li>
-<li>Add the <strong>unifidevice</strong> collector</li>
-<li>Open the <strong>unifidevice</strong> collector configuration tab<ol>
-<li>Enter the <strong>address</strong> (IP or FQDN) of the UniFi controller</li>
-<li>Ensure the correct <strong>port</strong> is set</li>
-<li>Set the <strong>site</strong> name.</li>
-<li>Enter the MAC address of the UniFi </li>
+<li>Open the UniFi Site you want to add UniFi devices for.</li>
+<li>Locate the <strong>Devices</strong> widget</li>
+<li>Click the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4Z"/></svg></span> icon for the device you want to add.</li>
+<li>Choose wether you want to create a new asset of add the site to an existing asset, using a new asset is most often preferred.</li>
+<li>Verify the suggested settings and click <strong>Save</strong>.</li>
+<li>The device will now appear with a <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg></span> icon indicating it has been setup.</li>
+<li>Add the correct labels to the newly created asset and add the <a href="../../services/last_seen/">lastseen</a> collector if desired.</li>
 </ol>
-</li>
-</ol>
-<p>You can automate this step using our toolkit and UniFi devices report.</p>
-<p>Please reach out to <a href="../../../introduction/support/">support</a> for additional information.</p>
+<p>You can automate this step using our <a href="https://github.com/infrasonar/toolkit">toolkit</a> and UniFi devices report.</p>
 <h2 id="additional-information">Additional information</h2>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span> <a href="https://github.com/infrasonar/unificontroller-probe">UniFi Controller probe</a><br>
-<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span> <a href="https://github.com/infrasonar/unifidevice-probe">UniFi Device probe</a></p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span> <a href="https://github.com/infrasonar/unificontroller-probe">UniFi Controller probe</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span> <a href="https://github.com/infrasonar/unifisite-probe">UniFi Site probe</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span> <a href="https://github.com/infrasonar/unifidevice-probe">UniFi Device probe</a></li>
+</ul>
 
 
 
