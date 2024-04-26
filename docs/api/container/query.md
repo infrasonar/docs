@@ -1,5 +1,5 @@
 # Query container
-**`GET`/container/<containerId\>?fields=...**
+**`GET` /container/<containerId\>?fields=...**
 
 ### Description
 Query container details.

@@ -43,6 +43,6 @@ curl \
 Response:
 ```json
 {
-    "assetId": 123
+    "assetId": 456
 }
 ```

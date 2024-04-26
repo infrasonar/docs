@@ -1,5 +1,5 @@
 # Assign alert
-**`PUT`/alert/<alertKs\>/assign**
+**`PUT` /alert/<alertKs\>/assign**
 
 ### Description
 Assign an open alert to a user. The user _(userId)_ must be marked as a member of the container. Success _(204)_ is also returned when the alert does not exist.

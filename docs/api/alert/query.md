@@ -1,5 +1,5 @@
 # Query alert
-**`GET`/alert/<alertKs\>?fields=...&actions=...**
+**`GET` /alert/<alertKs\>?fields=...&actions=...**
 
 ### Description
 Query alert details. This API call will work for both an open _and_ closed alert.

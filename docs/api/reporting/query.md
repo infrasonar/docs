@@ -1,5 +1,5 @@
 # Query reporting
-**`GET`/reporting/<reportingId\>?fields=...**
+**`GET` /reporting/<reportingId\>?fields=...**
 
 ### Description
 Query reporting details.
