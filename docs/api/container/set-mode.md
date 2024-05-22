@@ -16,6 +16,8 @@ _none_
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
 `mode`      | string    | Yes       | One of `normal`, `maintenance` or `disabled`.
+`duration`  | integer   | No        | Duration for the mode in _minutes_. Accepts a value between `1` and `480` and only works when the mode is set to either `maintenance` or `disabled`. If `duration` is not given, the mode is changed indefinitely.
+
 
 ### Return codes
 Error code  | Reason
