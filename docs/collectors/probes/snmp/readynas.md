@@ -1,4 +1,4 @@
-![NetApp-Probe](../../../images/probe_readynas.png){ width="150" align=right}
+![ReadyNAS-Probe](../../../images/probe_readynas.png){ width="150" align=right}
 
 # Netgear - ReadyNAS
 

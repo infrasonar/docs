@@ -36,7 +36,7 @@ The SANtricity / NetApp E-Series probe can easily be deployed using our [applian
 
 ## Probe configuration
 
-* **Address**: IP address of FQDN of them anagement interface
+* **Address**: IP address of FQDN of them management interface
 * **Port**: The probe retrieves monitoring data using the ONTAP REST API on TCP port 8443, note we encountered deployments using TCP port 443.
 * **Storage system ID**: Storage system id to retrieve stats from. Can also be the WWN of the storage system. When not given we collect stats from "1"
 
