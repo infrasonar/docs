@@ -8,15 +8,6 @@
 
 InfraSonar supports retrieving data from remote assets using the *SNMPv1*, *SNMPv2c*, and *SNMPv3* protocol.
 
-Next to the base SNMP probe we have various vendor specific probes:
-
-* [APC UPS](apcups.md)
-* [Eaton](eaton.md)
-* [HP ILO](hpilo.md)
-* [HP ProCurve](hpprocurve.md)
-* [Synology](synology.md)
-* [UniFi](unifi.md)
-
 ## Deployment
 
 The SNMP probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
@@ -45,81 +36,6 @@ To monitor an asset using SNMP there ar two things two setup on the monitored as
 
 The SNMP probe requires SNMP to be configured on devices you wish to monitor. The next chapter describes how to configure SNMP on some standard devices.
 
-### MacOS
-
-_These steps don’t require a system restart and are non-service affecting._
-
-1. Open a new terminal window.
-2. Create a backup of the default SNMP configuration file: `sudo mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig`
-3. Create and edit a new SNMP configuration file using [nano](../appliance/nano_basics.md) or vi
-   Enter the following in the new configuration file:
-
-```
-com2sec mynetwork <NETWORK/CIDR> public
-rocommunity public default .1
-```
-* Replace `<NETWORK/CIDR>` with the network address and CIDR mask of the subnet your SNMP collector resides on, usually this is the monitoring appliance.
-* Replace the community string “public” with another string if that’s your preference.
-
-
-
-4. Enable the SNMP daemon:
-```
-sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
-```
-Note: If you later change the SNMP settings on your Mac, you’ll need to `unload` the configuration first:
-
-
-```
-sudo launchctl unload /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
-sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
-```
-
-### Ubuntu
-
-First step is to install the SNMP Daemon:
-
-```
-sudo apt-get update
-sudo apt-get install snmpd
-```
-
-Next is to edit the `snmpd.conf` file, this requires a few setting in this file to change:
-
-```title="/etc/snmp/snmpd.conf" hl_lines="2 3 5 7 8"
-
-sysLocation    Sitting on the Dock of the Bay
-sysContact     Me <me@example.org>
-
-agentAddress udp:161,udp6:[::1]:161
-
-rocommunity  public default
-rocommunity6 public default
-
-```
-
-Set `sysLocation` to the correct location for this device and set `sysContact` to the system administrator contact.
-
-`agentAddress` configures which IPv4 and IPv6 the SNMP daemon should listen on.
-
-Setting this to: `agentAddress udp:161,udp6:[::1]:161` will set the server to listen on all IPv4 and IPv6 addresses.
-
-Alternatively you can bind to a specific IP address as such:
-```
-agentAddress udp:192.168.1.5:161
-```
-This binds the SNMPD daemon to the IP address 192.168.1.5 on port 161.
-
-
-Set the desired community name, in this example we use `public`
-```
-rocommunity: rocommunity public
-```
-
-Last step is to restart the SNMPD service: `sudo service snmpd restart`
-
-YOu can verify the  SNMPD is started using: `sudo service snmpd status`
-
 ### FreeBSD
 
 Edit (as root) the file `/etc/snmpd.config`, find the following lines in the file:
@@ -140,7 +56,6 @@ Set the desired community name, in this example we use `public`
 ```
 read := "public"
 ```
-
 
 Enable **bsnmpd** in `/etc/rc.conf`
 
@@ -176,8 +91,38 @@ When done restart the bsnmp daemon:
 /etc/rc.d/bsnmpd restart
 ```
 
+### MacOS
 
-### Debian based systems
+_These steps don’t require a system restart and are non-service affecting._
+
+1. Open a new terminal window.
+2. Create a backup of the default SNMP configuration file: `sudo mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig`
+3. Create and edit a new SNMP configuration file using [nano](../appliance/nano_basics.md) or vi
+   Enter the following in the new configuration file:
+```
+com2sec mynetwork <NETWORK/CIDR> public
+rocommunity public default .1
+```
+* Replace `<NETWORK/CIDR>` with the network address and CIDR mask of the subnet your SNMP collector resides on, usually this is the monitoring appliance.
+* Replace the community string “public” with another string if that’s your preference.
+
+4. Enable the SNMP daemon:
+```
+sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+```
+Note: If you later change the SNMP settings on your Mac, you’ll need to `unload` the configuration first:
+```
+sudo launchctl unload /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+```
+
+### Linux
+
+#### CentOS
+
+You can find a guide on how to install SNMP on CentOS [here](https://www.liquidweb.com/kb/how-to-install-and-configure-snmp-on-centos/).
+
+#### Debian based systems
 
 The first step is to install `snmpd` using`apt`:
 
@@ -237,11 +182,52 @@ Jul 29 10:37:24 donkey-kong systemd[1]: Started Simple Network Management Protoc
 Jul 29 10:37:24 donkey-kong snmpd[14394]: NET-SNMP version 5.7.3
 ```
 
-### CentOS
+#### Ubuntu
 
-You can find a guide on how to install SNMP on CentOS [here](https://www.liquidweb.com/kb/how-to-install-and-configure-snmp-on-centos/).
+First step is to install the SNMP Daemon:
 
-#### HP Proliant hosts
+```
+sudo apt-get update
+sudo apt-get install snmpd
+```
+
+Next is to edit the `snmpd.conf` file, this requires a few setting in this file to change:
+
+```title="/etc/snmp/snmpd.conf" hl_lines="2 3 5 7 8"
+
+sysLocation    Sitting on the Dock of the Bay
+sysContact     Me <me@example.org>
+
+agentAddress udp:161,udp6:[::1]:161
+
+rocommunity  public default
+rocommunity6 public default
+
+```
+
+Set `sysLocation` to the correct location for this device and set `sysContact` to the system administrator contact.
+
+`agentAddress` configures which IPv4 and IPv6 the SNMP daemon should listen on.
+
+Setting this to: `agentAddress udp:161,udp6:[::1]:161` will set the server to listen on all IPv4 and IPv6 addresses.
+
+Alternatively you can bind to a specific IP address as such:
+```
+agentAddress udp:192.168.1.5:161
+```
+This binds the SNMPD daemon to the IP address 192.168.1.5 on port 161.
+
+
+Set the desired community name, in this example we use `public`
+```
+rocommunity: rocommunity public
+```
+
+Last step is to restart the SNMPD service: `sudo service snmpd restart`
+
+YOu can verify the  SNMPD is started using: `sudo service snmpd status`
+
+### HP Proliant hosts
 
 The HP agents can be installed and queried on HP Proliant hosts using SNMP. This section describes the setup.
 
@@ -333,3 +319,16 @@ InfraSonar derives the address info from the ifdescr oid `1.3.6.1.2.1.2.2.1.2`
 We have seen devices return data in a hexadecimal format which cannot be decoded.
 
 The solution for now is to disable the `ipAddress` check on the asset.
+
+## Vendor specific SNMP probes
+
+Next to the base SNMP probe we have various vendor specific SNMP based probes:
+
+* [APC UPS](apcups.md)
+* [Dell iDRAC](idrac.md)
+* [Eaton](eaton.md)
+* [HP ILO](hpilo.md)
+* [HP ProCurve](hpprocurve.md)
+* [ReadyNAS](readynas.md)
+* [Synology](synology.md)
+* [UniFi](unifi.md)
