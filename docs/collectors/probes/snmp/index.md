@@ -45,6 +45,36 @@ To monitor an asset using SNMP there ar two things two setup on the monitored as
 
 The SNMP probe requires SNMP to be configured on devices you wish to monitor. The next chapter describes how to configure SNMP on some standard devices.
 
+### MacOS
+
+_These steps don’t require a system restart and are non-service affecting._
+
+1. Open a new terminal window.
+2. Create a backup of the default SNMP configuration file: `sudo mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig`
+3. Create and edit a new SNMP configuration file using [nano](../appliance/nano_basics.md) or vi
+   Enter the following in the new configuration file:
+
+```
+com2sec mynetwork <NETWORK/CIDR> public
+rocommunity public default .1
+```
+* Replace `<NETWORK/CIDR>` with the network address and CIDR mask of the subnet your SNMP collector resides on, usually this is the monitoring appliance.
+* Replace the community string “public” with another string if that’s your preference.
+
+
+
+4. Enable the SNMP daemon:
+```
+sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+```
+Note: If you later change the SNMP settings on your Mac, you’ll need to `unload` the configuration first:
+
+
+```
+sudo launchctl unload /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+```
+
 ### Ubuntu
 
 First step is to install the SNMP Daemon:
