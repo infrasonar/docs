@@ -18,7 +18,7 @@ Data from a monitored environment is received and processed in the InfraSonar cl
 
 service                                               | source                         | destination        | TCP Port
 ------------------------------------------------------|--------------------------------|--------------------|----------
-[Frontend](../application/index.md)                    | any                            | app.infrasonar.com | 443
+[Frontend](../application/index.md)                   | any                            | app.infrasonar.com | 443
 [API](../api/overview.md)                             | any                            | api.infrasonar.com | 443
 [HUB](../collectors/probes/agentcore.md)              | any                            | hub.infrasonar.com | 8730
 [InfraSonar Service](../collectors/services/index.md) | 34.90.55.73 and 34.90.105.247  | any                | any
