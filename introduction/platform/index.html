@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -536,6 +536,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Platform
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -545,6 +556,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connection-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fronted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fronted
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      HUB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrasonar-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      InfraSonar Service
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4614,6 +4710,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connection-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fronted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fronted
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      HUB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrasonar-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      InfraSonar Service
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4636,6 +4806,58 @@
   </p>
 <figcaption>Architectural overview of the InfraSonar platform</figcaption>
 </figure>
+<h2 id="connection-points">Connection points</h2>
+<table>
+<thead>
+<tr>
+<th>service</th>
+<th>source</th>
+<th>destination</th>
+<th>TCP Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../application/">Frontend</a></td>
+<td>any</td>
+<td>app.infrasonar.com</td>
+<td>443</td>
+</tr>
+<tr>
+<td><a href="../../api/overview/">API</a></td>
+<td>any</td>
+<td>api.infrasonar.com</td>
+<td>443</td>
+</tr>
+<tr>
+<td><a href="../../collectors/probes/agentcore/">HUB</a></td>
+<td>any</td>
+<td>hub.infrasonar.com</td>
+<td>8730</td>
+</tr>
+<tr>
+<td><a href="../../collectors/services/">InfraSonar Service</a></td>
+<td>34.90.55.73 and 34.90.105.247</td>
+<td>any</td>
+<td>any</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notes">Notes</h3>
+<h4 id="fronted">Fronted</h4>
+<p>Users connect to our frontend using their web browser. This connection is SSL encrypted and users are required to logon using their Google or Microsoft identity.</p>
+<h4 id="api">API</h4>
+<p>The API endpoint is used by our <a href="../../collectors/agents/">agents</a> and can be used for automation tasks. API request require the use of a <a href="../../api/authentication/">token</a></p>
+<h4 id="hub">HUB</h4>
+<p>Probes send their data to the <a href="../../collectors/probes/agentcore/">Agentcore</a>. In most scenarios the <a href="../../collectors/probes/agentcore/">Agentcore</a> and <a href="../../collectors/probes/">probes</a> are deployed using an InfraSonar <a href="../../collectors/probes/appliance/">appliance</a> running in a customer environment.
+The <a href="../../collectors/probes/agentcore/">Agentcore</a> connects to hub.infrasonar.com using TCP port <code>8730</code> or TCP port <code>443</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Play nice and avoid using TCP port 443</p>
+<p>TCP port 443 can be configured as a fallback as most firewalls don't inspect traffic properly.
+We do advise however to keep friends with your firewall administrator and use TCP port 8730 as we use an encrypted streaming protocol and not HTTPS what would be expected on TCP port 443</p>
+</div>
+<h4 id="infrasonar-service">InfraSonar Service</h4>
+<p><a href="../../collectors/services/">InfraSonar services</a> connect to supported platforms using the protocol, URL or FQDN provided by the user or configured in the collector. In some scenario's our IP addresses must be authorized to allow data retrieval.</p>
 
 
 
