@@ -1,5 +1,7 @@
 # Auto-Shrink Enabled or Job has Shrink Steps
 
+[source](https://www.brentozar.com/blitz/auto-shrink-enabled/)
+
 Running out of disk space sucks.  SQL Server can help: it can automatically shrink databases to remove unused space.  However, this option has way more drawbacks than positives.  We check `sys.databases` to see if `is_auto_shrink_on = 1` for any of the databases.
 
 We can also create our own Agent jobs with `DBCC SHRINKDATABASE` or `SHRINKFILE` commands, too.  `sp_Blitz` also checks for jobs with those key words in the job steps.  It’s not perfect – for example, it doesn’t catch maintenance plans set up to shrink databases.
