@@ -14,7 +14,6 @@ Installing the required pip packages:
 pip install -r requirements.txt
 ```
 
-
 Start the server:
 
 ```bash

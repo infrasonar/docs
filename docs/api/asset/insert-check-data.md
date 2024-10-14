@@ -15,13 +15,35 @@ Param               | Description
 _none_
 
 ### Body
+
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`data`      | object    | Yes       | Object with check data.
+`data`      | object    | No        | Object with check data _(if not given, `error` must be provided)_.
 `version`   | string    | Yes       | Version of the collector.
 `runtime`   | float     | No        | Time it took for the check to run in seconds.
 `no_count`  | boolean   | No        | If `true`, the check result will not be _"counted"_ by InfraSonar and therefore _not_ affect _"last-seen"_.
 `timestamp` | integer   | No        | Unix timestamp in seconds. If omitted, InfraSonar will set the timestamp for the check data.
+`error`     | object    | No        | Object with error _(see [error](#error))_ _(if not given, `error` must be provided)_.
+
+> At least one of `data` or `error` must be provided, and both can be included.
+
+### Error
+
+An optional error might be provided which raises a check notification in InfraSonar. It is possible send both _data_ and an _error_.
+
+Param       | Type      | Required  | Description
+------------|-----------|-----------|-------------
+`severity`  | string    | No        | Severity of the error _(`LOW`, `MEDIUM` or `HIGH`)_.
+`message`   | string    | Yes       | Error message
+
+Example error object:
+
+```json
+{
+    "severity": "MEDIUM",
+    "message": "this is an example error message"
+}
+```
 
 ### Return codes
 Error code  | Reason
