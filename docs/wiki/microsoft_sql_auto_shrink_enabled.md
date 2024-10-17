@@ -1,4 +1,4 @@
-# Auto-Shrink Enabled or Job has Shrink Steps
+# Microsoft SQL Auto-Shrink Enabled or Job has Shrink Steps
 
 [source](https://www.brentozar.com/blitz/auto-shrink-enabled/)
 
