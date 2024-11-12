@@ -1,4 +1,4 @@
-# Query container collectors
+# Query container properties
 **`GET` /container/<containerId\>/properties?kind=...&id=...&fields=...**
 
 ### Description

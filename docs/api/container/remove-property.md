@@ -1,4 +1,4 @@
-# Remove label from asset
+# Remove property from container
 **`DELETE` /container/<containerId\>/properties/<id>/<key>**
 
 ### Description

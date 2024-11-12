@@ -1,4 +1,4 @@
-# Query container collectors
+# Set property on container
 **`POST` /container/<containerId\>/properties**
 
 ### Description
