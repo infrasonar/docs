@@ -13,7 +13,7 @@ Param               | Description
 Param       | Default       | Description
 ------------|---------------|-------------
 `fields`    | _all fields_  | Fields to return _(see fields below for all available fields)_.
-`kind`      | _none_        | Only properties for a specific kind. One of `asset`, `container`, `condition` or `user`.
+`kind`      | _none_        | Only properties for a specific kind. One of `Asset`, `Container`, `Condition` or `User`.
 `id`        | _none_        | Only properties for a given Id.
 
 ### Fields
