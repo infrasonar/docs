@@ -21,6 +21,7 @@ Field               | Return type   | Description
 `name`              | string        | Container name.
 `timezone`          | string        | Container time-zone.
 `mode`              | string        | One of `normal`, `maintenance` or `disabled`.
+`properties`        | array(object) | List with property object. Each property container a `key` and `value` property.
 
 
 ### Return codes
