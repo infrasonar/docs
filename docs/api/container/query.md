@@ -47,6 +47,10 @@ Response:
     "id": 123,
     "mode": "normal",
     "name": "My Container",
-    "timezone": "Europe/Amsterdam"
+    "timezone": "Europe/Amsterdam",
+    "properties": [{
+        "key": "myProp",
+        "value": null
+    }]
 }
 ```

@@ -61,6 +61,12 @@ Response:
     "kind": "Asset",
     "description": "My host",
     "mode": "normal",
-    "labels": [456, 789]
+    "labels": [456, 789],
+    "disabledChecks": [],
+    "properties": [{
+        "key": "myProp",
+        "value": "some value"
+    }]
+
 }
 ```
