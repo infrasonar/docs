@@ -310,6 +310,39 @@ For the modifications to take effect, the SNMPD must be restarted using the foll
 /etc/init.d/snmpd restart
 ```
 
+### Solaris
+
+#### Solaris 10
+Edit community string, acl on config file: `/etc/sma/snmp/snmpd.conf`
+
+By default SNMP service is installed and enabled on Solaris 10 with service name: `sma`
+After change config file you need to restart sma service for changes take effect.
+
+```bash
+svcadm restart sma
+```
+
+#### Solaris 11
+
+Edit the community string, acl on config file: `/etc/net-snmp/snmp/snmpd.conf`
+
+By default SNMP service is installed and disabled on Solaris 11 with service name: `net-snmp` so we need to enable it:
+
+```bash
+svcadm enable net-snmp
+```
+
+You can verify if the service is running using the `svcs` command:
+
+```bash
+svcs -a | grep -i snmp
+disabled       10:15:28 svc:/system/fm/snmp-notify:default
+online         10:23:04 svc:/application/management/net-snmp:default
+```
+
+
+
+
 ## Known issues
 
 ### Unable to derive address info
