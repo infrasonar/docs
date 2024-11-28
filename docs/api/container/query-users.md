@@ -24,7 +24,7 @@ Field               | Return type       | Description
 --------------------|-------------------|-------------
 `id`                | int               | Id for the user.
 `name`              | string            | Name for the user.
-`email`             | string            | Email for the user.
+`email`             | string/null       | Email for the user or `null` when not visible for the user.
 `authProvider`      | string            | Authentication provider for the user. One of `Google`, `Microsoft` or `Password`.
 `inherit`           | boolean           | `True` when the user is inherited from another container, `False` if the user is added to the container.
 `member`            | boolean           | `True` when the user is markered as a member. Alerts can only be assigned to members of the container.
@@ -37,7 +37,7 @@ Error code  | Reason
 `200`       | Success.
 `400`       | Unknown field or invalid query param.
 `401`       | Invalid or missing token.
-`403`       | Insufficient permissions _(required: `API`+`CONTAINER_ACCESS`)_.
+`403`       | Insufficient permissions _(required: `API`+`READ`)_.
 `404`       | Container not found.
 
 ### Example
