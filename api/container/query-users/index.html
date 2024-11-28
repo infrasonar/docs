@@ -5072,8 +5072,8 @@
 </tr>
 <tr>
 <td><code>email</code></td>
-<td>string</td>
-<td>Email for the user.</td>
+<td>string/null</td>
+<td>Email for the user or <code>null</code> when not visible for the user.</td>
 </tr>
 <tr>
 <td><code>authProvider</code></td>
@@ -5125,7 +5125,7 @@
 </tr>
 <tr>
 <td><code>403</code></td>
-<td>Insufficient permissions <em>(required: <code>API</code>+<code>CONTAINER_ACCESS</code>)</em>.</td>
+<td>Insufficient permissions <em>(required: <code>API</code>+<code>READ</code>)</em>.</td>
 </tr>
 <tr>
 <td><code>404</code></td>
