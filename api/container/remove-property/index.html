@@ -9,14 +9,14 @@
       
       
       
-        <link rel="prev" href="../set-property/">
+        <link rel="prev" href="../remove-invite/">
       
       
-        <link rel="next" href="../purge-notifications/">
+        <link rel="next" href="../remove-user/">
       
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -3991,6 +3991,18 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -4026,6 +4038,48 @@
             Container
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-invite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create invite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -4181,6 +4235,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../query-users/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Query container users
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../set-mode/" class="md-nav__link">
         
   
@@ -4207,6 +4282,27 @@
   
   <span class="md-ellipsis">
     Set container property
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remove-invite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove invite
   </span>
   
 
@@ -4338,6 +4434,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../remove-user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../purge-notifications/" class="md-nav__link">
         
   
@@ -4364,6 +4481,27 @@
   
   <span class="md-ellipsis">
     Purge time-series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update-user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update user permissions
   </span>
   
 
@@ -4850,7 +4988,7 @@
 
 
 <h1 id="remove-property-from-container">Remove property from container</h1>
-<p><strong><code>DELETE</code> /container/&lt;containerId&gt;/properties/<id>/<key></strong></p>
+<p><strong><code>DELETE</code> /container/&lt;containerId&gt;/properties/<targetId>/<key></strong></p>
 <h3 id="description">Description</h3>
 <p>Remove a property from a container. Returns <code>204</code> even if the property did not exist.</p>
 <h3 id="path-parameters">Path parameters</h3>
@@ -4863,7 +5001,11 @@
 </thead>
 <tbody>
 <tr>
-<td><code>id</code></td>
+<td><code>containerId</code></td>
+<td>Container Id.</td>
+</tr>
+<tr>
+<td><code>targetId</code></td>
 <td>Target Id.</td>
 </tr>
 <tr>
@@ -4906,7 +5048,7 @@
 <h3 id="example">Example</h3>
 <p>Curl request:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/properties/123/my_prop&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/container/123/properties/456/my_prop&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>
 </code></pre></div></p>
 
@@ -4938,7 +5080,7 @@
     
       <nav class="md-footer__inner md-grid" aria-label="footer.title">
         
-          <a href="../set-property/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <a href="../remove-invite/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
@@ -4947,19 +5089,19 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                Set container property
+                Remove invite
               </div>
             </div>
           </a>
         
         
-          <a href="../purge-notifications/" class="md-footer__link md-footer__link--next" rel="next">
+          <a href="../remove-user/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                Purge notifications
+                Remove user
               </div>
             </div>
             <div class="md-footer__button md-icon">

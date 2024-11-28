@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -3996,6 +3996,18 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -4028,6 +4040,48 @@
             Container
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/container/add-user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/container/create-invite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create invite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -4183,6 +4237,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../api/container/query-users/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Query container users
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../api/container/set-mode/" class="md-nav__link">
         
   
@@ -4225,11 +4300,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../api/container/remove-invite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove invite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../api/container/remove-property/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Remove container property
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/container/remove-user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove user
   </span>
   
 
@@ -4272,6 +4389,27 @@
   
   <span class="md-ellipsis">
     Purge time-series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/container/update-user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update user permissions
   </span>
   
 
@@ -4818,6 +4956,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#solaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solaris
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solaris">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solaris-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solaris 10
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solaris-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solaris 11
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5110,6 +5281,23 @@ syslocation &lt;system_location&gt;
 </table>
 <p>For the modifications to take effect, the SNMPD must be restarted using the following command:</p>
 <div class="highlight"><pre><span></span><code>/etc/init.d/snmpd<span class="w"> </span>restart
+</code></pre></div>
+<h3 id="solaris">Solaris</h3>
+<h4 id="solaris-10">Solaris 10</h4>
+<p>Edit community string, acl on config file: <code>/etc/sma/snmp/snmpd.conf</code></p>
+<p>By default SNMP service is installed and enabled on Solaris 10 with service name: <code>sma</code>
+After change config file you need to restart sma service for changes take effect.</p>
+<div class="highlight"><pre><span></span><code>svcadm<span class="w"> </span>restart<span class="w"> </span>sma
+</code></pre></div>
+<h4 id="solaris-11">Solaris 11</h4>
+<p>Edit the community string, acl on config file: <code>/etc/net-snmp/snmp/snmpd.conf</code></p>
+<p>By default SNMP service is installed and disabled on Solaris 11 with service name: <code>net-snmp</code> so we need to enable it:</p>
+<div class="highlight"><pre><span></span><code>svcadm<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>net-snmp
+</code></pre></div>
+<p>You can verify if the service is running using the <code>svcs</code> command:</p>
+<div class="highlight"><pre><span></span><code>svcs<span class="w"> </span>-a<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>snmp
+disabled<span class="w">       </span><span class="m">10</span>:15:28<span class="w"> </span>svc:/system/fm/snmp-notify:default
+online<span class="w">         </span><span class="m">10</span>:23:04<span class="w"> </span>svc:/application/management/net-snmp:default
 </code></pre></div>
 <h2 id="known-issues">Known issues</h2>
 <h3 id="unable-to-derive-address-info">Unable to derive address info</h3>
