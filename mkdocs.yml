@@ -198,6 +198,8 @@ nav:
         - Assign alert: api/alert/assign.md
         - Close alert: api/alert/close.md
       - Container:
+        - Add user: api/container/add-user.md
+        - Create invite: api/container/create-invite.md
         - Create asset: api/container/create-asset.md
         - Query container: api/container/query.md
         - Query container Id: api/container/query-id.md
@@ -205,11 +207,15 @@ nav:
         - Query container assets: api/container/query-assets.md
         - Query container collectors: api/container/query-collectors.md
         - Query container properties: api/container/query-properties.md
+        - Query container users: api/container/query-users.md
         - Set container mode: api/container/set-mode.md
         - Set container property: api/container/set-property.md
+        - Remove invite: api/container/remove-invite.md
         - Remove container property: api/container/remove-property.md
+        - Remove user: api/container/remove-user.md
         - Purge notifications: api/container/purge-notifications.md
         - Purge time-series: api/container/purge-time-series.md
+        - Update user permissions: api/container/update-user.md
 
       - Label:
         - Query label: api/label/query.md

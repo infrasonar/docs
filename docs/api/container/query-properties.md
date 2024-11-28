@@ -2,7 +2,7 @@
 **`GET` /container/<containerId\>/properties?kind=...&id=...&fields=...**
 
 ### Description
-Query all properties for a given container.
+Query all properties for a given container. Each property is assigned to an object, which we call the _"target"_ object.
 
 ### Path parameters
 Param               | Description
