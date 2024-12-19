@@ -11,9 +11,10 @@ Param               | Description
 `alertKs`           | Alert key string _(ks)_.
 
 ### Body
-Param       | Type      | Required  | Description
-------------|-----------|-----------|-------------
-`message`   | string    | No        | Optional message _(max 240 characters, default empty)_.
+Param           | Type      | Required  | Description
+----------------|-----------|-----------|-------------
+`message`       | string    | No        | Optional message _(max 2000 characters, default empty)_.
+`isSolution`    | boolean   | No        | Mark as a solution to the problem _(requires a message of at least 60 characters)_.
 
 ### Return codes
 Error code  | Reason
