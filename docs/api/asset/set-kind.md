@@ -28,6 +28,7 @@ Logo                                                                            
 <img src="https://app.infrasonar.com/static/images/hosticons/citrix.png" style="margin:0; width:20px;"/>        | `Citrix`
 <img src="https://app.infrasonar.com/static/images/hosticons/database.png" style="margin:0; width:20px;"/>      | `Database`
 <img src="https://app.infrasonar.com/static/images/hosticons/dell.png" style="margin:0; width:20px;"/>          | `Dell`
+<img src="https://app.infrasonar.com/static/images/hosticons/discovery.png" style="margin:0; width:20px;"/>     | `Discovery`
 <img src="https://app.infrasonar.com/static/images/hosticons/dns.png" style="margin:0; width:20px;"/>           | `DNS`
 <img src="https://app.infrasonar.com/static/images/hosticons/docker.png" style="margin:0; width:20px;"/>        | `Docker`
 <img src="https://app.infrasonar.com/static/images/hosticons/eaton.png" style="margin:0; width:20px;"/>         | `Eaton`
