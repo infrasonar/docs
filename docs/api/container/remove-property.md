@@ -1,5 +1,5 @@
 # Remove property from container
-**`DELETE` /container/<containerId\>/properties/<targetId>/<key>**
+**`DELETE` /container/<containerId\>/properties/<targetId\>/<key\>**
 
 ### Description
 Remove a property from a container. Returns `204` even if the property did not exist.
