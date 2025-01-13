@@ -22,7 +22,8 @@ Field               | Return type       | Description
 `name`              | string            | Collector name.
 `kind`              | string            | One of `agent`, `probe` or `service`.
 `info`              | string            | Collector info.
-`min-version`       | string            | Minimal required version for the collector.
+`minVersion`        | string            | Minimal required version for the collector.
+`checks`            | array(string)     | Array with check keys.
 
 ### Options
 Option field     | Return type   | Description
