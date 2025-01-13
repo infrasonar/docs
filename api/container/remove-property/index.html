@@ -20,7 +20,7 @@
     
     
       
-        <title>Remove container property - InfraSonar</title>
+        <title>Remove property - InfraSonar</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#remove-property-from-container" class="md-skip">
+        <a href="#remove-property" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Remove container property
+              Remove property
             
           </span>
         </div>
@@ -3389,6 +3389,8 @@
       
         
       
+        
+      
     
     
       
@@ -3647,6 +3649,27 @@
   
   <span class="md-ellipsis">
     Set asset name
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asset/set-zone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set asset zone
   </span>
   
 
@@ -4005,6 +4028,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
       
@@ -4279,6 +4308,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../query-zones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Query container zones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../set-mode/" class="md-nav__link">
         
   
@@ -4304,7 +4354,7 @@
         
   
   <span class="md-ellipsis">
-    Set container property
+    Set property
   </span>
   
 
@@ -4355,7 +4405,7 @@
           
   
   <span class="md-ellipsis">
-    Remove container property
+    Remove property
   </span>
   
 
@@ -4366,7 +4416,7 @@
         
   
   <span class="md-ellipsis">
-    Remove container property
+    Remove property
   </span>
   
 
@@ -4478,6 +4528,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../remove-zone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove zone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../purge-notifications/" class="md-nav__link">
         
   
@@ -4525,6 +4596,27 @@
   
   <span class="md-ellipsis">
     Update user permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upsert-zone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upsert zone
   </span>
   
 
@@ -5010,10 +5102,10 @@
                   
 
 
-<h1 id="remove-property-from-container">Remove property from container</h1>
-<p><strong><code>DELETE</code> /container/&lt;containerId&gt;/properties/<targetId>/<key></strong></p>
+<h1 id="remove-property">Remove property</h1>
+<p><strong><code>DELETE</code> /container/&lt;containerId&gt;/properties/&lt;targetId&gt;/&lt;key&gt;</strong></p>
 <h3 id="description">Description</h3>
-<p>Remove a property from a container. Returns <code>204</code> even if the property did not exist.</p>
+<p>Remove a property. Returns <code>204</code> even if the property did not exist.</p>
 <h3 id="path-parameters">Path parameters</h3>
 <table>
 <thead>

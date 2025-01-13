@@ -3389,6 +3389,8 @@
       
         
       
+        
+      
     
     
       
@@ -3647,6 +3649,27 @@
   
   <span class="md-ellipsis">
     Set asset name
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asset/set-zone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set asset zone
   </span>
   
 
@@ -3966,6 +3989,12 @@
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -4382,6 +4411,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../query-zones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Query container zones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../set-mode/" class="md-nav__link">
         
   
@@ -4407,7 +4457,7 @@
         
   
   <span class="md-ellipsis">
-    Set container property
+    Set property
   </span>
   
 
@@ -4449,7 +4499,7 @@
         
   
   <span class="md-ellipsis">
-    Remove container property
+    Remove property
   </span>
   
 
@@ -4471,6 +4521,27 @@
   
   <span class="md-ellipsis">
     Remove user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remove-zone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove zone
   </span>
   
 
@@ -4534,6 +4605,27 @@
   
   <span class="md-ellipsis">
     Update user permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upsert-zone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upsert zone
   </span>
   
 
@@ -5078,6 +5170,16 @@
 <td>Only assets with another kind than the given kind <em>(e.g not-kind=Asset)</em>.</td>
 </tr>
 <tr>
+<td><code>zone</code></td>
+<td><em>none</em></td>
+<td>Only assets with the given zone Id_(e.g zone=0)_.</td>
+</tr>
+<tr>
+<td><code>not-zone</code></td>
+<td><em>none</em></td>
+<td>Only assets with another zone than the given zone Id <em>(e.g not-zone=1)</em>.</td>
+</tr>
+<tr>
 <td><code>mode</code></td>
 <td><em>none</em></td>
 <td>Only assets with the given mode <em>(e.g mode=normal)</em>.</td>
@@ -5128,6 +5230,11 @@
 <td><code>container</code></td>
 <td>integer</td>
 <td>Asset container Id <em>(Equal to containerId)</em>.</td>
+</tr>
+<tr>
+<td><code>zone</code></td>
+<td>integer</td>
+<td>Asset zone Id.</td>
 </tr>
 <tr>
 <td><code>name</code></td>
