@@ -16,6 +16,8 @@ Param               | Default           | Description
 `collectors`        | _none_            | Collector fields. If at least one field is given, the result will include "_collectors_" with an array of _collector_ objects _(see Collectors below for all available collector fields)_.
 `kind`              | _none_            | Only assets with the given kind _(e.g kind=Windows)_.
 `not-kind`          | _none_            | Only assets with another kind than the given kind _(e.g not-kind=Asset)_.
+`zone`              | _none_            | Only assets with the given zone Id_(e.g zone=0)_.
+`not-zone`          | _none_            | Only assets with another zone than the given zone Id _(e.g not-zone=1)_.
 `mode`              | _none_            | Only assets with the given mode _(e.g mode=normal)_.
 `not-mode`          | _none_            | Only assets with another mode than the given mode _(e.g not-mode=disabled)_.
 `collector`         | _none_            | Only assets with the given collector _(e.g collector=tcp)_.
@@ -28,6 +30,7 @@ Field               | Return type       | Description
 --------------------|-------------------|-------------
 `id`                | integer           | Asset Id.
 `container`         | integer           | Asset container Id _(Equal to containerId)_.
+`zone`              | integer           | Asset zone Id.
 `name`              | string            | Asset name.
 `kind`              | string            | One of the kinds _(see [set-kind](../asset/set-kind.md) api)_
 `description`       | string            | Asset description.

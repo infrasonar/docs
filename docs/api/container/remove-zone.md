@@ -1,15 +1,14 @@
-# Remove property
-**`DELETE` /container/<containerId\>/properties/<targetId\>/<key\>**
+# Remove user from container
+**`DELETE` /container/<containerId\>/zone/<zoneId\>**
 
 ### Description
-Remove a property. Returns `204` even if the property did not exist.
+Remove a user from the container.
 
 ### Path parameters
 Param               | Description
 --------------------|-------------
 `containerId`       | Container Id.
-`targetId`          | Target Id.
-`key`               | Property to remove.
+`zoneId`            | Zone Id.
 
 ### Query parameters
 _none_
@@ -22,13 +21,13 @@ Error code  | Reason
 ------------|--------
 `204`       | Success.
 `401`       | Invalid or missing token.
-`403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
+`403`       | Insufficient permissions _(required: `API`+`CONTAINER_ACCESS`)_.
 `404`       | Container not found.
 
 ### Example
 Curl request:
 ```bash
 curl \
-    -X DELETE 'https://api.infrasonar.com/container/123/properties/456/my_prop' \
+    -X DELETE 'https://api.infrasonar.com/container/123/zone/0' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```

@@ -185,6 +185,7 @@ nav:
         - Set asset kind: api/asset/set-kind.md
         - Set asset mode: api/asset/set-mode.md
         - Set asset name: api/asset/set-name.md
+        - Set asset zone: api/asset/set-zone.md
         - Add label to asset: api/asset/add-label.md
         - Purge notifications: api/asset/purge-notifications.md
         - Enable check: api/asset/enable-check.md
@@ -209,14 +210,17 @@ nav:
         - Query container collectors: api/container/query-collectors.md
         - Query container properties: api/container/query-properties.md
         - Query container users: api/container/query-users.md
+        - Query container zones: api/container/query-zones.md
         - Set container mode: api/container/set-mode.md
-        - Set container property: api/container/set-property.md
+        - Set property: api/container/set-property.md
         - Remove invite: api/container/remove-invite.md
-        - Remove container property: api/container/remove-property.md
+        - Remove property: api/container/remove-property.md
         - Remove user: api/container/remove-user.md
+        - Remove zone: api/container/remove-zone.md
         - Purge notifications: api/container/purge-notifications.md
         - Purge time-series: api/container/purge-time-series.md
         - Update user permissions: api/container/update-user.md
+        - Upsert zone: api/container/upsert-zone.md
 
       - Label:
         - Query label: api/label/query.md

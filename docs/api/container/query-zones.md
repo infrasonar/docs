@@ -1,33 +1,40 @@
-# Remove user from container
-**`DELETE` /container/<containerId\>/user/<userId\>**
+# Query container properties
+**`GET` /container/<containerId\>/zones**
 
 ### Description
-Remove a user from the container.
+Query all zones for a given container.
 
 ### Path parameters
 Param               | Description
 --------------------|-------------
 `containerId`       | Container Id.
-`userId`            | Zone Id.
 
 ### Query parameters
-_none_
-
-### Body
 _none_
 
 ### Return codes
 Error code  | Reason
 ------------|--------
-`204`       | Success.
+`200`       | Success.
+`400`       | Unknown field or invalid query param.
 `401`       | Invalid or missing token.
-`403`       | Insufficient permissions _(required: `API`+`CONTAINER_ACCESS`)_.
+`403`       | Insufficient permissions _(required: `API`+`READ`)_.
 `404`       | Container not found.
 
 ### Example
 Curl request:
 ```bash
 curl \
-    -X DELETE 'https://api.infrasonar.com/container/123/user/456' \
+    -X GET 'https://api.infrasonar.com/container/123/zones' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+```
+
+Response:
+```json
+[
+    {
+        "zone": 0,
+        "name": "default"
+    }
+]
 ```

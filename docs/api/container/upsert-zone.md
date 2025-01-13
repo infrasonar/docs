@@ -1,8 +1,8 @@
-# Set property
-**`POST` /container/<containerId\>/properties**
+# Create or update zone
+**`POST` /container/<containerId\>/zone**
 
 ### Description
-Create a property. Existing properties will be overwritten.
+Create or update a zone. Existing properties will be overwritten.
 
 ### Path parameters
 Param               | Description
@@ -15,10 +15,8 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`id`        | int       | Yes       | Target Id wherefore the property will be created.
-`kind`      | string    | Yes       | Must be one of `Asset`, `Container`, `Condition` or `User`.
-`key`       | string    | Yes       | Property key.
-`value`     | any       | Yes       | Property value which can be a _string_, _number_, _boolean_ or _null_.
+`zone`      | int       | Yes       | Zone Id.
+`name`      | string    | Yes       | Zone Name.
 
 ### Return codes
 Error code  | Reason
@@ -33,7 +31,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X POST 'https://api.infrasonar.com/container/123/properties' \
+    -X POST 'https://api.infrasonar.com/container/123/zone' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
