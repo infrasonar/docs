@@ -16,7 +16,7 @@ Error code  | Reason
 `200`       | Success.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`REPORTING_VIEW`)_.
-`404`       | Reporting not found.
+`404`       | Report not found.
 `XXX`       | Other errors may occur when the report is not available for download.
 
 ### Example

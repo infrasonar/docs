@@ -26,7 +26,7 @@ Error code  | Reason
 `400`       | Invalid body.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`CONTAINER_ACCESS`)_.
-`404`       | Asset or collector not found.
+`404`       | Container or user not found.
 
 ### Example
 Curl request:

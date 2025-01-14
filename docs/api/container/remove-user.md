@@ -22,7 +22,7 @@ Error code  | Reason
 `204`       | Success.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`CONTAINER_ACCESS`)_.
-`404`       | Container not found.
+`404`       | Container or user not found.
 
 ### Example
 Curl request:

@@ -1,8 +1,8 @@
-# Remove user from container
+# Remove zone from container
 **`DELETE` /container/<containerId\>/zone/<zoneId\>**
 
 ### Description
-Remove a user from the container.
+Remove a zone from the container.
 
 ### Path parameters
 Param               | Description
@@ -22,7 +22,7 @@ Error code  | Reason
 `204`       | Success.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`CONTAINER_ACCESS`)_.
-`404`       | Container not found.
+`404`       | Container or zone not found.
 
 ### Example
 Curl request:
