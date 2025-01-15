@@ -35,10 +35,8 @@ curl \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
-    "id": 123,
-    "kind": "Asset",
-    "key": "my_prop",
-    "value": "some value"
+    "zone": 1,
+    "name": "other zone"
 }'
 ```
 
