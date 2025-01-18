@@ -34,6 +34,6 @@ curl \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
-    "description": "This is cool label!"
+    "description": "This is a nice label!"
 }'
 ```

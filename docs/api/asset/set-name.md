@@ -34,6 +34,6 @@ curl \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
-    "name": "This is cool asset!"
+    "name": "my.asset.local"
 }'
 ```
