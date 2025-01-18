@@ -1,13 +1,13 @@
-# Set asset name
-**`PATCH` /asset/<assetId\>/name**
+# Set label name
+**`PATCH` /label/<labelId\>/name**
 
 ### Description
-Set the asset name. Success _(204)_ is also returned when the asset name has not been changed.
+Set the label name. Success _(204)_ is also returned when the label name has not been changed.
 
 ### Path parameters
 Param               | Description
 --------------------|-------------
-`assetId`           | Asset Id.
+`labelId`           | Label Id.
 
 ### Query parameters
 _none_
@@ -15,7 +15,7 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`name`      | string    | Yes       | Asset name.
+`name`      | string    | Yes       | Label name.
 
 ### Return codes
 Error code  | Reason
@@ -23,17 +23,17 @@ Error code  | Reason
 `204`       | Success.
 `400`       | Invalid body.
 `401`       | Invalid or missing token.
-`403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`)_.
-`404`       | Asset not found.
+`403`       | Insufficient permissions _(required: `API`+`CONTAINER_ADMIN`)_.
+`404`       | Label not found.
 
 ### Example
 Curl request:
 ```bash
 curl \
-    -X PATCH 'https://api.infrasonar.com/asset/123/name' \
+    -X PATCH 'https://api.infrasonar.com/label/123/name' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{
-    "name": "my.asset.local"
+    "name": "My Label"
 }'
 ```

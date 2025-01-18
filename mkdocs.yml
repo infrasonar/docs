@@ -221,9 +221,11 @@ nav:
         - Purge time-series: api/container/purge-time-series.md
         - Update user permissions: api/container/update-user.md
         - Upsert zone: api/container/upsert-zone.md
-
       - Label:
         - Query label: api/label/query.md
+        - Set label description: api/label/set-description.md
+        - Set label color: api/label/set-color.md
+        - Set label name: api/label/set-name.md
       - Reporting:
         - Query reporting: api/reporting/query.md
         - Get report: api/reporting/get-report.md
