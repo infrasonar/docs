@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-a-user" class="md-skip">
+        <a href="#wmi-as-a-non-admin-user" class="md-skip">
           Skip to content
         </a>
       
@@ -4968,6 +4968,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4994,9 +4996,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-confiugration" class="md-nav__link">
+  <a href="#local-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Local confiugration
+      Local configuration
     </span>
   </a>
   
@@ -5050,19 +5052,15 @@
                   
 
 
-  <h1>Non admin user</h1>
-
 <p><img align="right" alt="wmi-probe" src="../../../../images/probe_wmi.png" width="150" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This method requires mnauual actions to be taken on all Windows assets using this account.
-At the moment it is not possble to automate all actions using a GPO or script.
-(This is a by Microsoft design)</p>
-</div>
+<h1 id="wmi-as-a-non-admin-user">WMI as a non admin user</h1>
+<p>Using read-only accounts for monitoring is a security best practice. However, Microsoft's implementation of WMI makes this difficult on Windows systems, requiring manual configuration on each asset. This poses challenges for scalability and maintainability, especially in large environments.</p>
+<p>We strongly recommend carefully weighing the security risks against the operational overhead of configuring individual read-only access on each monitored Windows asset and potentially missing statuses form services as these potentially are now shown to regular users.</p>
+<p>The steps required to accomplish using a non domain admin account are outlined below.</p>
 <h2 id="create-a-user">Create a user</h2>
-<p>First step is to create a regular AD user without any additional permisions.</p>
+<p>First step is to create a regular AD user without any additional permissions.</p>
 <h2 id="group-policy">Group policy</h2>
-<p>The next step is to setup a GPO object to grant the just created user sufficant rights.</p>
+<p>The next step is to setup a GPO object to grant the just created user sufficient rights.</p>
 <ol>
 <li>Open the Group Policy Management console.</li>
 <li>create a GPO by right-clicking on <strong>Group Policy Objects</strong>.</li>
@@ -5081,7 +5079,7 @@ At the moment it is not possble to automate all actions using a GPO or script.
 <p class="admonition-title">Note</p>
 <p>If the GPO is not applied, select the <strong>Enforce GPO option</strong> to <strong>yes</strong> for the created GPO in Group policy management console.</p>
 </div>
-<h2 id="local-confiugration">Local confiugration</h2>
+<h2 id="local-configuration">Local configuration</h2>
 <p>The next steps need to be performed manually on each Windows asset.</p>
 <p>Set the correct rights for WMI namespace:</p>
 <ol>
