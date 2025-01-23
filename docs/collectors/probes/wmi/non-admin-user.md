@@ -1,19 +1,21 @@
 ![wmi-probe](../../../images/probe_wmi.png){ width="150" align=right}
 
+# WMI as a non admin user
 
-!!! note
-    This method requires mnauual actions to be taken on all Windows assets using this account.
-    At the moment it is not possble to automate all actions using a GPO or script.
-    (This is a by Microsoft design)
+Using read-only accounts for monitoring is a security best practice. However, Microsoft's implementation of WMI makes this difficult on Windows systems, requiring manual configuration on each asset. This poses challenges for scalability and maintainability, especially in large environments.
+
+We strongly recommend carefully weighing the security risks against the operational overhead of configuring individual read-only access on each monitored Windows asset and potentially missing statuses form services as these potentially are now shown to regular users.
+
+The steps required to accomplish using a non domain admin account are outlined below.
 
 
 ## Create a user
 
-First step is to create a regular AD user without any additional permisions.
+First step is to create a regular AD user without any additional permissions.
 
 ## Group policy
 
-The next step is to setup a GPO object to grant the just created user sufficant rights.
+The next step is to setup a GPO object to grant the just created user sufficient rights.
 
 1. Open the Group Policy Management console.
 2. create a GPO by right-clicking on **Group Policy Objects**.
@@ -33,7 +35,7 @@ The next step is to setup a GPO object to grant the just created user sufficant 
     If the GPO is not applied, select the **Enforce GPO option** to **yes** for the created GPO in Group policy management console.
 
 
-## Local confiugration
+## Local configuration
 
 The next steps need to be performed manually on each Windows asset.
 
