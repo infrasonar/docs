@@ -9,9 +9,11 @@
 
 ## Create a user
 
-First step is to create a regular users without any additional permisions.
+First step is to create a regular AD user without any additional permisions.
 
 ## Group policy
+
+The next step is to setup a GPO object to grant the just created user sufficant rights.
 
 1. Open the Group Policy Management console.
 2. create a GPO by right-clicking on **Group Policy Objects**.
@@ -28,7 +30,7 @@ First step is to create a regular users without any additional permisions.
 
 
 !!! note
-    If the GPO is not applied, select the "Enforce GPO option" to yes for the created GPO in Group policy management console.
+    If the GPO is not applied, select the **Enforce GPO option** to **yes** for the created GPO in Group policy management console.
 
 
 ## Local confiugration
