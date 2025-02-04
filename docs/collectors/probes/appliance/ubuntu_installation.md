@@ -88,7 +88,7 @@ echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
 ### Miscellaneous tools
 
 ```bash
-sudo apt install -y vim nano cron dnsutils snmp iputils-ping curl python3 pip snmpd tmate
+sudo apt install -y vim nano cron dnsutils snmp iputils-ping curl snmpd tmate
 ```
 
 The above command installs a list of useful tools:
@@ -100,8 +100,6 @@ The above command installs a list of useful tools:
 * *snmp*, snmpd daemon used to monitor the Linux operating system.
 * *iputils-ping*, tools for debugging network issues.
 * *[curl](https://curl.se/)*, command-line downloader
-* *[python3](https://python.org/)*, python programming language, used by the appliance manager.
-* *[pip](https://pypi.org/project/pip/)*, python package installer, used by the appliance manager.
 * *[tmate](https://tmate.io/)*, teamviewer like solution used to offer remote support on request.
 
 #### SNMPD
@@ -124,15 +122,40 @@ The official Docker engine installation instructions can be found [here](https:/
 sudo curl -sSL https://get.docker.com | bash
 ```
 
-### InfraSonar appliance manager
-
-You can install the [appliance manager](https://github.com/infrasonar/appliance-manager) using the following command:
+### Appliance installer
 
 ```bash
-sudo pip install infrasonar-appliance
+cd $(mktemp -d)
+wget -O appliance-installer-linux-amd64.tar.gz $(wget -q -O - https://api.github.com/repos/infrasonar/appliance-installer/releases/latest  |  jq -r '.assets[] | select(.name | contains ("linux")) | .browser_download_url')
+tar -xzvf appliance-installer-linux-amd64.tar.gz
+sudo ./appliance-installer
+```
+
+Follow the promtpts from the installer, this will look something like this:
+
+```
+Installation Path (enter path or press Enter for default: /etc/infrasonar)
+
+Please provide a token for the Agentcore (container token with `CoreConnect` permissions):
+<your token appears here>
+Please provide a token for the agents (container token with `Read`, `InsertCheckData`, `AssetManagement` and `API` permissions):
+<your token appears here>
+
+################################################################################
+
+  The appliance for zone 0 will be deployed in the '/etc/infrasonar' directory
+
+################################################################################
+
+Do you want to continue? (yes/no)
+yes
+Please be patient, this may take a while...
 ```
 
 ### Unattended updates
+
+
+sudo sh -c '(crontab -l ; echo "0 2 * * * /root/ubuntu_update.bash") | crontab -'
 
 As we want the InfraSonar appliance to be zero maintenance, we configure unattended updates and allow the appliance to reboot when necessary at 2:00 CET.
 
