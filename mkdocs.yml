@@ -173,6 +173,10 @@ nav:
       - Overview: api/overview.md
       - Authentication: api/authentication.md
       - ID's: api/ids.md
+      - Agentcore:
+        - Pull and update: api/agentcore/pull-and-update.md
+        - Set agentcore zone: api/agentcore/set-zone.md
+        - Remove agentcore: api/agentcore/remove-agentcore.md
       - Asset:
         - Query asset: api/asset/query.md
         - Query asset alerts: api/asset/query-alerts.md
@@ -204,10 +208,11 @@ nav:
         - Create asset: api/container/create-asset.md
         - Query container: api/container/query.md
         - Query container Id: api/container/query-id.md
+        - Query container agentcores: api/container/query-agentcores.md
         - Query container alerts: api/container/query-alerts.md
-        - Query container invites: api/container/query-invites.md
         - Query container assets: api/container/query-assets.md
         - Query container collectors: api/container/query-collectors.md
+        - Query container invites: api/container/query-invites.md
         - Query container properties: api/container/query-properties.md
         - Query container users: api/container/query-users.md
         - Query container zones: api/container/query-zones.md
