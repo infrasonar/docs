@@ -1,135 +1,117 @@
 #!/bin/bash
 
-# Fail fast with a concise message when not using bash
-if [ -z "${BASH_VERSION:-}" ]
-then
-  echo "Aborting, bash is required to interpret this script."
-  exit
-fi
+# Variables
 
-# Fail fast when directory is not writable
-
-if ! [ -w `pwd` ]
-then
-  echo "Aborting, directory $PWD must be writable!"
-  exit
-fi
-
-# Initialise script
+## make the script look prettier 
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-# Parametersfile
-ENV_FILE=.env
+## Script filename automatic ubuntu updates
+file_location=/root/ubuntu_update.bash
 
+# Startup message
 echo -e
 echo "${bold}InfraSonar install script${normal}"
 echo  "${bold}=========================${normal}"
 
-function check_prerequiste_docker_compose {
-  echo "--> Checking if docker compose is installed"
-  docker compose version > /dev/null 2>&1
-  if [ $? -eq 0 ]; then
-      echo "Docker compose in installed"
-  else
-      echo "${bold}No docker compose found.${normal}"
-      echo "Ensure docker compose is installed prior to executing this script"
-      echo "See also: https://docs.docker.com/compose/install/"
-      echo -e
-      echo "Exiting script"
-      exit
-  fi
-}
 
-
-function check_for_env_file {
-  # Check if we have a local .env file
-  echo "--> Checking .env file existence"
-  if [ -f "$ENV_FILE" ]; then
-    echo "Existing token file found ($ENV_FILE)"
-  else 
-    echo "No local token file found."
-    echo "Please enter the required tokens."
-    ask_tokens
-  fi
-}
-
-function ask_tokens {
-  # Ask for tokens
-  read -p "Enter ${bold}agentcore${normal} token:: " AGENTCORE_TOKEN
-  read -p "Enter ${bold}agentcore zone ID [0] ${normal}, leave 0 if unsure: " AGENTCORE_ZONE_ID
-  AGENTCORE_ZONE_ID=${AGENTCORE_ZONE_ID:-0}
-  read -p "Enter ${bold}agent${normal} token: " AGENT_TOKEN
-  echo Verify you entered the correct information:
-  echo Agentcore token: ${bold}$AGENTCORE_TOKEN${normal}
-  echo Agentcore zone: ${bold}$AGENTCORE_ZONE_ID${normal}
-  echo Agent token: ${bold}$AGENT_TOKEN${normal}
-  echo Is this information correct?
-  select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) save_env_file; break;;
-        No ) ask_tokens;;
-    esac
-done
-}
-
-function save_env_file {
-  # save tokens to disk
-  echo "--> Saving tokens to disk"
-  echo "AGENTCORE_TOKEN=$AGENTCORE_TOKEN" > $ENV_FILE
-  echo "AGENTCORE_ZONE_ID=$AGENTCORE_ZONE_ID" >> $ENV_FILE
-  echo "AGENT_TOKEN=$AGENT_TOKEN" >> $ENV_FILE
-}
-
-function check_for_docker_compose_file {
-  # Check if we have a local .env file
-  echo "--> Checking dokcer-compose.yml file existence"
-  if [ -f "./docker-compose.yml" ]; then
-    echo "Existing docker compose file found."
-    exit
-  else 
-    echo "docker-compose.yml file not found."
-    download_latest_docker_compose_file
-  fi
-}
-
-function download_latest_docker_compose_file {
-  # This downloads and overwrites the docker-compose file
-  echo "--> Downloading latest docker-compose.yml file"
-  curl -s -o docker-compose.yml https://docs.infrasonar.com/collectors/probes/appliance/docker-compose.yml
-}
-
-
-# MAIN
-
-# Ensure we can sudo without password
+# Allow sudo without password
 echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
 
-# Update and install required packages
+# Install all Ubuntu updates
 sudo apt update
 sudo apt upgrade -y -q
-sudo apt install -y -q python3 curl pip
+
+# Install additional packages
+sudo apt install -y -q vim nano cron dnsutils snmp iputils-ping curl wget snmpd tmate jq
+
+# Install docker
 sudo curl -sSL https://get.docker.com | bash
-sudo pip install infrasonar-appliance
+
+
+# Configure Ubuntu auto updates
+if [ -e $file_location ]; then
+  echo "File $file_location already exists!"
+else
+  cat > $file_location <<EOF
+#!/bin/bash
+
+# Set the time for the update (2:00 AM)
+UPDATE_TIME="02:00"
+
+# Log file for updates
+LOG_FILE="/var/log/ubuntu_automatic_updates.log"
+
+# Function to perform the updates
+perform_updates() {
+  echo "$(date): Starting automatic updates..." >> "$LOG_FILE"
+
+  # Update package lists
+  apt update >> "$LOG_FILE" 2>&1
+
+  # Upgrade installed packages (including new packages if needed)
+  apt upgrade -y >> "$LOG_FILE" 2>&1
+
+  # Dist-upgrade to handle distribution upgrades if available (use cautiously)
+  # apt dist-upgrade -y >> "$LOG_FILE" 2>&1  # Uncomment if you want dist-upgrades
+
+  # Autoremove to remove unused packages
+  apt autoremove -y >> "$LOG_FILE" 2>&1
+
+  # Autoclean to remove old downloaded package files
+  apt autoclean -y >> "$LOG_FILE" 2>&1
+
+  # Check if a reboot is required
+  if [ -f /var/run/reboot-required ]; then
+    echo "$(date): Reboot required. Rebooting..." >> "$LOG_FILE"
+    # Remove the lock file
+    rm /tmp/ubuntu_automatic_updates.lock
+    reboot
+  else
+    echo "$(date): No reboot required." >> "$LOG_FILE"
+  fi
+
+  echo "$(date): Automatic updates completed." >> "$LOG_FILE"
+}
+
+
+# Check if the script is already running
+if [ -f /tmp/ubuntu_automatic_updates.lock ]; then
+  echo "$(date): Automatic updates already running. Exiting." >> "$LOG_FILE"
+  exit 1
+fi
+
+# Create a lock file
+touch /tmp/ubuntu_automatic_updates.lock
+
+# Perform the updates
+perform_updates
+
+# Remove the lock file
+rm /tmp/ubuntu_automatic_updates.lock
+
+exit 0
+EOF
+
+## Ensure the update script is executable
+sudo chmod +x $file_location
+
+## Run the update script every day at 2.00 am
+sudo env file_location="$file_location" sh -c '(crontab -l ; echo "0 2 * * * $file_location") | crontab -'
+fi
+
+# InfraSonar installer
+## create a temporary folder and make this the working directory
+cd $(mktemp -d)
+
+## Download the latest InfraSonar appliance installer
+wget -q -O appliance-installer-linux-amd64.tar.gz $(wget -q -O - https://api.github.com/repos/infrasonar/appliance-installer/releases/latest  |  jq -r '.assets[] | select(.name | contains ("linux")) | .browser_download_url')
+
+## Unpack the InfraSonar appliance installer
+tar -xzvf appliance-installer-linux-amd64.tar.gz
+
+## Run the InfraSonar appliance installer
+sudo ./appliance-installer
 
 
 
-
-
-exit
-
-# Check if docker compose is installed
-check_prerequiste_docker_compose
-# Check if we have an environment file, if not create one.
-check_for_env_file
-# Check if we have a docker compose file, is not download the latest.
-check_for_docker_compose_file
-# Pull the docker containers
-echo "--> Pulling InfraSonar containers"
-docker compose pull
-echo "--> Starting InfraSonar containers"
-docker compose up -d 
-echo "--> Ready"
-docker compose ps
-echo "Status should be: Up ... for all containers"
-echo " Check our docs (https://docs.infrasonar.com) for more information"
