@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Set the time for the update (2:00 AM)
-UPDATE_TIME="02:00"
-
 # Log file for updates
 LOG_FILE="/var/log/ubuntu_automatic_updates.log"
 

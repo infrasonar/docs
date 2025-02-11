@@ -2,7 +2,7 @@
 site_name: InfraSonar
 
 # Copyright
-copyright: "Copyright &copy; 2024 Cesbit"
+copyright: "Copyright &copy; 2025 Cesbit"
 
 # Google analytics (Uses Cesbit Google account)
 extra:
@@ -44,6 +44,8 @@ markdown_extensions:
   - def_list
   - md_in_html
   - footnotes
+  - pymdownx.snippets:
+      base_path: ["docs"]
   - pymdownx.highlight
   - pymdownx.superfences:
       custom_fences:
@@ -55,8 +57,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-
   - pymdownx.tasklist:
       custom_checkbox: true
 
@@ -119,9 +119,6 @@ nav:
             - collectors/probes/appliance/index.md
             - Ubuntu guide: collectors/probes/appliance/ubuntu_installation.md
             - Windows guide: collectors/probes/appliance/windows_installation.md
-            - InfraSonar appliance (OVA): collectors/probes/appliance/appliance_installation.md
-            - InfraSonar Manager: collectors/probes/appliance/appliance_manager.md
-            - Nano basics: collectors/probes/appliance/nano_basics.md
             - Credentials: collectors/probes/appliance/credentials.md
             - Advanced: collectors/probes/appliance/advanced.md
         - Agentcore: collectors/probes/agentcore.md
