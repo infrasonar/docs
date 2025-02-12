@@ -19,7 +19,7 @@ If the remote appliance manager is active you can access it's configuration by c
 Here you can change your tokens, select a different zone and view overall logging.
 
 <figure markdown>
-  ![InfraSonar edit asset](../images/application_agentcore_remote_appliance_general.png){ width="800" })
+  ![InfraSonar edit asset](../images/application_agentcore_remote_appliance_general.png){ width="800" }
 </figure>
 
 #### Agents section
@@ -27,7 +27,7 @@ Here you can change your tokens, select a different zone and view overall loggin
 Here you can enable agents which run inside a docker container.
 
 <figure markdown>
-  ![InfraSonar edit asset](../images/application_agentcore_remote_appliance_agents.png){ width="800" })
+  ![InfraSonar edit asset](../images/application_agentcore_remote_appliance_agents.png){ width="800" }
 </figure>
 
 
