@@ -2,61 +2,84 @@
 
 This section outlines how to install the :fontawesome-brands-linux: Linux appliance from scratch.
 
-## Installation
+We opt to use Ubuntu in this guide. If you prefer to use any other distribution please contact [support](/docs/introduction/support.md) and discuss any pitfalls to be aware off.
 
-:material-ubuntu: Ubuntu Server 22.04 LTS is used as the basis for the InfraSonar appliance.
+## Hardware requirements
+
+:material-ubuntu: Ubuntu Server 24.04 LTS is used as the basis for the InfraSonar appliance.
 
 When using a virtual machine we suggest using these specifications:
+
+* **CPU**: 2 CPU
+* **Memory**: 2 GB memory
+* **Disk**: 50 GB HDD
+* **Name**: infrasonar-appliance
+
+### VMWare specifics
 
 * **Compatibility**: Compatible with: ESXi 6.5 and later VM version 13
 * **Guest OS Family**: Linux
 * **Guest OS Version**: Ubuntu Linux (64-bit) 
-* **CPU**: 2 CPU
-* **Memory**: 2 GB memory
-* **Disk**: 40 GB HDD
-* **Name**: infrasonar-appliance
 
-### Installation steps
+## Ubuntu Installation steps
 
-Boot from the Ubuntu Server 22.04.1 ISO and then follow these steps:
+You can download the required :material-ubuntu: Ubuntu Server 24.04 LTS ISO [here](https://ubuntu.com/download/server).
 
-1. Select your language: **English**.
-2. Keyboard configuration:
+
+
+Boot from the Ubuntu Server 24.04 LTS ISO and then follow these steps:
+
+1. First step is to **boot** from the Ubuntu ISO or from a [bootable USB stick](https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu).
+2. Select your language: **English**.
+3. If prompted to to **update to the new installer** please do so.
+4. Keyboard configuration: (_feel free to change to your situation_)
     1. Layout: **English (US)**.
     2. Variant: **English (US)**.
-3. Choose the type of install: **Ubuntu server (minimized)**
-4. Network configuration: **choose the appropriate network configuration for your environment**
-5. Proxy address: enter a proxy address if your environment uses a proxy, otherwise leave empty.
-6. Mirror address: **keep as it is**, *unless you know what you are doing*.
-7. Guided storage configuration:
+5. Choose the type of install: **Ubuntu server (minimized)**
+6. Network configuration: **choose the appropriate network configuration for your environment**
+7. Proxy address: enter a proxy address if your environment uses a proxy, otherwise leave empty.
+8. Mirror address: **keep as it is**, *unless you know what you are doing*.
+9. Guided storage configuration:
     1. Select: **Use an entire disk**.
     2. Deselect: **Set up this disk as an LVM group**.
-8. Storage configuration:
+10. Storage configuration:
    1. Review the file system summary and select: **Done**.
-9. Confirm destructive action, by clicking: **Continue**.
-10. Profile setup:
+11. Confirm destructive action, by clicking: **Continue**.
+12. Profile setup: (_feel free to pick your own username and server name_)
     1.  Your name: *sysadmin*.
     2.  Your server's name: *infrasonar-appliance*.
     3.  Pick a username: *sysdmin*.
-    4.  Choose a password: Infr@S0n@r
-    5.  Confirm your password: Infr@S0n@r
-11. SSH Setup:
+    4.  Choose a password: <Pick your own strong password and store is safely>
+    5.  Confirm your password: <Pick your own strong password and store is safely>
+13. SSH Setup:
     1.  Select: **Install OpenSSH Server**.
     2.  Import SSH identity: **Usually no, but feel free to enter your own**.
-12. Featured Server Snaps: do not select any server snaps.
-13. If the installation is ready, select: **Reboot now**.
+14. Featured Server Snaps: do not select any server snaps.
+15. If the installation is ready, select: **Reboot now**.
 
-## Post installation steps
+## InfraSonar installation steps
 
 Login to the appliance using SSH to perform the *post installation* steps.
 
-```
+```bash
 ssh sysadmin@<server-ip>
 ```
 
+Note all steps below can be easily executed using our quick deploy script:
+
+```bash
+sudo /bin/bash -c "$(curl -fsSL https://deploy.infrasonar.com)"
+```
+
+!!! warning "Do not run this script on an existing Linux system"
+    Our quick deploy script is meant to be used on a clean Ubuntu server installation.
+    Using it on an existing system can cause unexpected results!
+
+## Manual InfraSonar installation
+
 ### Upgrade
 
-update and upgrade your Ubuntu installation so we are current before proceeding.
+First step is to update and upgrade your Ubuntu installation so we are current before proceeding.
 
 ```bash 
 sudo apt update
@@ -77,18 +100,10 @@ sudo apt update
 sudo apt install -y open-vm-tools
 ```
 
-### sudo configuration
-
-We opt to allow command to be executed using sudo without asking for a password.
-
-```bash
-echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
-```
-
 ### Miscellaneous tools
 
 ```bash
-sudo apt install -y vim nano cron dnsutils snmp iputils-ping curl python3 pip snmpd tmate
+sudo apt install -y vim nano cron dnsutils snmp iputils-ping curl snmpd tmate jq
 ```
 
 The above command installs a list of useful tools:
@@ -100,13 +115,12 @@ The above command installs a list of useful tools:
 * *snmp*, snmpd daemon used to monitor the Linux operating system.
 * *iputils-ping*, tools for debugging network issues.
 * *[curl](https://curl.se/)*, command-line downloader
-* *[python3](https://python.org/)*, python programming language, used by the appliance manager.
-* *[pip](https://pypi.org/project/pip/)*, python package installer, used by the appliance manager.
 * *[tmate](https://tmate.io/)*, teamviewer like solution used to offer remote support on request.
 
 #### SNMPD
 
 As we use the default community string `public` and only require the snmpd daemon to listen on `localhost`, no further configuration is required.
+
 
 ```
 # Read-only access to everyone to the systemonly view
@@ -124,97 +138,54 @@ The official Docker engine installation instructions can be found [here](https:/
 sudo curl -sSL https://get.docker.com | bash
 ```
 
-### InfraSonar appliance manager
-
-You can install the [appliance manager](https://github.com/infrasonar/appliance-manager) using the following command:
-
-```bash
-sudo pip install infrasonar-appliance
-```
-
 ### Unattended updates
 
 As we want the InfraSonar appliance to be zero maintenance, we configure unattended updates and allow the appliance to reboot when necessary at 2:00 CET.
 
-**Ubuntu unattended upgrades installation**
+Create the following script as `/root/ubuntu_update.bash`:
+
+```bash title="ubuntu_update.bash"
+--8<-- "collectors/probes/appliance/ubuntu_update.bash"
+```
+
+Add this script to crontab of user root like this:
 
 ```bash
-# Install the unattended-upgrades package.
-sudo apt install -y unattended-upgrades
-# Verify using the following systemctl command.
-sudo systemctl status unattended-upgrades
-# To set automatic updates, we are going to install the update-notifier-common package.
-sudo apt install -y update-notifier-common
+sudo sh -c '(crontab -l ; echo "0 2 * * * /root/ubuntu_update.bash") | crontab -'
 ```
 
-**Ubuntu unattended upgrades configuration**
+Note using `sudo crontab -e` you can edit the schedule to your liking.
 
-Change the file `/etc/apt/apt.conf.d/50unattended-upgrades`, so it reflects these changes:
+### InfraSonar installer
 
-```hl_lines="11 20 24 29"
-....
-Unattended-Upgrade::Allowed-Origins {
-        "${distro_id}:${distro_codename}";
-        "${distro_id}:${distro_codename}-security";
-        // Extended Security Maintenance; doesn't necessarily exist for
-        // every release and this system may not have it installed, but if
-        // available, the policy for updates is such that unattended-upgrades
-        // should also install from here by default.
-        "${distro_id}ESMApps:${distro_codename}-apps-security";
-        "${distro_id}ESM:${distro_codename}-infra-security";
-        "${distro_id}:${distro_codename}-updates";
-//      "${distro_id}:${distro_codename}-proposed";
-//      "${distro_id}:${distro_codename}-backports";
-        "Docker:${distro_codename}";
-};
+Our InfraSonar installer is available on [GitHub](https://github.com/infrasonar/appliance-installer)
 
-....
-
-// Automatically reboot *WITHOUT CONFIRMATION* if
-// the file /var/run/reboot-required is found after the upgrade.
-Unattended-Upgrade::Automatic-Reboot "true";
-
-// Automatically reboot even if there are users currently logged in
-// when Unattended-Upgrade::Automatic-Reboot is set to true.
-Unattended-Upgrade::Automatic-Reboot-WithUsers "true";
-
-// If automatic reboot is enabled and needed, reboot at the specific
-// time instead of immediately.
-// Default: "now".
-Unattended-Upgrade::Automatic-Reboot-Time "02:00";
-....
-```
-
-**Enable daily unattended upgrades**
+The following command ensure download and execution of our latest installer:
 
 ```bash
-echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | sudo tee -a debconf-set-selections
-sudo dpkg-reconfigure -f noninteractive unattended-upgrades
+cd $(mktemp -d)
+wget -q -O appliance-installer-linux-amd64.tar.gz $(wget -q -O - https://api.github.com/repos/infrasonar/appliance-installer/releases/latest  |  jq -r '.assets[] | select(.name | contains ("linux")) | .browser_download_url')
+tar -xzvf appliance-installer-linux-amd64.tar.gz
+sudo ./appliance-installer
 ```
 
-You can verify that automatic updates are turned on, with this command:
+Follow the prompts from the installer, this will look something like this:
 
-```bash
-sudo debconf-get-selections | grep -i enable_auto_updates
 ```
+Installation Path (enter path or press Enter for default: /etc/infrasonar)
 
-!!! note
-    `debconf-get-selections` requires debconf-utils to be installed (`sudo apt-get install debconf-utils`).
-    We opt not to install this on production appliances, as we want to keep them as clean as possible.
+Please provide a token for the Agentcore (container token with `CoreConnect` permissions):
+<your token appears here>
+Please provide a token for the agents (container token with `Read`, `InsertCheckData`, `AssetManagement` and `API` permissions):
+<your token appears here>
 
-**Logging**
+################################################################################
 
-Unattended Upgrades Log.
+  The appliance for zone 0 will be deployed in the '/etc/infrasonar' directory
 
-The `unattended-upgrades.log` is a log file where you can view all actions done by the unattended upgrade system. You can view the file with, for example, the tail command:
+################################################################################
 
-```bash
-tail -n 100 /var/log/unattended-upgrades/unattended-upgrades.log
+Do you want to continue? (yes/no)
+yes
+Please be patient, this may take a while...
 ```
-
-
-### InfraSonar
-
-The easiest way to deploy InfraSonar is using our [appliance manager](./appliance_manager.md)
-
-It is however also possible to install InfraSonar manually using docker, see our [advanced](.//advanced.md) section.

@@ -8,8 +8,6 @@ Docker is a great concept to deploy and maintain Linux applications and services
 
 Checkout the [Get Started with Docker](https://www.docker.com/get-started/) guide to learn more.
 
-
-
 There are two options to accomplish this:
 
 1. Docker Desktop for Windows (ideal for home-lab and test-scenarios)<br>
@@ -19,7 +17,7 @@ There are two options to accomplish this:
 
 
 !!! info
-    We tested this setup on a Windows 11 host running Docker Desktop version 4.17.0
+    We tested this setup on a Windows 11 (24H2) host running Docker Desktop version 4.38.0
 
 ## Deploy the InfraSonar containers
 

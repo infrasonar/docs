@@ -2,7 +2,7 @@
 site_name: InfraSonar
 
 # Copyright
-copyright: "Copyright &copy; 2024 Cesbit"
+copyright: "Copyright &copy; 2025 Cesbit"
 
 # Google analytics (Uses Cesbit Google account)
 extra:
@@ -44,6 +44,8 @@ markdown_extensions:
   - def_list
   - md_in_html
   - footnotes
+  - pymdownx.snippets:
+      base_path: ["docs"]
   - pymdownx.highlight
   - pymdownx.superfences:
       custom_fences:
@@ -55,8 +57,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-
   - pymdownx.tasklist:
       custom_checkbox: true
 
@@ -86,25 +86,24 @@ nav:
        - Dashboard: application/dashboard.md
        - Containers: application/containers.md
     - Container:
+      - Agentcores: application/agentcores.md
       - Alerts: application/alerts.md
       - Assets: application/assets.md
       - Child containers: application/child_containers.md
-      - Conditions: application/conditions.md
-      - Labels: application/labels.md
-      - Schedule: application/schedule.md
-      - Views: application/views.md
-      - Credits: application/credits.md
-      - Rules: application/rules.md
-      - Agentcores: application/agentcores.md
-      - Zones: application/zones.md
-      - Users: application/users.md
-      - Webhooks: application/webhooks.md
-      - Tokens: application/tokens.md
-      - Time series: application/timeseries.md
       - Collectors: application/collectors.md
-      - Reporting: application/reporting.md
+      - Conditions: application/conditions.md
+      - Credits: application/credits.md
+      - Labels: application/labels.md
       - Log: application/log.md
+      - Reporting: application/reporting.md
+      - Rules: application/rules.md
+      - Schedule: application/schedule.md
+      - Time series: application/timeseries.md
+      - Tokens: application/tokens.md
       - Trash: application/trash.md
+      - Users: application/users.md
+      - Views: application/views.md
+      - Webhooks: application/webhooks.md
   - Collectors:
     - collectors/index.md
     - Agents:
@@ -119,9 +118,6 @@ nav:
             - collectors/probes/appliance/index.md
             - Ubuntu guide: collectors/probes/appliance/ubuntu_installation.md
             - Windows guide: collectors/probes/appliance/windows_installation.md
-            - InfraSonar appliance (OVA): collectors/probes/appliance/appliance_installation.md
-            - InfraSonar Manager: collectors/probes/appliance/appliance_manager.md
-            - Nano basics: collectors/probes/appliance/nano_basics.md
             - Credentials: collectors/probes/appliance/credentials.md
             - Advanced: collectors/probes/appliance/advanced.md
         - Agentcore: collectors/probes/agentcore.md
