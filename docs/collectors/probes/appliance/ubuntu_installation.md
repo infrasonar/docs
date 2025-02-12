@@ -117,15 +117,31 @@ The above command installs a list of useful tools:
 * *[curl](https://curl.se/)*, command-line downloader
 * *[tmate](https://tmate.io/)*, teamviewer like solution used to offer remote support on request.
 
-#### SNMPD
+### SNMPD
 
 As we use the default community string `public` and only require the snmpd daemon to listen on `localhost`, no further configuration is required.
 
+Edit the `/etc/snmp/snmpd.conf` file to ensure access to all facilities:
 
+
+``` title="/etc/snmp/snmpd.conf"
+# Read-only access to everyone to the systemonly view
+rocommunity  public default -V systemonly
+rocommunity6 public default -V systemonly
 ```
+
+Change the above section to:
+
+``` title="/etc/snmp/snmpd.conf"
 # Read-only access to everyone to the systemonly view
 rocommunity  public default
-rocommunity6 public default -V systemonly
+rocommunity6 public default
+```
+
+Restart the snmpd service to make the changes effective:
+
+```bash
+service snmpd restart
 ```
 
 ### Docker installation

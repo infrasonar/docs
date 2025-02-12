@@ -1,17 +1,5 @@
 #!/bin/bash
 
-# Function to re-run the script with sudo
-run_as_root() {
-  echo "This script requires root privileges. Please enter your password when prompted."
-  sudo "$0" "$@"  # Re-run the script with sudo. "$@" passes all arguments.
-  exit $? # Exit with the same status code as sudo.
-}
-
-# Prompt user for sudo if not root.
-if [[ "$UID" -ne 0 ]]; then
-  run_as_root
-fi
-
 # Variables
 
 ## make the script look prettier 
@@ -26,12 +14,24 @@ echo -e
 echo "${bold}InfraSonar install script${normal}"
 echo  "${bold}=========================${normal}"
 
+if [[ "$(id -u)" -ne 0 ]]; then
+  echo "This script must be run as root."
+  exit 1
+fi
+
+
 # Install all Ubuntu updates
 sudo apt update
 sudo apt upgrade -y -q
 
 # Install additional packages
 sudo apt install -y -q vim nano cron dnsutils snmp iputils-ping curl wget snmpd tmate jq
+
+#Configure snmpd
+
+sed -i 's/rocommunity  public default -V systemonly/rocommunity  public default/' /etc/snmp/snmpd.conf
+sed -i 's/rocommunity6 public default -V systemonly/rocommunity  public default/' /etc/snmp/snmpd.conf
+service snmpd restart
 
 # Install docker
 sudo curl -sSL https://get.docker.com | bash
@@ -47,6 +47,8 @@ sudo chmod +x $update_script
 
 ## Run the update script every day at 2.00 am
 sudo env update_script="$update_script" sh -c '(crontab -l ; echo "0 2 * * * $update_script") | crontab -'
+
+
 
 # InfraSonar installer
 ## create a temporary folder and make this the working directory
