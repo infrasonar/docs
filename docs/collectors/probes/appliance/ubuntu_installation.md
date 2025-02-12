@@ -6,7 +6,7 @@ We opt to use Ubuntu in this guide. If you prefer to use any other distribution 
 
 ## Hardware requirements
 
-:material-ubuntu: Ubuntu Server 22.04 LTS is used as the basis for the InfraSonar appliance.
+:material-ubuntu: Ubuntu Server 24.04 LTS is used as the basis for the InfraSonar appliance.
 
 When using a virtual machine we suggest using these specifications:
 
@@ -23,34 +23,39 @@ When using a virtual machine we suggest using these specifications:
 
 ## Ubuntu Installation steps
 
-Boot from the Ubuntu Server 22.04.1 ISO and then follow these steps:
+You can download the required :material-ubuntu: Ubuntu Server 24.04 LTS ISO [here](https://ubuntu.com/download/server).
 
-1. Select your language: **English**.
-2. If prompted to to **update to the new installer** please do so.
-3. Keyboard configuration: (_feel free to change to your situation_)
+
+
+Boot from the Ubuntu Server 24.04 LTS ISO and then follow these steps:
+
+1. First step is to **boot** from the Ubuntu ISO or from a [bootable USB stick](https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu).
+2. Select your language: **English**.
+3. If prompted to to **update to the new installer** please do so.
+4. Keyboard configuration: (_feel free to change to your situation_)
     1. Layout: **English (US)**.
     2. Variant: **English (US)**.
-4. Choose the type of install: **Ubuntu server (minimized)**
-5. Network configuration: **choose the appropriate network configuration for your environment**
-6. Proxy address: enter a proxy address if your environment uses a proxy, otherwise leave empty.
-7. Mirror address: **keep as it is**, *unless you know what you are doing*.
-8. Guided storage configuration:
+5. Choose the type of install: **Ubuntu server (minimized)**
+6. Network configuration: **choose the appropriate network configuration for your environment**
+7. Proxy address: enter a proxy address if your environment uses a proxy, otherwise leave empty.
+8. Mirror address: **keep as it is**, *unless you know what you are doing*.
+9. Guided storage configuration:
     1. Select: **Use an entire disk**.
     2. Deselect: **Set up this disk as an LVM group**.
-9. Storage configuration:
+10. Storage configuration:
    1. Review the file system summary and select: **Done**.
-10. Confirm destructive action, by clicking: **Continue**.
-11. Profile setup: (_feel free to pick your own username and server name_)
+11. Confirm destructive action, by clicking: **Continue**.
+12. Profile setup: (_feel free to pick your own username and server name_)
     1.  Your name: *sysadmin*.
     2.  Your server's name: *infrasonar-appliance*.
     3.  Pick a username: *sysdmin*.
     4.  Choose a password: <Pick your own strong password and store is safely>
     5.  Confirm your password: <Pick your own strong password and store is safely>
-12. SSH Setup:
+13. SSH Setup:
     1.  Select: **Install OpenSSH Server**.
     2.  Import SSH identity: **Usually no, but feel free to enter your own**.
-13. Featured Server Snaps: do not select any server snaps.
-14. If the installation is ready, select: **Reboot now**.
+14. Featured Server Snaps: do not select any server snaps.
+15. If the installation is ready, select: **Reboot now**.
 
 ## InfraSonar installation steps
 
