@@ -24,7 +24,7 @@ The Synology probe uses the [snmp](index.md) protocol to perform its queries.
 
 ## Deployment
 
-The Synology probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The Synology probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Credentials
 

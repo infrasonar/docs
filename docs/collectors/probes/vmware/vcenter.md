@@ -20,7 +20,7 @@ The **vcenter-probe** uses the [VMware API](https://www.vmware.com/support/pubs/
 
 ## Deployment
 
-The vCenter probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The vCenter probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Probe configuration
 

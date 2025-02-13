@@ -10,7 +10,7 @@ InfraSonar supports retrieving data from remote assets using the *SNMPv1*, *SNMP
 
 ## Deployment
 
-The SNMP probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The SNMP probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Prerequisites
 

@@ -30,7 +30,7 @@ See our overall [VMwware](index.md) documentation for additional information.
 
 ## Deployment
 
-The Vmware ESXi probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The Vmware ESXi probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Configuration
 

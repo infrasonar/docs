@@ -26,7 +26,7 @@ InfraSonar uses the open source [aiowmi](https://github.com/cesbit/aiowmi) libra
 
 ## Deployment
 
-The WMI probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The WMI probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager)
 
 ## Probe configuration
 

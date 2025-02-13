@@ -17,7 +17,7 @@ The HP ILO probe consist of a number of specific checks:
 
 ## Deployment
 
-The HP ILO probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The HP ILO probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Credentials
 

@@ -24,7 +24,7 @@ InfraSonar monitors ReadyNAS storage systems using [snmp](index.md).
 
 ## Deployment
 
-The ReadyNAS probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The ReadyNAS probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Credentials
 

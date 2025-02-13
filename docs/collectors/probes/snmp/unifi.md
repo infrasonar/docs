@@ -19,7 +19,7 @@ The UniFi probe consist of a number of UPS specific checks:
 
 ## Deployment
 
-The UniFi probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The UniFi probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Credentials
 
