@@ -16,7 +16,7 @@ The Dell iDRAC consist of a number of specific checks:
 
 ## Deployment
 
-The Dell iDRAC probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The Dell iDRAC probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Credentials
 
