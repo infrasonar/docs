@@ -25,7 +25,7 @@ sudo apt update
 sudo apt upgrade -y -q
 
 # Install additional packages
-sudo apt install -y -q vim nano cron dnsutils snmp iputils-ping curl wget snmpd tmate jq
+sudo apt install -y -q vim nano cron dnsutils snmp iputils-ping curl snmpd tmate jq
 
 #Configure snmpd
 
