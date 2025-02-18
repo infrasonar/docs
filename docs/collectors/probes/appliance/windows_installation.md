@@ -16,11 +16,12 @@ Checkout the [Get Started with Docker](https://www.docker.com/get-started/) guid
 Step by step :feet: guide: 
 
 1. Install Docker desktop on your Windows host.
-2. Download our latest appliance installer for Windows [here](https://github.com/infrasonar/appliance-installer/releases/latest)
-3. Extract the zip file.
-4. Open een elevated command prompt.
-5. Change into the directory were you extracted the appliance installer.
-6. Run the `appliance-installer.exe` executable and follow the steps:
+2. Ensure **Start Docker Desktop when you sign in to your computer** is enabled in the docker desktop configuration (:gear:).
+3. Download our latest appliance installer for Windows [here](https://github.com/infrasonar/appliance-installer/releases/latest)
+4. Extract the zip file.
+5. Open een elevated command prompt.
+6. Change into the directory were you extracted the appliance installer.
+7. Run the `appliance-installer.exe` executable and follow the steps:
 
 ```
 appliance-installer.exe
@@ -42,95 +43,4 @@ yes
 Please be patient, this may take a while...
 Done
 ```
-
-Open your container on https://app.infrasonar.com and manage the appliance via the 'Agentcores' menu
-
-
-!!! tip inline end
-    We strongly suggest setting up separate tokens when possible.
-
-
-
-
-
-6. Open notepad :notepad_spiral:
-7. Copy the `docker-compose.yml`` file from our [documentation page](./advanced.md) using the :material-content-copy: button
-8. Paste the file into the just opened notepad
-9.  Ensure to set the correct [tokens](./../../../application/tokens.md) for the agentcore and docker-probe in the `docker-compose.yml` file
-10. Save the file as `docker-compose.yml`, in this example we use a folder named `InfraSonar` in de `Documents` folder.<br>
-   !!! Be aware notepad has a tendency of adding `.txt` at the end of the filename.
-11. Open a dos box `cmd.exe`
-12. `cd` to the folder containing the `infrasonar.yml` file<br>
-   ```
-   cd %userprofile%\documents\infrasonar
-   ```
-13. Pull the InfraSonar containers using this compose pull:<br>
-   ```
-   docker compose pull
-   ```
-   _Downloading all layers might take some time, the total size off all layers is 5Gb_
-14. Once the containers are downloaded you can start the environment using:<br>
-   ```
-   docker compose up -d
-   ```
-
-<figure markdown>
-  ![InfraSonar on Windows](../../../images/guides_windows_appliance_1.png){ width="800" }
-  <figcaption>InfraSonar on Windows</figcaption>
-</figure>
-
-
-## Tune Vmmem memory consumption
-
-As shown by this `docker stats` output resource usage for the InfraSonar probes is very limited.
-WSL however claims a lot of memory by default.
-
-
-```console title="docker stats output"
-CONTAINER ID   NAME                            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O   PIDS
-bbf5f976f370   infrasonar-eaton-probe-1        0.01%     6.105MiB / 1.865GiB   0.32%     0B / 0B   0B / 0B     1
-8c9e76c02422   infrasonar-ping-probe-1         0.04%     8.492MiB / 1.865GiB   0.44%     0B / 0B   0B / 0B     1
-17e811490457   infrasonar-vcenter-probe-1      0.01%     7.301MiB / 1.865GiB   0.38%     0B / 0B   0B / 0B     1
-cd31bd13a236   infrasonar-agentcore-1          0.01%     6.812MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     2
-69f1e6ccc784   infrasonar-mssql-probe-1        0.01%     6.719MiB / 1.865GiB   0.35%     0B / 0B   0B / 0B     1
-e33dee93aaaa   infrasonar-tcp-probe-1          0.01%     5.312MiB / 1.865GiB   0.28%     0B / 0B   0B / 0B     1
-276f90782d43   infrasonar-santricity-probe-1   0.01%     8.035MiB / 1.865GiB   0.42%     0B / 0B   0B / 0B     1
-72b609c9aa8f   infrasonar-paloalto-probe-1     0.01%     7MiB / 1.865GiB       0.37%     0B / 0B   0B / 0B     1
-ae075f468016   infrasonar-docker-agent-1       0.03%     59.76MiB / 1.865GiB   3.13%     0B / 0B   0B / 0B     2
-886cc62a929e   infrasonar-netapp-probe-1       0.01%     6.957MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     1
-d75b00d7f3ea   infrasonar-esx-probe-1          0.01%     6.383MiB / 1.865GiB   0.33%     0B / 0B   0B / 0B     1
-b44ff0ac2e3a   infrasonar-wmi-probe-1          0.02%     6.992MiB / 1.865GiB   0.37%     0B / 0B   0B / 0B     1
-3d1e2202050c   infrasonar-hpprocurve-probe-1   0.01%     6.938MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     1
-be51bb8784ba   infrasonar-unifi-probe-1        0.01%     6.695MiB / 1.865GiB   0.35%     0B / 0B   0B / 0B     1
-696339a2d744   infrasonar-snmp-probe-1         0.01%     10.4MiB / 1.865GiB    0.54%     0B / 0B   0B / 0B     1
-1fa404f5d74d   infrasonar-dns-probe-1          0.01%     5.66MiB / 1.865GiB    0.30%     0B / 0B   0B / 0B     1
-525d977d3fe0   infrasonar-hpilo-probe-1        0.01%     6.898MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     1
-c33ffae3eaeb   infrasonar-synology-probe-1     0.01%     6.531MiB / 1.865GiB   0.34%     0B / 0B   0B / 0B     1
-8b6b0ceb9038   infrasonar-http-probe-1         0.01%     6.902MiB / 1.865GiB   0.36%     0B / 0B   0B / 0B     1
-```
-
-Luckily there is an easy fix.
-
-**Shut down WSL**
-
-Run this on your command line:
-```
-wsl --shutdown
-```
-
-**Edit your .wslconfig file**
-
-As the .wslconfig file is a hidden file it is best to open it directly using notepad:
-```
-notepad %UserProfile%/.wslconfig
-```
-
-If it doesn’t exist yet, just create it.
-
-Edit your `.wslconfig` file to limit memory usage
-You should have something like this in the file:
-
-```
-[wsl2]
-memory=2GB
-```
+Open your container on https://app.infrasonar.com and manage the appliance via the [Agentcores](../../../application/agentcores.md) menu
