@@ -178,12 +178,19 @@ Our InfraSonar installer is available on [GitHub](https://github.com/infrasonar/
 
 The following command ensure download and execution of our latest installer:
 
+
+
 ```bash
+## Create and change into a temporary directory
 cd $(mktemp -d)
-wget -q -O appliance-installer-linux-amd64.tar.gz $(wget -q -O - https://api.github.com/repos/infrasonar/appliance-installer/releases/latest  |  jq -r '.assets[] | select(.name | contains ("linux")) | .browser_download_url')
+## Download the latest InfraSonar appliance installer
+curl -sL $(curl -s https://api.github.com/repos/infrasonar/appliance-installer/releases/latest | jq -r '.assets[] | select(.name | contains ("linux")) | .browser_download_url') -o appliance-installer-linux-amd64.tar.gz
+## Unpack the InfraSonar appliance installer
 tar -xzvf appliance-installer-linux-amd64.tar.gz
+## Run the InfraSonar appliance installer
 sudo ./appliance-installer
 ```
+
 
 Follow the prompts from the installer, this will look something like this:
 
