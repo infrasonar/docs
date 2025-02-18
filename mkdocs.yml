@@ -65,14 +65,17 @@ nav:
   - Home: index.md
   - Documentation:
     - Introduction:
+       - introduction/index.md
        - Getting started: introduction/getting_started.md
+       - Credentials: introduction/credentials.md
        - Platform: introduction/platform.md
        - Support: introduction/support.md
        - Terminology: introduction/terminology.md
-       - About InfraSonar: introduction/about.md
+    - Howto:
+       - howtos/index.md
+       - Agentless implementation: howtos/agent-less.md
     - Guides:
        - Raspberry Pi dashboard: guides/raspberrypi_dashboard.md
-       - Migration: guides/migration.md
        - Remote support: guides/remote_support.md
     - Privacy & Security:
        - Security: privacy-security/security_considerations.md
@@ -118,7 +121,6 @@ nav:
             - collectors/probes/appliance/index.md
             - Ubuntu guide: collectors/probes/appliance/ubuntu_installation.md
             - Windows guide: collectors/probes/appliance/windows_installation.md
-            - Credentials: collectors/probes/appliance/credentials.md
             - Advanced: collectors/probes/appliance/advanced.md
         - Agentcore: collectors/probes/agentcore.md
         - DNS: collectors/probes/dns.md

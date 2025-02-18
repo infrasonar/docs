@@ -1,9 +1,8 @@
-# InfraSonar probes
+# InfraSonar appliance
 
 InfraSonar probes are deployed and maintained as Docker containers.
 
 As such we advice to setup a dedicated (virtual) :fontawesome-brands-linux: appliance for this task.
-
 
 ## Ubuntu
 

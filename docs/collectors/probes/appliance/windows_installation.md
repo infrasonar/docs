@@ -2,19 +2,11 @@
 
 # InfraSonar on Windows
 
-As InfraSonar uses Docker containers it can be easily deployed on multiple platforms including Microsoft Windows.
+As InfraSonar uses Docker containers it can deployed on multiple platforms including Microsoft Windows.
 
 Docker is a great concept to deploy and maintain Linux applications and services even on a Microsoft Windows host.
 
 Checkout the [Get Started with Docker](https://www.docker.com/get-started/) guide to learn more.
-
-There are two options to accomplish this:
-
-1. Docker Desktop for Windows (ideal for home-lab and test-scenarios)<br>
-   _The official Docker documentation has a great [guide](https://docs.docker.com/desktop/install/windows-install/) on this_
-2. Use containers with Hyper-V isolation on Windows.<br>
-   _We found the [Ubuntu documentation](https://ubuntu.com/tutorials/windows-ubuntu-hyperv-containers#1-overview) to be most useful._
-
 
 !!! info
     We tested this setup on a Windows 11 (24H2) host running Docker Desktop version 4.38.0
@@ -23,23 +15,61 @@ There are two options to accomplish this:
 
 Step by step :feet: guide: 
 
-1. Open notepad :notepad_spiral:
-2. Copy the `docker-compose.yml`` file from our [documentation page](./advanced.md) using the :material-content-copy: button
-3. Paste the file into the just opened notepad
-4. Ensure to set the correct [tokens](./../../../application/tokens.md) for the agentcore and docker-probe in the `docker-compose.yml` file
-5. Save the file as `docker-compose.yml`, in this example we use a folder named `InfraSonar` in de `Documents` folder.<br>
+1. Install Docker desktop on your Windows host.
+2. Download our latest appliance installer for Windows [here](https://github.com/infrasonar/appliance-installer/releases/latest)
+3. Extract the zip file.
+4. Open een elevated command prompt.
+5. Change into the directory were you extracted the appliance installer.
+6. Run the `appliance-installer.exe` executable and follow the steps:
+
+```
+appliance-installer.exe
+Installation Path (enter path or press Enter for default: C:\Users\sysadmin\infrasonar)
+
+Please provide a token for the Agentcore (container token with `CoreConnect` permissions):
+<your token appears here>
+Please provide a token for the agents (container token with `Read`, `InsertCheckData`, `AssetManagement` and `API` permissions):
+<your token appears here>
+
+#############################################################################################
+
+  The appliance for zone 0 will be deployed in the 'C:\Users\sysadmin\infrasonar' directory
+
+#############################################################################################
+
+Do you want to continue? (yes/no)
+yes
+Please be patient, this may take a while...
+Done
+```
+
+Open your container on https://app.infrasonar.com and manage the appliance via the 'Agentcores' menu
+
+
+!!! tip inline end
+    We strongly suggest setting up separate tokens when possible.
+
+
+
+
+
+6. Open notepad :notepad_spiral:
+7. Copy the `docker-compose.yml`` file from our [documentation page](./advanced.md) using the :material-content-copy: button
+8. Paste the file into the just opened notepad
+9.  Ensure to set the correct [tokens](./../../../application/tokens.md) for the agentcore and docker-probe in the `docker-compose.yml` file
+10. Save the file as `docker-compose.yml`, in this example we use a folder named `InfraSonar` in de `Documents` folder.<br>
    !!! Be aware notepad has a tendency of adding `.txt` at the end of the filename.
-6. Open a dos box `cmd.exe`
-7. `cd` to the folder containing the `infrasonar.yml` file<br>
+11. Open a dos box `cmd.exe`
+12. `cd` to the folder containing the `infrasonar.yml` file<br>
    ```
    cd %userprofile%\documents\infrasonar
    ```
-8.  Pull the InfraSonar containers using this compose pull:<br>
+13. Pull the InfraSonar containers using this compose pull:<br>
    ```
    docker compose pull
    ```
    _Downloading all layers might take some time, the total size off all layers is 5Gb_
-9.  Once the containers are downloaded you can start the environment using:<br>
+14. Once the containers are downloaded you can start the environment using:<br>
    ```
    docker compose up -d
    ```
