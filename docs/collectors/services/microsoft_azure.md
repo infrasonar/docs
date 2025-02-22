@@ -7,7 +7,7 @@
 !!! danger "Preview"
 
     The Azure service is a preview release.<br>
-    Contact [InfraSonar support](../../introduction/support.md) if you want to get involved in testing our preview release.
+    Contact [InfraSonar support](../../support/index.md) if you want to get involved in testing our preview release.
 
 ## Features
 

@@ -15,7 +15,7 @@ The Hyper-V guest probes uses [WMI](./index.md) to to monitor Microsoft Windows 
 
 ## Deployment
 
-The HyperV- guest probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
+The HyperV- guest probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Probe configuration
 
@@ -31,23 +31,12 @@ The HyperV- guest probe can easily be deployed using our [remote appliance manag
 
 **:material-numeric-3-circle:{ .red } Local conguration**
 
-:   As the Hyper-V guest connects to the Hyper-V host we urge you to use the same credentials for the Hyper-V guest queries. When Hyper-V is deployed in a windows domain you can set local configuration to `wmi` as this section is the default section for domain credentials.
+:   Here you can set an optional `Local configuration`.
 
-    See also our [credentials documentation](../appliance/credentials.md).
+## Good to know
 
-You can automate this step using our toolkit and the Hyper-V guests report.
-
-Please reach out to [support](../../../introduction/support.md) for additional information.
+You can automate deployment using our [toolkit](../../../guides/toolkit.md) and the Hyper-V guests report.
 
 ## Additional information
 
 :material-github: [Microsoft Hyper-V guest probe source code](https://github.com/infrasonar/hypervguest-probe)
-
-
-
-
-
-
-
-
-

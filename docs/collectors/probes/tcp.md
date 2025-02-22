@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The TCP probe uses TCP to try and make a TCP connection.
+The TCP probe uses Nmap to try and make a TCP connection to specified TCP ports.
 
 ## Features
 
@@ -29,7 +29,7 @@ TCP Ports         | List of ports to perform a port check on.<br>Each port must 
 
 Check TCP ports allows for monitoring specific TCP port statuses.
 
-As the TCP probe uses NMAP at its core it can identify the same six ports states as nmap.
+As the TCP probe uses NMAP at its core it can identify the same six ports states as Nmap.
 
 Port state        | Description
 ------------------|----------------------------------------
@@ -42,7 +42,9 @@ Port state        | Description
 
 ### Certificates
 
-Gathers certificates and ciphers present on the specified TCP port.
+* Gathers certificates and ciphers present on the specified TCP port.
+* Shows expiration date.
+* Shows the least overall strength per certificate.
 
 ## Additional information
 

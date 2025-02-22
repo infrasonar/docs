@@ -24,11 +24,8 @@ InfraSonar uses the open source [aiowmi](https://github.com/cesbit/aiowmi) libra
 * Installed Windows updates
 * VSS usage
 
-## Deployment
 
-The WMI probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager)
-
-## Probe configuration
+## prerequisites 
 
 ### Credentials
 
@@ -36,11 +33,37 @@ The WMI-probe requires a service account with domain admin rights or a local adm
 
 > While it is possible to configure a regular user with additional DCOM permissions we feel this provides a false sense of security as the DCOM privileges required are quite broad.
 
-## Checks
+#### None domain credentials
 
-## Best practices
+!!! info "None domain members"
+    This is only required for hosts that are not a member of your Windows domain or when using a local account is required due to other circumstances.
 
-## Operational
+By default only the true local administrator account can be used for remote WMI queries.
+You can use the following steps to create a local account:
+
+1. Create a local account and ensure the account is member of the group **Remote Management Users**.
+2. Authorize CIMV2 access:
+    1. Open the WMI management console `wmimgmt.msc`.
+    2. Right click **WMI Control (Local)** and select **properties** from the menu.
+    3. Select the **security** tab.
+    4. Browse to **Root\CIMV2**.
+    5. Click the button labeled **security**.
+3. Authorize COM access:
+    1. Start the **component Services** console.
+    2. Browse in the left pane to: _Component Services \ Computers_.
+    3. Right click **My Computer** and select **properties from the menu.
+    4. Open the tab **COM Security**.
+    5. Click **Edit Limits** in the _Access Permissions_ pane.
+    6. Add the account used for monitoring using the **Add** button.
+    7. Ensure the account has *Remote Access* permissions.
+    8. Close the access permission screen by clicking **OK**.
+    9. Click on **Edit Limits** in the _Launch and Activation Permissions_ pane.
+    10. Add the account used for monitoring using the **Add** button.
+    11. Ensure to allow: _Local Launch_, _Remote Launch_, _Local Activation_ and _Remote Activation_.
+    12. Close the windows by clicking **OK** twice and exit the Component Services console.
+
+
+See also our WMI trouble shooting section about [remote-UAC](wmi-troubleshooting.md#remote-uac) as you might need to disable this.
 
 ### Firewall requirements
 
@@ -100,38 +123,20 @@ netsh int ipv6 show dynamicport udp
 
     You adjust this range by using the netsh command, as follows: netsh int <ipv4|ipv6> set dynamic <tcp|udp> start= number num= range. This command sets the dynamic port range for TCP. The start port is number, and the total number of ports is range.
 
+#### Microsoft ISA Server
 
-### None domain credentials
+Monitoring a Microsoft ISA server requires the following rules on the ISA server:
 
-!!! info "None domain members"
-    This is only required for hosts that are not a member of your Windows domain or when using a local account is required due to other circumstances.
+* Allow traffic from the monitoring appliance to localhost for all protocols.
+* Within this rule, filtering "Enforce strict RPC compliance" must be disabled.
 
-By default only the true local administrator account can be used for remote WMI queries.
-You can use the following steps to create a local account:
+## Deployment
 
-1. Create a local account and ensure the account is member of the group **Remote Management Users**.
-2. Authorize CIMV2 access:
-    1. Open the WMI management console `wmimgmt.msc`.
-    2. Right click **WMI Control (Local)** and select **properties** from the menu.
-    3. Select the **security** tab.
-    4. Browse to **Root\CIMV2**.
-    5. Click the button labeled **security**.
-3. Authorize COM access:
-    1. Start the **component Services** console.
-    2. Browse in the left pane to: _Component Services \ Computers_.
-    3. Right click **My Computer** and select **properties from the menu.
-    4. Open the tab **COM Security**.
-    5. Click **Edit Limits** in the _Access Permissions_ pane.
-    6. Add the account used for monitoring using the **Add** button.
-    7. Ensure the account has *Remote Access* permissions.
-    8. Close the access permission screen by clicking **OK**.
-    9. Click on **Edit Limits** in the _Launch and Activation Permissions_ pane.
-    10. Add the account used for monitoring using the **Add** button.
-    11. Ensure to allow: _Local Launch_, _Remote Launch_, _Local Activation_ and _Remote Activation_.
-    12. Close the windows by clicking **OK** twice and exit the Component Services console.
+The WMI probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager)
 
+## Operational
 
-See also our WMI trouble shooting section about [remote-UAC](wmi-troubleshooting.md#remote-uac) as you might need to disable this.
+## Known issues
 
 ### Microsoft Windows server 2003
 
@@ -139,28 +144,10 @@ You should ensure **Management and Monitoring Tools** are installed using **Add/
 
 The **software** and **updates** check might not work as expected, we advise you to turn off these checks.
 
-### Microsoft ISA Server?
-
-Monitoring a Microsoft ISA server requires the following rules on the ISA server:
-
-* Allow traffic from the monitoring appliance to localhost for all protocols.
-* Within this rule, filtering "Enforce strict RPC compliance" must be disabled.
-
-### Known issues
+### Troubleshooting WMI
 
 See our [troubleshooting section](wmi-troubleshooting.md) for known issues and ways to troubleshot WMI queries.
-
-
 
 ## Additional information
 
 :material-github: [Microsoft WMI probe source code](https://github.com/infrasonar/wmi-probe)
-
-
-
-
-
-
-
-
-

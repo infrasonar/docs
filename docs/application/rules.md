@@ -56,7 +56,7 @@ Last choose in this section is for which **severity** :material-numeric-4-circle
 
     Choosing a lower level notifies you also about the more urgent levels. So if you choose *Critical* you will also be notified when an *Alert* or *Emergency* level is hit.
     <br><br>
-    To avoid unexpected costs and messages flooding you choosing the correct severity levels requires some careful consideration, if in doubt don't hesitate to contact [support](../introduction/support.md)
+    To avoid unexpected costs and messages flooding you choosing the correct severity levels requires some careful consideration, if in doubt don't hesitate to contact [support](../support/index.md)
 
 ### Condition
 

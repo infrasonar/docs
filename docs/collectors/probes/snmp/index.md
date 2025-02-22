@@ -10,7 +10,7 @@ InfraSonar supports retrieving data from remote assets using the *SNMPv1*, *SNMP
 
 ## Deployment
 
-The SNMP probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
+The SNMP probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Prerequisites
 
@@ -26,8 +26,6 @@ To monitor an asset using SNMP there ar two things two setup on the monitored as
 
 **Authentication**
 :   *SNMPv1* and *SNMPv2c* versions "plain" community string for authentication; *SNMPv3* is more secure but not supported on all devices.
-
-    The community string or credentials should be stored on the appliance as described [here](../appliance/credentials.md#snmp).
 
     !!! note "default configuration"
         When **no** configuration file is specified the probe falls back **SNMPv2c** and used the community string `public`.
@@ -97,7 +95,7 @@ _These steps don’t require a system restart and are non-service affecting._
 
 1. Open a new terminal window.
 2. Create a backup of the default SNMP configuration file: `sudo mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig`
-3. Create and edit a new SNMP configuration file using [nano](../appliance/nano_basics.md) or vi
+3. Create and edit a new SNMP configuration file using for example `nano` or `vi`
    Enter the following in the new configuration file:
 ```
 com2sec mynetwork <NETWORK/CIDR> public
@@ -106,7 +104,7 @@ rocommunity public default .1
 * Replace `<NETWORK/CIDR>` with the network address and CIDR mask of the subnet your SNMP collector resides on, usually this is the monitoring appliance.
 * Replace the community string “public” with another string if that’s your preference.
 
-4. Enable the SNMP daemon:
+1. Enable the SNMP daemon:
 ```
 sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
 ```

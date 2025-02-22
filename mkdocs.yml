@@ -62,19 +62,22 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: index.md
   - Documentation:
+    - index.md
     - Introduction:
-       - introduction/index.md
+       - index.md
        - Getting started: introduction/getting_started.md
-       - Credentials: introduction/credentials.md
        - Platform: introduction/platform.md
-       - Support: introduction/support.md
-       - Terminology: introduction/terminology.md
-    - Howto:
-       - howtos/index.md
-       - Agentless implementation: howtos/agent-less.md
-       - Raspberry Pi dashboard: howtos/raspberrypi_dashboard.md
+    - Concepts:
+       - Containers: concept/containers.md
+       - Collectors: concept/collectors.md
+       - Assets: concept/assets.md
+       - Credentials: concept/credentials.md
+       - Conditions: concept/conditions.md
+       - Alerts & notifications: concept/alerts-notifications.md
+    - Guides:
+       - Agentless implementation: guides/agent-less.md
+       - Raspberry Pi dashboard: guides/raspberrypi_dashboard.md
     - Privacy & Security:
        - Security: privacy-security/security_considerations.md
        - Privacy: privacy-security/privacy.md

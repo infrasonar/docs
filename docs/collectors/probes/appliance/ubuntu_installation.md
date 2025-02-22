@@ -2,7 +2,7 @@
 
 This section outlines how to install the :fontawesome-brands-linux: Linux appliance from scratch.
 
-We opt to use Ubuntu in this guide. If you prefer to use any other distribution please contact [support](/docs/introduction/support.md) and discuss any pitfalls to be aware off.
+We opt to use Ubuntu in this guide. If you prefer to use any other distribution please contact [support](/docs/support/index.md) and discuss any pitfalls to be aware off.
 
 ## Hardware requirements
 

@@ -19,7 +19,7 @@ Step by step :feet: guide:
 2. Ensure **Start Docker Desktop when you sign in to your computer** is enabled in the docker desktop configuration (:gear:).
 3. Download our latest appliance installer for Windows [here](https://github.com/infrasonar/appliance-installer/releases/latest)
 4. Extract the zip file.
-5. Open een elevated command prompt.
+5. Open a command prompt.
 6. Change into the directory were you extracted the appliance installer.
 7. Run the `appliance-installer.exe` executable and follow the steps:
 
@@ -43,4 +43,5 @@ yes
 Please be patient, this may take a while...
 Done
 ```
+
 Open your container on https://app.infrasonar.com and manage the appliance via the [Agentcores](../../../application/agentcores.md) menu

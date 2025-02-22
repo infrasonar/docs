@@ -1,4 +1,4 @@
-![Containers](../images/application_containers.png){ width="150" align=right}
+![Containers](../images/concept_containers.png){ width="150" align=right}
 
 # Containers
 
@@ -16,7 +16,3 @@ In this view you can also add/remove columns to show you:
 * Number of Notifications
 * Mode
 * Timezone
-
-A container can contain a maximum of 2.000 assets.
-
-If you have the need to add more assets please reach out to [support](../introduction/support.md) so we can discuss potential solutions.

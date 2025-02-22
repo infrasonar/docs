@@ -1,4 +1,4 @@
-![Alerts](../images/application_alert.png){ width="150" align=right}
+![Alerts](../images/concept_alert.png){ width="150" align=right}
 
 # :material-bell: Alerts
 

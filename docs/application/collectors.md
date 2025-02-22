@@ -1,4 +1,4 @@
-![Collectors](../images/collectors.png){ width="150" align=right}
+![Collectors](../images/concept_collectors.png){ width="150" align=right}
 
 # Collectors
 

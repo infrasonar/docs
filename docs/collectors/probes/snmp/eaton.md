@@ -17,12 +17,7 @@ The Eaton probe consist of a number of UPS specific checks:
 
 ## Deployment
 
-The Eaton probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
-## Credentials
-
-As the Eaton probe uses SNMP the SNMP section in our [credentials documentation](../appliance/credentials.md) is applicable for this probe.
-The probe configuration uses the `eaton` section as default in the InfraSonar credentials file.
+The Eaton probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Conditions
 

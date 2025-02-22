@@ -50,9 +50,9 @@ graph TD
 
 To fully support this hierarchical setup we created three corresponding collectors:
 
-* [UniFi Controller](./unificontroller.md)
-* [UniFi Site](./unifisite.md)
-* [UniFi Device](./unifidevice.md)
+* [UniFi Controller](./unifi.md#unifi-controller)
+* [UniFi Site](./unifi.md#unifi-site)
+* [UniFi Device](./unifi.md#unifi-devices)
 
 
 !!! note "See also our UniFi SNMP probe"
@@ -62,19 +62,7 @@ To fully support this hierarchical setup we created three corresponding collecto
 
 All three collectors use the UniFi API to collect data from the UniFi controller and this the same read-only credentials.
 
-Use the following sections in your credentials file:
-
-```yaml
-unificontroller:
-  config:
-    password: "username"
-    username: "pasword goes here"
-unifidevice:
-  use: unificontroller
-```
-
-See our [credentials documentation](./appliance/credentials.md) for more detailed information.
-
+You can easily configure these credentials using our [appliance manager](./appliance/appliance_manager.md).
 
 ### Deployment
 

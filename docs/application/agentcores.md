@@ -71,29 +71,19 @@ The **Name** field can be used as a **Local configuration**
   ![InfraSonar edit asset](../images/application_agentcore_remote_appliance_configure_collector.png){ width=800"}
 </figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Removing a Agentcore 
 
-With the proper autorotation it is possible to remove an Agentcore here.
+With the proper authorization it is possible to remove an Agentcore here.
 
 !!! danger "Proceed with caution"
 
     Removing an Agentcore without having a secondary agentcore in the same zone can seriously impact the availability of your monitoring solution.
 
+### Good to know
+
+* When one or more [Agentcores](agentcores.md) are configured in the specified zone an asset is bound to one of the Agentcores in this zone.
+* If no agentcores are configured in the specified zone we fall back to any other agent core.
+* For assets being monitored using an agent the zone configuration is purely cosmetic.
 
 
 ## Zones
@@ -101,9 +91,3 @@ With the proper autorotation it is possible to remove an Agentcore here.
 ![Zones](../images/application_zones.png){ width="150" align=right}
 
 Zones can be useful when assets are located in a dmz or other remote network as it allows to direct assets to a specific Agentcore by configuring the asset to be a member of the specific zone.
-
-## Good to know
-
-* When one or more [Agentcores](agentcores.md) are configured in the specified zone an asset is bound to one of the Agentcores in this zone.
-* If no agentcores are configured in the specified zone we fall back to any other agent core.
-* For assets being monitored using an agent the zone configuration is purely cosmetic.

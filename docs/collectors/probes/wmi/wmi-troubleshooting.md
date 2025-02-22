@@ -79,7 +79,6 @@ Configured LocalAccountTokenFilterPolicy to grant administrative rights remotely
     2. `Network access: Sharing and security model for local accounts`,<br> this must be set to **CLASSIC**.
     3. `Network security: LAN Manager authentication level`,<br> should be: **Not Defined**<br> or set to: **Send LM & NTLM - use NTLMv2 session security if negotiated**.<br>*This also should fix any `NTSTATUS: NT_STATUS_ACCESS_DENIED` errors*
 
-
 #### Remote UAC
 
 If you are monitoring a Windows asset using a local administrator account you might see the notification `unable to authenticate: ACCESS_DENIED (5)`
@@ -100,7 +99,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "LocalAccountTokenFilterPolicy"=dword:00000001
 ```
-
 
 ### WMI error 0x80041010
 

@@ -2,10 +2,13 @@
 
 # :material-key-outline: Tokens
 
-In this section container-tokens can be generated and maintained.
+Container tokens can be used to authorize external automation to manage InfraSonar data within a container using our [API](../api/overview.md).
 
-Container tokens can be used to authorize external automation to manage InfraSonar data using our API.
+!!! warning "Tokens are bound to a container"
+    Tokens are used for authentication but also to identify the container.
 
+    As such data sent from an agentcore or agent appears within the container the configured token belongs to.
+    
 Container tokens are also required for [agentcore](../application/agentcores.md) and [agent](../collectors/agents/index.md) authentication.
 
 !!! tip inline end

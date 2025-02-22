@@ -50,9 +50,9 @@ graph TD
 
 To fully support this hierarchical setup we created three corresponding collectors:
 
-* [UniFi Controller](./unificontroller.md)
-* [UniFi Site](./unifisite.md)
-* [UniFi Device](./unifidevice.md)
+* [UniFi Controller](./unifi.md#unifi-controller)
+* [UniFi Site](./unifi.md#unifi-site)
+* [UniFi Device](./unifi.md#unifi-devices)
 
 
 ## Pre-requisites
@@ -71,11 +71,11 @@ The UniFi API does not support accounts using MFA, setup a read-only account wit
 
     We strongly recommend creating a read only account specific for monitoring.
 
-See our [credentials documentation](./appliance/credentials.md) for more detailed information.
+You can set the credentials for our service on the service configuration page.
 
 ### Deployment
 
-The UniFi probes can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
+The UniFi service can easily be deployed.
 
 #### UniFi controller
 

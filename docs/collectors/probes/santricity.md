@@ -42,22 +42,6 @@ The SANtricity / NetApp E-Series probe can easily be deployed using our [applian
 
 ### Credentials
 
-#### SANtricity / NetApp E-Series
-
-The SANtricity / NetApp E-Series probe is configured in the `santricity` section:
-
-
-```yaml
-santricity:
-  config:
-    password: "some_secure_passw0rd"
-    username: monitor
-```
-
-
-
-The SANtricity / NetApp E-Series probe used the standard username/password configuration as described in our[credentials](appliance/credentials.md) section.
-
 !!! danger "Don't use admin"
 
     We strongly advise using the **monitor** user as this is a user with read-only access to the system.

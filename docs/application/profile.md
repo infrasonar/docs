@@ -26,7 +26,7 @@ Your personal access tokens are also managed here.
 
 :   You will also configure your personal access tokens here.
 
-    !!! note "Keep tokes personal"
+    !!! warning "Keep tokes personal"
 
         Tokens configured here are personal and represent you.
 

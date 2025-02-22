@@ -20,7 +20,7 @@ The **vcenter-probe** uses the [VMware API](https://www.vmware.com/support/pubs/
 
 ## Deployment
 
-The vCenter probe can easily be deployed using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
+The vCenter probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Probe configuration
 
@@ -33,17 +33,6 @@ The VMware API requires a user account which is assigned the **Read-only** rol t
 When vCenter is integrated with Active Directory (AD), you will find a group in vCenter that has a corresponding group in AD.
 
 Simply create a user with read-only permissions for your vCenter environment in AD and add it to the corresponding AD group. Your credentials for vCenter will be in the format of username@windows.domain.
-
-The corresponding `infrasonar.yaml` [^1] section when using for example *infrasonar@vsphere.local* as user id looks as follows:
-
-```yaml
-vcenter:
-  config:
-    username: infrasonar@windows.domain
-    password: "some_secure_passw0rd"
-```
-
-[^1]: Passwords are encrypted on the appliance the moment the file is saved, see our [credentials documentation](../appliance/credentials.md)
 
 #### vCenter standalone
 

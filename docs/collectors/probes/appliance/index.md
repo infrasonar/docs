@@ -12,7 +12,7 @@ We outlined the specific installation steps in our [Ubuntu Guide](./ubuntu_insta
 
 ## Oracle Linux
 
-We successfully deployed InfraSonar for one of our customers onto Oracle Linux using [podman](https://podman.io/). Please contact [support](/docs/introduction/support.md) to learn more about any implementation pitfalls and lessons learned.
+We successfully deployed InfraSonar for one of our customers onto Oracle Linux using [podman](https://podman.io/). Please contact [support](/docs/support/index.md) to learn more about any implementation pitfalls and lessons learned.
 
 ## Microsoft Windows
 

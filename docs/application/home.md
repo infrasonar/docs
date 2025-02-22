@@ -4,8 +4,8 @@
 
 The home screen gives you a personalized overview of alerts assigned to you, containers, access and favorites.
 
-!!! info "Future improvements ahead"
+!!! tip "Visit our tour"
 
-    In the future we will make it possible to adapt the home screen to your needs.
+    As a first time users please take our **introduction tour**, it is a great way to learn more about InfraSonar.
 
 ![application dashboard](../images/application_home_screenshot.png){ width="800"}
