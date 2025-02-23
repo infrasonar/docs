@@ -35,7 +35,7 @@ The HyperV- guest probe can easily be deployed and maintained using our [remote 
 
 ## Good to know
 
-You can automate deployment using our [toolkit](../../../guides/toolkit.md) and the Hyper-V guests report.
+You can automate deployment using our [InfraSonar Commandline Interfase](../../../guides/cli.md) and the Hyper-V guests report.
 
 ## Additional information
 

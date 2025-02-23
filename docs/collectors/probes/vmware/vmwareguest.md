@@ -42,7 +42,7 @@ The VMware guest probe can easily be deployed and maintained using our [remote a
 
     When monitoring guests running on a standalone ESXi environment you can use `esx` and when monitoring guest on Vcenter managed environment use `vcenter` 
 
-You can automate this step using our toolkit and VMware guests report.
+You can automate this step using our [InfraSonar Commandline Interfase](../../../guides/cli.md) and VMware guests report.
 
 Please reach out to [support](../../../support/index.md) for additional information.
 

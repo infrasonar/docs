@@ -1,3 +1,0 @@
-#### Toolkit
-
-The [InfraSonar tool](https://github.com/infrasonar/toolkit) can be used to manage assets for a container. The tool has two main features. One is to read all assets from a container to YAML output. If needed, all collector and label information can be included. The other feature of this tool is to apply a YAML file to InfraSonar. These two features combined allow you to easily add new assets as well as managing existing assets for a container.

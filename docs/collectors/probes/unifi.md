@@ -87,7 +87,7 @@ The UniFi probes can easily be deployed using our [appliance manager](./applianc
 6. The site will now appear with a :material-link: icon indicating it has been setup.
 7. Add the correct labels to the newly created asset and add the [lastseen](./../services/last_seen.md) collector if desired.
 
-You can automate this step using our [toolkit](https://github.com/infrasonar/toolkit) and UniFi devices report.
+You can automate this step using our [InfraSonar Commandline Interfase](../../guides/cli.md) and UniFi devices report.
 
 #### UniFi devices
 
@@ -99,7 +99,7 @@ You can automate this step using our [toolkit](https://github.com/infrasonar/too
 6. The device will now appear with a :material-link: icon indicating it has been setup.
 7. Add the correct labels to the newly created asset and add the [lastseen](./../services/last_seen.md) collector if desired.
 
-You can automate this step using our [toolkit](https://github.com/infrasonar/toolkit) and UniFi devices report.
+You can automate this step using our [InfraSonar Commandline Interfase](../../guides/cli.md) and UniFi devices report.
 
 ## Additional information
 
