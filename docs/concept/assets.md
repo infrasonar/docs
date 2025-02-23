@@ -2,16 +2,17 @@
 
 # :material-laptop: Assets
 
-Assets are in essence the monitored objects in an InfraSonar implementation.
+## The Foundation of Your Monitoring
 
-Assets can be IT components such as routers, switches, servers etc but can easily also consists of any other device which can be monitored such as elevators, IOT devices, etc.
-As a rule of thumb, if we can retrieve data and send it back to our cloud-platform we should be able to monitor it.
+In InfraSonar, "assets" represent the objects you monitor. This encompasses a wide range of devices, from traditional IT components like routers, switches, and servers to diverse assets such as elevators, IoT devices, and more.
 
-## Collectors
+> Essentially, if we can retrieve data from it and transmit it to our cloud platform, we can monitor it.
 
-[Collectors](./collectors.md) and labels form a symbiotic relation are added to assets and 
+## Features
 
-## Labels
+* **Collectors:** [Collectors](./collectors.md) are deployed directly onto assets to gather monitoring data.
+* **Labels:** [Labels](../application/labels.md) serve dual purposes: they facilitate easy identification and enable the application of conditions. By grouping conditions with labels, you can efficiently apply them to multiple assets.
+* **Asset Kinds:** Assigning a predefined asset kind not only enhances filtering capabilities but also visually distinguishes assets with relevant icons.
 
 ## Guest to asset
 
