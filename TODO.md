@@ -6,4 +6,4 @@
 * Howto manager, schedule and status
 * Properties
 * Document cli
-
+* Enhance views documentation
