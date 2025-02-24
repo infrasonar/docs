@@ -40,7 +40,7 @@ flowchart LR
 ## Deploy
 
 * **Install InfraSonar Appliance (if applicable):** Deploy the [InfraSonar appliance](../collectors/probes/appliance/index.md) if applicable for your chosen deployment model.
-* **Deploy Collectors:** Install and configure collectors for or on your assets. ([probes](../collectors/probes/index.md), [agents]((../collectors/agents/index.md)) and/or [services](../collectors/services/index.md))
+* **Deploy Collectors:** Install and configure collectors for or on your assets. ([probes](../collectors/probes/index.md), [agents](../collectors/agents/index.md) and/or [services](../collectors/services/index.md))
 * **Configure Assets and Labels:** Add your [assets](../application/assets.md) to InfraSonar and apply the necessary [labels](../application/labels.md).
 * **Define Conditions and Alerts:** Configure the conditions and alerts based on your monitoring requirements.
 * **Validate Data Collection:** Verify that InfraSonar is successfully collecting data from your assets, ensure there are **no** notifications.
@@ -93,7 +93,7 @@ flowchart TB
 
 4.  **Deploy:**
     * **Install InfraSonar Appliance (if applicable):** Deploy the [InfraSonar appliance](../collectors/probes/appliance/index.md) if applicable for your chosen deployment model.
-    * **Deploy Collectors:** Install and configure collectors for or on your assets. ([probes](../collectors/probes/index.md), [agents]((../collectors/agents/index.md)) and/or [services](../collectors/services/index.md))
+    * **Deploy Collectors:** Install and configure collectors for or on your assets. ([probes](../collectors/probes/index.md), [agents](../collectors/agents/index.md) and/or [services](../collectors/services/index.md))
     * **Configure Assets and Labels:** Add your [assets](../application/assets.md) to InfraSonar and apply the necessary [labels](../application/labels.md).
     * **Define Conditions and Alerts:** Configure the conditions and alerts based on your monitoring requirements.
     * **Validate Data Collection:** Verify that InfraSonar is successfully collecting data from your assets, ensure there are **no** notifications.
