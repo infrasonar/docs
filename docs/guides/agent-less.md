@@ -50,7 +50,7 @@ Add your Windows assets,
 3. Enter a **name** for your asset, we suggest using the actual name and even better de FQDN of your asset.
 4. Enter an optional **description**.
 5. Leave **Mode** set to **Normal**, see our [Modes](../application/modes.md) documentation for more information.
-6. Leave Sone to **default :: 0**, see our [Zones](../application/agentcores.md#zones) documentation section for more information.
+6. Leave Zone to **default :: 0**, see our [Zones](../application/agentcores.md#zones) documentation section for more information.
 7. Add the following **Collectors**: _wmi_ and _eventlog_
 8. Add the `Windows` label in the **Labels** menu
 9. Open the **eventlog** tab and provide the server address. (_if the previously entered name can be resolved by the appliance you can leave the address empty._)
