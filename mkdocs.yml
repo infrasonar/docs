@@ -137,6 +137,7 @@ nav:
         - NetApp: collectors/probes/netapp.md
         - Palo Alto: collectors/probes/paloalto.md
         - Ping: collectors/probes/ping.md
+        - PHP FPM: collectors/probes/phpfpm.md
         - SANtricity / NetApp E-Series: collectors/probes/santricity.md
         - SNMP:
             - collectors/probes/snmp/index.md
