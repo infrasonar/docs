@@ -17,10 +17,6 @@ The UniFi probe consist of a number of UPS specific checks:
 :material-check: Radio status<br>
 :material-check: VAP status
 
-## Deployment
-
-The UniFi probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Additional information
 
 :material-github: [UniFi probe source code](https://github.com/infrasonar/unifi-probe)

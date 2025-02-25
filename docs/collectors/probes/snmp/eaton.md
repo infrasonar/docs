@@ -15,10 +15,6 @@ The Eaton probe consist of a number of UPS specific checks:
 :material-check: Input, Bypass & Output measurement<br>
 :material-check: Environmental monitoring, temperature and humidity<br>
 
-## Deployment
-
-The Eaton probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Conditions
 
 The label `Eaton UPS` can be used to configure our default condition set.

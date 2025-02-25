@@ -62,11 +62,7 @@ To fully support this hierarchical setup we created three corresponding collecto
 
 All three collectors use the UniFi API to collect data from the UniFi controller and this the same read-only credentials.
 
-You can easily configure these credentials using our [appliance manager](./appliance/appliance_manager.md).
-
-### Deployment
-
-The UniFi probes can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
+You can easily configure these credentials using our [remote appliance manager](../../application/agentcores.md#remote-appliance-manager).
 
 #### UniFi controller
 

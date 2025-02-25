@@ -15,10 +15,6 @@ The HP ILO probe consist of a number of specific checks:
 :material-check:  Array controller<br>
 :material-check:  Storage (logical, phycial)
 
-## Deployment
-
-The HP ILO probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Conditions
 
 The label `HP ILO` can be used to configure our default condition set.

@@ -14,10 +14,6 @@ The HP ProCurve probe consist of a number of UPS specific checks:
 :material-check: Memory<br>
 :material-check: Sensors
 
-## Deployment
-
-The HP ProCurve probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Conditions
 
 The label `HP ProCurve` can be used to configure our default condition set.

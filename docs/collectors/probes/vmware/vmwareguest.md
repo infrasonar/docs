@@ -20,10 +20,6 @@ The VMware guest probe offers a deep inside into individual virtual machines run
 * Snapshots
 * VMware tools version
 
-## Deployment
-
-The VMware guest probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Probe configuration
 
 ![screenshot vmwareguest config](../../../images/application_vmwarequest_config.png)

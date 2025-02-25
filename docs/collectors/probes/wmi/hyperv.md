@@ -10,10 +10,6 @@ The Hyper-V guest probes uses [WMI](./index.md) to to monitor Microsoft Windows 
 
 * Hyper-V quest overview
 
-## Deployment
-
-The HyperV probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Probe configuration
 
 Configuration of the Hyper-V probe is the similar to deploying the [WMI](index.md) probe as it is in essence an extension of the WMI probe.

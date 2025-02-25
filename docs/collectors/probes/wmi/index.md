@@ -130,10 +130,6 @@ Monitoring a Microsoft ISA server requires the following rules on the ISA server
 * Allow traffic from the monitoring appliance to localhost for all protocols.
 * Within this rule, filtering "Enforce strict RPC compliance" must be disabled.
 
-## Deployment
-
-The WMI probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager)
-
 ## Operational
 
 ## Known issues

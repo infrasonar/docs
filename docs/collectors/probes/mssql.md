@@ -43,22 +43,17 @@ Some of the included measurements:
 !!! Tip Consultancy
     Our implementation consultants can assist in creating a detailed analysis of a Microsoft SQL server.
 
-## Deployment
-
-The Microsoft SQL probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
-
 ## Probe configuration
 
 The MSSQL probe requires the host's IP address running the monitored SQL server and requires access to curtain SQL tables as defined in our grant scripts.
 
 ### Credentials
 
-
 The Microsoft SQL probe supports SQL authentication and domain authentication.
 
 For both scenarios it is advisable to setup a separate account for this probe and grant this account access via the supplied grant scripts.
 
-Credentials can easily be set using our [appliance manager](./appliance/appliance_manager.md)
+Credentials can easily be set using our [remote appliance manager](../../application/agentcores.md#remote-appliance-manager)
 
 ### Authorization
 

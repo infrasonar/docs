@@ -10,10 +10,6 @@ The Eventlog guest probes uses [WMI](./index.md) to to monitor Microsoft Windows
 
 * Specific eventID's
 * Predefined security IDS's
-  
-## Deployment
-
-The eventlog probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Probe configuration
 

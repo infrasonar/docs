@@ -119,7 +119,7 @@ Use the following command to ensure executing of the morning and evening script 
 
 If you want to edit the crontab you can do so using `crontab -e`
 
-The website [crontab guru]9https://crontab.guru/) can be very helpfull to understand the crontab notation
+The website [crontab guru](https://crontab.guru/) can be very helpfull to understand the crontab notation
 
 ## Setup the dashboard
 

@@ -1,4 +1,4 @@
-![DNS-Collector](../images/collector_dns.png{ width="150" align=right}
+![DNS-Collector](../images/collector_dns.png){ width="150" align=right}
 
 # DNS Monitoring
 

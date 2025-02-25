@@ -33,10 +33,6 @@ Some checks are only available from a specific ONTAP version onward:
 * **interface and interface ports statistics** requires ONTAP v9.8 or higher
 * **SnapMirror transfer data** requires ONTAP v9.11 or higher
 
-## Deployment
-
-The NetApp probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
-
 ## Probe configuration
 
 ### Credentials
@@ -81,7 +77,7 @@ Verify the user creation:
 security login show infrasonar
 ```
 
-Set the credentials using our [appliance manager](./appliance/appliance_manager.md).
+Set the credentials using our [remote appliance manager](../../application/agentcores.md#remote-appliance-manager)
 
 The probe retrieves monitoring data using the ONTAP REST API on TCP port 443.
 

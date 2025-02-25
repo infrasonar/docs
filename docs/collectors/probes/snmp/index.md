@@ -8,10 +8,6 @@
 
 InfraSonar supports retrieving data from remote assets using the *SNMPv1*, *SNMPv2c*, and *SNMPv3* protocol.
 
-## Deployment
-
-The SNMP probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Prerequisites
 
 To monitor an asset using SNMP there ar two things two setup on the monitored asset:

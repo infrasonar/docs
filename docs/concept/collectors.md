@@ -54,11 +54,11 @@ graph LR
 
 #### InfraSonar appliance
 
-When we refer to our [InfraSonar appliance](../collectors/probes/appliance/index.md) we refer to an Agentcore and a collection of probes. In a typicly deployment the appliance is a Linus host running Docker as our preferred deployment method for probes are Docker containers.
+When we refer to our [InfraSonar appliance](../collectors/probes/appliance/index.md) we refer to an Agentcore and a collection of probes. In a typical deployment the appliance is a Linux host running Docker as our preferred deployment method for probes are Docker containers.
 
 #### Configuration
 
-Probes can easily be deployed and maintained using our [appliance manager](../collectors/probes//appliance/appliance_manager.md which also allows you to install a selection of agents on the appliance.
+Probes can easily be deployed and maintained using our [remote appliance manager](../application/agentcores.md#remote-appliance-manager) which also allows you to install a selection of agents on the appliance such as our [docker agent](../collectors/agents/docker.md) to monitor the appliance, our [speedtest agent](../collectors/agents/speedtest.md) to monitor the internet speed and our [discovery agent](../collectors/agents/discovery.md) to periodically run a Nmap scan. 
 
 ### Services
 

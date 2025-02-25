@@ -11,10 +11,6 @@ The TCP probe uses Nmap to try and make a TCP connection to specified TCP ports.
 * Check TCP ports
 * Check certificates
 
-## Deployment
-
-The TCP probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
-
 ## Probe configuration
 
 Property          | Description
