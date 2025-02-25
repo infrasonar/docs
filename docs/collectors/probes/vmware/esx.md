@@ -28,10 +28,6 @@ See our overall [VMwware](index.md) documentation for additional information.
     We offer a specific probe for VMware guest monitoring to retrieve even more in-depth metrics per virtual machine.
     See our [VMware guest documentation](./vmwareguest.md) for more information.
 
-## Deployment
-
-The Vmware ESXi probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Configuration
 
 ### Credentials

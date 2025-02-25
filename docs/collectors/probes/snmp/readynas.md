@@ -20,10 +20,6 @@ InfraSonar monitors ReadyNAS storage systems using [snmp](index.md).
 :material-check: Services<br>
 :material-check: IO
 
-## Deployment
-
-The ReadyNAS probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Additional information
 
 :material-github: [ReadyNAS probe source code](https://github.com/infrasonar/readynas-probe)

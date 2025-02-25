@@ -11,10 +11,6 @@ The HTTP probe allows to monitor a specific [URI](https://en.wikipedia.org/wiki/
 * Roundtrip time, the roundtriptime for the http(s) request is measured and returned.
 * HTTP status code monitoring
 
-## Deployment
-
-The HTTP probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
-
 ## Probe configuration
 
 Property        | Description

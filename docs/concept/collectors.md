@@ -58,7 +58,7 @@ When we refer to our [InfraSonar appliance](../collectors/probes/appliance/index
 
 #### Configuration
 
-Probes can easily be deployed and maintained using our [appliance manager](../collectors/probes//appliance/appliance_manager.md which also allows you to install a selection of agents on the appliance.
+Probes can easily be deployed and maintained using our [remote appliance manager](../application/agentcores.md#remote-appliance-manager) which also allows you to install a selection of agents on the appliance.
 
 ### Services
 

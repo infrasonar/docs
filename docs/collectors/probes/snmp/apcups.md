@@ -16,10 +16,6 @@ The APC UPS probe consist of a number of UPS specific checks:
 :material-check: UPS Load<br>
 :material-check: Temperature
 
-## Deployment
-
-The APC UPS probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Conditions
 
 The label `APC UPS` can be used to configure our default condition set.

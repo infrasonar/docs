@@ -30,10 +30,6 @@ Some of the features of the InfraSonar NetApp probe:
 * Controller status
 * Disk status status
 
-## Deployment
-
-The SANtricity / NetApp E-Series probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
-
 ## Probe configuration
 
 * **Address**: IP address of FQDN of them management interface

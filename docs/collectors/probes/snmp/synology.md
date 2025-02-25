@@ -21,10 +21,7 @@ The Synology probe uses the [snmp](index.md) protocol to perform its queries.
 
     You can also use the NAS to deploy our probes and utilize the NAS also a monitoring appliance.
     This works flawlessly as the InfraSonar resource usage is minimal.
-
-## Deployment
-
-The Synology probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
+    Note this requires an advanced setup as our remote appliance manager is not supported on the Synology platform.
 
 ## Additional information
 

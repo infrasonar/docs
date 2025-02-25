@@ -11,10 +11,6 @@ The ping-probe utilizes the [icmp protocol](https://en.wikipedia.org/wiki/Ping_(
 * Ping roundtrip monitoring, min and max timing
 * Number of successfully and/or dropped packages
 
-## Deployment
-
-The ping probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
-
 ## Probe configuration
 
 Property | Description

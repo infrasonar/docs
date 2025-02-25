@@ -13,10 +13,6 @@ The Hyper-V guest probes uses [WMI](./index.md) to to monitor Microsoft Windows 
 
 * Guest status as provided by the `Msvm_ComputerSystem` class
 
-## Deployment
-
-The HyperV- guest probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
-
 ## Probe configuration
 
 ![screenshot hypervguest config](../../../images/application_hypervquest_config.png)
