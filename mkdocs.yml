@@ -77,6 +77,7 @@ nav:
        - Alerts & notifications: concept/alerts-notifications.md
     - Guides:
        - Agentless implementation: guides/agent-less.md
+       - DNS monitoring: guides/dns.md
        - Raspberry Pi dashboard: guides/raspberrypi_dashboard.md
     - Privacy & Security:
        - Security: privacy-security/security_considerations.md
@@ -158,6 +159,7 @@ nav:
             - VMware guest: collectors/probes/vmware/vmwareguest.md
     - Services:
         - collectors/services/index.md
+        - DNS: collectors/services/dns.md
         - Last seen: collectors/services/last_seen.md
         - MailRoundTrip: collectors/services/mailroundtrip.md
         - Microsoft 365: collectors/services/microsoft_365.md

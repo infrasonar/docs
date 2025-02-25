@@ -4,17 +4,20 @@
 
 ## Introduction
 
-The DNS probe is a synthetic monitor and can even monitor changes to specific DNS records.
+The DNS service is a synthetic monitor and can even monitor changes to specific DNS records.
+The DNS service is similar to our [DNS Probe](../probes/dns.md) with the exeception that our services run on our platform.
+
+Using the DNS service can be really useful to observer your DNS configuration from outside your IT infrastructure.
 
 ## Features 
 
-THe DNS probe can perform forward and reverse DNS queries for an FQDN
+THe DNS service can perform forward and reverse DNS queries for an FQDN
 
 ## Deployment
 
-The DNS probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
+The DNS service can easily be deployed by enabling the dnssvc [collector](../../application/collectors.md)
 
-## Probe configuration
+## Service configuration
 
 Property    | Description
 ------------|---------------------------------------------------------
