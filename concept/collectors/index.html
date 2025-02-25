@@ -5846,9 +5846,9 @@
 <p>it is possible to use TCP port 443 instead of 8730 we don't recommended this but some environment refuse inter traffic to ports other then 80 and 443</p>
 </div>
 <h4 id="infrasonar-appliance">InfraSonar appliance</h4>
-<p>When we refer to our <a href="../../collectors/probes/appliance/">InfraSonar appliance</a> we refer to an Agentcore and a collection of probes. In a typicly deployment the appliance is a Linus host running Docker as our preferred deployment method for probes are Docker containers.</p>
+<p>When we refer to our <a href="../../collectors/probes/appliance/">InfraSonar appliance</a> we refer to an Agentcore and a collection of probes. In a typical deployment the appliance is a Linux host running Docker as our preferred deployment method for probes are Docker containers.</p>
 <h4 id="configuration">Configuration</h4>
-<p>Probes can easily be deployed and maintained using our [appliance manager](../collectors/probes//appliance/appliance_manager.md which also allows you to install a selection of agents on the appliance.</p>
+<p>Probes can easily be deployed and maintained using our <a href="../../application/agentcores/#remote-appliance-manager">remote appliance manager</a> which also allows you to install a selection of agents on the appliance such as our <a href="../../collectors/agents/docker/">docker agent</a> to monitor the appliance, our <a href="../../collectors/agents/speedtest/">speedtest agent</a> to monitor the internet speed and our <a href="../../collectors/agents/discovery/">discovery agent</a> to periodically run a Nmap scan. </p>
 <h3 id="services">Services</h3>
 <p>Services are like probes as they retrieve data agentless but are deployed on an isolated section on our InfraSonar cloud platform. Examples of InfraSonar services include our Microsoft Azure, Microsoft 365 and mail roundtrip.</p>
 <p>See our <a href="../../collectors/services/">services documentation</a> for additional services related documentation and an overview currently supported services.</p>

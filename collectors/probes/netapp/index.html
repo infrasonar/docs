@@ -2545,15 +2545,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#probe-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       Probe configuration
@@ -5690,15 +5681,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#probe-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       Probe configuration
@@ -5801,8 +5783,6 @@ The monitoring is not as elaborate as the API Probe.</p>
 <li><strong>interface and interface ports statistics</strong> requires ONTAP v9.8 or higher</li>
 <li><strong>SnapMirror transfer data</strong> requires ONTAP v9.11 or higher</li>
 </ul>
-<h2 id="deployment">Deployment</h2>
-<p>The NetApp probe can easily be deployed using our <a href="../appliance/appliance_manager/">appliance manager</a>.</p>
 <h2 id="probe-configuration">Probe configuration</h2>
 <h3 id="credentials">Credentials</h3>
 <div class="admonition danger">
@@ -5829,7 +5809,7 @@ security login create infrasonar -role infrasonar -application http -authenticat
 <p>Verify the user creation:</p>
 <div class="highlight"><span class="filename">Verify NetApp user</span><pre><span></span><code>security login show infrasonar
 </code></pre></div>
-<p>Set the credentials using our <a href="../appliance/appliance_manager/">appliance manager</a>.</p>
+<p>Set the credentials using our <a href="../../../application/agentcores/#remote-appliance-manager">remote appliance manager</a></p>
 <p>The probe retrieves monitoring data using the ONTAP REST API on TCP port 443.</p>
 <h2 id="operational">Operational</h2>
 <h3 id="danglingsnapshots">danglingSnapshots</h3>
