@@ -29,7 +29,7 @@ Check results up to a maximum of 100.000 packages will be stored in a queue.
 
 InfraSonar supports multiple Agentcores within a monitored environment. Deploying multiple Agentcores can be useful in spreading the network load, accommodate for network segmentation, and supporting large-scale implementations.
 
-To support network segmentation, assets can be assigned to a [zone](../../application/zones.md). When this zone also has an Agentcore assigned its assets will automatically be monitored using the Agentcores in this zone.
+To support network segmentation, assets can be assigned to a [zone](../../application/agentcores.md#zones). When this zone also has an Agentcore assigned its assets will automatically be monitored using the Agentcores in this zone.
 
 When you deploy multiple Agentcores in a zone, assets will be evenly distributed between all Agentcores in this zone..
 

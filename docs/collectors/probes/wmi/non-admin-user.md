@@ -8,7 +8,6 @@ We strongly recommend carefully weighing the security risks against the operatio
 
 The steps required to accomplish using a non domain admin account are outlined below.
 
-
 ## Create a user
 
 First step is to create a regular AD user without any additional permissions.
@@ -33,7 +32,6 @@ The next step is to setup a GPO object to grant the just created user sufficient
 
 !!! note
     If the GPO is not applied, select the **Enforce GPO option** to **yes** for the created GPO in Group policy management console.
-
 
 ## Local configuration
 

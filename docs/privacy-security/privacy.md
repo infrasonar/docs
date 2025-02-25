@@ -1,53 +1,41 @@
-# Privacy
+# Our Commitment to Your Privacy
 
-Protecting the privacy of the InfraSonar Platform and its customers is a top priority. This page describes what we do and what you as a user can do to guarantee this privacy as well as possible.
+At InfraSonar, safeguarding your privacy is paramount. This page outlines our practices and provides guidance on how you can further enhance your privacy within our platform.
 
-## Data control
+## Your Data, Your Control
 
-Customer data is your data, not InfraSonar’s. We only process your data according to your agreement(s). It is, therefore, also possible to manage and delete all user-related information.
+We recognize that your data belongs to you. We process it solely in accordance with our agreements. You have full control over your user-related information, including the ability to manage and delete it.
 
-## Data Access and Restrictions
+## Restricted Access & User Best Practices
 
-Only a minimum number of InfraSonar employees have access to user data to ensure user privacy.
+To ensure maximum privacy, we limit access to user data to a select group of InfraSonar employees.
 
-We recommend following the same policy in your InfraSonar environments. Only give users access to the resources they need.
+We strongly encourage you to implement the same principle within your InfraSonar environment, granting users access only to the resources they require.
 
-## Data collection and use
+## Transparent Data Practices
 
-We are transparent about data collection and use. We are committed to transparency, compliance with regulations like the GDPR, and privacy best practices. That is why we only collect data necessary for the platform's functioning. It is up to the user to determine which monitoring data needs to be collected.
+We maintain transparency regarding data collection and usage. We adhere to regulations like the [GDPR](https://gdpr-info.eu/) and follow privacy best practices. We only collect data essential for the platform's operation, leaving you to decide which monitoring data to gather.
 
-In addition, we never sell customer data or service data to third parties.
+We are committed to your privacy and will never sell your customer or service data to third parties.
 
-## Data retention
+## Data Retention Policies
 
-InfraSonar has the following different retention periods for its data.
+InfraSonar employs specific retention periods for various data types:
 
-### Configuration data
+* **Configuration Data:**
+    * Stored as configured.
+    * No historical records are retained for configuration changes other then in our logging.
+* **Time Series Data (SiriDB):**
+    * Performance data for actively monitored assets is retained for 66 weeks (approximately 15 months).
+    * Time series data inactive for three weeks is automatically purged.
+* **Closed Alerts:**
+    * Retained for 8 weeks.
+* **State Data:**
+    * Stored in memory and considered volatile.
+* **Backup Retention:**
+    * SiriDB backups: 4-day retention.
+    * Configuration data backups: 8-week retention.
 
-Configuration data such as labels, conditions and authorizations are stored while configured.
+**## Data Localization within the EU**
 
-When a configuration change is made, we don't retain any history in our logging and backups.
-
-### Time series data
-
-Time series data is stored in SiriDB, part of the InfraSonar cloud platform.
-
-- For actively monitored assets/hosts we store performance data with a retention period of 66 weeks (15 months).
-- Time series that have not received any data for three weeks are purged from the database, as these are stale metrics.
-
-### Closed alerts
-
-Closed alerts have a retention period of 8 weeks.
-
-### State data
-
-State data is kept in memory and is considered volatile.
-
-### Backup retention
-
-- SiriDB backups have a four day retention period.
-- Configuration data backups have an eight weeks retention period.
-
-## Data localization
-
-All data collected by InfraSonar is stored in the European Union in accordance with the GDPR.
+All data collected by InfraSonar is stored within the European Union, ensuring compliance with the GDPR.

@@ -18,12 +18,7 @@ The APC UPS probe consist of a number of UPS specific checks:
 
 ## Deployment
 
-The APC UPS probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
-
-## Credentials
-
-As the APC UPS probe uses SNMP the SNMP section in our [credentials documentation](../appliance/credentials.md) is applicable for this probe.
-The probe configuration uses the `apcups` section as default in the InfraSonar credentials file.
+The APC UPS probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Conditions
 

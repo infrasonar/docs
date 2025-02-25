@@ -30,7 +30,7 @@ See our overall [VMwware](index.md) documentation for additional information.
 
 ## Deployment
 
-The Vmware ESXi probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The Vmware ESXi probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Configuration
 
@@ -39,17 +39,6 @@ The Vmware ESXi probe can easily be deployed using our [appliance manager](./../
 The VMware API requires a user account which is assigned the **Read-only** rol on each monitored ESXi host.
 
 See the [VMware documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-172218B8-6DAB-4CEF-A5B7-E3865B9E9EE8.html) on how to setup a local account and assign this accountto the **Read-only** role.
-
-The corresponding `infrasonar.yaml` [^1] section when using for example **infrasonar** as user id looks as follows:
-
-```yaml
-esx:
-  config:
-    username: infrasonar
-    password: "some_secure_passw0rd"
-```
-
-[^1]: Passwords are encrypted on the appliance the moment the file is saved, see our [credentials documentation](../appliance/credentials.md)
 
 !!! danger "Don't use root"
 
@@ -73,7 +62,6 @@ etc/init.d/sfcbd-watchdog restart
 etc/init.d/hostd restart
 etc/init.d/vpxa restart
 ```
-
 
 ## Additional information
 

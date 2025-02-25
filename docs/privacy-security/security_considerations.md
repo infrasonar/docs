@@ -102,8 +102,10 @@ Here's how to strengthen your monitoring appliance's security:
 * **Version Pinning Notification**: If your company enforces version pinning, notify InfraSonar support to receive explicit update notifications.
 * **Regular Probe Password Rotation**: Change the passwords used by InfraSonar probes frequently.
 
-### Additional Security:
+### Physical Security:
 
-* **Disk Encryption (if possible)**: If your hardware supports it, enable disk encryption for additional data protection.
+* **Disk Encryption (if possible)**: If your hardware or operating supports it, consider disk encryption for additional data protection.
+* **Backup consideration**: If a backup of your appliance is for some reason accessible to unauthorized personal you assume all configured accounts as compromised and act accordingly. At a minimum you should change all passwords immediately and verify all security logs for unauthorized access. 
+
 
 These recommendations will significantly enhance the security posture of your monitoring appliance and minimize the risk associated with privileged access requirements.

@@ -62,18 +62,23 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: index.md
   - Documentation:
+    - index.md
     - Introduction:
+       - index.md
        - Getting started: introduction/getting_started.md
        - Platform: introduction/platform.md
-       - Support: introduction/support.md
-       - Terminology: introduction/terminology.md
-       - About InfraSonar: introduction/about.md
+    - Concepts:
+       - Containers: concept/containers.md
+       - Collectors: concept/collectors.md
+       - Assets: concept/assets.md
+       - Credentials: concept/credentials.md
+       - Conditions: concept/conditions.md
+       - Alerts & notifications: concept/alerts-notifications.md
     - Guides:
+       - Agentless implementation: guides/agent-less.md
+       - DNS monitoring: guides/dns.md
        - Raspberry Pi dashboard: guides/raspberrypi_dashboard.md
-       - Migration: guides/migration.md
-       - Remote support: guides/remote_support.md
     - Privacy & Security:
        - Security: privacy-security/security_considerations.md
        - Privacy: privacy-security/privacy.md
@@ -108,17 +113,17 @@ nav:
     - collectors/index.md
     - Agents:
         - collectors/agents/index.md
-        -  Docker: collectors/agents/docker.md
-        -  Kubernetes: collectors/agents/kubernetes.md
-        -  Windows: collectors/agents/windows.md
-        -  Speedtest: collectors/agents/speedtest.md
+        - Discovery:   collectors/agents/discovery.md
+        - Docker: collectors/agents/docker.md
+        - Kubernetes: collectors/agents/kubernetes.md
+        - Windows: collectors/agents/windows.md
+        - Speedtest: collectors/agents/speedtest.md
     - Probes:
         - collectors/probes/index.md
         - Appliance:
             - collectors/probes/appliance/index.md
             - Ubuntu guide: collectors/probes/appliance/ubuntu_installation.md
             - Windows guide: collectors/probes/appliance/windows_installation.md
-            - Credentials: collectors/probes/appliance/credentials.md
             - Advanced: collectors/probes/appliance/advanced.md
         - Agentcore: collectors/probes/agentcore.md
         - DNS: collectors/probes/dns.md
@@ -133,6 +138,7 @@ nav:
         - NetApp: collectors/probes/netapp.md
         - Palo Alto: collectors/probes/paloalto.md
         - Ping: collectors/probes/ping.md
+        - PHP FPM: collectors/probes/phpfpm.md
         - SANtricity / NetApp E-Series: collectors/probes/santricity.md
         - SNMP:
             - collectors/probes/snmp/index.md
@@ -153,6 +159,7 @@ nav:
             - VMware guest: collectors/probes/vmware/vmwareguest.md
     - Services:
         - collectors/services/index.md
+        - DNS: collectors/services/dns.md
         - Last seen: collectors/services/last_seen.md
         - MailRoundTrip: collectors/services/mailroundtrip.md
         - Microsoft 365: collectors/services/microsoft_365.md
@@ -237,3 +244,11 @@ nav:
         - Download file: api/files/download-file.md
         - Modify file: api/files/modify-file.md
         - Delete file: api/files/delete-file.md
+  - Support:
+    - Contact:
+        - support/index.md
+        - Remote support: support/remote_support.md
+    - Services:
+        - Custom collectors: support/development.md
+        - Consultancy: support/consultancy.md
+        - Training: support/training.md

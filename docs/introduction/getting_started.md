@@ -2,116 +2,109 @@
 
 # Getting started with InfraSonar
 
-InfraSonar is an in depth infrastructure monitoring solution developed and maintained by [Cesbit](https://cesbit.com), a software development company with years of experience in IT infrastructure monitoring and handling large volumes of data.
+> Feel free to book a free [implementation consultancy](../support/consultancy.md) session to get you up and running quickly.
 
-## Concept overview
-
-### Data collection
-
-InfraSonar identifies three concepts for retrieving monitoring data as outlined below.
+Begin your InfraSonar journey with our proven, actionable approach, designed to ensure a smooth and efficient implementation process.
 
 ``` mermaid
-graph LR
-  A(((Probes))) ~~~ B(((Agents)));
-  B ~~~ C(((Services)));
+flowchart LR
+  a([Get to Know<br> Our Concepts]) --> b([Define Your Implementation Strategy]) --> c([Prepare <br>for Deployment]) --> d([Deploy]) --> e([Adopt])
 ```
 
-**Probes**
-:   Probes collect data agentless, data is collected using monitoring protocols or API’s supplied by the vendor. An example of a probe is our WMI probe to monitor Microsoft Windows assets. Probes are typically deployed on a Linux appliance using Docker.
-    
-    Probe are orchestrated by our [agentcore](../collectors/probes/agentcore.md), the agentcore is also responsible for sending the data to our cloud platform.
-    
-    See our [probes documentation](../collectors/probes/index.md) for additional probe related documentation and an overview currently supported probes.
+## Get to Know Our Concepts
 
-**Agents**
-:   Agents run autonomously on an endpoint and send data straight to the InfraSonar platform.
+* **Deep Dive into Documentation:** Thoroughly review the InfraSonar documentation to understand its architecture, features, and capabilities.
+* **Conceptual Understanding:** Grasp the core concepts, such as [assets](../concept/assets.md), [collectors](../concept/collectors.md), [labels](../application/labels.md), [conditions](../concept/conditions.md), [alerts, and notifications](../concept/alerts-notifications.md).
+* **Hands-on Exploration (Sandbox/Demo):** setup sandbox environment or [ask us](../support/index.md) for a demo to familiarize yourself with the platform's interface and functionality.
+* **Attend Training/Webinars:** Participate in our [training sessions](../support/training.md) to gain deeper insights and ask questions.
 
-    See our [agent documentation](../collectors/agents/index.md) for additional agent related documentation and an overview currently supported agents.
+## Define Your Implementation Strategy
 
-**Services**
-:   Services are like probes as they retrieve data agentless but run on the InfraSonar cloud platform. Examples of InfraSonar services include our Microsoft Azure, Microsoft 365 and mail roundtrip.
-    
-    See our [services documentation](../collectors/services/index.md) for additional services related documentation and an overview currently supported services.
+* **Identify Monitoring Goals:** Clearly define your monitoring objectives and the key performance indicators (KPIs) you want to track.
+* **Inventory Your Assets:** Create a comprehensive inventory of all assets (IT, OT, etc.) that need to be monitored, consider using our [discover collector](../collectors/agents/discovery.md) to assist you in this task.
+* **Determine Monitoring Scope:** Define the scope of your monitoring, decide which collectors you want to deploy.
+* **Develop a Labeling Strategy:** Plan your labeling strategy to effectively organize and categorize your assets.
+* **Define Condition Requirements:** Elevate our pre-defined conditions and determine if these are sufficient for your organizations needs.
+* **Create Authorization and User Roles:** Plan what user roles you need, and what views they should have access to.
+* **Develop a Rollout Plan:** Define a timeline and phased approach for deploying InfraSonar.
 
-### Data analysis
+## Prepare for Deployment
 
-Probes, services and agents send their collected data to the InfraSonar backend, a fully managed cloud solutions where the last known state is stored, data is evaluated using conditions and performance metrics are stored for future analysis.
+ * **Infrastructure Assessment:** Assess your existing infrastructure to ensure compatibility with InfraSonar.
+ * **Network Configuration:** Configure network settings and firewall rules to allow InfraSonar to communicate with your assets.
+ * **Collector Deployment Planning:** Plan where collectors will be deployed, and how they will be installed.
+ * **Credential Management:** Setup credentials for accessing monitored assets and define a process for changing the any passwords according to your organizations requirements.. 
+ * **Test Environment Setup:** Create a test environment to validate your configuration and deployment process.
+ * **Document Procedures:** Create custom documentation for the deployment and configuration process for your organization.
 
-#### Containers
+## Deploy
 
-InfraSonar is a multi-tenant solution by design and uses a concept of [containers](../application/containers.md) to group hosts.
-Grouping occurs automatically as the data can only be send to the platform when it is accompanied by a token, these tokens are issues on container level.
+* **Install InfraSonar Appliance (if applicable):** Deploy the [InfraSonar appliance](../collectors/probes/appliance/index.md) if applicable for your chosen deployment model.
+* **Deploy Collectors:** Install and configure collectors for or on your assets. ([probes](../collectors/probes/index.md), [agents](../collectors/agents/index.md) and/or [services](../collectors/services/index.md))
+* **Configure Assets and Labels:** Add your [assets](../application/assets.md) to InfraSonar and apply the necessary [labels](../application/labels.md).
+* **Define Conditions and Alerts:** Configure the conditions and alerts based on your monitoring requirements.
+* **Validate Data Collection:** Verify that InfraSonar is successfully collecting data from your assets, ensure there are **no** notifications.
+* **Test Alerting:** Test the alerting functionality to ensure that notifications are being sent correctly.
+* **Create Views:** Create custom views to visualize your monitoring data.
 
-The picture below outlines our container concept:
+## Adopt
+
+* **Train Your Team:** Provide training to your team on how to use InfraSonar and interpret monitoring data.
+* **Integrate with Existing Systems:** Integrate InfraSonar with your existing incident management and ticketing systems.
+* **Establish Monitoring Procedures:** Define clear procedures for responding to alerts and resolving issues.
+* **Regularly Review and Optimize:** Continuously review your monitoring configuration and optimize it as needed.
+* **Gather Feedback:** Collect feedback from your team and users to identify areas for improvement.
+* **Stay Up-to-Date:** Keep up with the latest InfraSonar updates and features.
+* **Create Knowledge Base:** Create a knowledge base with common issues and their solutions.
+
+
+## ======
+Actionable roadmap:
 
 ``` mermaid
-graph LR
-  A[InfraSonar] --> B[container 1];
-  B -->C((assets));
-  A -->D[container 2];
-  D -->E[container 2.1];
-  D -->F[container 2.2];
-  E -->G((assets));
-  F -->H((assets));
-  A -->I[container 3];
-  I -->J((assets));
-  I -->K[container 3.1];
-  K -->L[container 3.1.1];
-  L -->N[container 3.1.1.1];
-  L -->O((assets));
-  N -->S((assets));
+flowchart TB
+  a([Get to Know<br> Our Concepts]) --> b([Define Your Implementation Strategy]) --> c([Prepare <br>for Deployment]) --> d([Deploy]) --> e([Adopt])
 ```
 
-[Authorizations](../application/users.md), [labels](../application/labels.md) and [conditions](../application/conditions.md) propagate form their parents to their children.
+**InfraSonar Implementation Steps: A Comprehensive Guide**
 
-#### Conditions
+1.  **Get to Know Our Concepts:**
+    * **Deep Dive into Documentation:** Thoroughly review the InfraSonar documentation to understand its architecture, features, and capabilities.
+    * **Conceptual Understanding:** Grasp the core concepts, such as [assets](../concept/assets.md), [collectors](../concept/collectors.md), [labels](../application/labels.md), [conditions](../concept/conditions.md), [alerts, and notifications](../concept/alerts-notifications.md).
+    * **Hands-on Exploration (Sandbox/Demo):** setup sandbox environment or [ask us](../support/index.md) for a demo to familiarize yourself with the platform's interface and functionality.
+    * **Attend Training/Webinars:** Participate in our [training sessions](../support/training.md) to gain deeper insights and ask questions.
 
-When data arrives it is evaluated using [conditions](../application/conditions.md), these conditions are added to an asset by applying [labels](../application/labels.md).
+2.  **Define Your Implementation Strategy:**
+    * **Identify Monitoring Goals:** Clearly define your monitoring objectives and the key performance indicators (KPIs) you want to track.
+    * **Inventory Your Assets:** Create a comprehensive inventory of all assets (IT, OT, etc.) that need to be monitored, consider using our [discover collector](../collectors/agents/discovery.md) to assist you in this task.
+    * **Determine Monitoring Scope:** Define the scope of your monitoring, decide which collectors you want to deploy.
+    * **Develop a Labeling Strategy:** Plan your labeling strategy to effectively organize and categorize your assets.
+    * **Define Condition Requirements:** Elevate our pre-defined conditions and determine if these are sufficient for your organizations needs.
+    * **Create Authorization and User Roles:** Plan what user roles you need, and what views they should have access to.
+    * **Develop a Rollout Plan:** Define a timeline and phased approach for deploying InfraSonar.
 
-Conditions can use the previous state to detect unwanted changes. Conditions on metrics for which [time-series](../application/timeseries.md) are available can also use our prediction routine to detect anomalies.
+3.  **Prepare for Deployment:**
+    * **Infrastructure Assessment:** Assess your existing infrastructure to ensure compatibility with InfraSonar.
+    * **Network Configuration:** Configure network settings and firewall rules to allow InfraSonar to communicate with your assets.
+    * **Collector Deployment Planning:** Plan where collectors will be deployed, and how they will be installed.
+    * **Credential Management:** Setup credentials for accessing monitored assets and define a process for changing the any passwords according to your organizations requirements.. 
+    * **Test Environment Setup:** Create a test environment to validate your configuration and deployment process.
+    * **Document Procedures:** Create custom documentation for the deployment and configuration process for your organization.
 
-[Rules](../application/rules.md) can be used to setup notifications or webhook integrations.
+4.  **Deploy:**
+    * **Install InfraSonar Appliance (if applicable):** Deploy the [InfraSonar appliance](../collectors/probes/appliance/index.md) if applicable for your chosen deployment model.
+    * **Deploy Collectors:** Install and configure collectors for or on your assets. ([probes](../collectors/probes/index.md), [agents](../collectors/agents/index.md) and/or [services](../collectors/services/index.md))
+    * **Configure Assets and Labels:** Add your [assets](../application/assets.md) to InfraSonar and apply the necessary [labels](../application/labels.md).
+    * **Define Conditions and Alerts:** Configure the conditions and alerts based on your monitoring requirements.
+    * **Validate Data Collection:** Verify that InfraSonar is successfully collecting data from your assets, ensure there are **no** notifications.
+    * **Test Alerting:** Test the alerting functionality to ensure that notifications are being sent correctly.
+    * **Create Views:** Create custom views to visualize your monitoring data.
 
-## Implementation
-
-As with any project good preparation is the key to success.
-
-!!! tip Read the pre-requisites
-
-    We urge you to read the pre-requisites for each collector you want to deploy.
-
-### Implementation tips and tricks :material-magic-staff:
-
-#### Credentials and IP authorization
-
-Most probes require credentials to query remote assets, were possible we suggest to use read-only accounts. Refer to the specific probe documentation to learn how to configure accounts.
-
-Some assets such as the [SNMP collector](../collectors/probes/snmp/index.md) requite the IP address from which the asset is queried to be whitelisted.
-
-#### Guest lists
-
-Some collectors allow guests to be easily added from a guest list retrieved by the collector.
-
-Collectors that support this feature include:
-
-* [Microsoft hyperV](../collectors//probes/wmi/hyperv.md)
-* [Unifi collector](../collectors/probes/unificontroller.md)
-* [VMware ESXi](../collectors/probes/vmware/esx.md)
-* [VMware vCenter](../collectors/probes/vmware/vcenter.md)
-
-#### Toolkit
-
-The [InfraSonar tool](https://github.com/infrasonar/toolkit) can be used to manage assets for a container. The tool has two main features. One is to read all assets from a container to YAML output. If needed, all collector and label information can be included. The other feature of this tool is to apply a YAML file to InfraSonar. These two features combined allow you to easily add new assets as well as managing existing assets for a container.
-
-### Network considerations
-
-* Data from probes is send to the InfraSonar cloud platform via an agentcore, see the agentcore documentation for it's TCP port usage [here](../collectors/probes/agentcore.md)
-* The IP addresses used by InfraSonar services might need to be whitelisted to allow data retrieval, the list of IP addresses used by services can be found [here](../collectors/services/index.md)
-* Agents send data to the InfraSonar API using HTTPS
-
-
-## Implementation support
-
-Feel free to [reach out to us](support.md) for support when implementing/evaluating InfraSonar.
-
-Our implementation Consultants are keen to show you around and get the best out of our platform.
+5.  **Adopt:**
+    * **Train Your Team:** Provide training to your team on how to use InfraSonar and interpret monitoring data.
+    * **Integrate with Existing Systems:** Integrate InfraSonar with your existing incident management and ticketing systems.
+    * **Establish Monitoring Procedures:** Define clear procedures for responding to alerts and resolving issues.
+    * **Regularly Review and Optimize:** Continuously review your monitoring configuration and optimize it as needed.
+    * **Gather Feedback:** Collect feedback from your team and users to identify areas for improvement.
+    * **Stay Up-to-Date:** Keep up with the latest InfraSonar updates and features.
+    * **Create Knowledge Base:** Create a knowledge base with common issues and their solutions.

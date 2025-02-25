@@ -50,9 +50,9 @@ graph TD
 
 To fully support this hierarchical setup we created three corresponding collectors:
 
-* [UniFi Controller](./unificontroller.md)
-* [UniFi Site](./unifisite.md)
-* [UniFi Device](./unifidevice.md)
+* [UniFi Controller](./unifi.md#unifi-controller)
+* [UniFi Site](./unifi.md#unifi-site)
+* [UniFi Device](./unifi.md#unifi-devices)
 
 
 ## Pre-requisites
@@ -71,11 +71,11 @@ The UniFi API does not support accounts using MFA, setup a read-only account wit
 
     We strongly recommend creating a read only account specific for monitoring.
 
-See our [credentials documentation](./appliance/credentials.md) for more detailed information.
+You can set the credentials for our service on the service configuration page.
 
 ### Deployment
 
-The UniFi probes can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
+The UniFi service can easily be deployed.
 
 #### UniFi controller
 
@@ -96,7 +96,7 @@ The UniFi probes can easily be deployed using our [appliance manager](./applianc
 6. The site will now appear with a :material-link: icon indicating it has been setup.
 7. Add the correct labels to the newly created asset and add the [lastseen](./../services/last_seen.md) collector if desired.
 
-You can automate this step using our [toolkit](https://github.com/infrasonar/toolkit) and UniFi devices report.
+You can automate this step using our [InfraSonar Commandline Interfase](../../guides/cli.md) and UniFi devices report.
 
 #### UniFi devices
 
@@ -108,7 +108,7 @@ You can automate this step using our [toolkit](https://github.com/infrasonar/too
 6. The device will now appear with a :material-link: icon indicating it has been setup.
 7. Add the correct labels to the newly created asset and add the [lastseen](./../services/last_seen.md) collector if desired.
 
-You can automate this step using our [toolkit](https://github.com/infrasonar/toolkit) and UniFi devices report.
+You can automate this step using our [InfraSonar Commandline Interfase](../../guides/cli.md) and UniFi devices report.
 
 ## Additional information
 

@@ -22,7 +22,7 @@ The VMware guest probe offers a deep inside into individual virtual machines run
 
 ## Deployment
 
-The VMware guest probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
+The VMware guest probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Probe configuration
 
@@ -42,9 +42,9 @@ The VMware guest probe can easily be deployed using our [appliance manager](./..
 
     When monitoring guests running on a standalone ESXi environment you can use `esx` and when monitoring guest on Vcenter managed environment use `vcenter` 
 
-You can automate this step using our toolkit and VMware guests report.
+You can automate this step using our [InfraSonar Commandline Interfase](../../../guides/cli.md) and VMware guests report.
 
-Please reach out to [support](../../../introduction/support.md) for additional information.
+Please reach out to [support](../../../support/index.md) for additional information.
 
 ## Additional information
 

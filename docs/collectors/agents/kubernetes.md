@@ -8,7 +8,7 @@ The Kubernetes agent monitors your Kubernetes cluster using an easy to deploy po
 
 ## Prerequisites
 
-* A valid Kubernetes [token](../../api/authentication.md).
+* A valid InfraSonar [token](../../api/authentication.md).
 * An InfraSonar asset ID if you want to use a *Deployment* instead of a *StatefulSet*.
 
 ## Installation

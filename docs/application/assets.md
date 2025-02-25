@@ -1,16 +1,12 @@
-![Assets](../images/application_assets.png){ width="150" align=right}
+![Assets](../images/concept_assets.png){ width="150" align=right}
 
 # :material-laptop: Assets
 
-Assets are in essence the monitored objects in an InfraSonar implementation. Assets can be IT components such as routers, switches, servers etc but can easily also consists of any other device which can be monitored such as elevators :elevator:, IOT devices :material-radio-tower:, etc. 
+The InfraSonar Asset concept is described [here](../concept/assets.md).
 
 ## Add asset
 
-When you are in the assets view you can add a new asset using the Add asset button.
-
-<figure markdown>
-  ![InfraSonar add host](../images/application_add_asset.png){ width="800" }
-</figure>
+When you are in the assets view you can add a new asset using the **:material-button-pointer: Add asset** button.
 
 ### Asset configuration
 
@@ -25,14 +21,16 @@ Configuring an asset involves the following steps:
 2. Enter an optional description.
 3. Select the mode.<br>
    *This is usually normal, see our [mode](modes.md) documentation for more details*
-4. Select the zone.
-   *This is usually 0, see our [zone](zones.md) documentation for more details*
-5. Select the [collectors](../collectors/index.md) you want to use.
-6. Enter the correct [labels](labels.md) for this asset.
+4. Select the asset kind.<br>
+   *Not only gives this a nice icon it also allows filtering in [views](./views.md) and [reports](./reporting.md).
+5. Select the zone.
+   *This is usually 0, see our [zone](./agentcores.md/#zones) documentation for more details*
+6. Select the [collectors](../collectors/index.md) you want to use.
+7. Enter the correct [labels](labels.md) for this asset.
 
 !!! note "Advanced asset configuration and credentials"
 
-    Some collectors require a more advanced configuration or credentials to be setup on the appliance running the collector. See our [credentials](../collectors/probes/appliance/credentials.md) section if this applies to your setup.
+    Some collectors require a more advanced configuration or credentials to be setup on the appliance running the collector. See our [credentials](../concept/credentials.md) section if this applies to your setup.
 
 ### Adding multiple assets
 

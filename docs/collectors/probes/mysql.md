@@ -8,7 +8,7 @@ The MySQL probe collects information about a MySQL server.
 
 ## Deployment
 
-The MySQL probe can easily be deployed using our [appliance manager](./appliance/appliance_manager.md).
+The MySQL probe can easily be deployed and maintained using our [appliance manager](./appliance/appliance_manager.md).
 
 ## Probe configuration
 
@@ -22,14 +22,8 @@ Create an `infrasonar` user and provide the required privileges:
     CREATE USER 'infrasonar' IDENTIFIED BY '<MY_SECRET_PASSWORD>';
     GRANT SELECT, PROCESS, REFERENCES on *.* TO 'infrasonar';
 
-Add the username and password to your configuration file _(`INFRASONAR_CONF` yaml)_:
 
-```yaml
-mysql:
-  config:
-     username: infrasonar
-     password: <MY_SECRET_PASSWORD>
-```
+Configure the username and password in our [appliance manager](./appliance/appliance_manager.md).
 
 ## Additional information
 

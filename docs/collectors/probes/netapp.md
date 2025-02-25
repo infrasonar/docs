@@ -45,13 +45,11 @@ The NetApp probe can easily be deployed using our [appliance manager](./applianc
 
     We strongly advise setting up a separate user for monitoring to have a clear separation of responsibilities but also to avoid lock-out issues.
 
-
 First step is to figure out which vserver to use:
 
 ```
 vserver show
 ```
-
 
 Create a role for InfraSonar with limited access, ensure to use the correct vserver. `vserver show` is your friend :nerd:
 
@@ -83,7 +81,7 @@ Verify the user creation:
 security login show infrasonar
 ```
 
-See the [credentials](appliance/credentials.md) section on how to configure credentials.
+Set the credentials using our [appliance manager](./appliance/appliance_manager.md).
 
 The probe retrieves monitoring data using the ONTAP REST API on TCP port 443.
 

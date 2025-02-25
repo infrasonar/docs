@@ -2,11 +2,9 @@
 
 ![InfraSonar support](../images/support.png){ width="150" align=right}
 
-## tmate
+We opt to use [tmate](https://tmate.io/) to provide remote support access to your [appliance](../collectors/probes/appliance/index.md) as it is easy to use, fully open source, and allows TeamViewer-like access to the terminal.
 
-We opt to use [tmate](https://tmate.io/) to provide remote support as it is easy to use, fully open source, and allows TeamViewer-like access to the terminal.
-
-### Installation
+## Installation
 
 Tmate comes preinstalled on our appliances, but if you have set up your environment manually, you might need to install tmate first.
 
@@ -18,7 +16,7 @@ sudo apt-get install tmate
 
 For other distributions, follow the guides provided at the [tmate](https://tmate.io/) website
 
-### Usage
+## Usage
 
 Just type `tmate` while connected via ssh or in the console of your virtual appliance.
 

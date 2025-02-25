@@ -53,19 +53,12 @@ The MSSQL probe requires the host's IP address running the monitored SQL server 
 
 ### Credentials
 
+
 The Microsoft SQL probe supports SQL authentication and domain authentication.
 
 For both scenarios it is advisable to setup a separate account for this probe and grant this account access via the supplied grant scripts.
 
-The corresponding `infrasonar.yaml` [^1] section when using for example *infrasonar@windows.domainl* as user id looks as follows:
-
-```yaml
-mssql:
-  config:
-    password: "some_secure_passw0rd"
-    username: infrasonar@windows.domain
-```
-[^1]: Passwords are encrypted on the appliance the moment the file is saved, see our [credentials documentation](appliance/credentials.md).
+Credentials can easily be set using our [appliance manager](./appliance/appliance_manager.md)
 
 ### Authorization
 

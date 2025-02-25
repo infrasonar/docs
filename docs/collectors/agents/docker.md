@@ -10,7 +10,7 @@ The Docker-agent is a Docker container that can be used to monitor other Docker 
 * The Docker-agent must be allowed access to the Unix socket `docker.sock`.
 * The Docker-agent requires a valid [token](../../api/authentication.md).
 
-## Deployment
+## Installation
 
 There are multiple scenario's that can be used to deploy the docker agent and it depends on your use case which one would suites best for you.
 

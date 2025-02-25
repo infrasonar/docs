@@ -5,7 +5,7 @@
 !!! danger "Preview"
 
     The ReadyNAS probe is a preview release.<br>
-    Contact [InfraSonar support](../../introduction/support.md) if you want to get involved in testing our preview release.
+    Contact [InfraSonar support](../../../support/index.md) if you want to get involved in testing our preview release.
 
 
 ## Introduction
@@ -13,8 +13,6 @@
 InfraSonar monitors ReadyNAS storage systems using [snmp](index.md).
 
 ## Features
-
-### TODO
 
 :material-check: System information<br>
 :material-check: Disk status<br>
@@ -24,12 +22,7 @@ InfraSonar monitors ReadyNAS storage systems using [snmp](index.md).
 
 ## Deployment
 
-The ReadyNAS probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
-
-## Credentials
-
-As the ReadyNAS probe uses SNMP the SNMP section in our [credentials documentation](../appliance/credentials.md) is applicable for this probe.
-The probe configuration uses the `readynas` section as default in the InfraSonar credentials file.
+The ReadyNAS probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Additional information
 

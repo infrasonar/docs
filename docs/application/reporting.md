@@ -82,4 +82,4 @@ This report contains all Hyper-V Guests based on the Hyper-V guests-lists combin
 
 ### UniFi devices
 
-This report contains all UniFi devices based on the UniFI Controller device lists combined with assets running the [unifidevice](../collectors/probes/unificontroller.md) collector.
+This report contains all UniFi devices based on the UniFI Controller device lists combined with assets running the [unifidevice](../collectors/probes/unifi.md#unifi-controller) collector.

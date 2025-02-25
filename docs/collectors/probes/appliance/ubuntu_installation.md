@@ -2,7 +2,7 @@
 
 This section outlines how to install the :fontawesome-brands-linux: Linux appliance from scratch.
 
-We opt to use Ubuntu in this guide. If you prefer to use any other distribution please contact [support](/docs/introduction/support.md) and discuss any pitfalls to be aware off.
+We opt to use Ubuntu in this guide. If you prefer to use any other distribution please contact [support](/docs/support/index.md) and discuss any pitfalls to be aware off.
 
 ## Hardware requirements
 
@@ -117,15 +117,31 @@ The above command installs a list of useful tools:
 * *[curl](https://curl.se/)*, command-line downloader
 * *[tmate](https://tmate.io/)*, teamviewer like solution used to offer remote support on request.
 
-#### SNMPD
+### SNMPD
 
 As we use the default community string `public` and only require the snmpd daemon to listen on `localhost`, no further configuration is required.
 
+Edit the `/etc/snmp/snmpd.conf` file to ensure access to all facilities:
 
+
+``` title="/etc/snmp/snmpd.conf"
+# Read-only access to everyone to the systemonly view
+rocommunity  public default -V systemonly
+rocommunity6 public default -V systemonly
 ```
+
+Change the above section to:
+
+``` title="/etc/snmp/snmpd.conf"
 # Read-only access to everyone to the systemonly view
 rocommunity  public default
-rocommunity6 public default -V systemonly
+rocommunity6 public default
+```
+
+Restart the snmpd service to make the changes effective:
+
+```bash
+service snmpd restart
 ```
 
 ### Docker installation
@@ -162,12 +178,19 @@ Our InfraSonar installer is available on [GitHub](https://github.com/infrasonar/
 
 The following command ensure download and execution of our latest installer:
 
+
+
 ```bash
+## Create and change into a temporary directory
 cd $(mktemp -d)
-wget -q -O appliance-installer-linux-amd64.tar.gz $(wget -q -O - https://api.github.com/repos/infrasonar/appliance-installer/releases/latest  |  jq -r '.assets[] | select(.name | contains ("linux")) | .browser_download_url')
+## Download the latest InfraSonar appliance installer
+curl -sL $(curl -s https://api.github.com/repos/infrasonar/appliance-installer/releases/latest | jq -r '.assets[] | select(.name | contains ("linux")) | .browser_download_url') -o appliance-installer-linux-amd64.tar.gz
+## Unpack the InfraSonar appliance installer
 tar -xzvf appliance-installer-linux-amd64.tar.gz
+## Run the InfraSonar appliance installer
 sudo ./appliance-installer
 ```
+
 
 Follow the prompts from the installer, this will look something like this:
 

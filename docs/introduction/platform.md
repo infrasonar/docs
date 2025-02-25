@@ -1,5 +1,7 @@
 # Platform
 
+![InfraSonar logo](../images/infrasonar_logo.png){ width="150" align=right}
+
 The InfraSonar cloud platform is hosted on the [Google Cloud Platform](https://cloud.google.com/).
 
 Data from a monitored environment is received and processed in the InfraSonar cloud platform on what we call the Hubs. These Hubs evaluate the data against configured conditions and store received time series data in [SiriDB](https://siridb.net/). Received state data is kept in memory by the Hubs.
@@ -46,3 +48,10 @@ The [Agentcore](../collectors/probes/agentcore.md) connects to hub.infrasonar.co
 #### InfraSonar Service
 
 [InfraSonar services](../collectors/services/index.md) connect to supported platforms using the protocol, URL or FQDN provided by the user or configured in the collector. In some scenario's our IP addresses must be authorized to allow data retrieval.
+
+
+### Network considerations
+
+* Data from probes is send to the InfraSonar cloud platform via an agentcore, see the agentcore documentation for it's TCP port usage [here](../collectors/probes/agentcore.md)
+* The IP addresses used by InfraSonar services might need to be whitelisted to allow data retrieval, the list of IP addresses used by services can be found [here](../collectors/services/index.md)
+* Agents send data to the InfraSonar API using HTTPS

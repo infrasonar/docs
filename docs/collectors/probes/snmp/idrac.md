@@ -16,16 +16,11 @@ The Dell iDRAC consist of a number of specific checks:
 
 ## Deployment
 
-The Dell iDRAC probe can easily be deployed using our [appliance manager](./../appliance/appliance_manager.md).
-
-## Credentials
-
-As the Dell iDRAC probe uses SNMP the SNMP section in our [credentials documentation](../appliance/credentials.md) is applicable for this probe.
-The probe configuration uses the `idrac` section as default in the InfraSonar credentials file.
+The Dell iDRAC probe can easily be deployed and maintained using our [remote appliance manager](../../../application/agentcores.md#remote-appliance-manager).
 
 ## Conditions
 
-The label `HP ILO` can be used to configure our default condition set.
+The label `iDrac` can be used to configure our default condition set.
 
 ## Additional information
 
