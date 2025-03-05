@@ -1,17 +1,17 @@
-![HTTP-Probe](../../images/probe_http.png){ width="300" align=right}
+![HTTP-Service](../../images/probe_http.png){ width="300" align=right}
 
-# :material-web: HTTP Probe
+# :material-web: HTTP Service
 
 ## Introduction
 
-The HTTP probe allows to monitor a specific [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) over the http or https protocol
+The HTTP Service allows to monitor a specific [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) over the http or https protocol
 
 ## Features
 
 * Roundtrip time, the roundtriptime for the http(s) request is measured and returned.
 * HTTP status code monitoring
 
-## Probe configuration
+## Service configuration
 
 Property        | Description
 ----------------|------------------------
@@ -107,4 +107,4 @@ code | class         | code Meaning
 
 ## Additional information
 
-:material-github: [HTTP probe source code](https://github.com/infrasonar/http-probe)
+:material-github: [HTTP Service source code](https://github.com/infrasonar/http-prbe)

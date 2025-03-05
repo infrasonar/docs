@@ -75,6 +75,11 @@ sudo /bin/bash -c "$(curl -fsSL https://deploy.infrasonar.com)"
     Our quick deploy script is meant to be used on a clean Ubuntu server installation.
     Using it on an existing system can cause unexpected results!
 
+!!! Note "Curl command explanation"
+    - `-L` to automatically follow redirects.
+    - `-sS` to suppress the progress meter but still show error messages.
+    - `-f` to treat an HTTP error as a command error. This is to ensure that no error message gets piped to `sh`, avoiding a potentially dangerous action.
+
 ## Manual InfraSonar installation
 
 ### Upgrade
