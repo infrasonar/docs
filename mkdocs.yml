@@ -160,6 +160,7 @@ nav:
     - Services:
         - collectors/services/index.md
         - DNS: collectors/services/dns.md
+        - HTTP: collectors/services/http.md
         - Last seen: collectors/services/last_seen.md
         - MailRoundTrip: collectors/services/mailroundtrip.md
         - Microsoft 365: collectors/services/microsoft_365.md
@@ -172,6 +173,7 @@ nav:
   - Integrations:
       - Overview: integrations/index.md
       - ConnectWise Manage: integrations/connectwise_manage.md
+      - Halo PSA: integrations/halo_psa.md
   - API reference:
       - Overview: api/overview.md
       - Authentication: api/authentication.md
