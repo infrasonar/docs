@@ -173,6 +173,7 @@ nav:
   - Integrations:
       - Overview: integrations/index.md
       - ConnectWise Manage: integrations/connectwise_manage.md
+      - Halo PSA: integrations/halo_psa.md
   - API reference:
       - Overview: api/overview.md
       - Authentication: api/authentication.md
