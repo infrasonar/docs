@@ -27,6 +27,11 @@ Some noteworthily sections of our `docker-compose.yml` file:
 
     Within the Watchtower service we mount the localtime file to ensure the container is running in the same timezone as the appliance.
 
+*rapp service*
+
+:   [Remote appliance Manager](https://github.com/infrasonar/rapp) allows you to [manage](../../../application/agentcores.md#remote-appliance-manager) your InfraSonar docker containers and config from our webapp.
+
+    Note that rapp takes control of this `docker-compose.yaml` file and uses it's own templating style to manage the file programmatically. 
 
 ## Docker compose file
 
