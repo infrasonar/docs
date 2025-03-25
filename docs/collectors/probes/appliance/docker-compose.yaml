@@ -11,10 +11,24 @@ x-infrasonar-template: &infrasonar
   volumes:
     - ./data:/data/
   labels:
-    ## We opt to only update our own containers using the AGENTCORE token to identiy the scope
+    ## We opt to only update our own containers using the AGENTCORE token to identify the scope
     com.centurylinklabs.watchtower.scope: ${AGENTCORE_TOKEN}
 
 services:
+  ## InfraSonar remote appliance manager
+  ## Our remote appliance manager takes control of this yaml file!
+  rapp:
+    environment:
+      COMPOSE_FILE: /etc/infrasonar/docker-compose.yml
+      CONFIG_FILE: /etc/infrasonar/data/config/infrasonar.yaml
+      ENV_FILE: /etc/infrasonar/.env
+      USE_DEVELOPMENT: 0
+    image: ghcr.io/infrasonar/rapp
+    network_mode: host
+    restart: always
+    volumes:
+    - /etc/infrasonar/:/etc/infrasonar/
+    - /var/run/docker.sock:/var/run/docker.sock
   ## Auto Update service
   watchtower:
     << : *infrasonar
@@ -49,13 +63,14 @@ services:
   #      volumes:
   #        - ./data:/data/
 
-  ## InfraSonar probes
+  ## InfraSonar agentcore
   agentcore:
     << : *infrasonar
     image: ghcr.io/infrasonar/agentcore
     environment:
       TOKEN: ${AGENTCORE_TOKEN}
       AGENTCORE_ZONE: ${AGENTCORE_ZONE_ID}
+  ## InfraSonar probes (note this is a subset of our probes)
   dns-probe:
     << : *infrasonar
     image: ghcr.io/infrasonar/dns-probe
