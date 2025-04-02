@@ -26,7 +26,7 @@ Variable                    | Scope         | Example value
 `ks`                        | All           | _(Unique key string to identify the alert of notification)_
 `notification_identifier`   | Notification  | _(For example an asset name but can be nil)_
 `notification_index`        | Notification  | _(For example a check name but can be nil)_
-`notification_kind`         | Notification  | ConnectionStatus _(One of `ConnectionStatus`, `ConnectionTimeDelta`, `ProbeVersion`, `ProbeMissing`, `ProbeTimeDelta`, `ProbeNoHeartbeat`, `CheckMissing`, `CheckError`, `CheckAged`, `CheckInvalidResult`, `CheckInvalidTimestamp`, `CheckInvalidData`, `ContainerMaintenance`, `AgentcoreMissing` or `ConditionError`)_
+`notification_kind`         | Notification  | ConnectionStatus _(One of `ConnectionStatus`, `ConnectionTimeDelta`, `RappUpdateError`, `ProbeVersion`, `ProbeMissing`, `ProbeTimeDelta`, `ProbeNoHeartbeat`, `CheckMissing`, `CheckError`, `CheckAged`, `CheckInvalidResult`, `CheckInvalidTimestamp`, `CheckInvalidData`, `ContainerMaintenance`, `AgentcoreMissing` or `ConditionError`)_
 `notification_message`      | Notification  | A message with optional MarkDown syntax.
 `notification_severity`     | Notification  | MEDIUM _(One of `LOW`, `MEDIUM` or `HIGH`)_
 `notification_timestamp`    | Notification  | 1689146219
