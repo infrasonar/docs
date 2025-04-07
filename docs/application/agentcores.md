@@ -71,6 +71,10 @@ The **Name** field can be used as a **Local configuration**
   ![InfraSonar edit asset](../images/application_agentcore_remote_appliance_configure_collector.png){ width=800"}
 </figure>
 
+#### Auto update section
+
+Use our auto update functionality to schedule regular updates of the collectors running on the remote appliance.
+
 ### Removing a Agentcore 
 
 With the proper authorization it is possible to remove an Agentcore here.
