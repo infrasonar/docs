@@ -115,7 +115,9 @@ nav:
         - collectors/agents/index.md
         - Discovery:   collectors/agents/discovery.md
         - Docker: collectors/agents/docker.md
+        - FS Events: collectors/agents/fsevents.md
         - Kubernetes: collectors/agents/kubernetes.md
+        - QStar: collectors/agents/qstar.md
         - Windows: collectors/agents/windows.md
         - Speedtest: collectors/agents/speedtest.md
     - Probes:
@@ -148,6 +150,7 @@ nav:
             - HP ILO: collectors/probes/snmp/hpilo.md
             - HP ProCurve: collectors/probes/snmp/hpprocurve.md
             - ReadyNAS: collectors/probes/snmp/readynas.md
+            - StorageTek: collectors/probes/snmp/storagetek.md
             - Synology: collectors/probes/snmp/synology.md
             - UniFi: collectors/probes/snmp/unifi.md
         - TCP: collectors/probes/tcp.md
