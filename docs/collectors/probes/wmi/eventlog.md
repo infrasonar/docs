@@ -68,6 +68,18 @@ ID                                                                              
 [4670](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4670) | Permissions on an object were changed
 [4672](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4672) | Special privileges assigned to new logon
 
+### Other interesting eventlog ID's to monitor
+
+#### Troubleshoot unexpected reboots
+
+This [article](https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/troubleshoot-unexpected-reboots-system-event-logs) gives a deep insight into which eventlog ID's you should monitor to reboot reasons.
+
+TL;DR for those who just want to know the eventlog ID's to watch for:
+
+- Reboot history: `12`, `13`, `6005`, & `6009`
+- Reboot types: `13`, `41`, `1074`, `6008`, & `6009` 
+- Causes of reboot: `19`, `41`, `1001`, `1074`, & `7045` 
+
 
 
 :material-github: [Windows Event Log probe source code](https://github.com/infrasonar/eventlog-probe)
