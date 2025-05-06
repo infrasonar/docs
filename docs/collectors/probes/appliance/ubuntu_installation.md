@@ -23,7 +23,7 @@ When using a virtual machine we suggest using these specifications:
 
 * **CPU**: 2 CPU
 * **Memory**: 2 GB memory
-* **Disk**: 20 GB HDD
+* **Disk**: 30 GB HDD
 * **Name**: infrasonar-appliance
 
 ### VMWare specifics
