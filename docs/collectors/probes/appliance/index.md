@@ -2,13 +2,13 @@
 
 InfraSonar probes are deployed and maintained as Docker containers.
 
-As such we advice to setup a dedicated (virtual) :fontawesome-brands-linux: appliance for this task.
+We advice to setup a dedicated (virtual) :fontawesome-brands-linux: Linux appliance for your InfraSonar deployment.
 
 ## Ubuntu
 
-Our preferred method of deployment is using a dedicated virtual of physical [Ubuntu server](https://ubuntu.com/server) installation.
+Our preferred and best supoorted method of deployment is using a dedicated virtual of physical Ubuntu server installation.
 
-We outlined the specific installation steps in our [Ubuntu Guide](./ubuntu_installation.md)
+We outlined the specific installation steps in our [Ubuntu Installation Guide](./ubuntu_installation.md)
 
 ## Oracle Linux
 

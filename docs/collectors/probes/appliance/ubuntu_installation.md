@@ -1,8 +1,19 @@
-# Appliance
+# :fontawesome-brands-linux: Appliance
 
-This section outlines how to install the :fontawesome-brands-linux: Linux appliance from scratch.
+This section outlines how to install our Ubuntu based  Linux appliance from scratch.
 
 We opt to use Ubuntu in this guide. If you prefer to use any other distribution please contact [support](/docs/support/index.md) and discuss any pitfalls to be aware off.
+
+## Prerequisites
+
+To ensure an up to date Ubuntu installation but also for our monitoring solution internet access is required for the appliance.
+
+Also note the appliance uses TCP port 8730 (TLS/SSL) to connect to our InfraSonar cloud Platform.
+
+!!! note ""
+    it is possible to use TCP port 443 instead of 8730 we don't recommended this but some environment refuse inter traffic to ports other then 80 and 443
+
+_If your organization does not allow direct internet access please contact [support](/docs/support/index.md) to discuss alternative options._
 
 ## Hardware requirements
 
@@ -12,7 +23,7 @@ When using a virtual machine we suggest using these specifications:
 
 * **CPU**: 2 CPU
 * **Memory**: 2 GB memory
-* **Disk**: 50 GB HDD
+* **Disk**: 20 GB HDD
 * **Name**: infrasonar-appliance
 
 ### VMWare specifics
@@ -24,8 +35,6 @@ When using a virtual machine we suggest using these specifications:
 ## Ubuntu Installation steps
 
 You can download the required :material-ubuntu: Ubuntu Server 24.04 LTS ISO [here](https://ubuntu.com/download/server).
-
-
 
 Boot from the Ubuntu Server 24.04 LTS ISO and then follow these steps:
 
@@ -81,6 +90,8 @@ sudo /bin/bash -c "$(curl -fsSL https://deploy.infrasonar.com)"
     - `-f` to treat an HTTP error as a command error. This is to ensure that no error message gets piped to `sh`, avoiding a potentially dangerous action.
 
 ## Manual InfraSonar installation
+
+All steps outlined below our automated in our deploy script.
 
 ### Upgrade
 

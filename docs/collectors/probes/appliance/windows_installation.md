@@ -11,6 +11,17 @@ Checkout the [Get Started with Docker](https://www.docker.com/get-started/) guid
 !!! info
     We tested this setup on a Windows 11 (24H2) host running Docker Desktop version 4.38.0
 
+## Prerequisites
+
+To ensure an up to date InfraSonar installation but also for our monitoring solution internet access is required for the appliance.
+
+Also note the appliance uses TCP port 8730 (TLS/SSL) to connect to our InfraSonar cloud Platform.
+
+!!! note ""
+    it is possible to use TCP port 443 instead of 8730 we don't recommended this but some environment refuse inter traffic to ports other then 80 and 443
+
+_If your organization does not allow direct internet access please contact [support](/docs/support/index.md) to discuss alternative options._
+
 ## Deploy the InfraSonar containers
 
 Step by step :feet: guide: 

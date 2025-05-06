@@ -68,7 +68,32 @@ services:
     image: ghcr.io/infrasonar/docker-agent
     environment:
       TOKEN: "<<agent token>>"
+      ASSET_ID: "<<asset_ID>>" #optional
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - infraSonarData:/data
 ```
+
+## Known issues
+
+We have seen docker version 20.10.8, build 3967b7d fail with the following error:
+
+```
+dockeragent    | [E 250429 07:32:42 agent:133] announce failed: can't start new thread
+```
+
+Adding the `privileged` flag to the docker-compose file solved this issue:
+
+```yaml
+services:
+  dockeragent:
+    .....
+    image: ghcr.io/infrasonar/docker-agent
+    privileged: true
+    .....
+```
+
+
+## Additional information
+
+* :material-github: [Docker agent](https://github.com/infrasonar/docker-agent)
