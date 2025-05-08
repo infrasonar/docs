@@ -119,7 +119,7 @@ sudo apt install -y open-vm-tools
 ### Miscellaneous tools
 
 ```bash
-sudo apt install -y vim nano cron dnsutils snmp iputils-ping curl snmpd tmate jq
+sudo apt install -y vim nano cron dnsutils snmp iputils-ping curl snmpd jq
 ```
 
 The above command installs a list of useful tools:
