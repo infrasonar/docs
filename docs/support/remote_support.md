@@ -2,39 +2,18 @@
 
 ![InfraSonar support](../images/support.png){ width="150" align=right}
 
-We opt to use [tmate](https://tmate.io/) to provide remote support access to your [appliance](../collectors/probes/appliance/index.md) as it is easy to use, fully open source, and allows TeamViewer-like access to the terminal.
+We provide extensive remote support specifically tailored to your infrastructure monitoring needs.
 
-## Installation
+Our team is dedicated to helping you get the most out of InfraSonar. 
 
-Tmate comes preinstalled on our appliances, but if you have set up your environment manually, you might need to install tmate first.
+We begin by expertly guiding you through the initial setup process, ensuring a smooth and efficient start. 
 
-On Debian / Ubuntu systems the installation is straightforward:
+Following setup, we provide comprehensive assistance in configuring InfraSonar to precisely align with your unique environment and monitoring requirements. 
 
-```bash
-sudo apt-get install tmate
-```
+Understanding alerts and notifications is crucial, and we're here to help you make sense of them, enabling you to proactively address potential issues. 
 
-For other distributions, follow the guides provided at the [tmate](https://tmate.io/) website
+Furthermore, we empower you to extend your monitoring capabilities by providing support in developing custom collectors, allowing InfraSonar to monitor even the most specialized aspects of your infrastructure. 
 
-## Usage
+As a standard part of our service, you can rely on our responsive email support for any questions or assistance you may need. 
 
-Just type `tmate` while connected via ssh or in the console of your virtual appliance.
-
-You will be greeted with a screen like this:
-
-```bash
-Tip: if you wish to use tmate only for remote access, run: tmate -F                                                                                                                                                                      [0/0]
-To see the following messages again, run in a tmate session: tmate show-messages
-Press <q> or <ctrl-c> to continue
----------------------------------------------------------------------
-Connecting to ssh.tmate.io...
-Note: clear your terminal before sharing readonly access
-web session read only: https://tmate.io/t/ro-generated_ro_id
-ssh session read only: ssh ro-generated_ro_id@lon1.tmate.io
-web session: https://tmate.io/t/generated_id
-ssh session: ssh generated_id@lon1.tmate.io
-```
-
-Send our support engineer this information via a secure channel and ensure access is only used by our support engineer by observing the screen.
-If in doubt, exit the session using the `exit` command or by pressing `ctrl-d`
-
+For more direct support, we offer optional paid services, including remote sessions where our experts can connect directly to your system to provide hands-on guidance and accelerate issue resolution. In specific, critical situations where remote support may not be sufficient, we also offer on-site visits to provide direct, in-person expertise, subject to availability and additional terms.

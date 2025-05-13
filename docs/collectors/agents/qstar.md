@@ -1,6 +1,6 @@
 # QStar
 
-The QStar agent can be used to monitor:
+The [QStar](https://www.qstar.com/) agent can be used to monitor:
 
 - QStar events
 - Replication status

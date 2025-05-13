@@ -75,6 +75,13 @@ The **Name** field can be used as a **Local configuration**
 
 Use our auto update functionality to schedule regular updates of the collectors running on the remote appliance.
 
+#### Remote access section
+
+When configured during the deployment of our appliance you can enable remote access here.
+Remote access allows authorized InfraSonar personal to access a tailored docker container for troubleshooting and debugging purposes.
+Access to this container is time-limited to avoid linger access. 
+
+
 ### Removing a Agentcore 
 
 With the proper authorization it is possible to remove an Agentcore here.
