@@ -72,6 +72,7 @@ nav:
        - Containers: concept/containers.md
        - Collectors: concept/collectors.md
        - Assets: concept/assets.md
+       - Views: concept/views.md
        - Credentials: concept/credentials.md
        - Conditions: concept/conditions.md
        - Alerts & notifications: concept/alerts-notifications.md
