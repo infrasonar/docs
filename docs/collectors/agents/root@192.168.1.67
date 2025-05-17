@@ -1,0 +1,114 @@
+#!/bin/bash
+
+# --- Variables ---
+
+install_dir="/opt/infrasonar-agent"
+binary_name="infrasonar-linux-agent"
+github_repo="infrasonar/linux-agent"
+systemd_unit_file="/etc/systemd/system/infrasonar-agent.service"
+
+log_info() {
+  echo "[INFO] $1"
+}
+
+log_error() {
+  echo "[ERROR] $1" >&2
+}
+
+check_root() {
+  if [[ "$EUID" -ne 0 ]]; then
+    log_error "This script requires root privileges. Please run with sudo."
+    exit 1
+  fi
+}
+
+check_systemd() {
+  if ! command -v systemctl &> /dev/null; then
+    log_error "systemd is not available on this system.  This script requires systemd."
+    exit 1
+  fi
+}
+
+create_directory() {
+  local dir_path="$1"
+  if [ ! -d "$dir_path" ]; then
+    log_info "Creating directory '$dir_path'..."
+    sudo mkdir -p "$dir_path"
+  else
+    log_info "Directory '$dir_path' already exists."
+  fi
+}
+
+download_agent() {
+  # Fetch the latest release info from GitHub API
+  response=$(curl -s "https://api.github.com/repos/"$GITHUB_REPO"/releases/latest")
+
+  # Extract the download URL for the Linux asset using grep and sed
+  download_url=$(echo "$response" | grep '"browser_download_url":' | sed -n "/$binary_name/p" | sed 's/.*"browser_download_url": "//' | sed 's/".*//')
+  
+  # Check if a URL was found
+  if [ -n "$download_url" ]; then
+    # Download the file
+    curl -sL "$download_url" -o $install_dir/$binary_name
+    log_info "Successfully downloaded $binary_name"
+  else
+    log_error "Error: Could not find a suitable download URL for Linux."
+    exit 1
+  fi
+}
+
+create_config() {
+  if [ -e "your_file_path" ]; then
+    log_info "Configuration file already exists."
+  else
+    log_info "Configuration file does not exist."
+    # Create configuration directory
+    create_directory "/etc/infrasonar"
+    read -p "Please enter your token: " token
+    echo "TOKEN=$token" | sudo tee "/etc/infrasonar/linux-agent.env"
+    log_info "Created config file '/etc/infrasonar/linux-agent.env'..."
+  fi
+}
+
+
+create_systemd_unit() {
+  log_info "Creating systemd unit file '$systemd_unit_file'..."
+  cat <<EOF | sudo tee "$systemd_unit_file"
+[Unit]
+Description=InfraSonar Linux Agent
+Wants=network.target
+
+[Service]
+WorkingDirectory=$install_dir
+EnvironmentFile=/etc/infrasonar/linux-agent.env
+ExecStart=$install_dir/$binary_name
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF
+}
+
+
+enable_and_start_service() {
+  log_info "Enabling and starting the InfraSonar agent service..."
+  sudo systemctl enable infrasonar-agent
+  sudo systemctl start infrasonar-agent
+  if [ $? -ne 0 ]; then
+    log_error "Failed to start the InfraSonar agent service. Check systemctl status InfraSonar-agent for details."
+  else
+    log_info "Infrasonar agent service started successfully."
+  fi
+}
+
+# --- Main Script ---
+
+check_root
+check_systemd # added systemd check
+create_directory "$install_dir"
+create_config
+download_agent
+create_systemd_unit
+enable_and_start_service
+
+log_info "InfraSonar Linux Agent deployment complete."
