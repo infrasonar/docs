@@ -1,4 +1,4 @@
-# Query container invites
+# Query container permissions
 **`GET` /container/<containerId\>/permissions**
 
 ### Description

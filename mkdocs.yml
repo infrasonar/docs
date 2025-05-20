@@ -222,6 +222,7 @@ nav:
         - Query container assets: api/container/query-assets.md
         - Query container collectors: api/container/query-collectors.md
         - Query container invites: api/container/query-invites.md
+        - Query container permissions: api/container/query-permissions.md
         - Query container properties: api/container/query-properties.md
         - Query container users: api/container/query-users.md
         - Query container zones: api/container/query-zones.md
