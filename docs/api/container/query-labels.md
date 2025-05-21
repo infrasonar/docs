@@ -22,7 +22,7 @@ Field               | Return type       | Description
 `name`              | string            | Label name.
 `color`             | string            | One of `Steel`, `Olive`, `Mauve`, `Emerald`, `Orange`, `Magenta` or `InfraSonarBlue`.
 `description`       | string            | Label description.
-`owner`             | object            | Container object with `id` and `name`.
+`ownerId`           | int               | Container Id where the label is created.
 
 ### Return codes
 Error code  | Reason
@@ -49,10 +49,7 @@ Response:
         "name": "Windows",
         "color": "InfraSonarBlue",
         "description": "Windows label",
-        "owner": {
-            "id": 123,
-            "name": "Foo"
-        }
+        "ownerId": 123
     }
 ]
 ```
