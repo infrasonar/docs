@@ -30,7 +30,7 @@ Error code  | Reason
 `200`       | Success.
 `400`       | Unknown field or invalid query param.
 `401`       | Invalid or missing token.
-`403`       | Insufficient permissions _(required: `API`+`CONTAINER_ACCESS`)_.
+`403`       | Insufficient permissions _(required: `API`+`READ`)_.
 `404`       | Container not found.
 
 ### Example
