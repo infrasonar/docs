@@ -21,7 +21,7 @@ Field               | Return type   | Description
 `name`              | string        | Label name.
 `color`             | string        | One of `Steel`, `Olive`, `Mauve`, `Emerald`, `Orange`, `Magenta` or `InfraSonarBlue`.
 `description`       | string        | Label description.
-
+`owner`             | object        | Container object with `id` and `name`.
 
 ### Return codes
 Error code  | Reason
