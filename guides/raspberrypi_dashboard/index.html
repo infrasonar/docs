@@ -993,53 +993,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#maintenance-scripts" class="md-nav__link">
+  <a href="#startup" class="md-nav__link">
     <span class="md-ellipsis">
-      Maintenance scripts
+      Startup
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Maintenance scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#morning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Morning
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Boot
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evening" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evening
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schedule-the-scripts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Schedule the scripts
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6268,53 +6226,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#maintenance-scripts" class="md-nav__link">
+  <a href="#startup" class="md-nav__link">
     <span class="md-ellipsis">
-      Maintenance scripts
+      Startup
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Maintenance scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#morning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Morning
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Boot
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evening" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evening
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schedule-the-scripts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Schedule the scripts
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6373,22 +6289,9 @@ sudo apt install -y fonts-noto-color-emoji xdotool &amp;&amp; \
 sudo apt autoremove -y &amp;&amp; \
 sudo apt autoclean
 </code></pre></div>
-<h2 id="maintenance-scripts">Maintenance scripts</h2>
-<p>Three script to ensure carefree maintenance are used.
-These scripts are stored in the user home-drive, this is default <code>/home/pi</code></p>
-<h3 id="morning">Morning</h3>
-<p>Thi script updates the Pi and performs a reboot to ensure a fresh start in the morning</p>
-<div class="highlight"><span class="filename">/home/pi/morning.bash</span><pre><span></span><code><span class="ch">#!/usr/bin/env sh</span>
-
-<span class="c1"># A daily upgrade is good hygiene.</span>
-sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>full-upgrade<span class="w"> </span>-y<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>autoremove<span class="w"> </span>-y<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>autoclean
-
-<span class="c1"># A daily restart mitigates browser memory leaks, and forces the screen to turn on</span>
-sudo<span class="w"> </span>reboot<span class="w"> </span>now
-</code></pre></div>
-<h3 id="boot">Boot</h3>
-<p>This script performs some cleanup actions after a reboot en ensure the dashboard is loaded upon a fresh start.</p>
-<div class="highlight"><span class="filename">/home/pi/boot.bash</span><pre><span></span><code><span class="ch">#!/usr/bin/env sh</span>
+<h2 id="startup">Startup</h2>
+<p>This startup script performs some cleanup actions after a reboot en ensure the dashboard is loaded upon a fresh start.</p>
+<div class="highlight"><span class="filename">/home/pi/autostart.sh</span><pre><span></span><code><span class="ch">#!/usr/bin/env sh</span>
 
 <span class="c1"># Disable screensaver. Varies across Pi models &amp; Raspbian versions; might be outdated.</span>
 <span class="c1"># Google &quot;raspberry disable suspend screensaver&quot; for help</span>
@@ -6407,34 +6310,19 @@ sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/&qu
 <span class="c1"># Start Chromium, in fullscreen &quot;kiosk&quot; mode, and disabling update notifications</span>
 chromium-browser<span class="w"> </span>--kiosk<span class="w"> </span>--check-for-update-interval<span class="o">=</span><span class="m">31536000</span><span class="w"> </span><span class="s1">&#39;https://app.infrasonar.com/dashboard&#39;</span>
 </code></pre></div>
-<h3 id="evening">Evening</h3>
-<p>This script turns off the display and kills the chrome browser to conserve valuable resources.</p>
-<div class="highlight"><span class="filename">/home/pi/evening.bash</span><pre><span></span><code><span class="ch">#!/usr/bin/env sh</span>
-
-<span class="c1"># Shutdown screen, to save the planet</span>
-<span class="nv">DISPLAY</span><span class="o">=</span>:0<span class="w"> </span>xset<span class="w"> </span>dpms<span class="w"> </span>force<span class="w"> </span>off
-
-<span class="c1"># Don&#39;t consume dashboard resources off office hours, to save the planet</span>
-pkill<span class="w"> </span>chromium
+<p>Ensure the startup script is executable:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>/home/pi/autostart.sh<span class="w"> </span>
 </code></pre></div>
-<h3 id="schedule-the-scripts">Schedule the scripts</h3>
-<p>Ensure all three scripts are executable:</p>
-<div class="highlight"><pre><span></span><code>chmod +x /home/pi/boot.bash 
-chmod +x /home/pi/morning.bash 
-chmod +x /home/pi/evening.bash 
+<p>Create the file <code>/home/pi/config/autostart/infrasonardashboard.desktop</code> with the following content:</p>
+<div class="highlight"><pre><span></span><code>[Desktop Entry]
+Name=InfraSonar Dashboard
+Exec=sh /home/pi/autostart.sh
+Terminal=false
+Type=Application
 </code></pre></div>
-<p>Add the following line at the end of the auto start script <code>/etc/xdg/lxsession/LXDE-pi/autostart</code> to ensure the dashboard is loaded upon boot:
-<div class="highlight"><pre><span></span><code>@/home/pi/boot.bash
-</code></pre></div></p>
-<p>and remove the following line from this file:
-<div class="highlight"><pre><span></span><code>@xscreensaver -no-splash
-</code></pre></div></p>
-<p>Use the following command to ensure executing of the morning and evening script using cron:</p>
-<div class="highlight"><pre><span></span><code>(crontab -l ; echo &quot;0 7 * * 1-5 /home/pi/morning.bash&quot;) | crontab -
-(crontab -l ; echo &quot;0 18 * * 1-5 /home/pi/evening.bash&quot;) | crontab -
+<p>Ensure this file is executable:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>/home/pi/config/autostart/infrasonardashboard.desktop<span class="w"> </span>
 </code></pre></div>
-<p>If you want to edit the crontab you can do so using <code>crontab -e</code></p>
-<p>The website <a href="https://crontab.guru/">crontab guru</a> can be very helpfull to understand the crontab notation</p>
 <h2 id="setup-the-dashboard">Setup the dashboard</h2>
 <p>last step is to login to infrasonar and configure the dashboard to your liking.</p>
 <div class="admonition note">
