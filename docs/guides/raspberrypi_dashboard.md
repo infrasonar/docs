@@ -30,29 +30,11 @@ sudo apt autoremove -y && \
 sudo apt autoclean
 ```
 
-## Maintenance scripts
+## Startup
 
-Three script to ensure carefree maintenance are used.
-These scripts are stored in the user home-drive, this is default `/home/pi`
+This startup script performs some cleanup actions after a reboot en ensure the dashboard is loaded upon a fresh start.
 
-### Morning
-
-Thi script updates the Pi and performs a reboot to ensure a fresh start in the morning
-
-```bash title="/home/pi/morning.bash"
-#!/usr/bin/env sh
-
-# A daily upgrade is good hygiene.
-sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean
-
-# A daily restart mitigates browser memory leaks, and forces the screen to turn on
-sudo reboot now
-```
-### Boot
-
-This script performs some cleanup actions after a reboot en ensure the dashboard is loaded upon a fresh start.
-
-```bash title="/home/pi/boot.bash"
+```bash title="/home/pi/autostart.sh"
 #!/usr/bin/env sh
 
 # Disable screensaver. Varies across Pi models & Raspbian versions; might be outdated.
@@ -73,53 +55,27 @@ sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/
 chromium-browser --kiosk --check-for-update-interval=31536000 'https://app.infrasonar.com/dashboard'
 ```
 
-### Evening
+Ensure the startup script is executable:
 
-This script turns off the display and kills the chrome browser to conserve valuable resources.
-
-
-```bash title="/home/pi/evening.bash"
-#!/usr/bin/env sh
-
-# Shutdown screen, to save the planet
-DISPLAY=:0 xset dpms force off
-
-# Don't consume dashboard resources off office hours, to save the planet
-pkill chromium
+```bash
+chmod +x /home/pi/autostart.sh 
 ```
 
-
-### Schedule the scripts
-
-Ensure all three scripts are executable:
+Create the file `/home/pi/config/autostart/infrasonardashboard.desktop` with the following content:
 
 ```
-chmod +x /home/pi/boot.bash 
-chmod +x /home/pi/morning.bash 
-chmod +x /home/pi/evening.bash 
+[Desktop Entry]
+Name=InfraSonar Dashboard
+Exec=sh /home/pi/autostart.sh
+Terminal=false
+Type=Application
 ```
 
+Ensure this file is executable:
 
-Add the following line at the end of the auto start script `/etc/xdg/lxsession/LXDE-pi/autostart` to ensure the dashboard is loaded upon boot:
+```bash
+chmod +x /home/pi/config/autostart/infrasonardashboard.desktop 
 ```
-@/home/pi/boot.bash
-```
-
-and remove the following line from this file:
-```
-@xscreensaver -no-splash
-```
-
-Use the following command to ensure executing of the morning and evening script using cron:
-
-```
-(crontab -l ; echo "0 7 * * 1-5 /home/pi/morning.bash") | crontab -
-(crontab -l ; echo "0 18 * * 1-5 /home/pi/evening.bash") | crontab -
-```
-
-If you want to edit the crontab you can do so using `crontab -e`
-
-The website [crontab guru](https://crontab.guru/) can be very helpfull to understand the crontab notation
 
 ## Setup the dashboard
 
