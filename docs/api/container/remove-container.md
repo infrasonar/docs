@@ -28,6 +28,6 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X DELETE 'https://api.infrasonar.com/container/123' \
+    -X DELETE 'https://api.infrasonar.com/container/456' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
