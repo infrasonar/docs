@@ -25,6 +25,8 @@ Logo                                                                            
 <img src="https://app.infrasonar.com/static/images/hosticons/apc.png" style="margin:0; width:20px;"/>           | `APC`
 <img src="https://app.infrasonar.com/static/images/hosticons/apple.png" style="margin:0; width:20px;"/>         | `Apple`
 <img src="https://app.infrasonar.com/static/images/hosticons/azure.png" style="margin:0; width:20px;"/>         | `Azure`
+<img src="https://app.infrasonar.com/static/images/hosticons/camera.png" style="margin:0; width:20px;"/>        | `Camera`
+<img src="https://app.infrasonar.com/static/images/hosticons/cisco.png" style="margin:0; width:20px;"/>         | `Cisco`
 <img src="https://app.infrasonar.com/static/images/hosticons/citrix.png" style="margin:0; width:20px;"/>        | `Citrix`
 <img src="https://app.infrasonar.com/static/images/hosticons/database.png" style="margin:0; width:20px;"/>      | `Database`
 <img src="https://app.infrasonar.com/static/images/hosticons/dell.png" style="margin:0; width:20px;"/>          | `Dell`
@@ -39,6 +41,7 @@ Logo                                                                            
 <img src="https://app.infrasonar.com/static/images/hosticons/hp.png" style="margin:0; width:20px;"/>            | `HP`
 <img src="https://app.infrasonar.com/static/images/hosticons/kubernetes.png" style="margin:0; width:20px;"/>    | `Kubernetes`
 <img src="https://app.infrasonar.com/static/images/hosticons/linux.png" style="margin:0; width:20px;"/>         | `Linux`
+<img src="https://app.infrasonar.com/static/images/hosticons/liveop.png" style="margin:0; width:20px;"/>        | `LiveOP`
 <img src="https://app.infrasonar.com/static/images/hosticons/netapp.png" style="margin:0; width:20px;"/>        | `NetApp`
 <img src="https://app.infrasonar.com/static/images/hosticons/paloalto.png" style="margin:0; width:20px;"/>      | `PaloAlto`
 <img src="https://app.infrasonar.com/static/images/hosticons/printer.png" style="margin:0; width:20px;"/>       | `Printer`
@@ -49,7 +52,9 @@ Logo                                                                            
 <img src="https://app.infrasonar.com/static/images/hosticons/supermicro.png" style="margin:0; width:20px;"/>    | `Supermicro`
 <img src="https://app.infrasonar.com/static/images/hosticons/switch.png" style="margin:0; width:20px;"/>        | `Switch`
 <img src="https://app.infrasonar.com/static/images/hosticons/synology.png" style="margin:0; width:20px;"/>      | `Synology`
+<img src="https://app.infrasonar.com/static/images/hosticons/tablet.png" style="margin:0; width:20px;"/>        | `Tablet`
 <img src="https://app.infrasonar.com/static/images/hosticons/unifi.png" style="margin:0; width:20px;"/>         | `UniFi`
+<img src="https://app.infrasonar.com/static/images/hosticons/vehicle.png" style="margin:0; width:20px;"/>       | `Vehicle`
 <img src="https://app.infrasonar.com/static/images/hosticons/vmware.png" style="margin:0; width:20px;"/>        | `VMware`
 <img src="https://app.infrasonar.com/static/images/hosticons/website.png" style="margin:0; width:20px;"/>       | `Website`
 <img src="https://app.infrasonar.com/static/images/hosticons/windows.png" style="margin:0; width:20px;"/>       | `Windows`
