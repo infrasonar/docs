@@ -60,18 +60,23 @@ download_agent() {
 }
 
 create_config() {
-  if [ -e "/etc/infrasonar" ]; then
+  if [ -f "/etc/infrasonar/linux-agent.env" ]; then
     log_info "Configuration file already exists."
   else
     log_info "Configuration file does not exist."
     # Create configuration directory
     create_directory "/etc/infrasonar"
+    # Ask for token
     read -p "Please enter your token: " token
-    echo "TOKEN=$token" | tee "/etc/infrasonar/linux-agent.env"
+    echo "TOKEN=$token" >"/etc/infrasonar/linux-agent.env"
+    # Ask for optional asset ID
+    read -p "Add asset token, leave empty for auto creation: " assetid
+    if [[ -n "$assetid" ]]; then
+      echo "ASSET_ID=$assetid" >> "/etc/infrasonar/linux-agent.env"
+    fi
     log_info "Created config file '/etc/infrasonar/linux-agent.env'..."
   fi
 }
-
 
 create_systemd_unit() {
   log_info "Creating systemd unit file '$systemd_unit_file'..."
@@ -90,7 +95,6 @@ Restart=on-failure
 WantedBy=multi-user.target
 EOF
 }
-
 
 enable_and_start_service() {
   log_info "Enabling and starting the InfraSonar agent service..."
