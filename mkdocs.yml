@@ -219,8 +219,9 @@ nav:
         - Close alert: api/alert/close.md
       - Container:
         - Add user: api/container/add-user.md
-        - Create invite: api/container/create-invite.md
         - Create asset: api/container/create-asset.md
+        - Create container: api/container/create-container.md
+        - Create invite: api/container/create-invite.md
         - Query container: api/container/query.md
         - Query container Id: api/container/query-id.md
         - Query container agentcores: api/container/query-agentcores.md
@@ -235,6 +236,7 @@ nav:
         - Query container zones: api/container/query-zones.md
         - Set container mode: api/container/set-mode.md
         - Set property: api/container/set-property.md
+        - Remove container: api/container/remove-container.md
         - Remove invite: api/container/remove-invite.md
         - Remove property: api/container/remove-property.md
         - Remove user: api/container/remove-user.md
