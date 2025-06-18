@@ -1,16 +1,15 @@
 ![Microsoft Windows](../../images/windows_logo.png){ width="150" align=right}
 
-# :material-microsoft-windows: Microsoft Windows agent
+# :material-microsoft-windows: Linux agent
 
 ## Installation
 
 ### Easy deployment
 
-You can use our easy deployment script, note this scripts requires elevated privileges as it runs an MSI installer.
+You can use our easy deployment script, note this scripts requires elevated privileges as it installs a service.
 
 ```batch
-curl -fsSL https://deploywindowsagent.infrasonar.com ^
-   -o %temp%\infrasonar.cmd && %temp%\infrasonar.cmd
+sudo /bin/bash -c "$(curl -fsSL https://deploy.infrasonar.com)"
 ```
 
 The install script now prompts you for the **InfraSonar agent token** as shown below:
