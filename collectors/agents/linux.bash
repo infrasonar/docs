@@ -34,7 +34,7 @@ create_directory() {
   local dir_path="$1"
   if [ ! -d "$dir_path" ]; then
     log_info "Creating directory '$dir_path'..."
-    sudo mkdir -p "$dir_path"
+    mkdir -p "$dir_path"
   else
     log_info "Directory '$dir_path' already exists."
   fi
@@ -60,22 +60,27 @@ download_agent() {
 }
 
 create_config() {
-  if [ -e "/etc/infrasonar" ]; then
+  if [ -f "/etc/infrasonar/linux-agent.env" ]; then
     log_info "Configuration file already exists."
   else
     log_info "Configuration file does not exist."
     # Create configuration directory
     create_directory "/etc/infrasonar"
+    # Ask for token
     read -p "Please enter your token: " token
-    echo "TOKEN=$token" | sudo tee "/etc/infrasonar/linux-agent.env"
+    echo "TOKEN=$token" >"/etc/infrasonar/linux-agent.env"
+    # Ask for optional asset ID
+    read -p "Add asset token, leave empty for auto creation: " assetid
+    if [[ -n "$assetid" ]]; then
+      echo "ASSET_ID=$assetid" >> "/etc/infrasonar/linux-agent.env"
+    fi
     log_info "Created config file '/etc/infrasonar/linux-agent.env'..."
   fi
 }
 
-
 create_systemd_unit() {
   log_info "Creating systemd unit file '$systemd_unit_file'..."
-  cat <<EOF | sudo tee "$systemd_unit_file"
+  cat <<EOF | tee "$systemd_unit_file"
 [Unit]
 Description=InfraSonar Linux Agent
 Wants=network.target
@@ -91,11 +96,10 @@ WantedBy=multi-user.target
 EOF
 }
 
-
 enable_and_start_service() {
   log_info "Enabling and starting the InfraSonar agent service..."
-  sudo systemctl enable infrasonar-agent
-  sudo systemctl start infrasonar-agent
+  systemctl enable infrasonar-agent
+  systemctl start infrasonar-agent
   if [ $? -ne 0 ]; then
     log_error "Failed to start the InfraSonar agent service. Check systemctl status InfraSonar-agent for details."
   else
