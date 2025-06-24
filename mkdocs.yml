@@ -184,6 +184,26 @@ nav:
       - Overview: integrations/index.md
       - ConnectWise Manage: integrations/connectwise_manage.md
       - Halo PSA: integrations/halo_psa.md
+  - Expression language:
+      - lang/index.md
+      - Basics:
+        - First expression: lang/basics/first_expression.md
+        - The return statement: lang/basics/the_return_statement.md
+        - Case statements: lang/basics/case_statements.md
+        - Using AND/OR logic: lang/basics/and_or_logic.md
+        - Optional Metrics: lang/basics/optional_metrics.md
+        - Variables in expression: lang/basics/variables_in_expression.md
+        - Message templates: lang/basics/message_templates.md
+        - Dynamic thresholds: lang/basics/dynamic_thresholds.md
+      - Keywords:
+        - new: lang/keywords/new.md
+        - hit: lang/keywords/hit.md
+        - ticks: lang/keywords/ticks.md
+        - minute, hour, weekday: lang/keywords/minute_hour_weekday.md
+      - Advanced:
+        - Cross-Item Data: lang/advanced/cross_item_data.md
+        - Item Missing: lang/advanced/item_missing.md
+        - Compare with Another Item: lang/advanced/compare_with_another_item.md
   - API reference:
       - Overview: api/overview.md
       - Authentication: api/authentication.md
