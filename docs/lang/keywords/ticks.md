@@ -5,7 +5,6 @@ The `ticks` keyword represents the number of consecutive times an item has trigg
 This keyword is particularly useful for implementing escalating severities or delaying alerts, allowing you to react differently based on the persistence of an issue.
 
 ## Example: Escalating CPU Alert Severity
-
 This example demonstrates how to increase the alert severity for high CPU usage over time.
 
 ```javascript

@@ -5,7 +5,6 @@ The `hit` keyword provides the count of items that are currently triggering an a
 The value of `hit` ranges from `0` to the total number of items being evaluated with an alert as result.
 
 ## Example: Limiting Alert Volume
-
 Consider a scenario where you want to be notified about errors, but prevent alert storms for widespread, minor issues.
 
 ```javascript

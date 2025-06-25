@@ -1,5 +1,4 @@
 # Message Templates
-
 You can embed dynamic values within your alert messages using message templates. These templates allow you to include relevant data, such as an item's name or metric values, directly in the alert.
 
 ```javascript
@@ -8,17 +7,22 @@ return DEBUG, "Memory usage of @item.name to high"
 
 In this example, `@item.name` acts as a placeholder that will be replaced with the actual name of the item when the message is generated.
 
-
 ## Escaping the `@` Symbol
-
 If you need to include a literal `@` sign in your message that shouldn't be interpreted as the start of a variable, add an exclamation mark (`!`) immediately after it:
 
 ```javascript
 return DEBUG, "Use @! in message."  // Renders as: "Use @ in message."
 ```
 
-## Explicitly Ending a Variable Placeholder
+## Escaping the single and double quotes
+It is possible to use single quotes in a double quote string, but sometimes you just want a double quote in a double quote string. In this case, you need to write two of them
 
+```javascript
+return DEBUG, "Use ""Double quotes"" in a double quote string."
+// Renders as: Use "Double quotes" in a double quote string.
+```
+
+## Explicitly Ending a Variable Placeholder
 Sometimes, characters immediately following a variable placeholder (like a period) can cause ambiguity. The system might incorrectly try to include that character as part of the variable name, leading to a template error.
 
 ```javascript
@@ -40,7 +44,6 @@ return DEBUG, "Failed item: @item.name!."  // Renders as: "Failed item: my-item.
 Notice that the `!` used to terminate the variable does not appear in the final message.
 
 ## Including a Literal Exclamation Mark After a Variable
-
 If you genuinely want an exclamation mark to appear after a variable in your message, simply add two exclamation marks:
 
 ```javascript
@@ -48,41 +51,35 @@ return DEBUG, "Failed item: @item.name!!"  // Renders as: "Failed item: my-item!
 ```
 
 ## Accessing Previous Item Values
-
 You can reference values from the previous evaluation cycle using the pr`ev keyword. This is useful for comparing current and historical data:
 
-
 ```javascript
-return DEBUG, "Memory usage: @item.usage_memory, Previous value: @prev.usage_memory"
+return DEBUG, "Memory usage: @item.usage_memory (Previous: @prev.usage_memory)"
 // Example output: "Memory usage: 76853248, Previous value: 63619072"
 ```
 
 ## Formatted Values with `fmt.`
-
 Raw metric values (like `76853248`) might not be user-friendly. For better readability, use the `fmt.` prefix to display formatted values (e.g., human-readable sizes, percentages):
 
 ```javascript
-return DEBUG, "Memory usage: @fmt.item.usage_memory, Previous value: @fmt.prev.usage_memory"
-// Example output: "Memory usage: 73.29 MiB, Previous value: 60.67 MiB"
+return DEBUG, "Memory usage: @fmt.item.usage_memory"
+// Example output: "Memory usage: 73.29 MiB"
 ```
 
 ## Multiline Messages
-
 Messages are multiline by default. You can define them across multiple lines using a multiline string:
 
 ```javascript
 var.message = "
-Memory usage: @fmt.item.usage_memory, Previous value: @fmt.prev.usage_memory
+Memory usage: @fmt.item.usage_memory
+Previous value: @fmt.prev.usage_memory
 "
 ```
 
 Note: Any leading or trailing whitespace _(like the newline character at the start and end of the example above)_ will be automatically trimmed from the rendered message.
 
-
 ## Listing All Items in a Message
-
 You can iterate through and list all items directly within a message template. This is particularly useful when you want a single alert to provide a comprehensive overview of multiple items, rather than generating separate alerts for each.
-
 
 It is even possible to list all items in a message. This can be especially useful if you want a single alert, but the message to contain all item.
 
@@ -115,13 +112,15 @@ All items:
 ```
 
 ## Available Message Placeholders
-
 This table provides an overview of the most commonly used placeholders and their respective examples and descriptions.
 
 Placeholder                         | Example output               | Description
 ----------------------------        | ---------------------------- | ------------
 `@asset.id`                         | `34567`                      | The unique identifier for the asset.
 `@asset.name`                       | `myhost.local`               | The name of the asset.
+`@asset.string.<key>`               | `...`                        | The asset property `<key>` containing a string value.
+`@asset.strings.<key>`              | `[..., ...]`                 | The asset property `<key>` containing a list of string values.
+`@asset.number.<key>`              | `[..., ...]`                 | The asset property `<key>` containing a list of string values.
 `@check.duration`                   | `4.05123`                    | The duration of the current check in seconds (float).
 `@check.interval`                   | `300`                        | The configured check interval in seconds (integer).
 `@check.local_datetime`             | `2022-07-21 16:45:44+02:00`  | The timezone-aware local date and time of the current check result.

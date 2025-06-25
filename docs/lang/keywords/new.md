@@ -5,12 +5,11 @@ The `new` keyword allows you to identify whether an item is being detected for t
 The `new` keyword evaluates to `true` if the item has no previous historical data in InfraSonar, and `false` otherwise.
 
 ## Example: Alerting on New Items
-
 ```javascript
 case new:
     return DEBUG, "New item detected: @item.name"
 ```
-
+a
 In this example, an alert will be triggered only when `@item.name` is discovered by InfraSonar for the very first time.
 
 ## Important Note on Testing:

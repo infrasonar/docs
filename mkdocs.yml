@@ -195,6 +195,7 @@ nav:
         - Variables in expression: lang/basics/variables_in_expression.md
         - Message templates: lang/basics/message_templates.md
         - Dynamic thresholds: lang/basics/dynamic_thresholds.md
+        - Asset Properties: lang/basics/asset_properties.md
       - Keywords:
         - new: lang/keywords/new.md
         - hit: lang/keywords/hit.md
@@ -204,6 +205,19 @@ nav:
         - Cross-Item Data: lang/advanced/cross_item_data.md
         - Item Missing: lang/advanced/item_missing.md
         - Compare with Another Item: lang/advanced/compare_with_another_item.md
+      - Functions:
+        - abs: lang/functions/abs.md
+        - add: lang/functions/add.md
+        - diff: lang/functions/diff.md
+        - diffps: lang/functions/diffps.md
+        - div: lang/functions/div.md
+        - endswith: lang/functions/endswith.md
+        - fdiv: lang/functions/fdiv.md
+        - imatch: lang/functions/imatch.md
+        - lower: lang/functions/lower.md
+        - match: lang/functions/match.md
+        - startswith: lang/functions/startswith.md
+        - upper: lang/functions/upper.md
   - API reference:
       - Overview: api/overview.md
       - Authentication: api/authentication.md

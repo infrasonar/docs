@@ -6,7 +6,7 @@ InfraSonar's expression language allows you to combine multiple `case` statement
 
 When you nest `case` statements, they form an AND relationship. The inner `case` will only be evaluated if all preceding outer `case` conditions are met.
 
-Suppose you want to raise an alert _only_ when memory usage exceeds 80% AND the operating system is neither "Windows" nor "ChromeOS". You could achieve this by nesting:
+Suppose you want to raise an alert _only_ when memory usage for some collector exceeds 80% _AND_ the operating system is neither "Windows" nor "ChromeOS". You could achieve this by nesting:
 
 ```javascript
 // Raise a WARNING if memory usage > 80%

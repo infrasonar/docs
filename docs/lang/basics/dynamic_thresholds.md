@@ -26,7 +26,6 @@ Memory usage higher than predicted:
 - **Automatic Forecasting**: You do not need to manually configure or activate forecasting. InfraSonar automatically begins generating forecasts for a metric once an expression referencing `enodo.<metric>` exists.
 
 ## Analyzing Differences (Rate of Change)
-
 For metrics that continuously increase, such as counters _(e.g., `error_count`, `byte_sent`)_, comparing the current value directly isn't always meaningful. Instead, it's often more useful to analyze the **difference** or **rate of change** between the current and previous values.
 
 To make this difference independent of your check interval, you can calculate the value per second. This allows for consistent comparisons regardless of how frequently your checks run.
