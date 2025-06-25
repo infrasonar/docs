@@ -32,5 +32,6 @@ The editor also understands data types. This means you can't accidentally compar
 
 Similarly, after typing `return` and a _space_, a list of available severities (like `WARNING`, `CRITICAL`, etc.) will pop up, ensuring you select a valid option. Plus, all your expressions are thoroughly validated for syntax and type correctness before you can save them, giving you immediate feedback and preventing invalid configurations from being deployed.
 
-
+!!! tip "Indentation Matters"
+    Indentation is crucial for defining the logic and structure of your expressions. Best practice is to use 4 spaces for indentation. Proper indentation significantly impacts how case statements are interpreted, as demonstrated in the [AND/OR logic documentation](../and_or_logic) where nesting and sequential case statements have distinct meanings.
 

@@ -196,15 +196,15 @@ nav:
         - Message templates: lang/basics/message_templates.md
         - Dynamic thresholds: lang/basics/dynamic_thresholds.md
         - Asset Properties: lang/basics/asset_properties.md
+      - Special Cases:
+        - Item Missing: lang/special_cases/item_missing.md
+        - Cross-Item Data: lang/special_cases/cross_item_data.md
+        - Compare with Another Item: lang/special_cases/compare_with_another_item.md
       - Keywords:
         - new: lang/keywords/new.md
         - hit: lang/keywords/hit.md
         - ticks: lang/keywords/ticks.md
         - minute, hour, weekday: lang/keywords/minute_hour_weekday.md
-      - Advanced:
-        - Cross-Item Data: lang/advanced/cross_item_data.md
-        - Item Missing: lang/advanced/item_missing.md
-        - Compare with Another Item: lang/advanced/compare_with_another_item.md
       - Functions:
         - abs: lang/functions/abs.md
         - add: lang/functions/add.md
