@@ -216,6 +216,9 @@ nav:
         - imatch: lang/functions/imatch.md
         - lower: lang/functions/lower.md
         - match: lang/functions/match.md
+        - mod: lang/functions/mod.md
+        - mul: lang/functions/mul.md
+        - ref: lang/functions/ref.md
         - startswith: lang/functions/startswith.md
         - upper: lang/functions/upper.md
   - API reference:
