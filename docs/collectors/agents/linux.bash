@@ -3,6 +3,7 @@
 # --- Variables ---
 
 install_dir="/opt/infrasonar-agent"
+config_dir="/etc/infrasonar"
 package_name="linux-agent"
 binary_name="infrasonar-linux-agent"
 github_repo="infrasonar/linux-agent"
@@ -60,34 +61,34 @@ download_agent() {
 }
 
 create_config() {
-  if [ -f "/etc/infrasonar/linux-agent.env" ]; then
+  if [ -f "$config_dir/linux-agent.env" ]; then
     log_info "Configuration file already exists."
   else
     log_info "Configuration file does not exist."
     # Create configuration directory
-    create_directory "/etc/infrasonar"
+    create_directory "$config_dir"
     # Ask for token
     read -p "Please enter your token: " token
-    echo "TOKEN=$token" >"/etc/infrasonar/linux-agent.env"
+    echo "TOKEN=$token" >"$config_dir/linux-agent.env"
     # Ask for optional asset ID
     read -p "Add asset token, leave empty for auto creation: " assetid
     if [[ -n "$assetid" ]]; then
-      echo "ASSET_ID=$assetid" >> "/etc/infrasonar/linux-agent.env"
+      echo "ASSET_ID=$assetid" >> "$config_dir/linux-agent.env"
     fi
-    log_info "Created config file '/etc/infrasonar/linux-agent.env'..."
+    log_info "Created config file '$config_dir/linux-agent.env'..."
   fi
 }
 
 create_systemd_unit() {
-  log_info "Creating systemd unit file '$systemd_unit_file'..."
-  cat <<EOF | tee "$systemd_unit_file"
+    log_info "Creating systemd unit file '$systemd_unit_file'..."
+    cat <<EOF > "$systemd_unit_file"
 [Unit]
 Description=InfraSonar Linux Agent
 Wants=network.target
 
 [Service]
 WorkingDirectory=$install_dir
-EnvironmentFile=/etc/infrasonar/linux-agent.env
+EnvironmentFile=$config_dir/linux-agent.env
 ExecStart=$install_dir/$binary_name
 Restart=on-failure
 

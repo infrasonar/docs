@@ -118,6 +118,7 @@ nav:
         - Docker: collectors/agents/docker.md
         - FS Events: collectors/agents/fsevents.md
         - Kubernetes: collectors/agents/kubernetes.md
+        - Linux: collectors/agents/linux.md
         - QStar: collectors/agents/qstar.md
         - Windows: collectors/agents/windows.md
         - Speedtest: collectors/agents/speedtest.md

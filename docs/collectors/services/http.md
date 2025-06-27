@@ -105,6 +105,6 @@ code | class         | code Meaning
 510  | Server Error  | Not Extended
 511  | Server Error  | Network Authentication Required
 
-## Additional information
+### Server disconnected
 
-:material-github: [HTTP Service source code](https://github.com/infrasonar/http-prbe)
+A notification showing `Server disconnected` typically indicates a reverse proxy not allowing access from our [service IP addresses](./index.md)
