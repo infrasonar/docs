@@ -202,13 +202,15 @@ nav:
         - Cross-Item Data: lang/special_cases/cross_item_data.md
         - Compare with Another Item: lang/special_cases/compare_with_another_item.md
       - Keywords:
-        - new: lang/keywords/new.md
         - hit: lang/keywords/hit.md
+        - new: lang/keywords/new.md
         - ticks: lang/keywords/ticks.md
+        - now: lang/keywords/now.md
         - minute, hour, weekday: lang/keywords/minute_hour_weekday.md
       - Functions:
         - abs: lang/functions/abs.md
         - add: lang/functions/add.md
+        - sub: lang/functions/sub.md
         - diff: lang/functions/diff.md
         - diffps: lang/functions/diffps.md
         - div: lang/functions/div.md
