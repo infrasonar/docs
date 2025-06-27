@@ -108,7 +108,3 @@ code | class         | code Meaning
 ### Server disconnected
 
 A notification showing `Server disconnected` typically indicates a reverse proxy not allowing access from our [service IP addresses](./index.md)
-
-## Additional information
-
-:material-github: [HTTP Service source code](https://github.com/infrasonar/http-prbe)
