@@ -2,12 +2,12 @@
 
 # --- Variables ---
 
-install_dir="/opt/infrasonar-agent"
+install_dir="/opt/infrasonar-linux-agent"
 config_dir="/etc/infrasonar"
 package_name="linux-agent"
 binary_name="infrasonar-linux-agent"
 github_repo="infrasonar/linux-agent"
-systemd_unit_file="/etc/systemd/system/infrasonar-agent.service"
+systemd_unit_file="/etc/systemd/system/infrasonar-linux-agent.service"
 
 log_info() {
   echo "[INFO] $1"
@@ -98,11 +98,11 @@ EOF
 }
 
 enable_and_start_service() {
-  log_info "Enabling and starting the InfraSonar agent service..."
-  systemctl enable infrasonar-agent
-  systemctl start infrasonar-agent
+  log_info "Enabling and starting the InfraSonar Linux agent service..."
+  systemctl enable infrasonar-linux-agent
+  systemctl start infrasonar-linux-agent
   if [ $? -ne 0 ]; then
-    log_error "Failed to start the InfraSonar agent service. Check systemctl status InfraSonar-agent for details."
+    log_error "Failed to start the InfraSonar Linux agent service. Check systemctl status InfraSonar-linux-agent for details."
   else
     log_info "Infrasonar agent service started successfully."
   fi
@@ -118,4 +118,4 @@ download_agent
 create_systemd_unit
 enable_and_start_service
 
-log_info "InfraSonar Linux Agent deployment complete."
+log_info "InfraSonar Linux agent deployment complete."
