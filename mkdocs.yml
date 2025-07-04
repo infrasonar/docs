@@ -221,7 +221,9 @@ nav:
         - mod: lang/functions/mod.md
         - mul: lang/functions/mul.md
         - ref: lang/functions/ref.md
+        - round: lang/functions/round.md
         - startswith: lang/functions/startswith.md
+        - strip: lang/functions/strip.md
         - sub: lang/functions/sub.md
         - upper: lang/functions/upper.md
   - API reference:
