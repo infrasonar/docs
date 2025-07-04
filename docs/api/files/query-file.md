@@ -1,4 +1,4 @@
-# Upload file
+# Query file
 **`GET` /container/<containerId\>/file/<fileId\>/info?fields=...**
 
 ### Description
