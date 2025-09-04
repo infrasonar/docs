@@ -19,11 +19,11 @@ _none_
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
 `data`      | object    | No        | Object with check data _(if not given, `error` must be provided)_.
-`version`   | string    | Yes       | Version of the collector.
+`version`   | string    | Yes       | Version of the collector using the format `MAJOR.MINOR.PATCH`, for example `"1.0.0"`.
 `runtime`   | float     | No        | Time it took for the check to run in seconds.
 `no_count`  | boolean   | No        | If `true`, the check result will not be _"counted"_ by InfraSonar and therefore _not_ affect _"last-seen"_.
 `timestamp` | integer   | No        | Unix timestamp in seconds. If omitted, InfraSonar will set the timestamp for the check data.
-`error`     | object    | No        | Object with error _(see [error](#error))_ _(if not given, `error` must be provided)_.
+`error`     | object    | Depends   | Object with error _(see [error](#error))_ _(`error` is required in case no `data` is provided)_.
 
 > At least one of `data` or `error` must be provided, and both can be included.
 
