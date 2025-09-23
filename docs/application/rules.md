@@ -41,12 +41,13 @@ To start, select how you'd like this rule to notify you by selecting a **rule ki
 * SMS
 * VoiceCall
 * WhatsApp
+* App (see: [My InfraSonar](../../../guides/my-infrasonar/))
 
 For webhooks some additional options can be configures, see our [webhook](./webhooks.md) documentation for the specific details.
 
 When configuring SMS, VoiceCall or WhatsApp we urge you to test the communication using the test button to ensure your desired way of communication is working.
 
-Next step is to configure a **user** :material-numeric-2-circle:{ .red }  for whom this rule is applicable. 
+Next step is to configure a **user** :material-numeric-2-circle:{ .red }  for whom this rule is applicable.
 
 Set a **description** :material-numeric-3-circle:{ .red }  for this rule, your future self and colleagues will thank you later.
 
