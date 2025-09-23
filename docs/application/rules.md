@@ -36,12 +36,12 @@ The next paragraphs outline each of the tabs when configuring rules.
 
 To start, select how you'd like this rule to notify you by selecting a **rule kind** :material-numeric-1-circle:{ .red }:
 
+* App _(see: [My InfraSonar](../../../guides/my-infrasonar/))_
 * Email
-* webhook
+* Webhook
 * SMS
 * VoiceCall
 * WhatsApp
-* App (see: [My InfraSonar](../../../guides/my-infrasonar/))
 
 For webhooks some additional options can be configures, see our [webhook](./webhooks.md) documentation for the specific details.
 
