@@ -80,6 +80,7 @@ nav:
        - Agentless implementation: guides/agent-less.md
        - DNS monitoring: guides/dns.md
        - Raspberry Pi dashboard: guides/raspberrypi_dashboard.md
+       - My InfraSonar: guides/my-infrasonar.md
     - Privacy & Security:
        - Security: privacy-security/security_considerations.md
        - Privacy: privacy-security/privacy.md
