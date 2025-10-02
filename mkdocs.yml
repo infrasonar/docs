@@ -175,6 +175,7 @@ nav:
             - Microsoft Exchange 2010: collectors/services/mailroundtrip/exchange2010.md
             - Microsoft 365: collectors/services/mailroundtrip/microsoft365.md
             - Google Workspace: collectors/services/mailroundtrip/google_workspace.md
+        - Manager: collectors/services/manager.md
         - Microsoft 365: collectors/services/microsoft_365.md
         - Microsoft Azure: collectors/services/microsoft_azure.md
         - MX: collectors/services/mx.md
