@@ -2,6 +2,9 @@
 
 My InfraSonar is a light app designed for your phone to give you real-time notifications and alerts. To get started, just install it on your device using the instructions below.
 
+!!! note "Configure your rules to use the App"
+    Make sure your InfraSonar alert and notification rules have the "App" configured to receive push notification on your mobile device (see [Rules](../../../application/rules/)).
+
 ## 📱 On Android
 1. Open **Google Chrome** on your Android device and navigate to [https://my.infrasonar.com](https://my.infrasonar.com).
 2. Tap the **three-dot menu ⋮** in the top right corner of the browser.
@@ -18,3 +21,4 @@ The app icon will now be on your home screen and in your app drawer.
 4. You can then edit the name of the app. Tap **"Add"** in the top right corner.
 
 The PWA icon will now appear on your home screen.
+
