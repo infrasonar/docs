@@ -57,7 +57,7 @@ Boot from the Ubuntu Server 24.04 LTS ISO and then follow these steps:
 12. Profile setup: (_feel free to pick your own username and server name_)
     1.  Your name: *sysadmin*.
     2.  Your server's name: *infrasonar-appliance*.
-    3.  Pick a username: *sysdmin*.
+    3.  Pick a username: *sysadmin*.
     4.  Choose a password: <Pick your own strong password and store is safely>
     5.  Confirm your password: <Pick your own strong password and store is safely>
 13. SSH Setup:
