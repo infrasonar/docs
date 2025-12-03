@@ -15,6 +15,7 @@ Param               | Description
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fmt`               | `false`           | Either `true` or `false`. When `true` the display function is used to format the values and if `false`, the raw values are returned.
+`aggr`              | `false`           | Query pending aggregation data together with the check result. Not possible in combination with `fmt` set to `true`.
 
 ### Return codes
 Error code  | Reason
