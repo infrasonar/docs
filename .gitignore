@@ -131,3 +131,5 @@ dmypy.json
 
 # WIP folder
 /wip
+
+.vscode/
