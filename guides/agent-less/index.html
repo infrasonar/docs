@@ -9195,11 +9195,11 @@
 <ol>
 <li>Navigate to the <a href="../../application/collectors/">collectors</a> page in your container.</li>
 <li>Enable tne <code>wmi</code>, <code>eventlog</code>,<code>snmp</code> and <code>lastseen</code> collectors by toggling them <strong>on</strong>.</li>
-<li>Go to the <a href="../../application/agentcores/">agentcore</a> menu and click the <img alt="⚙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2699.svg" title=":gear:" /> gear icon.</li>
+<li>Go to the <a href="../../application/agentcores/">agentcore</a> menu and click the <img alt="⚙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" title=":gear:" /> gear icon.</li>
 <li>Select the <strong>Probes</strong> tab and click <strong>Sync with container</strong>.</li>
 <li>Select the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg></span> pencil next to the wmi probe and enter domain admin credentials, see our <a href="../../collectors/probes/wmi/">WMI probe</a> for more information.</li>
 <li>Select the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg></span> pencil next to the eventlog probe and toggle <strong>Use reference configuration</strong> on, ensure <strong>wmi</strong> is selected as reference configuration.</li>
-<li>Click <strong>apply changes</strong> and wait <img alt="⏳" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/23f3.svg" title=":hourglass_flowing_sand:" /> for the probes to get deployed to the appliance.</li>
+<li>Click <strong>apply changes</strong> and wait <img alt="⏳" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/23f3.svg" title=":hourglass_flowing_sand:" /> for the probes to get deployed to the appliance.</li>
 </ol>
 <h2 id="add-assets">Add assets</h2>
 <p>We outline how to setup monitoring for a Microsoft Windows asset and a common networking switch.</p>
@@ -9232,13 +9232,13 @@
 <li>Open the <strong>snmo</strong> tab and provide the switch IP address. (<em>if the previously entered name can be resolved by the appliance you can leave the address empty.</em>)</li>
 </ol>
 <h2 id="last-seen">Last seen</h2>
-<p>When you observe your asset list you will note a <img alt="⚫" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26ab.svg" title=":black_circle:" /> grey dot in the <strong>active</strong> column.</p>
+<p>When you observe your asset list you will note a <img alt="⚫" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26ab.svg" title=":black_circle:" /> grey dot in the <strong>active</strong> column.</p>
 <p>This indicates we don't monitor when data for this asset arrived. We can easily fix this by adding our <code>lastseen</code> collector.</p>
 <ol>
 <li>Open the <a href="../../application/assets/">asset</a> and click the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg></span> pencil icon.</li>
 <li>Add the <code>lastseen</code> collector and click <strong>save</strong></li>
-<li>Observe the <img alt="⚫" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26ab.svg" title=":black_circle:" /> grey dot turning into a <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> green dot, hopefully <img alt="😃" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f603.svg" title=":smiley:" />...<br>
-<em>if the dot turn into a <img alt="🔴" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f534.svg" title=":red_circle:" /> dot this implies we have not seen data for this asset for some time, see also our <a href="../../collectors/services/last_seen/">lastseen</a> collector documentation for additional information.</em></li>
+<li>Observe the <img alt="⚫" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26ab.svg" title=":black_circle:" /> grey dot turning into a <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e2.svg" title=":green_circle:" /> green dot, hopefully <img alt="😃" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f603.svg" title=":smiley:" />...<br>
+<em>if the dot turn into a <img alt="🔴" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f534.svg" title=":red_circle:" /> dot this implies we have not seen data for this asset for some time, see also our <a href="../../collectors/services/last_seen/">lastseen</a> collector documentation for additional information.</em></li>
 </ol>
 <h2 id="conditions">Conditions</h2>
 <p>Let's find out which <a href="../../concept/conditions/">conditions</a> are used to monitor your assets.</p>
