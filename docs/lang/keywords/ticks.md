@@ -2,6 +2,10 @@
 
 The `ticks` keyword represents the number of consecutive times an item has triggered an alert for a specific expression.
 
+!!! warning
+
+    Executing a plain `return` leaves an existing alert open but bypasses the `ticks` increment. If no alert is open at the time of a plain `return`, the internal `ticks` counter is reset to `0`.
+
 This keyword is particularly useful for implementing escalating severities or delaying alerts, allowing you to react differently based on the persistence of an issue.
 
 ## Example: Escalating CPU Alert Severity
