@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -8910,6 +8910,14 @@
 <p>In InfraSonar, most conditions leverage a powerful, custom expression language to test your data. We specifically designed this language for its flexibility.</p>
 <p>A key advantage over a purely graphical interface is the ability to embed comments directly within your expressions. This means you can thoroughly explain the rationale behind specific tests, significantly improving readability and maintainability for your team.</p>
 <p>Despite its power, we've kept the language simple and robust, ensuring a gentle learning curve. Its built-in data type checking actively helps prevent common mistakes, making your expressions more reliable.</p>
+<div class="admonition info">
+<p class="admonition-title">InfraSonar Copilot</p>
+<p>For conditions utilizing expressions, InfraSonar automatically attempts to generate a <strong>Root Cause Analysis (RCA)</strong> when an alert triggers. This allows you to engage with the Copilot to diagnose and resolve the issue faster.</p>
+<p>The RCA service does not receive customer-specific data (such as IP addresses). To ensure privacy, only the alert template and expression syntax are transmitted for analysis.</p>
+<p>If you prefer not to send specific alerts to the RCA Service, you can disable this feature by adding the following comment anywhere within your condition:
+<div class="highlight"><pre><span></span><code><span class="c1">// INFRASONAR_NO_RCA</span>
+</code></pre></div></p>
+</div>
 
 
 
@@ -9001,10 +9009,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
