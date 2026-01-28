@@ -13,6 +13,7 @@ case ticks < 2:
     // Hysteresis: Prevents immediate closure by echoing the previous state.
     // If the alert was already OK, returning last_severity (OK) effectively
     // acts as a standard 'return OK', allowing the check to resolve normally
+    // This is required to increate the number of ticks if an alert is open.
     return alert.last_severity, "@alert.last_message"
 
 // If the condition is OK and we have met the tick requirement, resolve.
@@ -34,10 +35,8 @@ case item.state != 'running':
     return ERROR, "Item state is @item.state"
 
 case var.duration < 600:
-    // Hysteresis: Prevents immediate closure by echoing the previous state.
-    // If the alert was already OK, returning last_severity (OK) effectively
-    // acts as a standard 'return OK', allowing the check to resolve normally
-    return alert.last_severity, "Hold period: @var.duration / 600s. @alert.last_message"
+    // Note: with a plain return, the `ticks` do not increase
+    return
 
 // Otherwise, resolve
 return OK
