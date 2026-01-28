@@ -5181,6 +5181,8 @@
       
         
       
+        
+      
     
     
     
@@ -5292,14 +5294,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../special_cases/compare_with_another_item/" class="md-nav__link">
+      <a href="../../special_cases/global_state/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Compare with Another Item
+    Global State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../special_cases/prevent_immediate_close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prevent Immediate Close
   
 
     
@@ -5329,6 +5359,8 @@
   
     
     
+      
+        
       
         
       
@@ -5431,6 +5463,34 @@
     
   
     new
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../keywords/last/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    last
   
 
     
@@ -5581,6 +5641,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -5672,6 +5736,34 @@
     
   
     add
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/append/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    append
   
 
     
@@ -5840,6 +5932,34 @@
     
   
     imatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/len/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    len
   
 
     
@@ -9246,6 +9366,31 @@
 </thead>
 <tbody>
 <tr>
+<td><code>@alert.created</code></td>
+<td><code>1658253918</code></td>
+<td>The Unix timestamp of when the alert first triggered. If no alert is active, it defaults to the current time (<code>now</code>).</td>
+</tr>
+<tr>
+<td><code>@alert.last_hit</code></td>
+<td><code>1658253918</code></td>
+<td>The Unix timestamp of the most recent evaluation that resulted in a non-OK state. Defaults to <code>now</code> if the item is currently healthy.</td>
+</tr>
+<tr>
+<td><code>@alert.last_severity</code></td>
+<td><code>0..8</code></td>
+<td>The severity level returned in the previous evaluation cycle. Defaults to <code>0</code> (<code>OK</code>) if no incident is currently open.</td>
+</tr>
+<tr>
+<td><code>@alert.last_message</code></td>
+<td><code>...</code></td>
+<td>The exact message string returned by the previous evaluation. Returns an empty string <code>""</code> if there is no active alert.</td>
+</tr>
+<tr>
+<td><code>@asset.name</code></td>
+<td><code>myhost.local</code></td>
+<td>The name of the asset.</td>
+</tr>
+<tr>
 <td><code>@asset.id</code></td>
 <td><code>34567</code></td>
 <td>The unique identifier for the asset.</td>
@@ -9341,11 +9486,6 @@
 <td>The formatted value of the current item's metric (e.g., human-readable).</td>
 </tr>
 <tr>
-<td><code>@fmt.other.&lt;metric&gt;</code></td>
-<td><code>99%</code></td>
-<td>The formatted value of another item's metric.</td>
-</tr>
-<tr>
 <td><code>@fmt.prev.&lt;metric&gt;</code></td>
 <td><code>99%</code></td>
 <td>The formatted value of the item's metric from the previous check.</td>
@@ -9374,11 +9514,6 @@
 <td><code>@new</code></td>
 <td><code>True</code></td>
 <td><code>True</code> if the item is newly detected, <code>False</code> otherwise.</td>
-</tr>
-<tr>
-<td><code>@other.&lt;metric&gt;</code></td>
-<td><code>99.14525</code></td>
-<td>The raw value of a metric from another item.</td>
 </tr>
 <tr>
 <td><code>@prev.&lt;metric&gt;</code></td>

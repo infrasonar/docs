@@ -12,7 +12,7 @@
         <link rel="prev" href="../hit/">
       
       
-        <link rel="next" href="../ticks/">
+        <link rel="next" href="../last/">
       
       
         
@@ -5033,6 +5033,8 @@
       
         
       
+        
+      
     
     
     
@@ -5144,14 +5146,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../special_cases/compare_with_another_item/" class="md-nav__link">
+      <a href="../../special_cases/global_state/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Compare with Another Item
+    Global State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../special_cases/prevent_immediate_close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prevent Immediate Close
   
 
     
@@ -5183,6 +5213,8 @@
   
     
     
+      
+        
       
         
       
@@ -5374,6 +5406,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../last/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    last
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ticks/" class="md-nav__link">
         
   
@@ -5504,6 +5564,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -5595,6 +5659,34 @@
     
   
     add
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/append/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    append
   
 
     
@@ -5763,6 +5855,34 @@
     
   
     imatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/len/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    len
   
 
     
@@ -9011,11 +9131,10 @@
 <p>The <code>new</code> keyword allows you to identify whether an item is being detected for the first time by InfraSonar.</p>
 <p>The <code>new</code> keyword evaluates to <code>true</code> if the item has no previous historical data in InfraSonar, and <code>false</code> otherwise.</p>
 <h2 id="example-alerting-on-new-items">Example: Alerting on New Items</h2>
-<p><div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="ow">new</span><span class="o">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="ow">new</span><span class="o">:</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;New item detected: @item.name&quot;</span>
 </code></pre></div>
-a
-In this example, an alert will be triggered only when <code>@item.name</code> is discovered by InfraSonar for the very first time.</p>
+<p>In this example, an alert will be triggered only when <code>@item.name</code> is discovered by InfraSonar for the very first time.</p>
 <h2 id="important-note-on-testing">Important Note on Testing:</h2>
 <p>The <code>new</code> keyword relies on an item's historical presence within the InfraSonar system. Consequently, the <code>new</code> keyword will always evaluate to <code>false</code> during expression testing.</p>
 <p>Therefore, when testing expressions that include the <code>new</code> keyword, keep in mind that the case statement will not trigger based on new: <code>true</code>. You may need to temporarily adjust your test cases or logic to account for this.</p>
@@ -9063,13 +9182,13 @@ In this example, an alert will be triggered only when <code>@item.name</code> is
           </a>
         
         
-          <a href="../ticks/" class="md-footer__link md-footer__link--next" rel="next">
+          <a href="../last/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                ticks
+                last
               </div>
             </div>
             <div class="md-footer__button md-icon">
