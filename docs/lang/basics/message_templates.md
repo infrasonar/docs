@@ -116,6 +116,11 @@ This table provides an overview of the most commonly used placeholders and their
 
 Placeholder                         | Example output               | Description
 ----------------------------        | ---------------------------- | ------------
+`@alert.created`                    | `1658253918`                 | The Unix timestamp of when the alert first triggered. If no alert is active, it defaults to the current time (`now`).
+`@alert.last_hit`                   | `1658253918`                 | The Unix timestamp of the most recent evaluation that resulted in a non-OK state. Defaults to `now` if the item is currently healthy.
+`@alert.last_severity`              | `0..8`                       | The severity level returned in the previous evaluation cycle. Defaults to `0` (`OK`) if no incident is currently open.
+`@alert.last_message`               | `...`                        | The exact message string returned by the previous evaluation. Returns an empty string `""` if there is no active alert.
+`@asset.name`                       | `myhost.local`               | The name of the asset.
 `@asset.id`                         | `34567`                      | The unique identifier for the asset.
 `@asset.name`                       | `myhost.local`               | The name of the asset.
 `@asset.string.<key>`               | `...`                        | The asset property `<key>` containing a string value.
@@ -135,14 +140,12 @@ Placeholder                         | Example output               | Description
 `@enodo.<metric>.upper`             | `0.1234`                     | The raw forecasted upper bound value from Enodo.
 `@fmt.enodo.<metric>.lower`         | `99%`                        | The formatted forecasted lower bound value from Enodo.
 `@fmt.item.<metric>`                | `123 MB`                     | The formatted value of the current item's metric (e.g., human-readable).
-`@fmt.other.<metric>`               | `99%`                        | The formatted value of another item's metric.
 `@fmt.prev.<metric>`                | `99%`                        | The formatted value of the item's metric from the previous check.
 `@hit`                              | `0`                          | The number of items currently triggering an alert (0 or more).
 `@hour`                             | `0`                          | The current hour (0-23).
 `@item.<metric>`                    | `cpu1`                       | The raw value of the current item's metric.
 `@minute`                           | `0`                          | The current minute (0-59).
 `@new`                              | `True`                       | `True` if the item is newly detected, `False` otherwise.
-`@other.<metric>`                   | `99.14525`                   | The raw value of a metric from another item.
 `@prev.<metric>`                    | `99.14525`                   | The raw value of the item's metric from the previous check result.
 `@ticks`                            | `0`                          | The total number of times this specific alert has been triggered previously (0 or more).
 `@var.variable`                     | `...`                        | The value of a user-defined variable (see [Variables in Expressions](../variables_in_expression)).

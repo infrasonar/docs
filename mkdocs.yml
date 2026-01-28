@@ -203,22 +203,26 @@ nav:
       - Special Cases:
         - Item Missing: lang/special_cases/item_missing.md
         - Cross-Item Data: lang/special_cases/cross_item_data.md
-        - Compare with Another Item: lang/special_cases/compare_with_another_item.md
+        - Global State: lang/special_cases/global_state.md
+        - Prevent Immediate Close: lang/special_cases/prevent_immediate_close.md
       - Keywords:
         - hit: lang/keywords/hit.md
         - new: lang/keywords/new.md
+        - last: lang/keywords/last.md
         - ticks: lang/keywords/ticks.md
         - now: lang/keywords/now.md
         - minute, hour, weekday: lang/keywords/minute_hour_weekday.md
       - Functions:
         - abs: lang/functions/abs.md
         - add: lang/functions/add.md
+        - append: lang/functions/append.md
         - diff: lang/functions/diff.md
         - diffps: lang/functions/diffps.md
         - div: lang/functions/div.md
         - endswith: lang/functions/endswith.md
         - fdiv: lang/functions/fdiv.md
         - imatch: lang/functions/imatch.md
+        - len: lang/functions/len.md
         - lower: lang/functions/lower.md
         - match: lang/functions/match.md
         - mod: lang/functions/mod.md
