@@ -9579,11 +9579,13 @@
 <p>When data arrives at InfraSonar, conditions are evaluated. This may result in a new alert or an increase in the severity of an existing one. In both cases, InfraSonar scans the "Rules" to alert users via email, WhatsApp, SMS, VoiceCall, App notifications or webhooks.</p>
 <p>For remote execution, a dedicated webhook forwards the request to the relevant appliance. This webhook can include dynamic data from the alert, such as metric values, asset and container properties, or fixed values.</p>
 <h3 id="security-passwords-and-secrets">Security: Passwords and Secrets</h3>
-<p>To ensure a high level of security, sensitive credentials are not stored within the InfraSonar cloud. Instead:
-1. <strong>Local Storage:</strong> Passwords and secrets are configured and stored encrypted on the local appliance within your own network.
-2. <strong>Environment Variables:</strong> InfraSonar sends the webhook with dynamic and predefined environment variables (env vars).
-3. <strong>Injection:</strong> The local appliance then injects the sensitive <code>PASSWORD</code> and <code>SECRET</code> variables.
-4. <strong>Execution:</strong> Finally, a <strong>Python</strong>, <strong>Bash</strong>, or <strong>PowerShell</strong> script is executed on the appliance using the full set of environment variables.</p>
+<p>To ensure a high level of security, sensitive credentials are not stored within the InfraSonar cloud. Instead:</p>
+<ol>
+<li><strong>Local Storage:</strong> Passwords and secrets are configured and stored encrypted on the local appliance within your own network.</li>
+<li><strong>Environment Variables:</strong> InfraSonar sends the webhook with dynamic and predefined environment variables (env vars).</li>
+<li><strong>Injection:</strong> The local appliance then injects the sensitive <code>PASSWORD</code> and <code>SECRET</code> variables.</li>
+<li><strong>Execution:</strong> Finally, a <strong>Python</strong>, <strong>Bash</strong>, or <strong>PowerShell</strong> script is executed on the appliance using the full set of environment variables.</li>
+</ol>
 <h2 id="scripting-languages">Scripting Languages</h2>
 <h3 id="python-and-bash">Python and Bash</h3>
 <p>Python and Bash scripts are executed locally on the appliance itself.</p>
