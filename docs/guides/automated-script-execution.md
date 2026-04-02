@@ -1,4 +1,4 @@
-# Script Execution
+# Automated Script Execution
 
 This guide explains how InfraSonar can automatically trigger script execution when an alert is generated or updated. While this can be achieved via a direct webhook, this guide focuses on the secure solution: executing scripts through a **Remote Appliance (RAPP)**.
 
