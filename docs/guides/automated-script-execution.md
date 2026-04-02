@@ -17,6 +17,7 @@ For remote execution, a dedicated webhook forwards the request to the relevant a
 
 ### Security: Passwords and Secrets
 To ensure a high level of security, sensitive credentials are not stored within the InfraSonar cloud. Instead:
+
 1. **Local Storage:** Passwords and secrets are configured and stored encrypted on the local appliance within your own network.
 2. **Environment Variables:** InfraSonar sends the webhook with dynamic and predefined environment variables (env vars).
 3. **Injection:** The local appliance then injects the sensitive `PASSWORD` and `SECRET` variables.
