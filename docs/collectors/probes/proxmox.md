@@ -79,7 +79,7 @@ To create a user in Proxmox, follow these steps:
     * **User**: `infrasonar@pve`
     * **Token name**: `infrasonar`
     * **Description**: `infrasonar`
-    * **Enabled**: `true`
+    * **Privilege Separation**: `false`
 15. Click on **Add** in the bottom-right corner.
 16. Copy the **Token ID** and **Secret** to a safe place. You will need them to configure the collector in InfraSonar.
 
@@ -91,6 +91,13 @@ To create a user in Proxmox, follow these steps:
   <figcaption>Proxmox_permissions</figcaption>
 </figure>
 
+## Deploy
+
+The deployment process for integrating Proxmox with InfraSonar follows a three-step hierarchy:
+
+1. **Cluster Collector**: Start by deploying the cluster collector. This initial step provides an overview of the Proxmox nodes and facilitates their addition as assets in InfraSonar.
+2. **Node Collector**: Next, deploy the node collector. This collector offers insights into the individual Proxmox nodes and simplifies the process of adding containers and virtual machines as InfraSonar assets. This is easily done via the Nodes overview within the cluster collector interface.
+3. **Container/VM Collector**: Finally, deploy the specific collector for the container and/or virtual machine to gain detailed insights into the guest operating system. This collector can be set up conveniently using the guest view on the cluster collector, which allows you to create a new asset or assign an existing one.
 
 ### Troubleshooting
 
