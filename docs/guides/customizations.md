@@ -15,6 +15,7 @@ Property  | Type  | Default | Description
 `infrasonar_asset_default_mode_duration` | Int (enum) | `0` _(Indefinitely)_ | Default duration used when changing an asset's operational mode via the GUI. See [Duration Enumerator](#duration-enumerator).
 `infrasonar_container_allow_browser_index` | Bool | `false` | Controls whether basic asset information _(such as ID, name, and description)_ is cached and indexed locally by the browser to enable cross-container searching.
 `infrasonar_container_default_mode_duration` | Int (enum) | `0` _(Indefinitely)_ | Default duration used when changing a container's operational mode via the GUI. See [Duration Enumerator](#duration-enumerator).
+`infrasonar_disable_throttlebot` | Bool | `false` | Disable the InfraSonar ThrottleBot for all assets in the container _(must be set per container)_.
 `infrasonar_rule_default_mode_duration` | Int (enum) | `0` _(Indefinitely)_ | Default duration used when changing the enabled/disabled status of a rule via the GUI. See [Duration Enumerator](#duration-enumerator).
 
 ## Duration Enumerator
