@@ -3363,10 +3363,38 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#authorization" class="md-nav__link">
+  <a href="#create-a-user" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authorization
+        Create a user
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
       
     </span>
   </a>
@@ -9178,10 +9206,38 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#authorization" class="md-nav__link">
+  <a href="#create-a-user" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authorization
+        Create a user
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
       
     </span>
   </a>
@@ -9272,14 +9328,72 @@
 <h2 id="credentials">Credentials</h2>
 <p>All four collectors use the Proxmox API to collect data from the Proxmox nodes.</p>
 <p>You can easily configure these credentials using our <a href="../../../application/agentcores/#remote-appliance-manager">remote appliance manager</a>.</p>
-<h3 id="authorization">Authorization</h3>
-<p>Proxmox has a pre-defined role <strong>PVEAuditor</strong> which allows read-only access to your proxmox cluster.
-Read  <a href="https://pve.proxmox.com/wiki/User_Management">here</a> how to create a user.</p>
+<h3 id="create-a-user">Create a user</h3>
+<p>To create a user in Proxmox, follow these steps:</p>
+<ol>
+<li>Log in to your Proxmox web interface.</li>
+<li>Click on <strong>Datacenter</strong> in the left-hand navigation pane.</li>
+<li>Click on <strong>Permissions</strong> in the left-hand navigation pane.</li>
+<li>Click on <strong>Users</strong> in the left-hand navigation pane.</li>
+<li>Click on <strong>Add</strong> in the top-right corner.</li>
+<li>Fill in the following information:</li>
+<li><strong>User name</strong>: <code>infrasonar</code></li>
+<li><strong>Password</strong>: <code>[PASSWORD]</code></li>
+<li><strong>Email</strong>: [EMAIL_ADDRESS]`</li>
+<li><strong>Realm</strong>: <code>pve</code></li>
+<li><strong>Enabled</strong>: <code>true</code></li>
+<li>Click on <strong>Add</strong> in the bottom-right corner.</li>
+<li>Click on <strong>Permissions</strong> in the left-hand navigation pane.</li>
+<li>Click on <strong>Add</strong> in the top-right corner.</li>
+<li>Fill in the following information:<ul>
+<li><strong>User</strong>: <code>infrasonar@pve</code></li>
+<li><strong>Path</strong>: <code>/</code></li>
+<li><strong>Privileges</strong>: <code>PVEAuditor</code></li>
+<li><strong>Propagte</strong>: <code>true</code></li>
+</ul>
+</li>
+<li>Click on <strong>Add</strong> in the bottom-right corner.</li>
+<li>Click on <strong>API Tokens</strong> in the left-hand navigation pane.</li>
+<li>Click on <strong>Add</strong> in the top-right corner.</li>
+<li>Fill in the following information:<ul>
+<li><strong>User</strong>: <code>infrasonar@pve</code></li>
+<li><strong>Token name</strong>: <code>infrasonar</code></li>
+<li><strong>Description</strong>: <code>infrasonar</code></li>
+<li><strong>Privilege Separation</strong>: <code>false</code></li>
+</ul>
+</li>
+<li>Click on <strong>Add</strong> in the bottom-right corner.</li>
+<li>Copy the <strong>Token ID</strong> and <strong>Secret</strong> to a safe place. You will need them to configure the collector in InfraSonar.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Proxmox has a pre-defined role <strong>PVEAuditor</strong> which allows read-only access to your proxmox cluster.</p>
+</div>
 <figure>
 <p><img alt="Proxmox permissions" src="../../../images/probe_proxmox_permissions.png" width="500" />
   </p>
 <figcaption>Proxmox_permissions</figcaption>
 </figure>
+<h2 id="deploy">Deploy</h2>
+<p>The deployment process for integrating Proxmox with InfraSonar follows a three-step hierarchy:</p>
+<ol>
+<li><strong>Cluster Collector</strong>: Start by deploying the cluster collector. This initial step provides an overview of the Proxmox nodes and facilitates their addition as assets in InfraSonar.</li>
+<li><strong>Node Collector</strong>: Next, deploy the node collector. This collector offers insights into the individual Proxmox nodes and simplifies the process of adding containers and virtual machines as InfraSonar assets. This is easily done via the Nodes overview within the cluster collector interface.</li>
+<li><strong>Container/VM Collector</strong>: Finally, deploy the specific collector for the container and/or virtual machine to gain detailed insights into the guest operating system. This collector can be set up conveniently using the guest view on the cluster collector, which allows you to create a new asset or assign an existing one.</li>
+</ol>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>You can use the following curl command to test your credentials:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>https://&lt;node-ip&gt;:8006/api2/json/version<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: PVEAPIToken=&lt;userid&gt;@&lt;realm&gt;!&lt;tokenid&gt;=&lt;secret&gt;&#39;</span>
+</code></pre></div>
+<p>Explanation:</p>
+<ul>
+<li>node-ip: the ip address of your proxmox node</li>
+<li>userid: the user id of your proxmox user</li>
+<li>realm: the realm of your proxmox user</li>
+<li>tokenid: the token id of your proxmox user</li>
+<li>secret: the secret of your proxmox user</li>
+</ul>
 <h2 id="deployment">Deployment</h2>
 <ol>
 <li>Start by adding you Proxmox cluster collector to gain an overview of proxmox nodes and an easy way of adding them to InfraSonar.</li>
