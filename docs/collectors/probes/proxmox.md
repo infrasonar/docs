@@ -49,17 +49,72 @@ All four collectors use the Proxmox API to collect data from the Proxmox nodes.
 
 You can easily configure these credentials using our [remote appliance manager](../../application/agentcores.md#remote-appliance-manager).
 
+### Create a user
 
-### Authorization
+To create a user in Proxmox, follow these steps:
 
-Proxmox has a pre-defined role **PVEAuditor** which allows read-only access to your proxmox cluster.
-Read  [here](https://pve.proxmox.com/wiki/User_Management) how to create a user.
+1. Log in to your Proxmox web interface.
+2. Click on **Datacenter** in the left-hand navigation pane.
+3. Click on **Permissions** in the left-hand navigation pane.
+4. Click on **Users** in the left-hand navigation pane.
+5. Click on **Add** in the top-right corner.
+6. Fill in the following information:
+   * **User name**: `infrasonar`
+   * **Password**: `[PASSWORD]`
+   * **Email**: [EMAIL_ADDRESS]`
+   * **Realm**: `pve`
+   * **Enabled**: `true`
+7. Click on **Add** in the bottom-right corner.
+8. Click on **Permissions** in the left-hand navigation pane.
+9. Click on **Add** in the top-right corner.
+10. Fill in the following information:
+    * **User**: `infrasonar@pve`
+    * **Path**: `/`
+    * **Privileges**: `PVEAuditor`
+    * **Propagte**: `true`
+11. Click on **Add** in the bottom-right corner.
+12. Click on **API Tokens** in the left-hand navigation pane.
+13. Click on **Add** in the top-right corner.
+14. Fill in the following information:
+    * **User**: `infrasonar@pve`
+    * **Token name**: `infrasonar`
+    * **Description**: `infrasonar`
+    * **Privilege Separation**: `false`
+15. Click on **Add** in the bottom-right corner.
+16. Copy the **Token ID** and **Secret** to a safe place. You will need them to configure the collector in InfraSonar.
+
+!!! note
+    Proxmox has a pre-defined role **PVEAuditor** which allows read-only access to your proxmox cluster.
 
 <figure markdown>
   ![Proxmox permissions](../../images/probe_proxmox_permissions.png){ width="500"}
   <figcaption>Proxmox_permissions</figcaption>
 </figure>
 
+## Deploy
+
+The deployment process for integrating Proxmox with InfraSonar follows a three-step hierarchy:
+
+1. **Cluster Collector**: Start by deploying the cluster collector. This initial step provides an overview of the Proxmox nodes and facilitates their addition as assets in InfraSonar.
+2. **Node Collector**: Next, deploy the node collector. This collector offers insights into the individual Proxmox nodes and simplifies the process of adding containers and virtual machines as InfraSonar assets. This is easily done via the Nodes overview within the cluster collector interface.
+3. **Container/VM Collector**: Finally, deploy the specific collector for the container and/or virtual machine to gain detailed insights into the guest operating system. This collector can be set up conveniently using the guest view on the cluster collector, which allows you to create a new asset or assign an existing one.
+
+### Troubleshooting
+
+You can use the following curl command to test your credentials:
+
+```bash
+curl -k https://<node-ip>:8006/api2/json/version \
+     -H 'Authorization: PVEAPIToken=<userid>@<realm>!<tokenid>=<secret>'
+```
+
+Explanation:
+
+* node-ip: the ip address of your proxmox node
+* userid: the user id of your proxmox user
+* realm: the realm of your proxmox user
+* tokenid: the token id of your proxmox user
+* secret: the secret of your proxmox user
 
 ## Deployment
 

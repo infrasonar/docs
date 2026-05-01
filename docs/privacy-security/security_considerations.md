@@ -4,7 +4,6 @@ InfraSonar is an infrastructure monitoring platform as a service. This document 
 
 ## Data Collection and Use
 
-
 [probes](../collectors/probes/index.md), [agents](../collectors/agents/index.md) and [services](../collectors/services/index.md)
 
 * InfraSonar collectors ([probes](../collectors/probes/index.md), [agents](../collectors/agents/index.md) and [services](../collectors/services/index.md)) gather data relevant to the status and performance of the monitored device. We do **not** collect extraneous data.
@@ -53,7 +52,20 @@ InfraSonar data can exist in three states:
 
 The InfraSonar appliance relies on the security measures of the environment it's deployed in to protect data at rest.
 
+## Identity & Access Governance
+
+We empower your organization with enterprise-grade identity management tools:
+
+* **Enterprise SSO:** We support seamless integration with **Google** and **Microsoft Entra ID** (formerly Azure AD), allowing you to manage access through your existing corporate identity provider.
+* **Zero-Knowledge Passwords:** For local accounts, we store only salted hashes; your passwords are never visible to InfraSonar personnel.
+* **Internal Least Privilege:** Our engineers only access the specific code segments necessary for their roles, and all staff are bound by strict **confidentiality agreements (NDAs)**.
+
+## Proactive Monitoring
+
+Security is a 24/7 commitment. Our systems are monitored **365 days a year**. In the event of a performance anomaly or security event, our engineering team is alerted instantly via automated SMS, email, and voice channels to ensure immediate intervention.
+
 ## Data Classification
+
 InfraSonar data is classified as follows:
 
 * **:octicons-no-entry-fill-12: Restricted**
@@ -106,6 +118,5 @@ Here's how to strengthen your monitoring appliance's security:
 
 * **Disk Encryption (if possible)**: If your hardware or operating supports it, consider disk encryption for additional data protection.
 * **Backup consideration**: If a backup of your appliance is for some reason accessible to unauthorized personal you assume all configured accounts as compromised and act accordingly. At a minimum you should change all passwords immediately and verify all security logs for unauthorized access. 
-
 
 These recommendations will significantly enhance the security posture of your monitoring appliance and minimize the risk associated with privileged access requirements.
