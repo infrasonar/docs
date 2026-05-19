@@ -9,5 +9,6 @@ Our services run in our cloud platform and use the following IPv4 addresses:
 
 - 34.90.55.73
 - 34.90.105.247
+- 34.90.111.1
 
 Ensure assets you want to monitor using a service are allowed to be accessed from these IP addresses.
