@@ -151,6 +151,7 @@ nav:
         - SNMP:
             - collectors/probes/snmp/index.md
             - APC UPS: collectors/probes/snmp/apcups.md
+            - Brocade: collectors/probes/snmp/brocade.md
             - Dell iDRAC: collectors/probes/snmp/idrac.md
             - EATON: collectors/probes/snmp/eaton.md
             - HP ILO: collectors/probes/snmp/hpilo.md
