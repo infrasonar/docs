@@ -1,17 +1,17 @@
-![Eaton-Probe](../../../images/probe_brocade.png){ width="150" align=right}
+![Brocade-Probe](../../../images/probe_brocade.png){ width="150" align=right}
 
 # Brocade
 
 ## Introduction
 
-The Brocade probe uses the [snmp](index.md) protocol to perform its queries.
+The Brocade probe monitors Brocade Fibre Channel switches and uses the [SNMP](index.md) protocol to perform its queries.
 
 ## Features
 
-InfraSonar collects the following metrics from the Brocade Fibre Channel (FC) storage switches:
+InfraSonar collects the following metrics from Brocade Fibre Channel (FC) storage switches:
 
 - System Information & Health
--	Device Details: A Brocade switch named "brocade" (Serial: BRCEZL1913T01E) running firmware v8.2.3.
+-	Device Details
 -	Network & Fabric Role
 -	Resource Usage
 -	Hardware Health
