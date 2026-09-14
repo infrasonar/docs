@@ -63,8 +63,9 @@ Boot from the Ubuntu Server 26.04 LTS ISO and then follow these steps:
 13. SSH Setup:
     1.  Select: **Install OpenSSH Server**.
     2.  Import SSH identity: **Usually no, but feel free to enter your own**.
-14. Featured Server Snaps: do not select any server snaps.
-15. If the installation is ready, select: **Reboot now**.
+14. Skip Updating to Ubnutu Pro
+15. Featured Server Snaps: do not select any server snaps.
+16. If the installation is ready, select: **Reboot now**.
 
 ## InfraSonar installation steps
 
