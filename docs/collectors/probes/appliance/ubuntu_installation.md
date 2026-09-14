@@ -17,7 +17,7 @@ _If your organization does not allow direct internet access please contact [supp
 
 ## Hardware requirements
 
-:material-ubuntu: Ubuntu Server 24.04 LTS is used as the basis for the InfraSonar appliance.
+:material-ubuntu: Ubuntu Server 26.04 LTS is used as the basis for the InfraSonar appliance.
 
 When using a virtual machine we suggest using these specifications:
 
@@ -30,13 +30,13 @@ When using a virtual machine we suggest using these specifications:
 
 * **Compatibility**: Compatible with: ESXi 6.5 and later VM version 13
 * **Guest OS Family**: Linux
-* **Guest OS Version**: Ubuntu Linux (64-bit) 
+* **Guest OS Version**: Ubuntu Linux (64-bit)
 
 ## Ubuntu Installation steps
 
-You can download the required :material-ubuntu: Ubuntu Server 24.04 LTS ISO [here](https://ubuntu.com/download/server).
+You can download the required :material-ubuntu: Ubuntu Server 26.04 LTS ISO [here](https://ubuntu.com/download/server).
 
-Boot from the Ubuntu Server 24.04 LTS ISO and then follow these steps:
+Boot from the Ubuntu Server 26.04 LTS ISO and then follow these steps:
 
 1. First step is to **boot** from the Ubuntu ISO or from a [bootable USB stick](https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu).
 2. Select your language: **English**.
