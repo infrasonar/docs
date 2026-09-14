@@ -9395,7 +9395,7 @@ You can toggle this behavior when configuring the probe.</p>
 <h4 id="get-your-api-key">Get your API key</h4>
 <p><a href="https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-panorama-api/get-started-with-the-pan-os-xml-api/get-your-api-key">source</a></p>
 <p>To generate an API key, make a GET or POST request to the firewall’s hostname or IP addresses using the administrative credentials and type=keygen:</p>
-<div class="highlight"><pre><span></span><code>curl -k -X GET &#39;https://&lt;firewall&gt;/api/?type=keygen&amp;user=&lt;username&gt;&amp;password=&lt;password&gt;&#39;
+<div class="highlight"><pre><span></span><code>curl -k -X GET 'https://&lt;firewall&gt;/api/?type=keygen&amp;user=&lt;username&gt;&amp;password=&lt;password&gt;'
 </code></pre></div>
 <p>Ensure to change</p>
 <ul>
@@ -9404,14 +9404,14 @@ You can toggle this behavior when configuring the probe.</p>
 <li><code>&lt;password&gt;</code> with the password of your readl-only monitoring user</li>
 </ul>
 <p>A successful API call returns status="success" along with the API key within the key element:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;response</span><span class="w"> </span><span class="na">status=</span><span class="s">&quot;success&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;response</span><span class="w"> </span><span class="na">status=</span><span class="s">"success"</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;result&gt;</span>
 <span class="w">    </span><span class="nt">&lt;key&gt;</span>Your_secret_key_is_here<span class="nt">&lt;/key&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/result&gt;</span>
 <span class="nt">&lt;/response&gt;</span>
 </code></pre></div>
 <p>You can test your API key using the following command:</p>
-<div class="highlight"><pre><span></span><code>curl -k &#39;https://&lt;firewall&gt;//api/?type=op&amp;cmd=&lt;show&gt;&lt;system&gt;&lt;info&gt;&lt;/info&gt;&lt;/system&gt;&lt;/show&gt;&amp;key=&lt;apikey&gt;&#39;
+<div class="highlight"><pre><span></span><code>curl -k 'https://&lt;firewall&gt;//api/?type=op&amp;cmd=&lt;show&gt;&lt;system&gt;&lt;info&gt;&lt;/info&gt;&lt;/system&gt;&lt;/show&gt;&amp;key=&lt;apikey&gt;'
 </code></pre></div>
 <p>Ensure to change:</p>
 <ul>

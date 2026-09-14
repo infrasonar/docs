@@ -9343,63 +9343,63 @@
 
 <h1 id="message-templates">Message Templates</h1>
 <p>You can embed dynamic values within your alert messages using message templates. These templates allow you to include relevant data, such as an item's name or metric values, directly in the alert.</p>
-<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Memory usage of @item.name to high&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Memory usage of @item.name to high"</span>
 </code></pre></div>
 <p>In this example, <code>@item.name</code> acts as a placeholder that will be replaced with the actual name of the item when the message is generated.</p>
 <h2 id="escaping-the-symbol">Escaping the <code>@</code> Symbol</h2>
 <p>If you need to include a literal <code>@</code> sign in your message that shouldn't be interpreted as the start of a variable, add an exclamation mark (<code>!</code>) immediately after it:</p>
-<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Use @! in message.&quot;</span><span class="w">  </span><span class="c1">// Renders as: &quot;Use @ in message.&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Use @! in message."</span><span class="w">  </span><span class="c1">// Renders as: "Use @ in message."</span>
 </code></pre></div>
 <h2 id="escaping-the-single-and-double-quotes">Escaping the single and double quotes</h2>
 <p>It is possible to use single quotes in a double quote string, but sometimes you just want a double quote in a double quote string. In this case, you need to write two of them</p>
-<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Use &quot;&quot;Double quotes&quot;&quot; in a double quote string.&quot;</span>
-<span class="c1">// Renders as: Use &quot;Double quotes&quot; in a double quote string.</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Use ""Double quotes"" in a double quote string."</span>
+<span class="c1">// Renders as: Use "Double quotes" in a double quote string.</span>
 </code></pre></div>
 <h2 id="explicitly-ending-a-variable-placeholder">Explicitly Ending a Variable Placeholder</h2>
 <p>Sometimes, characters immediately following a variable placeholder (like a period) can cause ambiguity. The system might incorrectly try to include that character as part of the variable name, leading to a template error.</p>
-<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Failed item: @item.name.&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Failed item: @item.name."</span>
 </code></pre></div>
 <p>This would produce an error similar to:</p>
 <div class="highlight"><pre><span></span><code>template error: ambiguous `.` after `@item.name`; maybe you want to print the dot? use: @item.name!.
 </code></pre></div>
 <p>To resolve this, explicitly mark the end of the variable placeholder with an exclamation mark (<code>!</code>) before the punctuation:</p>
-<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Failed item: @item.name!.&quot;</span><span class="w">  </span><span class="c1">// Renders as: &quot;Failed item: my-item.&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Failed item: @item.name!."</span><span class="w">  </span><span class="c1">// Renders as: "Failed item: my-item."</span>
 </code></pre></div>
 <p>Notice that the <code>!</code> used to terminate the variable does not appear in the final message.</p>
 <h2 id="including-a-literal-exclamation-mark-after-a-variable">Including a Literal Exclamation Mark After a Variable</h2>
 <p>If you genuinely want an exclamation mark to appear after a variable in your message, simply add two exclamation marks:</p>
-<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Failed item: @item.name!!&quot;</span><span class="w">  </span><span class="c1">// Renders as: &quot;Failed item: my-item!&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Failed item: @item.name!!"</span><span class="w">  </span><span class="c1">// Renders as: "Failed item: my-item!"</span>
 </code></pre></div>
 <h2 id="accessing-previous-item-values">Accessing Previous Item Values</h2>
 <p>You can reference values from the previous evaluation cycle using the pr`ev keyword. This is useful for comparing current and historical data:</p>
-<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Memory usage: @item.usage_memory (Previous: @prev.usage_memory)&quot;</span>
-<span class="c1">// Example output: &quot;Memory usage: 76853248, Previous value: 63619072&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Memory usage: @item.usage_memory (Previous: @prev.usage_memory)"</span>
+<span class="c1">// Example output: "Memory usage: 76853248, Previous value: 63619072"</span>
 </code></pre></div>
 <h2 id="formatted-values-with-fmt">Formatted Values with <code>fmt.</code></h2>
 <p>Raw metric values (like <code>76853248</code>) might not be user-friendly. For better readability, use the <code>fmt.</code> prefix to display formatted values (e.g., human-readable sizes, percentages):</p>
-<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Memory usage: @fmt.item.usage_memory&quot;</span>
-<span class="c1">// Example output: &quot;Memory usage: 73.29 MiB&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Memory usage: @fmt.item.usage_memory"</span>
+<span class="c1">// Example output: "Memory usage: 73.29 MiB"</span>
 </code></pre></div>
 <h2 id="multiline-messages">Multiline Messages</h2>
 <p>Messages are multiline by default. You can define them across multiple lines using a multiline string:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span>
 <span class="s2">Memory usage: @fmt.item.usage_memory</span>
 <span class="s2">Previous value: @fmt.prev.usage_memory</span>
-<span class="s2">&quot;</span>
+<span class="s2">"</span>
 </code></pre></div>
 <p>Note: Any leading or trailing whitespace <em>(like the newline character at the start and end of the example above)</em> will be automatically trimmed from the rendered message.</p>
 <h2 id="listing-all-items-in-a-message">Listing All Items in a Message</h2>
 <p>You can iterate through and list all items directly within a message template. This is particularly useful when you want a single alert to provide a comprehensive overview of multiple items, rather than generating separate alerts for each.</p>
 <p>It is even possible to list all items in a message. This can be especially useful if you want a single alert, but the message to contain all item.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span>
 <span class="s2">All items:</span>
 
 <span class="s2">#for @pod in @items:</span>
 <span class="s2">- @pod.name : @pod.status</span>
 <span class="s2">#end</span>
-<span class="s2">&quot;</span>
+<span class="s2">"</span>
 
-<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;Running&quot;</span><span class="o">:</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"Running"</span><span class="o">:</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">message</span>
 </code></pre></div>
 <p>When this alert is triggered, the <code>var.message</code> template will render a detailed list of items. For example, the output might look like this:</p>

@@ -9193,14 +9193,14 @@
 <h2 id="example">Example:</h2>
 <p>last is most powerful when combined with set() and get(). You can collect data during the loop and only make a decision at the end.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Add current item value to a running total</span>
-<span class="kd">var</span><span class="p">.</span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;total_usage&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">usage</span><span class="p">)</span>
-<span class="nx">set</span><span class="p">(</span><span class="s1">&#39;total_usage&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">total</span><span class="p">)</span>
+<span class="kd">var</span><span class="p">.</span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="s1">'total_usage'</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">usage</span><span class="p">)</span>
+<span class="nx">set</span><span class="p">(</span><span class="s1">'total_usage'</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">total</span><span class="p">)</span>
 
 <span class="c1">// Only alert based on the total sum at the very end</span>
 <span class="k">case</span><span class="w"> </span><span class="nx">last</span><span class="o">:</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1000</span><span class="o">:</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">CRITICAL</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Total usage across all items (@var.total) exceeds limit!&quot;</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">OK</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Total usage is within limits.&quot;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">CRITICAL</span><span class="p">,</span><span class="w"> </span><span class="s2">"Total usage across all items (@var.total) exceeds limit!"</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">OK</span><span class="p">,</span><span class="w"> </span><span class="s2">"Total usage is within limits."</span>
 </code></pre></div>
 <h2 id="important-considerations">Important Considerations</h2>
 <ul>

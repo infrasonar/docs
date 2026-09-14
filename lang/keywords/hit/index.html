@@ -9176,7 +9176,7 @@
 <span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">errors</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="o">:</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">OK</span><span class="w"> </span><span class="c1">// Close alerts for interfaces with no errors</span>
 
-<span class="k">return</span><span class="w"> </span><span class="nx">NOTICE</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Errors detected on interface: @item.name&quot;</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">NOTICE</span><span class="p">,</span><span class="w"> </span><span class="s2">"Errors detected on interface: @item.name"</span>
 </code></pre></div>
 <p>This example effectively creates alerts for a maximum of five interfaces. Alerts for individual interfaces will automatically close when their errors resolve.</p>
 

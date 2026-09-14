@@ -9488,23 +9488,23 @@
 <h3 id="example">Example</h3>
 <p>Curl request <em>(Average bytes received p/s for the last 4 hours)</em>:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/asset/123/query-time-series&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\`</span><span class="sb">``</span>
-<span class="w">    </span>--data-raw<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;collector&quot;: &quot;wmi&quot;,</span>
-<span class="s1">    &quot;check&quot;: &quot;network&quot;,</span>
-<span class="s1">    &quot;type&quot;: &quot;interface&quot;,</span>
-<span class="s1">    &quot;metric&quot;: &quot;BytesReceivedPersec&quot;,</span>
-<span class="s1">    &quot;timeSpan&quot;: 14400,</span>
-<span class="s1">    &quot;aggregation&quot;: {</span>
-<span class="s1">        &quot;type&quot;: &quot;mean&quot;</span>
+<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://api.infrasonar.com/asset/123/query-time-series'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\`</span><span class="sb">``</span>
+<span class="w">    </span>--data-raw<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "collector": "wmi",</span>
+<span class="s1">    "check": "network",</span>
+<span class="s1">    "type": "interface",</span>
+<span class="s1">    "metric": "BytesReceivedPersec",</span>
+<span class="s1">    "timeSpan": 14400,</span>
+<span class="s1">    "aggregation": {</span>
+<span class="s1">        "type": "mean"</span>
 <span class="s1">    }</span>
-<span class="s1">}&#39;</span>
+<span class="s1">}'</span>
 </code></pre></div></p>
 <p>Response <em>(Each key in the response represents an item name, unless "merge" is used. The value is an array with with arrays containing a timestamp and value)</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Intel[R] 82574L Gigabit Network Connection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nt">"Intel[R] 82574L Gigabit Network Connection"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">[</span>
 <span class="w">            </span><span class="mi">1677142522</span><span class="p">,</span>
 <span class="w">            </span><span class="mf">9488.9375</span>

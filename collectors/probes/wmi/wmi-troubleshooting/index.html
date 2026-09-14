@@ -9294,7 +9294,7 @@
 <span class="w">    </span>-a<span class="w"> </span>&lt;computername<span class="w"> </span>or<span class="w"> </span>IP&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-u<span class="w"> </span>userid&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span>&lt;domain&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-q<span class="w"> </span><span class="s2">&quot;SELECT Name FROM Win32_OperatingSystem&quot;</span>
+<span class="w">    </span>-q<span class="w"> </span><span class="s2">"SELECT Name FROM Win32_OperatingSystem"</span>
 </code></pre></div>
 <h3 id="windows-host">Windows host</h3>
 <p>You can test if WMI is working correctly on a Windows host by using the <code>wbemtest</code> command:</p>
@@ -9358,7 +9358,7 @@ Configured LocalAccountTokenFilterPolicy to grant administrative rights remotely
 <div class="highlight"><pre><span></span><code>Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
-&quot;LocalAccountTokenFilterPolicy&quot;=dword:00000001
+"LocalAccountTokenFilterPolicy"=dword:00000001
 </code></pre></div>
 <h3 id="wmi-error-0x80041010">WMI error 0x80041010</h3>
 <p>Performance counter based checks such as:</p>

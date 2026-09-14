@@ -9306,7 +9306,7 @@
 <span class="w">  </span>--name<span class="w"> </span>dockeragent<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-h<span class="w"> </span><span class="nv">$HOSTNAME</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-v<span class="w"> </span>infraSonarData:/data<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">&quot;&lt;&lt;agent token&gt;&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">"&lt;&lt;agent token&gt;&gt;"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-v<span class="w"> </span>/var/run/docker.sock:/var/run/docker.sock<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>ghcr.io/infrasonar/docker-agent
@@ -9316,7 +9316,7 @@
 <span class="w">  </span>--name<span class="w"> </span>dockeragent<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--network<span class="w"> </span>host<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-v<span class="w"> </span>infraSonarData:/data<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">&quot;&lt;&lt;agent token&gt;&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">"&lt;&lt;agent token&gt;&gt;"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-v<span class="w"> </span>/var/run/docker.sock:/var/run/docker.sock<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>ghcr.io/infrasonar/docker-agent
@@ -9337,15 +9337,15 @@
 <span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/infrasonar/docker-agent</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">TOKEN</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;&lt;agent</span><span class="nv"> </span><span class="s">token&gt;&gt;&quot;</span>
-<span class="w">      </span><span class="nt">ASSET_ID</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;&lt;asset_ID&gt;&gt;&quot;</span><span class="w"> </span><span class="c1">#optional</span>
+<span class="w">      </span><span class="nt">TOKEN</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;&lt;agent</span><span class="nv"> </span><span class="s">token&gt;&gt;"</span>
+<span class="w">      </span><span class="nt">ASSET_ID</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;&lt;asset_ID&gt;&gt;"</span><span class="w"> </span><span class="c1">#optional</span>
 <span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/run/docker.sock:/var/run/docker.sock</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infraSonarData:/data</span>
 </code></pre></div>
 <h2 id="known-issues">Known issues</h2>
 <p>We have seen docker version 20.10.8, build 3967b7d fail with the following error:</p>
-<div class="highlight"><pre><span></span><code>dockeragent    | [E 250429 07:32:42 agent:133] announce failed: can&#39;t start new thread
+<div class="highlight"><pre><span></span><code>dockeragent    | [E 250429 07:32:42 agent:133] announce failed: can't start new thread
 </code></pre></div>
 <p>Adding the <code>privileged</code> flag to the docker-compose file solved this issue:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>

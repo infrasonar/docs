@@ -9285,20 +9285,20 @@
 <h2 id="example-detecting-version-mismatch">Example: Detecting Version Mismatch</h2>
 <p>In this scenario, we want to ensure all servers in a group are running the same software version. We "lock in" the version of the first server we see and compare every subsequent server against it.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// 1. Define the alert message</span>
-<span class="kd">var</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span>
+<span class="kd">var</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span>
 <span class="s2">Version mismatch detected!</span>
 <span class="s2">Reference: @var.name (v@var.version)</span>
 <span class="s2">Conflict:  @item.name (v@item.version)</span>
-<span class="s2">&quot;</span>
+<span class="s2">"</span>
 
 <span class="c1">// 2. Try to get the reference data from previous items</span>
-<span class="kd">var</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;ref_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="kd">var</span><span class="p">.</span><span class="nx">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;ref_version&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="kd">var</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="s1">'ref_name'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">)</span>
+<span class="kd">var</span><span class="p">.</span><span class="nx">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="s1">'ref_version'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">)</span>
 
 <span class="c1">// 3. Initialization: If name is empty, this is the FIRST item in the check.</span>
-<span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">:</span>
-<span class="w">    </span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;ref_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;ref_version&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">version</span><span class="p">)</span>
+<span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">''</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">set</span><span class="p">(</span><span class="s1">'ref_name'</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">set</span><span class="p">(</span><span class="s1">'ref_version'</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">version</span><span class="p">)</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">OK</span>
 
 <span class="c1">// 4. Comparison: Compare current item to the reference stored in state</span>

@@ -9211,10 +9211,10 @@
 </code></pre></div>
 <h2 id="example-2-including-asset-properties-in-an-alert-message">Example 2: Including Asset Properties in an Alert Message</h2>
 <p>This example shows how to embed an asset's location property directly into an alert message, providing immediate context.
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">asset_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">asset</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">location</span><span class="o">?</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s2">&quot;Unknown Location&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">asset_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">asset</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">location</span><span class="o">?</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s2">"Unknown Location"</span>
 
 <span class="k">case</span><span class="w"> </span><span class="kc">true</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Location: @var.asset_location&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Location: @var.asset_location"</span>
 </code></pre></div></p>
 
 

@@ -9212,13 +9212,13 @@
 <h1 id="variables-in-expression">Variables in Expression</h1>
 <p>You can define variables within your expression to reuse values multiple times. This improves readability and maintainability, especially for complex calculations.</p>
 <p>Variables must be assigned <strong>before</strong> any <code>case</code> statements. This ensures they are properly defined and available for use in your expression.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Define &quot;var.ratio&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Define "var.ratio"</span>
 <span class="kd">var</span><span class="p">.</span><span class="nx">ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">usage_memory</span><span class="o">?</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">allocatable_memory</span><span class="p">)</span>
 
 <span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">ratio</span><span class="o">?</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.9</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">CRITICAL</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Memory usage way too high!&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">CRITICAL</span><span class="p">,</span><span class="w"> </span><span class="s2">"Memory usage way too high!"</span>
 <span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">ratio</span><span class="o">?</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.8</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hign memory usage&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hign memory usage"</span>
 </code></pre></div>
 <h2 id="handling-optional-metrics-null-values">Handling Optional Metrics (Null Values)</h2>
 <p>When a variable's value is derived from an optional metric (which might be <code>null</code>), the variable itself can also be <code>null</code>. To correctly handle this in your expressions, you should mark the variable as optional with a <code>?</code>.</p>
@@ -9226,13 +9226,13 @@
 <h2 id="preventing-errors-and-null-values">Preventing Errors and Null values</h2>
 <p>Expressions can encounter issues like division by zero or other errors if source metrics are missing or invalid <em>(e.g., <code>item.allocatable_memory</code> is <code>0</code>)</em>. To gracefully handle such scenarios, you can use the nullish coalescing operator <code>??</code>.</p>
 <p>The <code>??</code> operator assigns the value on its right if the expression on its left evaluates to <code>null</code> or an error.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Define &quot;var.ratio&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Define "var.ratio"</span>
 <span class="kd">var</span><span class="p">.</span><span class="nx">ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">usage_memory</span><span class="o">?</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">allocatable_memory</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="mf">0</span>
 
 <span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">ratio</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.9</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">CRITICAL</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Memory usage way too high!&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">CRITICAL</span><span class="p">,</span><span class="w"> </span><span class="s2">"Memory usage way too high!"</span>
 <span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">ratio</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.8</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hign memory usage&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hign memory usage"</span>
 </code></pre></div>
 <p>In this example, if <code>item.usage_memory?.div(item.allocatable_memory)</code> results in <code>null</code> or an error (like zero division), <code>var.ratio</code> will be assigned <code>0</code> instead. This provides robust error handling.</p>
 <h2 id="chaining-optional-metrics-with">Chaining Optional Metrics with <code>??</code></h2>

@@ -9516,17 +9516,17 @@
 - <strong>curl</strong>, this script is downloaded using the <code>curl</code> command and also uses this command internally to download our binary agent.
 - <strong>elevated privileges</strong> as it installs a service.
 - <strong>systemd</strong>, our easy deployment scrips opt to use <code>systemd</code> to install the agent as as service.</p>
-<div class="highlight"><pre><span></span><code>sudo /bin/bash -c <span class="s2">&quot;$(curl -fsSL https://deploylinuxagent.infrasonar.com)&quot;</span>
+<div class="highlight"><pre><span></span><code>sudo /bin/bash -c <span class="s2">"$(curl -fsSL https://deploylinuxagent.infrasonar.com)"</span>
 </code></pre></div>
 <p>The install script prompts you for the <strong>InfraSonar agent token</strong> and optional asset token as shown below:</p>
-<div class="highlight"><pre><span></span><code>[INFO] Creating directory &#39;/opt/infrasonar-agent&#39;...
+<div class="highlight"><pre><span></span><code>[INFO] Creating directory '/opt/infrasonar-agent'...
 [INFO] Configuration file does not exist.
-[INFO] Creating directory &#39;/etc/infrasonar&#39;...
+[INFO] Creating directory '/etc/infrasonar'...
 Please enter your token: &lt;&lt;ENTER YOUR INFRASONAR AGENT TOKEN HERE&gt;&gt;
 Add asset token, leave empty for auto creation: 
-[INFO] Created config file &#39;/etc/infrasonar/linux-agent.env&#39;...
+[INFO] Created config file '/etc/infrasonar/linux-agent.env'...
 [INFO] Successfully downloaded infrasonar-linux-agent
-[INFO] Creating systemd unit file &#39;/etc/systemd/system/infrasonar-linux-agent.service&#39;...
+[INFO] Creating systemd unit file '/etc/systemd/system/infrasonar-linux-agent.service'...
 [INFO] Enabling and starting the InfraSonar Linux agent service...
 Created symlink /etc/systemd/system/multi-user.target.wants/infrasonar-linux-agent.service → /etc/systemd/system/infrasonar-linux-agent.service.
 [INFO] Infrasonar Linux agent service started successfully.
@@ -9540,86 +9540,86 @@ Created symlink /etc/systemd/system/multi-user.target.wants/infrasonar-linux-age
 
 <span class="c1"># --- Variables ---</span>
 
-<span class="nv">install_dir</span><span class="o">=</span><span class="s2">&quot;/opt/infrasonar-linux-agent&quot;</span>
-<span class="nv">config_dir</span><span class="o">=</span><span class="s2">&quot;/etc/infrasonar&quot;</span>
-<span class="nv">package_name</span><span class="o">=</span><span class="s2">&quot;linux-agent&quot;</span>
-<span class="nv">binary_name</span><span class="o">=</span><span class="s2">&quot;infrasonar-linux-agent&quot;</span>
-<span class="nv">github_repo</span><span class="o">=</span><span class="s2">&quot;infrasonar/linux-agent&quot;</span>
-<span class="nv">systemd_unit_file</span><span class="o">=</span><span class="s2">&quot;/etc/systemd/system/infrasonar-linux-agent.service&quot;</span>
+<span class="nv">install_dir</span><span class="o">=</span><span class="s2">"/opt/infrasonar-linux-agent"</span>
+<span class="nv">config_dir</span><span class="o">=</span><span class="s2">"/etc/infrasonar"</span>
+<span class="nv">package_name</span><span class="o">=</span><span class="s2">"linux-agent"</span>
+<span class="nv">binary_name</span><span class="o">=</span><span class="s2">"infrasonar-linux-agent"</span>
+<span class="nv">github_repo</span><span class="o">=</span><span class="s2">"infrasonar/linux-agent"</span>
+<span class="nv">systemd_unit_file</span><span class="o">=</span><span class="s2">"/etc/systemd/system/infrasonar-linux-agent.service"</span>
 
 log_info<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[INFO] </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[INFO] </span><span class="nv">$1</span><span class="s2">"</span>
 <span class="o">}</span>
 
 log_error<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[ERROR] </span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[ERROR] </span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
 <span class="o">}</span>
 
 check_root<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$EUID</span><span class="s2">&quot;</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>log_error<span class="w"> </span><span class="s2">&quot;This script requires root privileges. Please run with sudo.&quot;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$EUID</span><span class="s2">"</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>log_error<span class="w"> </span><span class="s2">"This script requires root privileges. Please run with sudo."</span>
 <span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
 
 check_systemd<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>systemctl<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>log_error<span class="w"> </span><span class="s2">&quot;systemd is not available on this system.  This script requires systemd.&quot;</span>
+<span class="w">    </span>log_error<span class="w"> </span><span class="s2">"systemd is not available on this system.  This script requires systemd."</span>
 <span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
 
 create_directory<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">dir_path</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dir_path</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>log_info<span class="w"> </span><span class="s2">&quot;Creating directory &#39;</span><span class="nv">$dir_path</span><span class="s2">&#39;...&quot;</span>
-<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dir_path</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">dir_path</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="nv">$dir_path</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>log_info<span class="w"> </span><span class="s2">"Creating directory '</span><span class="nv">$dir_path</span><span class="s2">'..."</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span><span class="nv">$dir_path</span><span class="s2">"</span>
 <span class="w">  </span><span class="k">else</span>
-<span class="w">    </span>log_info<span class="w"> </span><span class="s2">&quot;Directory &#39;</span><span class="nv">$dir_path</span><span class="s2">&#39; already exists.&quot;</span>
+<span class="w">    </span>log_info<span class="w"> </span><span class="s2">"Directory '</span><span class="nv">$dir_path</span><span class="s2">' already exists."</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
 
 download_agent<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="w">  </span><span class="c1"># Fetch the latest release info from GitHub API</span>
-<span class="w">  </span><span class="nv">response</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://api.github.com/repos/&quot;</span><span class="nv">$github_repo</span><span class="s2">&quot;/releases/latest&quot;</span><span class="k">)</span>
+<span class="w">  </span><span class="nv">response</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">"https://api.github.com/repos/"</span><span class="nv">$github_repo</span><span class="s2">"/releases/latest"</span><span class="k">)</span>
 
 <span class="w">  </span><span class="c1"># Extract the download URL for the Linux asset using grep and sed</span>
-<span class="w">  </span><span class="nv">download_url</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$response</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;&quot;browser_download_url&quot;:&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;/</span><span class="nv">$package_name</span><span class="s2">/p&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/.*&quot;browser_download_url&quot;: &quot;//&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/&quot;.*//&#39;</span><span class="k">)</span>
+<span class="w">  </span><span class="nv">download_url</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$response</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">'"browser_download_url":'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s2">"/</span><span class="nv">$package_name</span><span class="s2">/p"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/.*"browser_download_url": "//'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/".*//'</span><span class="k">)</span>
 
 <span class="w">  </span><span class="c1"># Check if a URL was found</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$download_url</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$download_url</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="c1"># Download the file</span>
-<span class="w">    </span>curl<span class="w"> </span>-sL<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$download_url</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$install_dir</span>/<span class="nv">$binary_name</span>
+<span class="w">    </span>curl<span class="w"> </span>-sL<span class="w"> </span><span class="s2">"</span><span class="nv">$download_url</span><span class="s2">"</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$install_dir</span>/<span class="nv">$binary_name</span>
 <span class="w">    </span>chmod<span class="w"> </span>+x<span class="w"> </span><span class="nv">$install_dir</span>/<span class="nv">$binary_name</span>
-<span class="w">    </span>log_info<span class="w"> </span><span class="s2">&quot;Successfully downloaded </span><span class="nv">$binary_name</span><span class="s2">&quot;</span>
+<span class="w">    </span>log_info<span class="w"> </span><span class="s2">"Successfully downloaded </span><span class="nv">$binary_name</span><span class="s2">"</span>
 <span class="w">  </span><span class="k">else</span>
-<span class="w">    </span>log_error<span class="w"> </span><span class="s2">&quot;Error: Could not find a suitable download URL for Linux.&quot;</span>
+<span class="w">    </span>log_error<span class="w"> </span><span class="s2">"Error: Could not find a suitable download URL for Linux."</span>
 <span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
 
 create_config<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$config_dir</span><span class="s2">/linux-agent.env&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>log_info<span class="w"> </span><span class="s2">&quot;Configuration file already exists.&quot;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$config_dir</span><span class="s2">/linux-agent.env"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>log_info<span class="w"> </span><span class="s2">"Configuration file already exists."</span>
 <span class="w">  </span><span class="k">else</span>
-<span class="w">    </span>log_info<span class="w"> </span><span class="s2">&quot;Configuration file does not exist.&quot;</span>
+<span class="w">    </span>log_info<span class="w"> </span><span class="s2">"Configuration file does not exist."</span>
 <span class="w">    </span><span class="c1"># Create configuration directory</span>
-<span class="w">    </span>create_directory<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$config_dir</span><span class="s2">&quot;</span>
+<span class="w">    </span>create_directory<span class="w"> </span><span class="s2">"</span><span class="nv">$config_dir</span><span class="s2">"</span>
 <span class="w">    </span><span class="c1"># Ask for token</span>
-<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Please enter your token: &quot;</span><span class="w"> </span>token
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;TOKEN=</span><span class="nv">$token</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="s2">&quot;</span><span class="nv">$config_dir</span><span class="s2">/linux-agent.env&quot;</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Please enter your token: "</span><span class="w"> </span>token
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"TOKEN=</span><span class="nv">$token</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="s2">"</span><span class="nv">$config_dir</span><span class="s2">/linux-agent.env"</span>
 <span class="w">    </span><span class="c1"># Ask for optional asset ID</span>
-<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Add asset token, leave empty for auto creation: &quot;</span><span class="w"> </span>assetid
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$assetid</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ASSET_ID=</span><span class="nv">$assetid</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$config_dir</span><span class="s2">/linux-agent.env&quot;</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Add asset token, leave empty for auto creation: "</span><span class="w"> </span>assetid
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$assetid</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"ASSET_ID=</span><span class="nv">$assetid</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$config_dir</span><span class="s2">/linux-agent.env"</span>
 <span class="w">    </span><span class="k">fi</span>
-<span class="w">    </span>log_info<span class="w"> </span><span class="s2">&quot;Created config file &#39;</span><span class="nv">$config_dir</span><span class="s2">/linux-agent.env&#39;...&quot;</span>
+<span class="w">    </span>log_info<span class="w"> </span><span class="s2">"Created config file '</span><span class="nv">$config_dir</span><span class="s2">/linux-agent.env'..."</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
 
 create_systemd_unit<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span>log_info<span class="w"> </span><span class="s2">&quot;Creating systemd unit file &#39;</span><span class="nv">$systemd_unit_file</span><span class="s2">&#39;...&quot;</span>
-<span class="w">    </span>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; &quot;$systemd_unit_file&quot;</span>
+<span class="w">    </span>log_info<span class="w"> </span><span class="s2">"Creating systemd unit file '</span><span class="nv">$systemd_unit_file</span><span class="s2">'..."</span>
+<span class="w">    </span>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; "$systemd_unit_file"</span>
 <span class="s">[Unit]</span>
 <span class="s">Description=InfraSonar Linux Agent</span>
 <span class="s">Wants=network.target</span>
@@ -9636,13 +9636,13 @@ create_systemd_unit<span class="o">()</span><span class="w"> </span><span class=
 <span class="o">}</span>
 
 enable_and_start_service<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span>log_info<span class="w"> </span><span class="s2">&quot;Enabling and starting the InfraSonar Linux agent service...&quot;</span>
+<span class="w">  </span>log_info<span class="w"> </span><span class="s2">"Enabling and starting the InfraSonar Linux agent service..."</span>
 <span class="w">  </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>infrasonar-linux-agent
 <span class="w">  </span>systemctl<span class="w"> </span>start<span class="w"> </span>infrasonar-linux-agent
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>log_error<span class="w"> </span><span class="s2">&quot;Failed to start the InfraSonar Linux agent service. Check systemctl status InfraSonar-linux-agent for details.&quot;</span>
+<span class="w">    </span>log_error<span class="w"> </span><span class="s2">"Failed to start the InfraSonar Linux agent service. Check systemctl status InfraSonar-linux-agent for details."</span>
 <span class="w">  </span><span class="k">else</span>
-<span class="w">    </span>log_info<span class="w"> </span><span class="s2">&quot;Infrasonar agent service started successfully.&quot;</span>
+<span class="w">    </span>log_info<span class="w"> </span><span class="s2">"Infrasonar agent service started successfully."</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
 
@@ -9650,13 +9650,13 @@ enable_and_start_service<span class="o">()</span><span class="w"> </span><span c
 
 check_root
 check_systemd<span class="w"> </span><span class="c1"># added systemd check</span>
-create_directory<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$install_dir</span><span class="s2">&quot;</span>
+create_directory<span class="w"> </span><span class="s2">"</span><span class="nv">$install_dir</span><span class="s2">"</span>
 create_config
 download_agent
 create_systemd_unit
 enable_and_start_service
 
-log_info<span class="w"> </span><span class="s2">&quot;InfraSonar Linux agent deployment complete.&quot;</span>
+log_info<span class="w"> </span><span class="s2">"InfraSonar Linux agent deployment complete."</span>
 </code></pre></div>
 </details>
 <h3 id="verify">Verify</h3>

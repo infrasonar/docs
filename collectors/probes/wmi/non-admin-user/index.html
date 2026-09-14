@@ -9190,10 +9190,10 @@
 <p>From the asset you want to monitor, open Command Prompt in Administrator mode.
 Run the below command to retrieve the user SID. Replace UserName with the user name for the User account.</p>
 <p>Ensure to use the name of your created user account </p>
-<div class="highlight"><pre><span></span><code>wmic useraccount where name=&quot;UserName&quot; get name,sid
+<div class="highlight"><pre><span></span><code>wmic useraccount where name="UserName" get name,sid
 </code></pre></div>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code>C:\&gt;wmic useraccount where name=&quot;wminoadmin&quot; get name,sid
+<div class="highlight"><pre><span></span><code>C:\&gt;wmic useraccount where name="wminoadmin" get name,sid
 Name        SID
 wminoadmin  S-1-5-21-724513037-2082936978-2164574455-1608
 </code></pre></div>

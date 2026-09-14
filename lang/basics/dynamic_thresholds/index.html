@@ -9192,15 +9192,15 @@
 <p>To address this, InfraSonar employs <strong>dynamic thresholds</strong> powered by its forecasting engine, <strong>Enodo</strong>. Based on historical data, Enodo automatically generates an expected upper and lower bound for your metrics. This allows your alerts to adapt to the normal behavior of each individual item.</p>
 <p>Consider a traditional fixed threshold:</p>
 <div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">memory_usage_ratio</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.8</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Memory usage too high: @fmt.item.memory_usage_ratio&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">"Memory usage too high: @fmt.item.memory_usage_ratio"</span>
 </code></pre></div>
 <p>With dynamic thresholds, you can use the forecasted upper bound instead of a static value:</p>
 <div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">memory_usage_ratio</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">enodo</span><span class="p">.</span><span class="nx">memory_usage_ratio</span><span class="o">?</span><span class="p">.</span><span class="nx">upper</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">"</span>
 <span class="s2">Memory usage higher than predicted:</span>
 <span class="s2">  Actual value: @fmt.item.memory_usage_ratio</span>
 <span class="s2">  Forecast Upper: @fmt.enodo.memory_usage_ratio.upper</span>
-<span class="s2">&quot;</span>
+<span class="s2">"</span>
 </code></pre></div>
 <h3 id="important-considerations">Important Considerations</h3>
 <ul>
@@ -9213,7 +9213,7 @@
 <p>InfraSonar supports this analysis by allowing you to define forecasts based on <code>diff</code> (total difference) or <code>diffps</code> (difference per second).</p>
 <p>Here's how you can alert on an unexpected increase in errors, comparing the current error rate per second (<code>diffps</code>) against a forecasted upper bound:</p>
 <div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">error_count</span><span class="p">.</span><span class="nx">diffps</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">enodo</span><span class="p">.</span><span class="nx">error_count</span><span class="o">?</span><span class="p">.</span><span class="nx">diffps</span><span class="p">.</span><span class="nx">upper</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;More errors than expected&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"More errors than expected"</span>
 </code></pre></div>
 <p>This approach helps identify abnormal spikes in activity, even if the total counter value is generally high.</p>
 

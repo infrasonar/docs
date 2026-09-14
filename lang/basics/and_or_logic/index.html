@@ -9196,22 +9196,22 @@
 <span class="c1">// AND the OS is NOT Windows</span>
 <span class="c1">// AND the OS is NOT ChromeOS</span>
 <span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">memory_usage_ratio</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.8</span><span class="o">:</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">os</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;Windows&quot;</span><span class="o">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">os</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;ChromeOS&quot;</span><span class="o">:</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Memory usage of @item.name exceeds 80%&quot;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">os</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"Windows"</span><span class="o">:</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">os</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"ChromeOS"</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">"Memory usage of @item.name exceeds 80%"</span>
 <span class="k">return</span><span class="w"> </span><span class="nx">OK</span>
 </code></pre></div>
 <p>While functional, this nested approach can become less readable as more conditions are added, especially for exclusion logic.</p>
 <h2 id="or-logic">OR Logic</h2>
 <p>A more elegant and readable way to handle exclusions or multiple conditions that lead to the same outcome is to use sequential <code>case</code> statements, which act as OR conditions. The first <code>case</code> statement that evaluates to true will be executed.</p>
 <p>To achieve the same goal (alert when memory usage &gt; 80%, but <em>not</em> for Windows or ChromeOS), we can place an early <code>return</code> statement for the excluded operating systems.</p>
-<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">os</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Windows&quot;</span><span class="o">:</span>
-<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">os</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;ChromeOS&quot;</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="c1">// Exclude when &quot;os&quot; is Windows OR ChromeOS</span>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">os</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Windows"</span><span class="o">:</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">os</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"ChromeOS"</span><span class="o">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="c1">// Exclude when "os" is Windows OR ChromeOS</span>
 
 <span class="c1">// Test if memory usage exceeds 80 percent</span>
 <span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">memory_usage_ratio</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.8</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Memory usage of @item.name exceeds 80%&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">"Memory usage of @item.name exceeds 80%"</span>
 <span class="k">return</span><span class="w"> </span><span class="nx">OK</span>
 </code></pre></div>
 <p>This method improves readability and maintainability, especially when dealing with more complex exclusion criteria.</p>

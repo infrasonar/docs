@@ -9102,13 +9102,13 @@
 <p>Let's create an expression to monitor a simple webpage.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Test if the website has responded with status code 200</span>
 <span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">statusCode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">200</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HTTP Status not OK, actual status: @item.statusCode&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">"HTTP Status not OK, actual status: @item.statusCode"</span>
 </code></pre></div>
 <p>Consider an <code>item</code> with the following data:</p>
 <div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://devapi.infrasonar.com/ready&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;responseTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.002146540746092796</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;statusCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">503</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://devapi.infrasonar.com/ready"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"responseTime"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.002146540746092796</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">503</span>
 <span class="w">      </span><span class="p">}</span>
 </code></pre></div>
 <p>This expression would trigger an alert with <code>WARNING</code> severity:</p>

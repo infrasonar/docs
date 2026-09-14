@@ -9221,22 +9221,22 @@
 <h2 id="example-aggregating-alerts">Example: Aggregating Alerts</h2>
 <p>This pattern allows you to collect names of failing servers across an entire check and fire a single, summarized alert at the end.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// 1. Define the message template (supports multi-line and #for loops)</span>
-<span class="kd">var</span><span class="p">.</span><span class="nx">template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span>
+<span class="kd">var</span><span class="p">.</span><span class="nx">template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span>
 <span class="s2">The following servers are in error state:</span>
 
 <span class="s2">#for @name in @var.servers:</span>
 <span class="s2">- @name</span>
 <span class="s2">#end</span>
-<span class="s2">&quot;</span>
+<span class="s2">"</span>
 
-<span class="c1">// 2. Load existing list or initialize a new one if it doesn&#39;t exist</span>
+<span class="c1">// 2. Load existing list or initialize a new one if it doesn't exist</span>
 <span class="c1">// The default value [] is required to make .append() work on the first run</span>
-<span class="kd">var</span><span class="p">.</span><span class="nx">servers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;servers&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[]).</span><span class="nx">append</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="kd">var</span><span class="p">.</span><span class="nx">servers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="s1">'servers'</span><span class="p">,</span><span class="w"> </span><span class="p">[]).</span><span class="nx">append</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
 <span class="kd">var</span><span class="p">.</span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">servers</span><span class="p">.</span><span class="nx">len</span><span class="p">()</span>
 
 <span class="c1">// 3. If current item is in error, save the updated list to persistent state</span>
-<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;error&#39;</span><span class="o">:</span>
-<span class="w">    </span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;servers&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">servers</span><span class="p">)</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'error'</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">set</span><span class="p">(</span><span class="s1">'servers'</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">servers</span><span class="p">)</span>
 
 <span class="c1">// 4. On the final item evaluation, determine the alert severity</span>
 <span class="k">case</span><span class="w"> </span><span class="nx">last</span><span class="o">:</span>

@@ -9192,7 +9192,7 @@
 <p>The <code>new</code> keyword evaluates to <code>true</code> if the item has no previous historical data in InfraSonar, and <code>false</code> otherwise.</p>
 <h2 id="example-alerting-on-new-items">Example: Alerting on New Items</h2>
 <div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="ow">new</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;New item detected: @item.name&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"New item detected: @item.name"</span>
 </code></pre></div>
 <p>In this example, an alert will be triggered only when <code>@item.name</code> is discovered by InfraSonar for the very first time.</p>
 <h2 id="important-note-on-testing">Important Note on Testing:</h2>

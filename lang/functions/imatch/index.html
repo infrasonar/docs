@@ -9198,11 +9198,11 @@
 <div class="highlight"><pre><span></span><code>&lt;string&gt;.imatch(&lt;regular_expression&gt;)
 </code></pre></div>
 <h2 id="example">Example:</h2>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">log_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;System Error[53]: Disk full.&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">log_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"System Error[53]: Disk full."</span>
 
 <span class="c1">// Test if error[X] is found, case in-sensitive</span>
-<span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">log_entry</span><span class="p">.</span><span class="nx">imatch</span><span class="p">(</span><span class="s2">&quot;.*error\[\d+\]&quot;</span><span class="p">)</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Error found: @var.log_entry&quot;</span>
+<span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">log_entry</span><span class="p">.</span><span class="nx">imatch</span><span class="p">(</span><span class="s2">".*error\[\d+\]"</span><span class="p">)</span><span class="o">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">"Error found: @var.log_entry"</span>
 </code></pre></div>
 
 

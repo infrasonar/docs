@@ -9341,53 +9341,53 @@
 <h3 id="examples">Examples</h3>
 <p>Curl request:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/container/123/file&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--form<span class="w"> </span><span class="s1">&#39;=@&quot;/path-to-file/network-drawing.png&quot;&#39;</span>
+<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://api.infrasonar.com/container/123/file'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--form<span class="w"> </span><span class="s1">'=@"/path-to-file/network-drawing.png"'</span>
 </code></pre></div></p>
 <p>Response:
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p>Python:
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.infrasonar.com/container/123/file&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.infrasonar.com/container/123/file"</span>
 
-<span class="n">files</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">(</span>
-    <span class="s1">&#39;network-drawing.png&#39;</span><span class="p">,</span>
-    <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path-to-file/network-drawing.png&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;image/jpeg&#39;</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">''</span><span class="p">,</span> <span class="p">(</span>
+    <span class="s1">'network-drawing.png'</span><span class="p">,</span>
+    <span class="nb">open</span><span class="p">(</span><span class="s1">'/path-to-file/network-drawing.png'</span><span class="p">,</span><span class="s1">'rb'</span><span class="p">),</span>
+    <span class="s1">'image/jpeg'</span>
 <span class="p">))]</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;multipart/form-data&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'multipart/form-data'</span><span class="p">,</span>
+    <span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>  <span class="c1"># {&quot;id&quot;:456}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>  <span class="c1"># {"id":456}</span>
 </code></pre></div></p>
 <p>C# (Http Client)
 <div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">();</span>
 <span class="kt">var</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpRequestMessage</span><span class="p">(</span>
 <span class="w">    </span><span class="n">HttpMethod</span><span class="p">.</span><span class="n">Post</span><span class="p">,</span>
-<span class="w">    </span><span class="s">&quot;https://api.infrasonar.com/container/123/file&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="s">"https://api.infrasonar.com/container/123/file"</span><span class="p">);</span>
 
 <span class="c1">// Set Authentication header</span>
 <span class="n">request</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span>
-<span class="w">    </span><span class="s">&quot;Authorization&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s">&quot;Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="s">"Authorization"</span><span class="p">,</span>
+<span class="w">    </span><span class="s">"Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">);</span>
 
 <span class="c1">// Create multipart content</span>
 <span class="kt">var</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MultipartFormDataContent</span><span class="p">();</span>
 <span class="n">content</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span>
-<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="nf">StreamContent</span><span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">OpenRead</span><span class="p">(</span><span class="s">&quot;/path-to-file/network-drawing.png&quot;</span><span class="p">)),</span>
-<span class="w">    </span><span class="s">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s">&quot;/path-to-file/network-drawing.png&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="nf">StreamContent</span><span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">OpenRead</span><span class="p">(</span><span class="s">"/path-to-file/network-drawing.png"</span><span class="p">)),</span>
+<span class="w">    </span><span class="s">""</span><span class="p">,</span>
+<span class="w">    </span><span class="s">"/path-to-file/network-drawing.png"</span><span class="p">);</span>
 
 <span class="c1">// Add contend to request</span>
 <span class="n">request</span><span class="p">.</span><span class="n">Content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">content</span><span class="p">;</span>
@@ -9396,7 +9396,7 @@
 <span class="n">response</span><span class="p">.</span><span class="n">EnsureSuccessStatusCode</span><span class="p">();</span>
 
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">ReadAsStringAsync</span><span class="p">());</span>
-<span class="c1">// &quot;{\&quot;id\&quot;:456}&quot;</span>
+<span class="c1">// "{\"id\":456}"</span>
 </code></pre></div></p>
 
 

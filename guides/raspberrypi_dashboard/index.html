@@ -9301,7 +9301,7 @@ sudo apt autoclean
 <div class="highlight"><span class="filename">/home/pi/autostart.sh</span><pre><span></span><code><span class="ch">#!/usr/bin/env sh</span>
 
 <span class="c1"># Disable screensaver. Varies across Pi models &amp; Raspbian versions; might be outdated.</span>
-<span class="c1"># Google &quot;raspberry disable suspend screensaver&quot; for help</span>
+<span class="c1"># Google "raspberry disable suspend screensaver" for help</span>
 
 xset<span class="w"> </span>s<span class="w"> </span>off
 xset<span class="w"> </span>-dpms
@@ -9310,12 +9310,12 @@ xset<span class="w"> </span>s<span class="w"> </span>noblank
 <span class="c1"># Move the mouse cursor out of the way!</span>
 xdotool<span class="w"> </span>mousemove<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
 
-<span class="c1"># Avoid &quot;Chrome didn&#39;t shutdown correctly&quot; notification on unclean shutdown</span>
-sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/&quot;exited_cleanly&quot;:false/&quot;exited_cleanly&quot;:true/&#39;</span><span class="w"> </span>~/.config/chromium/<span class="s1">&#39;Local State&#39;</span>
-sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/&quot;exited_cleanly&quot;:false/&quot;exited_cleanly&quot;:true/; s/&quot;exit_type&quot;:&quot;[^&quot;]\+&quot;/&quot;exit_type&quot;:&quot;Normal&quot;/&#39;</span><span class="w"> </span>~/.config/chromium/Default/Preferences
+<span class="c1"># Avoid "Chrome didn't shutdown correctly" notification on unclean shutdown</span>
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/"exited_cleanly":false/"exited_cleanly":true/'</span><span class="w"> </span>~/.config/chromium/<span class="s1">'Local State'</span>
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/'</span><span class="w"> </span>~/.config/chromium/Default/Preferences
 
-<span class="c1"># Start Chromium, in fullscreen &quot;kiosk&quot; mode, and disabling update notifications</span>
-chromium-browser<span class="w"> </span>--kiosk<span class="w"> </span>--check-for-update-interval<span class="o">=</span><span class="m">31536000</span><span class="w"> </span><span class="s1">&#39;https://app.infrasonar.com/dashboard&#39;</span>
+<span class="c1"># Start Chromium, in fullscreen "kiosk" mode, and disabling update notifications</span>
+chromium-browser<span class="w"> </span>--kiosk<span class="w"> </span>--check-for-update-interval<span class="o">=</span><span class="m">31536000</span><span class="w"> </span><span class="s1">'https://app.infrasonar.com/dashboard'</span>
 </code></pre></div>
 <p>Ensure the startup script is executable:</p>
 <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>/home/pi/autostart.sh<span class="w"> </span>

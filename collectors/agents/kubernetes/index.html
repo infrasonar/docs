@@ -9350,9 +9350,9 @@
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infrasonar</span>
 <span class="nt">rules</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;metrics.k8s.io&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apiregistration.k8s.io&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;pods&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;namespaces&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;nodes&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;nodes/proxy&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apiservices&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;persistentvolumeclaims&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;services&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;list&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;get&quot;</span><span class="p p-Indicator">]</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"metrics.k8s.io"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"apiregistration.k8s.io"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">""</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pods"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"namespaces"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"nodes"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"nodes/proxy"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"apiservices"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"persistentvolumeclaims"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"services"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"get"</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <p>Create a cluster role binding for the agent:</p>
 <div class="highlight"><span class="filename">cluster_role_binding.yaml</span><pre><span></span><code><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRoleBinding</span>
@@ -9401,9 +9401,9 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 <span class="w">        </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Always</span>
 <span class="w">        </span><span class="nt">env</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ASSET_ID</span>
-<span class="hll"><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;REPLACE_WITH_YOUR_ASSET_ID&gt;&quot;</span>
+<span class="hll"><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;REPLACE_WITH_YOUR_ASSET_ID&gt;"</span>
 </span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TOKEN</span>
-<span class="hll"><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;REPLACE_WITH_YOUR_AGENT_TOKEN&gt;&quot;</span>
+<span class="hll"><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;REPLACE_WITH_YOUR_AGENT_TOKEN&gt;"</span>
 </span></code></pre></div>
 <p>Apply the <em>deployment</em>:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
@@ -9435,9 +9435,9 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 <span class="w">        </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Always</span>
 <span class="w">        </span><span class="nt">env</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ASSET_ID</span>
-<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/mnt/data/asset.json&quot;</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"/mnt/data/asset.json"</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TOKEN</span>
-<span class="hll"><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;REPLACE_WITH_YOUR_AGENT_TOKEN&gt;&quot;</span>
+<span class="hll"><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;REPLACE_WITH_YOUR_AGENT_TOKEN&gt;"</span>
 </span><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
 <span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/data</span>
@@ -9445,7 +9445,7 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
 <span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">accessModes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;ReadWriteOnce&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">accessModes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"ReadWriteOnce"</span><span class="p p-Indicator">]</span>
 <span class="w">      </span><span class="nt">resources</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">requests</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1Mi</span>

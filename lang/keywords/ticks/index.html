@@ -9174,7 +9174,7 @@
 <p>This keyword is particularly useful for implementing escalating severities or delaying alerts, allowing you to react differently based on the persistence of an issue.</p>
 <h2 id="example-escalating-cpu-alert-severity">Example: Escalating CPU Alert Severity</h2>
 <p>This example demonstrates how to increase the alert severity for high CPU usage over time.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CPU usage consistently too high&quot;</span><span class="w"> </span><span class="c1">// Updated message for clarity</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"CPU usage consistently too high"</span><span class="w"> </span><span class="c1">// Updated message for clarity</span>
 
 <span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">cpu_usage</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">enodo</span><span class="p">.</span><span class="nx">cpu_usage</span><span class="o">?</span><span class="p">.</span><span class="nx">upper</span><span class="o">:</span>
 <span class="w">    </span><span class="c1">// If CPU has been high for more than 10 consecutive checks</span>

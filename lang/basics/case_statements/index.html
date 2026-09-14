@@ -9270,29 +9270,29 @@
 <h2 id="boolean-comparisons">Boolean Comparisons</h2>
 <p>When working with boolean metrics (<code>true</code> or <code>false</code>), you can test their state directly:</p>
 <div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">is_started</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Service Started: @item.name&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Service Started: @item.name"</span>
 </code></pre></div>
 <p>To check for a <code>false</code> value or perform an explicit comparison:</p>
 <div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">is_started</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">false</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Service Not Started: @item.name&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Service Not Started: @item.name"</span>
 </code></pre></div>
 <p><strong>Note:</strong> The <code>==</code> (equality) and <code>!=</code> (inequality) operators can be used to explicitly compare any two values, including <code>null</code>, across all data types.</p>
 <h2 id="numeric-comparisons">Numeric Comparisons</h2>
 <p>Numeric values can be compared using standard relational operators: <code>==</code> (equal to), <code>!=</code> (not equal to), <code>&gt;</code> (greater than), <code>&lt;</code> (less than), <code>&gt;=</code> (greater than or equal to), and <code>&lt;=</code> (less than or equal to).</p>
 <div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Count too large: @item.count&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Count too large: @item.count"</span>
 </code></pre></div>
 <h2 id="string-and-list-membership">String and List Membership</h2>
 <p>The <code>in</code> and <code>not in</code> operators are versatile for checking membership.</p>
 <h3 id="substring-check">Substring Check</h3>
 <p>To test if a substring exists within a larger string:</p>
-<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="s1">&#39;error&#39;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">lower</span><span class="p">()</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Error in message: @item.message&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="s1">'error'</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">lower</span><span class="p">()</span><span class="o">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">"Error in message: @item.message"</span>
 </code></pre></div>
 <h3 id="list-membership">List Membership</h3>
 <p>To test if a value is present within a list of values:</p>
-<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">weekday</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Saturday&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Sunday&#39;</span><span class="p">]</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;It is weekend&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">weekday</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">[</span><span class="s1">'Saturday'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sunday'</span><span class="p">]</span><span class="o">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"It is weekend"</span>
 </code></pre></div>
 <p>All elements within a single list must be of the same data type <em>(e.g., all strings, all integers)</em>. You cannot mix types within the same list.</p>
 

@@ -9350,9 +9350,9 @@ You can use the following steps to create a local account:</p>
 </div>
 <p><strong>To enable WMI traffic at command prompt using WMI rule group</strong></p>
 <p>We can easily allow remote WMI using the following set of <code>netsh</code> commands:</p>
-<div class="highlight"><pre><span></span><code>netsh advfirewall firewall set rule group=&quot;Windows Management Instrumentation (WMI-In)&quot; new enable=yes
-netsh advfirewall firewall set rule group=&quot;Windows Management Instrumentation (DCOM-In)&quot; new enable=yes
-netsh advfirewall firewall set rule group=&quot;Windows Management Instrumentation (ASync-In)&quot; new enable=yes
+<div class="highlight"><pre><span></span><code>netsh advfirewall firewall set rule group="Windows Management Instrumentation (WMI-In)" new enable=yes
+netsh advfirewall firewall set rule group="Windows Management Instrumentation (DCOM-In)" new enable=yes
+netsh advfirewall firewall set rule group="Windows Management Instrumentation (ASync-In)" new enable=yes
 </code></pre></div>
 <h4 id="corporate-firewall">Corporate firewall</h4>
 <p>When monitoring hosts which are located behind a firewall, for example hosts in a DMZ, the firewall must be configured to allow WMI.</p>

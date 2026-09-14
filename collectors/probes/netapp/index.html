@@ -9402,7 +9402,7 @@ security login rest-role create -role infrasonar -vserver netapp01 -api /api/sec
 <div class="highlight"><span class="filename">Verify NetApp role</span><pre><span></span><code>security login rest-role show infrasonar
 </code></pre></div>
 <p>Next step is to create a user (<code>infrasonar</code>) and assign the previously created role (<code>infrasonar</code>) to this user:</p>
-<div class="highlight"><span class="filename">Create NetApp user</span><pre><span></span><code>security login create infrasonar -role infrasonar -comment &quot;system-monitoring user, readonly&quot; -application ontapi -authentication-method password 
+<div class="highlight"><span class="filename">Create NetApp user</span><pre><span></span><code>security login create infrasonar -role infrasonar -comment "system-monitoring user, readonly" -application ontapi -authentication-method password 
 security login create infrasonar -role infrasonar -application http -authentication-method password 
 </code></pre></div>
 <p>Verify the user creation:</p>

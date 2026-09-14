@@ -9204,44 +9204,44 @@ rocommunity6 public default
 <div class="highlight"><span class="filename">ubuntu_update.bash</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># Log file for updates</span>
-<span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">&quot;/var/log/ubuntu_automatic_updates.log&quot;</span>
+<span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">"/var/log/ubuntu_automatic_updates.log"</span>
 
 <span class="c1"># Function to perform the updates</span>
 perform_updates<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: Starting automatic updates...&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: Starting automatic updates..."</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span>
 
 <span class="w">  </span><span class="c1"># Update package lists</span>
-<span class="w">  </span>apt<span class="w"> </span>update<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="w">  </span>apt<span class="w"> </span>update<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 
 <span class="w">  </span><span class="c1"># Upgrade installed packages (including new packages if needed)</span>
-<span class="w">  </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="w">  </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 
 <span class="w">  </span><span class="c1"># Dist-upgrade to handle distribution upgrades if available (use cautiously)</span>
-<span class="w">  </span><span class="c1"># apt dist-upgrade -y &gt;&gt; &quot;$LOG_FILE&quot; 2&gt;&amp;1  # Uncomment if you want dist-upgrades</span>
+<span class="w">  </span><span class="c1"># apt dist-upgrade -y &gt;&gt; "$LOG_FILE" 2&gt;&amp;1  # Uncomment if you want dist-upgrades</span>
 
 <span class="w">  </span><span class="c1"># Autoremove to remove unused packages</span>
-<span class="w">  </span>apt<span class="w"> </span>autoremove<span class="w"> </span>-y<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="w">  </span>apt<span class="w"> </span>autoremove<span class="w"> </span>-y<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 
 <span class="w">  </span><span class="c1"># Autoclean to remove old downloaded package files</span>
-<span class="w">  </span>apt<span class="w"> </span>autoclean<span class="w"> </span>-y<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="w">  </span>apt<span class="w"> </span>autoclean<span class="w"> </span>-y<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 
 <span class="w">  </span><span class="c1"># Check if a reboot is required</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/var/run/reboot-required<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: Reboot required. Rebooting...&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: Reboot required. Rebooting..."</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span>
 <span class="w">    </span><span class="c1"># Remove the lock file</span>
 <span class="w">    </span>rm<span class="w"> </span>/tmp/ubuntu_automatic_updates.lock
 <span class="w">    </span>reboot
 <span class="w">  </span><span class="k">else</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: No reboot required.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: No reboot required."</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span>
 <span class="w">  </span><span class="k">fi</span>
 
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: Automatic updates completed.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: Automatic updates completed."</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span>
 <span class="o">}</span>
 
 
 <span class="c1"># Check if the script is already running</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/tmp/ubuntu_automatic_updates.lock<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: Automatic updates already running. Exiting.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">: Automatic updates already running. Exiting."</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span>
 <span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
@@ -9257,7 +9257,7 @@ rm<span class="w"> </span>/tmp/ubuntu_automatic_updates.lock
 <span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
 </code></pre></div>
 <p>Add this script to crontab of user root like this:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;(crontab -l ; echo &quot;0 2 * * * /root/ubuntu_update.bash&quot;) | crontab -&#39;</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">'(crontab -l ; echo "0 2 * * * /root/ubuntu_update.bash") | crontab -'</span>
 </code></pre></div>
 <p>Note using <code>sudo crontab -e</code> you can edit the schedule to your liking.</p>
 <h3 id="infrasonar-installer">InfraSonar installer</h3>
@@ -9266,7 +9266,7 @@ rm<span class="w"> </span>/tmp/ubuntu_automatic_updates.lock
 <div class="highlight"><pre><span></span><code><span class="c1">## Create and change into a temporary directory</span>
 <span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>mktemp<span class="w"> </span>-d<span class="k">)</span>
 <span class="c1">## Download the latest InfraSonar appliance installer</span>
-curl<span class="w"> </span>-sL<span class="w"> </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/infrasonar/appliance-installer/releases/latest<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.assets[] | select(.name | contains (&quot;linux&quot;)) | .browser_download_url&#39;</span><span class="k">)</span><span class="w"> </span>-o<span class="w"> </span>appliance-installer-linux-amd64.tar.gz
+curl<span class="w"> </span>-sL<span class="w"> </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/infrasonar/appliance-installer/releases/latest<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.assets[] | select(.name | contains ("linux")) | .browser_download_url'</span><span class="k">)</span><span class="w"> </span>-o<span class="w"> </span>appliance-installer-linux-amd64.tar.gz
 <span class="c1">## Unpack the InfraSonar appliance installer</span>
 tar<span class="w"> </span>-xzvf<span class="w"> </span>appliance-installer-linux-amd64.tar.gz
 <span class="c1">## Run the InfraSonar appliance installer</span>

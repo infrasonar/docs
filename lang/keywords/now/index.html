@@ -9170,10 +9170,10 @@
 <p>It is intentionally an integer, as the precision of monitoring checks and the practical need for time comparisons in expressions are generally at the second level.</p>
 <h2 id="example">Example</h2>
 <div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">log_time</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="mf">3600</span><span class="p">)</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Log time older than one hour: @fmt.item.log_time&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Log time older than one hour: @fmt.item.log_time"</span>
 
 <span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">log_time</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">now</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Log time in the future: @fmt.item.log_time&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">DEBUG</span><span class="p">,</span><span class="w"> </span><span class="s2">"Log time in the future: @fmt.item.log_time"</span>
 </code></pre></div>
 
 

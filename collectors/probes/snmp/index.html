@@ -9363,21 +9363,21 @@
 <p>The SNMP probe requires SNMP to be configured on devices you wish to monitor. The next chapter describes how to configure SNMP on some standard devices.</p>
 <h3 id="freebsd">FreeBSD</h3>
 <p>Edit (as root) the file <code>/etc/snmpd.config</code>, find the following lines in the file:</p>
-<div class="highlight"><pre><span></span><code>location := &quot;Room 200&quot;
-contact := &quot;sysmeister@example.com&quot;
+<div class="highlight"><pre><span></span><code>location := "Room 200"
+contact := "sysmeister@example.com"
 
-read := &quot;public&quot;
+read := "public"
 
-write := &quot;geheim&quot;
-trap := &quot;mytrap&quot;
+write := "geheim"
+trap := "mytrap"
 </code></pre></div>
 <p>Set <code>location</code> to the correct location for this device and set <code>contact</code> to the system administrator contact.</p>
 <p>Set the desired community name, in this example we use <code>public</code>
-<div class="highlight"><pre><span></span><code>read := &quot;public&quot;
+<div class="highlight"><pre><span></span><code>read := "public"
 </code></pre></div></p>
 <p>Enable <strong>bsnmpd</strong> in <code>/etc/rc.conf</code></p>
 <p>Add this at the end of the file:
-<div class="highlight"><pre><span></span><code>bsnmpd_enable=&quot;YES&quot;
+<div class="highlight"><pre><span></span><code>bsnmpd_enable="YES"
 </code></pre></div></p>
 <p>Start snmpd:
 <div class="highlight"><pre><span></span><code>service bsnmpd start
@@ -9387,10 +9387,10 @@ trap := &quot;mytrap&quot;
 <div class="highlight"><pre><span></span><code>pkg_add -r bsnmp-ucd
 </code></pre></div>
 <p>Locate and uncomment the line in <code>/etc/snmpd.config</code>
-<div class="highlight"><pre><span></span><code>begemotSnmpdModulePath.&quot;hostres&quot; = &quot;/usr/lib/snmp_hostres.so&quot;
+<div class="highlight"><pre><span></span><code>begemotSnmpdModulePath."hostres" = "/usr/lib/snmp_hostres.so"
 </code></pre></div>
 Add the next line below the just uncommented line:
-<div class="highlight"><pre><span></span><code>begemotSnmpdModulePath.&quot;ucd&quot; = &quot;/usr/local/lib/snmp_ucd.so&quot;
+<div class="highlight"><pre><span></span><code>begemotSnmpdModulePath."ucd" = "/usr/local/lib/snmp_ucd.so"
 </code></pre></div></p>
 <p>When done restart the bsnmp daemon:
 <div class="highlight"><pre><span></span><code>/etc/rc.d/bsnmpd restart
@@ -9435,7 +9435,7 @@ Prior to editing this file we suggest making a backup of the existing configurat
 com2sec readonly  default         infrasonar
 group InfraSonarGroup v2c        readonly
 view all    included  .1
-access InfraSonarGroup &quot;&quot;      any       noauth    exact  all    none   none
+access InfraSonarGroup ""      any       noauth    exact  all    none   none
 syslocation planetearth
 syscontact support@infrasonar.com
 </code></pre></div>

@@ -9101,22 +9101,22 @@
 <h1 id="cross-item-data">Cross-Item Data</h1>
 <p>InfraSonar expressions are evaluated for each individual item. However, there are scenarios where you need to reference the state or metrics of <em>other</em> items within the same check result before deciding to raise an alert. InfraSonar exposes the full check result, allowing you to access data from other items.</p>
 <p>The syntax for retrieving a specific metric from another item is:</p>
-<div class="highlight"><pre><span></span><code>result.&lt;type-name&gt;.get(&quot;&lt;item-name&gt;&quot;, &quot;&lt;metric-name&gt;&quot;)
+<div class="highlight"><pre><span></span><code>result.&lt;type-name&gt;.get("&lt;item-name&gt;", "&lt;metric-name&gt;")
 </code></pre></div>
 <p><strong>Note:</strong> If the <code>&lt;type-name&gt;</code> is optional, it might be <code>null</code> so in that case you should mark the type-name as optional with a question mark (<code>?</code>).</p>
 <p>Consider a setup with two critical services, <code>"Primary"</code> and <code>"Secondary"</code>, each having a <code>Started</code> metric. You want to trigger an alert only if both services are not started.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Define a variable for the &#39;Started&#39; metric of the &quot;Secondary&quot; service</span>
-<span class="c1">// Use &#39;?? false&#39; to default to false if &#39;Secondary&#39; service or &#39;Started&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Define a variable for the 'Started' metric of the "Secondary" service</span>
+<span class="c1">// Use '?? false' to default to false if 'Secondary' service or 'Started'</span>
 <span class="c1">// metric is not found</span>
-<span class="kd">var</span><span class="p">.</span><span class="nx">secondaryStarted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">services</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Secondary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Started&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="kc">false</span>
+<span class="kd">var</span><span class="p">.</span><span class="nx">secondaryStarted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">services</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"Secondary"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Started"</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="kc">false</span>
 
 <span class="c1">// This expression logic is designed to run only when evaluating</span>
-<span class="c1">// the &quot;Primary&quot; service item.</span>
-<span class="c1">// If the current item is not &quot;Primary&quot;, we exit without action.</span>
-<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;Primary&quot;</span><span class="o">:</span>
+<span class="c1">// the "Primary" service item.</span>
+<span class="c1">// If the current item is not "Primary", we exit without action.</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"Primary"</span><span class="o">:</span>
 <span class="w">    </span><span class="k">return</span>
 
-<span class="c1">// If either the &quot;Primary&quot; service is Started OR the &quot;Secondary&quot; service</span>
+<span class="c1">// If either the "Primary" service is Started OR the "Secondary" service</span>
 <span class="c1">// is Started, then both are not down, so we return OK</span>
 <span class="c1">// (close any existing alert).</span>
 <span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">Started</span><span class="o">:</span>
@@ -9124,11 +9124,11 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">OK</span>
 
 <span class="c1">// If neither of the above conditions are met, it means:</span>
-<span class="c1">// 1. The current item IS &quot;Primary&quot;.</span>
-<span class="c1">// 2. &quot;Primary&quot;.Started is false.</span>
-<span class="c1">// 3. &quot;Secondary&quot;.Started (var.secondaryStarted) is false.</span>
+<span class="c1">// 1. The current item IS "Primary".</span>
+<span class="c1">// 2. "Primary".Started is false.</span>
+<span class="c1">// 3. "Secondary".Started (var.secondaryStarted) is false.</span>
 <span class="c1">// Therefore, both services are down.</span>
-<span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Both the primary and secondary service are down&quot;</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">"Both the primary and secondary service are down"</span>
 </code></pre></div>
 <p>This powerful feature allows you to define complex cross-item alert conditions within a single expression.</p>
 

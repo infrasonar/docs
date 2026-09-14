@@ -9195,13 +9195,13 @@
 </code></pre></div>
 <h2 id="example">Example</h2>
 <p>In this Kubernetes scenario, we have an expression evaluating a container. We want to check the status of its parent Pod and trigger an alert if the Pod is not running.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Retrieve the &#39;status&#39; metric from the container&#39;s parent Pod.</span>
-<span class="c1">// If the Pod or its status isn&#39;t found, default to &quot;Unknown&quot;.</span>
-<span class="kd">var</span><span class="p">.</span><span class="nx">pod_status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">pod</span><span class="p">.</span><span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s2">&quot;Unknown&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieve the 'status' metric from the container's parent Pod.</span>
+<span class="c1">// If the Pod or its status isn't found, default to "Unknown".</span>
+<span class="kd">var</span><span class="p">.</span><span class="nx">pod_status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">pod</span><span class="p">.</span><span class="nx">ref</span><span class="p">(</span><span class="s1">'status'</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s2">"Unknown"</span>
 
-<span class="c1">// If the Pod&#39;s status is not &quot;Running&quot;, trigger an error alert.</span>
-<span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">pod_status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;Running&quot;</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Pod for container @item.name has status: @var.pod_status&quot;</span>
+<span class="c1">// If the Pod's status is not "Running", trigger an error alert.</span>
+<span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">pod_status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"Running"</span><span class="o">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">"Pod for container @item.name has status: @var.pod_status"</span>
 </code></pre></div>
 
 

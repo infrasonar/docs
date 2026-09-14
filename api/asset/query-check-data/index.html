@@ -9345,28 +9345,28 @@
 <h3 id="example">Example</h3>
 <p>Curl request:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://api.infrasonar.com/asset/123/collector/ping/check/ping?fmt=true&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;</span>
+<span class="w">    </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">'https://api.infrasonar.com/asset/123/collector/ping/check/ping?fmt=true'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
 </code></pre></div></p>
 <p>Response:
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;icmp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"icmp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;192.168.1.2&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;maxTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1 ms&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ping&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;dropped&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;minTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;165 μs&quot;</span>
+<span class="w">                </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.168.1.2"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"maxTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 ms"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ping"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"dropped"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"minTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"165 μs"</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4.015 seconds&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-12 15:29:37+01:00&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-12 15:24:37+01:00&quot;</span>
+<span class="w">    </span><span class="nt">"framework"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.015 seconds"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-12 15:29:37+01:00"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"prev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-12 15:24:37+01:00"</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>

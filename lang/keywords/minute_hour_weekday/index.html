@@ -9198,7 +9198,7 @@
 <p>It is important to note that for all time-dependent keywords (<code>minute</code>, <code>hour</code>, <code>weekday</code>), the <strong>timezone of the container running the expression</strong> is used.</p>
 <h2 id="example-time-based-alert-suppression">Example: Time-Based Alert Suppression</h2>
 <p>This example demonstrates how to suppress alerts for new errors outside of typical business hours (Monday-Friday, 8:00 AM - 5:30 PM).</p>
-<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">weekday</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Saturday&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Sunday&#39;</span><span class="p">]</span><span class="o">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">weekday</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">[</span><span class="s1">'Saturday'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sunday'</span><span class="p">]</span><span class="o">:</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="c1">// Suppress all alerts on weekends</span>
 
 <span class="k">case</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">8</span><span class="o">:</span>
@@ -9210,7 +9210,7 @@
 
 <span class="c1">// If none of the above conditions are met</span>
 <span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">error_count</span><span class="p">.</span><span class="nx">diff</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Error(s) found on item: @item.name&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">WARNING</span><span class="p">,</span><span class="w"> </span><span class="s2">"Error(s) found on item: @item.name"</span>
 </code></pre></div>
 <p>This setup allows for precise control over when alerts are active, reducing noise during non-operational hours.</p>
 

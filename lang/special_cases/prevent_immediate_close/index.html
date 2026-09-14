@@ -9192,15 +9192,15 @@
 <h2 id="method-1-minimum-evaluation-ticks">Method 1: Minimum Evaluation Ticks</h2>
 <p>This approach ensures the alert remains open for at least one extra cycle after the condition has been resolved. This is useful for smoothing out momentary "blips."</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Check if the condition is currently failing</span>
-<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">state</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;running&#39;</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Item state is @item.state&quot;</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">state</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">'running'</span><span class="o">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">"Item state is @item.state"</span>
 
 <span class="k">case</span><span class="w"> </span><span class="nx">ticks</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span>
 <span class="w">    </span><span class="c1">// Hysteresis: Prevents immediate closure by echoing the previous state.</span>
 <span class="w">    </span><span class="c1">// If the alert was already OK, returning last_severity (OK) effectively</span>
-<span class="w">    </span><span class="c1">// acts as a standard &#39;return OK&#39;, allowing the check to resolve normally</span>
+<span class="w">    </span><span class="c1">// acts as a standard 'return OK', allowing the check to resolve normally</span>
 <span class="w">    </span><span class="c1">// This is required to increate the number of ticks if an alert is open.</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">alert</span><span class="p">.</span><span class="nx">last_severity</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;@alert.last_message&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">alert</span><span class="p">.</span><span class="nx">last_severity</span><span class="p">,</span><span class="w"> </span><span class="s2">"@alert.last_message"</span>
 
 <span class="c1">// If the condition is OK and we have met the tick requirement, resolve.</span>
 <span class="k">return</span><span class="w"> </span><span class="nx">OK</span>
@@ -9208,14 +9208,14 @@
 <h2 id="method-2-minimum-time-duration">Method 2: Minimum Time Duration</h2>
 <p>This approach is better for checks with an unpredictable check interval. It prevents the alert from closing until a specific amount of time has passed since it first triggered.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Calculate alert age.</span>
-<span class="c1">// Using &#39;created&#39; ensures a minimum total lifespan for the alert.</span>
-<span class="c1">// Alternatively, use &#39;last_hit&#39; to require a cooldown period starting</span>
+<span class="c1">// Using 'created' ensures a minimum total lifespan for the alert.</span>
+<span class="c1">// Alternatively, use 'last_hit' to require a cooldown period starting</span>
 <span class="c1">// from the most recent failure.</span>
 <span class="kd">var</span><span class="p">.</span><span class="nx">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="nx">alert</span><span class="p">.</span><span class="nx">created</span><span class="p">)</span>
 
 <span class="c1">// 1. Maintain the ERROR state if the condition is still met</span>
-<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">state</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;running&#39;</span><span class="o">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Item state is @item.state&quot;</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">state</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">'running'</span><span class="o">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ERROR</span><span class="p">,</span><span class="w"> </span><span class="s2">"Item state is @item.state"</span>
 
 <span class="k">case</span><span class="w"> </span><span class="kd">var</span><span class="p">.</span><span class="nx">duration</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">600</span><span class="o">:</span>
 <span class="w">    </span><span class="c1">// Note: with a plain return, the `ticks` do not increase</span>

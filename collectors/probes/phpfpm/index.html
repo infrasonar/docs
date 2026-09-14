@@ -9216,10 +9216,10 @@ Please review the FPM pool documentation for more information.</p>
 <p>No credentials are required to view this page.</p>
 <p>For security the FPM status page should be restricted to internal requests or known client IPs only as the page reveals request URLs and information about available resources.</p>
 <p>Depending on the web server configuration it might be needed to configure the web server to allow requests directly to this path, bypassing any PHP scripts. An example of a configuration for Apache with FPM listening on UDS and pm.status_path set to /fpm-status would look like:</p>
-<div class="highlight"><pre><span></span><code>&lt;LocationMatch &quot;/fpm-status&quot;&gt;
+<div class="highlight"><pre><span></span><code>&lt;LocationMatch "/fpm-status"&gt;
  Order Allow,Deny
  Allow from 127.0.0.1
- ProxyPass &quot;unix:/var/run/php-fpm.sock|fcgi://localhost/fpm-status&quot;
+ ProxyPass "unix:/var/run/php-fpm.sock|fcgi://localhost/fpm-status"
 &lt;/LocationMatch&gt;
 </code></pre></div>
 <p>After reloading or restarting both FPM and the web server the status page will be accessible from the appliance (as long as the request comes from an allowed IP address if the IP restriction was configured).</p>
