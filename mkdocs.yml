@@ -238,6 +238,7 @@ nav:
   - API reference:
       - Overview: api/overview.md
       - Authentication: api/authentication.md
+      - Permissions: api/permissions.md
       - ID's: api/ids.md
       - Agentcore:
         - Pull and update: api/agentcore/pull-and-update.md
