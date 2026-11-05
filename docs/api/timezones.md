@@ -14,7 +14,6 @@ _none_
 Error code  | Reason
 ------------|--------
 `200`       | Success.
-`401`       | Invalid or missing token.
 
 ### Example
 Curl request:
@@ -26,5 +25,5 @@ curl \
 
 Response:
 ```json
-["UTC", "Europe/Amsterdam", "Africa/Abidjan", "Africa/Accra", ...]
+["UTC", "Europe/Amsterdam", "Africa/Abidjan", "Africa/Accra", "..."]
 ```
