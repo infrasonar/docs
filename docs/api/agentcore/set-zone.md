@@ -34,7 +34,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X PATCH 'https://api.infrasonar.com/agentcore/123/zone' \
+    -X PATCH 'https://api.infrasonar.com/agentcore/123/rapp/zone' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{

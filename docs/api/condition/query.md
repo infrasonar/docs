@@ -7,7 +7,7 @@ Query condition details.
 ### Path parameters
 Param               | Description
 --------------------|-------------
-`conditionId`           | Condition Id.
+`conditionId`       | Condition Id.
 
 ### Query parameters
 Param               | Default           | Description
@@ -48,7 +48,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/condition/123?fields=name,kind' \
+    -X GET 'https://api.infrasonar.com/container/123/condition/456?fields=name,kind' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
