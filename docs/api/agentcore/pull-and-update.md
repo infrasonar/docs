@@ -1,5 +1,5 @@
-# Set asset zone
-**`POST` /agentcore/<agentcoreId\>/pull-and-update**
+# Pull and update appliance
+**`POST` /agentcore/<agentcoreId\>/rapp/pull-and-update**
 
 ### Description
 Pull and update Docker images on the appliance.

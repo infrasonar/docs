@@ -1,5 +1,5 @@
 # Set agentcore zone
-**`PATCH` /agentcore/<agentcoreId\>/zone**
+**`PATCH` /agentcore/<agentcoreId\>/rapp/zone**
 
 ### Description
 Set the agentcore zone. Success _(204)_ is also returned when the agentcore was already in the desired zone.
