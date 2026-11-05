@@ -31,7 +31,7 @@ Field               | Return type        | Description
 `typeKey`           | string             | Type key.
 `ignoreCase`        | boolean/null       | Case insensive item name match. Only available when kind `ItemsMustExist`.
 `itemsRe`           | boolean/null       | Item match pattern. Only available when kind `ItemsMustExist`.
-`itemList`          | array(string)/null | Item match list. Only available when kind `ItemsMustExist`.
+`itemsList`         | array(string)/null | Item match list. Only available when kind `ItemsMustExist`.
 `labels`            | array(integer)     | List with label Ids.
 `ownerId`           | integer            | Container Id where the condition is created.
 
