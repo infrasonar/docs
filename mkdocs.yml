@@ -281,9 +281,9 @@ nav:
         - Create asset: api/container/create-asset.md
         - Create container: api/container/create-container.md
         - Create invite: api/container/create-invite.md
+        - List available timezones: api/container/timezones.md
         - Purge notifications: api/container/purge-notifications.md
         - Purge time-series: api/container/purge-time-series.md
-        - Query container: api/container/query.md
         - Query container Id: api/container/query-id.md
         - Query container agentcores: api/container/query-agentcores.md
         - Query container alerts: api/container/query-alerts.md
@@ -291,12 +291,13 @@ nav:
         - Query container collectors: api/container/query-collectors.md
         - Query container invites: api/container/query-invites.md
         - Query container labels: api/container/query-labels.md
+        - Query container merge queue: api/container/query-merge-queue.md
+        - Query container move queue: api/container/query-move-queue.md
         - Query container permissions: api/container/query-permissions.md
         - Query container properties: api/container/query-properties.md
         - Query container users: api/container/query-users.md
         - Query container zones: api/container/query-zones.md
-        - Query container merge queue: api/container/query-merge-queue.md
-        - Query container move queue: api/container/query-move-queue.md
+        - Query container: api/container/query.md
         - Remove container: api/container/remove-container.md
         - Remove invite: api/container/remove-invite.md
         - Remove property: api/container/remove-property.md

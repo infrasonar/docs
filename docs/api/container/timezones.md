@@ -1,5 +1,5 @@
 # Get timezones
-**`GET` /timezones**
+**`GET` /container/timezones**
 
 ### Description
 Returns a list of supported time zone strings.
