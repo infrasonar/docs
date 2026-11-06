@@ -48,6 +48,7 @@ Condition field     | Return type        | Description
 `description`       | string             | Condition description.
 `labels`            | array(integer)     | List with label Ids.
 `ownerId`           | integer            | Container Id where the condition is created.
+`masterId`          | integer/null       | Condition Id of the master condition if this is a linked condition; otherwise `null`. A linked condition overrides specific fields of its master condition and replaces it during evaluation.
 `expression`        | string/null        | Evaluation expression. Applicable when kind is `ItemExpression` or `ItemMissing`.
 `singleAlert`       | boolean            | Gathers up all alerts into a single alert per asset. When `false`, each item will creates its own alert. Default: `false`.
 `closeOnReturn`     | boolean/null       | Automatically closes the alert when a previously missing item reappears. Only applicable when kind is `ItemMissing`. Default: `false`.
@@ -56,7 +57,7 @@ Condition field     | Return type        | Description
 `ignoreCase`        | boolean/null       | Enables case-insensitive matching for item names. Only applicable when kind is `ItemsMustExist`. Default: `false`.
 `itemsRe`           | string/null        | Regular expression pattern for matching items. Only applicable when kind is `ItemsMustExist`.
 `itemsList`         | array(string)/null | Explicit list of item names to match. Only applicable when kind is `ItemsMustExist`.
-`masterId`          | integer/null       | Condition Id of the master condition if this is a linked condition; otherwise `null`. A linked condition overrides specific fields of its master condition and replaces it during evaluation.
+
 
 ### Return codes
 Error code  | Reason
