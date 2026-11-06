@@ -41,9 +41,9 @@ Condition field     | Return type        | Description
 --------------------|--------------------|-------------
 `id`                | integer            | Condition Id.
 `name`              | string             | Condition name.
-`collectorKey`      | string             | Collector key.
-`checkKey`          | string             | Check key.
-`typeKey`           | string             | Type key.
+`collector`         | string             | Collector key.
+`check`             | string             | Check key.
+`type`              | string             | Type key.
 `kind`              | string             | One of `ItemExpression`, `ItemMissing`, `ItemsMustExist`.
 `description`       | string             | Condition description.
 `labels`            | array(integer)     | List with label Ids.

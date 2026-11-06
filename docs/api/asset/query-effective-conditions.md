@@ -15,11 +15,13 @@ Param               | Default           | Description
 `fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
 `activity`          | _none_            | Activity fields. If at least one field is given, the result will include "_activity_" with an array of _activity_ objects _(see [Activity](#activity) below for all available activity fields)_.
 `condition`         | _none_            | Condition fields. If at least one field is given, the result will include "_condition_" with a _condtion_ object _(see [Condition](#condition) below for all available condition fields)_.
+`enabled`           | _none_            |
+`status`            | _none_            |
 
 ### Fields
 Field               | Return type         | Description
 --------------------|---------------------|-------------
-`isEnabled`         | boolean             | Effective enabled state. `true` only when enabled for both the container and the asset; otherwise `false`.
+`enabled`           | boolean             | Effective enabled state. `true` only when enabled for both the container and the asset; otherwise `false`.
 `status`            | string              | One of `Active`, `Disabled`, `Dormant`, `Overridden`.
 
 ### Activity
@@ -34,9 +36,9 @@ Condition field     | Return type        | Description
 --------------------|--------------------|-------------
 `id`                | integer            | Condition Id.
 `name`              | string             | Condition name.
-`collectorKey`      | string             | Collector key.
-`checkKey`          | string             | Check key.
-`typeKey`           | string             | Type key.
+`collector`         | string             | Collector key.
+`check`             | string             | Check key.
+`type`              | string             | Type key.
 `kind`              | string             | One of `ItemExpression`, `ItemMissing`, `ItemsMustExist`.
 `description`       | string             | Condition description.
 `labels`            | array(integer)     | List with label Ids.
@@ -82,7 +84,7 @@ Response:
             "name": "test",
             "kind": "ItemExpression",
         },
-        "isEnabled": true,
+        "enabled": true,
         "status": "Active"
     }
 ]
