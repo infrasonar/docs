@@ -15,7 +15,7 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`timezone`  | string    | Yes       | Timezone for the container. Example: `Europe/Amsterdam`.
+`timezone`  | string    | Yes       | Timezone for the container. See [List available timezones](./timezones.md) for all available timezones.
 
 ### Return codes
 Error code  | Reason

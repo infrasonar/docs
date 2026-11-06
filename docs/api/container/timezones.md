@@ -25,5 +25,22 @@ curl \
 
 Response:
 ```json
-["UTC", "Europe/Amsterdam", "Africa/Abidjan", "Africa/Accra", "..."]
+[
+  "UTC",
+  "Europe/Amsterdam",
+  "Europe/Brussels",
+  "Europe/Berlin",
+  "Europe/Paris",
+  "Europe/London",
+  "Europe/Kyiv",
+  "Europe/Warsaw",
+  "America/New_York",
+  "America/Chicago",
+  "America/Los_Angeles",
+  "Asia/Dubai",
+  "Asia/Singapore",
+  "Asia/Tokyo",
+  "Australia/Sydney",
+  ...
+]
 ```

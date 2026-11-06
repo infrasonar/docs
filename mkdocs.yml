@@ -304,6 +304,7 @@ nav:
         - Remove user: api/container/remove-user.md
         - Remove zone: api/container/remove-zone.md
         - Set container mode: api/container/set-mode.md
+        - Set container timezone: api/container/set-container-timezone.md
         - Set property: api/container/set-property.md
         - Update user permissions: api/container/update-user.md
         - Upsert zone: api/container/upsert-zone.md
