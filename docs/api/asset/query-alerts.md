@@ -28,6 +28,9 @@ Field               | Return type   | Description
 `lastTimestamp`     | integer       | Unix timestamp in seconds of the last hit _(equal to "timestamp" with only a single hit)_.
 `ownerId`           | integer/null  | User Id of the owner or _null_ when the alert is not assigned to an owner.
 `conditionId`       | integer       | Id of the associated condition.
+`assetId`           | integer       | Id of the associated asset.
+`item`              | string        | Name of the associated item.
+
 
 ### Return codes
 Error code  | Reason
