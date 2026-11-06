@@ -22,7 +22,7 @@ Param       | Default       | Description
 ### Fields
 Field               | Return type       | Description
 --------------------|-------------------|-------------
-`id`                | int               | Id for the user.
+`id`                | integer           | Id for the user.
 `name`              | string            | Name for the user.
 `email`             | string/null       | Email for the user or `null` when not visible for the user.
 `authProvider`      | string            | Authentication provider for the user. One of `Google`, `Microsoft` or `Password`.

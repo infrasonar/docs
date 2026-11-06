@@ -19,7 +19,7 @@ Param       | Default       | Description
 ### Fields
 Field               | Return type       | Description
 --------------------|-------------------|-------------
-`id`                | int               | Target Id for the property.
+`id`                | integer           | Target Id for the property.
 `kind`              | string/null       | Target Kind of the property. One of `Asset`, `Container`, `Condition`, `User` or `null` if no target is found.
 `name`              | string/null       | Readable name for the target. This value can be `null` if no target is found for the Id.
 `key`               | string            | Property key.
