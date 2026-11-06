@@ -20,6 +20,7 @@ Param               | Default           | Description
 Field               | Return type   | Description
 --------------------|---------------|-------------
 `ks`                | string        | Key string of the alert.
+`status`   | string      | Current lifecycle state of the alert. See [Alert Status Values](#alert-status-values) for details.
 `message`           | string        | Initial message when the alert was opened.
 `severity`          | integer       | Initial severity when the alert was opened _(value between 0=highest and 7=lowest severity)_.
 `timestamp`         | integer       | Unix timestamp in seconds when the alert was opened.
@@ -30,6 +31,16 @@ Field               | Return type   | Description
 `assetId`           | integer       | Id of the associated asset.
 `item`              | string        | Name of the associated item.
 `closedTimestamp`   | integer/null  | Unix timestamp in seconds when the alert was closed or _null_ if not closed.
+
+#### Alert Status Values
+
+Status             | State   | Description
+-------------------|---------|-------------
+`Open`             | Open    | The alert is open and currently unassigned.
+`Assigned`         | Open    | The alert is open and assigned to a user (`ownerId` is populated).
+`Closed`           | Closed  | The alert was manually closed by a user.
+`AutoClosed`       | Closed  | The alert was automatically closed because a subsequent evaluation of the condition returned an OK state.
+`IndirectClosed`   | Closed  | The alert was closed because the underlying condition is no longer evaluated (e.g., condition removed, check disabled, or asset unassigned).
 
 ### Actions
 Action field        | Return type   | Description
