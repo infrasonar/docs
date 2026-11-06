@@ -12,8 +12,8 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | `id`              | Fields to return _(see fields below for all available fields)_.
-`collectors`        | _none_            | Collector fields. If at least one field is given, the result will include "_collectors_" with an array of _collector_ objects _(see Collectors below for all available collector fields)_.
+`fields`            | `id`              | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`collectors`        | _none_            | Collector fields. If at least one field is given, the result will include "_collectors_" with an array of _collector_ objects _(see [Collectors](#collectors) below for all available collector fields)_.
 `kind`              | _none_            | Only assets with the given kind _(e.g kind=Windows)_.
 `not-kind`          | _none_            | Only assets with another kind than the given kind _(e.g not-kind=Asset)_.
 `zone`              | _none_            | Only assets with the given zone Id_(e.g zone=0)_.

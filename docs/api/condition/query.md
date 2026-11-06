@@ -12,7 +12,7 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | _all fields_      | Fields to return _(see fields below for all available fields)_.
+`fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
 
 ### Fields
 Field               | Return type        | Description
@@ -21,6 +21,8 @@ Field               | Return type        | Description
 `name`              | string             | Condition name.
 `kind`              | string             | One of `ItemExpression`, `ItemMissing`, `ItemsMustExist`.
 `description`       | string             | Condition description.
+`labels`            | array(integer)     | List with label Ids.
+`ownerId`           | integer            | Container Id where the condition is created.
 `expression`        | string/null        | Condition expression when kind `ItemExpression` or `ItemMissing`.
 `singleAlert`       | boolean            | Gathers up all alerts into a single alert per asset.
 `closeOnReturn`     | boolean/null       | Close the alert when a missing item returns. Only available when kind `ItemMissing`.
@@ -32,8 +34,7 @@ Field               | Return type        | Description
 `ignoreCase`        | boolean/null       | Case insensive item name match. Only available when kind `ItemsMustExist`.
 `itemsRe`           | boolean/null       | Item match pattern. Only available when kind `ItemsMustExist`.
 `itemsList`         | array(string)/null | Item match list. Only available when kind `ItemsMustExist`.
-`labels`            | array(integer)     | List with label Ids.
-`ownerId`           | integer            | Container Id where the condition is created.
+`masterId`          | integer/null       | Condition Id of the master condition if this is a linked condition; otherwise `null`. A linked condition overrides specific fields of its master condition and replaces it during evaluation.
 
 ### Return codes
 Error code  | Reason

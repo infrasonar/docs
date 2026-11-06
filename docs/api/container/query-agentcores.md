@@ -12,8 +12,8 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | `id`              | Fields to return _(see fields below for all available fields)_.
-`probes`            | _none_            | Probes fields. If at least one field is given and the agentcore is connected, the result will include "_probes_" with an array of _probe_ objects _(see Probes below for all available probe fields)_.
+`fields`            | `id`              | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`probes`            | _none_            | Probes fields. If at least one field is given and the agentcore is connected, the result will include "_probes_" with an array of _probe_ objects _(see [Probes](#probes) below for all available probe fields)_.
 
 ### Fields
 Field               | Return type       | Description

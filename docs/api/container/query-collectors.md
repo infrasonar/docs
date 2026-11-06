@@ -12,8 +12,8 @@ Param               | Description
 ### Query parameters
 Param       | Default   | Description
 ------------|-----------|-------------
-`fields`    | `key`      | Fields to return _(see fields below for all available fields)_.
-`options`   | _none_    | Option fields. If at least one field is given, the result will include "_options_" with an array of _option_ objects _(see Options below for all available option fields)_.
+`fields`    | `key`      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`options`   | _none_    | Option fields. If at least one field is given, the result will include "_options_" with an array of _option_ objects _(see [Options](#options) below for all available option fields)_.
 
 ### Fields
 Field               | Return type       | Description
