@@ -27,6 +27,7 @@ Field               | Return type   | Description
 `lastSeverity`      | integer       | Severity of the last hit _(equal to "severity" with only a single hit)_.
 `lastTimestamp`     | integer       | Unix timestamp in seconds of the last hit _(equal to "timestamp" with only a single hit)_.
 `ownerId`           | integer/null  | User Id of the owner or _null_ when the alert is not assigned to an owner.
+`conditionId`       | integer       | Id of the associated condition.
 
 ### Return codes
 Error code  | Reason
