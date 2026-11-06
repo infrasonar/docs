@@ -13,16 +13,16 @@ Param               | Description
 ### Query parameters
 Param       | Default       | Description
 ------------|---------------|-------------
-`fields`    | _all fields_  | Fields to return _(see fields below for all available fields)_.
+`fields`    | _all fields_  | Fields to return _(see [Fields](#fields) below for all available fields)_.
 
 ### Fields
 Field               | Return type       | Description
 --------------------|-------------------|-------------
-`id`                | int               | Label Id.
+`id`                | integer           | Label Id.
 `name`              | string            | Label name.
 `color`             | string            | One of `Steel`, `Olive`, `Mauve`, `Emerald`, `Orange`, `Magenta` or `InfraSonarBlue`.
 `description`       | string            | Label description.
-`ownerId`           | int               | Container Id where the label is created.
+`ownerId`           | integer           | Container Id where the label is created.
 
 ### Return codes
 Error code  | Reason

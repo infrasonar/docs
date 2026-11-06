@@ -1,5 +1,5 @@
-# Set asset zone
-**`POST` /agentcore/<agentcoreId\>/pull-and-update**
+# Pull and update appliance
+**`POST` /agentcore/<agentcoreId\>/rapp/pull-and-update**
 
 ### Description
 Pull and update Docker images on the appliance.
@@ -32,6 +32,6 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X POST 'https://api.infrasonar.com/agentcore/123/pull-and-update' \
+    -X POST 'https://api.infrasonar.com/agentcore/123/rapp/pull-and-update' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```

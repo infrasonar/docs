@@ -15,7 +15,7 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`zone`      | int       | Yes       | Zone Id.
+`zone`      | integer   | Yes       | Zone Id.
 `name`      | string    | Yes       | Zone Name.
 
 ### Return codes
@@ -39,4 +39,3 @@ curl \
     "name": "other zone"
 }'
 ```
-

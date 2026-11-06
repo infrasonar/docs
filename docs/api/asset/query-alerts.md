@@ -14,12 +14,13 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | `ks`              | Fields to return _(see fields below for all available fields)_.
+`fields`            | `ks`              | Fields to return _(see [Fields](#fields) below for all available fields)_.
 
 ### Fields
 Field               | Return type   | Description
 --------------------|---------------|-------------
 `ks`                | string        | Key string of the alert.
+`status`            | string         | Current state of the alert. Either `Open` (unassigned) or `Assigned` (assigned to a user). Only active alerts are returned.
 `message`           | string        | Initial message when the alert was opened.
 `severity`          | integer       | Initial severity when the alert was opened _(value between 0=highest and 7=lowest severity)_.
 `timestamp`         | integer       | Unix timestamp in seconds when the alert was opened.
@@ -27,6 +28,10 @@ Field               | Return type   | Description
 `lastSeverity`      | integer       | Severity of the last hit _(equal to "severity" with only a single hit)_.
 `lastTimestamp`     | integer       | Unix timestamp in seconds of the last hit _(equal to "timestamp" with only a single hit)_.
 `ownerId`           | integer/null  | User Id of the owner or _null_ when the alert is not assigned to an owner.
+`conditionId`       | integer       | Id of the associated condition.
+`assetId`           | integer       | Id of the associated asset.
+`item`              | string        | Name of the associated item.
+
 
 ### Return codes
 Error code  | Reason

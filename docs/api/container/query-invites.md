@@ -13,7 +13,7 @@ Param               | Description
 ### Query parameters
 Param       | Default       | Description
 ------------|---------------|-------------
-`fields`    | _all fields_  | Fields to return _(see fields below for all available fields)_.
+`fields`    | _all fields_  | Fields to return _(see [Fields](#fields) below for all available fields)_.
 
 ### Fields
 Field               | Return type       | Description
@@ -35,7 +35,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/container/123/users' \
+    -X GET 'https://api.infrasonar.com/container/123/invites' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
@@ -43,13 +43,8 @@ Response:
 ```json
 [
     {
-        "id": 123,
-        "name": "Alice in Wonderland",
         "email": "alice@wonderland.net",
-        "authProvider": "Password",
-        "inherit": false,
         "member": true,
-        "mute": false,
         "permissions": [
             "READ"
         ]
