@@ -31,6 +31,7 @@ Field               | Return type   | Description
 `assetId`           | integer       | Id of the associated asset.
 `item`              | string        | Name of the associated item.
 `closedTimestamp`   | integer/null  | Unix timestamp in seconds when the alert was closed or _null_ if not closed.
+`solution`          | string/null   | Resolution note provided when an alert is closed. Only populated if the alert has status `Closed` and was marked with a solution; otherwise `null`.
 
 #### Alert Status Values
 
