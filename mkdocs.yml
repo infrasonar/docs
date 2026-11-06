@@ -253,9 +253,9 @@ nav:
         - Merge asset: api/asset/merge-asset.md
         - Move asset: api/asset/move-asset.md
         - Purge notifications: api/asset/purge-notifications.md
+        - Query asset: api/asset/query.md
         - Query asset Id: api/asset/query-id.md
         - Query asset alerts: api/asset/query-alerts.md
-        - Query asset: api/asset/query.md
         - Query check data: api/asset/query-check-data.md
         - Query forecast data: api/asset/query-forecast-data.md
         - Query time series: api/asset/query-time-series.md
@@ -283,6 +283,7 @@ nav:
         - Create invite: api/container/create-invite.md
         - Purge notifications: api/container/purge-notifications.md
         - Purge time-series: api/container/purge-time-series.md
+        - Query container: api/container/query.md
         - Query container Id: api/container/query-id.md
         - Query container agentcores: api/container/query-agentcores.md
         - Query container alerts: api/container/query-alerts.md
@@ -294,7 +295,8 @@ nav:
         - Query container properties: api/container/query-properties.md
         - Query container users: api/container/query-users.md
         - Query container zones: api/container/query-zones.md
-        - Query container: api/container/query.md
+        - Query container merge queue: api/container/query-merge-queue.md
+        - Query container move queue: api/container/query-move-queue.md
         - Remove container: api/container/remove-container.md
         - Remove invite: api/container/remove-invite.md
         - Remove property: api/container/remove-property.md
