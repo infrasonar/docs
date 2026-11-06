@@ -41,7 +41,7 @@ Condition field     | Return type        | Description
 `expression`        | string/null        | Condition expression when kind `ItemExpression` or `ItemMissing`.
 `singleAlert`       | boolean            | Gathers up all alerts into a single alert per asset.
 `closeOnReturn`     | boolean/null       | Close the alert when a missing item returns. Only available when kind `ItemMissing`.
-`ticks`             | integer/null       | The number of times this condition must be hit in a row before an actual alert will be raised.
+`ticks`             | integer/null       | Number of consecutive matching polls required before an alert is raised (`0` triggers immediately). Not applicable when kind is `ItemMissing`. Default: `0`.
 `severity`          | integer/null       | Severity. Only available when kind `ItemsMustExist`.
 `collectorKey`      | string             | Collector key.
 `checkKey`          | string             | Check key.
