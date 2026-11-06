@@ -12,9 +12,9 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | _all fields_      | Fields to return _(see fields below for all available fields)_.
-`actions`           | _none_            | Action fields. If at least one field is given, the result will include "_actions_" with an array of _action_ objects _(see Actions below for all available action fields)_.
-`condition`         | _none_            | Condition fields. If at least one field is given, the result will include "_condition_" with a _condtion_ object _(see Condition below for all available condition fields)_.
+`fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`actions`           | _none_            | Action fields. If at least one field is given, the result will include "_actions_" with an array of _action_ objects _(see [Actions](#actions) below for all available action fields)_.
+`condition`         | _none_            | Condition fields. If at least one field is given, the result will include "_condition_" with a _condtion_ object _(see [Condition](#condition) below for all available condition fields)_.
 
 ### Fields
 Field               | Return type   | Description
