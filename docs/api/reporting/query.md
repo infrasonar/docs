@@ -12,8 +12,8 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | _all fields_      | Fields to return _(see fields below for all available fields)_.
-`reports`           | _none_            | Report fields. If at least one field is given, the result will include "_reports_" with an array of _report_ objects _(see Reports below for all available report fields)_.
+`fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`reports`           | _none_            | Report fields. If at least one field is given, the result will include "_reports_" with an array of _report_ objects _(see [Reports](#reports) below for all available report fields)_.
 
 ### Fields
 Field               | Return type   | Description

@@ -15,7 +15,7 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`kind`      | string    | Yes       | Asset kind. See [List available kinds](./kinds.md#kinds) below for all available asset kinds.
+`kind`      | string    | Yes       | Asset kind. See [List available kinds](./kinds.md#kinds) for all available asset kinds.
 
 ### Return codes
 Error code  | Reason

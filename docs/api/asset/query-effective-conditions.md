@@ -12,8 +12,8 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | _all fields_      | Fields to return _(see fields below for all available fields)_.
-`activity`          | _none_            | Activity fields. If at least one field is given, the result will include "_activity_" with an array of _activity_ objects _(see Activity below for all available activity fields)_.
+`fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`activity`          | _none_            | Activity fields. If at least one field is given, the result will include "_activity_" with an array of _activity_ objects _(see [Activity](#activity) below for all available activity fields)_.
 
 ### Fields
 Field               | Return type        | Description
