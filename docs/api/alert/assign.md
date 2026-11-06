@@ -12,7 +12,7 @@ Param               | Description
 ### Body
 Param           | Type      | Required  | Description
 ----------------|-----------|-----------|-------------
-`userId`        | int       | Yes       | User Id of a user
+`userId`        | int       | Yes       | User Id.
 `message`       | string    | No        | Optional message _(max 240 characters, default empty)_.
 
 ### Return codes
