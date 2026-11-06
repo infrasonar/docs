@@ -18,7 +18,7 @@ Param               | Default           | Description
 ### Fields
 Field               | Return type   | Description
 --------------------|---------------|-------------
-`id`                | int           | Reporting Id.
+`id`                | integer       | Reporting Id.
 `name`              | string        | Reporting name.
 `kind`              | string        | One of `AlertsNotificationsReport`, `StateDataReport`, `ChartDataReport`, `ConditionReport`.
 `content`           | string        | One of `PDF`, `JSON`, `XLSX`.
@@ -27,10 +27,10 @@ Field               | Return type   | Description
 ### Reports
 Field               | Return type   | Description
 --------------------|---------------|-------------
-`id`                | int           | Report Id.
-`size`              | int           | Report size in bytes.
+`id`                | integer       | Report Id.
+`size`              | integer       | Report size in bytes.
 `start`             | string        | Start time of the report. For example, a monthly report for March 2023 will return `2023-03-01T00:00:00+0100`.
-`success`           | bool          | This is `true` if the report was successful, else `false`.
+`success`           | boolean       | This is `true` if the report was successful, else `false`.
 
 
 ### Return codes

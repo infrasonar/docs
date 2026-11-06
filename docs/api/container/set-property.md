@@ -15,7 +15,7 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`id`        | int       | Yes       | Target Id wherefore the property will be created.
+`id`        | integer   | Yes       | Target Id wherefore the property will be created.
 `kind`      | string    | Yes       | Must be one of `Asset`, `Container`, `Condition` or `User`.
 `key`       | string    | Yes       | Property key.
 `value`     | any       | Yes       | Property value which can be a _string_, _number_, _boolean_ or _null_.
@@ -43,4 +43,3 @@ curl \
     "value": "some value"
 }'
 ```
-
