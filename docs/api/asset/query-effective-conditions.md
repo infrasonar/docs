@@ -15,14 +15,21 @@ Param               | Default           | Description
 `fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
 `activity`          | _none_            | Activity fields. If at least one field is given, the result will include "_activity_" with an array of _activity_ objects _(see [Activity](#activity) below for all available activity fields)_.
 `condition`         | _none_            | Condition fields. If at least one field is given, the result will include "_condition_" with a _condtion_ object _(see [Condition](#condition) below for all available condition fields)_.
-`enabled`           | _none_            |
-`status`            | _none_            |
 
 ### Fields
 Field               | Return type         | Description
 --------------------|---------------------|-------------
 `enabled`           | boolean             | Effective enabled state. `true` only when enabled for both the container and the asset; otherwise `false`.
-`status`            | string              | One of `Active`, `Disabled`, `Dormant`, `Overridden`.
+`status`            | string              | Current evaluation state of the condition on this asset. See [Status Values](#status-values) for details.
+
+#### Status Values
+
+Status         | Description
+---------------|-------------
+`Active`       | The condition is enabled and actively being evaluated against incoming metrics.
+`Disabled`     | The condition is disabled (`enabled` is `false` at the container or asset level).
+`Overridden`   | The condition is a master condition that has been superseded by a linked condition on this asset.
+`Dormant`      | The condition applies to the asset, but the required collector or check is not configured or enabled, so no data is evaluated.
 
 ### Activity
 Action field        | Return type   | Description
