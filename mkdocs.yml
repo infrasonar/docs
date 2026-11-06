@@ -251,6 +251,7 @@ nav:
         - Insert check data: api/asset/insert-check-data.md
         - List available kinds: api/asset/kinds.md
         - Merge asset: api/asset/merge-asset.md
+        - Move asset: api/asset/move-asset.md
         - Purge notifications: api/asset/purge-notifications.md
         - Query asset Id: api/asset/query-id.md
         - Query asset alerts: api/asset/query-alerts.md
@@ -271,6 +272,10 @@ nav:
         - Assign alert: api/alert/assign.md
         - Close alert: api/alert/close.md
         - Query alert: api/alert/query.md
+      - Collector:
+        - Validate configuration: api/collector/validate-configuration.md
+      - Condition:
+        - Query condition: api/condition/query.md
       - Container:
         - Add user: api/container/add-user.md
         - Create asset: api/container/create-asset.md
