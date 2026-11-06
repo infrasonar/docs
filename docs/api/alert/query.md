@@ -20,7 +20,7 @@ Param               | Default           | Description
 Field               | Return type   | Description
 --------------------|---------------|-------------
 `ks`                | string        | Key string of the alert.
-`status`   | string      | Current lifecycle state of the alert. See [Alert Status Values](#alert-status-values) for details.
+`status`            | string        | Current lifecycle state of the alert. See [Alert Status Values](#alert-status-values) for details.
 `message`           | string        | Initial message when the alert was opened.
 `severity`          | integer       | Initial severity when the alert was opened _(value between 0=highest and 7=lowest severity)_.
 `timestamp`         | integer       | Unix timestamp in seconds when the alert was opened.
