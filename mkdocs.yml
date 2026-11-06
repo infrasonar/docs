@@ -273,6 +273,8 @@ nav:
         - Query alert: api/alert/query.md
       - Collector:
         - Validate configuration: api/collector/validate-configuration.md
+      - Condition:
+        - Query condition: api/condition/query.md
       - Container:
         - Add user: api/container/add-user.md
         - Create asset: api/container/create-asset.md
