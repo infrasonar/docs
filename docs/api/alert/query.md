@@ -40,7 +40,7 @@ Status             | State   | Description
 `Assigned`         | Open    | The alert is open and assigned to a user (`ownerId` is populated).
 `Closed`           | Closed  | The alert was manually closed by a user.
 `AutoClosed`       | Closed  | The alert was automatically closed because a subsequent evaluation of the condition returned an OK state.
-`IndirectClosed`   | Closed  | The alert was closed because the underlying condition is no longer evaluated (e.g., condition removed, check disabled, or asset unassigned).
+`IndirectClosed`   | Closed  | The alert was closed because the underlying condition is no longer evaluated (e.g., condition removed, check disabled, or unassigned from asset).
 
 ### Actions
 Action field        | Return type   | Description
