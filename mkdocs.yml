@@ -242,39 +242,42 @@ nav:
       - ID's: api/ids.md
       - Agentcore:
         - Pull and update: api/agentcore/pull-and-update.md
-        - Set agentcore zone: api/agentcore/set-zone.md
         - Remove agentcore: api/agentcore/remove-agentcore.md
+        - Set agentcore zone: api/agentcore/set-zone.md
       - Asset:
-        - Query asset: api/asset/query.md
-        - Query asset alerts: api/asset/query-alerts.md
+        - Add label to asset: api/asset/add-label.md
+        - Disable check: api/asset/disable-check.md
+        - Enable check: api/asset/enable-check.md
+        - Insert check data: api/asset/insert-check-data.md
+        - List available kinds: api/asset/kinds.md
+        - Merge asset: api/asset/merge-asset.md
+        - Purge notifications: api/asset/purge-notifications.md
         - Query asset Id: api/asset/query-id.md
+        - Query asset alerts: api/asset/query-alerts.md
+        - Query asset: api/asset/query.md
         - Query check data: api/asset/query-check-data.md
         - Query forecast data: api/asset/query-forecast-data.md
         - Query time series: api/asset/query-time-series.md
-        - Insert check data: api/asset/insert-check-data.md
+        - Remove collector from asset: api/asset/remove-collector.md
+        - Remove label from asset: api/asset/remove-label.md
         - Set asset description: api/asset/set-description.md
         - Set asset kind: api/asset/set-kind.md
         - Set asset mode: api/asset/set-mode.md
         - Set asset name: api/asset/set-name.md
         - Set asset zone: api/asset/set-zone.md
-        - Add label to asset: api/asset/add-label.md
-        - Purge notifications: api/asset/purge-notifications.md
-        - Enable check: api/asset/enable-check.md
-        - Disable check: api/asset/disable-check.md
-        - Remove collector from asset: api/asset/remove-collector.md
-        - Remove label from asset: api/asset/remove-label.md
         - Upsert collector to asset: api/asset/upsert-collector.md
       - Alert:
-        - Query alert: api/alert/query.md
         - Add message to alert: api/alert/message.md
         - Assign alert: api/alert/assign.md
         - Close alert: api/alert/close.md
+        - Query alert: api/alert/query.md
       - Container:
         - Add user: api/container/add-user.md
         - Create asset: api/container/create-asset.md
         - Create container: api/container/create-container.md
         - Create invite: api/container/create-invite.md
-        - Query container: api/container/query.md
+        - Purge notifications: api/container/purge-notifications.md
+        - Purge time-series: api/container/purge-time-series.md
         - Query container Id: api/container/query-id.md
         - Query container agentcores: api/container/query-agentcores.md
         - Query container alerts: api/container/query-alerts.md
@@ -286,32 +289,32 @@ nav:
         - Query container properties: api/container/query-properties.md
         - Query container users: api/container/query-users.md
         - Query container zones: api/container/query-zones.md
-        - Set container mode: api/container/set-mode.md
-        - Set property: api/container/set-property.md
+        - Query container: api/container/query.md
         - Remove container: api/container/remove-container.md
         - Remove invite: api/container/remove-invite.md
         - Remove property: api/container/remove-property.md
         - Remove user: api/container/remove-user.md
         - Remove zone: api/container/remove-zone.md
-        - Purge notifications: api/container/purge-notifications.md
-        - Purge time-series: api/container/purge-time-series.md
+        - Set container mode: api/container/set-mode.md
+        - Set property: api/container/set-property.md
         - Update user permissions: api/container/update-user.md
         - Upsert zone: api/container/upsert-zone.md
       - Label:
+        - List available colors: api/label/colors.md
         - Query label: api/label/query.md
-        - Set label description: api/label/set-description.md
         - Set label color: api/label/set-color.md
+        - Set label description: api/label/set-description.md
         - Set label name: api/label/set-name.md
       - Reporting:
-        - Query reporting: api/reporting/query.md
         - Get report: api/reporting/get-report.md
+        - Query reporting: api/reporting/query.md
       - Files:
-        - Query files: api/files/query-files.md
-        - Query file: api/files/query-file.md
-        - Upload file: api/files/upload-file.md
+        - Delete file: api/files/delete-file.md
         - Download file: api/files/download-file.md
         - Modify file: api/files/modify-file.md
-        - Delete file: api/files/delete-file.md
+        - Query file: api/files/query-file.md
+        - Query files: api/files/query-files.md
+        - Upload file: api/files/upload-file.md
   - Support:
     - Contact:
         - support/index.md

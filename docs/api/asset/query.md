@@ -22,7 +22,7 @@ Field               | Return type       | Description
 `container`         | integer           | Asset container Id.
 `zone`              | integer           | Asset zone Id.
 `name`              | string            | Asset name.
-`kind`              | string            | One of the kinds _(see [set-kind](../asset/set-kind.md) api)_
+`kind`              | string            | One of the kinds _(see [List available kinds](../asset/kinds.md#kinds) api)_
 `description`       | string            | Asset description.
 `mode`              | string            | One of `normal`, `maintenance` or `disabled`.
 `labels`            | array(integer)    | List with label Ids.

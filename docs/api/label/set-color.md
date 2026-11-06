@@ -15,21 +15,7 @@ _none_
 ### Body
 Param       | Type      | Required  | Description
 ------------|-----------|-----------|-------------
-`color`     | string    | Yes       | Label color. See table below for all available colors.
-
-### Kind
-
-Color                                   | Name
-----------------------------------------|------------------------
-<span style="color:#5f7789;">⬤</span>  | `Steel` _(default)_
-<span style="color:#668860;">⬤</span>  | `Olive`
-<span style="color:#795f8d;">⬤</span>  | `Mauve`
-<span style="color:#008d00;">⬤</span>  | `Emerald`
-<span style="color:#ff5b00;">⬤</span>  | `Orange`
-<span style="color:#ec0074;">⬤</span>  | `Magenta`
-<span style="color:#990f02;">⬤</span>  | `Cherry`
-<span style="color:#fcae1e;">⬤</span>  | `Gold`
-<span style="color:#436caa;">⬤</span>  | `InfraSonarBlue` _(reserved for global labels)_
+`color`     | string    | Yes       | Label color. See [List available colors](./colors.md#colors) for all available colors.
 
 ### Return codes
 Error code  | Reason

@@ -2,7 +2,7 @@
 **`GET` /timezones**
 
 ### Description
-Query the timezones.
+Returns a list of supported time zone strings.
 
 ### Path parameters
 _none_
