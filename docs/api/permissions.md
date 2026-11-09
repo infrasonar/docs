@@ -43,7 +43,7 @@ Response:
                 "CONTAINER_ADMIN",
                 "CONTAINER_MANAGEMENT",
                 "READ"
-            ],
+            ]
         }
     ],
     "tokenType": "container"

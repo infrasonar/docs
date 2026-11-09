@@ -61,7 +61,7 @@ Response:
             {
                 "key": "address",
                 "type": "String",
-                "default": "",
+                "default": ""
             }
         ]
     }

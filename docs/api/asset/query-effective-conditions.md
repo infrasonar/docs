@@ -89,7 +89,7 @@ Response:
         ],
         "condition": {
             "name": "test",
-            "kind": "ItemExpression",
+            "kind": "ItemExpression"
         },
         "enabled": true,
         "status": "Active"
