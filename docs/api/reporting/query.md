@@ -24,21 +24,6 @@ Field               | Return type   | Description
 `content`           | string        | One of `PDF`, `JSON`, `XLSX`.
 `repeat`            | string/null   | One of `Daily`, `Weekly`, `Monthly` or `null` when this is a one-time reporting.
 
-#### Reporting Kind
-
-Status                      | Description
-----------------------------|-------------
-`AlertsNotificationsReport` |
-`StateDataReport`           |
-`ChartDataReport`           |
-`ConditionReport`           |
-`ConditionStatusReport`     |
-`CheckStatusReport`         |
-`PhoneUsageReport`          |
-`GuestsReport`              |
-`AgentcoresProbesReport`    |
-`UserPermissionsReport`     |
-
 ### Reports
 Field               | Return type   | Description
 --------------------|---------------|-------------
