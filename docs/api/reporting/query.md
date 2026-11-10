@@ -20,7 +20,7 @@ Field               | Return type   | Description
 --------------------|---------------|-------------
 `id`                | integer       | Reporting Id.
 `name`              | string        | Reporting name.
-`kind`              | string        | Reporting kind. See [Reporting Kind](#reporting-kind) for details.
+`kind`              | string        | Reporting kind. See [List available kinds](./kinds.md#kinds) for all available reporting kinds.
 `content`           | string        | One of `PDF`, `JSON`, `XLSX`.
 `repeat`            | string/null   | One of `Daily`, `Weekly`, `Monthly` or `null` when this is a one-time reporting.
 
