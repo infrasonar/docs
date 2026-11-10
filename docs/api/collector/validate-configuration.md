@@ -12,7 +12,7 @@ Parameter       | Description
 ----------------|----------------------------------------------------
 `collectorKey`  | Collector key.
 
-### Request body
+### Body
 
 Field      | Type            | Required | Description
 -----------|-----------------|----------|-------------
