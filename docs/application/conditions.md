@@ -30,16 +30,16 @@ We identify three kind of Conditions:
 
 **Kind**         | **Description**
 -----------------|------------------------------
-EXPRESSION       | Enter an expression to run against each existing item of the selected type in the result. The `item` variable represents the item and `prev` refers to the previously known item.
-ITEMS MUST EXIST | Enter an expression to run against each existing item of the selected type in the result. The `item` variable represents the item and `prev` refers to the previously known item.
-ITEMS_MISSING    | Enter an expression to run against each item of the selected type that is missing from the result compared to the previous result. The `item` variable in the expression represents the previously known item.
+ItemExpression   | Enter an expression to run against each existing item of the selected type in the result. The `item` variable represents the item and `prev` refers to the previously known item.
+ItemsMustExist   | Enter an expression to run against each existing item of the selected type in the result. The `item` variable represents the item and `prev` refers to the previously known item.
+ItemMissing      | Enter an expression to run against each item of the selected type that is missing from the result compared to the previous result. The `item` variable in the expression represents the previously known item.
 
 **Ticks**
 
 The number of times this condition must be hit in a row before an actual alert will be raised.
 
 !!! note
-    Ticks can not be set for the condition kind `ITEMS_MISSING` as this compares with a previous check result.
+    Ticks can not be set for the condition kind `ItemsMustExist` as this compares with a previous check result.
 
 **Single alert**
 
@@ -47,7 +47,7 @@ Gathers up all alerts into a single alert per asset. When disabled, each item wi
 
 **Close on return**
 
-Close the alert when a missing item returns. This option is only available for an `ITEM_MISSING` condition and cannot be enabled in combination with **"Single alert"**.
+Close the alert when a missing item returns. This option is only available for an `ItemMissing` condition and cannot be enabled in combination with **"Single alert"**.
 
 ### Labels tab
 
@@ -55,7 +55,7 @@ In this tab you configure for which labels the condition is active.
 
 ### Items tab
 
-This tab allows you to set the severity and specify for which items this conditions is a active in case of `ITEMS MUST EXIST` or which items this condition should exclude in the case of `ITEMS_MISSING`
+This tab allows you to set the severity and specify for which items this conditions is a active in case of `ItemsMustExist` or which items this condition should exclude in the case of `ItemMissing`
 
 #### Items must exist
 
@@ -78,4 +78,3 @@ All items will be compared towards the previous items. If one (or more) items is
 InfraSonar uses a powerful expression language that allows for precise and tailored conditions.
 
 See our [exxpression language documentation](../../lang) to learn how to write InfraSonar condition expressions.
-
