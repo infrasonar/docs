@@ -257,6 +257,7 @@ nav:
         - Query asset Id: api/asset/query-id.md
         - Query asset alerts: api/asset/query-alerts.md
         - Query check data: api/asset/query-check-data.md
+        - Query effective conditions: api/asset/query-effective-conditions.md
         - Query forecast data: api/asset/query-forecast-data.md
         - Query time series: api/asset/query-time-series.md
         - Remove collector from asset: api/asset/remove-collector.md
@@ -280,6 +281,7 @@ nav:
         - Add user: api/container/add-user.md
         - Create asset: api/container/create-asset.md
         - Create container: api/container/create-container.md
+        - Create label: api/container/create-label.md
         - Create invite: api/container/create-invite.md
         - List available timezones: api/container/timezones.md
         - Purge notifications: api/container/purge-notifications.md
@@ -303,6 +305,8 @@ nav:
         - Remove property: api/container/remove-property.md
         - Remove user: api/container/remove-user.md
         - Remove zone: api/container/remove-zone.md
+        - Set collector display: api/container/set-collector-display.md
+        - Set container name: api/container/set-container-name.md
         - Set container mode: api/container/set-mode.md
         - Set container timezone: api/container/set-container-timezone.md
         - Set property: api/container/set-property.md
@@ -315,6 +319,7 @@ nav:
         - Set label description: api/label/set-description.md
         - Set label name: api/label/set-name.md
       - Reporting:
+        - List available kinds: api/reporting/kinds.md
         - Get report: api/reporting/get-report.md
         - Query reporting: api/reporting/query.md
       - Files:
