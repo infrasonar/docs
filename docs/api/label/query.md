@@ -19,7 +19,7 @@ Field               | Return type   | Description
 --------------------|---------------|-------------
 `id`                | integer       | Label Id.
 `name`              | string        | Label name.
-`color`             | string        | One of `Steel`, `Olive`, `Mauve`, `Emerald`, `Orange`, `Magenta` or `InfraSonarBlue`.
+`color`             | string        | Label color. See [List available colors](./colors.md#colors) for all available colors.
 `description`       | string        | Label description.
 `ownerId`           | integer       | Container Id where the label is created.
 
