@@ -46,7 +46,7 @@ Status             | State   | Description
 ### Actions
 Action field        | Return type   | Description
 --------------------|---------------|-------------
-`kind`              | string        | One of: `Assign`, `Comment`, `IntegrationCall`, `Close`, `AutoClose`, `IndirectClose`
+`kind`              | string        | One of: `Assign`, `Comment`, `IntegrationCall`, `Close`, `AutoClose`, `IndirectClose`, `SeverityChanged`
 `timestamp`         | integer       | Unix timestamp in seconds.
 `data`              | object/null   | Additional data object.
 
