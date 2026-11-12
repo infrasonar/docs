@@ -13,8 +13,8 @@ Param               | Description
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`condition`         | `id`              | Condition fields. The result will include "_condition_" with a _condtion_ object _(see [Condition](#condition) below for all available condition fields)_.
 `activity`          | _none_            | Activity fields. If at least one field is given, the result will include "_activity_" with an array of _activity_ objects _(see [Activity](#activity) below for all available activity fields)_.
-`condition`         | _none_            | Condition fields. If at least one field is given, the result will include "_condition_" with a _condtion_ object _(see [Condition](#condition) below for all available condition fields)_.
 
 ### Fields
 Field               | Return type         | Description
