@@ -31,7 +31,7 @@ We identify three kind of Conditions:
 **Kind**         | **Description**
 -----------------|------------------------------
 ItemExpression   | Enter an expression to run against each existing item of the selected type in the result. The `item` variable represents the item and `prev` refers to the previously known item.
-ItemsMustExist   | Enter an expression to run against each existing item of the selected type in the result. The `item` variable represents the item and `prev` refers to the previously known item.
+ItemsMustExist   | Provide a comma-separated list of item names or a regular expression to specify which items of the selected type must be present in the result.
 ItemMissing      | Enter an expression to run against each item of the selected type that is missing from the result compared to the previous result. The `item` variable in the expression represents the previously known item.
 
 **Ticks**
