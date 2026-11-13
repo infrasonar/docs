@@ -1,5 +1,5 @@
 # Set agentcore zone
-**`PATCH` /agentcore/<agentcoreId\>/zone**
+**`PATCH` /agentcore/<agentcoreId\>/rapp/zone**
 
 ### Description
 Set the agentcore zone. Success _(204)_ is also returned when the agentcore was already in the desired zone.
@@ -34,7 +34,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X PATCH 'https://api.infrasonar.com/agentcore/123/zone' \
+    -X PATCH 'https://api.infrasonar.com/agentcore/123/rapp/zone' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
     -H 'Content-Type: application/json' \
     --data-raw '{

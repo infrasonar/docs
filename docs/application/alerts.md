@@ -48,7 +48,7 @@ Notification are used to notify InfraSonar users of issues with the monitoring p
 Notifications disappear when the issue is resolved, users can't close a notification only the system can once the issue is resolved. 
 As such all notifications should be handled as an indication that something is wrong with monitoring.
 
-!!! tip "Good to known"
+!!! tip "Good to know"
     Notifications are not the result of a condition. The only notifications which are raised by incoming data, are the check errors. These are not conditions but errors which directly result in a notification.
 
 ## Managing alerts

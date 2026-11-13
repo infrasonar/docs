@@ -12,13 +12,15 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | _all fields_      | Fields to return _(see fields below for all available fields)_.
-`actions`           | _none_            | Action fields. If at least one field is given, the result will include "_actions_" with an array of _action_ objects _(see Actions below for all available action fields)_.
+`fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`actions`           | _none_            | Action fields. If at least one field is given, the result will include "_actions_" with an array of _action_ objects _(see [Actions](#actions) below for all available action fields)_.
+`condition`         | _none_            | Condition fields. If at least one field is given, the result will include "_condition_" with a _condtion_ object _(see [Condition](#condition) below for all available condition fields)_.
 
 ### Fields
 Field               | Return type   | Description
 --------------------|---------------|-------------
 `ks`                | string        | Key string of the alert.
+`status`            | string        | Current lifecycle state of the alert. See [Alert Status Values](#alert-status-values) for details.
 `message`           | string        | Initial message when the alert was opened.
 `severity`          | integer       | Initial severity when the alert was opened _(value between 0=highest and 7=lowest severity)_.
 `timestamp`         | integer       | Unix timestamp in seconds when the alert was opened.
@@ -26,14 +28,49 @@ Field               | Return type   | Description
 `lastSeverity`      | integer       | Severity of the last hit _(equal to "severity" with only a single hit)_.
 `lastTimestamp`     | integer       | Unix timestamp in seconds of the last hit _(equal to "timestamp" with only a single hit)_.
 `ownerId`           | integer/null  | User Id of the owner or _null_ when the alert is not assigned to an owner.
+`assetId`           | integer       | Id of the associated asset.
+`item`              | string        | Name of the associated item.
 `closedTimestamp`   | integer/null  | Unix timestamp in seconds when the alert was closed or _null_ if not closed.
+`solution`          | string/null   | Resolution note provided when an alert is closed. Only populated if the alert has status `Closed` and was marked with a solution; otherwise `null`.
+
+#### Alert Status Values
+
+Status             | State   | Description
+-------------------|---------|-------------
+`Open`             | Open    | The alert is open and currently unassigned.
+`Assigned`         | Open    | The alert is open and assigned to a user (`ownerId` is populated).
+`Closed`           | Closed  | The alert was manually closed by a user.
+`AutoClosed`       | Closed  | The alert was automatically closed because a subsequent evaluation of the condition returned an OK state.
+`IndirectClosed`   | Closed  | The alert was closed because the underlying condition is no longer evaluated (e.g., condition removed, check disabled, or unassigned from asset).
 
 ### Actions
 Action field        | Return type   | Description
 --------------------|---------------|-------------
-`kind`              | string        | One of: `Assign`, `Comment`, `IntegrationCall`, `Close`, `AutoClose`, `IndirectClose`
+`kind`              | string        | One of: `Assign`, `Comment`, `IntegrationCall`, `Close`, `AutoClose`, `IndirectClose`, `SeverityChanged`
 `timestamp`         | integer       | Unix timestamp in seconds.
 `data`              | object/null   | Additional data object.
+
+### Condition
+Condition field     | Return type        | Description
+--------------------|--------------------|-------------
+`id`                | integer            | Condition Id.
+`name`              | string             | Condition name.
+`collector`         | string             | Collector key.
+`check`             | string             | Check key.
+`type`              | string             | Type key.
+`kind`              | string             | One of `ItemExpression`, `ItemMissing`, `ItemsMustExist`.
+`description`       | string             | Condition description.
+`labels`            | array(integer)     | List with label Ids.
+`ownerId`           | integer            | Container Id where the condition is created.
+`masterId`          | integer/null       | Condition Id of the master condition if this is a linked condition; otherwise `null`. A linked condition overrides specific fields of its master condition and replaces it during evaluation.
+`expression`        | string/null        | Evaluation expression. Applicable when kind is `ItemExpression` or `ItemMissing`.
+`singleAlert`       | boolean            | Gathers up all alerts into a single alert per asset. When `false`, each item will creates its own alert. Default: `false`.
+`closeOnReturn`     | boolean/null       | Automatically closes the alert when a previously missing item reappears. Only applicable when kind is `ItemMissing`. Default: `false`.
+`ticks`             | integer/null       | Number of consecutive matching polls required before an alert is raised (`0` triggers immediately). Not applicable when kind is `ItemMissing`. Default: `0`.
+`severity`          | integer/null       | Alert severity level assigned when triggered. Only applicable when kind is `ItemsMustExist`.
+`ignoreCase`        | boolean/null       | Enables case-insensitive matching for item names. Only applicable when kind is `ItemsMustExist`. Default: `false`.
+`itemsRe`           | string/null        | Regular expression pattern for matching items. Only applicable when kind is `ItemsMustExist`.
+`itemsList`         | array(string)/null | Explicit list of item names to match. Only applicable when kind is `ItemsMustExist`.
 
 ### Return codes
 Error code  | Reason

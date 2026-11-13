@@ -1,4 +1,4 @@
-# Upload file
+# Download file
 **`GET` /container/<containerId\>/file/<fileId\>**
 
 ### Description
@@ -28,7 +28,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/container/123/file' \
+    -X GET 'https://api.infrasonar.com/container/123/file/456' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 

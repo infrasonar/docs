@@ -1,6 +1,5 @@
 # Query forecast data
-
-`GET /asset/<assetId>/collector/<collectorKey>/check/<checkKey>/type/<typeKey>/metric/<metricKey>/forecasts?aggregation=none`
+**`GET` /asset/<assetId\>/collector/<collectorKey\>/check/<checkKey\>/type/<typeKey\>/metric/<metricKey\>/forecasts?aggregation=none**
 
 ### Description
 Query forecast data. A list will be returned containing all items with forecasts. The forecast for each item is an array with arrays containing a _UNIX-timestamp_, the _upper_ and _lower_ prediction values. The forecast for an item might also be `null` when the forecast could not be created _(for example when the metric hasn't enough data points)_. In the latter case, the item has a `retryAfter` property with a UNIX-timestamp which tells when a new attempt will be made to create a forecast for that item.

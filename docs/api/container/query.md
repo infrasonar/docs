@@ -12,7 +12,7 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | _all fields_      | Fields to return _(see fields below for all available fields)_.
+`fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
 
 ### Fields
 Field               | Return type   | Description

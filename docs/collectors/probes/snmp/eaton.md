@@ -25,7 +25,7 @@ A noteworthy condition is the **Eaton UPS input source** condition as this condi
 
 An interesting use case for this condition is to setup a rule to send a voice call to notify on-call personal when main power is lost.
 
-!!! note "Good to known"
+!!! note "Good to know"
 
     As the UPS occasionally switches to battery power for a couple of seconds as part of its maintenance routine this condition potential get's triggered while all is well.
     To avoid sending incorrect notification we wait one cycle before sending out an alert.

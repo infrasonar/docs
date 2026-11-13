@@ -12,25 +12,25 @@ Param               | Description
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
-`fields`            | _all fields_      | Fields to return _(see fields below for all available fields)_.
-`reports`           | _none_            | Report fields. If at least one field is given, the result will include "_reports_" with an array of _report_ objects _(see Reports below for all available report fields)_.
+`fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`reports`           | _none_            | Report fields. If at least one field is given, the result will include "_reports_" with an array of _report_ objects _(see [Reports](#reports) below for all available report fields)_.
 
 ### Fields
 Field               | Return type   | Description
 --------------------|---------------|-------------
-`id`                | int           | Reporting Id.
+`id`                | integer       | Reporting Id.
 `name`              | string        | Reporting name.
-`kind`              | string        | One of `AlertsNotificationsReport`, `StateDataReport`, `ChartDataReport`, `ConditionReport`.
+`kind`              | string        | Reporting kind. See [List available kinds](./kinds.md#kinds) for all available reporting kinds.
 `content`           | string        | One of `PDF`, `JSON`, `XLSX`.
 `repeat`            | string/null   | One of `Daily`, `Weekly`, `Monthly` or `null` when this is a one-time reporting.
 
 ### Reports
 Field               | Return type   | Description
 --------------------|---------------|-------------
-`id`                | int           | Report Id.
-`size`              | int           | Report size in bytes.
+`id`                | integer       | Report Id.
+`size`              | integer       | Report size in bytes.
 `start`             | string        | Start time of the report. For example, a monthly report for March 2023 will return `2023-03-01T00:00:00+0100`.
-`success`           | bool          | This is `true` if the report was successful, else `false`.
+`success`           | boolean       | This is `true` if the report was successful, else `false`.
 
 
 ### Return codes
@@ -57,7 +57,7 @@ Response:
     "kind": "StateDataReport",
     "reports": [
         {
-            "id": 123,
+            "id": 456,
             "start": "2023-03-01T00:00:00+0100"
         }
     ]

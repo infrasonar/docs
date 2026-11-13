@@ -23,7 +23,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/reporting/123/report/123' \
+    -X GET 'https://api.infrasonar.com/reporting/123/report/456' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
