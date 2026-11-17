@@ -275,6 +275,10 @@ nav:
         - Close alert: api/alert/close.md
         - Query alert: api/alert/query.md
       - Collector:
+        - List available metric formats: api/collector/metric-formats.md
+        - Query checks: api/collector/query-checks.md
+        - Query types: api/collector/query-types.md
+        - Query metrics: api/collector/query-metrics.md
         - Validate configuration: api/collector/validate-configuration.md
       - Condition:
         - Query condition: api/condition/query.md
