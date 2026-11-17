@@ -1,8 +1,8 @@
-# Query checks
-**`GET` /collector/<collectorKey\>/check/<checkKey>/type/<typeKey>/metrics?fields=...**
+# Query metric
+**`GET` /collector/<collectorKey\>/check/<checkKey>/type/<typeKey>/metric/<metricKey>?fields=...**
 
 ### Description
-Query types.
+Query metric.
 
 ### Path parameters
 Param               | Description
@@ -10,12 +10,14 @@ Param               | Description
 `collectorKey`      | Collector key.
 `checkKey`          | Check key.
 `typeKey`           | Type key.
+`metricKey`         | Metric key.
 
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
-`format`            | _key_             | Format fields. The result will include "_format_" with a _format_ object _(see [Format](#format) below for all available report fields)_.
+`format`            | _none_            | Format fields. The result will include "_format_" with a _format_ object _(see [Format](#format) below for all available format fields)_.
+`ref`               | _none_            | Ref fields. The result will include "_ref_" with a _ref_ object _(see [Ref](#ref) below for all available ref fields)_.
 
 ### Fields
 Field               | Return type   | Description
@@ -36,6 +38,11 @@ Field               | Return type   | Description
 `valueType`         | string        | Value type. One of `Any`, `Numeric`, `Text`.
 `example`           | boolean       |
 
+### Ref
+Field               | Return type   | Description
+--------------------|---------------|-------------
+`key`               | string        | Referenced type key.
+
 ### Return codes
 Error code  | Reason
 ------------|--------
@@ -49,40 +56,17 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/collector/http/check/http/type/http/metrics?fields=key,dataType' \
+    -X GET 'https://api.infrasonar.com/collector/http/check/http/type/http/metric/responseTime?fields=key,dataType&format=key' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
 Response:
 ```json
-[
-    {
-        "key": "name",
-        "dataType": "String",
-        "format": {
-            "key": "None",
-        }
-    },
-    {
-        "key": "payload",
-        "dataType": "String",
-        "format": {
-            "key": "None",
-        }
-    },
-    {
-        "key": "responseTime",
-        "dataType": "Float",
-        "format": {
-            "key": "HumanizedSeconds",
-        }
-    },
-    {
-        "key": "statusCode",
-        "dataType": "Integer",
-        "format": {
-            "key": "None",
-        }
-    },
-]
+{
+    "key": "responseTime",
+    "dataType": "Float",
+    "format": {
+        "key": "HumanizedSeconds",
+    }
+}
 ```

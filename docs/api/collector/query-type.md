@@ -1,19 +1,23 @@
-# Query checks
-**`GET` /collector/<collectorKey\>/check/<checkKey>/types?fields=...**
+# Query type
+**`GET` /collector/<collectorKey\>/check/<checkKey>/type/<typeKey>?fields=...**
 
 ### Description
-Query types.
+Query type.
 
 ### Path parameters
 Param               | Description
 --------------------|-------------
 `collectorKey`      | Collector key.
 `checkKey`          | Check key.
+`typeKey`           | Type key.
 
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`metrics`           | _none_            | Metric fields. If at least one field is given, the result will include "_metrics_" with an array of _metric_ objects _(see [Metric](./query-metric.md#fields) api for all available metric fields)_.
+`format`            | _none_            | Format fields. The result will include "_format_" with a _format_ object _(see [Format](./query-metric.md#format) api for all available format fields)_.
+`ref`               | _none_            | Ref fields. The result will include "_ref_" with a _ref_ object _(see [Ref](./query-metric.md#ref) api for all available ref fields)_.
 
 ### Fields
 Field               | Return type   | Description
@@ -37,7 +41,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/collector/http/check/http/types?fields=key,optional,single' \
+    -X GET 'https://api.infrasonar.com/collector/http/check/http/type/http?fields=key,optional,single' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 

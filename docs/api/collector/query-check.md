@@ -1,18 +1,23 @@
-# Query checks
-**`GET` /collector/<collectorKey\>/checks?fields=...**
+# Query check
+**`GET` /collector/<collectorKey\>/check/<checkKey>?fields=...**
 
 ### Description
-Query checks.
+Query check.
 
 ### Path parameters
 Param               | Description
 --------------------|-------------
 `collectorKey`      | Collector key.
+`checkKey`          | Check key.
 
 ### Query parameters
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`types`             | _none_            | Type fields. If at least one field is given, the result will include "_types_" with an array of _type_ objects _(see [Type](./query-type.md#fields) api for all available type fields)_.
+`metrics`           | _none_            | Metric fields. If at least one field is given, the result will include "_metrics_" with an array of _metric_ objects _(see [Metric](./query-metric.md#fields) api for all available metric fields)_.
+`format`            | _none_            | Format fields. The result will include "_format_" with a _format_ object _(see [Format](./query-metric.md#format) api for all available format fields)_.
+`ref`               | _none_            | Ref fields. The result will include "_ref_" with a _ref_ object _(see [Ref](./query-metric.md#ref) api for all available ref fields)_.
 
 ### Fields
 Field               | Return type   | Description
@@ -37,7 +42,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/collector/http/checks?fields=key,interval' \
+    -X GET 'https://api.infrasonar.com/collector/http/check/http?fields=key,interval' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
@@ -45,6 +50,6 @@ Response:
 ```json
 {
     "key": "http",
-    "interval": 60,
+    "interval": 60
 }
 ```
