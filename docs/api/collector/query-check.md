@@ -2,7 +2,9 @@
 **`GET` /collector/<collectorKey\>/check/<checkKey>?fields=...**
 
 ### Description
-Query check.
+Returns detailed information for a specific check within a collector. By supplying optional query parameters, you can expand the check's hierarchy in a single request—including its check types and nested metrics (along with their data, format, and reference definitions).
+
+To inspect the full parent collector (including all checks and configuration options), see [Query collector](./query.md). If you only need to inspect a single child resource, see the dedicated endpoints for querying a [type](./query-type.md) or [metric](./query-metric.md).
 
 ### Path parameters
 Param               | Description
@@ -27,8 +29,8 @@ Field               | Return type   | Description
 `key`               | string        | Check key.
 `name`              | string        | Check name.
 `interval`          | integer/null  | Check interval. Only applicable for `probe` collectors or `service` collectors.
-`maxAge`            | integer/null  | Check maximum age.
-`mustExist`         | boolean       | Check must exsit.
+`maxAge`            | integer/null  | Maximum age in seconds before a notification is raised if no new data is received. When `null`, no maximum age is enforced.
+`mustExist`         | boolean       | Whether the check must exist.
 
 
 ### Return codes
