@@ -24,16 +24,17 @@ Field               | Return type   | Description
 --------------------|---------------|-------------
 `key`               | string        | Metric key.
 `name`              | string        | Metric display name.
-`dataAggregation`   | string/null   |
-`dataType`          | string        |
-`required`          | boolean       |
+`aggregationMethod` | string/null   | Aggregation method. One of `First`, `Last`, `Append`, `AppendUnique`, `MergeSort`, `MergeSortUnique`, `Sum`, `Mean`, `Median`, `MedianHigh`, `MedianLow`, `Maximum`,`Minimum` or `Mode`.
+`dataType`          | string        | Data type. One of `Bool`, `Int`, `Float`, `String`, `ListBool`, `ListInt`, `ListFloat` or `ListString`.
+`required`          | boolean       | When `true`, a non-`null` value is required for the metric.
 
 ### Format
 Field               | Return type   | Description
 --------------------|---------------|-------------
 `key`               | string        | Format key.
 `name`              | string        | Format name.
-`category`          | string        |
+`category`          | string        | Format category. One of `General`, `Duration`, `Date & Time`, `Numbers & Currency`, `Status & Highlighting`,
+`Data Size & Rate`, `Distance`, `Temperature`, `Signal & Frequency`,`Electrical & Power` or `Text`.
 `valueType`         | string        | Value type. One of `Any`, `Numeric`, `Text`.
 `example`           | boolean       |
 
