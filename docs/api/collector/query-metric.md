@@ -16,6 +16,7 @@ Param               | Description
 Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
+`data`              | _none_            | Data fields. The result will include "_data_" with a _data_ object _(see [Data](#data) below for all available data fields)_.
 `format`            | _none_            | Format fields. The result will include "_format_" with a _format_ object _(see [Format](#format) below for all available format fields)_.
 `ref`               | _none_            | Ref type fields. The result will include "_ref_" with a _ref_ object _(see [Ref](#ref) below for all available ref fields)_.
 
@@ -24,8 +25,12 @@ Field               | Return type   | Description
 --------------------|---------------|-------------
 `key`               | string        | Metric key.
 `name`              | string        | Metric display name.
-`aggregationMethod` | string/null   | Aggregation method. One of `First`, `Last`, `Append`, `AppendUnique`, `MergeSort`, `MergeSortUnique`, `Sum`, `Mean`, `Median`, `MedianHigh`, `MedianLow`, `Maximum`,`Minimum` or `Mode`.
-`dataType`          | string        | Data type. One of `Bool`, `Int`, `Float`, `String`, `ListBool`, `ListInt`, `ListFloat` or `ListString`.
+
+### Data
+Field               | Return type   | Description
+--------------------|---------------|-------------
+`aggregation`       | string/null   | Aggregation method. One of `First`, `Last`, `Append`, `AppendUnique`, `MergeSort`, `MergeSortUnique`, `Sum`, `Mean`, `Median`, `MedianHigh`, `MedianLow`, `Maximum`,`Minimum` or `Mode`.
+`type`              | string        | Data type. One of `Bool`, `Int`, `Float`, `String`, `ListBool`, `ListInt`, `ListFloat` or `ListString`.
 `required`          | boolean       | When `true`, a non-`null` value is required for the metric.
 
 ### Format

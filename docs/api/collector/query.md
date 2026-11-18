@@ -17,6 +17,7 @@ Param               | Default           | Description
 `options`           | _none_            | Option fields. If at least one field is given, the result will include "_options_" with an array of _option_ objects _(see [Options](#options) below for all available option fields)_.
 `types`             | _none_            | Type fields. If at least one field is given, the result will include "_types_" with an array of _type_ objects _(see [Type](./query-type.md#fields) api for all available type fields)_.
 `metrics`           | _none_            | Metric fields. If at least one field is given, the result will include "_metrics_" with an array of _metric_ objects _(see [Metric](./query-metric.md#fields) api for all available metric fields)_.
+`data`              | _none_            | Data fields. The result will include "_data_" with a _data_ object _(see [Data](./query-metric.md#data) api for all available data fields)_.
 `format`            | _none_            | Format fields. The result will include "_format_" with a _format_ object _(see [Format](./query-metric.md#format) api for all available format fields)_.
 `ref`               | _none_            | Ref type fields. The result will include "_ref_" with a _ref_ object _(see [Ref](./query-metric.md#ref) api for all available ref fields)_.
 `refs`           | _none_               | Ref fields. If at least one field is given, the result will include "_refs_" with an array of _ref_ objects _(see [Refs](./query-type.md#refs) api for all available ref fields)_.
