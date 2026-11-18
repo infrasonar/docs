@@ -2,15 +2,16 @@
 **`GET` /collector/metric-formats**
 
 ### Description
+Returns a list of available metric formats. Metric formats define how raw metric values are formatted.
 
 ### Format
 Field               | Data type     | Description
 --------------------|---------------|-------------
 `key`               | string        | Format key.
 `name`              | string        | Format name.
-`category`          | string        |
-`valueType`         | string        | Value type. One of `Any`, `Numeric`, `Text`.
-`example`           | boolean       |
+`category`          | string        | Category used to group similar formats (e.g., `General`, `Data Size & Rate`).
+`valueType`         | string        | Supported metric value type. One of `Any`, `Numeric`, `Text`.
+`example`           | string        | Example showing how a raw value is transformed into its formatted representation.
 
 ### Path parameters
 _none_
