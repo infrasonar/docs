@@ -24,7 +24,7 @@ Field               | Return type   | Description
 --------------------|---------------|-------------
 `key`               | string        | Metric key.
 `name`              | string        | Metric display name.
-`dataAggregation`   | string        |
+`dataAggregation`   | string/null   |
 `dataType`          | string        |
 `required`          | boolean       |
 
