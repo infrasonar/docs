@@ -2,7 +2,9 @@
 **`GET` /collector/<collectorKey\>/check/<checkKey>/type/<typeKey>/metric/<metricKey>?fields=...**
 
 ### Description
-Query metric.
+Returns detailed information for a specific metric within a check type. By supplying optional query parameters, you can include the metric's data definition (`data`), UI display formatting (`format`), and outgoing reference target (`ref`) in a single request.
+
+To inspect broader levels of the hierarchy, see [Query type](./query-type.md), [Query check](./query-check.md), or [Query collector](./query.md). For a list of all available display formats, see [List available metric formats](./metric-formats.md).
 
 ### Path parameters
 Param               | Description
@@ -38,10 +40,9 @@ Field               | Return type   | Description
 --------------------|---------------|-------------
 `key`               | string        | Format key.
 `name`              | string        | Format name.
-`category`          | string        | Format category. One of `General`, `Duration`, `Date & Time`, `Numbers & Currency`, `Status & Highlighting`,
-`Data Size & Rate`, `Distance`, `Temperature`, `Signal & Frequency`,`Electrical & Power` or `Text`.
-`valueType`         | string        | Value type. One of `Any`, `Numeric`, `Text`.
-`example`           | boolean       |
+`category`          | string        | Category used to group similar formats (e.g., `General`, `Data Size & Rate`).
+`valueType`         | string        | Supported metric value type. One of `Any`, `Numeric`, `Text`.
+`example`           | string        | Example showing how a raw value is transformed into its formatted representation.
 
 ### Ref
 Field               | Return type   | Description
@@ -62,7 +63,7 @@ Error code  | Reason
 Curl request:
 ```bash
 curl \
-    -X GET 'https://api.infrasonar.com/collector/http/check/http/type/http/metric/responseTime?fields=key,dataType&format=key' \
+    -X GET 'https://api.infrasonar.com/collector/http/check/http/type/http/metric/responseTime?fields=key&data=type&format=key' \
     -H 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
@@ -70,9 +71,11 @@ Response:
 ```json
 {
     "key": "responseTime",
-    "dataType": "Float",
+    "data": {
+        "type": "Float"
+    },
     "format": {
-        "key": "HumanizedSeconds",
+        "key": "HumanizedSeconds"
     }
 }
 ```
