@@ -44,7 +44,7 @@ Collector field     | Return type   | Description
 --------------------|---------------|-------------
 `key`               | string        | Collector key.
 `name`              | string        | Collector name.
-`kind`              | string        | One of `agent`, `probe` or `service`.
+`kind`              | string        | One of `Agent`, `Probe` or `Service`.
 `config`            | object/null   | Configuration for the collector if config exists.
 
 ### Return codes

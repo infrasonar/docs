@@ -13,26 +13,17 @@ Param               | Description
 Param       | Default   | Description
 ------------|-----------|-------------
 `fields`    | `key`      | Fields to return _(see [Fields](#fields) below for all available fields)_.
-`options`   | _none_    | Option fields. If at least one field is given, the result will include "_options_" with an array of _option_ objects _(see [Options](#options) below for all available option fields)_.
+`options`   | _none_    | Option fields. If at least one field is given, the result will include "_options_" with an array of _option_ objects _(see [Options](../collector/query.md#options) api for all available option fields)_.
 
 ### Fields
 Field               | Return type       | Description
 --------------------|-------------------|-------------
 `key`               | string            | Collector Id.
 `name`              | string            | Collector name.
-`kind`              | string            | One of `agent`, `probe` or `service`.
+`kind`              | string            | One of `Agent`, `Probe` or `Service`.
 `info`              | string            | Collector info.
 `minVersion`        | string            | Minimal required version for the collector.
 `checks`            | array(string)     | Array with check keys.
-
-### Options
-Option field     | Return type   | Description
---------------------|---------------|-------------
-`key`               | string        | Option key.
-`name`              | string        | Option name.
-`info`              | string        | Option info.
-`type`              | string        | One of `Bool`, `Int`, `Float`, `String`, `ListBool`, `ListInt`, `ListFloat` or `ListString`.
-`default`           | any           | Default value _(The default value is not guaranteed to pass the validation function)_.
 
 ### Return codes
 Error code  | Reason
