@@ -2,7 +2,9 @@
 **`GET` /collector/<collectorKey\>/check/<checkKey>/type/<typeKey>?fields=...**
 
 ### Description
-Query type.
+Returns detailed information for a specific type within a check. By supplying optional query parameters, you can expand the type's nested metrics (along with their data, format, and reference definitions) as well as incoming references (`refs`) from other metrics.
+
+To inspect the parent [check](./query-check.md) or the full [collector](./query.md), see their respective endpoints. If you only need to inspect a single metric within this type, see [Query metric](./query-metric.md).
 
 ### Path parameters
 Param               | Description
@@ -26,8 +28,8 @@ Field               | Return type   | Description
 --------------------|---------------|-------------
 `key`               | string        | Type key.
 `name`              | string        | Type name.
-`optional`          | boolean       |
-`single`            | boolean       |
+`optional`          | boolean       | Whether this type is optional in the check result. When `false`, at least one item of this type is expected.
+`single`            | boolean       | Whether this type must contain **exactly one** item (`true`) or allows multiple items (`false`) per check result.
 
 ### Refs
 Field               | Return type   | Description
