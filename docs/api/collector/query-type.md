@@ -16,8 +16,9 @@ Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
 `metrics`           | _none_            | Metric fields. If at least one field is given, the result will include "_metrics_" with an array of _metric_ objects _(see [Metric](./query-metric.md#fields) api for all available metric fields)_.
+`refs`           | _none_               | Ref fields. If at least one field is given, the result will include "_refs_" with an array of _ref_ objects _(see [Refs](#refs) below for all available ref fields)_.
 `format`            | _none_            | Format fields. The result will include "_format_" with a _format_ object _(see [Format](./query-metric.md#format) api for all available format fields)_.
-`ref`               | _none_            | Ref fields. The result will include "_ref_" with a _ref_ object _(see [Ref](./query-metric.md#ref) api for all available ref fields)_.
+`ref`               | _none_            | Ref type fields. The result will include "_ref_" with a _ref_ object _(see [Ref](./query-metric.md#ref) api for all available ref fields)_.
 
 ### Fields
 Field               | Return type   | Description
@@ -27,6 +28,12 @@ Field               | Return type   | Description
 `optional`          | boolean       |
 `single`            | boolean       |
 
+### Refs
+Field               | Return type   | Description
+--------------------|---------------|-------------
+`check`             | string        | Referenced check key.
+`type`              | string        | Referenced type key.
+`metric`            | string        | Referenced metric key.
 
 ### Return codes
 Error code  | Reason

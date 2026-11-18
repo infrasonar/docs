@@ -17,7 +17,7 @@ Param               | Default           | Description
 --------------------|-------------------|-------------
 `fields`            | _all fields_      | Fields to return _(see [Fields](#fields) below for all available fields)_.
 `format`            | _none_            | Format fields. The result will include "_format_" with a _format_ object _(see [Format](#format) below for all available format fields)_.
-`ref`               | _none_            | Ref fields. The result will include "_ref_" with a _ref_ object _(see [Ref](#ref) below for all available ref fields)_.
+`ref`               | _none_            | Ref type fields. The result will include "_ref_" with a _ref_ object _(see [Ref](#ref) below for all available ref fields)_.
 
 ### Fields
 Field               | Return type   | Description
@@ -26,7 +26,6 @@ Field               | Return type   | Description
 `name`              | string        | Metric display name.
 `dataAggregation`   | string        |
 `dataType`          | string        |
-`fileIdLink`        | boolean       |
 `required`          | boolean       |
 
 ### Format
@@ -41,7 +40,8 @@ Field               | Return type   | Description
 ### Ref
 Field               | Return type   | Description
 --------------------|---------------|-------------
-`key`               | string        | Referenced type key.
+`check`             | string        | Referenced check key.
+`type`              | string        | Referenced type key.
 
 ### Return codes
 Error code  | Reason
