@@ -2,7 +2,9 @@
 **`GET` /collector/<collectorKey\>?fields=...**
 
 ### Description
-Query collector.
+Returns detailed information for a specific collector. By supplying optional query parameters, you can retrieve the collector's full hierarchy in a single request—including its configuration options, checks, check types, and nested metrics (along with their data, format, and reference definitions).
+
+If you only need to inspect a single resource without fetching the entire collector tree, see the dedicated endpoints for querying a [check](./query-check.md), [type](./query-type.md), or [metric](./query-metric.md).
 
 ### Path parameters
 Param               | Description
@@ -40,7 +42,7 @@ Option field     | Return type   | Description
 `name`              | string        | Option name.
 `info`              | string        | Option info.
 `type`              | string        | One of `Bool`, `Int`, `Float`, `String`, `ListBool`, `ListInt`, `ListFloat` or `ListString`.
-`default`           | any           | Default value _(The default value is not guaranteed to pass the validation function)_.
+`default`           | any           | Initial default value _(Note that this is only a placeholder/starting value and is not guaranteed to pass validation)_.
 
 ### Return codes
 Error code  | Reason
