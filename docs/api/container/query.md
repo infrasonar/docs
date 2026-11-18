@@ -20,7 +20,7 @@ Field               | Return type   | Description
 `id`                | integer       | Container Id.
 `name`              | string        | Container name.
 `timezone`          | string        | Container time-zone.
-`mode`              | string        | One of `normal`, `maintenance` or `disabled`.
+`mode`              | string        | One of `Normal`, `Maintenance` or `Disabled`.
 `properties`        | array(object) | List with property object. Each property container a `key` and `value` property.
 
 
@@ -45,7 +45,7 @@ Response:
 ```json
 {
     "id": 123,
-    "mode": "normal",
+    "mode": "Normal",
     "name": "My Container",
     "timezone": "Europe/Amsterdam",
     "properties": [{

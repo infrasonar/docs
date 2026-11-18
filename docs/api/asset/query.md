@@ -24,7 +24,7 @@ Field               | Return type       | Description
 `name`              | string            | Asset name.
 `kind`              | string            | One of the kinds _(see [List available kinds](../asset/kinds.md#kinds) api)_
 `description`       | string            | Asset description.
-`mode`              | string            | One of `normal`, `maintenance` or `disabled`.
+`mode`              | string            | One of `Normal`, `Maintenance` or `Disabled`.
 `labels`            | array(integer)    | List with label Ids.
 `disabledChecks`    | array(object)     | List with check objects. Each check object contains a `collector` and `check` property, both with the key as value.
 `properties`        | array(object)     | List with property object. Each property container a `key` and `value` property.
@@ -61,7 +61,7 @@ Response:
     "name": "my-host.local",
     "kind": "Asset",
     "description": "My host",
-    "mode": "normal",
+    "mode": "Normal",
     "labels": [456, 789],
     "disabledChecks": [],
     "properties": [{
