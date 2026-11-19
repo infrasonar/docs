@@ -7496,6 +7496,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -7543,6 +7553,146 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collector/metric-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    List available metric formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collector/query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collector/query-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collector/query-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collector/query-metric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query metric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -8242,17 +8392,6 @@
     <span class="md-ellipsis">
       
         Fields
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Options
       
     </span>
   </a>
@@ -9901,17 +10040,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#return-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9987,7 +10115,7 @@
 <tr>
 <td><code>options</code></td>
 <td><em>none</em></td>
-<td>Option fields. If at least one field is given, the result will include "<em>options</em>" with an array of <em>option</em> objects <em>(see <a href="#options">Options</a> below for all available option fields)</em>.</td>
+<td>Option fields. If at least one field is given, the result will include "<em>options</em>" with an array of <em>option</em> objects <em>(see <a href="../../collector/query/#options">Options</a> api for all available option fields)</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -10014,7 +10142,7 @@
 <tr>
 <td><code>kind</code></td>
 <td>string</td>
-<td>One of <code>agent</code>, <code>probe</code> or <code>service</code>.</td>
+<td>One of <code>Agent</code>, <code>Probe</code> or <code>Service</code>.</td>
 </tr>
 <tr>
 <td><code>info</code></td>
@@ -10030,43 +10158,6 @@
 <td><code>checks</code></td>
 <td>array(string)</td>
 <td>Array with check keys.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="options">Options</h3>
-<table>
-<thead>
-<tr>
-<th>Option field</th>
-<th>Return type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>key</code></td>
-<td>string</td>
-<td>Option key.</td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td>string</td>
-<td>Option name.</td>
-</tr>
-<tr>
-<td><code>info</code></td>
-<td>string</td>
-<td>Option info.</td>
-</tr>
-<tr>
-<td><code>type</code></td>
-<td>string</td>
-<td>One of <code>Bool</code>, <code>Int</code>, <code>Float</code>, <code>String</code>, <code>ListBool</code>, <code>ListInt</code>, <code>ListFloat</code> or <code>ListString</code>.</td>
-</tr>
-<tr>
-<td><code>default</code></td>
-<td>any</td>
-<td>Default value <em>(The default value is not guaranteed to pass the validation function)</em>.</td>
 </tr>
 </tbody>
 </table>
