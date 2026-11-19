@@ -20,7 +20,7 @@ Field               | Return type       | Description
 `id`                | integer           | Asset Id.
 `name`              | string            | Asset name.
 `targetAssetId`     | integer           | Target asset Id.
-`status`            | string            | One of `pending`, `working` or `error`.
+`status`            | string            | One of `Pending`, `Working` or `Error`.
 `error`             | string/null       | Merge error reason.
 
 ### Return codes
@@ -46,7 +46,7 @@ Response:
     {
         "id": 124,
         "name": "my-host.local",
-        "status": "pending",
+        "status": "Pending",
         "targetAssetId": 125
     }
 ]

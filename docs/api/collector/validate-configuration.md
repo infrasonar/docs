@@ -23,6 +23,8 @@ Error code  | Reason
 ------------|--------
 `204`       | Success (configuration is valid).
 `400`       | Invalid (configuration failed validation checks).
+`401`       | Invalid or missing token.
+`403`       | Insufficient permissions _(required: `API`+`READ`)_.
 `404`       | Collector not found.
 
 ### Example

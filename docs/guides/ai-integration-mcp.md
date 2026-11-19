@@ -11,7 +11,7 @@ The InfraSonar MCP server uses Server-Sent Events (SSE) and exposes two endpoint
 | Endpoint | URL | Access Level |
 | :--- | :--- | :--- |
 | **Read-Only** *(Recommended)* | `https://mcp.infrasonar.com/ro/sse` | Inspect containers, assets, alerts, conditions, collectors, and time-series metrics. No modifications can be made. |
-| **Read-Write** | `https://mcp.infrasonar.com/rw/sse` | Includes all read-only capabilities plus write actions: closing or assigning alerts, adding alert notes, toggling checks, setting maintenance/disabled modes, and creating assets. |
+| **Read-Write** | `https://mcp.infrasonar.com/rw/sse` | Includes all read-only capabilities plus write actions: closing or assigning alerts, adding alert notes, toggling checks, setting Maintenance/Disabled modes, and creating assets. |
 
 > **Tip:** Start with the **Read-Only (`/ro/sse`)** endpoint for daily triage and root-cause investigation. Only use the **Read-Write (`/rw/sse`)** endpoint when you explicitly want the assistant to perform changes in your container.
 
