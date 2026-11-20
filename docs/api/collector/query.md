@@ -33,7 +33,6 @@ Field               | Return type   | Description
 `kind`              | string        | Collector kind. One of `Agent`, `Probe` or `Service`.
 `info`              | string        | Collector info.
 `minVersion`        | string        | Minimal required version for the collector.
-`checks`            | array(string) | Array with check keys.
 
 ### Options
 Option field     | Return type   | Description

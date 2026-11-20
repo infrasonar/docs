@@ -1,5 +1,5 @@
 # Query metric
-**`GET` /collector/<collectorKey\>/check/<checkKey>/type/<typeKey>/metric/<metricKey>?fields=...**
+**`GET` /collector/<collectorKey\>/check/<checkKey\>/type/<typeKey\>/metric/<metricKey\>?fields=...**
 
 ### Description
 Returns detailed information for a specific metric within a check type. By supplying optional query parameters, you can include the metric's data definition (`data`), UI display formatting (`format`), and outgoing reference target (`ref`) in a single request.

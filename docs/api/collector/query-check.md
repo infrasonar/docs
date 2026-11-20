@@ -1,5 +1,5 @@
 # Query check
-**`GET` /collector/<collectorKey\>/check/<checkKey>?fields=...**
+**`GET` /collector/<collectorKey\>/check/<checkKey\>?fields=...**
 
 ### Description
 Returns detailed information for a specific check within a collector. By supplying optional query parameters, you can expand the check's hierarchy in a single request—including its check types and nested metrics (along with their data, format, and reference definitions).

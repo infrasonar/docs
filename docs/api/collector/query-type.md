@@ -1,5 +1,5 @@
 # Query type
-**`GET` /collector/<collectorKey\>/check/<checkKey>/type/<typeKey>?fields=...**
+**`GET` /collector/<collectorKey\>/check/<checkKey\>/type/<typeKey\>?fields=...**
 
 ### Description
 Returns detailed information for a specific type within a check. By supplying optional query parameters, you can expand the type's nested metrics (along with their data, format, and reference definitions) as well as incoming references (`refs`) from other metrics.
