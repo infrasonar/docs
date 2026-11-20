@@ -2,7 +2,7 @@
 **`PUT` /container/<containerId\>/invite**
 
 ### Description
-Create an invite for a user. Invites can only be created for users which do not yet exist in InfraSonar. For existing users, use the [add user](../add-user) and [update-user](../update-user) API handlers.
+Create an invite for a user. Invites can only be created for users which do not yet exist in InfraSonar. For existing users, use the [add user](../add-user) and [update user](../update-user) API handlers.
 
 ### Path parameters
 Param               | Description
