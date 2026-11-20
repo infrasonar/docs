@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -10079,7 +10079,7 @@
 
 
 <h1 id="query-check">Query check</h1>
-<p><strong><code>GET</code> /collector/&lt;collectorKey&gt;/check/<checkKey>?fields=...</strong></p>
+<p><strong><code>GET</code> /collector/&lt;collectorKey&gt;/check/&lt;checkKey&gt;?fields=...</strong></p>
 <h3 id="description">Description</h3>
 <p>Returns detailed information for a specific check within a collector. By supplying optional query parameters, you can expand the check's hierarchy in a single request—including its check types and nested metrics (along with their data, format, and reference definitions).</p>
 <p>To inspect the full parent collector (including all checks and configuration options), see <a href="../query/">Query collector</a>. If you only need to inspect a single child resource, see the dedicated endpoints for querying a <a href="../query-type/">type</a> or <a href="../query-metric/">metric</a>.</p>

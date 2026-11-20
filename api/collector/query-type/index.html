@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -10101,7 +10101,7 @@
 
 
 <h1 id="query-type">Query type</h1>
-<p><strong><code>GET</code> /collector/&lt;collectorKey&gt;/check/<checkKey>/type/<typeKey>?fields=...</strong></p>
+<p><strong><code>GET</code> /collector/&lt;collectorKey&gt;/check/&lt;checkKey&gt;/type/&lt;typeKey&gt;?fields=...</strong></p>
 <h3 id="description">Description</h3>
 <p>Returns detailed information for a specific type within a check. By supplying optional query parameters, you can expand the type's nested metrics (along with their data, format, and reference definitions) as well as incoming references (<code>refs</code>) from other metrics.</p>
 <p>To inspect the parent <a href="../query-check/">check</a> or the full <a href="../query/">collector</a>, see their respective endpoints. If you only need to inspect a single metric within this type, see <a href="../query-metric/">Query metric</a>.</p>
