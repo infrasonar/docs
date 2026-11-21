@@ -8,7 +8,7 @@ Remove a user from the container.
 Param               | Description
 --------------------|-------------
 `containerId`       | Container Id.
-`userId`            | Zone Id.
+`userId`            | User Id.
 
 ### Query parameters
 _none_

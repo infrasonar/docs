@@ -7,7 +7,7 @@ Query effective conditions.
 ### Path parameters
 Param               | Description
 --------------------|-------------
-`assetId`           | Condition Id.
+`assetId`           | Asset Id.
 
 ### Query parameters
 Param               | Default           | Description

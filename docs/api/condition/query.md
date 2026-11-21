@@ -7,6 +7,7 @@ Query condition details.
 ### Path parameters
 Param               | Description
 --------------------|-------------
+`containerId`       | Container Id.
 `conditionId`       | Condition Id.
 
 ### Query parameters

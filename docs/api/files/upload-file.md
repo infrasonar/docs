@@ -50,7 +50,7 @@ url = "https://api.infrasonar.com/container/123/file"
 files = [('', (
     'network-drawing.png',
     open('/path-to-file/network-drawing.png','rb'),
-    'image/jpeg'
+    'image/png'
 ))]
 
 headers = {
