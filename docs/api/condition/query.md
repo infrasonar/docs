@@ -36,6 +36,7 @@ Field               | Return type        | Description
 `ignoreCase`        | boolean/null       | Enables case-insensitive matching for item names. Only applicable when kind is `ItemsMustExist`. Default: `false`.
 `itemsRe`           | string/null        | Regular expression pattern for matching items. Only applicable when kind is `ItemsMustExist`.
 `itemsList`         | array(string)/null | Explicit list of item names to match. Only applicable when kind is `ItemsMustExist`.
+`properties`        | array(object)      | List with property objects. Each property contains a `key` and `value` property.
 
 ### Return codes
 Error code  | Reason

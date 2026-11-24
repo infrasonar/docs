@@ -23,7 +23,7 @@ Param                   | Type          | Required  | Description
 ### Return codes
 Error code  | Reason
 ------------|--------
-`201`       | Success.
+`204`       | Success.
 `400`       | Invalid body or a user with this mail address already exists in InfraSonar.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`CONTAINER_ACCESS`)_.

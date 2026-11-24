@@ -27,7 +27,7 @@ Field               | Return type       | Description
 `mode`              | string            | One of `Normal`, `Maintenance` or `Disabled`.
 `labels`            | array(integer)    | List with label Ids.
 `disabledChecks`    | array(object)     | List with check objects. Each check object contains a `collector` and `check` property, both with the key as value.
-`properties`        | array(object)     | List with property object. Each property container a `key` and `value` property.
+`properties`        | array(object)     | List with property objects. Each property contains a `key` and `value` property.
 
 ### Collectors
 Collector field     | Return type   | Description
