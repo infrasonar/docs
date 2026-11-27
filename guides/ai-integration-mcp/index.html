@@ -1219,6 +1219,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-transport-should-i-choose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which Transport Should I Choose?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1240,6 +1257,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Client Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#streamable-http-clients-antigravity-modern-mcp-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streamable HTTP Clients (Antigravity / Modern MCP Clients)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sse-clients-claude-desktop-cline-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSE Clients (Claude Desktop / Cline / Cursor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -9967,6 +10012,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-transport-should-i-choose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which Transport Should I Choose?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -9988,6 +10050,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Client Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#streamable-http-clients-antigravity-modern-mcp-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streamable HTTP Clients (Antigravity / Modern MCP Clients)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sse-clients-claude-desktop-cline-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSE Clients (Claude Desktop / Cline / Cursor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -10020,43 +10110,64 @@
 
 
 <h1 id="ai-integration-mcp">AI Integration (MCP)</h1>
-<p>InfraSonar provides a hosted <strong>Model Context Protocol (MCP)</strong> server that connects your monitoring environment directly to MCP-compatible AI assistants (such as Claude Desktop, Cursor, Cline, and LibreChat). This allows your AI assistant to query live check data, investigate alerts, inspect condition expressions, and manage operational states using natural language.</p>
+<p>InfraSonar provides a hosted <strong>Model Context Protocol (MCP)</strong> server that connects your monitoring environment directly to MCP-compatible AI assistants (such as Claude Desktop, Cursor, Cline, Antigravity, and LibreChat). This allows your AI assistant to query live check data, investigate alerts, inspect condition expressions, and manage operational states using natural language.</p>
 <hr />
 <h2 id="endpoints">Endpoints</h2>
-<p>The InfraSonar MCP server uses Server-Sent Events (SSE) and exposes two endpoints depending on the level of access you want to grant your AI assistant:</p>
+<p>The InfraSonar MCP server supports both <strong>Streamable HTTP</strong> (<code>2025-03-26</code> spec) and legacy <strong>HTTP + SSE</strong> (<code>2024-11-05</code> spec), and separates access into <strong>Read-Only</strong> and <strong>Read-Write</strong> endpoints:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Endpoint</th>
-<th style="text-align: left;">URL</th>
 <th style="text-align: left;">Access Level</th>
+<th style="text-align: left;">Streamable HTTP <em>(Recommended)</em></th>
+<th style="text-align: left;">HTTP + SSE</th>
+<th style="text-align: left;">Capabilities</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>Read-Only</strong> <em>(Recommended)</em></td>
+<td style="text-align: left;"><code>https://mcp.infrasonar.com/ro/mcp</code></td>
 <td style="text-align: left;"><code>https://mcp.infrasonar.com/ro/sse</code></td>
 <td style="text-align: left;">Inspect containers, assets, alerts, conditions, collectors, and time-series metrics. No modifications can be made.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Read-Write</strong></td>
+<td style="text-align: left;"><code>https://mcp.infrasonar.com/rw/mcp</code></td>
 <td style="text-align: left;"><code>https://mcp.infrasonar.com/rw/sse</code></td>
-<td style="text-align: left;">Includes all read-only capabilities plus write actions: closing or assigning alerts, adding alert notes, toggling checks, setting Maintenance/Disabled modes, and creating assets.</td>
+<td style="text-align: left;">Includes all read-only capabilities plus write actions: closing or assigning alerts, adding alert notes, toggling checks, setting Maintenance/Disabled modes, purging dead time-series, and creating assets.</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Tip:</strong> Start with the <strong>Read-Only (<code>/ro/sse</code>)</strong> endpoint for daily triage and root-cause investigation. Only use the <strong>Read-Write (<code>/rw/sse</code>)</strong> endpoint when you explicitly want the assistant to perform changes in your container.</p>
+<p><strong>Tip:</strong> Start with a <strong>Read-Only (<code>/ro/mcp</code> or <code>/ro/sse</code>)</strong> endpoint for daily triage and root-cause investigation. Only use a <strong>Read-Write (<code>/rw/mcp</code> or <code>/rw/sse</code>)</strong> endpoint when you explicitly want the assistant to perform changes in your container.</p>
 </blockquote>
+<h3 id="which-transport-should-i-choose">Which Transport Should I Choose?</h3>
+<ul>
+<li><strong>Streamable HTTP (<code>/ro/mcp</code>, <code>/rw/mcp</code>):</strong> Recommended for newer MCP clients (such as Antigravity and modern web/IDE clients) that support the <code>2025-03-26</code> MCP specification. No local Node.js bridge is required.</li>
+<li><strong>HTTP + SSE (<code>/ro/sse</code>, <code>/rw/sse</code>):</strong> Use this if your client specifically expects a Server-Sent Events endpoint (<code>2024-11-05</code> MCP specification).</li>
+</ul>
 <hr />
 <h2 id="authentication">Authentication</h2>
 <p>All requests to the MCP server require an InfraSonar <strong>API Token</strong> passed via the <code>Authorization</code> HTTP header as a Bearer token:</p>
 <div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;YOUR_INFRASONAR_API_TOKEN&gt;
 </code></pre></div>
-<p>Make sure the token has the appropriate permissions for the actions you intend to run (for example, at least <code>API</code> + <code>READ</code> for querying data, or <code>API</code> + <code>READ</code> + <code>ASSET_MANAGEMENT</code> / <code>CHECK_MANAGEMENT</code> etc. when using the read-write endpoint). You can authenticate using either a container token <em>(scoped to a single container)</em> or a personal API token <em>(scoped to all containers you have access to)</em>.</p>
+<p>Make sure the token has the appropriate permissions for the actions you intend to run (for example, at least <code>API</code> + <code>READ</code> for querying data, or <code>API</code> + <code>READ</code> + <code>ASSET_MANAGEMENT</code> / <code>CHECK_MANAGEMENT</code> etc. when using a read-write endpoint). You can authenticate using either a <strong>container token</strong> <em>(scoped to a single container)</em> or a <strong>personal API token</strong> <em>(scoped to all containers you have access to)</em>.</p>
+<hr />
 <h2 id="client-configuration">Client Configuration</h2>
 <p>Add the InfraSonar MCP server to your AI client configuration file.</p>
-<p>Claude Desktop / Cline / Cursor</p>
+<h3 id="streamable-http-clients-antigravity-modern-mcp-clients">Streamable HTTP Clients (Antigravity / Modern MCP Clients)</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"infrasonar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"serverUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mcp.infrasonar.com/ro/mcp"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"Authorization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer YOUR_INFRASONAR_API_TOKEN"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="sse-clients-claude-desktop-cline-cursor">SSE Clients (Claude Desktop / Cline / Cursor)</h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"infrasonar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -10068,14 +10179,17 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>To enable write operations, replace the URL with <code>https://mcp.infrasonar.com/rw/sse</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> To enable write operations, replace <code>/ro/mcp</code> with <code>/rw/mcp</code> (or <code>/ro/sse</code> with <code>/rw/sse</code>).</p>
+</blockquote>
+<hr />
 <h2 id="example-prompts">Example Prompts</h2>
 <p>Once connected, you can ask your AI assistant questions such as:</p>
 <ul>
 <li><em>"List the most critical open alerts in container Production and explain how to resolve them."</em></li>
 <li><em>"Why did the certificate alert trigger on <code>web-01</code>? Show me the condition expression and current check data."</em></li>
 <li><em>"Plot the incoming network traffic for <code>esx-prod-01</code> over the last 24 hours."</em></li>
-<li><em>"Put asset <code>db-02</code> into maintenance mode for 60 minutes." (Requires <code>/rw/sse</code>)</em></li>
+<li><em>"Put asset <code>db-02</code> into maintenance mode for 60 minutes." (Requires <code>/rw/mcp</code> or <code>/rw/sse</code>)</em></li>
 </ul>
 
 
