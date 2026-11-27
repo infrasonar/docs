@@ -257,6 +257,7 @@ nav:
         - Query asset: api/asset/query.md
         - Query asset Id: api/asset/query-id.md
         - Query asset alerts: api/asset/query-alerts.md
+        - Query asset notifications: api/asset/query-notifications.md
         - Query check data: api/asset/query-check-data.md
         - Query effective conditions: api/asset/query-effective-conditions.md
         - Query forecast data: api/asset/query-forecast-data.md
@@ -299,6 +300,7 @@ nav:
         - Query container collectors: api/container/query-collectors.md
         - Query container invites: api/container/query-invites.md
         - Query container labels: api/container/query-labels.md
+        - Query container notifications: api/container/query-notifications.md
         - Query container merge queue: api/container/query-merge-queue.md
         - Query container move queue: api/container/query-move-queue.md
         - Query container permissions: api/container/query-permissions.md
@@ -324,6 +326,9 @@ nav:
         - Set label color: api/label/set-color.md
         - Set label description: api/label/set-description.md
         - Set label name: api/label/set-name.md
+      - Notification:
+        - Purge notification: api/notification/purge.md
+        - Query notification: api/notification/query.md
       - Reporting:
         - List available kinds: api/reporting/kinds.md
         - Get report: api/reporting/get-report.md
