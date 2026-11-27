@@ -2,7 +2,7 @@
 **`PUT` /notification/<notificationKs\>/purge**
 
 ### Description
-Close a notification.
+Close a notification. Success _(204)_ is also returned when the notificiation is already closed .
 
 
 ### Path parameters
