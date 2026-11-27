@@ -10,10 +10,11 @@ Param               | Description
 `alertKs`           | Alert key string _(ks)_.
 
 ### Body
-Param           | Type      | Required  | Description
-----------------|-----------|-----------|-------------
-`userId`        | integer   | Yes       | User Id.
-`message`       | string    | No        | Optional message _(max 240 characters, default empty)_.
+Param              | Type      | Required  | Description
+-------------------|-----------|-----------|-------------
+`userId`           | integer   | Yes       | User Id.
+`assignedByUserId` | integer   | No        | Optional assigned by User Id. When not given the alert will be assigned by the token' user in case of a user token.
+`message`          | string    | No        | Optional message _(max 240 characters, default empty)_.
 
 ### Return codes
 Error code  | Reason

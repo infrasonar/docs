@@ -15,6 +15,7 @@ Param           | Type      | Required  | Description
 ----------------|-----------|-----------|-------------
 `message`       | string    | No        | Optional message _(max 2000 characters, default empty)_.
 `isSolution`    | boolean   | No        | Mark as a solution to the problem _(requires a message of at least 60 characters unless configured diffrently by the `infrasonar_alert_minimum_solution_length` container property, default false)_.
+`userId`        | integer   | No        | Optional User Id. When not given the alert will be closed by the token' user in case of a user token.
 
 ### Return codes
 Error code  | Reason

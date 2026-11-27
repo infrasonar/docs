@@ -13,7 +13,7 @@ Param               | Description
 ### Body
 Param           | Type      | Required  | Description
 ----------------|-----------|-----------|-------------
-`userId`        | integer   | No        | User Id.
+`userId`        | integer   | No        | Optional User Id. When not given the notification will be closed by the token' user in case of a user token.
 
 ### Return codes
 Error code  | Reason

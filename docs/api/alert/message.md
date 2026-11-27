@@ -13,6 +13,7 @@ Param               | Description
 Param           | Type      | Required  | Description
 ----------------|-----------|-----------|-------------
 `message`       | string    | Yes       | Message to add _(max 240 characters, default empty)_.
+`userId`        | integer   | No        | Optional User Id. When not given the alert message will be added by the token' user in case of a user token.
 
 ### Return codes
 Error code  | Reason
