@@ -2,7 +2,7 @@
 **`PUT` /notification/<notificationKs\>/purge**
 
 ### Description
-Close a notification. Success _(204)_ is also returned when the notificiation is already closed .
+Close a notification. Success _(204)_ is also returned when the notificiation is already closed.
 
 
 ### Path parameters
@@ -22,6 +22,7 @@ Error code  | Reason
 `400`       | Invalid body or notification key string.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`ASSET_MANAGEMENT`+`CONTAINER_MANAGERMENT`+`CONTAINER_ADMIN`)_.
+`404`       | User _(userId)_ not found.
 
 ### Example
 Curl request:

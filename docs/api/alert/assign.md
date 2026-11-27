@@ -23,7 +23,7 @@ Error code  | Reason
 `400`       | Invalid body or alert key string.
 `401`       | Invalid or missing token.
 `403`       | Insufficient permissions _(required: `API`+`ALERT_ASSIGN`)_.
-`404`       | User _(userId)_ not found or the user is not a member.
+`404`       | User _(assignedByUserId)_, _(userId)_ not found or user _(userId)_ is not a member.
 
 ### Example
 Curl request:
